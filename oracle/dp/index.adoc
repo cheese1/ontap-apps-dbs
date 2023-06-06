@@ -1,12 +1,12 @@
 ---
 layout: astra
 sidebar: sidebar
-permalink: index.html
-lead: Oracle on ONTAP
+permalink: oracle/dp/index.html
+lead: Oracle Data Protection 
 summary: SProtocols
 ---
 
-= Oracle on ONTAP Implementation Guides
+= Oracle Data Protection
 :hardbreaks:
 :nofooter:
 :icons: font

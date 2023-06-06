@@ -1,8 +1,8 @@
 ---
 layout: astra
 sidebar: sidebar
-permalink: index.html
-lead: Oracle on ONTAP
+permalink: oracle/index.html
+lead: Oracle on ONTAP General Configuration
 summary: SProtocols
 ---
 

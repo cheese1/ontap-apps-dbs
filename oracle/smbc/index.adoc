@@ -1,12 +1,12 @@
 ---
 layout: astra
 sidebar: sidebar
-permalink: index.html
-lead: Oracle on ONTAP
-summary: SProtocols
+permalink: oracle/smbc/index.html
+lead: Oracle with SM-BC
+summary: Protocols
 ---
 
-= Oracle on ONTAP Implementation Guides
+= Oracle Data Protection
 :hardbreaks:
 :nofooter:
 :icons: font

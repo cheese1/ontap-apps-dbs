@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: oracle/network-configuration/san_configuration.html
+keywords: TR-3633, oracle, database, ontap, SAN, zoning
+summary: FC SAN configuration for Oracle on ONTAP
+---
+
+= General SAN configuration
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+Configuring FC SAN for Oracle databases is primarily about following everyday SAN best practices.
+
+== Zoning
+
+An FC zone should never contain more than one initiator. Such an arrangement might appear to work initially, but crosstalk between initiators eventually interferes with performance and stability.
+
+Multitarget zones are generally regarded as safe, although in rare circumstances the behavior of FC target ports from different vendors has caused problems. For example, avoid including the target ports from both a NetApp and an EMC storage array in the same zone. In addition, placing a NetApp storage system and a tape device in the same zone is even more likely to cause problems.

@@ -1,0 +1,45 @@
+---
+sidebar: sidebar
+permalink: oracle/smbc/rac.html
+keywords: TR-4899, oracle, smbc, sm-bc, RAC
+summary: Oracle RAC on ONTAP with SM-BC
+---
+
+= Oracle RAC with SM-BC
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+
+An extended RAC cluster means distributing RAC nodes across sites, with each site having a usable copy of the data. Some customers rely on Oracle Automatic Storage Management (ASM) redundancy to mirror data across sites. Although ONTAP offers many benefits for this approach, overall, ASM mirroring scales poorly as the number of databases increases. Storage-level mirroring is simpler because it centralizes replication management on the array, as opposed to managing replication across many ASM disk groups scattered across multiple RAC clusters.
+
+If the RAC cluster itself must survive the loss of connectivity between sites or a site failure, there are additional quorum requirements. First, the RAC cluster need three quorum resources. This typically involves a third site, but if one site is prioritized higher than the other site, the third quorum resource could be placed on that site. The result is that neither a loss of connectivity between sites nor a site failure at the remote site affects quorum. Site failure of the prioritized site would result in loss of quorum, which would cause an eviction at the surviving site, but services could then be forced to restart with a reduced quorum. The additional time to recover services might be an acceptable tradeoff to avoid establishing a third site. Figure 7 illustrates Oracle Extended RAC over SM-BC.
+
+image:smbc-rac.png[Error: Missing Graphic Image]
+
+If a cluster must remain operational under all scenarios in which site-to-site connectivity or an entire site is lost, a third site would be required to host an Oracle tiebreaker voting disk.
+
+Oracle continues to add new features and capabilities for geographically distributed clustering. The procedure in Figure 8 illustrates the options that are currently available, but these options can change in future versions of the Oracle Grid Infrastructure.
+
+During the Grid Infrastructure installation of an Oracle Extended Cluster in 19c, the user defines a minimum of three and a maximum of five sites. The storage resources of a site are known as a failure group.
+
+image:smbc-racinstall.png[Error: Missing Graphic Image]
+
+A three-site model includes two active sites, each able to run database instances, and a third site to host quorum OCR and voting disk files. The quorum site is a storage-only site with no other Oracle software installed. Oracle even allows NFS to be used for the quorum site.
+
+While generating the load, we reproduced various host, storage, and network failure scenarios on the primary site and observed the behavior in Swingbench. As expected, no errors or failures were detected; there was only an I/O pause for few seconds.
+
+image:smbc-swingbench.png[Error: Missing Graphic Image]
+
+== Site load balancing and granular failover (cross disaster recovery model)
+
+SM-BC delivers granular control over dataset replication for purposes such as load balancing or individual application failover. The overall architecture looks like an extended RAC cluster, but some databases are dedicated to specific sites and the overall load is distributed.
+
+For example, you could build an Oracle RAC cluster hosting six individual databases. The storage for three of the databases would be primarily hosted on site A, and storage for the other three databases would be hosted on site B. This configuration ensures the best possible performance by minimizing cross-site traffic. In addition, applications would be configured to use the database instances that are local to the storage system with active paths. This minimizes RAC interconnect traffic. Finally, this overall design ensures that all compute resources are used evenly. As workloads change, databases can be selectively failed back and forth across sites to ensure even loading.
+
+Figure 10 shows the cross disaster recovery architecture with multiple workloads at each site.
+
+image:smbc-multiworkload.png[Error: Missing Graphic Image]

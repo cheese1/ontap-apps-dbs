@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: oracle/migration/7-mode_transition_tool.html
+keywords: TR-4534, migration, oracle, database, storage, system, 7, mode, transition, tool, 7mtt
+summary: Documentation on 7MTT is available on the NetApp Support site and includes guidance on both the copy-based and copy-free options. 
+---
+
+= 7-Mode Transition Tool
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-08-13 11:16:19.738782
+//
+
+[.lead]
+Documentation on 7MTT is available on the NetApp http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61584[Support^] site and includes guidance on both the copy-based and copy-free options. In particular, see the release notes for specific guidance on approaching a 7MTT project. Additional assistance is available from NetApp and partner professional services.
