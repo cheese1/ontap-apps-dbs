@@ -14,34 +14,32 @@ sidebar:
     - section: oracle
     - section: postgres
     - section: hana
-    - title: "Other Information"
-      links:
-        - title: "Legal Notices"
-          url: /legal-notices.html
+    - title: "Legal Notices"
+      url: /legal-notices.html
 
 homepage:
   tiles:
     - title: "MariaDB/MySQL"
       links:
         - title: "MariaDB and MySQL on ONTAP"
-          url: /mysql/index.html
+          url: mysql/index.html
     - title: "Microsoft SQL Server"
       links:
         - title: "MS SQL Server on ONTAP"
-          url: /mssql/index.html
+          url: mssql/index.html
     - title: "Oracle Database"
       links:
         - title: "Oracle on ONTAP"
-          url: /oracle/index.html
+          url: oracle/index.html
     - title: "PostgreSQL"
       links:
         - title: "PostgreSQL on ONTAP"
-          url: /postgres/index.html
+          url: postgres/index.html
     - title: "SAP HANA"
       links:
         - title: "SAP HANA on ONTAP"
-          url: /hana/index.html
+          url: hana/index.html
     - title: "Other Information"
       links:
         - title: "Legal Notices"
-          url: /legal-notices.html
+          url: legal-notices.html
