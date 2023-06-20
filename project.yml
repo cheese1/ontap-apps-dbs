@@ -15,7 +15,7 @@ sidebar:
     - section: postgres
     - section: hana
     - title: "Legal Notices"
-      url: /legal-notices.html
+      url: legal-notices.html
 
 homepage:
   tiles:

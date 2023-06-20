@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:
 summary:
 ---
-= Legal notices
+= Legal Notices
 :icons: font
 :imagesdir: ../media/
 
