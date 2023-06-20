@@ -2,11 +2,12 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: Oracle on ONTAP
-summary: SProtocols
+lead: 
+summary: Best Practice and Implementation Guides for applications and databases on ONTAP 
 ---
 
-= Oracle on ONTAP Implementation Guides
+=
+ONTAP Applications and Databases Implementation Guides
 :hardbreaks:
 :nofooter:
 :icons: font
