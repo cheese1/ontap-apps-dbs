@@ -1,5 +1,5 @@
 section: hana 
 title: SAP HANA
-url: /hana/introduction.html
 entries:
   - title: Configuration Guides
+    url: /hana/introduction.html
