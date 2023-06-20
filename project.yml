@@ -1,4 +1,3 @@
----
 settings:
   name: Application and Database Best Practice and Implementation Guides
   internal:
@@ -9,16 +8,11 @@ sidebar:
   entries:
     - title: Application and Databases
       url: /index.html
-    - title: "MariaDB/MySQL"
-      url: /mysql/index.html
-    - title: "Microsoft SQL Server"
-      url: /mssql/index.html
-    - title: "Oracle Database"
-      url: /oracle/index.html
-    - title: "PostgreSQL"
-      url: /postgres/index.html
-    - title: "SAP HANA"
-      url: /hana/index.html
+    - section: mysql
+    - section: mssql
+    - section: oracle
+    - section: postgres
+    - section: hana
     - title: "Other Information"
       links:
         - title: "Legal Notices"
@@ -36,7 +30,7 @@ homepage:
           url: /mssql/index.html
     - title: "Oracle Database"
       links:
-        - title: "General ONTAP Configuration"
+        - title: "Oracle on ONTAP"
           url: /oracle/index.html
     - title: "PostgreSQL"
       links:

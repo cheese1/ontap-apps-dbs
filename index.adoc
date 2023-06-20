@@ -6,8 +6,7 @@ lead:
 summary: Best Practice and Implementation Guides for applications and databases on ONTAP 
 ---
 
-=
-ONTAP Applications and Databases Implementation Guides
+= ONTAP Applications and Databases Implementation Guides
 :hardbreaks:
 :nofooter:
 :icons: font
