@@ -2,7 +2,6 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: 
 summary: Best Practice and Implementation Guides for applications and databases on ONTAP 
 ---
 
