@@ -1,5 +1,6 @@
-section: hana 
+section: mssql
 title: Microsoft SQL Server
-url: /mssql/introduction.html
+url: mssql/introduction.html
 entries:
   - title: Configuration Guides
+    url: mssql/introduction.html

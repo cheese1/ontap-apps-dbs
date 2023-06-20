@@ -1,5 +1,6 @@
-section: hana 
+section: postgres
 title: PostgreSQL
 url: /postgres/introduction.html
 entries:
   - title: Configuration Guides
+    url: /postgres/introduction.html

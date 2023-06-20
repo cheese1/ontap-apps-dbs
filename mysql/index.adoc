@@ -1,0 +1,14 @@
+---
+layout: landing-page
+sidebar: sidebar
+permalink: mysql/index.html
+lead: MariaDB and MySQL on ONTAP
+summary: MS-SQL
+---
+
+= MariaDB and MySQL on ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/

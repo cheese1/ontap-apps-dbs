@@ -1,5 +1,6 @@
-section: hana 
+section: mysql 
 title: MariaDB and MySQL
 url: /mysql/introduction.html
 entries:
   - title: Configuration Guides
+    url: /mysql/introduction.html
