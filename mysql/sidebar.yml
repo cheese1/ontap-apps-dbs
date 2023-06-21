@@ -1,111 +1,111 @@
 section: mysql
 title: mysql
-url: mysql/introduction.html
+url: /mysql/introduction.html
 entries:
   - title  Introduction
-    url: mysql/intro.html
+    url: /mysql/intro.html
   - title  ONTAP Configuration 
-    url: mysql/ontap-config.html
+    url: /mysql/ontap-config.html
   - title  Storage Virtual Machines and Logical Interfaces
-    url: mysql/svm-lif.html
+    url: /mysql/svm-lif.html
   - title = SVMs
-    url: mysql/svm.html
+    url: /mysql/svm.html
   - title  LIFs
-    url: mysql/lifs.html
+    url: /mysql/lifs.html
   - title  NFS LIF Design
-    url: mysql/nas-lif-design.html
+    url: /mysql/nas-lif-design.html
   - title  SAN LIF Design
-    url: mysql/san-lif-design.html
+    url: /mysql/san-lif-design.html
   - title  LUN Misalignment Warnings
-    url: mysql/luns-misalignment.html
+    url: /mysql/luns-misalignment.html
   - title  LUN Sizing
-    url: mysql/lun-sizing.html
+    url: /mysql/lun-sizing.html
   - title = LUN Resizing and LVM-Based Resizing
-    url: mysql/lun-resizing.html
+    url: /mysql/lun-resizing.html
   - title  LUN Count
-    url: mysql/lun.count.html
+    url: /mysql/lun.count.html
   - title  Overcommitting RAM
-    url: mysql/overcommit-ram.html
+    url: /mysql/overcommit-ram.html
   - title  Ethernet Flow Control
-    url: mysql/ethernet-flow-control.html
+    url: /mysql/ethernet-flow-control.html
   - title = Jumbo Frames
-    url: mysql/jumbo-frames.html
+    url: /mysql/jumbo-frames.html
   - title  TCP Parameters
-    url: mysql/tcp-parameters.html
+    url: /mysql/tcp-parameters.html
   - title  ONTAP QoS
-    url: mysql/qos.html
+    url: /mysql/qos.html
   - title  IOPS QoS
-    url: mysql/qos-iops.html
+    url: /mysql/qos-iops.html
   - title  Bandwidth QoS
-    url: mysql/qos-bandwidth.html
+    url: /mysql/qos-bandwidth.html
   - title  Guaranteed QoS
-    url: mysql/qos-guaranteed.html
+    url: /mysql/qos-guaranteed.html
   - title  ONTAP Efficiency
-    url: mysql/efficiency.html
+    url: /mysql/efficiency.html
   - title  Compression
-    url: mysql/compression.html
+    url: /mysql/compression.html
   - title  Inline Data Compaction
-    url: mysql/compaction.html
+    url: /mysql/compaction.html
   - title  Deduplication
-    url: mysql/deduplication.html
+    url: /mysql/deduplication.html
   - title  Thin Provisioning
-    url: mysql/thin-provisioning.html
+    url: /mysql/thin-provisioning.html
   - title  Native Data Protection
-    url: mysql/data-protection.html
+    url: /mysql/data-protection.html
   - title  Recovery Time Objective  
-    url: mysql/rto.html
+    url: /mysql/rto.html
   - title  Recovery Point Objective
-    url: mysql/rpo.html
+    url: /mysql/rpo.html
   - title  NetApp Snapshot Technology
-    url: mysql/snapshots.html
+    url: /mysql/snapshots.html
   - title  NetApp SnapRestore Technology
-    url: mysql/snaprestore.html
+    url: /mysql/snaprestore.html
   - title  Data Replication and Disaster Recovery
-    url: mysql/replication.html
+    url: /mysql/replication.html
   - title  ONTAP SnapMirror 
-    url: mysql/snapmirror.html
+    url: /mysql/snapmirror.html
   - title  Slot Tables 
-    url: mysql/slot-tables.html
+    url: /mysql/slot-tables.html
   - title  Security-Enhanced Linux
-    url: mysql/selinux.html
+    url: /mysql/selinux.html
   - title  I/O Schedulers
-    url: mysql/schedules.html
+    url: /mysql/schedules.html
   - title  Multipathing
-    url: mysql/multipathing.html
+    url: /mysql/multipathing.html
   - title  Open File Limits 
-    url: mysql/open-file-limits.html
+    url: /mysql/open-file-limits.html
   - title  Containers
-    url: mysql/containers.html
+    url: /mysql/containers.html
   - title  Storage Presentation
-    url: mysql/virtualized-storage-presentation.html
+    url: /mysql/virtualized-storage-presentation.html
   - title  Paravirtualized Drivers
-    url: mysql/paravirtualized.html
+    url: /mysql/paravirtualized.html
   - title  MySQL
-    url: mysql/mysql-intro.html
+    url: /mysql/mysql-intro.html
   - title  MySQL File Structure
-    url: mysql/file-structure.html
+    url: /mysql/file-structure.html
   - title etApp recommends a few important MySQL configuration parameters (listed in Table 1) to obtain optimal performance.
-    url: mysql/configuration.html
+    url: /mysql/configuration.html
   - title  innodb_log_file_size
-    url: mysql/innodb_log_file_size.html
+    url: /mysql/innodb_log_file_size.html
   - title  innodb_flush_log_at_trx_commit
-    url: mysql/innodb_flush_log_at_trx_commit.html
+    url: /mysql/innodb_flush_log_at_trx_commit.html
   - title  innodb_doublewrite
-    url: mysql/innodb_doublewrite.html
+    url: /mysql/innodb_doublewrite.html
   - title  innodb_buffer_pool_size
-    url: mysql/innodb_buffer_pool_size.html
+    url: /mysql/innodb_buffer_pool_size.html
   - title  innodb_flush_method
-    url: mysql/innodb_flush_method.html
-  - title     url: mysql/innodb_io_capacity.html
+    url: /mysql/innodb_flush_method.html
+  - title     url: /mysql/innodb_io_capacity.html
   - title  innodb_lru_scan_depth 
-    url: mysql/innodb_lru_scan_depth.html
+    url: /mysql/innodb_lru_scan_depth.html
   - title  open_file_limits
-    url: mysql/open_file_limits.html
+    url: /mysql/open_file_limits.html
   - title eployment Methods 
-    url: mysql/deployment.html
+    url: /mysql/deployment.html
   - title ySQL over NFS
-    url: mysql/mysql-over-nfs.html
+    url: /mysql/mysql-over-nfs.html
   - title ySQL over SAN
-    url: mysql/mysql-over-san.html
+    url: /mysql/mysql-over-san.html
   - title  Additional information
-    url: mysql/additional-information.html
+    url: /mysql/additional-information.html
