@@ -1,189 +1,112 @@
 section: mysql
-title: Oracle on ONTAP
-url: /oracle/introduction.html
+title: mysql
+url: /mysql/introduction.html
 entries:
-  - title: Configuration Guides
-    entries:
-    - title: ONTAP
-      entries:
-      - title: RAID
-        url: /oracle/ontap-configuration/raid.html
-      - title: Capacity Limits
-        url: /oracle/ontap-configuration/capacity-limits.html
-      - title: Storage Virtual Machines
-        url: /oracle/ontap-configuration/svm.html
-      - title: Logical Interfaces
-        url: /oracle/ontap-configuration/lif.html
-      - title: Quality of Service (QoS)
-        url: /oracle/ontap-configuration/qos.html
-      - title: Efficiency
-        url: /oracle/ontap-configuration/efficiency.html
-      - title: Thin Provisioning
-        url: /oracle/ontap-configuration/thin_provisioning.html
-      - title: Checksums
-        url: /oracle/ontap-configuration/checksums.html
-      - title: Snapshots
-        url: /oracle/ontap-configuration/snapshots.html
-      - title: Failover and Switchover
-        url: /oracle/ontap-configuration/failover.html
-      - title: Oracle and NVFAIL
-        url: /oracle/ontap-configuration/oracle_and_nvfail.html
-    - title: Storage
-      entries:
-      - title: NFS Storage
-        url: /oracle/storage-configuration/nfs_configuration.html
-      - title: SAN Storage
-        url: /oracle/storage-configuration/san_configuration.html
-    - title: Oracle
-      entries:
-      - title: db_file_multiblock_read_count
-        url: /oracle/oracle-configuration/mbr.html
-      - title: filesystemio_options
-        url: /oracle/oracle-configuration/filesystemio_options.html
-      - title: Oracle RAC
-        url: /oracle/oracle-configuration/rac.html
-      - title: Redo Block Size
-        url: /oracle/oracle-configuration/redo_block_size.html
-    - title: Network
-      entries:
-      - title: Ethernet configuration
-        url: /oracle/network-configuration/ethernet_configuration.html
-      - title: FC configuration
-        url: /oracle/network-configuration/san_configuration.html
-    - title: Hosts
-      entries:
-      - title: AIX
-        url: /oracle/host-configuration/aix.html
-      - title: HP-UX
-        url: /oracle/host-configuration/hp-ux.html
-      - title: Linux
-        url: /oracle/host-configuration/linux.html
-      - title: Linux with ASMlib and AFD
-        url: /oracle/host-configuration/asmlib-afd.html
-      - title: Microsoft Windows
-        url: /oracle/host-configuration/windows.html
-      - title: Solaris
-        url: /oracle/host-configuration/solaris.html
-  - title: Virtualization
-    url: /oracle/virtualization/intro.html
-  - title: Data Protection
-    url: /oracle/dp/index.html
-    entries:
-    - title: ONTAP Data Protection Fundamentals
-      url: /oracle/dp/fundamentals.html
-    - title: RPO, TRO, and SLA's
-      url: /oracle/dp/slas.html
-    - title: Planning
-      url: /oracle/dp/planning.html
-    - title: Data Availability
-      url: /oracle/dp/availability.html
-    - title: Data Integrity
-      url: /oracle/dp/integrity.html
-    - title: Oracle and NVFAIL
-      url: /oracle/ontap-configuration/oracle_and_nvfail.html
-    - title: Local Data protection
-      entries:
-      - title: Oracle Online Backups
-        url: /oracle/dp/oracle_hot_backup.html
-      - title: Consistency Group backup
-        url: /oracle/dp/oracle_consistency_group_backup.html
-      - title: Storage Snapshot Optimized backups
-        url: /oracle/dp/snapshot_optimized_backup.html
-    - title: Disaster Recovery
-      entries:
-      - title: Consistency group disaster recovery
-        url: /oracle/dp/consistency_group_disaster_recovery.html
-      - title: Disaster recovery with log replay
-        url: /oracle/dp/disaster_recovery_with_log_replay.html
-  - title: Oracle with SnapMirror Business Continuity
-    url: /oracle/smbc/index.html
-    entries:
-    - title: Overview
-      url: /oracle/smbc/overview.html
-    - title: SM-BC with Oracle Single Instance
-      url: /oracle/smbc/si.html
-    - title: SM-BC with Oracle RAC
-      url: /oracle/smbc/rac.html
-    - title: Failure Scenarios
-      url: /oracle/smbc/failure-scenarios.html
-  - title: Oracle on MetroCluster
-    url: /oracle/metrocluster/index.html
-    entries:
-    - title: MetroCluster physical architecture
-      url: /oracle/metrocluster/metrocluster_physical_architecture.html
-    - title: MetroCluster logical architecture
-      url: /oracle/metrocluster/metrocluster_logical_architecture.html
-    - title: SyncMirror
-      url: /oracle/metrocluster/syncmirror.html
-    - title: Oracle and NVFAIL
-      url: /oracle/ontap-configuration/oracle_and_nvfail.html
-    - title: Oracle Single Instance on MetroCluster
-      url: /oracle/metrocluster/si_on_metrocluster.html
-    - title: Oracle RAC and MetroCluster
-      url: /oracle/metrocluster/rac.html
-    - title: MetroCluster and NVFAIL
-      url: /oracle/metrocluster/mc-mcc-nvfail.html
-  - title: Database Storage Tiering
-    entries:
-    - title: Overview
-      url: /oracle/tiering/introduction.html
-    - title: FabricPool Architecture
-      url: /oracle/tiering/overview.html
-    - title: Tiering Policies
-      entries:
-      - title: Sending Data to Object Store
-        url: /oracle/tiering/data_tiering_policies.html
-      - title: Retriving Data from Object Store
-        url: /oracle/tiering/data_retrieval_policies.html
-    - title: Tiering Strategies
-      entries:
-      - title: Whole Datafiles
-        url: /oracle/tiering/whole_datafiles.html
-      - title: Partial Datafiles
-        url: /oracle/tiering/partial_datafiles.html
-      - title: Archive Logs
-        url: /oracle/tiering/logs.html
-      - title: Snapshots
-        url: /oracle/tiering/snapshots.html
-      - title: RMAN Backups and Exports
-        url: /oracle/tiering/backups.html
-    - title: Object Store Access Interruptions
-      url: /oracle/tiering/access_interruptions.html
-  - title: Oracle Database Migration
-    entries:
-    - title: Introduction
-      url: /oracle/migration/introduction.html
-    - title: Planning
-      url: /oracle/migration/planning.html
-    - title: Procedures
-      entries:
-      - title: Introduction
-        url: /oracle/migration/procedures-introduction.html
-      - title: Overview
-        url: /oracle/migration/options.html
-      - title: Datafile Move
-        url: /oracle/migration/procedures-datafile_move.html
-      - title: Log shipping
-        url: /oracle/migration/procedures-log_shipping.html
-      - title: Host Data Copy
-        url: /oracle/migration/procedures-host_data_copy.html
-      - title: Foreign LUN Import
-        entries:
-        - title: Preparation
-          url: /oracle/migration/fli-preparation.html
-        - title: Cutover
-          url: /oracle/migration/fli-cutover.html
-        - title: Completion
-          url: /oracle/migration/fli-completion.html
-        - title: Protocol Conversion
-          url: /oracle/migration/protocol_conversion.html
-    - title: Sample Scripts
-      url: /oracle/migration/sample_scripts.html
-  - title: Additional Notes
-    entries:
-    - title: Performance Optimization and Benchmarking
-      url: /oracle/notes/optimization_and_benchmarking.html
-    - title: Stale NFS locks
-      url: /oracle/notes/stale_nfs_locks.html
-    - title: WAFL alignment verification
-      url: /oracle/notes/wafl_alignment_verification.html
+  - title Introduction
+    url: /mysql/intro.html
+  - title ONTAP Configuration 
+    url: /mysql/ontap-config.html
+  - title Storage Virtual Machines and Logical Interfaces
+    url: /mysql/svm-lif.html
+  - title SVMs
+    url: /mysql/svm.html
+  - title LIFs
+    url: /mysql/lifs.html
+  - title NFS LIF Design
+    url: /mysql/nas-lif-design.html
+  - title SAN LIF Design
+    url: /mysql/san-lif-design.html
+  - title LUN Misalignment Warnings
+    url: /mysql/luns-misalignment.html
+  - title LUN Sizing
+    url: /mysql/lun-sizing.html
+  - title LUN Resizing and LVM-Based Resizing
+    url: /mysql/lun-resizing.html
+  - title LUN Count
+    url: /mysql/lun.count.html
+  - title Overcommitting RAM
+    url: /mysql/overcommit-ram.html
+  - title Ethernet Flow Control
+    url: /mysql/ethernet-flow-control.html
+  - title Jumbo Frames
+    url: /mysql/jumbo-frames.html
+  - title TCP Parameters
+    url: /mysql/tcp-parameters.html
+  - title ONTAP QoS
+    url: /mysql/qos.html
+  - title IOPS QoS
+    url: /mysql/qos-iops.html
+  - title Bandwidth QoS
+    url: /mysql/qos-bandwidth.html
+  - title Guaranteed QoS
+    url: /mysql/qos-guaranteed.html
+  - title ONTAP Efficiency
+    url: /mysql/efficiency.html
+  - title Compression
+    url: /mysql/compression.html
+  - title Inline Data Compaction
+    url: /mysql/compaction.html
+  - title Deduplication
+    url: /mysql/deduplication.html
+  - title Thin Provisioning
+    url: /mysql/thin-provisioning.html
+  - title Native Data Protection
+    url: /mysql/data-protection.html
+  - title Recovery Time Objective  
+    url: /mysql/rto.html
+  - title Recovery Point Objective
+    url: /mysql/rpo.html
+  - title NetApp Snapshot Technology
+    url: /mysql/snapshots.html
+  - title NetApp SnapRestore Technology
+    url: /mysql/snaprestore.html
+  - title Data Replication and Disaster Recovery
+    url: /mysql/replication.html
+  - title ONTAP SnapMirror 
+    url: /mysql/snapmirror.html
+  - title Slot Tables 
+    url: /mysql/slot-tables.html
+  - title Security-Enhanced Linux
+    url: /mysql/selinux.html
+  - title I/O Schedulers
+    url: /mysql/schedules.html
+  - title Multipathing
+    url: /mysql/multipathing.html
+  - title Open File Limits 
+    url: /mysql/open-file-limits.html
+  - title Containers
+    url: /mysql/containers.html
+  - title Storage Presentation
+    url: /mysql/virtualized-storage-presentation.html
+  - title Paravirtualized Drivers
+    url: /mysql/paravirtualized.html
+  - title MySQL
+    url: /mysql/mysql-intro.html
+  - title MySQL File Structure
+    url: /mysql/file-structure.html
+  - title MySQL Configuration Overview
+    url: /mysql/configuration.html
+  - title innodb_log_file_size
+    url: /mysql/innodb_log_file_size.html
+  - title innodb_flush_log_at_trx_commit
+    url: /mysql/innodb_flush_log_at_trx_commit.html
+  - title innodb_doublewrite
+    url: /mysql/innodb_doublewrite.html
+  - title innodb_buffer_pool_size
+    url: /mysql/innodb_buffer_pool_size.html
+  - title innodb_flush_method
+    url: /mysql/innodb_flush_method.html
+  - title innodb_io_capacity
+    url: /mysql/innodb_io_capacity.html
+  - title innodb_lru_scan_depth 
+    url: /mysql/innodb_lru_scan_depth.html
+  - title open_file_limits
+    url: /mysql/open_file_limits.html
+  - title Deployment Methods 
+    url: /mysql/deployment.html
+  - title MySQL over NFS
+    url: /mysql/mysql-over-nfs.html
+  - title MySQL over SAN
+    url: /mysql/mysql-over-san.html
+  - title Additional information
+    url: /mysql/additional-information.html
