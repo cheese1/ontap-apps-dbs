@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/svm.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -15,4 +15,4 @@ Some customers operate one primary SVM for most of their day-to-day requirements
 * An SVM for a development group that has been granted administrative control to manage its own storage independently.
 * An SVM for sensitive business data, such as human resources or financial reporting data, for which the administrative team must be limited.
 
-Note: In a multitenant environment, each tenant’s data can be given a dedicated SVM. The recommended limit for SVMs is approximately 125 per cluster node, but in general the LIF maximums are reached before the SVM limit is reached. There is a point at which a multitenant environment is best separated into network segments rather into isolated, dedicated SVMs.
+Note: In a multitenant environment, each tenantâ€™s data can be given a dedicated SVM. The recommended limit for SVMs is approximately 125 per cluster node, but in general the LIF maximums are reached before the SVM limit is reached. There is a point at which a multitenant environment is best separated into network segments rather into isolated, dedicated SVMs.

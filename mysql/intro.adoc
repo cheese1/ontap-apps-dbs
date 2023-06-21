@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar
 permalink: mysql/intro.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
 = Introduction
 
-MySQL and its variants, including MariaDB and Percona, are widely used for many enterprise applications. These applications range from global social networking sites and massive e-commerce systems to SMB hosting systems containing thousands of database instances. This document describes the configuration requirements and provides guidance on tuning and storage configuration for deploying MySQL on NetApp® ONTAP® data management software
+MySQL and its variants, including MariaDB and Percona, are widely used for many enterprise applications. These applications range from global social networking sites and massive e-commerce systems to SMB hosting systems containing thousands of database instances. This document describes the configuration requirements and provides guidance on tuning and storage configuration for deploying MySQL on NetAppÂ® ONTAPÂ® data management software
 
 == NetApp ONTAP
 

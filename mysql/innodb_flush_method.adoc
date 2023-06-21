@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_flush_method.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -17,7 +17,7 @@ The following options are for flushing the files through InnoDB:
 
 * O_DIRECT. InnoDB uses the O_DIRECT option (or directio() on Solaris) to open the data files and uses fsync() to flush both the data and log files. This option is available on some GNU/Linux versions, FreeBSD, and Solaris.
 
-* O_DIRECT_NO_FSYNC. InnoDB uses the O_DIRECT option during flushing I/O; however, it skips the fsync() system call afterward. This option is unsuitable for some types of file systems (for example, XFS). If you are not sure if your file system requires an fsync() system call—for example, to preserve all file metadata—use the O_DIRECT option instead.
+* O_DIRECT_NO_FSYNC. InnoDB uses the O_DIRECT option during flushing I/O; however, it skips the fsync() system call afterward. This option is unsuitable for some types of file systems (for example, XFS). If you are not sure if your file system requires an fsync() system callâ€”for example, to preserve all file metadataâ€”use the O_DIRECT option instead.
 
 Observation
 

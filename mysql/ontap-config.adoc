@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/ontap-config.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -9,11 +9,11 @@ summary: MySQL on ONTAP
 
 This section presents best practices for basic NetApp ONTAP configuration. 
 
-These best practices don’t apply to large-scale MySQL deployments (200+ databases), which require a special architecture and design. Even small changes in data protection requirements can significantly affect storage design. For detailed configuration information, see TR-4591: Database Data Protection: Backup, Recovery, Replication, and DR. For comprehensive assistance with design, contact NetApp sales.
+These best practices donâ€™t apply to large-scale MySQL deployments (200+ databases), which require a special architecture and design. Even small changes in data protection requirements can significantly affect storage design. For detailed configuration information, see TR-4591: Database Data Protection: Backup, Recovery, Replication, and DR. For comprehensive assistance with design, contact NetApp sales.
 
-RAID DP is integrated with NetApp WAFL® to prevent performance bottlenecks with dedicated parity drives. Write operations are coalesced in RAM and prepared as a complete RAID stripe, including parity generation. There is no need to perform a read to complete a write, which means that ONTAP and WAFL avoid the RAID penalty. Performance for latency-critical operations, such as redo logging, is unimpeded, and random data-file writes do not incur any RAID penalty resulting from a need to regenerate parity. Therefore, NetApp recommends RAID DP as the default RAID group size.
+RAID DP is integrated with NetApp WAFLÂ® to prevent performance bottlenecks with dedicated parity drives. Write operations are coalesced in RAM and prepared as a complete RAID stripe, including parity generation. There is no need to perform a read to complete a write, which means that ONTAP and WAFL avoid the RAID penalty. Performance for latency-critical operations, such as redo logging, is unimpeded, and random data-file writes do not incur any RAID penalty resulting from a need to regenerate parity. Therefore, NetApp recommends RAID DP as the default RAID group size.
 
-In addition to having no single point of failure, RAID DP lets you expand or reconfigure storage while online. You can run your applications without interruption—even while adding more storage capacity or throughput.
+In addition to having no single point of failure, RAID DP lets you expand or reconfigure storage while online. You can run your applications without interruptionâ€”even while adding more storage capacity or throughput.
 
 == Capacity Levels
 

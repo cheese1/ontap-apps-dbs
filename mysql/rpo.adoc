@@ -1,12 +1,12 @@
 ---
 sidebar: sidebar
 permalink: mysql/rpo.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
 = Recovery Point Objective
 
-The recovery point objective (RPO) defines the maximum tolerable data loss. In a database context, the RPO is usually a question of how much uncommitted data can be lost in a specific situation. In a typical recovery scenario in which a database is damaged by a product bug or user error, the RPO should be zero—there should be no data loss. The recovery procedure involves restoring an earlier copy of the database files and then replaying the log files to bring the database state up to the desired point-in-time. The log files required for this operation should already be backed up.
+The recovery point objective (RPO) defines the maximum tolerable data loss. In a database context, the RPO is usually a question of how much uncommitted data can be lost in a specific situation. In a typical recovery scenario in which a database is damaged by a product bug or user error, the RPO should be zeroâ€”there should be no data loss. The recovery procedure involves restoring an earlier copy of the database files and then replaying the log files to bring the database state up to the desired point-in-time. The log files required for this operation should already be backed up.
 
 In unusual scenarios, log data might be lost. For example, an accidental or malicious rm -rf * of database files could result in the deletion of all data. The only option would be to restore from backup, including log files, and some data would inevitably be lost. The only option to improve the RPO in a traditional backup environment would be to perform repeated backups of the log data. This option is limited, however, because of the constant data movement and the difficulty maintaining a backup system as a constantly running service. One of the benefits of advanced storage systems is the ability to protect data from accidental or malicious damage to files and thus deliver a better RPO without data movement. 

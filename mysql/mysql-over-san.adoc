@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/mysql-over-san.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -47,4 +47,4 @@ NetApp LUNs store data in 4KB physical blocks, which yields eight 512-byte logic
 
 If you do not set up the same block size, I/O will not be aligned with physical blocks correctly and could write in two different drives in a RAID group, resulting in latency.
 
-It is important that you align I/O for smooth read/write operations. However, when the I/O begins at a logical block that is not at the start of a physical block, the I/O is misaligned. I/O operations are aligned only when they begin at a logical block—the first logical block in a physical block.
+It is important that you align I/O for smooth read/write operations. However, when the I/O begins at a logical block that is not at the start of a physical block, the I/O is misaligned. I/O operations are aligned only when they begin at a logical blockâ€”the first logical block in a physical block.

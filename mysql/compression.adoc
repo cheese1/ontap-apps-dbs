@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/compression.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -25,7 +25,7 @@ The simplest approach for using compression is enabling adaptive compression for
 
 * Some databases have high redo logging (transaction logs) rates. Redo logs are comparatively small and are constantly overwritten, so any space savings from compression is negligible. This data should be moved to a volume without compression. 
 
-* If data files contain a significant amount of uncompressible data—for example, when compression is already enabled, or encryption is used—place this data on volumes without compression. 
+* If data files contain a significant amount of uncompressible dataâ€”for example, when compression is already enabled, or encryption is usedâ€”place this data on volumes without compression. 
 
 == Secondary Compression
 
@@ -33,4 +33,4 @@ Secondary compression uses a larger block size that is fixed at 32KB. This featu
 
 NetApp recommends secondary compression for datasets that include large amounts of unchanging data, such as binary logs, logical or physical backups, or exported data. These types of files are written sequentially and not updated. This point does not mean that adaptive compression is discouraged. However, if the volume of data being stored is large, then secondary compression delivers better savings when compared to adaptive compression.
 
-* *Caution:* Secondary compression and deduplication should not be used together with flat-file backups. Small changes to the backed-up data will affect the 32KB compression window. If the window shifts, the resulting compressed data will differ across the entire file. Deduplication occurs after compression, which means the deduplication engine will see each compressed backup differently. If deduplication of backups is required, don’t use secondary compression. Adaptive compression is preferable, because it works at a smaller block size and does not disrupt deduplication efficiency. For similar reasons, host-side compression also interferes with deduplication efficiency.
+* *Caution:* Secondary compression and deduplication should not be used together with flat-file backups. Small changes to the backed-up data will affect the 32KB compression window. If the window shifts, the resulting compressed data will differ across the entire file. Deduplication occurs after compression, which means the deduplication engine will see each compressed backup differently. If deduplication of backups is required, donâ€™t use secondary compression. Adaptive compression is preferable, because it works at a smaller block size and does not disrupt deduplication efficiency. For similar reasons, host-side compression also interferes with deduplication efficiency.

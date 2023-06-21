@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_flush_log_at_trx_commit.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -13,7 +13,7 @@ When there is a change to the data, the change is not immediately written to sto
 
 * 1: When you set innodb_flush_log_trx_commit=1, InnoDB writes the log buffer to the transaction log and flushes to durable storage for every transaction. For example, for all transaction commits, InnoDB writes to the log and then writes to storage. Slower storage negatively affects performance; for example, the number of InnoDB transactions per second is reduced.
 
-* 2: When you set innodb_flush_log_trx_commit=2, InnoDB writes the log buffer to the log file at every commit; however, it doesn’t write data to storage. InnoDB flushes data once every second. Even if there is a power failure or system crash, option 2 data is available in the log file and is recoverable.
+* 2: When you set innodb_flush_log_trx_commit=2, InnoDB writes the log buffer to the log file at every commit; however, it doesnâ€™t write data to storage. InnoDB flushes data once every second. Even if there is a power failure or system crash, option 2 data is available in the log file and is recoverable.
 
 If performance is the main goal, set the value to 2. Since InnoDB writes to the drives once per second, not for every transaction commit, performance improves dramatically. If a power failure or crash occurs, data can be recovered from the transaction log.
 

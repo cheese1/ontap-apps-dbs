@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/virtualized-storage-presentation.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -20,7 +20,7 @@ As a general rule, avoid using datastores for database files. There are many rea
 * Transparency. When a VM owns its file systems, it is easier for a database administrator (DBA) or a system administrator to identify the source of the file systems for their data.
 * Performance. Testing has shown that channeling all I/O through a hypervisor datastore affects performance.
 * Manageability. When a VM owns its file systems, the use or nonuse of a hypervisor layer affects manageability. The same procedures for provisioning, monitoring, data protection, and so on can be used across the entire estate, including virtualized and nonvirtualized environments.
-* Stability and troubleshooting. When a VM owns its file systems, delivering good, stable performance and troubleshooting problems are much simpler because the entire storage stack is present on the VM. The hypervisor’s only role is to transport FC or IP frames. When a datastore is included in a configuration, it complicates the configuration by introducing another set of timeouts, parameters, log files, and potential bugs.
+* Stability and troubleshooting. When a VM owns its file systems, delivering good, stable performance and troubleshooting problems are much simpler because the entire storage stack is present on the VM. The hypervisorâ€™s only role is to transport FC or IP frames. When a datastore is included in a configuration, it complicates the configuration by introducing another set of timeouts, parameters, log files, and potential bugs.
 * Portability. When a VM owns its file systems, the process of moving a database environment becomes much simpler. File systems can be easily moved between virtualized and nonvirtualized guests.
 * Vendor lock-in. After data is placed in a datastore, using a different hypervisor or removing the data from the virtualized environment entirely becomes very difficult.
 * Snapshot enablement. In some cases, backups in a virtualized environment can become a problem because of the relatively limited bandwidth. For example, a four-port 10GbE trunk might be sufficient to support day-to-day performance needs of many virtualized databases. However, such a trunk would be insufficient to perform backups using Oracle Recovery Manager (RMAN) or other backup products that require streaming a full-sized copy of the data. 

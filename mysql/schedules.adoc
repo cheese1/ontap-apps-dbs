@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/schedules.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -9,6 +9,6 @@ summary: MySQL on ONTAP
 
 The Linux kernel allows low-level control over the way that I/O to block devices is scheduled. The defaults on various distributions of Linux vary considerably. MySQL recommends that you use NoOps or a deadline I/O scheduler with native asynchronous I/O (AIO) on Linux. In general, NetApp customers and internal testing show better results with NoOps.
 
-MySQL’s InnoDB storage engine uses the asynchronous I/O subsystem (native AIO) on Linux to perform read-ahead and write requests for data file pages. This behavior is controlled by the innodb_use_native_aio configuration option, which is enabled by default. With native AIO, the type of I/O scheduler has greater influence on I/O performance. Conduct benchmarks to determine which I/O scheduler provides the best results for your workload and environment.
+MySQLâ€™s InnoDB storage engine uses the asynchronous I/O subsystem (native AIO) on Linux to perform read-ahead and write requests for data file pages. This behavior is controlled by the innodb_use_native_aio configuration option, which is enabled by default. With native AIO, the type of I/O scheduler has greater influence on I/O performance. Conduct benchmarks to determine which I/O scheduler provides the best results for your workload and environment.
 
 See the relevant Linux and MySQL documentation for instructions on configuring the I/O scheduler. 

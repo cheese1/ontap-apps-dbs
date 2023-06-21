@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar
 permalink: mysql/jumbo-frames.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
 = Jumbo Frames
 
-The use of jumbo frames can improve performance somewhat in 1Gb networks by reducing CPU and network overhead, but the benefit usually isn’t significant. Even so, NetApp recommends implementing jumbo frames when possible, to realize potential performance benefits and to future-proof the solution.
+The use of jumbo frames can improve performance somewhat in 1Gb networks by reducing CPU and network overhead, but the benefit usually isnâ€™t significant. Even so, NetApp recommends implementing jumbo frames when possible, to realize potential performance benefits and to future-proof the solution.
 
 In 10Gb networks, using jumbo frames is almost mandatory. Without jumbo frames, most 10Gb implementations reach a packets-per-second limit before they reach the 10Gb mark. Using jumbo frames improves efficiency in TCP/IP processing, because it allows the database server, NICs, and the storage system to process fewer larger packets. The performance improvement varies from NIC to NIC, but it is significant.
 

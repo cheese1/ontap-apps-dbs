@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar
 permalink: mysql/file-structure.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
 = MySQL File Structure
 
-InnoDB acts as the middle layer between storage and the MySQL server—it stores the data to the drives. Figure 2 shows how InnoDB interacts with storage.
+InnoDB acts as the middle layer between storage and the MySQL serverâ€”it stores the data to the drives. Figure 2 shows how InnoDB interacts with storage.
 
 Figure 2) InnoDB engine architecture.
 
@@ -35,7 +35,7 @@ Because ONTAP NVRAM already provides write protection, double-write buffering is
 
 The insert buffer is also a special feature of InnoDB. If nonunique secondary index blocks are not in memory, InnoDB inserts entries into the insert buffer to avoid random I/O operations. Periodically, the insert buffer is merged into the secondary index trees in the database. The insert buffer reduces the number of I/O operations by merging I/O requests to the same block; random I/O operations can be sequential. The insert buffer is also highly optimized for HDDs. Both sequential writes and reads occur during normal operations.
 
-Undo segments are random I/O oriented. To guarantee multiversion concurrency (MVCC), InnoDB must register old images in the undo segments. Reading previous images from the undo segments requires random reads. If you run a long transaction with repeatable reads (such as mysqldump—single transaction) or run a long query, random reads can occur. Therefore, storing undo segments on SSDs is better in this instance. If you run only short transactions or queries, the random reads are not an issue.
+Undo segments are random I/O oriented. To guarantee multiversion concurrency (MVCC), InnoDB must register old images in the undo segments. Reading previous images from the undo segments requires random reads. If you run a long transaction with repeatable reads (such as mysqldumpâ€”single transaction) or run a long query, random reads can occur. Therefore, storing undo segments on SSDs is better in this instance. If you run only short transactions or queries, the random reads are not an issue.
 
 Because of these InnoDB I/O characteristics, NetApp recommends the following storage design layout:
 

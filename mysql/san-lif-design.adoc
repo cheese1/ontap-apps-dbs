@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/san-lif-design.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -15,7 +15,7 @@ The most important consideration with LIF performance in a SAN environment is ba
 
 == Resiliency
 
-SAN LIFs do not fail over. If a SAN LIF fails, the client’s multipathing ability detects the loss of a path and redirects I/O to a different LIF.
+SAN LIFs do not fail over. If a SAN LIF fails, the clientâ€™s multipathing ability detects the loss of a path and redirects I/O to a different LIF.
 
 == Manageability
 
@@ -28,7 +28,7 @@ NetApp makes the following primary recommendations:
 * Do not create more paths than are required. Too many paths make overall management more complicated and can cause problems with path failover on some hosts. Furthermore, some hosts have unexpected path limitations for configurations such as SAN booting.
 * Few LUNs should require more than four paths to storage. The value of having more than two nodes advertising paths to LUNs is limited because the aggregate hosting a LUN is inaccessible if the node that owns the LUN and its high-availability (HA) partner fail. Creating paths on nodes other than the primary HA pair is not helpful in such a situation.
 * You can manage the number of visible LUN paths by selecting which ports are included in FC zones. However, it is usually easier to include all potential target points in the FC zone and control LUN visibility at the ONTAP level.
-* In Data ONTAP 8.3 and later, the selective LUN-mapping feature is the default. With selective LUN mapping, any new LUN is automatically advertised from the node that owns the underlying aggregate and the node’s HA partner. With this arrangement, you don’t need to create port sets or configure zoning to limit port accessibility. Each LUN is available on the minimum number of nodes required for optimal performance and resiliency. 
+* In Data ONTAP 8.3 and later, the selective LUN-mapping feature is the default. With selective LUN mapping, any new LUN is automatically advertised from the node that owns the underlying aggregate and the nodeâ€™s HA partner. With this arrangement, you donâ€™t need to create port sets or configure zoning to limit port accessibility. Each LUN is available on the minimum number of nodes required for optimal performance and resiliency. 
 * If you must migrate a LUN outside the two controllers, you can add the additional nodes with the LUN-mapping add-reporting-nodes command so that the LUNs are advertised on the new nodes. Doing so creates additional SAN paths to the LUNs for LUN migration. However, the host must perform a discovery operation to use the new paths. 
 * Do not be overly concerned about indirect traffic. It is best to avoid indirect traffic in an I/O-intensive environment for which every microsecond of latency is critical, but the visible performance effect is negligible for typical workloads.
 

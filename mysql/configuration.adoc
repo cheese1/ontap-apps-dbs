@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/configuration.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -32,4 +32,4 @@ innodb_lru_scan_depth
 8192
 open_file_limit
 65535
-To set the parameters described in this section, you must change them in the MySQL configuration file (my.cnf). The NetApp best practices are a result of the tests performed in-house. Detailed test results and the hardware configuration of the server are detailed in section 15, ìPerformance Results.î
+To set the parameters described in this section, you must change them in the MySQL configuration file (my.cnf). The NetApp best practices are a result of the tests performed in-house. Detailed test results and the hardware configuration of the server are detailed in section 15, ‚ÄúPerformance Results.‚Äù

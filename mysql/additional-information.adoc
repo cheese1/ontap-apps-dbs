@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/additional-information.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 

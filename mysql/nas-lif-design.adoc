@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/nas-lif-design.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -56,4 +56,4 @@ A common misconception is that there must be a 1:1 relationship between volumes 
 
 For example, a database project containing a relatively small number of performance-critical databases that only requires a total of 40 volumes might warrant a 1:1 volume to LIF strategy. This arrangement would require 40 IP addresses. Any volume could then be moved anywhere in the cluster along with the associated LIF, and traffic would always be direct, minimizing every source of latency even at microsecond levels.
 
-As a counterexample, a 1:1 relationship between customers and LIFs might make a large hosted environment easier to manage. Over time, you might need to migrate a volume to a different node, which would cause some indirect traffic. However, you shouldn’t be able to detect the performance effect unless the network ports on the interconnect switch are saturating. If necessary, establish a new LIF on additional nodes and update the host at the next maintenance window to remove indirect traffic from the configuration.
+As a counterexample, a 1:1 relationship between customers and LIFs might make a large hosted environment easier to manage. Over time, you might need to migrate a volume to a different node, which would cause some indirect traffic. However, you shouldnâ€™t be able to detect the performance effect unless the network ports on the interconnect switch are saturating. If necessary, establish a new LIF on additional nodes and update the host at the next maintenance window to remove indirect traffic from the configuration.

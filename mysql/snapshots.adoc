@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/snapshots.html
-keywords: mysql,mariadb,percona,database
+keywords: MySQL,MariaDB,Percona,database
 summary: MySQL on ONTAP
 ---
 
@@ -9,7 +9,7 @@ summary: MySQL on ONTAP
 
 The foundation of NetApp ONTAP data protection software is NetApp Snapshot technology. The key values are as follows: 
 
-* Simplicity. A Snapshot copy is a read-only copy of a data container’s contents at a specific PiT. 
+* Simplicity. A Snapshot copy is a read-only copy of a data containerâ€™s contents at a specific PiT. 
 * Efficiency. Snapshot copies require no space at the moment of creation. Space is only consumed when data is changed. 
 * Manageability. A backup strategy based on Snapshot copies is easy to configure and manage, because Snapshot copies are a native part of the storage operating system. If the storage system is powered on, it is ready to create backups. 
 * Scalability. Up to 1023 backups of a single container of files and LUNs can be preserved. For complex datasets, multiple containers of data can be protected by a single, consistent set of Snapshot copies. 
@@ -40,7 +40,7 @@ ONTAP has a multi-admin verification (MAV) feature which means no single adminis
 
 Data protection software 
 
-NetApp SnapCenter® plugin for MySQL database, combined with Snapshot and NetApp FlexClone technologies, offer you benefits such as: 
+NetApp SnapCenterÂ® plugin for MySQL database, combined with Snapshot and NetApp FlexClone technologies, offer you benefits such as: 
 
 * Rapid backup and restore. 
 * Space-efficient clones. 
