@@ -5,7 +5,6 @@ keywords: mysql,mariadb,percona,database
 summary: MySQL on ONTAP
 ---
 
-
 = innodb_io_capacity
 
 In the InnoDB plug-in, a new parameter called innodb_io_capacity was added from MySQL 5.7. It controls the maximum number of IOPS that InnoDB performs (which includes the flushing rate of dirty pages as well as the insert buffer [ibuf] batch size). The innodb_io_capacity parameter sets an upper limit on IOPS by InnoDB background tasks, such as flushing pages from the buffer pool and merging data from the change buffer.  

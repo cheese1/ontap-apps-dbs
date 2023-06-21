@@ -5,6 +5,8 @@ keywords: mysql,mariadb,percona,database
 summary: MySQL on ONTAP
 ---
 
+= MySQL Configuration Overview
+
 NetApp recommends a few important MySQL configuration parameters (listed in Table 1) to obtain optimal performance.
 
 Table 1) MySQL configuration parameters. 

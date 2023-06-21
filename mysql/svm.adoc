@@ -5,7 +5,7 @@ keywords: mysql,mariadb,percona,database
 summary: MySQL on ONTAP
 ---
 
-== SVMs
+= SVMs
 
 SVMs are the basic functional unit of storage, so it is useful to compare an SVM to a guest on a VMware ESXi server. When first installed, ESXi has no preconfigured capabilities, such as hosting a guest operating system or supporting an end-user application. It is an empty container until a virtual machine (VM) is defined. ONTAP data management software is similar. When first installed, ONTAP has no data-serving capabilities, and an SVM must be defined. It is the SVM personality that defines the data services.
 

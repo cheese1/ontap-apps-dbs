@@ -5,7 +5,7 @@ keywords: mysql,mariadb,percona,database
 summary: MySQL on ONTAP
 ---
 
-== LUN Resizing and LVM-Based Resizing
+= LUN Resizing and LVM-Based Resizing
 
 When a SAN-based file system has reached its capacity limit, there are two options for increasing the space available:
 
