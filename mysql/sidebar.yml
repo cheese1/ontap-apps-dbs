@@ -2,7 +2,7 @@ section: mysql
 title: mysql
 url: /mysql/introduction.html
 entries:
-  - title Introduction
+  - title: Introduction
     entries:
        - title: Config
          url: /mysql/intro.html
