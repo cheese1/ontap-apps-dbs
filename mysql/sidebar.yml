@@ -1,6 +1,5 @@
 section: mysql
-title: mysql
 url: /mysql/introduction.html
 entries:
-  - title  Introduction
+  - title: Virtualization
     url: /mysql/intro.html
