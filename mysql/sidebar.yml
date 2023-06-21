@@ -84,7 +84,7 @@ entries:
     url: /mysql/mysql-intro.html
   - title  MySQL File Structure
     url: /mysql/file-structure.html
-  - title etApp recommends a few important MySQL configuration parameters (listed in Table 1) to obtain optimal performance.
+  - title Configuration Overview
     url: /mysql/configuration.html
   - title  innodb_log_file_size
     url: /mysql/innodb_log_file_size.html
@@ -96,7 +96,8 @@ entries:
     url: /mysql/innodb_buffer_pool_size.html
   - title  innodb_flush_method
     url: /mysql/innodb_flush_method.html
-  - title     url: /mysql/innodb_io_capacity.html
+  - title innodb_io_capacity
+    url: /mysql/innodb_io_capacity.html
   - title  innodb_lru_scan_depth 
     url: /mysql/innodb_lru_scan_depth.html
   - title  open_file_limits
