@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: mysql/snapmirror.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= ONTAP SnapMirror 
+
+SnapMirror is the NetApp asynchronous and synchronous replication solution, ideally suited for protecting large, complicated, and dynamic datasets such as databases and their associated applications. Its key values are as follows: 
+
+* Manageability. SnapMirror is easy to configure and manage because it is a native part of the storage software. No add-on products are required. Replication relationships can be established in minutes and can be managed directly on the storage system. 
+* Simplicity. Replication is based on FlexVol volumes, which are containers of LUNs or files that are replicated as a single consistent group. 
+* Efficiency. After the initial replication relationship is established, only changes are replicated. Efficiency features such as deduplication and compression are preserved, further reducing the amount of data that must be transferred to a remote site. 

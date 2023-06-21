@@ -1,0 +1,10 @@
+---
+sidebar: sidebar
+permalink: mysql/rto.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= Recovery Time Objective  
+
+The recovery time objective (RTO) defines the maximum time allowed for the recovery of a service. For example, a human resources database might have an RTO of 24 hours because, although losing access to this data for a day would be inconvenient, the business can still operate. In contrast, a database supporting the general ledger of a bank would have an RTO measured in minutes or even seconds. An RTO of zero is not possible, because there must be a way to differentiate between an actual service outage and a routine event such as a lost network packet. However, a near-zero RTO is a typical requirement. 

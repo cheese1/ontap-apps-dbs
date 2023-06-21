@@ -1,0 +1,10 @@
+---
+sidebar: sidebar
+permalink: mysql/overcommit-ram.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= Overcommitting RAM
+
+Overcommitting RAM means configuring more virtualized RAM on various hosts than exists on the physical hardware. Doing so can cause unexpected performance problems. When virtualizing a database, the underlying blocks of the database cache must not be swapped out by the hypervisor, or performance becomes highly unstable.

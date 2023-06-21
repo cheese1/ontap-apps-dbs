@@ -1,0 +1,32 @@
+---
+sidebar: sidebar
+permalink: mysql/multipathing.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= Multipathing
+
+Some customers have encountered crashes during network disruption because the multipath daemon was not running on their system. On more recent versions of Linux, the installation process of the operating system and the multipathing daemon might leave these operating systems vulnerable to this problem. The packages are installed correctly, but they are not configured for automatic startup after a reboot.
+
+You can verify the state of the multipath daemon by running the systemctl command. If the status is not active, the daemon is not running.
+
+[root@jfs0 ~]# systemctl status multipathd.service
+
+multipathd.service - Device-Mapper Multipath Device Controller
+
+   Loaded: loaded (/usr/lib/systemd/system/multipathd.service; enabled; vendor preset: enabled)
+
+   Active: active (running) since Mon 2018-06-25 13:05:05 EDT; 1 months 21 days ago
+
+  Process: 583 ExecStart=/sbin/multipathd (code=exited, status=0/SUCCESS)
+
+  Process: 579 ExecStartPre=/sbin/multipath -A (code=exited, status=0/SUCCESS)
+
+  Process: 557 ExecStartPre=/sbin/modprobe dm-multipath (code=exited, status=0/SUCCESS)
+
+ Main PID: 589 (multipathd)
+
+   CGroup: /system.slice/multipathd.service
+
+           ??589 /sbin/multipathd

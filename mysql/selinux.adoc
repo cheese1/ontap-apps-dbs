@@ -1,0 +1,12 @@
+---
+sidebar: sidebar
+permalink: mysql/selinux.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= Security-Enhanced Linux
+
+Security-Enhanced Linux (SELinux) is a Linux kernel security model that provides a mechanism for supporting access control security policies. The SELinux architecture supports the enforcement of many kinds of mandatory access control policies. This enforcement applies to users, daemons, files, and directories.
+
+The /etc/selinux/config configuration file controls whether SELinux is enabled or disabled. The SELinux variable can be set to disabled, permissive, or enforcing mode. The disabled option completely disables the SELinux kernel and application code, leaving the system running without any SELinux protection. The permissive option enables the SELinux code but causes it to operate in a mode where policy-denied accesses are permitted but audited. The enforcing option enables the SELinux code and causes it to enforce and audit access denials. Permissive mode can yield a different set of denials than enforcing mode. Enforcing mode prevents an operation from proceeding past the first denial, and some application code will fall back to a less privileged mode of operation if denied access.

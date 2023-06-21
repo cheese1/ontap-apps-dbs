@@ -1,0 +1,10 @@
+---
+sidebar: sidebar
+permalink: mysql/qos-bandwidth.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= Bandwidth QoS
+
+Not all I/O sizes are the same. Databases might perform a large number of fully random block reads, which would result in the IOPS threshold being reached. But databases might also perform a full table scan operation, which would consist of few large block reads, consuming a lot of bandwidth, but relatively few IOPS.

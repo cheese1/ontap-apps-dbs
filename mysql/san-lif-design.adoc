@@ -1,0 +1,37 @@
+---
+sidebar: sidebar
+permalink: mysql/san-lif-design.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= SAN LIF Design
+
+LIF design in a SAN environment is relatively simple for one reason: multipathing. All modern SAN implementations allow a client to access data over multiple network paths and select the best path or paths for access. As a result, performance with respect to LIF design is simpler to address because SAN clients automatically load-balance I/O across the best available paths. If a path becomes unavailable, the client automatically selects a different path. The resulting simplicity of design makes SAN LIFs more manageable. This does not mean that a SAN environment is always more easily managed, because there are many other aspects of SAN storage that are much more complicated than NFS. It simply means that SAN LIF design is easier.
+
+== Performance
+
+The most important consideration with LIF performance in a SAN environment is bandwidth. For example, a four-node ONTAP cluster with two 16Gb FC ports per node allows up to 32Gb of bandwidth from each node. I/O is automatically balanced between ports, and all I/O is directed down the most optimal path.
+
+== Resiliency
+
+SAN LIFs do not fail over. If a SAN LIF fails, the client’s multipathing ability detects the loss of a path and redirects I/O to a different LIF.
+
+== Manageability
+
+LIF migration is a much more common task in an NFS environment, because LIF migration is often associated with relocating volumes around the cluster. There is no need to migrate a LIF in a SAN environment when volumes are relocated. After the volume move has completed, ONTAP sends a notification to the SAN about a change in paths, and the SAN clients automatically reoptimize. LIF migration with SAN is primarily associated with major physical hardware changes. For example, if a nondisruptive upgrade of the controllers is required, a SAN LIF is migrated to the new hardware. If an FC port is found to be faulty, a LIF can be migrated to an unused port.
+
+== Design Recommendations
+
+NetApp makes the following primary recommendations:
+
+* Do not create more paths than are required. Too many paths make overall management more complicated and can cause problems with path failover on some hosts. Furthermore, some hosts have unexpected path limitations for configurations such as SAN booting.
+* Few LUNs should require more than four paths to storage. The value of having more than two nodes advertising paths to LUNs is limited because the aggregate hosting a LUN is inaccessible if the node that owns the LUN and its high-availability (HA) partner fail. Creating paths on nodes other than the primary HA pair is not helpful in such a situation.
+* You can manage the number of visible LUN paths by selecting which ports are included in FC zones. However, it is usually easier to include all potential target points in the FC zone and control LUN visibility at the ONTAP level.
+* In Data ONTAP 8.3 and later, the selective LUN-mapping feature is the default. With selective LUN mapping, any new LUN is automatically advertised from the node that owns the underlying aggregate and the node’s HA partner. With this arrangement, you don’t need to create port sets or configure zoning to limit port accessibility. Each LUN is available on the minimum number of nodes required for optimal performance and resiliency. 
+* If you must migrate a LUN outside the two controllers, you can add the additional nodes with the LUN-mapping add-reporting-nodes command so that the LUNs are advertised on the new nodes. Doing so creates additional SAN paths to the LUNs for LUN migration. However, the host must perform a discovery operation to use the new paths. 
+* Do not be overly concerned about indirect traffic. It is best to avoid indirect traffic in an I/O-intensive environment for which every microsecond of latency is critical, but the visible performance effect is negligible for typical workloads.
+
+* An FC zone should never contain more than one initiator. Such an arrangement might appear to work initially, but crosstalk between initiators eventually interferes with performance and stability.
+
+* *Note:* In general, multitarget zones are regarded as safe, although in rare circumstances the behavior of FC target ports from different vendors has caused problems. For example, avoid including the target ports from both a NetApp and an EMC storage array in the same zone. In addition, placing a NetApp storage system and a tape device in the same zone is even more likely to cause problems.

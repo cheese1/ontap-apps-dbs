@@ -1,0 +1,18 @@
+---
+sidebar: sidebar
+permalink: mysql/svm.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+== SVMs
+
+SVMs are the basic functional unit of storage, so it is useful to compare an SVM to a guest on a VMware ESXi server. When first installed, ESXi has no preconfigured capabilities, such as hosting a guest operating system or supporting an end-user application. It is an empty container until a virtual machine (VM) is defined. ONTAP data management software is similar. When first installed, ONTAP has no data-serving capabilities, and an SVM must be defined. It is the SVM personality that defines the data services.
+
+Some customers operate one primary SVM for most of their day-to-day requirements but then create a small number of SVMs for special needs, including the following situations:
+
+* An SVM for a critical business database managed by a specialist team.
+* An SVM for a development group that has been granted administrative control to manage its own storage independently.
+* An SVM for sensitive business data, such as human resources or financial reporting data, for which the administrative team must be limited.
+
+Note: In a multitenant environment, each tenant’s data can be given a dedicated SVM. The recommended limit for SVMs is approximately 125 per cluster node, but in general the LIF maximums are reached before the SVM limit is reached. There is a point at which a multitenant environment is best separated into network segments rather into isolated, dedicated SVMs.

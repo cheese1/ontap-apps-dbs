@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: mysql/jumbo-frames.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+== Jumbo Frames
+
+The use of jumbo frames can improve performance somewhat in 1Gb networks by reducing CPU and network overhead, but the benefit usually isn’t significant. Even so, NetApp recommends implementing jumbo frames when possible, to realize potential performance benefits and to future-proof the solution.
+
+In 10Gb networks, using jumbo frames is almost mandatory. Without jumbo frames, most 10Gb implementations reach a packets-per-second limit before they reach the 10Gb mark. Using jumbo frames improves efficiency in TCP/IP processing, because it allows the database server, NICs, and the storage system to process fewer larger packets. The performance improvement varies from NIC to NIC, but it is significant.
+
+Many people erroneously believe that in jumbo-frame implementations, all connected devices must support jumbo frames and that the maximum transmission unit (MTU) size must match end to end. Instead, the two network endpoints negotiate the highest mutually acceptable frame size when establishing a connection. In a typical environment, a network switch is set to an MTU size of 9216, the NetApp controller is set to 9000, and the clients are set to a mix of 9000 and 1514. Clients that can support an MTU of 9000 can use jumbo frames, and clients that can support only 1514 can negotiate a lower value.
+
+Problems with this arrangement are rare in a completely switched environment. However, take care in a routed environment that no intermediate router is forced to fragment jumbo frames.
+
+NetApp recommends the following best practices:
+
+* With 1GbE, Jumbo frames are desirable but not required.
+
+* With 10GbE, Jumbo frames are required for maximum performance.

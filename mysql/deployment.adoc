@@ -1,0 +1,13 @@
+---
+sidebar: sidebar
+permalink: mysql/deployment.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+Deployment Methods 
+
+There are different ways of accessing your stored data. If it’s a local drive, you can directly access the data over the cable. However, if the data is stored over a network, you must choose a protocol to fit your requirements. Storage protocols are broadly categorized into the following two parts:
+
+* NFS protocols 
+* SAN protocols 

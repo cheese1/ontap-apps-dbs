@@ -1,0 +1,12 @@
+---
+sidebar: sidebar
+permalink: mysql/paravirtualized.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= Paravirtualized Drivers
+
+For optimum performance, using paravirtualized network drivers is critical. When a datastore is used, a paravirtualized SCSI driver is required. A paravirtualized device driver allows a guest to integrate more deeply into the hypervisor, as opposed to an emulated driver in which the hypervisor spends more CPU time mimicking the behavior of physical hardware.
+
+The performance of most databases is limited by storage. Therefore, the extra latency introduced by a network or SCSI driver is particularly noticeable. NetApp Support has encountered many performance complaints that customers resolved by installing paravirtualized drivers. During one customer proof of concept, databases showed better performance under ESXi than with the same hardware running as bare metal. The tests were very I/O intensive, and the performance difference was attributed to the use of the ESXi paravirtualized network drivers.

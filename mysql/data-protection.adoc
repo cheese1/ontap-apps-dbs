@@ -1,0 +1,12 @@
+---
+sidebar: sidebar
+permalink: mysql/data-protection.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= Native Data Protection
+
+The most mission-critical data is usually found in databases. Any enterprise without its data becomes paralyzed and cannot run its business. This data must be protected. However, data protection is more than just ensuring a usable backup—it involves performing the backups quickly and reliably as well as storing backups safely. The other side of data protection is data recovery. When data is inaccessible, the enterprise is affected and might be inoperative until data is restored. This process must be quick and reliable. Finally, most databases must be protected against disasters, which means maintaining a replica of the database. The replica must be sufficiently up-to-date, and making the replica a fully operational database must be quick and simple. 
+
+A database data protection architecture should be defined by business requirements. These requirements include factors such as the speed of recovery, the maximum permissible data loss, and backup retention needs. The data protection plan must also consider various regulatory requirements for data retention and restoration. Finally, consider different data recovery scenarios, ranging from the typical recovery resulting from user or application errors up to disaster recovery scenarios that include the complete loss of a site. Small changes in data protection and recovery policies can significantly affect the overall architecture of storage, backup, and recovery. It is critical to define and document standards before starting design work to avoid complicating a data protection architecture. The following two sections describe two objectives of data protection to consider in your backup or recover strategy: RTO and RPO.

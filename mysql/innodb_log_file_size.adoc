@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: mysql/innodb_log_file_size.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= innodb_log_file_size
+
+Selecting the right size for the InnoDB log file size is important for the write operations and for having a decent recovery time after a server crash. Because so many transactions are logged in to the file, the log file size is important for write operations. When records are modified, the change is not immediately written back to the tablespace. Instead, the change is recorded at the end of the log file and the page is marked as dirty. InnoDB uses its log to convert the random I/O into sequential I/O.
+
+When the log is full, the dirty page is written out to the tablespace in sequence to free up space in the log file. For example, suppose a server crashes in the middle of a transaction, and the write operations are only recorded in the log file. Before the server can go live again, it must go through a recovery phase in which the changes recorded in the log file are replayed. The more entries that are in the log file, the longer it takes for the server to recover. 
+
+In this example, the log file size affects both the recovery time and the write performance. When choosing the right number for the log file size, balance the recovery time against write performance. Typically, anything between 128M and 512M is a good value.

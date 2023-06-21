@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: mysql/qos.html
+keywords: mysql,mariadb,percona,database
+summary: MySQL on ONTAP
+---
+
+= ONTAP QoS
+
+The increased adoption of all-flash storage has also resulted in consolidation of database workloads. Storage arrays relying on spinning media tended to support only a limited number of databases because of the limited IOPS capabilities of older drive technology. One or two highly active databases would saturate the underlying drives long before the storage controllers reached their limits. This situation has changed. A performance capability of a relatively small number of SSDs can saturate even the most powerful storage controllers. You can use the full capabilities of the controllers without the fear of sudden performance collapse as spinning media latency spikes. 
+
+For example, a simple two-node HA AFF system can service about 400K random IOPS before latency climbs above 1 millisecond. Less than 1% of databases would be expected to reach such levels, and allowing an AFF to manage just 10K IOPS would be wasteful.
+
+There are three types of quality of service (QoS) in NetApp ONTAP: IOPS, bandwidth, and guaranteed. QoS controls can be applied to SVMs, volumes, LUNs, and files. 
