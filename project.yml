@@ -1,18 +1,20 @@
 ---
 settings:
-  name: Application and Database Best Practice and Implementation Guides
+  name: ONTAP for Enteprise Applications
   internal:
     pdf_enabled: false
   prod:
     pdf_enabled: false
 sidebar:
   entries:
-    - title: Application and Databases
+    - title: ONTAP for Enterprise Applications
       url: /index.html
+    - section: common
     - section: mysql
     - section: mssql
     - section: oracle
     - section: postgres
     - section: hana
+    - section: virtualization 
     - title: Legal notices
       url: /legal-notices.html
