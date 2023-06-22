@@ -2,10 +2,8 @@ section: oracle
 title: Oracle on ONTAP
 url: /oracle/introduction.html
 entries:
-  - title: Configuration Guides
+  - title: ONTAP Introduction
     entries:
-    - title: ONTAP
-      entries:
       - title: RAID
         url: /oracle/ontap-configuration/raid.html
       - title: Capacity Limits
@@ -28,45 +26,7 @@ entries:
         url: /oracle/ontap-configuration/failover.html
       - title: Oracle and NVFAIL
         url: /oracle/ontap-configuration/oracle_and_nvfail.html
-    - title: Storage
-      entries:
-      - title: NFS Storage
-        url: /oracle/storage-configuration/nfs_configuration.html
-      - title: SAN Storage
-        url: /oracle/storage-configuration/san_configuration.html
-    - title: Oracle
-      entries:
-      - title: db_file_multiblock_read_count
-        url: /oracle/oracle-configuration/mbr.html
-      - title: filesystemio_options
-        url: /oracle/oracle-configuration/filesystemio_options.html
-      - title: Oracle RAC
-        url: /oracle/oracle-configuration/rac.html
-      - title: Redo Block Size
-        url: /oracle/oracle-configuration/redo_block_size.html
-    - title: Network
-      entries:
-      - title: Ethernet configuration
-        url: /oracle/network-configuration/ethernet_configuration.html
-      - title: FC configuration
-        url: /oracle/network-configuration/san_configuration.html
-    - title: Hosts
-      entries:
-      - title: AIX
-        url: /oracle/host-configuration/aix.html
-      - title: HP-UX
-        url: /oracle/host-configuration/hp-ux.html
-      - title: Linux
-        url: /oracle/host-configuration/linux.html
-      - title: Linux with ASMlib and AFD
-        url: /oracle/host-configuration/asmlib-afd.html
-      - title: Microsoft Windows
-        url: /oracle/host-configuration/windows.html
-      - title: Solaris
-        url: /oracle/host-configuration/solaris.html
-  - title: Virtualization
-    url: /oracle/virtualization/intro.html
-  - title: Data Protection
+  - title: ONTAP Data Protection
     url: /oracle/dp/index.html
     entries:
     - title: ONTAP Data Protection Fundamentals
@@ -79,22 +39,60 @@ entries:
       url: /oracle/dp/availability.html
     - title: Data Integrity
       url: /oracle/dp/integrity.html
+  - title: Storage Configuration for Oracle Databases
+    entries:
+    - title: NFS Storage
+      url: /oracle/storage-configuration/nfs_configuration.html
+    - title: SAN Storage
+      url: /oracle/storage-configuration/san_configuration.html
     - title: Oracle and NVFAIL
       url: /oracle/ontap-configuration/oracle_and_nvfail.html
-    - title: Local Data protection
-      entries:
-      - title: Oracle Online Backups
-        url: /oracle/dp/oracle_hot_backup.html
-      - title: Consistency Group backup
-        url: /oracle/dp/oracle_consistency_group_backup.html
-      - title: Storage Snapshot Optimized backups
-        url: /oracle/dp/snapshot_optimized_backup.html
-    - title: Disaster Recovery
-      entries:
-      - title: Consistency group disaster recovery
-        url: /oracle/dp/consistency_group_disaster_recovery.html
-      - title: Disaster recovery with log replay
-        url: /oracle/dp/disaster_recovery_with_log_replay.html
+  - title: Oracle Configuration
+    entries:
+    - title: db_file_multiblock_read_count
+      url: /oracle/oracle-configuration/mbr.html
+    - title: filesystemio_options
+      url: /oracle/oracle-configuration/filesystemio_options.html
+    - title: Oracle RAC
+      url: /oracle/oracle-configuration/rac.html
+    - title: Redo Block Size
+      url: /oracle/oracle-configuration/redo_block_size.html
+  - title: Network Configuration
+    entries:
+    - title: Ethernet configuration
+      url: /oracle/network-configuration/ethernet_configuration.html
+    - title: FC configuration
+      url: /oracle/network-configuration/san_configuration.html
+  - title: Host Configuration
+    entries:
+    - title: AIX
+      url: /oracle/host-configuration/aix.html
+    - title: HP-UX
+      url: /oracle/host-configuration/hp-ux.html
+    - title: Linux
+      url: /oracle/host-configuration/linux.html
+    - title: Linux with ASMlib and AFD
+      url: /oracle/host-configuration/asmlib-afd.html
+    - title: Microsoft Windows
+      url: /oracle/host-configuration/windows.html
+    - title: Solaris
+      url: /oracle/host-configuration/solaris.html
+  - title: Virtualization of Oracle Databases
+    url: /oracle/virtualization/intro.html
+  - title: Oracle Data protection
+    entries:
+    - title: Oracle Online Backups
+      url: /oracle/dp/oracle_hot_backup.html
+    - title: Consistency Group backup
+      url: /oracle/dp/oracle_consistency_group_backup.html
+    - title: Storage Snapshot Optimized backups
+      url: /oracle/dp/snapshot_optimized_backup.html
+  - title: Oracle Disaster Recovery
+    entries:
+    - title: Consistency group disaster recovery
+      url: /oracle/dp/consistency_group_disaster_recovery.html
+    - title: Disaster recovery with log replay
+      url: /oracle/dp/disaster_recovery_with_log_replay.html
   - title: Oracle with SnapMirror Business Continuity
     url: /oracle/smbc/index.html
     entries:
@@ -109,12 +107,14 @@ entries:
   - title: Oracle on MetroCluster
     url: /oracle/metrocluster/index.html
     entries:
-    - title: MetroCluster physical architecture
-      url: /oracle/metrocluster/metrocluster_physical_architecture.html
-    - title: MetroCluster logical architecture
-      url: /oracle/metrocluster/metrocluster_logical_architecture.html
-    - title: SyncMirror
-      url: /oracle/metrocluster/syncmirror.html
+    - title: NetApp MetroCluster Overview
+      entries:
+      - title: MetroCluster physical architecture
+        url: /oracle/metrocluster/metrocluster_physical_architecture.html
+      - title: MetroCluster logical architecture
+        url: /oracle/metrocluster/metrocluster_logical_architecture.html
+      - title: SyncMirror
+        url: /oracle/metrocluster/syncmirror.html
     - title: Oracle and NVFAIL
       url: /oracle/ontap-configuration/oracle_and_nvfail.html
     - title: Oracle Single Instance on MetroCluster

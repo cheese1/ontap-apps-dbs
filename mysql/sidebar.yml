@@ -1,5 +1,5 @@
 section: mysql
-title: mysql
+title: MySQL on ONTAP
 url: /mysql/introduction.html
 entries:
   - title: Introduction
