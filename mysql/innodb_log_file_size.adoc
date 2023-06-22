@@ -1,9 +1,16 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_log_file_size.html
-keywords: MySQL,MariaDB,Percona,database
+keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
+
+
+[.lead]
+
+Placeholder
+
+
 
 = innodb_log_file_size
 

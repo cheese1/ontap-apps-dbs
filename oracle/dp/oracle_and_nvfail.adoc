@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/oracle_and_nvfail.html
+permalink: oracle/dp/oracle_and_nvfail.html
 keywords: TR-3633, oracle, metrocluster, nvfail
 summary: Configuring NVFAIL to protect Oracle databases
 ---
