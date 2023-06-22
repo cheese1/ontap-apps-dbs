@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/checksums.html
+permalink: common/ontap-configuration/checksums.html
 keywords: TR-3633, oracle, database, ontap, configuration, checksums, data integrity
 summary: Checksums and Oracle on ONTAP data protection
 ---

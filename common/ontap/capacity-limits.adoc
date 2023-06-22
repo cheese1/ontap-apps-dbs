@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/capacity-limits.html
+permalink: common/ontap-configuration/capacity-limits.html
 keywords: TR-3633, oracle, database, ontap, capacity
 summary: Managing ONTAP storage capacity and free space with Oracle databases
 ---

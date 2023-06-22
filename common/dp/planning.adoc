@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/planning.html
+permalink: common/dp/planning.html
 keywords: TR-4591, oracle, ontap, data protection, DR, snapshots, CG
 summary: Oracle on ONTAP Data Protection strategies
 ---

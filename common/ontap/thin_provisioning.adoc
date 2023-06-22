@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/thin_provisioning.html
+permalink: common/ontap-configuration/thin_provisioning.html
 keywords: TR-3633, oracle, database, ontap, thin provisioning
 summary: Thin provisioning with Oracle on ONTAP
 ---

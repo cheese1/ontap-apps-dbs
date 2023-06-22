@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/extended_rac_and_nvfail.html
+permalink: common/ontap-configuration/extended_rac_and_nvfail.html
 keywords: TR-3633, oracle, metrocluster, extended, rac, nvfail, manually, forced
 summary: "The safest option to force a switchover with an extended RAC cluster is by specifying force-nvfail-all at the command line."
 ---

@@ -5,88 +5,87 @@ entries:
   - title: ONTAP Introduction
     entries:
       - title: RAID
-        url: /oracle/ontap-configuration/raid.html
+        url: /common/ontap/raid.html
       - title: Capacity Limits
-        url: /oracle/ontap-configuration/capacity-limits.html
+        url: /common/ontap/capacity-limits.html
       - title: Storage Virtual Machines
-        url: /oracle/ontap-configuration/svm.html
+        url: /common/ontap/svm.html
       - title: Logical Interfaces
-        url: /oracle/ontap-configuration/lif.html
+        url: /common/ontap/lif.html
       - title: Quality of Service (QoS)
-        url: /oracle/ontap-configuration/qos.html
+        url: /common/ontap/qos.html
       - title: Efficiency
-        url: /oracle/ontap-configuration/efficiency.html
+        url: /common/ontap/efficiency.html
       - title: Thin Provisioning
-        url: /oracle/ontap-configuration/thin_provisioning.html
+        url: /common/ontap/thin_provisioning.html
       - title: Checksums
-        url: /oracle/ontap-configuration/checksums.html
+        url: /common/ontap/checksums.html
       - title: Snapshots
-        url: /oracle/ontap-configuration/snapshots.html
+        url: /common/ontap/snapshots.html
       - title: Failover and Switchover
-        url: /oracle/ontap-configuration/failover.html
-      - title: Oracle and NVFAIL
-        url: /oracle/ontap-configuration/oracle_and_nvfail.html
+        url: /common/ontap/failover.html
   - title: ONTAP Data Protection
-    url: /oracle/dp/index.html
     entries:
     - title: ONTAP Data Protection Fundamentals
-      url: /oracle/dp/fundamentals.html
+      url: /common/dp/fundamentals.html
     - title: RPO, TRO, and SLA's
-      url: /oracle/dp/slas.html
+      url: /common/dp/slas.html
     - title: Planning
-      url: /oracle/dp/planning.html
+      url: /common/dp/planning.html
     - title: Data Availability
-      url: /oracle/dp/availability.html
+      url: /common/dp/availability.html
     - title: Data Integrity
-      url: /oracle/dp/integrity.html
-  - title: Storage Configuration for Oracle Databases
+      url: /common/dp/integrity.html
+  - title: Oracle on ONTAP Configuration
     entries:
-    - title: NFS Storage
-      url: /oracle/storage-configuration/nfs_configuration.html
-    - title: SAN Storage
-      url: /oracle/storage-configuration/san_configuration.html
-    - title: Oracle and NVFAIL
-      url: /oracle/ontap-configuration/oracle_and_nvfail.html
-  - title: Oracle Configuration
-    entries:
-    - title: db_file_multiblock_read_count
-      url: /oracle/oracle-configuration/mbr.html
-    - title: filesystemio_options
-      url: /oracle/oracle-configuration/filesystemio_options.html
-    - title: Oracle RAC
-      url: /oracle/oracle-configuration/rac.html
-    - title: Redo Block Size
-      url: /oracle/oracle-configuration/redo_block_size.html
-  - title: Network Configuration
-    entries:
-    - title: Ethernet configuration
-      url: /oracle/network-configuration/ethernet_configuration.html
-    - title: FC configuration
-      url: /oracle/network-configuration/san_configuration.html
-  - title: Host Configuration
-    entries:
-    - title: AIX
-      url: /oracle/host-configuration/aix.html
-    - title: HP-UX
-      url: /oracle/host-configuration/hp-ux.html
-    - title: Linux
-      url: /oracle/host-configuration/linux.html
-    - title: Linux with ASMlib and AFD
-      url: /oracle/host-configuration/asmlib-afd.html
-    - title: Microsoft Windows
-      url: /oracle/host-configuration/windows.html
-    - title: Solaris
-      url: /oracle/host-configuration/solaris.html
-  - title: Virtualization of Oracle Databases
-    url: /oracle/virtualization/intro.html
-  - title: Oracle Data protection
-    entries:
-    - title: Oracle Online Backups
-      url: /oracle/dp/oracle_hot_backup.html
-    - title: Consistency Group backup
-      url: /oracle/dp/oracle_consistency_group_backup.html
-    - title: Storage Snapshot Optimized backups
-      url: /oracle/dp/snapshot_optimized_backup.html
+    - title: Storage Configuration
+      entries:
+      - title: NFS Storage
+        url: /oracle/storage-configuration/nfs_configuration.html
+      - title: SAN Storage
+        url: /oracle/storage-configuration/san_configuration.html
+      - title: Oracle and NVFAIL
+        url: /oracle/dp/oracle_and_nvfail.html
+    - title: Database Configuration
+      entries:
+      - title: db_file_multiblock_read_count
+        url: /oracle/oracle-configuration/mbr.html
+      - title: filesystemio_options
+        url: /oracle/oracle-configuration/filesystemio_options.html
+      - title: Oracle RAC
+        url: /oracle/oracle-configuration/rac.html
+      - title: Redo Block Size
+        url: /oracle/oracle-configuration/redo_block_size.html
+    - title: Network Configuration
+      entries:
+      - title: Ethernet configuration
+        url: /oracle/network-configuration/ethernet_configuration.html
+      - title: FC configuration
+        url: /oracle/network-configuration/san_configuration.html
+    - title: Host Configuration
+      entries:
+      - title: AIX
+        url: /oracle/host-configuration/aix.html
+      - title: HP-UX
+        url: /oracle/host-configuration/hp-ux.html
+      - title: Linux
+        url: /oracle/host-configuration/linux.html
+      - title: Linux with ASMlib and AFD
+        url: /oracle/host-configuration/asmlib-afd.html
+      - title: Microsoft Windows
+        url: /oracle/host-configuration/windows.html
+      - title: Solaris
+        url: /oracle/host-configuration/solaris.html
+    - title: Virtualization of Oracle Databases
+      url: /oracle/virtualization/intro.html
+    - title: Oracle Data protection
+      entries:
+      - title: Oracle Online Backups
+        url: /oracle/dp/oracle_hot_backup.html
+      - title: Consistency Group backup
+        url: /oracle/dp/oracle_consistency_group_backup.html
+      - title: Storage Snapshot Optimized backups
+        url: /oracle/dp/snapshot_optimized_backup.html
   - title: Oracle Disaster Recovery
     entries:
     - title: Consistency group disaster recovery
@@ -116,39 +115,39 @@ entries:
       - title: SyncMirror
         url: /oracle/metrocluster/syncmirror.html
     - title: Oracle and NVFAIL
-      url: /oracle/ontap-configuration/oracle_and_nvfail.html
+      url: /oracle/dp/oracle_and_nvfail.html
     - title: Oracle Single Instance on MetroCluster
       url: /oracle/metrocluster/si_on_metrocluster.html
     - title: Oracle RAC and MetroCluster
       url: /oracle/metrocluster/rac.html
     - title: MetroCluster and NVFAIL
       url: /oracle/metrocluster/mc-mcc-nvfail.html
-  - title: Database Storage Tiering
+  - title: Oracle Database Tiering
     entries:
     - title: Overview
-      url: /oracle/tiering/introduction.html
+      url: /common/tiering/introduction.html
     - title: FabricPool Architecture
-      url: /oracle/tiering/overview.html
+      url: /common/tiering/overview.html
     - title: Tiering Policies
       entries:
       - title: Sending Data to Object Store
-        url: /oracle/tiering/data_tiering_policies.html
+        url: /common/data/tiering_policies.html
       - title: Retriving Data from Object Store
-        url: /oracle/tiering/data_retrieval_policies.html
+        url: /common/data_retrieval_policies.html
     - title: Tiering Strategies
       entries:
       - title: Whole Datafiles
-        url: /oracle/tiering/whole_datafiles.html
+        url: /common/tiering/whole_datafiles.html
       - title: Partial Datafiles
-        url: /oracle/tiering/partial_datafiles.html
+        url: /common/tiering/partial_datafiles.html
       - title: Archive Logs
-        url: /oracle/tiering/logs.html
+        url: /common/tiering/logs.html
       - title: Snapshots
-        url: /oracle/tiering/snapshots.html
+        url: /common/tiering/snapshots.html
       - title: RMAN Backups and Exports
-        url: /oracle/tiering/backups.html
-    - title: Object Store Access Interruptions
-      url: /oracle/tiering/access_interruptions.html
+        url: /common/tiering/backups.html
+      - title: Object Store Access Interruptions
+        url: /common/tiering/access_interruptions.html
   - title: Oracle Database Migration
     entries:
     - title: Introduction

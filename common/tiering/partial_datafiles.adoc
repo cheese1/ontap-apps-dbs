@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/tiering/partial_datafiles.html
+permalink: common/tiering/partial_datafiles.html
 keywords: TR-4695, oracle, storage, tiering, fabricpool
 summary: Database Snapshot Subfile Tiering with FabricPool
 ---

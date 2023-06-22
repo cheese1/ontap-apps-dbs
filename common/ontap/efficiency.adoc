@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/efficiency.html
+permalink: common/ontap-configuration/efficiency.html
 keywords: TR-3633, oracle, database, ontap, efficiency, compression, compaction, deduplication
 summary: Managing efficiency with Oracle on ONTAP
 ---

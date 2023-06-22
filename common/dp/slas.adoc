@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/slas.html
+permalink: common/dp/slas.html
 keywords: TR-4591, oracle, ontap, SLA, data protection, RPO, RTO
 summary: Oracle data protection SLA's
 ---

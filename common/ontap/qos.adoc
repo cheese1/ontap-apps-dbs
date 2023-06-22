@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/qos.html
+permalink: common/ontap-configuration/qos.html
 keywords: TR-3633, oracle, database, ontap, qos, bandwidth, minimum, guaranteed
 summary: The increased adoption of all-flash storage has also resulted in consolidation of database workloads.
 ---

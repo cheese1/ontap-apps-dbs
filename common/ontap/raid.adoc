@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/raid.html
+permalink: common/ontap-configuration/raid.html
 keywords: TR-3633, oracle, database, ontap
 summary: RAID data protection for databases
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/tiering/snapshots.html
+permalink: common/tiering/snapshots.html
 keywords: TR-4695, oracle, storage, tiering, fabricpool
 summary: Database Snapshot Tiering with FabricPool
 ---

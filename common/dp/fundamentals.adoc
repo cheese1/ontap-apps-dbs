@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/fundamentals.html
+permalink: common/dp/fundamentals.html
 keywords: TR-4591, oracle, ontap, data protection
 summary: Basic principles of ONTAP data protection
 ---

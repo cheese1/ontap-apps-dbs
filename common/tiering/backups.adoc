@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/tiering/backups.html
+permalink: common/tiering/backups.html
 keywords: TR-4695, oracle, storage, tiering, fabricpool
 summary: Databases with FabricPool - Backups
 ---

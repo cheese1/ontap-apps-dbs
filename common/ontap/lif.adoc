@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/ontap-configuration/lif.html
+permalink: common/ontap-configuration/lif.html
 keywords: TR-3633, oracle, database, ontap, LIF, multipath, multipathing
 summary: LIF configuration for Oracle on ONTAP
 ---
