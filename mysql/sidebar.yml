@@ -2,40 +2,6 @@ section: mysql
 title: MySQL on ONTAP
 url: /mysql/introduction.html
 entries:
-  - title: ONTAP Introduction
-    entries:
-      - title: RAID
-        url: /common/ontap/raid.html
-      - title: Capacity Limits
-        url: /common/ontap/capacity-limits.html
-      - title: Storage Virtual Machines
-        url: /common/ontap/svm.html
-      - title: Logical Interfaces
-        url: /common/ontap/lif.html
-      - title: Quality of Service (QoS)
-        url: /common/ontap/qos.html
-      - title: Efficiency
-        url: /common/ontap/efficiency.html
-      - title: Thin Provisioning
-        url: /common/ontap/thin_provisioning.html
-      - title: Checksums
-        url: /common/ontap/checksums.html
-      - title: Snapshots
-        url: /common/ontap/snapshots.html
-      - title: Failover and Switchover
-        url: /common/ontap/failover.html
-  - title: ONTAP Data Protection
-    entries:
-    - title: ONTAP Data Protection Fundamentals
-      url: /common/dp/fundamentals.html
-    - title: RPO, TRO, and SLA's
-      url: /common/dp/slas.html
-    - title: Planning
-      url: /common/dp/planning.html
-    - title: Data Availability
-      url: /common/dp/availability.html
-    - title: Data Integrity
-      url: /common/dp/integrity.html
   - title: Host Configuration
     entries:
     - title: Slot Tables 
