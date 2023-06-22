@@ -1,6 +1,10 @@
 indexpage:
   lead: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures.
   tiles:
+    - title: ONTAP for Enterprise Applications
+      links:
+        - title: Overview
+          url: common/index.html
     - title: MariaDB/MySQL
       links:
         - title: MariaDB and MySQL on ONTAP
@@ -21,6 +25,10 @@ indexpage:
       links:
         - title: SAP HANA on ONTAP
           url: hana/index.html
+    - title: Virtualization
+      links:
+        - title: VMware
+          url: virtualization/vmware/index.html
     - title: Other Information
       links:
         - title: Legal notices

@@ -2,10 +2,10 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-summary: Best Practice and Implementation Guides for applications and databases on ONTAP 
+summary: Enterprise Applications with ONTAP
 ---
 
-= ONTAP Applications and Databases Implementation Guides
+= Enterprise Applications with ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
