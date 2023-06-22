@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/ontap-configuration/svm.html
+permalink: common/ontap/svm.html
 keywords: TR-3633, oracle, database, ontap, svm
 summary: SVM provisioning for Oracle on ONTAP
 ---

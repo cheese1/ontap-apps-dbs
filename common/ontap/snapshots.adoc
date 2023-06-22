@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/ontap-configuration/snapshots.html
+permalink: common/ontap/snapshots.html
 keywords: TR-3633, oracle, database, ontap, snapshots
 summary: Oracle on ONTAP and the role of snapshots
 ---

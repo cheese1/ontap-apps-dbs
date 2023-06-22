@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/ontap-configuration/efficiency.html
+permalink: common/ontap/efficiency.html
 keywords: TR-3633, oracle, database, ontap, efficiency, compression, compaction, deduplication
 summary: Managing efficiency with Oracle on ONTAP
 ---
@@ -57,7 +57,7 @@ With the use of NFS, datafiles are aligned. Each block of the datafile is aligne
 SAN environments require data to be aligned to an 8KB boundary for optimum compression. There are two aspects of alignment for SAN: the LUN and the filesystem. The LUN must be configured as either a whole- drive device (no partition) or with a partition that aligns to an 8K boundary. See the OS-specific sections that follow for details on compression and alignment on a configuration-by-configuration basis.
 
 [NOTE]
-See the section link:../ontap-configuration/thin_provisioning.html#fractional-reservations[Fractional Reservations] for an explanation of the interaction between compression and fractional reservation.
+See the section link:../ontap/thin_provisioning.html#fractional-reservations[Fractional Reservations] for an explanation of the interaction between compression and fractional reservation.
 
 == Inline data compaction
 

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/ontap-configuration/failover.html
+permalink: common/ontap/failover.html
 keywords: TR-3633, oracle, database, ontap, configuration, failover, switchover
 summary: A complete description of the configuration of the ONTAP OS is beyond the scope of this document.
 ---
