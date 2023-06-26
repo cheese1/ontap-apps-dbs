@@ -28,8 +28,8 @@ entries:
     url: /postgres/db-config.html
   - title: Best practices summary
     url: /postgres/summary.html
-  - title: Appendix A: Host configuration
-    url: /postgres/appendix-a.html
+  - title: Host configuration
+    url: /postgres/host-config.html
   - title: SELinux
     url: /postgres/selinux.html
   - title: TOAST
