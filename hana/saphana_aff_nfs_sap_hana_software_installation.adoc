@@ -5,6 +5,9 @@ keywords: single host, multiple host, software, installation, hdbclm, addhosts
 summary: This section describes how to configure a system for the installation of SAP HANA software on single-host and multiple-host systems.
 ---
 
+[.lead]
+Placeholder
+
 = SAP HANA software installation
 :hardbreaks:
 :nofooter:

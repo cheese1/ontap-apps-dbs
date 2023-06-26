@@ -5,6 +5,9 @@ keywords: i, o, stack, configuration, sap, hana, fas, fc
 summary: Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the I/O behavior and optimize the database for the file and storage system used.
 ---
 
+[.lead]
+Placeholder
+
 = I/O stack configuration for SAP HANA
 :hardbreaks:
 :nofooter:
@@ -36,7 +39,7 @@ NetApp conducted performance tests to define the ideal values. The following tab
 |all
 |===
 
-For SAP HANA 1.0 up to SPS12, these parameters can be set during the installation of the SAP HANA database as described in SAP Note https://launchpad.support.sap.com/[2267798 – Configuration of the SAP HANA Database during Installation Using hdbparam^].
+For SAP HANA 1.0 up to SPS12, these parameters can be set during the installation of the SAP HANA database as described in SAP Note https://launchpad.support.sap.com/[2267798 â€“ Configuration of the SAP HANA Database during Installation Using hdbparam^].
 
 Alternatively, the parameters can be set after the SAP HANA database installation using the `hdbparam` framework.
 
@@ -51,13 +54,13 @@ Starting with SAP HANA 2.0, `hdbparam` is deprecated and the parameters have bee
 
 ....
 SS3adm@stlrx300s8-6:/usr/sap/SS3/SYS/global/hdb/custom/config> cat global.ini
-…
+â€¦
 [fileio]
 async_read_submit = on
 async_write_submit_active = on
 max_parallel_io_requests = 128
 async_write_submit_blocks = all
-…
+â€¦
 ....
 
 With SAP HANA 2.0 SPS5 and later, you can use the `setParameter.py `script to set the parameters mentioned above.

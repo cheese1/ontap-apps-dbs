@@ -5,6 +5,9 @@ keywords: storage, sizing, performance, sas disk shelf, ns224 nvme, test tool,
 summary: The following section provides an overview of the required performance and capacity considerations needed for sizing a storage system for SAP HANA.
 ---
 
+[.lead]
+Placeholder
+
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -31,7 +34,7 @@ SAP has defined a static set of storage KPIs. These KPIs are valid for all produ
 [NOTE]
 Storage performance KPIs are only mandated for production SAP HANA systems, but you can implement them in for all HANA system.
 
-SAP delivers a performance test tool that must be used to validate the storage system’s performance for active SAP HANA hosts attached to the storage.
+SAP delivers a performance test tool that must be used to validate the storage systemâ€™s performance for active SAP HANA hosts attached to the storage.
 
 NetApp tested and predefined the maximum number of SAP HANA hosts that can be attached to a specific storage model while still fulfilling the required storage KPIs from SAP for production-based SAP HANA systems.
 
@@ -109,7 +112,7 @@ For more information about the configuration of the different SAP test tools,  s
 The following example shows how variables can be set for the HCMT/HCOT execution plan.
 
 ....
-…{
+â€¦{
          "Comment": "Log Volume: Controls whether read requests are submitted asynchronously, default is 'on'",
          "Name": "LogAsyncReadSubmit",
          "Value": "on",
@@ -156,13 +159,13 @@ The following example shows how variables can be set for the HCMT/HCOT execution
          "Name": "DataExtMaxParallelIoRequests",
          "Value": "128",
          "Request": "false"
-      }, …
+      }, â€¦
 ....
 
 These variables must be used for the test configuration. This is usually the case with the predefined execution plans SAP delivers with the HCMT/HCOT tool. The following example for a 4k log write test is from an execution plan.
 
 ....
-…
+â€¦
       {
          "ID": "D664D001-933D-41DE-A904F304AEB67906",
          "Note": "File System Write Test",
@@ -193,7 +196,7 @@ These variables must be used for the test configuration. This is usually the cas
                   "ExtNumSubmitQueues": "${LogExtNumSubmitQueues}",
                   "ExtSizeKernelIoQueue": "${ExtSizeKernelIoQueue}"
                }
-            }, …
+            }, â€¦
 ....
 
 == Storage sizing process overview

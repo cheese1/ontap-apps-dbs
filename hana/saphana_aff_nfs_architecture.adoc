@@ -5,6 +5,9 @@ keywords: host, storage controller, nfs, 10gbe, architecture, back up, disaster 
 summary: SAP HANA hosts are connected to storage controllers by using a redundant 10GbE or faster network infrastructure. Data communication between SAP HANA hosts and storage controllers is based on the NFS protocol. A redundant switching infrastructure is required to provide fault-tolerant SAP HANA host-to-storage connectivity in case of switch or network interface card (NIC) failure.
 ---
 
+[.lead]
+Placeholder
+
 = Architecture
 :hardbreaks:
 :nofooter:

@@ -5,6 +5,9 @@ keywords: configure, multipathing, create, lvm, volume, groups, logical, mount, 
 summary: The documentation also contains information about multipath configurations that are specific to the Linux version used.
 ---
 
+[.lead]
+Placeholder
+
 = Host setup
 :hardbreaks:
 :nofooter:
@@ -268,7 +271,7 @@ If the above commands do not find the volumes, a restart is required.
 . To mount the logical volumes, the logical volumes must be activated. To activate the volumes, run the following command:
 +
 ....
-vgchange -a y 
+vgchange -a yÂ 
 ....
 
 == Create file systems
@@ -315,8 +318,8 @@ stlrx300s8-6:/ # mkdir -p /hana/data/SS3/mnt00001
 stlrx300s8-6:/ # mkdir -p /hana/log/SS3/mnt00001
 stlrx300s8-6:/ # mkdir -p /hana/shared
 
-stlrx300s8-6:/ # chmod –R 777 /hana/log/SS3
-stlrx300s8-6:/ # chmod –R 777 /hana/data/SS3
+stlrx300s8-6:/ # chmod â€“R 777 /hana/log/SS3
+stlrx300s8-6:/ # chmod â€“R 777 /hana/data/SS3
 stlrx300s8-6:/ # chmod 777 /hana/shared
 ....
 
@@ -332,8 +335,8 @@ stlrx300s8-6:/ # mkdir -p /hana/data/SS3/mnt00002
 stlrx300s8-6:/ # mkdir -p /hana/log/SS3/mnt00002
 stlrx300s8-6:/ # mkdir -p /hana/shared
 
-stlrx300s8-6:/ # chmod –R 777 /hana/log/SS3
-stlrx300s8-6:/ # chmod –R 777 /hana/data/SS3
+stlrx300s8-6:/ # chmod â€“R 777 /hana/log/SS3
+stlrx300s8-6:/ # chmod â€“R 777 /hana/data/SS3
 stlrx300s8-6:/ # chmod 777 /hana/shared
 ....
 
@@ -381,6 +384,6 @@ stlrx300s8-6:/ # cat /etc/fstab
 <storage-ip>:/hana_shared /hana/shared nfs rw,vers=3,hard,timeo=600,intr,noatime,nolock 0 0
 ....
 
-. To mount the file systems, run the `mount –a` command at each host.
+. To mount the file systems, run the `mount â€“a` command at each host.
 
 link:saphana_fas_fc_i_o_stack_configuration_for_sap_hana.html[Next: I/O stack configuration for SAP HANA.]

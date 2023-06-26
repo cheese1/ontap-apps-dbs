@@ -5,6 +5,9 @@ keywords: sap, hana, nfs, fas, inftastructure, setup, configuration
 summary: The following sections provide SAP HANA infrastructure setup and configuration guidelines.
 ---
 
+[.lead]
+Placeholder
+
 = Overview
 :hardbreaks:
 :nofooter:

@@ -5,6 +5,9 @@ keywords: hana, database, ontap
 summary: NetApp ONTAP is a powerful data-management platform with native capabilities that include everything from instant backup, restore and cloning capabilities, efficiency features such as inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
 ---
 
+[.lead]
+Placeholder
+
 = SAP HANA on ONTAP
 :hardbreaks:
 :nofooter:

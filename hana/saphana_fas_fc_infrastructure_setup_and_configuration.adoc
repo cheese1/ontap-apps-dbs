@@ -5,6 +5,9 @@ keywords:
 summary:
 ---
 
+[.lead]
+Placeholder
+
 = Infrastructure setup and configuration
 :hardbreaks:
 :nofooter:

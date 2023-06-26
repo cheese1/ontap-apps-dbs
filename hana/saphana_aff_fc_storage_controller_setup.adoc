@@ -5,6 +5,9 @@ keywords: storage efficiency, netapp volume encryption, quality of service, qos,
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding Data ONTAP setup and configuration guides.
 ---
 
+[.lead]
+Placeholder
+
 = Storage controller setup
 :hardbreaks:
 :nofooter:
@@ -132,10 +135,10 @@ For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/sha
 |Data, log, and shared volumes for system SID1
 |Data volume: SID1_data_mnt00001
 |Shared volume: SID1_shared
-|–
+|â€“
 |Log volume: SID1_log_mnt00001
 |Data, log, and shared volumes for system SID2
-|–
+|â€“
 |Log volume: SID2_log_mnt00001
 |Data volume: SID2_data_mnt00001
 |Shared volume: SID2_shared
@@ -143,10 +146,10 @@ For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/sha
 |Shared volume: SID3_shared
 |Data volume: SID3_data_mnt00001
 |Log volume: SID3_log_mnt00001
-|–
+|â€“
 |Data, log, and shared volumes for system SID4
 |Log volume: SID4_log_mnt00001
-|–
+|â€“
 |Shared volume: SID4_shared
 |Data volume: SID4_data_mnt00001
 |===
@@ -228,29 +231,29 @@ For each SAP HANA host, a data volume and a log volume are created. The `/hana/s
 
 |Data and log volumes for node 1
 |Data volume: SID_data_mnt00001
-|–
+|â€“
 |Log volume: SID_log_mnt00001
-|–
+|â€“
 |Data and log volumes for node 2
 |Log volume: SID_log_mnt00002
-|–
+|â€“
 |Data volume: SID_data_mnt00002
-|–
+|â€“
 |Data and log volumes for node 3
-|–
+|â€“
 |Data volume: SID_data_mnt00003
-|–
+|â€“
 |Log volume: SID_log_mnt00003
 |Data and log volumes for node 4
-|–
+|â€“
 |Log volume: SID_log_mnt00004
-|–
+|â€“
 |Data volume: SID_data_mnt00004
 |Shared volume for all hosts
 |Shared volume: SID_shared
-|–
-|–
-|–
+|â€“
+|â€“
+|â€“
 |===
 
 The following table shows the configuration and the mount points of a multiple-host system with four active SAP HANA hosts.
@@ -314,9 +317,9 @@ The following table shows an example for two LUNs per volume group for a 2+1 SAP
 |Log volume: SID_log_mnt00002
 |Shared volume for all hosts
 |Shared volume: SID_shared
-|–
-|–
-|–
+|â€“
+|â€“
+|â€“
 |===
 
 At the SAP HANA host, volume groups and logical volumes need to be created and mounted, as indicated in the following table.
@@ -352,7 +355,7 @@ The volume options listed in the following table must be verified and set on all
 |Action |
 
 |Disable automatic Snapshot copies
-|vol modify –vserver <vserver-name> -volume <volname> -snapshot-policy none
+|vol modify â€“vserver <vserver-name> -volume <volname> -snapshot-policy none
 |Disable visibility of Snapshot directory
 |vol modify -vserver <vserver-name> -volume <volname> -snapdir-access false
 |===

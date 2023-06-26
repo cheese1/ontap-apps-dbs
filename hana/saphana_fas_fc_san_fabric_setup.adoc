@@ -5,6 +5,9 @@ keywords: san, fabric, setup, sap, hana, setup, fcp, connection, storage, contro
 summary: Each SAP HANA server must have a redundant FCP SAN connection with a minimum of 8Gbps bandwidth. For each SAP HANA host attached to a storage controller, at least 8Gbps of bandwidth must be configured at the storage controller.
 ---
 
+[.lead]
+Placeholder
+
 = SAN fabric setup
 :hardbreaks:
 :nofooter:

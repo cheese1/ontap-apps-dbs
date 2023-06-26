@@ -5,6 +5,9 @@ keywords:
 summary:
 ---
 
+[.lead]
+Placeholder
+
 = Update history
 :hardbreaks:
 :nofooter:

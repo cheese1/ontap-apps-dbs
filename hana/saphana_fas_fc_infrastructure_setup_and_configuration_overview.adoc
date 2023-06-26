@@ -5,6 +5,9 @@ keywords: sap, hana, infrastructure, setup, configuration, guidelines, steps, ho
 summary: The following sections provide SAP HANA infrastructure setup and configuration guidelines.
 ---
 
+[.lead]
+Placeholder
+
 = Overview
 :hardbreaks:
 :nofooter:

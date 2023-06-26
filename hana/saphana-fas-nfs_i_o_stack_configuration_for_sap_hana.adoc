@@ -5,6 +5,9 @@ keywords: io, stack, configuration, sap, hana, fas, nfs
 summary: Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the IO behavior and optimize the database for the file and storage systems used.
 ---
 
+[.lead]
+Placeholder
+
 = I/O stack configuration for SAP HANA
 :hardbreaks:
 :nofooter:
@@ -51,13 +54,13 @@ Starting with SAP HANA 2.0, `hdbparam` has been deprecated, and the parameters h
 
 ....
 nf2adm@stlrx300s8-6: /usr/sap/NF2/SYS/global/hdb/custom/config> cat global.ini
-…
+â€¦
 [fileio]
 async_read_submit = on
 async_write_submit_active = on
 max_parallel_io_requests = 128
 async_write_submit_blocks = all
-…
+â€¦
 ....
 
 Since SAP HANA 2.0 SPS5, the `setParameter.py` script can be used the set the correct parameters:

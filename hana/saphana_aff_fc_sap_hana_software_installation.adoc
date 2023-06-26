@@ -5,6 +5,9 @@ keywords: software, installation,
 summary: This section describes the preparation necessary to install SAP HANA on single-host and multiple-host systems.
 ---
 
+[.lead]
+Placeholder
+
 = SAP HANA software installation
 :hardbreaks:
 :nofooter:

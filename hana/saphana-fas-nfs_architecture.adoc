@@ -5,6 +5,9 @@ keywords: sap, hana, backup, storage, replication, snapmirror, metrocluster, dis
 summary: SAP HANA hosts are connected to storage controllers by using a redundant 10GbE or faster network infrastructure.
 ---
 
+[.lead]
+Placeholder
+
 = Architecture
 :hardbreaks:
 :nofooter:

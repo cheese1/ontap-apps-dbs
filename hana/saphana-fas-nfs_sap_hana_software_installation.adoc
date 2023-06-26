@@ -5,6 +5,9 @@ keywords: sap, hana, software, installation, single, multiple, system, host
 summary: The following are requirements for software installation for SAP HANA.
 ---
 
+[.lead]
+Placeholder
+
 = SAP HANA software installation
 :hardbreaks:
 :nofooter:

@@ -5,6 +5,9 @@ keywords: FCP, fibre channel, fiber channel, configuration,
 summary:
 ---
 
+[.lead]
+Placeholder
+
 = Architecture
 :hardbreaks:
 :nofooter:

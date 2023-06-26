@@ -4,6 +4,9 @@ sidebar: sidebar
 permalink: hana/index.html
 lead: HANA on ONTAP
 summary: HANA
+
+[.lead]
+Placeholder
 ---
 
 = HANA on ONTAP Implementation Guides

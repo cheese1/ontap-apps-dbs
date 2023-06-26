@@ -5,6 +5,9 @@ keywords: network, setup, vmware, sap, hana, storage, hosts
 summary: Use the following guidelines when configuring the network.
 ---
 
+[.lead]
+Placeholder
+
 = Network setup
 :hardbreaks:
 :nofooter:

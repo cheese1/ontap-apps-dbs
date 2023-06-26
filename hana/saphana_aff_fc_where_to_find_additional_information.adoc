@@ -5,6 +5,9 @@ keywords:
 summary:
 ---
 
+[.lead]
+Placeholder
+
 = Where to find additional information
 :hardbreaks:
 :nofooter:

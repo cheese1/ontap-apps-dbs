@@ -5,6 +5,9 @@ keywords:
 summary:
 ---
 
+[.lead]
+Placeholder
+
 = SAP HANA using VMware vSphere
 :hardbreaks:
 :nofooter:

@@ -5,6 +5,9 @@ keywords: sap, hana, fas, systems, fibre, channel, protocol, configuration, data
 summary: The NetApp FAS product family has been certified for use with SAP HANA in TDI projects. The certified enterprise storage platform is characterized by the NetApp ONTAP operating system.
 ---
 
+[.lead]
+Placeholder
+
 = TR-4384: SAP HANA on NetApp FAS Systems with Fibre Channel Protocol Configuration Guide
 
 :hardbreaks:
@@ -27,7 +30,7 @@ The certification is valid for the following models:
 
 * FAS2720, FAS2750, FAS8200, FAS8300, FAS8700, FAS9000, FAS9500
 
-For a complete list of NetApp’s certified storage solutions for SAP HANA, see the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=v:deCertified;ve:13[certified and supported SAP HANA hardware directory^].
+For a complete list of NetAppâ€™s certified storage solutions for SAP HANA, see the https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=v:deCertified;ve:13[certified and supported SAP HANA hardware directory^].
 
 This document describes FAS configurations that use the Fibre Channel Protocol (FCP).
 
@@ -40,7 +43,7 @@ The configuration guides for FAS systems using NFS and NetApp AFF systems can be
 * https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_introduction.html[SAP HANA on NetApp FAS Systems with NFS^]
 * https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introduction.html[SAP HANA on NetApp AFF Systems with NFS^]
 
-In an SAP HANA multiple-host environment, the standard SAP HANA storage connector is used to provide fencing in the event of an SAP HANA host failover. Refer to the relevant SAP notes for operating system configuration guidelines and HANA-specific Linux kernel dependencies. For more information, see https://launchpad.support.sap.com/[SAP Note 2235581 – SAP HANA Supported Operating Systems^].
+In an SAP HANA multiple-host environment, the standard SAP HANA storage connector is used to provide fencing in the event of an SAP HANA host failover. Refer to the relevant SAP notes for operating system configuration guidelines and HANA-specific Linux kernel dependencies. For more information, see https://launchpad.support.sap.com/[SAP Note 2235581 â€“ SAP HANA Supported Operating Systems^].
 
 == SAP HANA tailored data center integration
 
