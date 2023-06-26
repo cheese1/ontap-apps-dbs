@@ -69,16 +69,15 @@ entries:
     - title: Failure Scenarios
       url: /oracle/smbc/failure-scenarios.html
   - title: Oracle on MetroCluster
-    url: /oracle/metrocluster/index.html
     entries:
     - title: NetApp MetroCluster Overview
-      entries:
-      - title: MetroCluster physical architecture
-        url: /oracle/metrocluster/metrocluster_physical_architecture.html
-      - title: MetroCluster logical architecture
-        url: /oracle/metrocluster/metrocluster_logical_architecture.html
-      - title: SyncMirror
-        url: /oracle/metrocluster/syncmirror.html
+      url: /oracle/metrocluster/index.html
+    - title: MetroCluster physical architecture
+      url: /oracle/metrocluster/metrocluster_physical_architecture.html
+    - title: MetroCluster logical architecture
+      url: /oracle/metrocluster/metrocluster_logical_architecture.html
+    - title: SyncMirror
+      url: /oracle/metrocluster/syncmirror.html
     - title: Oracle and NVFAIL
       url: /oracle/dp/oracle_and_nvfail.html
     - title: Oracle Single Instance on MetroCluster
