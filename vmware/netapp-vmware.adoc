@@ -5,6 +5,9 @@ keywords: netapp, vmware, getting, started
 summary:
 ---
 
+[.lead]
+Placeholder
+
 = Get Started With NetApp & VMware
 :hardbreaks:
 :nofooter:
