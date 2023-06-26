@@ -2,7 +2,6 @@ section: hana
 title: SAP HANA on ONTAP
 entries:
   - title: SAP HANA on NetApp AFF Systems with FCP Configuration Guide
-    type: solutions
     entries:
       - title: Introduction
         url: /hana/saphana_aff_fc_introduction.html
@@ -35,7 +34,6 @@ entries:
       - title: Update history
         url: /hana/saphana_aff_fc_update_history.html
   - title: SAP HANA on NetApp AFF Systems with NFS Configuration Guide
-    type: solutions
     entries:
       - title: Introduction
         url: /hana/saphana_aff_nfs_introduction.html
@@ -70,7 +68,6 @@ entries:
       - title: Update history
         url: /hana/saphana_aff_nfs_update_history.html
   - title: SAP HANA on NetApp FAS Systems with NFS Configuration Guide
-    type: solutions
     entries:
       - title: Introduction
         url: /hana/saphana-fas-nfs_introduction.html
@@ -105,7 +102,6 @@ entries:
       - title: Update history
         url: /hana/saphana-fas-nfs_update_history.html
   - title: SAP HANA on FAS Systems with FCP Configuration Guide
-    type: solutions
     entries:
       - title: Introduction
         url: /hana/saphana_fas_fc_introduction.html

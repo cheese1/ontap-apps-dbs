@@ -102,6 +102,6 @@ entries:
           - title: "End User Computing with VMware and NVIDIA GPUs (Deployment Guide)"
             url: /virtualization/nva-1129-deploy.html
           - title: "End User Computing with VMware for 3D Graphics"
-            url: /virtualization/tr-4792-link.htm entries:
+            url: /virtualization/tr-4792-link.htm
       - title: "Videos"
         url: /virtualization/vsphere_demos_videos.html
