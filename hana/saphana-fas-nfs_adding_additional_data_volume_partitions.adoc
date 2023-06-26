@@ -5,6 +5,9 @@ keywords: adding, additional, data, volume, partitions, host, enabling sap, hana
 summary: Starting with SAP HANA 2.0 SPS4, you can configure additional data volume partitions, which allows you to configure two or more volumes for the data volume of an SAP HANA tenant database.
 ---
 
+[.lead]
+Placeholder
+
 = Adding additional data volume partitions
 :hardbreaks:
 :nofooter:
