@@ -1,128 +1,128 @@
 section: oracle
 title: Oracle on ONTAP
-url: /oracle/introduction.html
 entries:
-  - title: Oracle on ONTAP
+  - title: Introduction
+    url: /oracle/introduction.html
+  entries:
+  - title: Storage Configuration
     entries:
-    - title: Storage Configuration
-      entries:
-      - title: NFS Storage
-        url: /oracle/storage-configuration/nfs_configuration.html
-      - title: SAN Storage
-        url: /oracle/storage-configuration/san_configuration.html
-      - title: Oracle and NVFAIL
-        url: /oracle/dp/oracle_and_nvfail.html
-    - title: Database Configuration
-      entries:
-      - title: db_file_multiblock_read_count
-        url: /oracle/oracle-configuration/mbr.html
-      - title: filesystemio_options
-        url: /oracle/oracle-configuration/filesystemio_options.html
-      - title: Oracle RAC
-        url: /oracle/oracle-configuration/rac.html
-      - title: Redo Block Size
-        url: /oracle/oracle-configuration/redo_block_size.html
-    - title: Network Configuration
-      entries:
-      - title: Ethernet configuration
-        url: /oracle/network-configuration/ethernet_configuration.html
-      - title: FC configuration
-        url: /oracle/network-configuration/san_configuration.html
-    - title: Host Configuration
-      entries:
-      - title: AIX
-        url: /oracle/host-configuration/aix.html
-      - title: HP-UX
-        url: /oracle/host-configuration/hp-ux.html
-      - title: Linux
-        url: /oracle/host-configuration/linux.html
-      - title: Linux with ASMlib and AFD
-        url: /oracle/host-configuration/asmlib-afd.html
-      - title: Microsoft Windows
-        url: /oracle/host-configuration/windows.html
-      - title: Solaris
-        url: /oracle/host-configuration/solaris.html
-    - title: Virtualization of Oracle Databases
-      url: /oracle/virtualization/intro.html
-    - title: Oracle Data protection
-      entries:
-      - title: Oracle Online Backups
-        url: /oracle/dp/oracle_hot_backup.html
-      - title: Consistency Group backup
-        url: /oracle/dp/oracle_consistency_group_backup.html
-      - title: Storage Snapshot Optimized backups
-        url: /oracle/dp/snapshot_optimized_backup.html
-  - title: Oracle Disaster Recovery
-    entries:
-    - title: Consistency group disaster recovery
-      url: /oracle/dp/consistency_group_disaster_recovery.html
-    - title: Disaster recovery with log replay
-      url: /oracle/dp/disaster_recovery_with_log_replay.html
-  - title: Oracle with SnapMirror Business Continuity
-    url: /oracle/smbc/index.html
-    entries:
-    - title: Overview
-      url: /oracle/smbc/overview.html
-    - title: SM-BC with Oracle Single Instance
-      url: /oracle/smbc/si.html
-    - title: SM-BC with Oracle RAC
-      url: /oracle/smbc/rac.html
-    - title: Failure Scenarios
-      url: /oracle/smbc/failure-scenarios.html
-  - title: Oracle on MetroCluster
-    url: /oracle/metrocluster/index.html
-    entries:
-    - title: NetApp MetroCluster Overview
-      entries:
-      - title: MetroCluster physical architecture
-        url: /oracle/metrocluster/metrocluster_physical_architecture.html
-      - title: MetroCluster logical architecture
-        url: /oracle/metrocluster/metrocluster_logical_architecture.html
-      - title: SyncMirror
-        url: /oracle/metrocluster/syncmirror.html
+    - title: NFS Storage
+      url: /oracle/storage-configuration/nfs_configuration.html
+    - title: SAN Storage
+      url: /oracle/storage-configuration/san_configuration.html
     - title: Oracle and NVFAIL
       url: /oracle/dp/oracle_and_nvfail.html
-    - title: Oracle Single Instance on MetroCluster
-      url: /oracle/metrocluster/si_on_metrocluster.html
-    - title: Oracle RAC and MetroCluster
-      url: /oracle/metrocluster/rac.html
-    - title: MetroCluster and NVFAIL
-      url: /oracle/metrocluster/mc-mcc-nvfail.html
-  - title: Oracle Database Migration
+  - title: Database Configuration
+    entries:
+    - title: db_file_multiblock_read_count
+      url: /oracle/oracle-configuration/mbr.html
+    - title: filesystemio_options
+      url: /oracle/oracle-configuration/filesystemio_options.html
+    - title: Oracle RAC
+      url: /oracle/oracle-configuration/rac.html
+    - title: Redo Block Size
+      url: /oracle/oracle-configuration/redo_block_size.html
+  - title: Network Configuration
+    entries:
+    - title: Ethernet configuration
+      url: /oracle/network-configuration/ethernet_configuration.html
+    - title: FC configuration
+      url: /oracle/network-configuration/san_configuration.html
+  - title: Host Configuration
+    entries:
+    - title: AIX
+      url: /oracle/host-configuration/aix.html
+    - title: HP-UX
+      url: /oracle/host-configuration/hp-ux.html
+    - title: Linux
+      url: /oracle/host-configuration/linux.html
+    - title: Linux with ASMlib and AFD
+      url: /oracle/host-configuration/asmlib-afd.html
+    - title: Microsoft Windows
+      url: /oracle/host-configuration/windows.html
+    - title: Solaris
+      url: /oracle/host-configuration/solaris.html
+  - title: Virtualization of Oracle Databases
+    url: /oracle/virtualization/intro.html
+  - title: Oracle Data protection
+    entries:
+    - title: Oracle Online Backups
+      url: /oracle/dp/oracle_hot_backup.html
+    - title: Consistency Group backup
+      url: /oracle/dp/oracle_consistency_group_backup.html
+    - title: Storage Snapshot Optimized backups
+      url: /oracle/dp/snapshot_optimized_backup.html
+- title: Oracle Disaster Recovery
+  entries:
+  - title: Consistency group disaster recovery
+    url: /oracle/dp/consistency_group_disaster_recovery.html
+  - title: Disaster recovery with log replay
+    url: /oracle/dp/disaster_recovery_with_log_replay.html
+- title: Oracle with SnapMirror Business Continuity
+  url: /oracle/smbc/index.html
+  entries:
+  - title: Overview
+    url: /oracle/smbc/overview.html
+  - title: SM-BC with Oracle Single Instance
+    url: /oracle/smbc/si.html
+  - title: SM-BC with Oracle RAC
+    url: /oracle/smbc/rac.html
+  - title: Failure Scenarios
+    url: /oracle/smbc/failure-scenarios.html
+- title: Oracle on MetroCluster
+  url: /oracle/metrocluster/index.html
+  entries:
+  - title: NetApp MetroCluster Overview
+    entries:
+    - title: MetroCluster physical architecture
+      url: /oracle/metrocluster/metrocluster_physical_architecture.html
+    - title: MetroCluster logical architecture
+      url: /oracle/metrocluster/metrocluster_logical_architecture.html
+    - title: SyncMirror
+      url: /oracle/metrocluster/syncmirror.html
+  - title: Oracle and NVFAIL
+    url: /oracle/dp/oracle_and_nvfail.html
+  - title: Oracle Single Instance on MetroCluster
+    url: /oracle/metrocluster/si_on_metrocluster.html
+  - title: Oracle RAC and MetroCluster
+    url: /oracle/metrocluster/rac.html
+  - title: MetroCluster and NVFAIL
+    url: /oracle/metrocluster/mc-mcc-nvfail.html
+- title: Oracle Database Migration
+  entries:
+  - title: Introduction
+    url: /oracle/migration/introduction.html
+  - title: Planning
+    url: /oracle/migration/planning.html
+  - title: Procedures
     entries:
     - title: Introduction
-      url: /oracle/migration/introduction.html
-    - title: Planning
-      url: /oracle/migration/planning.html
-    - title: Procedures
+      url: /oracle/migration/procedures-introduction.html
+    - title: Overview
+      url: /oracle/migration/options.html
+    - title: Datafile Move
+      url: /oracle/migration/procedures-datafile_move.html
+    - title: Log shipping
+      url: /oracle/migration/procedures-log_shipping.html
+    - title: Host Data Copy
+      url: /oracle/migration/procedures-host_data_copy.html
+    - title: Foreign LUN Import
       entries:
-      - title: Introduction
-        url: /oracle/migration/procedures-introduction.html
-      - title: Overview
-        url: /oracle/migration/options.html
-      - title: Datafile Move
-        url: /oracle/migration/procedures-datafile_move.html
-      - title: Log shipping
-        url: /oracle/migration/procedures-log_shipping.html
-      - title: Host Data Copy
-        url: /oracle/migration/procedures-host_data_copy.html
-      - title: Foreign LUN Import
-        entries:
-        - title: Preparation
-          url: /oracle/migration/fli-preparation.html
-        - title: Cutover
-          url: /oracle/migration/fli-cutover.html
-        - title: Completion
-          url: /oracle/migration/fli-completion.html
-        - title: Protocol Conversion
-          url: /oracle/migration/protocol_conversion.html
-    - title: Sample Scripts
-      url: /oracle/migration/sample_scripts.html
-  - title: Additional Notes
-    entries:
-    - title: Performance Optimization and Benchmarking
-      url: /oracle/notes/optimization_and_benchmarking.html
-    - title: Stale NFS locks
-      url: /oracle/notes/stale_nfs_locks.html
-    - title: WAFL alignment verification
-      url: /oracle/notes/wafl_alignment_verification.html
+      - title: Preparation
+        url: /oracle/migration/fli-preparation.html
+      - title: Cutover
+        url: /oracle/migration/fli-cutover.html
+      - title: Completion
+        url: /oracle/migration/fli-completion.html
+      - title: Protocol Conversion
+        url: /oracle/migration/protocol_conversion.html
+  - title: Sample Scripts
+    url: /oracle/migration/sample_scripts.html
+- title: Additional Notes
+  entries:
+  - title: Performance Optimization and Benchmarking
+    url: /oracle/notes/optimization_and_benchmarking.html
+  - title: Stale NFS locks
+    url: /oracle/notes/stale_nfs_locks.html
+  - title: WAFL alignment verification
+    url: /oracle/notes/wafl_alignment_verification.html

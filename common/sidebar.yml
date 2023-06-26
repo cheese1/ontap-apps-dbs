@@ -1,8 +1,9 @@
 section: common
 title: ONTAP for Enterprise Applications
-url: /common/introduction.html
 entries:
-  - title: ONTAP Introduction
+  - title: Introduction
+    url: /common/introduction.html
+  - title: ONTAP Core Technologies
     entries:
       - title: RAID
         url: /common/ontap/raid.html
