@@ -1,6 +1,5 @@
 section: olvm
-title: Oracle Virtualization Landscape Manager
-url: olvm/introduction.html
+title: OLVM
 entries:
   - title: Configuration Guides
     url: olvm/introduction.html

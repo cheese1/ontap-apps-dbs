@@ -16,8 +16,9 @@ entries:
     - title: Open File Limits 
       url: /mysql/open-file-limits.html
   - title: Database Configuration
-    url: /mysql/mysql-intro.html
     entries:
+    - title: Introduction
+      url: /mysql/mysql-intro.html
     - title: MySQL File Structure
       url: /mysql/file-structure.html
     - title: MySQL Configuration Overview

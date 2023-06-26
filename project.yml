@@ -7,15 +7,13 @@ settings:
     pdf_enabled: false
 sidebar:
   entries:
-    - title: Implementation Guides
-      url: /index.html
     - section: common
     - section: mysql
     - section: mssql
     - section: oracle
     - section: postgres
     - section: hana
-    - title: virtualization
+    - title: Virtualization
       entries:
       - section: kvm
       - section: olvm

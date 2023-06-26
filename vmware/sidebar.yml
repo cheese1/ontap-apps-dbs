@@ -1,6 +1,5 @@
 section: vmware
-title: "Virtualization"
-url: /virtualization/index.html
+title: VMware
 entries:
   - title: "Get Started With NetApp and VMware"
     url: /virtualization/netapp-vmware.html
