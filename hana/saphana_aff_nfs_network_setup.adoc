@@ -5,6 +5,10 @@ keywords: network, setup, nic, nfs, lacp, ifgroup, jumbo frames, vmxnet3, mtu
 summary: This section describes the dedicated storage network setup for SAP HANA hosts.
 ---
 
+[.lead]
+
+Placeholder
+
 = Network setup
 :hardbreaks:
 :nofooter:

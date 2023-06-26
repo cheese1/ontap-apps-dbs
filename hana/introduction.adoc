@@ -15,6 +15,4 @@ Placeholder
 :linkattrs:
 :imagesdir: ./media/
 
-[.lead]
-
 NetApp ONTAP is a powerful data management platform with native capabilities that include inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
