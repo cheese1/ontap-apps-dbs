@@ -4,17 +4,13 @@ url: /virtualization/index.html
 entries:
   - title: "Get Started With NetApp and VMware"
     url: /virtualization/netapp-vmware.html
-#                
   - title: "What's New for VMware Virtualization"
     url: https://docs.netapp.com/us-en/ontap-whatsnew/ontap98fo_vmware_virtualization.html
-#
   - title: "ONTAP tools for VMware vSphere - Product Security"
     url: /virtualization/tools-vmware-secure-development-activities.html
-#
   - title: "VMware Virtualization for ONTAP"
     entries:
       - title: "NetApp ONTAP Benefits for VMware vSphere Administrators"
-        type: solutions
         entries:
           - title: "Introduction"
             url: /virtualization/vsphere_admin_introduction.html
@@ -26,10 +22,8 @@ entries:
             url: /virtualization/vsphere_admin_vvols_and_spbm.html
           - title: "Hybrid Cloud"
             url: /virtualization/vsphere_admin_hybrid_cloud.html
-#
       - title: "VMware vSphere with ONTAP Best Practices"
         url: /virtualization/vsphere_ontap_ontap_for_vsphere.html
-        type: solutions
         entries:
           - title: "ONTAP capabilities for vSphere"
             url: /virtualization/vsphere_ontap_ontap_capabilities_for_vsphere.html
@@ -45,10 +39,8 @@ entries:
             url: /virtualization/vsphere_ontap_where_to_find_additional_information.html
           - title: "Contact us"
             url: /virtualization/vsphere_ontap_contact_us.html
-#
       - title: "VMware vSphere Virtual Volumes (vVols) with NetApp ONTAP"
         url: /virtualization/vvols-overview.html
-        type: solutions
         entries:
           - title: "Using vVols with ONTAP"
             url: /virtualization/vvols-ontap.html
@@ -58,10 +50,8 @@ entries:
             url: /virtualization/vvols-protect.html
           - title: "Troubleshooting"
             url: /virtualization/vvols-resources.html
-#
       - title: "VMware Site Recovery Manager with NetApp ONTAP 9"
         url: /virtualization/vsrm-ontap9_1._introduction_to_srm_with_ontap.html
-        type: solutions
         entries:
           - title: "New features with SRM and ONTAP Tools"
             url: /virtualization/vsrm-ontap9_new_features_with_srm_and_ontap_tools.html
@@ -77,15 +67,10 @@ entries:
             url: /virtualization/vsrm-ontap9_conclusion.html
           - title: "Additional Information"
             url: /virtualization/vsrm-ontap9_additional_information.html
-#
       - title: "ONTAP tools for VMware vSphere - Product Security"
         url: /virtualization/tools-vmware-secure-development-activities.html
-        type: solutions
-#
       - title: "SnapCenter Plug-in VMware vSphere - Product security"
         url: /virtualization/scvmware-security-secure-development-activities.html
-        type: solutions
-#
       - title: "VMware vSphere Automation"
         url: /virtualization/vsphere_auto_introduction.html
         type: solutions
@@ -108,96 +93,6 @@ entries:
                 url: /virtualization/vsphere_ontap_auto_file_nfs.html
               - title: "NFS - v4.1"
                 url: /virtualization/vsphere_ontap_auto_file_nfs41.html
-#
-  - title: "VMware for Public Cloud"
-    url: /ehc/index.html
-#      - title: "Overview"
-#        url: /ehc/ehc-overview.html
-#      - title: "VMware Cloud on Hyperscaler Clouds"
-#        url: /ehc/ehc-hyperscalers.html
-#      - title: "Supported Configurations"
-#        url: /ehc/ehc-support-configs.html
-#      - title: "VMware in the Hyperscalers Configuration"
-#        url: /ehc/ehc-config-vmware-intro.html
-#        entries:
-#          - title: "Configure VMC for AWS"
-#            url: /ehc/aws/aws-setup.html
-#          - title: "Configure AVS for Azure"
-#            url: /ehc/azure/azure-setup.html
-#          - title: "Configure GCVE for GCP"
-#            url: /ehc/gcp/gcp-setup.html
-#      - title: "NetApp Storage in Hyperscaler Clouds"
-#        url: /ehc/ehc-datastore-intro.html
-#        entries:
-#          - title: "Guest Connected storage for VMC"
-#            url: /ehc/aws/aws-guest.html
-#          - title: "Guest Connected storage for AVS"
-#            url: /ehc/azure/azure-guest.html
-#          - title: "Guest Connected storage for GCVE"
-#            url: /ehc/gcp/gcp-guest.html
-#      - title: "Summary and Conclusion"
-#        url: /ehc/ehc-summary.html
-#
-  - title: "VMware Hybrid Cloud Use Cases"
-    entries:
-      - title: "Use Case Overview"
-        url: /ehc/ehc-use-cases.html
-#      - title: "Solutions for Azure and AVS"
-#        url: /ehc/azure-solutions.html
-#      - title: "Solutions for AWS and VMC"
-#        url: /ehc/aws-solutions.html
-#      - title: "Solutions for GCP and GCVE"
-#        url: /ehc/gcp-solutions.html
-#
-  - title: "Virtual Desktops"
-    entries:
-      - title: "Virtual Desktop Services (VDS)"
-        entries:
-          - title: "Hybrid Cloud VDI with NetApp Virtual Desktop Service"
-            url: /vdi-vds/hcvdivds_hybrid_cloud_vdi_with_virtual_desktop_service.html
-            type: solutions
-            entries:
-              - title: "Use Cases"
-                url: /vdi-vds/hcvdivds_use_cases.html
-              - title: "NetApp Virtual Desktop Service Overview"
-                url: /vdi-vds/hcvdivds_netapp_virtual_desktop_service_overview.html
-              - title: "NetApp HCI Overview"
-                url: /vdi-vds/hcvdivds_netapp_hci_overview.html
-              - title: "NVIDIA Licensing"
-                url: /vdi-vds/hcvdivds_nvidia_licensing.html
-              - title: "Deployment"
-                url: /vdi-vds/hcvdivds_deployment.html
-              - title: "Hybrid Cloud Environment"
-                url: /vdi-vds/hcvdivds_hybrid_cloud_environment.html
-              - title: "Single Server Load Test with Login VSI"
-                url: /vdi-vds/hcvdivds_single_server_load_test_with_login_vsi.html
-              - title: "Management Portal"
-                url: /vdi-vds/hcvdivds_management_portal.html
-              - title: "User Management"
-                url: /vdi-vds/hcvdivds_user_management.html
-              - title: "Workspace Management"
-                url: /vdi-vds/hcvdivds_workspace_management.html
-              - title: "Application Management"
-                url: /vdi-vds/hcvdivds_application_management.html
-              - title: "ONTAP features for Virtual Desktop Service"
-                url: /vdi-vds/hcvdivds_why_ontap.html
-              - title: "Data Management"
-                url: /vdi-vds/hcvdivds_data_management.html
-              - title: "Operation Management"
-                url: /vdi-vds/hcvdivds_operation_management.html
-              - title: "Tools and Logs"
-                url: /vdi-vds/hcvdivds_tools_and_logs.html
-              - title: "GPU Considerations"
-                url: /vdi-vds/hcvdivds_gpu_considerations.html
-              - title: "Solutions for industry"
-                url: /vdi-vds/hcvdivds_solutions_for_industry.html
-              - title: "Conclusion"
-                url: /vdi-vds/hcvdivds_conclusion.html
-              - title: "Where to Find Additional Information"
-                url: /vdi-vds/hcvdivds_where_to_find_additional_information.html
-#
-
-#
       - title: "VMware Horizon"
         entries:
           - title: "End User Computing with VMware (Design Guide)"
@@ -207,16 +102,6 @@ entries:
           - title: "End User Computing with VMware and NVIDIA GPUs (Deployment Guide)"
             url: /virtualization/nva-1129-deploy.html
           - title: "End User Computing with VMware for 3D Graphics"
-            url: /virtualization/tr-4792-link.html
-#      - title: "Citrix Virtual Apps and Desktops"
-#
-      - title: "FlexPod Desktop Virtualization Solutions"
-        url: /virtualization/flex-virtual-solutions.html
-#
-  - title: "Demos and Tutorials"
-    entries:
+            url: /virtualization/tr-4792-link.htm entries:
       - title: "Videos"
         url: /virtualization/vsphere_demos_videos.html
-#
-
-

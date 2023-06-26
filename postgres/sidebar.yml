@@ -31,8 +31,8 @@ entries:
       url: /postgres/performance-tuning.html
     - title: Database configuration
       url: /postgres/db-config.html
-  - title: Best practices summary
-    url: /postgres/summary.html
+    - title: Best practices summary
+      url: /postgres/summary.html
     - title: TOAST
       url: /postgres/toast.html
     - title: VACUUM
