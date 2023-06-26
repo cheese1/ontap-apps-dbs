@@ -5,6 +5,9 @@ keywords: sap, hana, installation, preparations, nfsv4, user, authentication, st
 summary: NFS version 4 and higher requires user authentication. This authentication can be accomplished by using a central user management tool such as a Lightweight Directory Access Protocol (LDAP) server or with local user accounts.
 ---
 
+[.lead]
+Placeholder
+
 = SAP HANA installation preparations for NFSv4
 :hardbreaks:
 :nofooter:

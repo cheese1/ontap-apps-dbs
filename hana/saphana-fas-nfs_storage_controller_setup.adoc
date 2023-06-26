@@ -5,6 +5,9 @@ keywords: storage, controller, setup, efficiency, fabricpool, disk, shelf, aggre
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 ---
 
+[.lead]
+Placeholder
+
 = Storage controller setup
 :hardbreaks:
 :nofooter:
