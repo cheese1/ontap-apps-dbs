@@ -1,0 +1,47 @@
+---
+sidebar: sidebar
+permalink: mssql/buffer-pool.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
++ Buffer pool extensions
+
+The buffer pool extension provides seamless integration of an NVRAM extension with the database engine buffer pool to significantly improve I/O throughput. The buffer pool extension is not available in every SQL Server edition. It is available only with the 64-bit SQL Server Standard, Business Intelligence, and Enterprise editions.
+
+The buffer pool extension feature extends the buffer pool cache with nonvolatile storage (usually SSDs). The extension allows the buffer pool to accommodate a larger database working set, forcing the paging of I/O between the RAM and the SSDs and effectively offloading small random I/Os from mechanical disks to SSDs. Because of the lower latency and better random I/O performance of SSDs, the buffer pool extension significantly improves I/O throughput.
+
+The buffer pool extension feature offers the following benefits:
+
+* Increased random I/O throughput
+* Reduced I/O latency
+* Increased transaction throughput
+* Improved read performance with a larger hybrid buffer pool
+* A caching architecture that can take advantage of existing and future low-cost memory
+
+For buffer pool extensions, NetApp recommends the following:
+
+* Make sure that an SSD-backed LUN (such as NetApp AFF) is presented to the SQL Server host so that it can be used as a buffer pool extension target disk.
+
+* The extension file must be the same size as or larger than the buffer pool.
+
+The following example shows a T-SQL command to set up a buffer pool extension of 32GB.
+
+USE master
+
+GO
+
+ALTER SERVER CONFIGURATION
+
+SET BUFFER POOL EXTENSION ON
+
+  (FILENAME = ‘P:\BUFFER POOL EXTENSION\SQLServerCache.BUFFER POOL EXTENSION’, SIZE = 32 GB);
+
+GO

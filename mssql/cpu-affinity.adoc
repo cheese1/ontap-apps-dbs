@@ -1,0 +1,26 @@
+---
+sidebar: sidebar
+permalink: mssql/cpu-affinity.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Processor affinity
+
+You are unlikely ever to need to alter the processor affinity defaults unless you encounter performance problems, but it is still worth understanding what they are and how they work.
+
+SQL Server supports processor affinity by two options:
+
+* CPU affinity mask
+* Affinity I/O mask
+
+SQL Server uses all CPUs available from the operating system (if the per-processor core license is chosen). It creates schedulers on all the CPUs to make best use of the resources for any given workload. When multitasking, the operating system or other applications on the server can switch process threads from one processor to another. SQL Server is a resource-intensive application, and so performance can be affected when this occurs. To minimize the effect, you can configure the processors such that all the SQL Server load is directed to a preselected group of processors. This is achieved by using the CPU affinity mask.
+
+The affinity I/O mask option binds SQL Server disk I/O to a subset of CPUs. In SQL Server OLTP environments, this extension can enhance the performance of SQL Server threads issuing I/O operations.

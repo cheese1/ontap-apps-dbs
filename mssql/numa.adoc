@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: mssql/numa.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Nonuniform memory access
+
+Nonuniform memory access (NUMA) is a memory-access optimization method that helps increase processor speed without increasing the load on the processor bus. If NUMA is configured on the server where SQL Server is installed, no additional configuration is required because SQL Server is NUMA aware and performs well on NUMA hardware.

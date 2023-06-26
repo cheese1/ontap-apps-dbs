@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: mssql/index-create.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Index create memory
+
+The index create memory option is another advanced option that you should not usually change. It controls the maximum amount of RAM initially allocated for creating indexes. The default value for this option is 0, which means that it is managed by SQL Server automatically. However, if you encounter difficulties creating indexes, consider increasing the value of this option.

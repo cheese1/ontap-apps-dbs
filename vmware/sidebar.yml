@@ -73,7 +73,6 @@ entries:
         url: /virtualization/scvmware-security-secure-development-activities.html
       - title: "VMware vSphere Automation"
         url: /virtualization/vsphere_auto_introduction.html
-        type: solutions
         entries:
           - title: "Traditional Block Storage Provisioning"
             url: /virtualization/vsphere_ontap_auto_block.html

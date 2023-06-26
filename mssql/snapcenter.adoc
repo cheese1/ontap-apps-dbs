@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: mssql/snapcenter.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= SnapCenter
+
+SQL Server databases can be quickly and easily protected using NetApp SnapCenter software with the Plug-in for SQL Server and the Plug-in for Microsoft Windows. These products enable application-consistent backup, automated cloning, and restore and recovery of SQL Server databases, instances, or availability groups.
+
+NetApp and partner professional services experts are available for assistance in complex projects. Even if assistance is not required during the project, NetApp strongly encourages new customers to use professional services for assistance in developing a high-level approach. 
