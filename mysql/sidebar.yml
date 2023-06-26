@@ -14,7 +14,7 @@ entries:
       url: /mysql/multipathing.html
     - title: Open File Limits 
       url: /mysql/open-file-limits.html
-  - title: MySQL Configuration
+  - title: Database Configuration
     url: /mysql/mysql-intro.html
     entries:
     - title: MySQL File Structure
@@ -39,5 +39,3 @@ entries:
       url: /mysql/open_file_limits.html
     - title: Deployment Methods 
       url: /mysql/deployment.html
-  - title: Additional information
-    url: /mysql/additional-information.html
