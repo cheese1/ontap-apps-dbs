@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: postgres/performance-tuning.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= PostgreSQL performance tuning
+
+Designing an efficient and high-performing database file system layout is important from both a performance and scalability perspective, but database size is not a factor. A mistaken perception is that huge databases need high-performance disk architecture. Even if the database size is 50GB, you need a good disk architecture.
+
+Here are some tips for designing the database layout:
+
+* Ensure that the database has multiple tablespaces, with tables and indexes grouped according to the transaction rates.
+* The tablespace must be placed across multiple disk file systems for balanced I/O. To make this balance possible, use the LVM or place critical tables on different volumes or LUNs. (The volumes or LUNs can be on the same aggregate or different aggregates). Placing tables in this way ensures that multiple CPUs come into play to perform transactions across multiple disks as described in Figure 7.
+
+Figure 7) User-defined tablespaces stored on multiple disks (NFS, SAN).
+
+
+
+* Consider placing the pg_xlog or pg_wal directory on a separate disk (volume or LUN) on a high-transaction database.
+* Use I/O monitoring tools to understand the I/O statistics across all the disks and manage the database objects accordingly.

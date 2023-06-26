@@ -1,0 +1,49 @@
+---
+sidebar: sidebar
+permalink: postgres/selinux.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= SELinux
+
+Security-Enhanced Linux (SELinux) is a Linux kernel security model that provides a mechanism for supporting access control security policies.
+
+The /etc/selinux/config configuration file controls whether SELinux is enabled or disabled, and if enabled, whether SELinux operates in permissive mode or enforcing mode. The SELINUX variable can be set to disabled, permissive, or enforcing mode. 
+
+* The disabled option completely disables the SELinux kernel and application code, leaving the system running without any SELinux protection. 
+* The permissive option enables the SELinux code and permits policy-denied accesses but audits them.
+* The enforcing option enables the SELinux code and causes it to enforce access denials and audit them.
+* In our testing, most deployments observed errors while mounting an NFS file system on a Linux host or while starting the PostgreSQL daemon. Some common errors include:
+
+Error message: not found; Error message: access denied;
+
+Error message: Permission denied; Cannot mount / access an NFS volume or file system; Error Message: Cannot find home Directory
+
+You can resolve these errors by correcting the SELinux configuration files and verifying that the export options on NetApp ONTAP are correct. For further troubleshooting steps, see this NetApp Knowledgebase article. 
+
+To learn more about FC configuration, see the following documentation: 
+
+* SAN Configuration
+
+Describes supported FC, iSCSI, and FCoE topologies for connecting host computers to storage controllers in clusters. 
+
+* SAN Administration
+
+Describes how to configure and manage the iSCSI, FCoE, and FC protocols for clustered SAN environments, including configuration of LUNs, initiator groups (igroups), and targets.
+
+Appendix B: PostgreSQL page and file system layout
+
+Every table and index is stored as an array of pages of a fixed size (usually 8KB), although you can select a different page size by changing the configuration. Each page contains a header that stores metadata about the block. The header provides details about checksum, start of free space, and end of free space. The item after the header is an array identifier composed of offset-length pairs pointing to the actual items.
+
+The structure used to store the table is a heap file. Heap files are lists of unordered records of variable size. The heap file is structured as a collection of pages or blocks, each containing a collection of items. Figure 8 takes a closer look at how PostgreSQL stores data across rows and in each page or block of a table.
+
+Figure 8) Data storage in PostgreSQL.
+

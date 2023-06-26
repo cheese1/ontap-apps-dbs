@@ -1,6 +1,40 @@
 section: postgres
-title: PostgreSQL
+title: postgres
 url: /postgres/introduction.html
 entries:
-  - title: Configuration Guides
+  - title: Introduction
     url: /postgres/introduction.html
+  - title: PostgreSQL architecture
+    url: /postgres/architecture.html
+  - title: Data protection
+    url: /postgres/index-protection.html
+  - title: Native data protection
+    url: /postgres/native-dp.html
+  - title: Snapshot technology
+    url: /postgres/snapshot-dp.html
+  - title: Data protection software
+    url: /postgres/snapcenter-dp.html
+  - title: Database security
+    url: /postgres/security.html
+  - title: PostgreSQL database best practices
+    url: /postgres/index-bp.html
+  - title: Tablespaces
+    url: /postgres/tablespaces.html
+  - title: File system options
+    url: /postgres/filesystems.html
+  - title: PostgreSQL performance tuning
+    url: /postgres/performance-tuning.html
+  - title: Database configuration
+    url: /postgres/db-config.html
+  - title: Best practices summary
+    url: /postgres/summary.html
+  - title: Appendix A: Host configuration
+    url: /postgres/appendix-a.html
+  - title: SELinux
+    url: /postgres/selinux.html
+  - title: TOAST
+    url: /postgres/toast.html
+  - title: VACUUM
+    url: /postgres/vacuum.html
+  - title: PostgreSQL File system layout
+    url: /postgres/fs-layout.html

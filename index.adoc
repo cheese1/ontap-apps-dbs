@@ -2,10 +2,10 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-summary: Enterprise Applications with ONTAP
+summary: Implementation Guides
 ---
 
-= Enterprise Applications with ONTAP
+= Implementations Guides
 :hardbreaks:
 :nofooter:
 :icons: font
