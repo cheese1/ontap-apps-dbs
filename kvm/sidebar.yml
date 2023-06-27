@@ -1,5 +1,5 @@
 section: kvm
 title: KVM
 entries:
-  - title: Configuration Guides
+  - title: Overview
     url: kvm/overview.html

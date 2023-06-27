@@ -39,5 +39,5 @@ entries:
       url: /postgres/toast.html
     - title: VACUUM
       url: /postgres/vacuum.html
-    - title: PostgreSQL File system layout
+    - title: PostgreSQL filesystem layout
       url: /postgres/fs-layout.html

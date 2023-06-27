@@ -3,17 +3,17 @@ title: MySQL on ONTAP
 entries:
   - title: Overview
     url: /mysql/overview.html
-  - title: Host Configuration
+  - title: Host configuration
     entries:
-    - title: Slot Tables 
+    - title: SlottTables 
       url: /mysql/slot-tables.html
-    - title: Security-Enhanced Linux
+    - title: Security-enhanced Linux
       url: /mysql/selinux.html
-    - title: I/O Schedulers
+    - title: I/O schedulers
       url: /mysql/schedules.html
     - title: Multipathing
       url: /mysql/multipathing.html
-    - title: Open File Limits 
+    - title: Open file limits 
       url: /mysql/open-file-limits.html
   - title: Database Configuration
     entries:
@@ -21,7 +21,7 @@ entries:
       url: /mysql/mysql-intro.html
     - title: MySQL File Structure
       url: /mysql/file-structure.html
-    - title: MySQL Configuration Overview
+    - title: MySQL configuration overview
       url: /mysql/configuration.html
     - title: innodb_log_file_size
       url: /mysql/innodb_log_file_size.html
@@ -39,5 +39,5 @@ entries:
       url: /mysql/innodb_lru_scan_depth.html
     - title: open_file_limits
       url: /mysql/open_file_limits.html
-    - title: Deployment Methods 
+    - title: Deployment methods 
       url: /mysql/deployment.html

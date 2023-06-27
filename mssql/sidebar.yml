@@ -3,7 +3,7 @@ title: Microsoft SQL Server on ONTAP
 entries:
   - title: Overview
     url: /mssql/overview.html
-  - title: SQL Server workload types
+  - title: SQL server workload types
     url: /mssql/workloads.html
   - title: Benchmarking
     url: /mssql/benchmarking.html
@@ -27,7 +27,7 @@ entries:
     url: /mssql/index-create.html
   - title: Min memory per query
     url: /mssql/min-memory-per-query.html
-  - title: + Buffer pool extensions
+  - title: Buffer pool extensions
     url: /mssql/buffer-pool.html
   - title: Database files and filegroups
     url: /mssql/files-and-filegroups.html
