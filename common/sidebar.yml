@@ -12,6 +12,12 @@ entries:
       - title: Storage Virtual Machines
         url: /common/ontap/svm.html
       - title: Logical Interfaces
+      - title: Network configuration
+        entries:
+        - title: Ethernet configuration
+          url: /common/ethernet_configuration.html
+        - title: FC SAN configuration
+          url: /common/fcsan_configuration.html
         url: /common/ontap/lif.html
       - title: Quality of Service (QoS)
         url: /common/ontap/qos.html

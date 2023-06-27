@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: common/ontap/raid.html
-keywords: TR-3633, oracle, database, ontap
-summary: RAID data protection for databases
+keywords: ontap,raid
+summary: RAID data protection for enterprise applications
 ---
 
 = RAID Levels
@@ -15,7 +15,7 @@ summary: RAID data protection for databases
 [.lead]
 RAID refers to the use of redundancy to protect data against the loss of a drive.
 
-Questions occasionally arise concerning RAID levels in the configuration of NetApp storage used for Oracle databases. Many older Oracle documents and books on Oracle configuration contain warnings about using RAID mirroring and/or avoiding certain types of RAID. Although they raise valid points, these sources do not apply to RAID 4 and the NetApp RAID DP and RAID-TEC technologies used in ONTAP.
+Questions occasionally arise concerning RAID levels in the configuration of NetApp storage used for databases and other enterprise applications. Many older documents about storage array configuration contain warnings about using RAID mirroring and/or avoiding certain types of RAID. Although they raise valid points, these sources do not apply to RAID 4 and the NetApp RAID DP and RAID-TEC technologies used in ONTAP.
 
 RAID 4, RAID 5, RAID 6, RAID DP, and RAID-TEC all use parity to ensure drive failure does not result in data loss. These RAID options offer much better storage efficiency in comparison to mirroring, but most RAID implementations have a drawback that affects write operations. Completion of a write operation on other RAID implementations may require multiple drive reads to regenerate the parity data, a process commonly called the RAID penalty.
 

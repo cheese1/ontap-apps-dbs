@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: common/ontap/svm.html
-keywords: TR-3633, oracle, database, ontap, svm
-summary: SVM provisioning for Oracle on ONTAP
+keywords: ontap, svm
+summary: SVM provisioning
 ---
 
 = Storage Virtual Machines
@@ -13,7 +13,7 @@ summary: SVM provisioning for Oracle on ONTAP
 :imagesdir: ./../media/
 
 [.lead]
-A Storage Virtual Machine (SVM; known as a vserver at the ONTAP CLI) is a basic functional unit of storage, and it is useful to compare an SVM to a guest on a VMware ESX server.
+A Storage Virtual Machine (SVM), known as a vserver at the ONTAP CLI, is a basic functional unit of storage, and it is useful to compare an SVM to a guest on a VMware ESX server.
 
 When first installed, ESX has no preconfigured capabilities, such as hosting a guest OS or supporting an end-user application. It is an empty container until a virtual machine (VM) is defined. ONTAP is similar. When first installed, this OS has no data-serving capabilities, and an SVM must be defined. It is the SVM personality that defines the data services.
 
@@ -21,7 +21,7 @@ As with other aspects of database architecture, the best options for SVM and log
 
 == SVMs
 
-There is no official best practice for provisioning SVM's for Oracle on ONTAP. The right approach depends on management and security requirements.
+There is no official best practice for provisioning SVMs for ONTAP. The right approach depends on management and security requirements.
 
 Most customers operate one primary SVM for most of their day-to-day requirements but then create a small number of SVMs for special needs, including the following situations:
 

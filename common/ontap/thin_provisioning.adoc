@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: common/ontap/thin_provisioning.html
-keywords: TR-3633, oracle, database, ontap, thin provisioning
-summary: Thin provisioning with Oracle on ONTAP
+keywords: ontap, thin provisioning
+summary: Thin provisioning with ONTAP
 ---
 
 = Thin provisioning
@@ -13,15 +13,15 @@ summary: Thin provisioning with Oracle on ONTAP
 :imagesdir: ./../media/
 
 [.lead]
-Thin provisioning refers to configuring more space on a storage system than is technically available. Such configuration comes in many forms and is integral to many features that ONTAP offers to an Oracle database environment. Thin provisioning is also closely related to efficiency technologies for the same reason - efficiency features allow more logical data to be stored than what technically exists on the storage system.
+Thin provisioning refers to configuring more space on a storage system than is technically available. Such configuration comes in many forms and is integral to many features that ONTAP offers to an enterprise application environment. Thin provisioning is also closely related to efficiency technologies for the same reason - efficiency features allow more logical data to be stored than what technically exists on the storage system.
 
-Almost any use of Snapshot copies involves thin provisioning. For example, a typical 10TB database on NetApp storage contains 30 days of Snapshot copies. This arrangement results in approximately 10TB of data visible in the active file system and 300TB dedicated to Snapshot copies. The total 310TB of storage usually resides on approximately 12TB to 15TB of space. The active database consumes 10TB, and the remaining 300TB of data only requires 2TB to 5TB of space because only the changes to the original data are stored.
+Almost any use of Snapshot copies involves thin provisioning. For example, a typical 10TB database on NetApp storage includes around 30 days of Snapshot copies. This arrangement results in approximately 10TB of data visible in the active file system and 300TB dedicated to Snapshot copies. The total 310TB of storage usually resides on approximately 12TB to 15TB of space. The active database consumes 10TB, and the remaining 300TB of data only requires 2TB to 5TB of space because only the changes to the original data are stored.
 
 Cloning is also an example of thin provisioning. A major NetApp customer created 40 clones of an 80TB database for use by development. If all 40 developers using these clones overwrote every block in every datafile, over 3.2PB of storage would be required. In practice, turnover is low, and the collective space requirement is closer to 40TB because only changes are stored on the drives.
 
 == Space management
 
-Some care must be taken with thin provisioning an Oracle environment because data change rates can increase unexpectedly. For example, space consumption due to Snapshot copies can grow rapidly if tables are reindexed, or a misplaced RMAN backup can write a large amount of data in a very short time. Finally, it can be difficult to recover an Oracle database if a file system runs out of free space during datafile extension.
+Some care must be taken with thin provisioning an application environment because data change rates can increase unexpectedly. For example, space consumption due to Snapshot copies can grow rapidly if database tables are reindexed, or widescale patching is applied to VMware guests. A misplaced backup can write a large amount of data in a very short time. Finally, it can be difficult to recover some application if a file system runs out of free space unexpectedly.
 
 Fortunately, these risks can be addressed with careful configuration of `volume-autogrow` and `snapshot-autodelete` policies. As their names imply, these options enable a user to create policies that automatically clear space consumed by Snapshot copies or grow a volume to accommodate additional data. Many options are available, and needs vary by customer.
 
@@ -29,21 +29,21 @@ See the ONTAP Logical Storage Management Guide for a complete discussion of thes
 
 == LUN thin provisioning
 
-Thin provisioning of active LUNs is of limited use in an Oracle environment because Oracle initializes datafiles to their full size at the time of creation. The efficiency of thin provisioning of active LUNs in a file system environment can be lost over time as deleted and erased data occupy more and more unallocated whitespace in the file system.
+The efficiency of thin provisioning of active LUNs in a file system environment can be lost over time as data is deleted. Unless that deleted data is either overwritten with zeros or the space is released with TRIM/UNMAP space reclamation, the "erased" data occupies more and more unallocated whitespace in the file system. Furthemore, thin provisioning of active LUNs is of limited use in many database environments because datafiles are initialized to their full size at the time of creation.
 
-There is one exception when an LVM is used. When an LVM such as Veritas VxVM or Oracle ASM is used, the underlying LUNs are divided into extents that are only used when needed. For example, if a database begins at 2TB in size but could grow to 10TB over time, this database can be placed on 10TB of thin-provisioned LUNs organized in an LVM diskgroup. It would occupy only 2TB of space at the time of creation and would only claim additional space as extents are allocated to accommodate database growth. This process is safe as long as space is monitored.
+Careful planning of LVM configuration can improve efficiency and minimize the need for storage provisioning and LUN reszing. When an LVM such as Veritas VxVM or Oracle ASM is used, the underlying LUNs are divided into extents that are only used when needed. For example, if a dataset begins at 2TB in size but could grow to 10TB over time, this dataset could be placed on 10TB of thin-provisioned LUNs organized in an LVM diskgroup. It would occupy only 2TB of space at the time of creation and would only claim additional space as extents are allocated to accommodate data growth. This process is safe as long as space is monitored.
 
 == Fractional reservations
 
 Fractional reserve refers to the behavior of a LUN in a volume with respect to space efficiency. When the option `fractional-reserve` is set to 100%, all data in the volume can experience 100% turnover with any data pattern without exhausting space on the volume.
 
-For a Snapshot example, consider a database on a single 250GB LUN in a 1TB volume. Creating a Snapshot copy would immediately result in the reservation of an additional 250GB of space in the volume to guarantee that the volume does not run out of space for any reason. Using fractional reserves is generally wasteful because it is extremely unlikely that every byte in the database volume would need to be overwritten. There is no reason to reserve space for an event that never happens. Still, if a customer cannot monitor space consumption in a storage system and must be certain that space never runs out, 100% fractional reservations would be required to use Snapshot copies.
+For example, consider a database on a single 250GB LUN in a 1TB volume. Creating a Snapshot copy would immediately result in the reservation of an additional 250GB of space in the volume to guarantee that the volume does not run out of space for any reason. Using fractional reserves is generally wasteful because it is extremely unlikely that every byte in the database volume would need to be overwritten. There is no reason to reserve space for an event that never happens. Still, if a customer cannot monitor space consumption in a storage system and must be certain that space never runs out, 100% fractional reservations would be required to use Snapshot copies.
 
 == Compression and deduplication
 
-Compression and deduplication are both forms of thin provisioning. For example, a 50TB database footprint might compress to 30TB, resulting in a savings of 20TB. For compression to yield any benefits, some of that 20TB must be used for other data, or the storage system must be purchased with less than 50TB. The result is storing more data than is technically available on the storage system. From the database point of view, there is 50TB of data, even though it occupies only 30TB on the drives.
+Compression and deduplication are both forms of thin provisioning. For example, a 50TB data footprint might compress to 30TB, resulting in a savings of 20TB. For compression to yield any benefits, some of that 20TB must be used for other data, or the storage system must be purchased with less than 50TB. The result is storing more data than is technically available on the storage system. From the data point of view, there is 50TB of data, even though it occupies only 30TB on the drives.
 
-There is always a possibility that the compressibility of a database changes, which would result in increased consumption of real space. This increase in consumption means that compression must be managed as with other forms of thin provisioning in terms of monitoring and using `volume-autogrow` and `snapshot-autodelete`.
+There is always a possibility that the compressibility of a dataset changes, which would result in increased consumption of real space. This increase in consumption means that compression must be managed as with other forms of thin provisioning in terms of monitoring and using `volume-autogrow` and `snapshot-autodelete`.
 
 Compression and deduplication are discussed in further detail in the section link:efficiency.html
 

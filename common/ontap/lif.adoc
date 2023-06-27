@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: common/ontap/lif.html
-keywords: TR-3633, oracle, database, ontap, LIF, multipath, multipathing
-summary: LIF configuration for Oracle on ONTAP
+keywords: ontap, LIF, multipath, multipathing
+summary: LIF configuration
 ---
 
 = Logical Interfaces
@@ -44,11 +44,11 @@ If a path becomes unavailable, the client automatically selects a different path
 
 === Performance
 
-The most important consideration with LIF performance in a SAN environment is bandwidth. For example, a four-node ONTAP cluster with two 16Gb FC ports per node allows up to 32Gb of bandwidth from each node. I/O is automatically balanced between ports, and all I/O is directed down the most optimal path.
+The most important consideration with LIF performance in a SAN environment is bandwidth. For example, a four-node ONTAP AFF cluster with two 16Gb FC ports per node allows up to 32Gb of bandwidth from each node. I/O is automatically balanced between ports, and all I/O is directed down the most optimal path.
 
 === Resiliency
 
-SAN LIFs do not fail over within a storage system. If a SAN LIF fails, then the client's multipathing ability detects the loss of a path and redirects I/O to a different LIF.
+SAN LIFs do not fail over within a storage system. If a SAN LIF fails, then the client's multipathing software detects the loss of a path and redirects I/O to a different LIF.
 
 === Manageability
 
@@ -64,13 +64,11 @@ NetApp makes the following primary recommendations:
 * In ONTAP 8.3 and later, the selective LUN mapping (SLM) feature is the default. With SLM, any new LUN is automatically advertised from the node that owns the underlying aggregate and the node's HA partner. This arrangement avoids the need to create port sets or configure zoning to limit port accessibility. Each LUN is available on the minimum number of nodes required for both optimal performance and resiliency.
 +
 In the event a LUN must be migrated outside of the two controllers, the additional nodes can be added with the `lun mapping add-reporting-nodes` command so that the LUNs are advertised on the new nodes. Doing so creates additional SAN paths to the LUNs for LUN migration. However, the host must perform a discovery operation to use the new paths.
-
 * Do not be overly concerned about indirect traffic. It is best to avoid indirect traffic in a very I/O-intensive environment for which every microsecond of latency is critical, but the visible performance effect is negligible for typical workloads.
-* Follow the zoning rules described in link:/network-configuration/ethernet.html[Ethernet].
 
 == NFS LIF design
 
-In contrast to SAN protocols, NFS has a limited ability to define multiple paths to data. The parallel NFS (pNFS) extensions to NFSv4.1 address this limitation, but pNFS is not yet supported for Oracle databases and is not covered in this document.
+In contrast to SAN protocols, NFS has a limited ability to define multiple paths to data. The parallel NFS (pNFS) extensions to NFSv4.1 address this limitation
 
 === Performance and resiliency
 
