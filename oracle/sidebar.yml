@@ -58,7 +58,6 @@ entries:
     - title: Disaster recovery with log replay
       url: /oracle/dp/disaster_recovery_with_log_replay.html
   - title: Oracle with SnapMirror Business Continuity
-    url: /oracle/smbc/index.html
     entries:
     - title: Overview
       url: /oracle/smbc/overview.html

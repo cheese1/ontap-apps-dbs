@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: common/introduction.html
+permalink: common/overview.html
 keywords: oracle, database, ontap, HANA, VMware
-summary: NetApp ONTAP is a powerful data-management platform with native capabilities that include everything from instant backup, restore and cloning capabilities, efficiency features such as inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
+summary: ONTAP is a powerful data-management platform with native capabilities that include everything from instant backup, restore and cloning capabilities, efficiency features such as inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
 ---
 
-= Oracle Databases on ONTAP
+= ONTAP for Enterprise Applications
 :hardbreaks:
 :nofooter:
 :icons: font
