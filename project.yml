@@ -7,7 +7,7 @@ settings:
     pdf_enabled: false
 sidebar:
   entries:
-    - title: Enterprise Applications Implementation Guides
+    - title: Implementation Guides
       url: /index.html
     - section: common
     - section: mysql

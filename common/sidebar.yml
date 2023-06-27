@@ -11,22 +11,22 @@ entries:
         url: /common/ontap/capacity-limits.html
       - title: Storage Virtual Machines
         url: /common/ontap/svm.html
-      - title: Logical Interfaces
       - title: Network configuration
         entries:
+        - title: Logical Interfaces
+          url: /common/network-configuration/lif.html
         - title: Ethernet configuration
-          url: /common/ethernet_configuration.html
+          url: /common/network-configuration/ethernet_configuration.html
         - title: FC SAN configuration
-          url: /common/fcsan_configuration.html
-        url: /common/ontap/lif.html
+          url: /common/network-configuration/fcsan_configuration.html
       - title: Quality of Service (QoS)
         url: /common/ontap/qos.html
       - title: Efficiency
         url: /common/ontap/efficiency.html
       - title: Thin Provisioning
         url: /common/ontap/thin_provisioning.html
-      - title: Checksums
-        url: /common/ontap/checksums.html
+      - title: Data integrity
+        url: /common/ontap/integrity.html
       - title: Snapshots
         url: /common/ontap/snapshots.html
       - title: Failover and Switchover

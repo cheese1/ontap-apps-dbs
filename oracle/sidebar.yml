@@ -1,8 +1,8 @@
 section: oracle
 title: Oracle on ONTAP
 entries:
-  - title: Introduction
-    url: /oracle/introduction.html
+  - title: Overview
+    url: /oracle/overview.html
   - title: Storage Configuration
     entries:
     - title: NFS Storage
@@ -43,6 +43,10 @@ entries:
     url: /oracle/virtualization/intro.html
   - title: Oracle Data protection
     entries:
+    - title: Data integrity
+      url: /oracle/dp/integrity.html
+    - title: Snapshots
+      url: /oracle/dp/snapshots.html
     - title: Oracle Online Backups
       url: /oracle/dp/oracle_hot_backup.html
     - title: Consistency Group backup

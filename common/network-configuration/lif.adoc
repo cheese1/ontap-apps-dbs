@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/ontap/lif.html
+permalink: common/network-configuration/lif.html
 keywords: ontap, LIF, multipath, multipathing
 summary: LIF configuration
 ---

@@ -5,7 +5,7 @@ permalink: index.html
 summary: Implementation Guides
 ---
 
-= Implementations Guides
+= Enterprise Application Implementation Guides
 :hardbreaks:
 :nofooter:
 :icons: font

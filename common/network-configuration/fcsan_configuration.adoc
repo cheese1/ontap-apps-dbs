@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: oracle/network-configuration/san_configuration.html
-keywords: TR-3633, oracle, database, ontap, SAN, zoning
+permalink: /common/network-configuration/fcsan_configuration.html
+keywords: ontap, SAN, zoning
 summary: FC SAN configuration for Oracle on ONTAP
 ---
 

@@ -2,4 +2,4 @@ section: kvm
 title: KVM
 entries:
   - title: Configuration Guides
-    url: kvm/introduction.html
+    url: kvm/overview.html

@@ -3,6 +3,8 @@ title: SAP HANA on ONTAP
 entries:
   - title: SAP HANA on NetApp AFF Systems with FCP Configuration Guide
     entries:
+      - title: Overview
+        url: /hana/overview.html
       - title: Introduction
         url: /hana/saphana_aff_fc_introduction.html
       - title: Architecture

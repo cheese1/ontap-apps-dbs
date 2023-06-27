@@ -1,8 +1,8 @@
 section: mssql
 title: Microsoft SQL Server on ONTAP
 entries:
-  - title: Introduction
-    url: /mssql/introduction.html
+  - title: Overview
+    url: /mssql/overview.html
   - title: SQL Server workload types
     url: /mssql/workloads.html
   - title: Benchmarking
