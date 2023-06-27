@@ -1,8 +1,8 @@
 section: postgres
 title: PostgreSQL on ONTAP
 entries:
-  - title: Introduction
-    url: /postgres/introduction.html
+  - title: Overview
+    url: /postgres/overview.html
   - title: PostgreSQL architecture
     url: /postgres/architecture.html
   - title: Data protection

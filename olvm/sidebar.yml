@@ -1,5 +1,5 @@
 section: olvm
 title: OLVM
 entries:
-  - title: Configuration Guides
-    url: olvm/introduction.html
+  - title: Overview
+    url: olvm/overview.html

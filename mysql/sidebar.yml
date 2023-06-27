@@ -1,8 +1,8 @@
 section: mysql
 title: MySQL on ONTAP
 entries:
-  - title: Introduction
-    url: /mysql/introduction.html
+  - title: Overview
+    url: /mysql/overview.html
   - title: Host Configuration
     entries:
     - title: Slot Tables 

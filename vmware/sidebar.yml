@@ -1,8 +1,8 @@
 section: vmware
 title: VMware
 entries:
-  - title: "Get Started With NetApp and VMware"
-    url: /virtualization/netapp-vmware.html
+  - title: Overview
+    url: /virtualization/overview.html
   - title: "What's New for VMware Virtualization"
     url: https://docs.netapp.com/us-en/ontap-whatsnew/ontap98fo_vmware_virtualization.html
   - title: "ONTAP tools for VMware vSphere - Product Security"

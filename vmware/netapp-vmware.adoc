@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/netapp-vmware.html
+permalink: vmware/overview.html
 keywords: netapp, vmware, getting, started
 summary:
 ---
