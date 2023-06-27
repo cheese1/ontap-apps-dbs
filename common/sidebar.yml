@@ -1,0 +1,71 @@
+section: common
+title: ONTAP for enterprise applications
+entries:
+  - title: Overview
+    url: /common/overview.html
+  - title: ONTAP core Technologies
+    entries:
+      - title: RAID
+        url: /common/ontap/raid.html
+      - title: Capacity limits
+        url: /common/ontap/capacity-limits.html
+      - title: Storage virtual machines
+        url: /common/ontap/svm.html
+      - title: Network configuration
+        entries:
+        - title: Logical interfaces
+          url: /common/network-configuration/lif.html
+        - title: Ethernet configuration
+          url: /common/network-configuration/ethernet_configuration.html
+        - title: FC SAN configuration
+          url: /common/network-configuration/fcsan_configuration.html
+      - title: Quality of service (QoS)
+        url: /common/ontap/qos.html
+      - title: Efficiency
+        url: /common/ontap/efficiency.html
+      - title: Thin provisioning
+        url: /common/ontap/thin_provisioning.html
+      - title: Data integrity
+        url: /common/ontap/integrity.html
+      - title: Snapshots
+        url: /common/ontap/snapshots.html
+      - title: Failover and switchover
+        url: /common/ontap/failover.html
+  - title: ONTAP data protection
+    entries:
+    - title: ONTAP Data protection fundamentals
+      url: /common/dp/fundamentals.html
+    - title: RPO, TRO, and SLAs
+      url: /common/dp/slas.html
+    - title: Planning
+      url: /common/dp/planning.html
+    - title: Data availability
+      url: /common/dp/availability.html
+    - title: Data integrity
+      url: /common/dp/integrity.html
+  - title: Database Tiering
+    entries:
+    - title: Overview
+      url: /common/tiering/introduction.html
+    - title: FabricPool architecture
+      url: /common/tiering/overview.html
+    - title: Tiering Policies
+      entries:
+      - title: Sending data to Object Store
+        url: /common/data/tiering_policies.html
+      - title: Retriving data from Object Store
+        url: /common/data_retrieval_policies.html
+    - title: Tiering strategies
+      entries:
+      - title: Whole datafiles
+        url: /common/tiering/whole_datafiles.html
+      - title: Partial datafiles
+        url: /common/tiering/partial_datafiles.html
+      - title: Archive logs
+        url: /common/tiering/logs.html
+      - title: Snapshots
+        url: /common/tiering/snapshots.html
+      - title: RMAN backups and exports
+        url: /common/tiering/backups.html
+      - title: Object store access interruptions
+        url: /common/tiering/access_interruptions.html

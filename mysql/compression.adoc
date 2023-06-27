@@ -1,0 +1,43 @@
+---
+sidebar: sidebar
+permalink: mysql/compression.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Compression
+
+Before all-flash storage systems were available, database compression was of limited value, because most databases required a large number of drives to provide acceptable performance. Storage systems contained much more capacity than required as a side effect of the large number of drives. The scenario has changed with the rise of solid-state storage. You no longer need to vastly overprovision the drive count purely to obtain good performance. You can match the drive space in a storage system to actual capacity needs. 
+
+The increased IOPS capability of SSDs almost always yields cost savings compared to spinning drives, but compression can achieve further savings by increasing the effective capacity of solid-state media. Compression is available in MySQL, but it creates a load on the database server CPUs, which can damage performance. A better option is to offload the compression work to the storage system.
+
+== Adaptive Compression
+
+Adaptive compression has been thoroughly tested with database workloads with no observed effect on performance, even in an all-flash environment in which latency is measured in microseconds. In initial testing, some customers have reported a performance increase with the use of compression. 
+
+NetApp ONTAP manages physical blocks in 4KB units. Therefore, the maximum possible compression ratio with adaptive compression alone is 2:1 with a database using an 8KB block. Early testing with real customer data has shown compression ratios approaching this level, but results vary according to the type of data stored.
+
+The simplest approach for using compression is enabling adaptive compression for all database volumes. As stated previously, adaptive compression is suitable for all I/O patterns. Note the following exceptions:
+
+* If a volume is not thin provisioned, do not enable compression; it provides no benefit. 
+
+* If a large number of binary logs are retained, moving them to a volume using secondary compression improves storage efficiency.
+
+* Some databases have high redo logging (transaction logs) rates. Redo logs are comparatively small and are constantly overwritten, so any space savings from compression is negligible. This data should be moved to a volume without compression. 
+
+* If data files contain a significant amount of uncompressible data—for example, when compression is already enabled, or encryption is used—place this data on volumes without compression. 
+
+== Secondary Compression
+
+Secondary compression uses a larger block size that is fixed at 32KB. This feature allows ONTAP to compress data beyond 2:1, but secondary compression is primarily designed for data at rest or data that is written sequentially and requires maximum compression.
+
+NetApp recommends secondary compression for datasets that include large amounts of unchanging data, such as binary logs, logical or physical backups, or exported data. These types of files are written sequentially and not updated. This point does not mean that adaptive compression is discouraged. However, if the volume of data being stored is large, then secondary compression delivers better savings when compared to adaptive compression.
+
+* *Caution:* Secondary compression and deduplication should not be used together with flat-file backups. Small changes to the backed-up data will affect the 32KB compression window. If the window shifts, the resulting compressed data will differ across the entire file. Deduplication occurs after compression, which means the deduplication engine will see each compressed backup differently. If deduplication of backups is required, don’t use secondary compression. Adaptive compression is preferable, because it works at a smaller block size and does not disrupt deduplication efficiency. For similar reasons, host-side compression also interferes with deduplication efficiency.

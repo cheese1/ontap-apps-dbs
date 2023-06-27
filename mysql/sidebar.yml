@@ -1,0 +1,43 @@
+section: mysql
+title: MySQL on ONTAP
+entries:
+  - title: Overview
+    url: /mysql/overview.html
+  - title: Host configuration
+    entries:
+    - title: SlottTables 
+      url: /mysql/slot-tables.html
+    - title: Security-enhanced Linux
+      url: /mysql/selinux.html
+    - title: I/O schedulers
+      url: /mysql/schedules.html
+    - title: Multipathing
+      url: /mysql/multipathing.html
+    - title: Open file limits 
+      url: /mysql/open-file-limits.html
+  - title: Database Configuration
+    entries:
+    - title: Introduction
+      url: /mysql/mysql-intro.html
+    - title: MySQL File Structure
+      url: /mysql/file-structure.html
+    - title: MySQL configuration overview
+      url: /mysql/configuration.html
+    - title: innodb_log_file_size
+      url: /mysql/innodb_log_file_size.html
+    - title: innodb_flush_log_at_trx_commit
+      url: /mysql/innodb_flush_log_at_trx_commit.html
+    - title: innodb_doublewrite
+      url: /mysql/innodb_doublewrite.html
+    - title: innodb_buffer_pool_size
+      url: /mysql/innodb_buffer_pool_size.html
+    - title: innodb_flush_method
+      url: /mysql/innodb_flush_method.html
+    - title: innodb_io_capacity
+      url: /mysql/innodb_io_capacity.html
+    - title: innodb_lru_scan_depth 
+      url: /mysql/innodb_lru_scan_depth.html
+    - title: open_file_limits
+      url: /mysql/open_file_limits.html
+    - title: Deployment methods 
+      url: /mysql/deployment.html

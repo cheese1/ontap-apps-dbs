@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: common/tiering/introduction.html
+keywords: TR-4695, oracle, storage, tiering, fabricpool
+summary: Introduction to database tiering with FabricPool
+---
+
+= Database Storage Tiering with NetApp FabricPool
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+NetApp FabricPool is an automated storage tiering feature in which active data resides on local high-performance solid-state drives (SSDs), and inactive data is tiered to low-cost object storage. It was first made available in NetApp ONTAP 9.2 for management of read-only data and has since been enhanced in ONTAP 9.4 to also tier active data.
+
+In a database context, you can create a single storage architecture in which the hot data remains on the local storage array. Inactive data such as archived logs, database backups, or even less active database blocks are moved to less expensive object storage.
+
+FabricPool is integrated with ONTAP. The tiering process is fully automated with multiple policy-based management options. Apart from the performance characteristics of the object storage layer, FabricPool is transparent to application and database configuration. No architectural changes are required, and you can continue managing your database and application environment from the central ONTAP storage system.
+
+== FabricPool and NVMe
+
+You should also consider FabricPool an important part of your Non-Volatile Memory Express (NVMe) strategy. FabricPool integrates an NVMe performance tier with an object-storage capacity tier. Only the data that truly belongs on the NVMe-based media remains on the performance tier, providing maximum return on your NVMe investment.

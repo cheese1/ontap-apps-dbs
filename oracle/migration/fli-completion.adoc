@@ -1,0 +1,70 @@
+---
+sidebar: sidebar
+permalink: oracle/migration/fli-completion.html
+keywords: TR-4534, migration, oracle, FLI
+summary: Completing an FLI cutover
+---
+
+= Foreign LUN import - completion
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+From a host point of view, the migration is complete, but I/O is still served from the foreign array until the import relationships are deleted.
+
+Before deleting the relationships, you must confirm that the migration process is complete for all LUNs.
+
+....
+EcoSystems-8060::*> lun import show -vserver jfsCloud0 -fields foreign-disk,path,operational-state
+vserver   foreign-disk path              operational-state
+--------- ------------ ----------------- -----------------
+jfsCloud0 800DT$HuVWB/ /vol/new_asm/LUN4 completed
+jfsCloud0 800DT$HuVWBW /vol/new_asm/LUN0 completed
+jfsCloud0 800DT$HuVWBX /vol/new_asm/LUN1 completed
+jfsCloud0 800DT$HuVWBY /vol/new_asm/LUN2 completed
+jfsCloud0 800DT$HuVWBZ /vol/new_asm/LUN3 completed
+jfsCloud0 800DT$HuVWBa /vol/new_asm/LUN5 completed
+jfsCloud0 800DT$HuVWBb /vol/new_asm/LUN6 completed
+jfsCloud0 800DT$HuVWBc /vol/new_asm/LUN7 completed
+jfsCloud0 800DT$HuVWBd /vol/new_asm/LUN8 completed
+jfsCloud0 800DT$HuVWBe /vol/new_asm/LUN9 completed
+jfsCloud0 800DT$HuVWBf /vol/new_lvm/LUN0 completed
+jfsCloud0 800DT$HuVWBg /vol/new_lvm/LUN1 completed
+jfsCloud0 800DT$HuVWBh /vol/new_lvm/LUN2 completed
+jfsCloud0 800DT$HuVWBi /vol/new_lvm/LUN3 completed
+jfsCloud0 800DT$HuVWBj /vol/new_lvm/LUN4 completed
+jfsCloud0 800DT$HuVWBk /vol/new_lvm/LUN5 completed
+jfsCloud0 800DT$HuVWBl /vol/new_lvm/LUN6 completed
+jfsCloud0 800DT$HuVWBm /vol/new_lvm/LUN7 completed
+jfsCloud0 800DT$HuVWBn /vol/new_lvm/LUN8 completed
+jfsCloud0 800DT$HuVWBo /vol/new_lvm/LUN9 completed
+20 entries were displayed.
+....
+
+== Delete import relationships
+
+When the migration process is complete, delete the migration relationship. After you have done so, I/O is served exclusively from the drives on ONTAP.
+
+....
+EcoSystems-8060::*> lun import delete -vserver jfsCloud0 -path /vol/new_asm/LUN0
+EcoSystems-8060::*> lun import delete -vserver jfsCloud0 -path /vol/new_asm/LUN1
+...
+EcoSystems-8060::*> lun import delete -vserver jfsCloud0 -path /vol/new_lvm/LUN8
+EcoSystems-8060::*> lun import delete -vserver jfsCloud0 -path /vol/new_lvm/LUN9
+....
+
+== Deregister foreign LUNs
+
+Finally, modify the disk to remove the `is-foreign` designation.
+
+....
+EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBW} -is-foreign false
+EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBX} -is-foreign false
+...
+EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBn} -is-foreign false
+EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBo} -is-foreign false
+EcoSystems-8060::*>
+....

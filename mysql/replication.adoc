@@ -1,0 +1,21 @@
+---
+sidebar: sidebar
+permalink: mysql/replication.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Data Replication and Disaster Recovery
+
+Nearly every database requires data replication. At the most basic level, replication can mean a copy on tape stored off site or database-level replication to a standby database. Disaster recovery refers to the use of those replica copies to bring a service online if a catastrophic loss of service occurs. ONTAP offers multiple replication options to address various requirements natively within the storage array, covering a complete spectrum of needs. These options can range from simple replication of backups to a remote site up to a synchronous, fully automated solution that delivers disaster recovery and HA in the same platform. 
+
+The primary ONTAP replication technologies applicable to databases is the NetApp SnapMirror technologies. This products is not add-on but are fully integrated into ONTAP and activated by the simple addition of a license key. Storage-level replication is not the only option, either. Database-level replication, MySQL native replication, global transaction identifier (GTID) semi-sync replication, InnoDB clusters, and Percona XtraDB Cluster (PXC) can also be used as data protection strategies.
+
+The right choice depends on the specific replication, recovery, and retention requirements.

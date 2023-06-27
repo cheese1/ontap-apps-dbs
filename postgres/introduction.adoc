@@ -1,0 +1,15 @@
+---
+sidebar: sidebar
+permalink: postgres/introduction.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases on ONTAP
+---
+
+[.lead]
+Placeholder
+
+= Introduction
+
+As data grows exponentially, data management becomes more complex for enterprises like yours. This complexity increases your licensing, operational, support, and maintenance costs. To reduce the overall TCO, you might consider switching from commercial to open-source databases with reliable, high-performing back-end storage. PostgreSQL is an advanced open-source database that is widely used in academic, commercial, and large enterprises. It comes with a new set of features that addresses the gaps in other relational database management systems (RDBMSs). ONTAP proprietary software is used in storage disk arrays such as NetApp FAS and NetApp AFF, NetApp ONTAP Select, Amazon Web Services (AWS) FSx on ONTAP and NetApp Cloud Volumes ONTAP. With the release of ONTAP 9, you can unify data management across flash, disk, and cloud. This unification enables you to simplify your storage environment and build the foundation for a Data Fabric that makes it easy to move your data anywhere.
+
+Note: This document is intended for customers who use PostgreSQL databases in both the physical and virtualized environments. It contains information about best practices for successfully deploying and managing PostgreSQL databases on ONTAP 9.x. The recommendations in this report are generic, so they are not specific to any configuration. Depending on your business needs, some suggestions might require changes. You must evaluate your environment against the official documentation for PostgreSQL, hypervisors, OS, and ONTAP storage.

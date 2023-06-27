@@ -1,0 +1,38 @@
+---
+sidebar: sidebar
+permalink: oracle/storage-configuration/san_configuration.html
+keywords: TR-3633, oracle, database, ontap, SAN, ASM
+summary: Oracle on SAN configuration overview
+---
+
+= SAN configuration
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+This section contains the high-level recommendations for configuration of Oracle database SAN storage.
+
+The primary requirements are found in link:/common/storage-configuration/san-configuration.html[SAN Configuration], with additional guidance as follows:
+
+== LUN misalignment warnings
+
+Oracle redo logging normally generates unaligned I/O that can cause misleading warnings about misaligned LUNs on ONTAP. Oracle redo logging performs a sequential overwrite of the redo log file with writes of varying size. A log write operation that does not align to 4KB boundaries does not ordinarily cause performance problems because the next log write operation completes the block. The result is that ONTAP is able to process almost all writes as complete 4KB blocks, even though the data in some 4KB blocks was written in two separate operations.
+
+Verify alignment by using by using utilities such as `sio` or `dd` that can generate I/O at a defined block size. The I/O alignment statistics on the storage system can be viewed with the `stats` command. See link:../notes/wafl_alignment_verification.html[WAFL Alignment Verification] for more information.
+
+== Datafile block size
+
+Some OSs offer a choice of file system block sizes. For file systems supporting datafiles, the block size should be 8KB when compression is used. When compression is not required, a block size of either 8KB or 4KB can be used.
+
+Some OSs offer a choice of file system block sizes. For file systems supporting datafiles, the block size should be 4KB. If a datafile is placed on a file system with a 512-byte block, misaligned files are possible. The LUN and the file system might be properly aligned based on NetApp recommendations, but the file I/O would be misaligned. Such a misalignment would cause severe performance problems.
+
+== Redo block size
+
+File systems supporting redo logs must use a block size that is a multiple of the redo block size. This generally requires that both the redo log file system and the redo log itself use a block size of 512 bytes. At very high redo rates, it is possible that 4KB block sizes perform better because high redo rates allow I/O to be performed in fewer and more efficient operations. If redo rates are greater than 50MBps, consider testing a 4KB block size.
+
+A few customer problems have been identified with databases using redo logs with a 512-byte block size on a file system with a 4KB block size and many very small transactions. The overhead involved in applying multiple 512-byte changes to a single 4KB file system block led to performance problems that were resolved by changing the file system to use a block size of 512 bytes.
+
+NetApp recommends not changing the redo block size unless advised by a relevant customer support or professional services organization or the change is based on official product documentation.

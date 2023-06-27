@@ -1,0 +1,23 @@
+---
+sidebar: sidebar
+permalink: mysql/ethernet-flow-control.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Ethernet Flow Control
+
+Ethernet flow control allows a client to request that a sender temporarily stop data transmission—usually because the receiver cannot process incoming data quickly enough. At one time, requesting that a sender cease transmission was less disruptive than having a receiver discard packets because buffers were full. This is no longer the case with the TCP stacks used in operating systems today. In fact, flow control causes more problems than it solves.
+
+Performance problems caused by Ethernet flow control have been increasing in recent years. This is because Ethernet flow control operates at the physical layer. If a network configuration permits any database server to send an Ethernet flow control request to a storage system, I/O pauses for all connected clients. Because more clients are served by a single storage controller, the likelihood of these clients sending flow control requests increases. The problem has occurred frequently at customer sites with extensive operating system virtualization.
+
+A NIC on a NetApp system should not receive flow-control requests. The method used to achieve this result varies according to the network switch manufacturer. Usually, you can set flow control on an Ethernet switch to receive desired or receive on, which means that a flow control request is not forwarded to the storage controller. If the network connection on the storage controller doesn’t allow flow-control disabling, configure the clients to never send flow control requests. Change to either the NIC configuration on the database server itself or the switch ports to which the database server is connected.
+
+Make sure that NetApp storage controllers do not receive Ethernet flow-control packets. If possible, set the switch ports to which the controller is attached; however, some switch hardware has limitations that might require client-side changes instead.

@@ -1,0 +1,43 @@
+section: postgres
+title: PostgreSQL on ONTAP
+entries:
+  - title: Overview
+    url: /postgres/overview.html
+  - title: PostgreSQL architecture
+    url: /postgres/architecture.html
+  - title: Data protection
+    entries:
+    - title: Introduction
+      url: /postgres/index-protection.html
+    - title: Native data protection
+      url: /postgres/native-dp.html
+    - title: Snapshot technology
+      url: /postgres/snapshot-dp.html
+    - title: Data protection software
+      url: /postgres/snapcenter-dp.html
+  - title: Database security
+    url: /postgres/security.html
+  - title: Host configuration
+    url: /postgres/host-config.html
+  - title: SELinux
+    url: /postgres/selinux.html
+  - title: Database configuration
+    entries:
+    - title: Introduction
+      url: /postgres/index-bp.html
+    - title: Tablespaces
+      url: /postgres/tablespaces.html
+    - title: File system options
+      url: /postgres/filesystems.html
+    - title: PostgreSQL performance tuning
+      url: /postgres/performance-tuning.html
+    - title: Database configuration
+      url: /postgres/db-config.html
+    - title: Best practices summary
+      url: /postgres/summary.html
+    - title: TOAST
+      url: /postgres/toast.html
+    - title: VACUUM
+      url: /postgres/vacuum.html
+    - title: PostgreSQL filesystem layout
+      url: /postgres/fs-layout.html

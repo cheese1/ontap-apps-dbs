@@ -1,0 +1,190 @@
+---
+sidebar: sidebar
+permalink: common/dp/fundamentals.html
+keywords: TR-4591, oracle, ontap, data protection
+summary: Basic principles of ONTAP data protection
+---
+
+= ONTAP Data Protection Fundamentals
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+The most mission-critical data is usually found in databases. An enterprise cannot operate without access to its data, and in some cases, the data defines the business. This data must be protected; however, data protection is more than just ensuring a usable backup—it is about performing the backups quickly and reliably as well as storing backups safely. The other side of data protection is data recovery. When data is inaccessible, the enterprise is affected and may be inoperative until data is restored. This process must be quick and reliable. Finally, most databases must be protected against disasters, which means maintaining a replica of the database. The replica must be sufficiently up to date, and it must be quick and simple to make the replica a fully operational database.
+
+== Snapshots
+
+The foundation of NetApp ONTAP data protection software is NetApp snapshot technology. The key values are as follows:
+
+* *Simplicity.* A Snapshot copy is a read-only copy of the contents of a container of data at a specific point in time.
+* *Efficiency.* Snapshot copies require no space at the moment of creation. Space is only consumed when data is changed.
+* *Manageability.* A backup strategy based on Snapshot copies is easy to configure and manage because Snapshot copies are a native part of the storage OS. If the storage system is powered on, it is ready to create backups.
+* *Scalability.* Up to 1024 backups of a single container of files and LUNs can be preserved. For complex datasets, multiple containers of data can be protected by a single, consistent set of Snapshot copies.
+* Performance is unaffected, whether a volume contains 250 Snapshot copies or none.
+
+Although many storage vendors offer snapshot technology, the snapshot technology within ONTAP is unique and offers significant benefits to enterprise application and database environments:
+
+* ONTAP Snapshot copies are part of the underlying Write-Anywhere File Layout (WAFL). They are not an add-on or external technology. This simplifies management because the storage system is the backup system.
+* ONTAP Snapshot copies do not affect performance, except for some edge cases such as when so much data is stored in Snapshot copies that the underlying storage system fills up.
+* The term "consistency group" is often used to refer to a grouping of storage objects that are managed as a consistent collection of data. A snapshot copy of a particular ONTAP volume constitutes consistency group backup.
+
+ONTAP Snapshot copies scale better than competing technology. Customers can store 5, 50, or 500 snapshots without affecting performance. The maximum number of Snapshot copies currently allowed in a volume is 1024. If additional Snapshot copy retention is required, there are options to cascade the Snapshot copies to additional volumes.
+
+As a result, protecting a database running on ONTAP is simple and highly scalable. Database backups do not require movement of data, therefore a backup strategy can be tailored to the needs of the business rather than the limitations of network transfer rates, large number of tape drives, or disk staging areas.
+
+=== Is a snapshot a backup?
+
+One commonly asked question about the use of snapshots as a data protection strategy is the fact that the "real" data and the snapshot data are located on the same drives. Loss of those drives would result in the loss of both the primary data and the backup.
+
+This is a valid concern. Local snapshots are used for day-to-day backup and recovery needs, and in that respect the snapshot is a backup. Close to 99% of all recovery scenarios in NetApp environments rely on snapshots to meet even the most aggressive RTO requirements.
+
+Local snapshots should, however, never be the only backup strategy, which is why NetApp offers technology such as SnapMirror and SnapVault replication to quickly and efficiently replicate snapshots to an independent set of drives. In a properly architected solution with snapshots plus snapshot replication, the use of tape can be minimized to perhaps a quarterly archive or eliminated entirely.
+
+== SnapRestore
+
+Rapid data restoration in ONTAP from a Snapshot copy is delivered by NetApp SnapRestore technology. The key values are as follows:
+
+* Individual files or LUNs can be restored in seconds, whether it is a 2TB LUN or a 4KB file.
+* An entire container (a NetApp FlexVol volume) of LUNs and/or files can be restored in seconds, whether it is 10GB or 100TB of data.
+
+When a critical database is down, critical business operations are down. Tapes can break, and even restores from disk-based backups can be slow to transfer across the network. SnapRestore avoids these problems by delivering near instantaneous restoration of databases. Even petabyte-scale databases can be completely restored with just a few minutes of effort.
+
+The reason SnapRestore works so quickly and efficiently is due to the nature of a Snapshot copy, which is essentially a parallel read-only view of the contents of a volume at a specific point in time. The active blocks are the real blocks that can be changed, while the Snapshot copy is a read-only view into the state of the blocks that constitute the files and LUNs at the time the Snapshot copy was created.
+
+ONTAP only permits read-only access to snapshot data, but the data can be reactivated with SnapRestore. The Snapshot copy is reenabled as a read-write view of the data, returning the data to its prior state. SnapRestore can operate at the volume or the file level. The technology is essentially the same with a few minor differences in behavior.
+
+=== Volume SnapRestore
+
+Volume-based SnapRestore returns the entire volume of data to an earlier state. This operation does not require data movement, meaning that the restore process is essentially instantaneous, although the API or CLI operation might take a few seconds to be processed. Restoring 1GB of data is no more complicated or time-consuming than restoring 1PB of data. This capability is the primary reason many database customers migrate to ONTAP storage systems. It delivers an RTO measured in seconds for even the largest datasets.
+
+One drawback to volume-based SnapRestore is caused by the fact that changes within a volume are cumulative over time. Therefore, each Snapshot copy and the active file data are dependent on the changes leading up to that point. Reverting a volume to an earlier state means discarding all the subsequent changes that had been made to the data. What is less obvious, however, is that this includes subsequently created Snapshot copies. This is not always desirable.
+
+For example, a data retention SLA might specify 30 days of nightly backups. Restoring a database to a Snapshot copy created five days ago with volume SnapRestore would discard all the Snapshot copies created on the previous five days, violating the SLA.
+
+There are a number of options available to address this limitation:
+
+. Data can be copied from a prior Snapshot copy, as opposed to performing a SnapRestore of the entire volume. This method works best with smaller datasets.
+. A Snapshot copy can be cloned rather than restored. The limitation to this approach is that the source Snapshot copy is a dependency of the clone. Therefore, it cannot be deleted unless the clone is also deleted or is split into an independent volume.
+. Use of file-based SnapRestore.
+
+=== File SnapRestore
+
+File-based SnapRestore is a more granular snapshot-based restoration process. Rather than reverting the state of an entire volume, the state of an individual file or LUN is reverted. No Snapshot copies need to be deleted, nor does this operation create any dependency on a prior Snapshot copy. The file or LUN becomes immediately available in the active volume.
+
+No data movement is required during a SnapRestore restore of a file or LUN. However, some internal metadata updates are required to reflect the fact that the underlying blocks in a file or LUN now exist in both a Snapshot copy and the active volume. There should be no effect on performance, but this process blocks the creation of Snapshot copies until it is complete. The processing rate is approximately 5GBps (18TB/hour) based on the total size of the files restored.
+
+== Data replication and disaster recovery
+
+Nearly every database requires data replication. At the most basic level, replication can mean a copy on tape stored offsite or database-level replication to a standby database. Disaster recovery refers to the use of those replica copies to bring a service online in the event of catastrophic loss of service.
+
+ONTAP offers multiple replication options to address a variety of requirements natively within the storage array, covering a complete spectrum of needs. These options can include simple replication of backups to a remote site up to a synchronous, fully automated solution that delivers both disaster recovery and high availability in the same platform.
+
+The primary ONTAP replication technologies applicable to databases are the NetApp SnapMirror and NetApp SyncMirror technologies. These are not add-on products; rather they are fully integrated into ONTAP and are activated by the simple addition of a license key. Storage-level replication is not the only option either. Database-level replication, such as with Oracle DataGuard, can also integrate into a data protection strategy based on ONTAP.
+
+The right choice depends on the specific replication, recovery, and retention requirements.
+
+=== ONTAP SnapMirror
+
+SnapMirror is the NetApp asynchronous replication solution, ideally suited for protecting large, complicated, and dynamic datasets such as databases and their associated applications. Its key values are as follows:
+
+* *Manageability.* SnapMirror is easy to configure and manage because it is a native part of the storage software. No add-on products are required. Replication relationships can be established in minutes and can be managed directly on the storage system.
+* *Simplicity.* Replication is based on FlexVol volumes, which are containers of LUNs or files that are replicated as a single consistent group.
+* *Efficiency.* After the initial replication relationship is established, only changes are replicated. Furthermore, efficiency features such as deduplication and compression are preserved, further reducing the amount of data that must be transferred to a remote site.
+* *Flexibility.* Mirrors can be temporarily broken to allow testing of disaster recovery procedures, and then the mirroring can be easily reestablished with no need for a complete remirroring. Only the changed data must be applied to bring the mirrors back into sync. Mirroring can also be reversed to allow a rapid resync after the disaster concludes and the original site is back in service. Finally, read-write clones of replicated data are available for testing and development.
+
+ONTAP offers several different replication technologies, but the most flexible is SnapMirror, a volume-to-volume asynchronous mirroring option.
+
+As mentioned before, a FlexVol volume is the basic unit of management for Snapshot-based backups and SnapRestore-based recovery. A FlexVol volume is also the basic unit for SnapMirror-based replication. The first step is establishing the baseline mirror of the source volume to the destination volume. After this mirror relationship is initialized, all subsequent operations are based on replication of the changed data alone.
+
+From a database recovery perspective, the key values of SnapMirror are as follows:
+
+* SnapMirror operations are simple to understand and can be easily automated.
+* A simple update of a SnapMirror replica requires that only the delta changes are replicated, reducing demands on bandwidth and allowing more frequent updates.
+* SnapMirror is highly granular. It is based on simple volume-to-volume relationships, allowing for the creation of hundreds of independently managed replicas and replication intervals. Replication does not need to be one-size-fits-all.
+* The mirroring direction can be easily reversed while preserving the ability to update the relationship based on the changes alone. This delivers rapid failback capability after the primary site is restored to service after a disaster such as a power failure. Only the changes must be synchronized back to the source.
+* Mirrors can easily be broken and efficiently resynced to permit rehearsal of disaster recovery procedures.
+* SnapMirror operating in full block-level replication mode replicates not just the data in a volume, but also the Snapshot copies. This capability provides both a copy of the data and a complete set of backups on the disaster recovery site.
+
+SnapMirror operating in version-flexible mode allows for replication of specific Snapshot copies, permitting different retention times at the primary and secondary sites.
+
+=== SnapMirror Synchronous
+
+SnapMirror Synchronous (SM-S) is an enhancement to SnapMirror that delivers RPO=0 synchronous replication. It is most often used in storage architectures where only subset of the total data requires synchronous mirroring.
+
+SM-S can operate in two slightly different modes, Sync and StrictSync.
+
+In Sync mode, changes are replicated before being acknowledged. This guarantees an RPO of zero, so long as replication is operational. If the change cannot be replicated, SM-S can exit synchronous mode and allow operations to continue. This allows RPO=0 under normal circumstances, but data processes do not completely halt if the replication destination is unavailable.
+
+StrictSync guarantees an RPO=0. A failure to replicate changes results in an I/O error, which typically causes an application shutdown.
+
+For a complete explanation of SM-S, see https://www.netapp.com/media/17174-tr4733.pdf?v=1221202075448P[TR-4733^] and the official ONTAP documentation. Features are continuously added with new versions of ONTAP.
+
+=== MetroCluster and SyncMirror
+
+MetroCluster is also a synchronous replication solution, aimed at large-scale mission-critical workloads. Replication is based on SyncMirror. At the simplest layer, SyncMirror creates two complete sets of RAID-protected data in two different locations. They could be in adjoining rooms within a data center, or they could be located many kilometers apart.
+
+SyncMirror is fully integrated with ONTAP and operates just above the RAID level. Therefore, all the usual ONTAP features, such as Snapshot copies, SnapRestore, and NetApp FlexClone, work seamlessly. It is still ONTAP, it just includes an additional layer of synchronous data mirroring.
+
+A collection of ONTAP controllers managing SyncMirror data is called a NetApp MetroCluster configuration. The primary purpose of MetroCluster is to provide high availability access to synchronously mirrored data in a variety of typical and disaster recovery failure scenarios.
+
+The key values of data protection with MetroCluster and SyncMirror are as follows:
+
+* In normal operations, SyncMirror delivers guaranteed synchronous mirroring across locations. A write operation is not acknowledged until it is present on nonvolatile media on both sites.
+* If connectivity between sites fails, SyncMirror automatically switches into asynchronous mode to keep the primary site serving data until connectivity is restored. When restored, it delivers rapid resynchronization by efficiently updating the changes that have accumulated on the primary site. Full reinitialization is not required.
+
+SnapMirror is also fully compatible with systems based on SyncMirror. For example, a primary database might be running on a MetroCluster cluster spread across two geographic sites. This database can also replicate backups to a third site as long-term archives or for the creation of clones in a DevOps environment.
+
+For a complete description of using Oracle on MetroCluster, see https://www.netapp.com/us/media/tr-4592.pdf[TR-4592^].
+
+== Consistency groups
+
+The term "consistency group" refers to the ability of a storage array to manage multiple storage resources as a single image. For example, a database might consist of 10 LUNs. The array must be able to back up, restore, and replicate those 10 LUNs in a consistent manner. Restoration is not possible if the images of the LUNs were not consistent at the point of backup. Replicating those 10 LUNs requires that all the replicas are perfectly synchronized with each other.
+
+The term "consistency group" is not often used when discussing ONTAP because consistency has always been a basic function of the volume and aggregate architecture within ONTAP. Many other storage arrays manage LUNs or file systems as individual units. They could then be optionally configured as a "consistency group" for purposes of data protection, but this is an extra step in the configuration.
+
+ONTAP has always been able to capture consistent local and replicated images of data. Although the various volumes on an ONTAP system are not usually formally described as a consistency group, that is what they are. A Snapshot copy of that volume is a consistency group image, restoration for that Snapshot copy is a consistency group restoration, and both SnapMirror and SnapVault offer consistency group replication.
+
+=== Dependent write order
+
+From a technical point of view, the key to a consistency group is preserving write order and, specifically, dependent write order. For example, a database writing to 10 LUNs writes simultaneously to all of them. Many writes are issued asynchronously, meaning that the order in which they are completed is unimportant and the actual order they are completed varies based on operating system and network behavior.
+
+Some write operations must be present on disk before the database can proceed with additional writes. These critical write operations are called dependent writes. Subsequent write I/O depends on the presence of these writes on disk. Any snapshot, recovery, or replication of these 10 LUNs must make sure that dependent write order is guaranteed. File system updates are another example of write-order dependent writes. The order in which file system changes are made must be preserved or the entire file system could become corrupt.
+
+[NOTE]
+Some storage systems can be configured for "async" operations, meaning that they can acknowledge a write before it has been committed to persistent media. This can improve performance, but it virtually guarantees data loss in the event of a storage system crash or power failure. ONTAP cannot be configured like this; it always operates in a synchronous mode. If a write has been acknowledged by ONTAP, it has been stored in persistent media.
+
+=== Consistency group snapshots
+
+Consistency group snapshots (cg-snapshots) are an extension of the basic ONTAP Snapshot technology. A standard snapshot operation creates a consistent image of all data within a single volume, but sometimes it is necessary to create a consistent set of snapshots across multiple volumes and even across multiple storage systems. The result is a set of snapshots that can be used in the same way as a snapshot of just one individual volume. They can be used for local data recovery, replicated for disaster recovery purposes, or cloned as a single consistent unit.
+
+The largest known use of cg-snapshots is for a database environment of approximately 1PB in size spanning 12 controllers. The cg-snapshots created on this system have been used for backup, recovery and cloning.
+
+Most of the time, when a data set spans volumes and write order must be preserved, a cg-snapshot is automatically used by the chosen management software. There is no need to understand the technical details of cg-snapshots in such cases. However, there are situations in which complicated data protection requirements require detailed control over the data protection and replication process. Automation workflows or the use of custom scripts to call the cg-snapshot APIs are some of options. Understanding the best option and the role of cg-snapshot requires a more detailed explanation of the technology.
+
+Creation of a set of cg-snapshots is a two-step process:
+
+. Establish write fencing on all target volumes.
+. Create snapshots of those volumes while in the fenced state. 0.
+
+Write fencing is established serially. This mean that as the fencing process is set up across multiple volumes, write I/O is frozen on the first volumes in the sequence as it continues to be committed to volumes that appear later. This might initially appear to violate the requirement for write order to be preserved, but that only applies to I/O that is issued asynchronously on the host and does not depend on any other writes.
+
+For example, a database might issue a lot of asynchronous datafile updates and allow the OS to reorder the I/O and complete them according to its own scheduler configuration. The order of this type of I/O cannot be guaranteed because the application and operating system have already released the requirement to preserve write order.
+
+As a counter example, most database logging activity is synchronous. The database does not proceed with further log writes until the I/O is acknowledged, and the order of those writes must be preserved. If a log I/O arrives on a fenced volume, it is not acknowledged and the application blocks on further writes. Likewise, file system metadata I/O is usually synchronous. For example, a file deletion operation must not be lost. If an operating system with an xfs file system deleted a file and the I/O that updated the xfs file system metadata to remove the reference to that file landed on a fenced volume, then the file system activity would pause. This guarantees the integrity of the file system during cg-snapshot operations.
+
+After write fencing is set up across the target volumes, they are ready for snapshot creation. The snapshots need not be created at precisely the same time because the state of the volumes is frozen from a dependent write point of view. To guard against a flaw in the application creating the cg snapshots, the initial write fencing includes a configurable timeout in which ONTAP automatically releases the fencing and resumes write processing after a defined number of seconds. If all the snapshots are created before the timeout period lapses, then the resulting set of snapshots are a valid consistency group.
+
+== SnapCenter software and other management tools
+
+The primary value of ONTAP in a database environment comes from the core ONTAP technologies such as instant Snapshot copies, simple SnapMirror replication, and efficient creation of FlexClone volumes. In some cases, simple configuration of these features within ONTAP meets requirements, but more complicated needs require an orchestration layer.
+
+The purpose of this TR is to explain the principles of data protection on ONTAP with a goal of making a database storage architecture "snapshot-friendly" and ready.
+
+=== SnapCenter
+
+SnapCenter is the flagship NetApp data protection product. At a very low level, it is similar to the SnapManager products in terms of how it executes database backups, but it was built from the ground up to deliver a single-pane-of-glass for data protection management on NetApp storage systems.
+
+SnapCenter includes the basic functions such as Snapshot based backups and restores, SnapMirror and SnapVault replication, and other features required to operate at scale for large enterprises. These advanced features include an expanded role-based access control (RBAC) capability, RESTful APIs to integrate with third-party orchestration products, nondisruptive central management of SnapCenter plug-ins on database hosts, and a user interface designed for cloud-scale environments.

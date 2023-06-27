@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: mysql/efficiency.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= ONTAP Efficiency
+
+Storage efficiency enables you to store the maximum amount of data within the smallest possible space and at the lowest possible cost. The NetApp storage efficiency technologies described in this section can help you realize maximum space savings.

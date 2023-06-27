@@ -1,11 +1,11 @@
 ---
-layout: landing-page
+layout: astra
 sidebar: sidebar
 permalink: index.html
-# lead: Use only if indexpage.lead is not present in _index.yml
-summary: "summary, used for search results"
+summary: Implementation Guides
 ---
-= replace with repository name
+
+= Enterprise Application Implementation Guides
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: mssql/flexclones.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Flexclones
+
+FlexClone technology can be leveraged both at the primary storage system and at the SnapMirror destination for effective utilization of resources. FlexClone can also be used for disaster recovery testing without affecting the operational continuity of the SQL Server environment.
+
+SQL Server requires application-consistent Snapshot copies to create FlexClone volumes based on a Snapshot. NetApp recommends using SnapCenter to create Snapshot copies. For more details about the SQL Server Plug-in for SnapCenter, see TR-4714: Best Practice Guide for SQL Server Using NetApp SnapCenter.

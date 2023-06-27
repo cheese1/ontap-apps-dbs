@@ -1,0 +1,127 @@
+section: oracle
+title: Oracle on ONTAP
+entries:
+  - title: Overview
+    url: /oracle/overview.html
+  - title: Storage configuration
+    entries:
+    - title: NFS storage
+      url: /oracle/storage-configuration/nfs_configuration.html
+    - title: SAN storage
+      url: /oracle/storage-configuration/san_configuration.html
+    - title: Oracle and NVFAIL
+      url: /oracle/dp/oracle_and_nvfail.html
+    - title: ASM Reclamation Utility
+      url: /oracle/storage-configuration/asmru.html
+  - title: Database configuration
+    entries:
+    - title: db_file_multiblock_read_count
+      url: /oracle/oracle-configuration/mbr.html
+    - title: filesystemio_options
+      url: /oracle/oracle-configuration/filesystemio_options.html
+    - title: Oracle RAC
+      url: /oracle/oracle-configuration/rac.html
+    - title: Redo block size
+      url: /oracle/oracle-configuration/redo_block_size.html
+  - title: Network configuration
+    url: /oracle/network-configuration/network-overview.html
+  - title: Host configuration
+    entries:
+    - title: AIX
+      url: /oracle/host-configuration/aix.html
+    - title: HP-UX
+      url: /oracle/host-configuration/hp-ux.html
+    - title: Linux
+      url: /oracle/host-configuration/linux.html
+    - title: Linux with ASMlib and AFD
+      url: /oracle/host-configuration/asmlib-afd.html
+    - title: Microsoft Windows
+      url: /oracle/host-configuration/windows.html
+    - title: Solaris
+      url: /oracle/host-configuration/solaris.html
+  - title: Virtualization of Oracle databases
+    url: /oracle/virtualization/intro.html
+  - title: Oracle data protection
+    entries:
+    - title: Data integrity
+      url: /oracle/dp/integrity.html
+    - title: Snapshots
+      url: /oracle/dp/snapshots.html
+    - title: Oracle online backups
+      url: /oracle/dp/oracle_hot_backup.html
+    - title: Consistency group backup
+      url: /oracle/dp/oracle_consistency_group_backup.html
+    - title: Storage Snapshot Optimized backups
+      url: /oracle/dp/snapshot_optimized_backup.html
+  - title: Oracle disaster recovery
+    entries:
+    - title: Consistency group disaster recovery
+      url: /oracle/dp/consistency_group_disaster_recovery.html
+    - title: Disaster recovery with log replay
+      url: /oracle/dp/disaster_recovery_with_log_replay.html
+  - title: Oracle with SnapMirror Business Continuity
+    entries:
+    - title: Overview
+      url: /oracle/smbc/overview.html
+    - title: SM-BC with Oracle Single Instance
+      url: /oracle/smbc/si.html
+    - title: SM-BC with Oracle RAC
+      url: /oracle/smbc/rac.html
+    - title: Failure Scenarios
+      url: /oracle/smbc/failure-scenarios.html
+  - title: Oracle on MetroCluster
+    entries:
+    - title: NetApp MetroCluster Overview
+      url: /oracle/metrocluster/index.html
+    - title: MetroCluster physical architecture
+      url: /oracle/metrocluster/metrocluster_physical_architecture.html
+    - title: MetroCluster logical architecture
+      url: /oracle/metrocluster/metrocluster_logical_architecture.html
+    - title: SyncMirror
+      url: /oracle/metrocluster/syncmirror.html
+    - title: Oracle and NVFAIL
+      url: /oracle/dp/oracle_and_nvfail.html
+    - title: Oracle Single Instance on MetroCluster
+      url: /oracle/metrocluster/si_on_metrocluster.html
+    - title: Oracle RAC and MetroCluster
+      url: /oracle/metrocluster/rac.html
+    - title: MetroCluster and NVFAIL
+      url: /oracle/metrocluster/mc-mcc-nvfail.html
+  - title: Oracle database migration
+    entries:
+    - title: Introduction
+      url: /oracle/migration/introduction.html
+    - title: Planning
+      url: /oracle/migration/planning.html
+    - title: Procedures
+      entries:
+      - title: Introduction
+        url: /oracle/migration/procedures-introduction.html
+      - title: Overview
+        url: /oracle/migration/options.html
+      - title: Datafile move
+        url: /oracle/migration/procedures-datafile_move.html
+      - title: Log shipping
+        url: /oracle/migration/procedures-log_shipping.html
+      - title: Host data copy
+        url: /oracle/migration/procedures-host_data_copy.html
+      - title: Foreign LUN import
+        entries:
+        - title: Preparation
+          url: /oracle/migration/fli-preparation.html
+        - title: Cutover
+          url: /oracle/migration/fli-cutover.html
+        - title: Completion
+          url: /oracle/migration/fli-completion.html
+        - title: Protocol conversion
+          url: /oracle/migration/protocol_conversion.html
+    - title: Sample scripts
+      url: /oracle/migration/sample_scripts.html
+  - title: Additional notes
+    entries:
+    - title: Performance optimization and benchmarking
+      url: /oracle/notes/optimization_and_benchmarking.html
+    - title: Stale NFS locks
+      url: /oracle/notes/stale_nfs_locks.html
+    - title: WAFL alignment verification
+      url: /oracle/notes/wafl_alignment_verification.html

@@ -1,0 +1,62 @@
+---
+sidebar: sidebar
+permalink: mysql/snapshots.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= NetApp Snapshot Technology
+
+The foundation of NetApp ONTAP data protection software is NetApp Snapshot technology. The key values are as follows: 
+
+* Simplicity. A Snapshot copy is a read-only copy of a data container’s contents at a specific PiT. 
+* Efficiency. Snapshot copies require no space at the moment of creation. Space is only consumed when data is changed. 
+* Manageability. A backup strategy based on Snapshot copies is easy to configure and manage, because Snapshot copies are a native part of the storage operating system. If the storage system is powered on, it is ready to create backups. 
+* Scalability. Up to 1023 backups of a single container of files and LUNs can be preserved. For complex datasets, multiple containers of data can be protected by a single, consistent set of Snapshot copies. 
+* No performance impact. Performance is unaffected, whether a volume contains 1023 Snapshot copies or none. 
+
+As a result, protecting a database running on ONTAP is simple and highly scalable. Database backups do not require movement of data. Therefore, a backup strategy should be customized to the needs of the business rather than the limitations of network transfer rates, large number of tape drives, or storage-based staging areas.
+
+To implement the data protection strategy with MySQL, it is important to design the storage layout accordingly. NetApp recommends that you create two volumes for MySQL:
+
+* A volume to store all your data files, index files, and tablespace
+* A volume to store all your logs (mainly redo logs and binary logs)
+
+For detailed information about this recommendation, see section 12.
+
+You can create point-in-time recovery (PITR) consistent backups by completing the following steps:
+
+. Quiesce the I/O to stop MySQL writing by running the FLUSH TABLES WITH READ LOCK command.
+. Create the Snapshot copy of both volumes.
+. Unquiesce the I/O to allow MySQL transactions by running the UNLOCK TABLES command.
+
+Integrate these steps in the shell script for your daily and weekly backup solutions. NetApp Snapshot technology backs up terabytes and petabytes in a matter of seconds. This feature is helpful for the MySQL ecosystem where the traditional approach (logical or hot backup) of creating backups takes longer and uses more network and drive bandwidth.
+
+You can achieve consistent snapshots across volumes using ONTAP Consistency group feature. Consistency group is recommended when there are multiple volumes mounted to a single instance or a database with multiple tablespaces. A consistency group snapshot ensures all volumes are grouped together and protected. A consistency group can be managed efficiently from ONTAP System Manager, or REST API and you can even replicate it to secondary storage, clone it to create an instant copy of a database for testing or development purposes.
+
+From ONTAP 9.12.1 onwards, Snapshot copies can be locked to protect snapshots being deleted by malicious attacker or rogue administrator. This is applicable on both NAS and SAN volume. Admin need to add SnapLock license and turn on the compliance clock. Enabling tamperproof snapshot copies locks the Snapshot copy for a specified period making sure the copy cannot be deleted accidentally or maliciously. 
+
+ONTAP has a multi-admin verification (MAV) feature which means no single administrator has a complete privilege to delete Snapshot copies or modify volumes. This can act as additional security to avoid volumes or Snapshot copies getting tampered with by rogue administrators.
+
+Data protection software 
+
+NetApp SnapCenter® plugin for MySQL database, combined with Snapshot and NetApp FlexClone technologies, offer you benefits such as: 
+
+* Rapid backup and restore. 
+* Space-efficient clones. 
+* The ability to build a speedy and effective disaster recovery system. 
+
+* *Note:* You might prefer to choose NetApp's premium backup partners such as Veeam Software and Commvault under the following circumstances: 
+
+* Managing workloads across a heterogenous environment 
+* Storing backups to either cloud or tape for long-term retention 
+* Support for a wide range of OS versions and types 
+
+SnapCenter plugin for MySQL is community supported plugin leveraging SnapCenter Custom Creator framework plugin and the setup and documentation are available on NetApp Automation store. Through SnapCenter, user can backup database, clone and restore data remotely.

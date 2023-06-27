@@ -1,0 +1,23 @@
+---
+sidebar: sidebar
+permalink: mysql/tcp-parameters.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= TCP Parameters
+
+Three settings are frequently misconfigured: TCP timestamps, selective acknowledgment (SACK), and TCP window scaling. Many out-of-date Internet documents recommend disabling these parameters to improve performance. There was some merit to this recommendation many years ago when CPU capabilities were much lower and it was advantageous to reduce TCP processing overhead whenever possible.
+
+However, with modern operating systems, disabling any of these TCP features rarely results in any detectable benefit, and might damage performance. Performance damage is especially likely in virtualized networking environments, because these features are required for efficient handling of packet loss and changes in network quality.
+
+NetApp recommends the following best practices:
+
+* Enable TCP timestamps, SACK, and TCP window scaling on the host.

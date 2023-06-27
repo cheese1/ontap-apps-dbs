@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: mysql/qos-guaranteed.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= Guaranteed QoS
+
+Many customers seek a solution that includes guaranteed QoS, which is more difficult than it seems and potentially wasteful. For example, placing 10 databases with a 10K IOPS guarantee would require a system to be sized such that all 10 databases could simultaneously run at 10K IOPS, for a total of 100K. This scenario is highly unlikely, but if it is required, the best option is to guarantee performance through the sizing effort.
+
+For example, each NetApp AFF HA pair could constitute a 400K IOPS building block. The total guaranteed IOPS of all hosted databases should not add up to more than 400K IOPS. Furthermore, to prevent a database from consuming more than its allotted IOPS capability, it should have the standard QoS applied as a limit. 

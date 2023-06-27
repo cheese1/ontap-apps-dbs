@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: oracle/dp/oracle_consistency_group_backup.html
+keywords: TR-4591, oracle, data, protection, consistency, group, backup, volume, archive, log, redo, controlfiles
+summary: Consistency group backups for Oracle on ONTAP
+---
+
+= Oracle Consistency Group backup
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+Placing an entire Oracle database in a single volume, including datafiles, archive logs, redo logs, and controlfiles, is a valid backup, restore, and replication method. However, the RPO is limited to the point of the backup itself. It is suitable for an RPO of one hour or greater. If a database spans volumes, cg-snapshots are required using one of the tools discussed previously.
+
+As an example, the entire database can be in a single volume with the following snapshot schedule:
+
+* 72 hourly snapshots
+* 30 nightly snapshots
+* 12 monthly snapshotsThis delivers an RPO of one hour over the rolling period of the preceding 72 hours, plus additional nightly and monthly backups. Multiple databases or application files can also be included in the single volume or set of cg-snapshots to deliver consistent backups across a larger environment.

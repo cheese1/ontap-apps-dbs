@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: mysql/ontap-config.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= ONTAP Configuration 
+
+This section presents best practices for basic NetApp ONTAP configuration. 
+
+These best practices don’t apply to large-scale MySQL deployments (200+ databases), which require a special architecture and design. Even small changes in data protection requirements can significantly affect storage design. For detailed configuration information, see TR-4591: Database Data Protection: Backup, Recovery, Replication, and DR. For comprehensive assistance with design, contact NetApp sales.
+
+RAID DP is integrated with NetApp WAFL® to prevent performance bottlenecks with dedicated parity drives. Write operations are coalesced in RAM and prepared as a complete RAID stripe, including parity generation. There is no need to perform a read to complete a write, which means that ONTAP and WAFL avoid the RAID penalty. Performance for latency-critical operations, such as redo logging, is unimpeded, and random data-file writes do not incur any RAID penalty resulting from a need to regenerate parity. Therefore, NetApp recommends RAID DP as the default RAID group size.
+
+In addition to having no single point of failure, RAID DP lets you expand or reconfigure storage while online. You can run your applications without interruption—even while adding more storage capacity or throughput.
+
+== Capacity Levels
+
+To provide high and predictable performance on a storage array, some free space is required for metadata and data organizational tasks. Free space is defined as any space that is not used for actual data and includes unallocated space on the aggregate itself and unused space within the constituent volumes. Thin provisioning must also be considered. For example, a volume might contain a 1TB LUN of which only 50% is used by actual data. In a thinly provisioned environment, this LUN would correctly appear to be consuming 500GB of space. However, in a fully provisioned environment, the full capacity of 1TB appears to be in use, and the 500GB of unallocated space is hidden. This space is unused by actual data and should therefore be included in the calculation of total free space. The NetApp recommendations for storage systems used for databases are described in the sections that follow.
+
+== SSD Aggregates, Including AFF and ASA Systems 
+
+For SSD aggregates, including NetApp AFF and ASA systems, NetApp recommends a minimum of 10% free space. This percentage includes all unused space, free space within the aggregate or a volume, and any free space that is allocated because of full provisioning but is not used by actual data. The recommendation of 10% free space is conservative. SSD aggregates can support database workloads at even higher levels of utilization without any effect on performance. However, as the utilization of the aggregate increases, the risk of running out of space also increases if utilization is not monitored carefully. 

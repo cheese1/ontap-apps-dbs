@@ -1,0 +1,14 @@
+---
+layout: astra
+sidebar: sidebar
+permalink: oracle/metrocluster/index.html
+lead: Oracle on MetroCluster
+summary: Protocols
+---
+
+= Oracle Data Protection
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/

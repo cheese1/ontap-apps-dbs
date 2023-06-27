@@ -1,0 +1,57 @@
+---
+sidebar: sidebar
+permalink: mysql/mysql-over-san.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+MySQL over SAN
+
+There are two options to configure MySQL with SAN using the previously described two-volume model. Smaller databases can be placed on a pair of standard LUNs as long as the I/O and capacity demands are within the limits of a single LUN file system. For example, a database that requires approximately 2K random IOPS can be hosted on a single file system on a single LUN. Likewise, a database that is only 100GB in size would fit on a single LUN without creating a management problem.
+
+Larger databases require multiple LUNs. For example, a database that requires 100K IOPS would most likely need at least eight LUNs. A single LUN would become a bottleneck because of the inadequate number of SCSI channels to drives. A 10TB database would similarly be difficult to manage on a single 10TB LUN. Logical volume managers are designed to bond the performance and capacity capabilities of multiple LUNs together to improve performance and manageability.
+
+In both cases, a pair of NetApp ONTAP volumes should be sufficient. With a simple configuration, the data file LUN would be placed in a dedicated volume, as would the log LUN. With a logical volume manager configuration, all the LUNs in the data file volume group would be in a dedicated volume, and the LUNs of the log volume group would be in a second dedicated volume. 
+
+NetApp recommends two file systems for MySQL deployments on SAN:
+
+* The first file system stores all MySQL data including tablespace, data, and index.
+
+* The second file system stores all logs (binary logs, slow logs, and transaction logs).
+
+There are multiple reasons for separating data in this manner, including: 
+
+* The I/O patterns of data files and log files differ. Separating them would allow more options with QoS controls.
+
+* Optimal use of Snapshot technology requires the ability to independently restore the data files. Comingling data files with log files interferes with data file restoration.
+
+* NetApp SnapMirror technology can be used to provide a simple, low-RPO disaster recovery capability for a database; however, it requires different replication schedules for the data files and logs.
+
+Note: Use this basic two-volume layout to future-proof the solution so that all ONTAP features can be used if needed. 
+
+NetApp also recommends that you format your drive with the ext4 file system because of the following features:
+
+* Extended approach to block management features used in the journaling file system (JFS) and delayed allocation features of the extended file system (XFS).
+
+* Ext4 permits file systems of up to 1 exbibyte (2^60 bytes) and files of up to 16 tebibytes (16 * 2^40 bytes). In contrast, the ext3 file system supports only a maximum file system size of 16TB and a maximum file size of 2TB.
+
+* In ext4 file systems, multiblock allocation (mballoc) allocates multiple blocks for a file in a single operation, instead of allocating them one by one, as in ext3. This configuration reduces the overhead of calling the block allocator several times, and it optimizes the allocation of memory.
+
+* Although XFS is the default for many Linux distributions, it manages metadata differently and is not suitable for some MySQL configurations.
+
+NetApp recommends using 4k block size options with the mkfs utility to align with existing block LUN size.
+
+mkfs.ext4 -b 4096
+
+NetApp LUNs store data in 4KB physical blocks, which yields eight 512-byte logical blocks.
+
+If you do not set up the same block size, I/O will not be aligned with physical blocks correctly and could write in two different drives in a RAID group, resulting in latency.
+
+It is important that you align I/O for smooth read/write operations. However, when the I/O begins at a logical block that is not at the start of a physical block, the I/O is misaligned. I/O operations are aligned only when they begin at a logical block—the first logical block in a physical block.

@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: postgres/index-bp.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= PostgreSQL database best practices
+
+This section covers more best practices for using the PostgreSQL database.

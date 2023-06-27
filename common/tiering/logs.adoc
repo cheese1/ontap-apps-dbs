@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: common/tiering/logs.html
+keywords: TR-4695, oracle, storage, tiering, fabricpool
+summary: Database Transaction Log Tiering with FabricPool
+---
+
+= Transaction Log Tiering with FabricPool
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+Perhaps the most important use for FabricPool is improving the efficiency of archived log file management. Most relational databases operate in log archival mode to deliver point-in-time recovery. Changes to the databases are committed by recording the changes in the transaction logs, and the transaction log is retained without being overwritten. In some cases, the transaction log is created as a copy of the active log file. In other cases, the active log file is closed, and the database creates a new log file in the same location but with a different name.
+
+Recovery of the database is performed by restoring the datafiles to a time immediately before the required recovery point and then replaying the transaction logs until the database is at the desired state.
+
+The result can be a requirement to retain an enormous volume of archived transaction logs. The capacity required can be many times the size of the database itself. NetApp has seen databases with over 100TB of archived logs that were kept online and available to meet regulatory requirements.
+
+This situation creates a significant management challenge. The transaction logs can be retained on disk, but this becomes costly and wasteful, especially as databases move toward NVMe-based storage. A different tier of SATA storage can be created specifically for logs, but that approach creates an additional storage type that must be deployed and managed. Still other customers continue to use tape-based backup solutions that sweep logs to tape and remove them from the active filesystem. This is not only complicated, but also risky because a tape-based backup system is much more prone to problems that interrupt service.
+
+Fabric Pools solves these problems by delivering a single solution with integrated tiering. The transaction logs are stored and remain accessible in their usual location.
+
+== Policies
+
+A `tiering-minimum-cooling-days` policy of a few days retains the most recent logs, and therefore the logs most likely to be required for an urgent recovery situation, on the performance tier. The data blocks from older files are then moved to the capacity tier.
+
+The `auto` policy is usually the most appropriate policy for a volume hosting archive log data *in the active filesystem.* This applies to databases such as Oracle which perform circular overwrites of the same set of redolog files.
+
+The `auto` enforces prompt tiering when the cooling threshold has been reached irrespective of whether the logs have been deleted or continue to exist in the primary filesystem. Storing all the potentially required logs in a single location in the active filesystem also simplifies management. There is no reason to search through snapshots to locate a file that needs to be restored.
+
+Some databases, such as Microsoft SQL Server, truncate transaction log files during backup operations so that the logs are no longer in the active filesystem. Capacity might be saved by using the `snapshot-only` tiering policy, but the `auto` policy is not useful for log data because there should rarely cooled log data in the active filesystem.
+
+The `snapshot- only` policy only tiers blocks that are no longer in the active filesystem. Therefore, archived logs on an NFS or SMB share would need to be deleted before the data could be tiered.
+
+Tiering would be even less efficient with a LUN configuration because deletion of a file from a LUN only removes the file references from the filesystem metadata. The actual blocks on the LUNs remain in place until overwritten. This could create a lengthy delay between the time a file is deleted and the time that the blocks are overwritten and become candidates for tiering.
+
+A SnapMirror or SnapVault destination volume containing archived log files can also use a FabricPool `all` policy for the immediate tiering of all data, but the savings might not be significant. The `auto` policy normally leaves a very small amount of data on the performance tier. If the replicas are needed for recovery purposes, it would probably be better to have the recently created files available on the fastest possible tier.

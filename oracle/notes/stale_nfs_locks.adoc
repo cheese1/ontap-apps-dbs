@@ -1,0 +1,50 @@
+---
+sidebar: sidebar
+permalink: oracle/notes/stale_nfs_locks.html
+keywords: oracle, database, ontap, stale, nfs, locks
+summary: Oracle and stale NFSv3 Locks
+---
+
+= Stale NFS locks
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+If an Oracle database server crashes, it might have problems with stale NFS locks upon restart. This problem is avoidable by paying careful attention to the configuration of name resolution on the server.
+
+This problem arises because creating a lock and clearing a lock use two slightly different methods of name resolution. Two processes are involved, the Network Lock Manager (NLM) and the NFS client. The NLM uses `uname n` to determine the host name, while the `rpc.statd` process uses `gethostbyname()`. These host names must match for the OS to properly clear stale locks. For example, the host might be looking for locks owned by `dbserver5`, but the locks were registered by the host as `dbserver5.mydomain.org`. If `gethostbyname()` does not return the same value as `uname –a`, then the lock release process did not succeed.
+
+The following sample script verifies whether name resolution is fully consistent:
+
+....
+#! /usr/bin/perl
+$uname=`uname -n`;
+chomp($uname);
+($name, $aliases, $addrtype, $length, @addrs) = gethostbyname $uname;
+print "uname -n yields: $uname\n";
+print "gethostbyname yields: $name\n";
+....
+
+If `gethostbyname` does not match `uname`, stale locks are likely. For example, this result reveals a potential problem:
+
+....
+uname -n yields: dbserver5
+gethostbyname yields: dbserver5.mydomain.org
+....
+
+The solution is usually found by changing the order in which hosts appear in `/etc/hosts`. For example, assume that the hosts file includes this entry:
+
+....
+10.156.110.201  dbserver5.mydomain.org dbserver5 loghost
+....
+
+To resolve this issue, change the order in which the fully qualified domain name and the short host name appear:
+
+....
+10.156.110.201  dbserver5 dbserver5.mydomain.org loghost
+....
+
+`gethostbyname()` now returns the short `dbserver5` host name, which matches the output of `uname`. Locks are thus cleared automatically after a server crash.

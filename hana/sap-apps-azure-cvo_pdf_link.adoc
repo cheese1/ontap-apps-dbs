@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: hana/sap-apps-azure-cvo_pdf_link.html
+keywords: pdf, sap, applications, apps, hana, azure netapp files
+summary: TR-4757 provides best practices for using Azure NetApp Files for SAP Applications and SAP HANA deployments. It also details the different use cases from SAP shared file systems This document provides best practices for leveraging NetApp Cloud Volumes ONTAP for SAP Applications and SAP HANA deployments. It includes different use cases from SAP shared file systems and specific performance considerations with SAP HANA on Cloud Volumes ONTAP.
+---
+
+[.lead]
+Placeholder
+
+= TR-4757: SAP Applications on Microsoft Azure - Using NetApp Cloud Volumes ONTAP
+: hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+Bernd Herth, Tobias Brandl, Nils Bauer, NetApp
+
+Will Bratton, Geert van Teylingen, Microsoft
+
+TR-4757 provides best practices for using Azure NetApp Files for SAP Applications and SAP HANA deployments. It also details the different use cases from SAP shared file systems This document provides best practices for leveraging NetApp Cloud Volumes ONTAP for SAP Applications and SAP HANA deployments. It includes different use cases from SAP shared file systems and specific performance considerations with SAP HANA on Cloud Volumes ONTAP.
+
+link:https://www.netapp.com/pdf.html?item=/media/17126-tr4757pdf.pdf[https://www.netapp.com/pdf.html?item=/media/17126-tr4757pdf.pdf]

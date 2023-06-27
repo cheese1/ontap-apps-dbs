@@ -1,0 +1,41 @@
+---
+sidebar: sidebar
+permalink: mysql/snaprestore.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= NetApp SnapRestore Technology
+
+Rapid data restoration in ONTAP from a Snapshot copy is delivered by NetApp SnapRestore technology. SnapRestore enables instantaneous restoration of Snapshot data. The reason SnapRestore works so quickly and efficiently is that a Snapshot copy is essentially a parallel read-only view of the contents of a volume at a specific PiT. The active blocks are the real blocks that can be changed, whereas the Snapshot copy is a read-only view into the state of the blocks that constitute the files and LUNs at the time the Snapshot copy was created. ONTAP permits read-only access to Snapshot data, but the data can be reactivated with SnapRestore. The Snapshot copy is reenabled as a read/write view of the data, returning the data to its prior state. SnapRestore can operate at the volume or file level. The technology is essentially the same with a few minor differences in behavior. The key values are as follows: 
+
+* Individual files or LUNs can be restored in seconds, whether it is a 2TB LUN or a 4KB file. 
+* An entire container (a NetApp FlexVol® volume) of LUNs and files can be restored in seconds, whether it is 10GB or 100TB of data. 
+
+When a critical database is down, critical business operations are down. Tapes can break, and even restore operations from disk-based backups can be slow to transfer across the network. SnapRestore prevents these problems by delivering near instantaneous restoration of databases. Even petabyte-scale databases can be completely restored with just a few minutes of effort.
+
+With a two-volume approach and SnapRestore technology, it is easy to restore any backup size. Select the target data and log volumes to restore. The restore is an exact PiT, because all the logs (binary and transaction logs) are stored on the log volume. You can perform PITR by completing the following steps:
+
+. Stop the MySQL application. 
+. Restore the volumes with SnapRestore technology.
+. Start the MySQL application.
+
+After MySQL restarts, it automatically recovers by checking the transaction logs (IB logs). 
+
+* *Note:* Manual recovery is not required for MySQL to bring the database back up. Database recovery depends on the size of the IB log file. The larger the size of the file, the longer the recovery time. For more information, see section 12.2, “MySQL File Structure.”
+
+Snapshot and SnapRestore technologies are most useful when database refresh is required on dev/test systems. Most of the time the development and QA teams provide production data for their work. It is quite easy to restore daily backups on dev and QA systems with NetApp Snapshot, SnapRestore, and FlexClone® technologies. Also, you can restore the deleted rows or dropped tables from the Snapshot copy.
+
+To recover deleted rows or dropped tables from the backup, complete the following steps:
+
+. Take a FlexClone volume from the Snapshot copy.
+. Split the FlexClone volume from its parent volume.
+. Attach the volume to another MySQL instance.
+. Restore individual rows or tables from the MySQL instance.

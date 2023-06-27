@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: postgres/filesystems.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= File system options
+
+* NetApp recommends using version 4 of the NFS protocol, because it has an integrated locking feature that version 3 lacks. Also, it has new features such as statefulness, improved security, and strong authentication. 
+
+* PostgreSQL does not recommend soft mounting of an NFS file system.
+
+* PostgreSQL also advises mounting the NFS file system synchronously to avoid a data inconsistency problem. See the PostgreSQL documentation for more details.
+
+* Use the following mount option while mounting an NFS file system:
+
+nfs4 rw, hard,nointr,bg,vers=4,sync,proto=tcp,noatime,rsize=65536,wsize=65536
+
+* NetApp recommends having four to eight LUNs to support data file I/O. 
+
+* A NetApp LUN stores data in 4KB physical blocks. If you don’t set up the same block size, I/O is not aligned with physical blocks correctly and might end up writing to two different disks in the RAID group. Because writing to two disks results in latency, NetApp recommends using 4KB block sizes to create the partition on discovered LUN. 

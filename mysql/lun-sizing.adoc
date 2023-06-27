@@ -1,0 +1,26 @@
+---
+sidebar: sidebar
+permalink: mysql/lun-sizing.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+
+
+[.lead]
+
+Placeholder
+
+
+
+= LUN Sizing
+
+A LUN is a virtualized object on ONTAP that exists across all the drives in the hosting aggregate. As a result, the LUN’s performance is unaffected by its size, because the LUN draws on the full potential of the aggregate no matter which size is chosen.
+
+NetApp discourages the practice of establishing a universal standard LUN size, because doing so can complicate manageability. For example, a standard LUN size of 100GB might work well when a database is in the range of 1TB to 2TB, but a database 20TB in size would require 200 LUNs. This means that server reboot times are longer, and there are more objects to manage in the various UIs. Using fewer, larger LUNs avoids such problems.
+
+Notes:
+
+* The LUN count is more important than the LUN size.
+* LUN size is mostly controlled by LUN count requirements.
+
+Avoid creating more LUNs than required.
