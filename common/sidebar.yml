@@ -51,30 +51,30 @@ entries:
       url: /common/dp/snaprestore.html
     - title: SnapCenter and other tools
       url: /common/dp/tools.html
-     - title: SnapMirror Business Continuity
-       entries:
-       - title: Overview
+    - title: SnapMirror Business Continuity
+      entries:
+      - title: Overview
         url: /common/smbc/overview.html
-       - title: SM-BC with Oracle Single Instance
-         url: /common/smbc/si.html
-       - title: SM-BC with Oracle RAC
-         url: /common/smbc/rac.html
-       - title: Failure Scenarios
-        url: /common/smbc/failure-scenarios.html
-      - title: MetroCluster
-        entries:
-       - title: NetApp MetroCluster Overview
-          url: /common/metrocluster/overview
-        - title: MetroCluster physical architecture
-          url: /common/metrocluster/metrocluster_physical_architecture.html
-        - title: MetroCluster logical architecture
-          url: /common/metrocluster/metrocluster_logical_architecture.html
-        - title: SyncMirror
-          url: /common/metrocluster/syncmirror.html
-        - title: Applications on MetroCluster
-          url: /common/metrocluster/apps-on-metrocluster.html
-         - title: MetroCluster and NVFAIL
-          url: /common/metrocluster/nvfail.html
+      - title: SM-BC with Oracle Single Instance
+        url: /common/smbc/si.html
+      - title: SM-BC with Oracle RAC
+        url: /common/smbc/rac.html
+      - title: Failure Scenarios
+       url: /common/smbc/failure-scenarios.html
+    - title: MetroCluster
+      entries:
+      - title: NetApp MetroCluster Overview
+        url: /common/metrocluster/overview
+      - title: MetroCluster physical architecture
+        url: /common/metrocluster/metrocluster_physical_architecture.html
+      - title: MetroCluster logical architecture
+        url: /common/metrocluster/metrocluster_logical_architecture.html
+      - title: SyncMirror
+        url: /common/metrocluster/syncmirror.html
+      - title: Applications on MetroCluster
+        url: /common/metrocluster/apps-on-metrocluster.html
+       - title: MetroCluster and NVFAIL
+        url: /common/metrocluster/nvfail.html
   - title: Application and Database tiering
     entries:
     - title: Overview

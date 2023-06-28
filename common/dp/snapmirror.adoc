@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/dp/snapmirrot.html
+permalink: common/dp/snapmirror.html
 keywords: ontap, snapmirror
 summary: SnapMirror and SyncMirror
 ---

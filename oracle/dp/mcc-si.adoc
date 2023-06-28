@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/metrocluster/si_on_metrocluster.html
+permalink: oracle/metrocluster/mcc-si.html
 keywords: TR-4592, oracle, metrocluster, mcc, MCC-IP
 summary: Oracle Single Instance on MetroCluster
 ---
