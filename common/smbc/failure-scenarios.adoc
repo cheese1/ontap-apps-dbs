@@ -1,8 +1,8 @@
 ---
-permalink: oracle/smbc/failure-scenarios.html
+permalink: common/smbc/failure-scenarios.html
 sidebar: sidebar
-keywords: TR-4899, oracle, sm-bc, smbc, failover
-summary: "Oracle on ONTAP with SM-BC: Failure Scenarios"
+keywords: Tsm-bc, smbc, failover
+summary: "SM-BC: Failure Scenarios"
 ---
 = SM-BC Failure Scenarios
 :hardbreaks:

@@ -61,8 +61,12 @@ entries:
       url: /oracle/dp/oracle_and_nvfail.html
     - title: Oracle Single Instance on MetroCluster
       url: /oracle/dp/si_on_metrocluster.html
+    - title: Oracle Single Instance on SM-BC
+      url: /oracle/dp/sm-bc-si.html
     - title: Oracle RAC and MetroCluster
       url: /oracle/dp/rac.html
+    - title: Oracle RAC on SM-BC
+      url: /oracle/dp/sm-bc-rac.html
     - title: Consistency group disaster recovery
       url: /oracle/dp/consistency_group_disaster_recovery.html
     - title: Disaster recovery with log replay

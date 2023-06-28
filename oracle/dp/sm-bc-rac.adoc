@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/smbc/rac.html
+permalink: common/smbc/rac.html
 keywords: TR-4899, oracle, smbc, sm-bc, RAC
 summary: Oracle RAC on ONTAP with SM-BC
 ---

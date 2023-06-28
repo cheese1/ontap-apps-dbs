@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/apps_on_metrocluster.html
-keywords: etrocluster, mcc, MCC-IP
+permalink: common/metrocluster/apps-on-metrocluster.html
+keywords: Metrocluster, mcc, MCC-IP
 summary: Applications with MetroCluster
 ---
 

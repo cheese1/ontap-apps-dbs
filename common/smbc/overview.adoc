@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: oracle/smbc/overview.html
+permalink: common/smbc/overview.html
 keywords: TR-4899, oracle, smbc, sm-bc
-summary: Introduction to Oracle on ONTAP using SnapMirror Business Continuity
+summary: SM-BC overview
 ---
 
 = Overview
