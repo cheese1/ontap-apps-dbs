@@ -1,10 +1,16 @@
 indexpage:
   lead: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures.
   tiles:
-    - title: Implementation guides
+    - title: ONTAP 
       links:
-        - title: ONTAP feature overview
-          url: common/index.html
+        - title: Get started
+          url: common/overview.html
+        - title: ONTAP core technologies
+          url: common/ontap/overview.html
+        - title: ONTAP data protection
+          url: common/dp/overview.html
+        - title: Application and database tiering
+          url: common/tiering/overview.html
     - title: MariaDB/MySQL
       links:
         - title: MariaDB and MySQL on ONTAP
@@ -16,7 +22,13 @@ indexpage:
     - title: Oracle Database
       links:
         - title: Oracle on ONTAP
-          url: oracle/index.html
+          url: oracle/overview.html
+        - title: Oracle data protection
+          url: oracle/dp/overview.html
+        - title: Oracle disaster recovery
+          url: oracle/dp/overview.html
+        - title: Oracle migration
+          url: oracle/migration/overview.html
     - title: PostgreSQL
       links:
         - title: PostgreSQL on ONTAP
