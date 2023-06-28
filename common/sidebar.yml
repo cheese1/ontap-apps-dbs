@@ -60,7 +60,7 @@ entries:
       - title: SM-BC with Oracle RAC
         url: /common/smbc/rac.html
       - title: Failure Scenarios
-       url: /common/smbc/failure-scenarios.html
+        url: /common/smbc/failure-scenarios.html
     - title: MetroCluster
       entries:
       - title: NetApp MetroCluster Overview

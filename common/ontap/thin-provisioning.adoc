@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ontap/ontap/thin-provisioning.html
+permalink: common/ontap/thin-provisioning.html
 keywords: ontap, thin provisioning
 summary: Thin provisioning with ONTAP
 ---
