@@ -19,8 +19,6 @@ entries:
     url: /postgres/tiering.html
   - title: Database security
     url: /postgres/security.html
-  - title: Host configuration
-    url: /postgres/host-config.html
   - title: SELinux
     url: /postgres/selinux.html
   - title: Database configuration

@@ -13,8 +13,6 @@ entries:
       url: /mysql/selinux.html
     - title: I/O schedulers
       url: /mysql/schedules.html
-    - title: Multipathing
-      url: /mysql/multipathing.html
     - title: Open file limits 
       url: /mysql/open-file-limits.html
   - title: Database Configuration
