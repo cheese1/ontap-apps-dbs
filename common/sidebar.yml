@@ -64,19 +64,17 @@ entries:
       - title: MetroCluster
         entries:
        - title: NetApp MetroCluster Overview
-          url: /common/metrocluster/index.html
+          url: /common/metrocluster/overview
         - title: MetroCluster physical architecture
           url: /common/metrocluster/metrocluster_physical_architecture.html
         - title: MetroCluster logical architecture
           url: /common/metrocluster/metrocluster_logical_architecture.html
         - title: SyncMirror
-        url: /common/metrocluster/syncmirror.html
-        - title: Oracle and NVFAIL
-          url: /common/dp/oracle_and_nvfail.html
-        - title: Oracle Single Instance on MetroCluster
-          url: /common/metrocluster/si_on_metrocluster.html
-        - title: MetroCluster and NVFAIL
-          url: /common/metrocluster/mc-mcc-nvfail.html
+          url: /common/metrocluster/syncmirror.html
+        - title: Applications on MetroCluster
+          url: /common/metrocluster/apps-on-metrocluster.html
+         - title: MetroCluster and NVFAIL
+          url: /common/metrocluster/nvfail.html
   - title: Application and Database tiering
     entries:
     - title: Overview

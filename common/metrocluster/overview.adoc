@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/syncmirror.html
-keywords: metrocluster, syncmirror
-summary: SyncMirror
+permalink: oracle/metrocluster/syncmirror.html
+keywords: TR-4592, oracle, metrocluster, syncmirror
+summary: Oracle on ONTAP and the role of syncmirror
 ---
 
 = SyncMirror

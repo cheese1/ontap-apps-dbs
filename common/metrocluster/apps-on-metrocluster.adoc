@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: oracle/metrocluster/si_on_metrocluster.html
-keywords: TR-4592, oracle, metrocluster, mcc, MCC-IP
-summary: Oracle Single Instance on MetroCluster
+permalink: common/metrocluster/apps_on_metrocluster.html
+keywords: etrocluster, mcc, MCC-IP
+summary: Applications with MetroCluster
 ---
 
 = Oracle Single Instance on MetroCluster

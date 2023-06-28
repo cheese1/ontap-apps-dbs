@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: oracle/metrocluster/metrocluster_physical_architecture.html
-keywords: TR-4592, oracle, metrocluster, MCC, MCC-IP
+permalink: common/metrocluster/metrocluster_physical_architecture.html
+keywords: metrocluster, MCC, MCC-IP
 summary: MetroCluster Physical Architecture
 ---
 

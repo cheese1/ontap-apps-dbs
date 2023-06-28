@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: oracle/metrocluster/metrocluster_logical_architecture.html
-keywords: TR-4592, oracle, metrocluster, mcc, mcc-ip, clusterlion
+permalink: common/metrocluster/metrocluster_logical_architecture.html
+keywords: metrocluster, mcc, mcc-ip
 summary: MetroCluster Logical Architecture
 ---
 
