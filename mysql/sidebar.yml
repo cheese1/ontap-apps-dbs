@@ -9,8 +9,6 @@ entries:
     entries:
     - title: Slot tables 
       url: /mysql/slot-tables.html
-    - title: Security-enhanced Linux
-      url: /mysql/selinux.html
     - title: I/O schedulers
       url: /mysql/schedules.html
     - title: Open file limits 
