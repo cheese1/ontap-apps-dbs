@@ -5,16 +5,32 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
+= SQL Server workloads
 
 [.lead]
+The SQL Server database platform can support many applications. 
 
-Placeholder
-
-
-
-= SQL Server workload types
-
-The SQL Server database platform can support several applications. Before deploying SQL Server, you must understand the database workload requirements of the applications that your SQL Server instances support. Each application has different requirements for capacity, performance, and availability, and therefore each database should be designed to optimally support those requirements. Many organizations classify databases into multiple management tiers, using application requirements to define SLAs. SQL Server workloads can be described as follows:
+Before deploying SQL Server, you must understand the database workload requirements of the applications that your SQL Server instances support. Each application has different requirements for capacity, performance, and availability, and therefore each database should be designed to optimally support those requirements. Many organizations classify databases into multiple management tiers, using application requirements to define SLAs. SQL Server workloads can be described as follows:
 
 * OLTP databases are often also the most critical databases in an organization. These databases usually back customer-facing applications and are considered essential to the company’s core operations. Mission-critical OLTP databases and the applications they support often have SLAs that require high levels of performance and are sensitive to performance degradation and availability. They might also be candidates for Always On Failover Clusters or Always On Availability Groups. The I/O mix of these types of databases is usually characterized by 75% to 90% random read and 25% to 10% write.
 * Decision support system (DSS) databases can be also referred to as data warehouses. These databases are mission critical in many organizations that rely on analytics for their business. These databases are sensitive to CPU utilization and read operations from disk when queries are being run. In many organizations, DSS databases are the most critical during the month, quarter, and year end. This workload typically has a 100% read I/O mix.
+
+= Benchmarking
+
+The Transaction Process Council (TPC) is a nonprofit corporation founded to define transaction processing and database benchmarks and to disseminate objective, verifiable TPC performance data to the industry. TPC tests simulate complete compute environments in which a population of users executes transactions against databases. Table 1 summarizes the typical SQL Server testing workloads.
+
+Table 1) Typical SQL Server workloads.
+
+Workload type
+TPC test
+Read/write ratio (percentages)
+OLTP
+TPC-C
+~75/25
+
+TPC-E
+~90/10
+DSS
+TPC-H
+~100/0
+Although various workload generation options are available, we generally focus our efforts on measuring the performance of SQL Server databases when handling transactional workloads, and we use the TPC-E tools from Microsoft or TPC-H using HammerDB (HammerDB.com). The detailed instructions on how to use these specific benchmarks are beyond the scope of this document.

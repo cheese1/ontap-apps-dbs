@@ -5,16 +5,12 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = Host log directory
 
-SnapCenter uses a host log directory to store transaction log backup data. This is at the host level. Each SQL Server host used by SnapCenter must have a host log directory configured to perform log backups. SnapCenter has a database repository, so metadata related to backup, restore, or cloning operations is stored in a central database repository.
+[.lead]
+SQL Server uses a host log directory to store transaction log backup data. This is at the host level. 
+
+Each SQL Server host used by SnapCenter must have a host log directory configured to perform log backups. SnapCenter has a database repository, so metadata related to backup, restore, or cloning operations is stored in a central database repository.
 
 The sizes of the host log directory is calculated as follows:
 

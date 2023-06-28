@@ -5,16 +5,12 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = Max server memory
 
-The max server memory option sets the maximum amount of memory that the SQL Server instance can use. It is generally used if multiple applications are running on the same server where SQL Server is running and you want to guarantee that these applications have sufficient memory to function properly.
+[.lead]
+The max server memory option sets the maximum amount of memory that the SQL Server instance can use.
+
+It is generally used if multiple applications are running on the same server where SQL Server is running and you want to guarantee that these applications have sufficient memory to function properly.
 
 Some applications only use whatever memory is available when they start and do not request more even if needed. That is where the max server memory setting comes into play.
 

@@ -5,16 +5,12 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = Deduplication
 
-NetApp does not recommend using deduplication with SQL Server database files primarily because this process is almost entirely ineffective. A SQL Server page contains a header that is globally unique to the database and a trailer that is nearly unique. One percent space savings are possible, but this is at the expense of significant overhead caused by data deduplication.
+[.lead]
+NetApp does not recommend using deduplication with SQL Server database files primarily because this process is almost entirely ineffective. 
+
+A SQL Server page contains a header that is globally unique to the database and a trailer that is nearly unique. One percent space savings are possible, but this is at the expense of significant overhead caused by data deduplication.
 
 Many competing arrays claim the ability to deduplicate SQL Server databases based on the presumption that a database is copied multiple times. In this respect, NetApp deduplication could also be used, but ONTAP offers a better option: NetApp FlexClone technology. The result is the same; multiple copies of a SQL Server database that share most of the underlying physical blocks are created. Using FlexClone is much more efficient than taking the time to copy data files and then deduplicate them. It is, in effect, nonduplication rather than deduplication, because a duplicate is never created in the first place.
 

@@ -5,16 +5,12 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
+= Overview
 
 [.lead]
+SQL Server is the foundation of Microsoft's data platform, delivering mission-critical performance with in-memory technologies and faster insights on any data, whether on the premises or in the cloud.
 
-Placeholder
-
-
-
-= Introduction
-
-SQL Server is the foundation of Microsoft's data platform, delivering mission-critical performance with in-memory technologies and faster insights on any data, whether on the premises or in the cloud. Microsoft SQL Server builds on the mission-critical capabilities delivered in prior releases by providing breakthrough performance, availability, and manageability for mission-critical applications. The storage system is a key factor in the overall performance of a SQL Server database. NetApp provides several products to allow your SQL Server database to deliver enterprise-class performance while providing world-class tools to manage your environment.
+Microsoft SQL Server builds on the mission-critical capabilities delivered in prior releases by providing breakthrough performance, availability, and manageability for mission-critical applications. The storage system is a key factor in the overall performance of a SQL Server database. NetApp provides several products to allow your SQL Server database to deliver enterprise-class performance while providing world-class tools to manage your environment.
 
 == Purpose and scope
 
