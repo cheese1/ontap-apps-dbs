@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/sm-bc-si.html
+permalink: oracle/dp/smbc-si.html
 keywords: TR-4899, oracle, smbc, sm-bc
 summary: Oracle Single Instance on ONTAP with SM-BC
 ---

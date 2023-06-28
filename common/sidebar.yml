@@ -73,7 +73,7 @@ entries:
         url: /common/metrocluster/syncmirror.html
       - title: Applications on MetroCluster
         url: /common/metrocluster/apps-on-metrocluster.html
-       - title: MetroCluster and NVFAIL
+      - title: MetroCluster and NVFAIL
         url: /common/metrocluster/nvfail.html
   - title: Application and Database tiering
     entries:
