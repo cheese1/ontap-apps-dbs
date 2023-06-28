@@ -5,16 +5,12 @@ keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = innodb_lru_scan_depth 
 
-The innodb_lru_scan_depth parameter influences the algorithms and heuristics of the flush operation for the InnoDB buffer pool. This parameter is primarily of interest to performance experts tuning I/O-intensive workloads. For each buffer pool instance, this parameter specifies how far down in the least recently used (LRU) page list the page cleaner thread should continue scanning, looking for dirty pages to flush. This background operation is performed once per second.
+[.lead]
+The innodb_lru_scan_depth parameter influences the algorithms and heuristics of the flush operation for the InnoDB buffer pool. 
+
+This parameter is primarily of interest to performance experts tuning I/O-intensive workloads. For each buffer pool instance, this parameter specifies how far down in the least recently used (LRU) page list the page cleaner thread should continue scanning, looking for dirty pages to flush. This background operation is performed once per second.
 
 You can adjust the value up or down to minimize the number of free pages. Don’t set the value much higher than needed, because the scans can have a significant performance cost. Also, consider adjusting this parameter when changing the number of buffer pool instances, because innodb_lru_scan_depth *innodb_buffer_pool_instances defines the amount of work performed by the page cleaner thread each second.
 

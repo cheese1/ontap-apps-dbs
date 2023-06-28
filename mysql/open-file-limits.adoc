@@ -5,16 +5,13 @@ keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 
+= Open File Limits 
 
 [.lead]
 
-Placeholder
+To run, the MySQL server needs file descriptors.
 
-
-
-= Open File Limits 
-
-To run, the MySQL server needs file descriptors. It uses them to open new connections, store tables in the cache, create temporary tables to resolve complicated queries, and access persistent ones. If mysqld is not able to open new files when needed, it can stop functioning correctly. A common symptom of this issue is error 24, “Too many open files.” The number of file descriptors mysqld can open simultaneously is defined by the open_files_limit option set in the configuration file (/etc/my.cnf). But open_files_limit also depends on the limits of the operating system. This dependency makes setting the variable more complicated.
+It uses them to open new connections, store tables in the cache, create temporary tables to resolve complicated queries, and access persistent ones. If mysqld is not able to open new files when needed, it can stop functioning correctly. A common symptom of this issue is error 24, “Too many open files.” The number of file descriptors mysqld can open simultaneously is defined by the open_files_limit option set in the configuration file (/etc/my.cnf). But open_files_limit also depends on the limits of the operating system. This dependency makes setting the variable more complicated.
 
 MySQL cannot set its open_files_limit option higher than what is specified under ulimit 'open files'. Therefore, you need to explicitly set these limits at the operating system level to allow MySQL to open files as needed. There are two ways to check the file limit in Linux:
 

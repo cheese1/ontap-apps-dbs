@@ -79,7 +79,7 @@ entries:
         url: /common/metrocluster/apps-on-metrocluster.html
       - title: MetroCluster and NVFAIL
         url: /common/metrocluster/nvfail.html
-  - title: Application and Database tiering
+  - title: Application and database tiering
     entries:
     - title: Overview
       url: /common/tiering/introduction.html

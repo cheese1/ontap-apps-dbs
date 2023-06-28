@@ -2,19 +2,14 @@
 sidebar: sidebar
 permalink: mysql/file-structure.html
 keywords: MySQL,MariaDB,TR-4722
-summary: MySQL on ONTAP
+summary: MySQL file structure
 ---
 
-
+= MySQL file structure
 [.lead]
+InnoDB acts as the middle layer between storage and the MySQL server—it stores the data to the drives. 
 
-Placeholder
-
-
-
-= MySQL File Structure
-
-InnoDB acts as the middle layer between storage and the MySQL server—it stores the data to the drives. Figure 2 shows how InnoDB interacts with storage.
+Figure 2 shows how InnoDB interacts with storage.
 
 Figure 2) InnoDB engine architecture.
 

@@ -5,16 +5,11 @@ keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = innodb_flush_method
+[.lead]
+The innodb_flush_method parameter specifies how InnoDB opens and flushes the log and data files. 
 
-The innodb_flush_method parameter specifies how InnoDB opens and flushes the log and data files. In InnoDB optimization, setting this parameter tweaks the database performance when applicable. 
+In InnoDB optimization, setting this parameter tweaks the database performance when applicable. 
 
 The following options are for flushing the files through InnoDB:
 

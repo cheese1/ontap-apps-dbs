@@ -1,33 +1,22 @@
 ---
 sidebar: sidebar
-permalink: mysql/overview.html
+permalink: mysql/mysql-intro.html
 keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 
+= MySQL
 
 [.lead]
+MySQL and its variants, including MariaDb and Percona MySQL, is the world’s most popular database.
 
-Placeholder
+Its features include:
 
+* Lower TCO. MySQL is a powerful, free, open-source database management system that has been available for years. It is very stable. It has community support that helps maintain, debug, and add new features. If a web application requires more than a database, or requires load-balancing or sharding, you can easily set up database instances with only hardware costs, rather than commercial databases that require a single license for each instance.
+* Reliability, performance, and ease of use. One of MySQL’s hallmarks is exceptional performance and scalability, which is why so many web-based businesses use it. MySQL uses several key strengths to deliver fast performance. Because competition is always a mouse click (or screen touch) away, rapid responses to customer inquiries and activities are paramount. The database serving web-based applications needs to provide extreme performance for both read (simple and complex queries) and write operations. 
+* Database development, design, and administration. MySQL Workbench provides an integrated development, design, and administration environment to make developers and DBAs more productive. Different developers look for different features in a database, and MySQL offers a range of features. It can run adequately on both a laptop and a desktop. It can easily adapt to the environment, ensuring that it does not collide with existing web servers or applications.
+* Comprehensive transactional support. MySQL is one of the most robust transactional database engines available. It is the solution for full data integrity, offering features such as complete atomic, consistent, isolated, durable transaction support; multiversion transaction support; and unrestricted row-level locking. It provides instant deadlock identification through server-enforced referential integrity.
+* Data security. MySQL is globally renowned for being the most secure and reliable database management system used in popular web applications such as WordPress, Drupal, Joomla, Facebook, Google, and Twitter. The data security and support for transactional processing that accompany the recent version of MySQL can benefit any business, especially e-commerce businesses that involve frequent money transfers.
+* Pluggable architecture. The MySQL pluggable storage engine architecture enables a database professional to select a specialized storage engine for a particular application need without having to manage application coding requirements. The MySQL server architecture isolates the application programmer and DBA from all the low-level implementation details at the storage level, providing a consistent and easy application model and API. Although there are different capabilities across different storage engines, the application is shielded from these differences.
 
-
-= Introduction
-
-MySQL and its variants, including MariaDB and Percona, are widely used for many enterprise applications. These applications range from global social networking sites and massive e-commerce systems to SMB hosting systems containing thousands of database instances. This document describes the configuration requirements and provides guidance on tuning and storage configuration for deploying MySQL on NetApp® ONTAP® data management software
-
-== NetApp ONTAP
-
-For maximum performance and control of data, NetApp ONTAP remains the leading solution. It is the standard storage solution that thousands of customers have relied on for more than 25 years. ONTAP delivers solutions for any environment, ranging from mission-critical database deployments to instant restore scenarios.
-
-ONTAP software is the foundation for advanced data protection and management. However, ONTAP is only the software portion of the solution. There are several hardware environments to choose from:
-
-* ONTAP on NetApp AFF and ASA
-* ONTAP Select
-* NetApp Cloud Volumes ONTAP
-
-Some hardware options offer better performance, others offer lower costs, and some run within hyperscale clouds. The core functions of ONTAP are unchanged, with multiple replication options available to bind different ONTAP systems into a single solution. As a result, data protection and disaster recovery strategies can be built on real-world needs, such as performance requirements, capital expenditure (capex), or operational expenditure (opex) considerations, and overall cloud strategy. The underlying storage technology runs anywhere in any environment.
-
-ONTAP with AFF and ASA Controllers
-
-For maximum performance and control of data, ONTAP on a physical AFF and ASA systems remains the leading solution. ONTAP delivers solutions for any environment, ranging from single mission-critical databases to 60,000-database service provider deployments, instant restores of petabyte-scale databases, and database as a service (DBaaS) environments involving hundreds of clones of a single database.
+MySQL's efficient and modular architecture provides huge benefits if you want to target a particular application need—such as data warehousing, transaction processing, or HA situations—while using interfaces and services that are independent of any one storage engine.  

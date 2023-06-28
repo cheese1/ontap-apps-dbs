@@ -5,16 +5,12 @@ keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = Slot Tables 
 
-NFS performance on Linux depends on a parameter called tcp_slot_table_entries. This parameter regulates the number of outstanding NFS operations that are permitted on a Linux operating system. 
+[.lead]
+NFS performance on Linux depends on a parameter called tcp_slot_table_entries.
+
+This parameter regulates the number of outstanding NFS operations that are permitted on a Linux operating system. 
 
 The default value in most 2.6-derived kernels, which includes RH5 and OL5, is 16. However, this default frequently causes performance problems. The opposite problem occurs on newer kernels in which the tcp_slot_table_entries value is uncapped and can cause storage problems by flooding the system with excessive requests. The solution is to set this value statically. Use a value of 128 for any Linux operating system using NetApp NFS storage with a MySQL database. To set this value in Red Hat Enterprise Linux 6.2 and earlier, place the following entry in /etc/sysctl.conf: 
 
