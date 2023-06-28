@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: common/ontap/snapshots.html
+permalink: common/dp/snapshots-and-apps.html
 keywords: database, ontap, snapshots
 summary: Oracle on ONTAP and the role of snapshots
 ---
 
-= Snapshots
+= Snapshots and application backups
 
 :hardbreaks:
 :nofooter:
@@ -14,10 +14,9 @@ summary: Oracle on ONTAP and the role of snapshots
 :imagesdir: ./../media/
 
 [.lead]
+The most important consideration for a file system layout is the plan for leveraging NetApp Snapshot technology. 
 
 == Snapshot-based backups
-
-The most important consideration for a file system layout is the plan for leveraging NetApp Snapshot technology. 
 
 There are many options for using ONTAP Snapshot copies to protect your data, and snapshots are the basis for many other ONTAP features, including replication, disaster recovery, and cloning. A complete description of snapshot technology is beyond the scope of this document, but the following sections provide a general overview.
 

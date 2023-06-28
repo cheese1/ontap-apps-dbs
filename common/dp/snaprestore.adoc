@@ -13,7 +13,6 @@ summary: SnapRestore
 :imagesdir: ./../media/
 
 [.lead]
-
 Rapid data restoration in ONTAP from a snapshot is delivered by NetApp SnapRestore technology. 
 
 The key values are as follows:

@@ -5,7 +5,7 @@ keywords: snapshots,snapshot copies, snapshot copy
 summary: Snapshot copies
 ---
 
-= Snapshot copies
+= Snapshots
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,8 +13,9 @@ summary: Snapshot copies
 :imagesdir: ./../media/
 
 [.lead]
+The foundation of NetApp ONTAP data protection software is NetApp snapshot technology. 
 
-The foundation of NetApp ONTAP data protection software is NetApp snapshot technology. The key values are as follows:
+The key values are as follows:
 
 * *Simplicity.* A Snapshot copy is a read-only copy of the contents of a container of data at a specific point in time.
 * *Efficiency.* Snapshot copies require no space at the moment of creation. Space is only consumed when data is changed.

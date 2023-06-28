@@ -5,6 +5,8 @@ entries:
     url: /common/overview.html
   - title: ONTAP core technologies
     entries:
+      - title: Overview
+        url: /common/dp/overview.html
       - title: RAID
         url: /common/ontap/raid.html
       - title: Capacity limits
@@ -33,7 +35,7 @@ entries:
         url: /common/ontap/failover.html
   - title: ONTAP data protection
     entries:
-    - title: ONTAP data protection overview
+    - title: Overview
       url: /common/dp/overview.html
     - title: Data protection planning
       url: /common/dp/planning.html
@@ -43,8 +45,10 @@ entries:
       url: /common/dp/availability.html
     - title: Data integrity
       url: /common/dp/integrity.html
-    - title: Snapshot copies
+    - title: Snapshots
       url: /common/dp/snapshots.html
+    - title: Snapshots and applications
+      url: /common/dp/snapshots-and-apps.html
     - title: SnapRestore
       url: /common/dp/snaprestore.html
     - title: SnapMirror and SyncMirror
@@ -63,7 +67,7 @@ entries:
         url: /common/smbc/failure-scenarios.html
     - title: MetroCluster
       entries:
-      - title: NetApp MetroCluster Overview
+      - title: Overview
         url: /common/metrocluster/overview
       - title: MetroCluster physical architecture
         url: /common/metrocluster/metrocluster_physical_architecture.html

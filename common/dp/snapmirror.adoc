@@ -13,7 +13,6 @@ summary: SnapMirror and SyncMirror
 :imagesdir: ./../media/
 
 [.lead]
-
 Nearly every application requires data replication. 
 
 At the most basic level, replication can mean a copy on tape stored offsite or application-level replication to a standby location. Disaster recovery refers to the use of those replica copies to bring a service online in the event of catastrophic loss of service.
