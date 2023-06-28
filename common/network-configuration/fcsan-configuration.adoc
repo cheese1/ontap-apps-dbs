@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: /common/network-configuration/fcsan_configuration.html
+permalink: /common/network-configuration/fcsan-configuration.html
 keywords: ontap, SAN, zoning
 summary: FC SAN configuration for Oracle on ONTAP
 ---
