@@ -1,0 +1,39 @@
+---
+sidebar: sidebar
+permalink: oracle/dp/mc-mcc-nvfail.html
+keywords: TR-4592, oracle, metrocluster, extended rac, rac, nvfail, switchover
+summary: Oracle on MetroCluster - NVFAIL 
+---
+
+= MetroCluster and NVFAIL
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+NVFAIL is a general data integrity feature in ONTAP that is especially critical with database workload, and is discussed in detail in link:../ontap-configuration/oracle_and_nvfail.html[NVFAIL]. This section covers MetroCluster-specific considerations for NVFAIL.
+
+== Extended RAC with manually forced NVFAIL
+
+The safest option to force a switchover with an extended RAC cluster is by specifying `-force-nvfail-all` at the command line. This option is available as an emergency measure to make sure that all cached data is flushed. If a host is using storage resources originally located on the disaster-stricken site, it receives either I/O errors or a stale file handle (`ESTALE`) error. Oracle databases crash, and file systems either go offline entirely or switch to read-only mode.
+
+After the switchover completes, the `in-nvfailed-state` flag needs to be cleared, and the LUNs need to be placed online. After this activity is complete, the database can be restarted. These tasks can be automated to reduce the RTO.
+
+== Extended RAC with dr-force-nvfail
+
+The safest configuration is to set the `dr-force-nvfail` flag on all volumes that might be accessed from a remote site. As a result, the volumes become unavailable when they enter `in-nvfailed-state` during a switchover. After the switchover completes, the `in-nvfailed-state` flag must be cleared, and the LUNs must be placed online. After these activities are complete, the database can be restarted. These tasks can be automated to reduce the RTO.
+
+The result is similar to using the `-force-nvfail-all` flag. However, the number of volumes affected can be limited to just those volumes that must be protected from applications or operating systems with stale caches.
+
+== Extended RAC without dr-force-nvfail
+
+There are two critical requirements for an environment that does not use `dr-force-nvfail` on database volumes:
+
+* A forced switchover must occur no more than 30 seconds after primary site loss.
+* A switchover must not occur during maintenance tasks or any other conditions in which SyncMirror plexes or NVRAM replication are out of sync.The first requirement can be met by using tiebreaker software that is configured to perform a switchover within 30 seconds of a site failure. This requirement does not mean the switchover must be performed within 30 seconds of the detection of a site failure. It does mean that it is no longer safe to force a switchover if 30 seconds has elapsed since a site was confirmed to be operational.
+
+The second requirement can be partially met by disabling all automated switchover capabilities when the MetroCluster configuration is known to be out of sync. A better option is to have a tiebreaker solution that can monitor the health of NVRAM replication and the SyncMirror plexes. If the cluster is not fully synchronized, the tiebreaker should not trigger a switchover.
+
+The NetApp MCTB software cannot monitor the synchronization status, so it should be disabled when MetroCluster is not in sync for any reason. ClusterLion does include NVRAM-monitoring and plex-monitoring capabilities and can be configured to not trigger the switchover unless the MetroCluster system is confirmed to be fully synchronized.

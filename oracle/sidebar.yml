@@ -57,38 +57,16 @@ entries:
       url: /oracle/dp/snapshot_optimized_backup.html
   - title: Oracle disaster recovery
     entries:
+    - title: Oracle and NVFAIL
+      url: /oracle/dp/oracle_and_nvfail.html
+    - title: Oracle Single Instance on MetroCluster
+      url: /oracle/dp/si_on_metrocluster.html
+    - title: Oracle RAC and MetroCluster
+      url: /oracle/dp/rac.html
     - title: Consistency group disaster recovery
       url: /oracle/dp/consistency_group_disaster_recovery.html
     - title: Disaster recovery with log replay
       url: /oracle/dp/disaster_recovery_with_log_replay.html
-  - title: Oracle with SnapMirror Business Continuity
-    entries:
-    - title: Overview
-      url: /oracle/smbc/overview.html
-    - title: SM-BC with Oracle Single Instance
-      url: /oracle/smbc/si.html
-    - title: SM-BC with Oracle RAC
-      url: /oracle/smbc/rac.html
-    - title: Failure Scenarios
-      url: /oracle/smbc/failure-scenarios.html
-  - title: Oracle on MetroCluster
-    entries:
-    - title: NetApp MetroCluster Overview
-      url: /oracle/metrocluster/index.html
-    - title: MetroCluster physical architecture
-      url: /oracle/metrocluster/metrocluster_physical_architecture.html
-    - title: MetroCluster logical architecture
-      url: /oracle/metrocluster/metrocluster_logical_architecture.html
-    - title: SyncMirror
-      url: /oracle/metrocluster/syncmirror.html
-    - title: Oracle and NVFAIL
-      url: /oracle/dp/oracle_and_nvfail.html
-    - title: Oracle Single Instance on MetroCluster
-      url: /oracle/metrocluster/si_on_metrocluster.html
-    - title: Oracle RAC and MetroCluster
-      url: /oracle/metrocluster/rac.html
-    - title: MetroCluster and NVFAIL
-      url: /oracle/metrocluster/mc-mcc-nvfail.html
   - title: Oracle database migration
     entries:
     - title: Introduction

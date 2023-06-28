@@ -3,7 +3,7 @@ title: ONTAP for enterprise applications
 entries:
   - title: Overview
     url: /common/overview.html
-  - title: ONTAP core Technologies
+  - title: ONTAP core technologies
     entries:
       - title: RAID
         url: /common/ontap/raid.html
@@ -33,17 +33,51 @@ entries:
         url: /common/ontap/failover.html
   - title: ONTAP data protection
     entries:
-    - title: ONTAP Data protection fundamentals
-      url: /common/dp/fundamentals.html
+    - title: ONTAP data protection overview
+      url: /common/dp/overview.html
+    - title: Data protection planning
+      url: /common/dp/planning.html
     - title: RPO, TRO, and SLAs
       url: /common/dp/slas.html
-    - title: Planning
-      url: /common/dp/planning.html
     - title: Data availability
       url: /common/dp/availability.html
     - title: Data integrity
       url: /common/dp/integrity.html
-  - title: Database Tiering
+    - title: Snapshot copies
+      url: /common/dp/snapshots.html
+    - title: SnapRestore
+      url: /common/dp/snaprestore.html
+    - title: SnapMirror and SyncMirror
+      url: /common/dp/snaprestore.html
+    - title: SnapCenter and other tools
+      url: /common/dp/tools.html
+     - title: SnapMirror Business Continuity
+       entries:
+       - title: Overview
+        url: /common/smbc/overview.html
+       - title: SM-BC with Oracle Single Instance
+         url: /common/smbc/si.html
+       - title: SM-BC with Oracle RAC
+         url: /common/smbc/rac.html
+       - title: Failure Scenarios
+        url: /common/smbc/failure-scenarios.html
+      - title: MetroCluster
+        entries:
+       - title: NetApp MetroCluster Overview
+          url: /common/metrocluster/index.html
+        - title: MetroCluster physical architecture
+          url: /common/metrocluster/metrocluster_physical_architecture.html
+        - title: MetroCluster logical architecture
+          url: /common/metrocluster/metrocluster_logical_architecture.html
+        - title: SyncMirror
+        url: /common/metrocluster/syncmirror.html
+        - title: Oracle and NVFAIL
+          url: /common/dp/oracle_and_nvfail.html
+        - title: Oracle Single Instance on MetroCluster
+          url: /common/metrocluster/si_on_metrocluster.html
+        - title: MetroCluster and NVFAIL
+          url: /common/metrocluster/mc-mcc-nvfail.html
+  - title: Application and Database tiering
     entries:
     - title: Overview
       url: /common/tiering/introduction.html

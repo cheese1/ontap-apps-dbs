@@ -1,0 +1,18 @@
+---
+sidebar: sidebar
+permalink: common/dp/overview.html
+keywords: ontap, data protection
+summary: Basic principles of ONTAP data protection
+---
+
+= ONTAP data protection overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+The most mission-critical data is usually found in enterprise applications such as databases.
+
+An enterprise cannot operate without access to its data, and in some cases, the data defines the business. This data must be protected; however, data protection is more than just ensuring a usable backup—it is about performing the backups quickly and reliably as well as storing backups safely. The other side of data protection is data recovery. When data is inaccessible, the enterprise is affected and may be inoperative until data is restored. This process must be quick and reliable. Finally, critical datasets must be protected against disasters, which means maintaining a replica of the dataset. The replica must be sufficiently up to date, and it must be quick and simple to make the replica a fully operational application or database.
