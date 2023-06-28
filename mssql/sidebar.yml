@@ -35,20 +35,20 @@ entries:
     entries:
     - title: Database files and filegroups
       url: /mssql/files-and-filegroups.html
-      - title: Database and storage considerations
-        url: /mssql/storage-considerations.html
-      - title: Volumes
-        url: /mssql/volumes.html
-      - title: Compression
-        url: /mssql/compression.html
-      - title: tempdb files
-        url: /mssql/tempdb.html
-      - title: Host log directory
-        url: /mssql/host-log.html
-      - title: Flexclones
-        url: /mssql/flexclones.html
-      - title: Deduplication
-        url: /mssql/deduplication.html
+     - title: Database and storage considerations
+       url: /mssql/storage-considerations.html
+     - title: Volumes
+       url: /mssql/volumes.html
+     - title: Compression
+       url: /mssql/compression.html
+     - title: tempdb files
+       url: /mssql/tempdb.html
+     - title: Host log directory
+       url: /mssql/host-log.html
+     - title: Flexclones
+       url: /mssql/flexclones.html
+     - title: Deduplication
+       url: /mssql/deduplication.html
   - title: Tiering
     url: /mssql/tiering.html
   - title: SnapCenter

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/mysql-intro.html
+permalink: mysql/overview.html
 keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
