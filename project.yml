@@ -10,8 +10,8 @@ sidebar:
     - title: Implementation guides
       url: /index.html
     - section: common
-    - section: mysql
     - section: mssql
+    - section: mysql
     - section: oracle
     - section: postgres
     - section: hana

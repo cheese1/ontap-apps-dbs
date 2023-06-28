@@ -25,6 +25,8 @@ entries:
     url: /mssql/max-worker-threads.html
   - title: Index create memory
     url: /mssql/index-create.html
+  - title: Tiering
+    url: /mssql/tiering.html
   - title: Min memory per query
     url: /mssql/min-memory-per-query.html
   - title: Buffer pool extensions

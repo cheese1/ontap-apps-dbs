@@ -5,7 +5,7 @@ keywords: checksums, data integrity, lost writes
 summary: Checksums and ONTAP data integrity
 ---
 
-= Checksums and Data Integrity
+= Checksums and data integrity
 :hardbreaks:
 :nofooter:
 :icons: font

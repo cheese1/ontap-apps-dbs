@@ -5,7 +5,7 @@ keywords: ontap,raid
 summary: RAID data protection for enterprise applications
 ---
 
-= RAID Levels
+= RAID levels
 :hardbreaks:
 :nofooter:
 :icons: font

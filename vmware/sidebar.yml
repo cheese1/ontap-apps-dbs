@@ -13,15 +13,15 @@ entries:
         entries:
           - title: "Introduction"
             url: /virtualization/vsphere_admin_introduction.html
-          - title: "Unified Storage"
+          - title: "Unified storage"
             url: /virtualization/vsphere_admin_unified_storage.html
-          - title: "Storage Efficiencies"
+          - title: "Storage efficiencies"
             url: /virtualization/vsphere_admin_storage_efficiencies.html
           - title: "Virtual Volume and Storage Policy Based Management"
             url: /virtualization/vsphere_admin_vvols_and_spbm.html
-          - title: "Hybrid Cloud"
+          - title: "Hybrid cloud"
             url: /virtualization/vsphere_admin_hybrid_cloud.html
-      - title: "VMware vSphere with ONTAP Best Practices"
+      - title: "VMware vSphere with ONTAP best Practices"
         url: /virtualization/vsphere_ontap_ontap_for_vsphere.html
         entries:
           - title: "ONTAP capabilities for vSphere"
@@ -43,7 +43,7 @@ entries:
         entries:
           - title: "Using vVols with ONTAP"
             url: /virtualization/vvols-ontap.html
-          - title: "Deploying vVols Storage"
+          - title: "Deploying vVols storage"
             url: /virtualization/vvols-deploy.html
           - title: "Protecting vVols"
             url: /virtualization/vvols-protect.html
@@ -73,7 +73,7 @@ entries:
       - title: "VMware vSphere Automation"
         url: /virtualization/vsphere_auto_introduction.html
         entries:
-          - title: "Traditional Block Storage Provisioning"
+          - title: "Traditional block storage provisioning"
             url: /virtualization/vsphere_ontap_auto_block.html
             entries:
               - title: "VMFS - Fibre Channel"
@@ -84,7 +84,7 @@ entries:
                 url: /virtualization/vsphere_ontap_auto_block_iscsi.html
               - title: "VMFS - NVMe over Fabric"
                 url: /virtualization/vsphere_ontap_auto_block_nvmeof.html
-          - title: "Traditional File Storage Provisioning"
+          - title: "Traditional file storage provisioning"
             url: /virtualization/vsphere_ontap_auto_file.html
             entries:
               - title: "NFS - v3"
@@ -93,13 +93,13 @@ entries:
                 url: /virtualization/vsphere_ontap_auto_file_nfs41.html
       - title: "VMware Horizon"
         entries:
-          - title: "End User Computing with VMware (Design Guide)"
+          - title: "End user computing with VMware (Design Guide)"
             url: /virtualization/nva-1132-design.html
-          - title: "End User Computing with VMware and NVIDIA GPUs (Design Guide)"
+          - title: "End user computing with VMware and NVIDIA GPUs (Design Guide)"
             url: /virtualization/nva-1129-design.html
-          - title: "End User Computing with VMware and NVIDIA GPUs (Deployment Guide)"
+          - title: "End user computing with VMware and NVIDIA GPUs (Deployment Guide)"
             url: /virtualization/nva-1129-deploy.html
-          - title: "End User Computing with VMware for 3D Graphics"
+          - title: "End user computing with VMware for 3D graphics"
             url: /virtualization/tr-4792-link.htm
       - title: "Videos"
         url: /virtualization/vsphere_demos_videos.html

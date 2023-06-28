@@ -2,10 +2,10 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-summary: Implementation Guides
+summary: Implementation guides
 ---
 
-= Enterprise Application Implementation Guides
+= Enterprise application implementation guides
 :hardbreaks:
 :nofooter:
 :icons: font

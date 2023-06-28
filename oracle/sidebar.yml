@@ -13,6 +13,8 @@ entries:
       url: /oracle/dp/oracle_and_nvfail.html
     - title: ASM Reclamation Utility
       url: /oracle/storage-configuration/asmru.html
+    - title: Tiering
+      url: /oracle/storage-configuration/tiering.html
   - title: Database configuration
     entries:
     - title: db_file_multiblock_read_count

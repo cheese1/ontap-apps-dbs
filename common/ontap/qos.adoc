@@ -5,7 +5,7 @@ keywords: ontap, qos, bandwidth, minimum, guaranteed
 summary: Safely consolidating multiple workloads with ONTAP QoS
 ---
 
-= Quality of service
+= Quality of Service
 :hardbreaks:
 :nofooter:
 :icons: font
