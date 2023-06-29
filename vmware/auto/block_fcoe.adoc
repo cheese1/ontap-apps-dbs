@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vsphere/block_fcoe.html
+permalink: vmware/auto/block_fcoe.html
 keywords: vSphere, datastore, VMFS, FCoE, ONTAP tools, zone, network interface
 summary: This page provides steps to deploy a NetApp ONTAP storage FCoE VMFS datastore in a VMware vSphere environment.
 ---

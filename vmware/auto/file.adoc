@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vsphere/file.html
+permalink: vmware/auto/file.html
 keywords: vSphere, NFS, NFS4.1, NAS, ONTAP tools, VLAN, network interface
 summary: This page provides NFS datastore support in VMware vSphere environment.
 ---

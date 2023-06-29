@@ -63,8 +63,8 @@ entries:
             url: /hana/aff-nfs/sap_hana_data_volume_size.html
           - title: SAP HANA software installation
             url: /hana/aff-nfs/sap_hana_software_installation.html
-        - title: Adding additional data volume partitions
-          url: /hana/aff-nfs/adding_additional_data_volume_partitions.html
+          - title: Adding additional data volume partitions
+            url: /hana/aff-nfs/adding_additional_data_volume_partitions.html
       - title: Where to find additional information
         url: /hana/aff-nfs/where_to_find_additional_information.html
       - title: Update history

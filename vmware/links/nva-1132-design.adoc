@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/nva-1132-design.html
+permalink: vmware/links/nva-1132-design.html
 keywords: design, HCI, computing, vmware, cloud
 summary: "VMware end-user computing with NetApp HCI is a prevalidated, best-practice data center architecture for deploying virtual desktop workloads at an enterprise scale."
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vsphere/file_nfs41.html
+permalink: vmware/auto/file_nfs41.html
 keywords: vSphere, datastore, nfs, ONTAP tools, vlan, network interface, service policy, export policy
 summary: This page provides steps to deploy a NetApp ONTAP NFS version 4 datastore in a VMware vSphere environment.
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vsphere/block_fc.html
+permalink: vmware/auto/block_fc.html
 keywords: vSphere, datastore, VMFS, FC, ONTAP tools, zone, WWPN
 summary: This page provides steps to deploy a NetApp ONTAP storage FC VMFS datastore in a VMware vSphere environment.
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vsphere/block_iscsi.html
+permalink: vmware/auto/block_iscsi.html
 keywords: vSphere, datastore, VMFS, iSCSI, ONTAP tools, vlan, network interface, service policy
 summary: This page provides steps to deploy a NetApp ONTAP storage iSCSI VMFS datastore in a VMware vSphere environment.
 ---
