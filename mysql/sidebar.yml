@@ -3,16 +3,6 @@ title: MySQL on ONTAP
 entries:
   - title: Overview
     url: /mysql/overview.html
-  - title: Containerization 
-    url: /mysql/containers.html
-  - title: Host configuration
-    entries:
-    - title: Slot tables 
-      url: /mysql/slot-tables.html
-    - title: I/O schedulers
-      url: /mysql/schedules.html
-    - title: Open file limits 
-      url: /mysql/open-file-limits.html
   - title: Database Configuration
     entries:
     - title: MySQL File Structure
@@ -35,5 +25,21 @@ entries:
       url: /mysql/innodb_lru_scan_depth.html
     - title: open_file_limits
       url: /mysql/open_file_limits.html
-  - title: Tiering
-    url: /mysql/tiering.html
+  - title: Host configuration
+    entries:
+    - title: Containerization 
+      url: /mysql/containers.html
+    - title: Slot tables 
+      url: /mysql/slot-tables.html
+    - title: I/O schedulers
+      url: /mysql/schedules.html
+    - title: Open file limits 
+      url: /mysql/open-file-limits.html
+  - title: Storage configuration
+    entries:
+    - title: NFS Configuration
+      url: /mysql/nfs.html
+    - title: SAN Configuration
+      url: /mysql/san.html
+    - title: Tiering
+      url: /mysql/tiering.html

@@ -3,7 +3,7 @@ title: ONTAP for enterprise applications
 entries:
   - title: Overview
     url: /common/overview.html
-  - title: ONTAP core technologies
+  - title: Core technologies
     entries:
       - title: Overview
         url: /common/dp/overview.html
@@ -21,6 +21,12 @@ entries:
           url: /common/network-configuration/ethernet_configuration.html
         - title: FC SAN configuration
           url: /common/network-configuration/fcsan_configuration.html
+      - title: Storage configuration
+        entries:
+        - title: NFS
+          url: /common/storage-configuration/nfs.html
+        - tile: FC SAN
+          url: /common/storage-configuration/fcsan.html
       - title: Quality of service (QoS)
         url: /common/ontap/qos.html
       - title: Efficiency
@@ -33,7 +39,7 @@ entries:
         url: /common/ontap/snapshots.html
       - title: Failover and switchover
         url: /common/ontap/failover.html
-  - title: ONTAP data protection
+  - title: Data protection
     entries:
     - title: Overview
       url: /common/dp/overview.html
@@ -79,7 +85,7 @@ entries:
         url: /common/metrocluster/apps-on-metrocluster.html
       - title: MetroCluster and NVFAIL
         url: /common/metrocluster/nvfail.html
-  - title: Application and database tiering
+  - title: Tiering
     entries:
     - title: Overview
       url: /common/tiering/introduction.html

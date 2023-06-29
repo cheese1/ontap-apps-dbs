@@ -3,9 +3,7 @@ title: Microsoft SQL Server on ONTAP
 entries:
   - title: Overview
     url: /mssql/overview.html
-  - title: SQL server workloads
-    url: /mssql/workloads.html
-  - title: SQL Server configuration
+  - title: Database configuration
     entries:
     - title: Shared instance versus dedicated instance
       url: /mssql/shared-vs-dedicated.html
@@ -33,6 +31,8 @@ entries:
         url: /mssql/buffer-pool.html
   - title: Storage configuration
     entries:
+    - title: Workloads
+      url: /mssql/workloads.html
     - title: Database files and filegroups
       url: /mssql/files-and-filegroups.html
     - title: Database and storage considerations
@@ -49,7 +49,7 @@ entries:
       url: /mssql/flexclones.html
     - title: Deduplication
       url: /mssql/deduplication.html
-  - title: Tiering
-    url: /mssql/tiering.html
+    - title: Tiering
+      url: /mssql/tiering.html
   - title: SnapCenter
     url: /mssql/snapcenter.html

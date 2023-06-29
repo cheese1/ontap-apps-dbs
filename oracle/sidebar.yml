@@ -3,18 +3,6 @@ title: Oracle on ONTAP
 entries:
   - title: Overview
     url: /oracle/overview.html
-  - title: Storage configuration
-    entries:
-    - title: NFS storage
-      url: /oracle/storage-configuration/nfs_configuration.html
-    - title: SAN storage
-      url: /oracle/storage-configuration/san_configuration.html
-    - title: Oracle and NVFAIL
-      url: /oracle/dp/oracle_and_nvfail.html
-    - title: ASM Reclamation Utility
-      url: /oracle/storage-configuration/asmru.html
-    - title: Tiering
-      url: /oracle/storage-configuration/tiering.html
   - title: Database configuration
     entries:
     - title: db_file_multiblock_read_count
@@ -25,8 +13,6 @@ entries:
       url: /oracle/oracle-configuration/rac.html
     - title: Redo block size
       url: /oracle/oracle-configuration/redo_block_size.html
-  - title: Network configuration
-    url: /oracle/network-configuration/network-overview.html
   - title: Host configuration
     entries:
     - title: AIX
@@ -41,6 +27,20 @@ entries:
       url: /oracle/host-configuration/windows.html
     - title: Solaris
       url: /oracle/host-configuration/solaris.html
+  - title: Network configuration
+    url: /oracle/network-configuration/network-overview.html
+  - title: Storage configuration
+    entries:
+    - title: NFS storage
+      url: /oracle/storage-configuration/nfs_configuration.html
+    - title: SAN storage
+      url: /oracle/storage-configuration/san_configuration.html
+    - title: Oracle and NVFAIL
+      url: /oracle/dp/oracle_and_nvfail.html
+    - title: ASM Reclamation Utility
+      url: /oracle/storage-configuration/asmru.html
+    - title: Tiering
+      url: /oracle/storage-configuration/tiering.html
   - title: Virtualization of Oracle databases
     url: /oracle/virtualization/intro.html
   - title: Oracle data protection

@@ -15,7 +15,7 @@ summary: TCP/IP and ethernet configuration.
 [.lead]
 TCP/IP is the network protocol NFS, iSCSI, and NVMe/TCP and NVMe/RoCE storage, and especially the cloud.
 
-== THost OS settings
+== Host OS settings
 
 Most application vendor documentation include specific TCP and ethernet settings intended to ensure the application is working optimally. These same settings are usually sufficient to also deliver optimal IP-based storage performance. 
 

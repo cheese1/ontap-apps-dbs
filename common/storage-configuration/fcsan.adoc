@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/storage-configuration/san_configuration.html
+permalink: common/storage-configuration/fcsan.html
 keywords: SAN, ASM, LVM
 summary: Basic guidelines for configuration FC SAN for maximum reliability, managability, and resiliency
 ---
