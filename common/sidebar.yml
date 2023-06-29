@@ -25,7 +25,7 @@ entries:
         entries:
         - title: NFS
           url: /common/storage-configuration/nfs.html
-        - tile: FC SAN
+        - title: FC SAN
           url: /common/storage-configuration/fcsan.html
       - title: Quality of service (QoS)
         url: /common/ontap/qos.html

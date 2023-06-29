@@ -4,20 +4,21 @@ entries:
   - title: Overview
     entries:
   - title: "VMware Virtualization for ONTAP"
-      entries:
-        - title: "Introduction"
-          url: /vmware/vsphere_admin_introduction.html
-        - title: "Unified storage"
-          url: /vmware/vsphere_admin_unified_storage.html
-        - title: "Storage efficiencies"
-          url: /vmware/vsphere_admin_storage_efficiencies.html
-        - title: "Virtual Volume and Storage Policy Based Management"
-          url: /vmware/vsphere_admin_vvols_and_spbm.html
-        - title: "Hybrid cloud"
-          url: /vmware/vsphere_admin_hybrid_cloud.html
+    entries:
+      - title: "Introduction"
+        url: /vmware/vsphere_admin_introduction.html
+      - title: "Unified storage"
+        url: /vmware/vsphere_admin_unified_storage.html
+      - title: "Storage efficiencies"
+        url: /vmware/vsphere_admin_storage_efficiencies.html
+      - title: "Virtual Volume and Storage Policy Based Management"
+        url: /vmware/vsphere_admin_vvols_and_spbm.html
+      - title: "Hybrid cloud"
+        url: /vmware/vsphere_admin_hybrid_cloud.html
     - title: VMware vSphere with ONTAP
-      url: /vmware/vsphere_ontap_ontap_for_vsphere.html
       entries:
+        - title: Overview
+          url: /vmware/vsphere_ontap_ontap_for_vsphere.html
         - title: "ONTAP capabilities for vSphere"
           url: /vmware/vsphere_ontap_ontap_capabilities_for_vsphere.html
         - title: "Datastores and protocols"
@@ -33,8 +34,9 @@ entries:
         - title: "Contact us"
           url: /vmware/vsphere_ontap_contact_us.html
     - title: "VMware vSphere Virtual Volumes (vVols) with NetApp ONTAP"
-      url: /vmware/vvols-overview.html
       entries:
+        - title: Overview
+          url: /vmware/vvols-overview.html
         - title: "Using vVols with ONTAP"
           url: /vmware/vvols-ontap.html
         - title: "Deploying vVols storage"
@@ -44,8 +46,9 @@ entries:
         - title: "Troubleshooting"
           url: /vmware/vvols-resources.html
     - title: "VMware Site Recovery Manager with NetApp ONTAP 9"
-      url: /vmware/vsrm-ontap9_1._introduction_to_srm_with_ontap.html
       entries:
+        - title: Overview
+          url: /vmware/vsrm-ontap9_1._introduction_to_srm_with_ontap.html
         - title: "New features with SRM and ONTAP Tools"
           url: /vmware/vsrm-ontap9_new_features_with_srm_and_ontap_tools.html
         - title: "Deployment best practices"
@@ -61,26 +64,29 @@ entries:
         - title: "Additional Information"
           url: /vmware/vsrm-ontap9_additional_information.html
     - title: "VMware vSphere Automation"
-      url: /vmware/vsphere_auto_introduction.html
       entries:
-        - title: "Traditional block storage provisioning"
+      - title: Overview
+        url: /vmware/vsphere_auto_introduction.html
+      - title: "Traditional block storage provisioning"
+        entries:
+        - title: Overview
           url: /vmware/vsphere_ontap_auto_block.html
-          entries:
-            - title: "VMFS - Fibre Channel"
-              url: /vmware/vsphere_ontap_auto_block_fc.html
-            - title: "VMFS - Fibre Channel over Ethernet"
-              url: /vmware/vsphere_ontap_auto_block_fcoe.html
-            - title: "VMFS - iSCSI"
-              url: /vmware/vsphere_ontap_auto_block_iscsi.html
-            - title: "VMFS - NVMe over Fabric"
-              url: /vmware/vsphere_ontap_auto_block_nvmeof.html
-        - title: "Traditional file storage provisioning"
+        - title: "VMFS - Fibre Channel"
+          url: /vmware/vsphere_ontap_auto_block_fc.html
+        - title: "VMFS - Fibre Channel over Ethernet"
+          url: /vmware/vsphere_ontap_auto_block_fcoe.html
+        - title: "VMFS - iSCSI"
+          url: /vmware/vsphere_ontap_auto_block_iscsi.html
+        - title: "VMFS - NVMe over Fabric"
+          url: /vmware/vsphere_ontap_auto_block_nvmeof.html
+      - title: "Traditional file storage provisioning"
+        entries:
+        - title: Overview
           url: /vmware/vsphere_ontap_auto_file.html
-          entries:
-            - title: "NFS - v3"
-              url: /vmware/vsphere_ontap_auto_file_nfs.html
-            - title: "NFS - v4.1"
-              url: /vmware/vsphere_ontap_auto_file_nfs41.html
+        - title: "NFS - v3"
+          url: /vmware/vsphere_ontap_auto_file_nfs.html
+        - title: "NFS - v4.1"
+          url: /vmware/vsphere_ontap_auto_file_nfs41.html
     - title: "VMware Horizon"
       entries:
         - title: "End user computing with VMware (Design Guide)"
