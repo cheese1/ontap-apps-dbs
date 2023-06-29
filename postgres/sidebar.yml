@@ -3,10 +3,10 @@ title: PostgreSQL on ONTAP
 entries:
   - title: Overview
     url: /postgres/overview.html
-  - title: PostgreSQL architecture
-    url: /postgres/architecture.html
   - title: Database configuration
     entries:
+    - title: PostgreSQL architecture
+      url: /postgres/architecture.html
     - title: Tablespaces
       url: /postgres/tablespaces.html
     - title: File system options

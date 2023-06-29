@@ -41,7 +41,7 @@ entries:
       url: /oracle/storage-configuration/asmru.html
     - title: Tiering
       url: /oracle/storage-configuration/tiering.html
-  - title: Virtualization of Oracle databases
+  - title: Virtualization
     url: /oracle/virtualization/intro.html
   - title: Oracle data protection
     entries:

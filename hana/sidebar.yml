@@ -6,138 +6,138 @@ entries:
   - title: SAP HANA on NetApp AFF Systems with FCP Configuration Guide
     entries:
       - title: Introduction
-        url: /hana/saphana_aff_fc_introduction.html
+        url: /hana/aff-fc/introduction.html
       - title: Architecture
-        url: /hana/saphana_aff_fc_architecture.html
+        url: /hana/aff-fc/architecture.html
       - title: Storage sizing
-        url: /hana/saphana_aff_fc_storage_sizing.html
+        url: /hana/aff-fc/storage_sizing.html
       - title: Infrastructure setup and configuration
         entries:
           - title: Infrastructure setup and configuration overview
-            url: /hana/saphana_aff_fc_infrastructure_setup_and_configuration_overview.html
+            url: /hana/aff-fc/infrastructure_setup_and_configuration_overview.html
           - title: SAN fabric setup
-            url: /hana/saphana_aff_fc_san_fabric_setup.html
+            url: /hana/aff-fc/san_fabric_setup.html
           - title: Time synchronization
-            url: /hana/saphana_aff_fc_time_synchronization.html
+            url: /hana/aff-fc/time_synchronization.html
           - title: Storage controller setup
-            url: /hana/saphana_aff_fc_storage_controller_setup.html
+            url: /hana/aff-fc/storage_controller_setup.html
           - title: SAP HANA storage connector API
-            url: /hana/saphana_aff_fc_sap_hana_storage_connector_api.html
+            url: /hana/aff-fc/sap_hana_storage_connector_api.html
           - title: Host setup
-            url: /hana/saphana_aff_fc_host_setup.html
+            url: /hana/aff-fc/host_setup.html
           - title: I/O Stack configuration for SAP HANA
-            url: /hana/saphana_aff_fc_i_o_stack_configuration_for_sap_hana.html
+            url: /hana/aff-fc/i_o_stack_configuration_for_sap_hana.html
           - title: SAP HANA software installation
-            url: /hana/saphana_aff_fc_sap_hana_software_installation.html
+            url: /hana/aff-fc/sap_hana_software_installation.html
           - title: Adding additional data volume partitions for SAP HANA single-host systems
-            url: /hana/saphana_aff_fc_adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html
-      - title: Where to find additional information
-        url: /hana/saphana_aff_fc_where_to_find_additional_information.html
-      - title: Update history
-        url: /hana/saphana_aff_fc_update_history.html
+            url: /hana/aff-fc/adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html
+       - title: Where to find additional information
+         url: /hana/aff-fc/where_to_find_additional_information.html
+       - title: Update history
+         url: /hana/aff-fc/update_history.html
   - title: SAP HANA on NetApp AFF Systems with NFS Configuration Guide
     entries:
       - title: Introduction
-        url: /hana/saphana_aff_nfs_introduction.html
+        url: /hana/aff-nfs/introduction.html
       - title: Architecture
-        url: /hana/saphana_aff_nfs_architecture.html
+        url: /hana/aff-nfs/architecture.html
       - title: Storage sizing
-        url: /hana/saphana_aff_nfs_storage_sizing.html
+        url: /hana/storage_sizing.html
       - title: Infrastructure setup and configuration
         entries:
           - title: Infrastructure setup and configuration overview
-            url: /hana/saphana_aff_nfs_infrastructure_setup_and_configuration_overview.html
+            url: /hana/aff-nfs/infrastructure_setup_and_configuration_overview.html
           - title: Network setup
-            url: /hana/saphana_aff_nfs_network_setup.html
+            url: /hana/aff-nfs/network_setup.html
           - title: Time synchronization
-            url: /hana/saphana_aff_nfs_time_synchronization.html
+            url: /hana/aff-nfs/time_synchronization.html
           - title: Storage controller setup
-            url: /hana/saphana_aff_nfs_storage_controller_setup.html
+            url: /hana/aff-nfs/storage_controller_setup.html
           - title: Host setup
-            url: /hana/saphana_aff_nfs_host_setup.html
+            url: /hana/aff-nfs/host_setup.html
           - title: SAP HANA installation preparations for NFSv4
-            url: /hana/saphana_aff_nfs_sap_hana_installation_preparations_for_nfsv4.html
+            url: /hana/aff-nfs/sap_hana_installation_preparations_for_nfsv4.html
           - title: I/O stack configuration for SAP HANA
-            url: /hana/saphana_aff_nfs_i_o_stack_configuration_for_sap_hana.html
+            url: /hana/aff-nfs/i_o_stack_configuration_for_sap_hana.html
           - title: SAP HANA data volume size
-            url: /hana/saphana_aff_nfs_sap_hana_data_volume_size.html
+            url: /hana/aff-nfs/sap_hana_data_volume_size.html
           - title: SAP HANA software installation
-            url: /hana/saphana_aff_nfs_sap_hana_software_installation.html
-          - title: Adding additional data volume partitions
-            url: /hana/saphana_aff_nfs_adding_additional_data_volume_partitions.html
+            url: /hana/aff-nfs/sap_hana_software_installation.html
+        - title: Adding additional data volume partitions
+          url: /hana/aff-nfs/adding_additional_data_volume_partitions.html
       - title: Where to find additional information
-        url: /hana/saphana_aff_nfs_where_to_find_additional_information.html
+        url: /hana/aff-nfs/where_to_find_additional_information.html
       - title: Update history
-        url: /hana/saphana_aff_nfs_update_history.html
-  - title: SAP HANA on NetApp FAS Systems with NFS Configuration Guide
-    entries:
-      - title: Introduction
-        url: /hana/saphana-fas-nfs_introduction.html
-      - title: Architecture
-        url: /hana/saphana-fas-nfs_architecture.html
-      - title: Storage sizing
-        url: /hana/saphana-fas-nfs_storage_sizing.html
-      - title: Infrastructure setup and configuration
-        entries:
-          - title: Infrastructure setup and configuration overview
-            url: /hana/saphana-fas-nfs_infrastructure_setup_and_configuration_overview.html
-          - title: Network setup
-            url: /hana/saphana-fas-nfs_network_setup.html
-          - title: Time synchronization
-            url: /hana/saphana-fas-nfs_time_synchronization.html
-          - title: Storage controller setup
-            url: /hana/saphana-fas-nfs_storage_controller_setup.html
-          - title: Host setup
-            url: /hana/saphana-fas-nfs_host_setup.html
-          - title: SAP HANA installation preparations for NFSv4
-            url: /hana/saphana-fas-nfs_sap_hana_installation_preparations_for_nfsv4.html
-          - title: I/O stack configuration for SAP HANA
-            url: /hana/saphana-fas-nfs_i_o_stack_configuration_for_sap_hana.html
-          - title: SAP HANA data volume size
-            url: /hana/saphana-fas-nfs_sap_hana_data_volume_size.html
-          - title: SAP HANA software installation
-            url: /hana/saphana-fas-nfs_sap_hana_software_installation.html
-          - title: Adding additional data volume partitions
-            url: /hana/saphana-fas-nfs_adding_additional_data_volume_partitions.html
-      - title: Where to find additional information
-        url: /hana/saphana-fas-nfs_where_to_find_additional_information.html
-      - title: Update history
-        url: /hana/saphana-fas-nfs_update_history.html
+        url: /hana/aff-nfs/update_history.html
   - title: SAP HANA on FAS Systems with FCP Configuration Guide
     entries:
       - title: Introduction
-        url: /hana/saphana_fas_fc_introduction.html
+        url: /hana/fas-fc/introduction.html
       - title: Architecture
-        url: /hana/saphana_fas_fc_architecture.html
+        url: /hana/fas-fc/architecture.html
       - title: Storage sizing
-        url: /hana/saphana_fas_fc_storage_sizing.html
+        url: /hana/fas-fc/storage_sizing.html
       - title: Infrastructure setup and configuration
         entries:
           - title: Infrastructure setup and configuration overview
-            url: /hana/saphana_fas_fc_infrastructure_setup_and_configuration_overview.html
+            url: /hana/fas-fc/infrastructure_setup_and_configuration_overview.html
           - title: SAN fabric setup
-            url: /hana/saphana_fas_fc_san_fabric_setup.html
+            url: /hana/fas-fc/san_fabric_setup.html
           - title: Time synchronization
-            url: /hana/saphana_fas_fc_time_synchronization.html
+            url: /hana/fas-fc/time_synchronization.html
           - title: Storage controller setup
-            url: /hana/saphana_fas_fc_storage_controller_setup.html
+            url: /hana/fas-fc/storage_controller_setup.html
           - title: SAP HANA storage connector API
-            url: /hana/saphana_fas_fc_sap_hana_storage_connector_api.html
+            url: /hana/fas-fc/sap_hana_storage_connector_api.html
           - title: Host setup
-            url: /hana/saphana_fas_fc_host_setup.html
+            url: /hana/fas-fc/host_setup.html
           - title: I/O stack configuration for SAP HANA
-            url: /hana/saphana_fas_fc_i_o_stack_configuration_for_sap_hana.html
+            url: /hana/fas-fc/i_o_stack_configuration_for_sap_hana.html
           - title: SAP HANA software installation
-            url: /hana/saphana_fas_fc_sap_hana_software_installation.html
+            url: /hana/fas-fc/sap_hana_software_installation.html
           - title: Adding additional data volume partitions for SAP HANA single-host systems
-            url: /hana/saphana_fas_fc_adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html
+            url: /hana/fas-fc/adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html
       - title: Where to find additional information
-        url: /hana/saphana_fas_fc_where_to_find_additional_information.html
+        url: /hana/fas-fc/where_to_find_additional_information.html
       - title: Update history
-        url: /hana/saphana_fas_fc_update_history.html
+        url: /hana/fas-fc/update_history.html
+  - title: SAP HANA on NetApp FAS Systems with NFS Configuration Guide
+    entries:
+      - title: Introduction
+        url: /hana/fas-nfs/saphana-fas-nfs_introduction.html
+      - title: Architecture
+        url: /hana/fas-nfs/saphana-fas-nfs_architecture.html
+      - title: Storage sizing
+        url: /hana/fas-nfs/saphana-fas-nfs_storage_sizing.html
+      - title: Infrastructure setup and configuration
+        entries:
+          - title: Infrastructure setup and configuration overview
+            url: /hana/fas-nfs/saphana-fas-nfs_infrastructure_setup_and_configuration_overview.html
+          - title: Network setup
+            url: /hana/fas-nfs/saphana-fas-nfs_network_setup.html
+          - title: Time synchronization
+            url: /hana/fas-nfs/saphana-fas-nfs_time_synchronization.html
+          - title: Storage controller setup
+            url: /hana/fas-nfs/saphana-fas-nfs_storage_controller_setup.html
+          - title: Host setup
+            url: /hana/fas-nfs/saphana-fas-nfs_host_setup.html
+          - title: SAP HANA installation preparations for NFSv4
+            url: /hana/fas-nfs/saphana-fas-nfs_sap_hana_installation_preparations_for_nfsv4.html
+          - title: I/O stack configuration for SAP HANA
+            url: /hana/fas-nfs/saphana-fas-nfs_i_o_stack_configuration_for_sap_hana.html
+          - title: SAP HANA data volume size
+            url: /hana/fas-nfs/saphana-fas-nfs_sap_hana_data_volume_size.html
+          - title: SAP HANA software installation
+            url: /hana/fas-nfs/saphana-fas-nfs_sap_hana_software_installation.html
+          - title: Adding additional data volume partitions
+            url: /hana/fas-nfs/saphana-fas-nfs_adding_additional_data_volume_partitions.html
+      - title: Where to find additional information
+        url: /hana/fas-nfs/saphana-fas-nfs_where_to_find_additional_information.html
+      - title: Update history
+        url: /hana/fas-nfs/saphana-fas-nfs_update_history.html
   - title: SAP HANA on IBM Power Systems and NetApp AFF Systems with NFS
-    url: /hana/saphana-ibm-aff-nfs_pdf_link.html
+    url: /hana/fas-fc/saphana-ibm-aff-nfs_pdf_link.html
   - title: SAP with Oracle on UNIX and NFS with NetApp ONTAP
-    url: /hana/sap-oracle-snapman_pdf_link.html
+    url: /hana/fas-fc/sap-oracle-snapman_pdf_link.html
   - title: SAP with Microsoft SQL Server on Windows Using ONTAP
-    url: /hana/sap-sqls-sc_pdf_link.html
+    url: /hana/fas-fc/sap-sqls-sc_pdf_link.html
