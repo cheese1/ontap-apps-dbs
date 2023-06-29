@@ -31,10 +31,10 @@ entries:
             url: /hana/aff-fc/sap_hana_software_installation.html
           - title: Adding additional data volume partitions for SAP HANA single-host systems
             url: /hana/aff-fc/adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html
-       - title: Where to find additional information
-         url: /hana/aff-fc/where_to_find_additional_information.html
-       - title: Update history
-         url: /hana/aff-fc/update_history.html
+      - title: Where to find additional information
+        url: /hana/aff-fc/where_to_find_additional_information.html
+      - title: Update history
+        url: /hana/aff-fc/update_history.html
   - title: SAP HANA on NetApp AFF Systems with NFS Configuration Guide
     entries:
       - title: Introduction

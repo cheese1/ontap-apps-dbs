@@ -1,8 +1,6 @@
 section: vmware
 title: VMware
 entries:
-  - title: Overview
-    entries:
   - title: "VMware Virtualization for ONTAP"
     entries:
       - title: "Introduction"
