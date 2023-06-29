@@ -64,7 +64,7 @@ entries:
   - title: "VMware vSphere Automation"
     entries:
     - title: Overview
-      url: /vmware/auto/introduction.html
+      url: /vmware/auto/overview.html
     - title: "Traditional block storage provisioning"
       entries:
       - title: Overview
@@ -88,12 +88,12 @@ entries:
   - title: "VMware Horizon"
     entries:
       - title: "End user computing with VMware (Design Guide)"
-        url: /vmware/nva-1132-design.html
+        url: /vmware/links/nva-1132-design.html
       - title: "End user computing with VMware and NVIDIA GPUs (Design Guide)"
-        url: /vmware/nva-1129-design.html
+        url: /vmware/links/nva-1129-design.html
       - title: "End user computing with VMware and NVIDIA GPUs (Deployment Guide)"
-        url: /vmware/nva-1129-deploy.html
+        url: /vmware/links/nva-1129-deploy.html
       - title: "End user computing with VMware for 3D graphics"
-        url: /vmware/tr-4792-link.htm
+        url: /vmware/links/tr-4792-link.htm
   - title: "Videos"
     url: /vmware/vsphere_demos_videos.html

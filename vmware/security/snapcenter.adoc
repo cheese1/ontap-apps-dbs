@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/scvmware-security-secure-development-activities.html
+permalink: vmware/security/snapcenter.html
 keywords: security, snapcenter, treat modeling, dast, vulnerability scanning, penetration testing
 summary: 
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/introduction.html
+permalink: vmware/auto/overview.html
 keywords: vSphere, cloud, hybrid cloud, AWS, Azure, Google cloud, snapmirror cloud, cloud backup service, Cloud Sync, FabricPool, ONTAP
 summary: This page describes the benefits of automating base ONTAP functionality in a VMware vSphere environment.
 ---

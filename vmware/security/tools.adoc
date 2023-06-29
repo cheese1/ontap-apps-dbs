@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/tools-vmware-secure-development-activities.html
+permalink: vmware/security/tools.html
 keywords: wp-7353, wp7353, 7353, security, vmware, vsphere, Tools
 summary: This document discusses product security for ONTAP tools for VMware vSphere.
 ---
