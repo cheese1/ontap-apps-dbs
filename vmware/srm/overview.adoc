@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/srm/introduction_to_srm_with_ontap.html
+permalink: vmware/srm/overview.html
 keywords: ontap, vsphere, srm, srm, hybrid, cloud, migration, vmware, site, recovery manager, vsrm
 summary: NetApp ONTAP has been a leading storage solution for VMware vSphere environments since its introduction into the modern datacenter in 2002, and it continues to add innovative capabilities to simplify management while reducing costs.
 ---
