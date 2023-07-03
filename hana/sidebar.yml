@@ -1,9 +1,7 @@
 section: hana
 title: SAP HANA on ONTAP
 entries:
-  - title: Overview
-    url: /hana/overview.html
-  - title: SAP HANA on NetApp AFF Systems with FCP Configuration Guide
+  - title: SAP HANA on AFF with FCP
     entries:
       - title: Introduction
         url: /hana/aff-fc/introduction.html
@@ -35,7 +33,7 @@ entries:
         url: /hana/aff-fc/where_to_find_additional_information.html
       - title: Update history
         url: /hana/aff-fc/update_history.html
-  - title: SAP HANA on NetApp AFF Systems with NFS Configuration Guide
+  - title: SAP HANA on AFF with NFS
     entries:
       - title: Introduction
         url: /hana/aff-nfs/introduction.html
@@ -69,7 +67,7 @@ entries:
         url: /hana/aff-nfs/where_to_find_additional_information.html
       - title: Update history
         url: /hana/aff-nfs/update_history.html
-  - title: SAP HANA on FAS Systems with FCP Configuration Guide
+  - title: SAP HANA on FAS with FCP
     entries:
       - title: Introduction
         url: /hana/fas-fc/introduction.html
@@ -101,7 +99,7 @@ entries:
         url: /hana/fas-fc/where_to_find_additional_information.html
       - title: Update history
         url: /hana/fas-fc/update_history.html
-  - title: SAP HANA on NetApp FAS Systems with NFS Configuration Guide
+  - title: SAP HANA on FAS with NFS
     entries:
       - title: Introduction
         url: /hana/fas-nfs/saphana-fas-nfs_introduction.html
@@ -135,9 +133,9 @@ entries:
         url: /hana/fas-nfs/saphana-fas-nfs_where_to_find_additional_information.html
       - title: Update history
         url: /hana/fas-nfs/saphana-fas-nfs_update_history.html
-  - title: SAP HANA on IBM Power Systems and NetApp AFF Systems with NFS
+  - title: SAP HANA on IBM Power Systems with AFF and NFS
     url: /hana/fas-fc/saphana-ibm-aff-nfs_pdf_link.html
-  - title: SAP with Oracle on UNIX and NFS with NetApp ONTAP
+  - title: SAP with Oracle with NFS
     url: /hana/fas-fc/sap-oracle-snapman_pdf_link.html
-  - title: SAP with Microsoft SQL Server on Windows Using ONTAP
+  - title: SAP with Microsoft SQL Server
     url: /hana/fas-fc/sap-sqls-sc_pdf_link.html

@@ -31,36 +31,36 @@ entries:
         url: /vmware/vsphere/where_to_find_additional_information.html
       - title: "Contact us"
         url: /vmware/vsphere/contact_us.html
-  - title: "VMware vSphere Virtual Volumes (vVols) with NetApp ONTAP"
+  - title: "VMware vSphere Virtual Volumes (vVols) with ONTAP"
     entries:
       - title: Overview
-        url: /vmware/vvols-overview.html
+        url: /vmware/vvols/overview.html
       - title: "Using vVols with ONTAP"
-        url: /vmware/vvols-ontap.html
+        url: /vmware/vvols/ontap.html
       - title: "Deploying vVols storage"
-        url: /vmware/vvols-deploy.html
+        url: /vmware/vvols/deploy.html
       - title: "Protecting vVols"
-        url: /vmware/vvols-protect.html
+        url: /vmware/vvols/protect.html
       - title: "Troubleshooting"
-        url: /vmware/vvols-resources.html
-  - title: "VMware Site Recovery Manager with NetApp ONTAP 9"
+        url: /vmware/vvols/resources.html
+  - title: "VMware Site Recovery Manager with ONTAP"
     entries:
       - title: Overview
-        url: /vmware/ontap9_1._introduction_to_srm_with_ontap.html
+        url: /vmware/overview.html
       - title: "New features with SRM and ONTAP Tools"
-        url: /vmware/ontap9_new_features_with_srm_and_ontap_tools.html
+        url: /vmware/new_features_with_srm_and_ontap_tools.html
       - title: "Deployment best practices"
-        url: /vmware/ontap9_deployment_best_practices.html
+        url: /vmware/srm/deployment_best_practices.html
       - title: "Operational best practices"
-        url: /vmware/ontap9_operational_best_practices.html
+        url: /vmware/srm/operational_best_practices.html
       - title: "Replication topologies"
-        url: /vmware/ontap9_replication_topologies.html
+        url: /vmware/srm/replication_topologies.html
       - title: "Troubleshooting SRM when using vVols replication"
-        url: /vmware/ontap9_appendix_a__troubleshooting_srm_when_using_vvols_replication.html
+        url: /vmware/srm/appendix_a__troubleshooting_srm_when_using_vvols_replication.html
       - title: "Conclusion"
-        url: /vmware/ontap9_conclusion.html
+        url: /vmware/srm/conclusion.html
       - title: "Additional Information"
-        url: /vmware/ontap9_additional_information.html
+        url: /vmware/srm/additional_information.html
   - title: "VMware vSphere Automation"
     entries:
     - title: Overview
