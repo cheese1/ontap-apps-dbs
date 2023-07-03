@@ -15,13 +15,6 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:47:33.821615
-//
-link:adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html[Previous: Adding additional data volume partitions for SAP HANA single-host systems.]
-
 To learn more about the information described in this document, refer to the following documents and/or websites:
 
 * Best Practices and Recommendations for Scale-Up Deployments of SAP HANA on VMware vSphere
@@ -44,7 +37,7 @@ http://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html[ht
 +
 https://www.sap.com/documents/2016/05/e8705aae-717c-0010-82c7-eda71af511fa.html[https://www.sap.com/documents/2016/05/e8705aae-717c-0010-82c7-eda71af511fa.html^]
 
-* TR-4646: SAP HANA Disaster Recovery with Storage Replication Using SnapCenter 4.0 SAP HANA Plug-In
+* TR-4646: SAP HANA Disaster Recovery with Asynchronous Storage Replication Using SnapCenter 4.0 SAP HANA Plug-In
 +
 https://www.netapp.com/us/media/tr-4646.pdf[https://www.netapp.com/us/media/tr-4646.pdf^]
 
@@ -52,11 +45,7 @@ https://www.netapp.com/us/media/tr-4646.pdf[https://www.netapp.com/us/media/tr-4
 +
 https://www.netapp.com/us/media/tr-4614.pdf[https://www.netapp.com/us/media/tr-4614.pdf^]
 
-* TR-4338: SAP HANA on VMware vSphere with NetApp FAS and AFF Systems
-+
-http://www.netapp.com/us/media/tr-4338.pdf[www.netapp.com/us/media/tr-4338.pdf^]
-
-* TR-4667: Automating SAP System Copies Using the SnapCenter 4.0 SAP HANA Plugin
+* TR-4667: Automating SAP System Copies Using the SnapCenter 4.0 SAP HANA Plug-in
 +
 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html[https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html^]
 
@@ -64,12 +53,6 @@ https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-intro
 +
 https://www.netapp.com/us/documentation/index.aspx[https://www.netapp.com/us/documentation/index.aspx^]
 
-* NetApp AFF Storage System Resources
-+
-https://mysupport.netapp.com/info/web/ECMLP2676498.html[https://mysupport.netapp.com/info/web/ECMLP2676498.html^]
-
 * SAP HANA Software Solutions
 +
-file:///C:/Users/mschoen/NetApp%20Inc/SAP%20TME%20-%20Dokumente/Projects/HANA-BestPracticeGuide-TRs/2018_sept/www.netapp.com/us/solutions/applications/sap/index.aspx%23sap-hana[www.netapp.com/us/solutions/applications/sap/index.aspx#sap-hana^]
-
-link:update_history.html[Next: Update history.]
+http://www.netapp.com/us/solutions/applications/sap/index.aspx[www.netapp.com/us/solutions/applications/sap/index.aspx#sap-hana^]

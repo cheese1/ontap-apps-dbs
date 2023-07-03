@@ -45,6 +45,8 @@ entries:
     url: /oracle/virtualization/intro.html
   - title: Oracle data protection
     entries:
+    - title: Overview
+      url: /oracle/overview-dp.html
     - title: Data integrity
       url: /oracle/dp/integrity.html
     - title: Snapshots
@@ -57,6 +59,8 @@ entries:
       url: /oracle/dp/snapshot_optimized_backup.html
   - title: Oracle disaster recovery
     entries:
+    - title: Overview
+      url: /oracle/overview-dr.html
     - title: Oracle and NVFAIL
       url: /oracle/dp/oracle_and_nvfail.html
     - title: Oracle Single Instance on MetroCluster

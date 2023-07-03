@@ -15,13 +15,6 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:40:51.418309
-//
-link:adding_additional_data_volume_partitions_for_sap_hana_single-host_systems.html[Previous: Adding additional data volume partitions for SAP HANA single-host systems.]
-
 To learn more about the information described in this document, refer to the following documents and/or websites:
 
 * Best Practices and Recommendations for Scale-Up Deployments of SAP HANA on VMware vSphere
@@ -52,10 +45,6 @@ https://www.netapp.com/us/media/tr-4646.pdf[https://www.netapp.com/us/media/tr-4
 +
 https://www.netapp.com/us/media/tr-4614.pdf[https://www.netapp.com/us/media/tr-4614.pdf^]
 
-* TR-4338: SAP HANA on VMware vSphere with NetApp FAS and AFF Systems
-+
-http://www.netapp.com/us/media/tr-4338.pdf[www.netapp.com/us/media/tr-4338.pdf^]
-
 * TR-4667: Automating SAP System Copies Using the SnapCenter 4.0 SAP HANA Plug-in
 +
 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html[https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html^]
@@ -64,10 +53,6 @@ https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-intro
 +
 https://www.netapp.com/us/documentation/index.aspx[https://www.netapp.com/us/documentation/index.aspx^]
 
-* NetApp FAS Storage System Resources
-* https://mysupport.netapp.com/info/web/ECMLP2676498.html[https://mysupport.netapp.com/info/web/ECMLP2676498.html^]
 * SAP HANA Software Solutions
 +
 http://www.netapp.com/us/solutions/applications/sap/index.aspx[www.netapp.com/us/solutions/applications/sap/index.aspx#sap-hana^]
-
-link:update_history.html[Next: Update history.]

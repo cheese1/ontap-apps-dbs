@@ -10,7 +10,10 @@ summary: MySQL on ONTAP
 [.lead]
 MySQL and its variants, including MariaDb and Percona MySQL, is the world’s most popular database.
 
-Its features include:
+[NOTE]
+This section is based on TR-4722: MySQL Database on NetApp ONTAP Best Practices
+
+The features of MySQL include:
 
 * Lower TCO. MySQL is a powerful, free, open-source database management system that has been available for years. It is very stable. It has community support that helps maintain, debug, and add new features. If a web application requires more than a database, or requires load-balancing or sharding, you can easily set up database instances with only hardware costs, rather than commercial databases that require a single license for each instance.
 * Reliability, performance, and ease of use. One of MySQL’s hallmarks is exceptional performance and scalability, which is why so many web-based businesses use it. MySQL uses several key strengths to deliver fast performance. Because competition is always a mouse click (or screen touch) away, rapid responses to customer inquiries and activities are paramount. The database serving web-based applications needs to provide extreme performance for both read (simple and complex queries) and write operations. 
