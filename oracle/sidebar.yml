@@ -66,11 +66,11 @@ entries:
     - title: Oracle Single Instance on MetroCluster
       url: /oracle/dp/mcc-si.html
     - title: Oracle Single Instance on SM-BC
-      url: /oracle/dp/sm-bc-si.html
+      url: /oracle/dp/smbc-si.html
     - title: Oracle RAC and MetroCluster
       url: /oracle/dp/mcc-rac.html
     - title: Oracle RAC on SM-BC
-      url: /oracle/dp/sm-bc-rac.html
+      url: /oracle/dp/smbc-rac.html
     - title: Consistency group disaster recovery
       url: /oracle/dp/consistency_group_disaster_recovery.html
     - title: Disaster recovery with log replay

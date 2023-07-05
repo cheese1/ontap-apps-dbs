@@ -61,6 +61,7 @@ entries:
       url: /common/dp/snaprestore.html
     - title: SnapCenter and other tools
       url: /common/dp/tools.html
+  - title: Disaster recovery
     - title: SnapMirror Business Continuity
       entries:
       - title: Overview
