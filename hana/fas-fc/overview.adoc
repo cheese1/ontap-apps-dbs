@@ -24,12 +24,11 @@ For a complete list of NetAppâ€™s certified storage solutions for SAP HANA,
 
 [NOTE]
 This section is based on TR-4384: SAP HANA on NetApp FAS Systems with Fibre Channel Protocol Configuration Guide
+[NOTE]
+The configuration described in this paper is necessary to achieve the required SAP HANA KPIs and the best performance for SAP HANA. Changing any settings or using features not listed herein might result in performance degradation or unexpected behavior and should only be done if advised by NetApp support.
 
 == Introduction
 This document describes FAS configurations that use the Fibre Channel Protocol (FCP).
-
-[NOTE]
-The configuration described in this paper is necessary to achieve the required SAP HANA KPIs and the best performance for SAP HANA. Changing any settings or using features not listed herein might result in performance degradation or unexpected behavior and should only be done if advised by NetApp support.
 
 The configuration guides for FAS systems using NFS and NetApp AFF systems can be found using the following links:
 

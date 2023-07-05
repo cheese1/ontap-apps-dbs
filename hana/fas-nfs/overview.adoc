@@ -22,12 +22,11 @@ This certification is currently only valid for the following models:
 
 [NOTE]
 This section is based on TR-4290: SAP HANA on NetApp FAS systems with NFS Configuration guide
+[NOTE]
+The configuration described in this paper is necessary to achieve the required SAP HANA KPIs and the best performance for SAP HANA. Changing any settings or using features not listed herein might cause performance degradation or unexpected behavior and should only be performed if advised by NetApp support.
 
 == Introduction
 This document describes the ONTAP configuration requirements for the NFS version 3 (NFSv3) protocol or the NFS version 4 (NFSv4.1) protocol. 
-
-[NOTE]
-The configuration described in this paper is necessary to achieve the required SAP HANA KPIs and the best performance for SAP HANA. Changing any settings or using features not listed herein might cause performance degradation or unexpected behavior and should only be performed if advised by NetApp support.
 
 The following table shows the supported combinations for NFS versions, NFS locking, and the required isolation implementations, depending on the SAP HANA database configuration.
 
