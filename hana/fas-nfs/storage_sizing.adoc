@@ -206,7 +206,7 @@ The number of disks per HANA host and the SAP HANA host density for each storage
 
 The sizing process requires details such as the number of production and nonproduction SAP HANA hosts, the RAM size of each host, and the backup retention of the storage-based Snapshot copies. The number of SAP HANA hosts determines the storage controller and the number of disks required.
 
-The size of the RAM, net data size on the disk of each SAP HANA host, and the Snapshot copy backup retention period are used as inputs during capacity sizing.
+The size of the RAM, net data size on the disk of each SAP HANA host, and the snapshot retention period are used as inputs during capacity sizing.
 
 The following figure summarizes the sizing process.
 

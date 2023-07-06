@@ -14,7 +14,7 @@ Each SQL Server host used by SnapCenter must have a host log directory configure
 
 The sizes of the host log directory is calculated as follows:
 
-Size of host log directory = ( (maximum DB LDF size × daily log change rate %) × (Snapshot copy retention) ÷ (1 – LUN overhead space %)
+Size of host log directory = ( (maximum DB LDF size × daily log change rate %) × (snapshot retention) ÷ (1 – LUN overhead space %)
 
 The host log directory sizing formula assumes a 10% LUN overhead space
 

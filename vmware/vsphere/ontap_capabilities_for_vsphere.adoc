@@ -29,7 +29,7 @@ There are many ONTAP features that are useful for managing virtualized workloads
 
 Here are further details about base ONTAP features:
 
-* *NetApp Snapshot copies.* ONTAP offers instant Snapshot copies of a VM or datastore with zero performance effects when you create or use a Snapshot copy. They can be used to create a restoration point for a VM prior to patching or for simple data protection. Note that these are different from VMware (consistency) snapshots. The easiest way to make an ONTAP Snapshot copy is to use the SnapCenter Plug-In for VMware vSphere to back up VMs and datastores.
+* *NetApp Snapshot copies.* ONTAP offers instant Snapshot copies of a VM or datastore with zero performance effects when you create or use a snapshot. They can be used to create a restoration point for a VM prior to patching or for simple data protection. Note that these are different from VMware (consistency) snapshots. The easiest way to make an snapshot is to use the SnapCenter Plug-In for VMware vSphere to back up VMs and datastores.
 * *Storage efficiency.* ONTAP supports inline and background deduplication and compression, zero-block deduplication, and data compaction.
 * *Volume and LUN move.* Allows nondisruptive movement of volumes and LUNs supporting vSphere datastores and vVols within the ONTAP cluster to balance performance and capacity or support nondisruptive maintenance and upgrades.
 * *QoS.* QoS allows for managing performance on an individual LUN, volume, or file. This function can be used to limit an unknown or bully VM or to make sure an important VM gets sufficient performance resources.
@@ -75,4 +75,4 @@ image:vsphere_ontap_image1.png[Error: Missing Graphic Image]
 
 === NFS Plug-In for VMware VAAI
 
-The NetApp NFS Plug-In for VMware VAAI is a plug-in for ESXi hosts that allows them to use VAAI features with NFS datastores on ONTAP. It supports copy offload for clone operations, space reservation for thick virtual disk files, and Snapshot copy offload. Offloading copy operations to storage is not necessarily faster to complete, but it does reduce network bandwidth requirements and offloads host resources such as CPU cycles, buffers, and queues. You can use ONTAP tools for VMware vSphere to install the plug-in on ESXi hosts or, where supported, vSphere Lifecycle Manager (vLCM).
+The NetApp NFS Plug-In for VMware VAAI is a plug-in for ESXi hosts that allows them to use VAAI features with NFS datastores on ONTAP. It supports copy offload for clone operations, space reservation for thick virtual disk files, and snapshot offload. Offloading copy operations to storage is not necessarily faster to complete, but it does reduce network bandwidth requirements and offloads host resources such as CPU cycles, buffers, and queues. You can use ONTAP tools for VMware vSphere to install the plug-in on ESXi hosts or, where supported, vSphere Lifecycle Manager (vLCM).

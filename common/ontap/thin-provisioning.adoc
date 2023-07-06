@@ -37,7 +37,7 @@ Careful planning of LVM configuration can improve efficiency and minimize the ne
 
 Fractional reserve refers to the behavior of a LUN in a volume with respect to space efficiency. When the option `fractional-reserve` is set to 100%, all data in the volume can experience 100% turnover with any data pattern without exhausting space on the volume.
 
-For example, consider a database on a single 250GB LUN in a 1TB volume. Creating a Snapshot copy would immediately result in the reservation of an additional 250GB of space in the volume to guarantee that the volume does not run out of space for any reason. Using fractional reserves is generally wasteful because it is extremely unlikely that every byte in the database volume would need to be overwritten. There is no reason to reserve space for an event that never happens. Still, if a customer cannot monitor space consumption in a storage system and must be certain that space never runs out, 100% fractional reservations would be required to use Snapshot copies.
+For example, consider a database on a single 250GB LUN in a 1TB volume. Creating a snapshot would immediately result in the reservation of an additional 250GB of space in the volume to guarantee that the volume does not run out of space for any reason. Using fractional reserves is generally wasteful because it is extremely unlikely that every byte in the database volume would need to be overwritten. There is no reason to reserve space for an event that never happens. Still, if a customer cannot monitor space consumption in a storage system and must be certain that space never runs out, 100% fractional reservations would be required to use Snapshot copies.
 
 == Compression and deduplication
 
@@ -62,14 +62,14 @@ When using ASRU, ensure that all Oracle-recommended patches are installed.
 
 === Compression and fractional reservations
 
-Compression is a form of thin provisioning. Fractional reservations affect the use of compression, with one important note; space is reserved in advance of the Snapshot copy creation. Normally, fractional reserve is only important if a Snapshot copy exists. If there is no Snapshot copy, fractional reserve is not important. This is not the case with compression. If a LUN is created on a volume with compression, ONTAP preserves space to accommodate a Snapshot copy. This behavior can be confusing during configuration, but it is expected.
+Compression is a form of thin provisioning. Fractional reservations affect the use of compression, with one important note; space is reserved in advance of the snapshot creation. Normally, fractional reserve is only important if a snapshot exists. If there is no snapshot, fractional reserve is not important. This is not the case with compression. If a LUN is created on a volume with compression, ONTAP preserves space to accommodate a snapshot. This behavior can be confusing during configuration, but it is expected.
 
 As an example, consider a 10GB volume with a 5GB LUN that has been compressed down to 2.5GB with no Snapshot copies. Consider these two scenarios:
 
 * Fractional reserve = 100 results in 7.5GB utilization
 * Fractional reserve = 0 results in 2.5GB utilization
 
-The first scenario includes 2.5GB of space consumption for current data and 5GB of space to account for 100% turnover of the source in anticipation of Snapshot copy use. The second scenario reserves no extra space.
+The first scenario includes 2.5GB of space consumption for current data and 5GB of space to account for 100% turnover of the source in anticipation of snapshot use. The second scenario reserves no extra space.
 
 Although this situation might seem confusing, it is unlikely to be encountered in practice. Compression implies thin provisioning, and thin provisioning in a LUN environment requires fractional reservations. It is always possible for compressed data to be overwritten by something uncompressible, which means a volume must be thin provisioned for compression to result in any savings.
 

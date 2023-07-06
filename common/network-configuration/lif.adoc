@@ -30,7 +30,7 @@ These topics apply to the end-to-end solution, from the host through the switche
 There are multiple LIF types. Official ONTAP documentation provides more complete information on this topic, but from a functional perspective LIFs can be divided into the following groups:
 
 * *Cluster and node management LIFs.* LIFs used to manage the storage cluster.
-* *SVM management LIFs.* Interfaces that permit access to an SVM through the ONTAP API (known as ZAPI) for functions such as Snapshot copy creation or volume resizing. Products such as SMO must have access to an SVM management LIF.
+* *SVM management LIFs.* Interfaces that permit access to an SVM through the ONTAP API (known as ZAPI) for functions such as snapshot creation or volume resizing. Products such as SMO must have access to an SVM management LIF.
 * *Data LIFs.* Interfaces that carry FC, iSCSI, NFS, or CIFS data.
 
 [NOTE]
