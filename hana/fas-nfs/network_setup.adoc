@@ -38,7 +38,7 @@ At the storage layer, four active connections are configured to provide 10Gb thr
 
 At the storage layer, a broadcast domain with an MTU size of 9000 is configured, and all required physical interfaces are added to this broadcast domain. This approach automatically assigns these physical interfaces to the same failover group. All logical interfaces (LIFs) that are assigned to these physical interfaces are added to this failover group.
 
-image:image10.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image10.png[Error: Missing Graphic Image]
 
 In general, it is also possible to use HA interface groups on the servers (bonds) and the storage systems (for example, Link Aggregation Control Protocol [LACP] and ifgroups). With HA interface groups, verify that the load is equally distributed between all interfaces within the group. The load distribution depends on the functionality of the network switch infrastructure.
 
@@ -51,13 +51,13 @@ Because all data for SAP HANA instances, including performance-critical data and
 
 The following figure provide a network overview.
 
-image:image11.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image11.png[Error: Missing Graphic Image]
 
 Each SAP HANA node uses a dedicated port group on the VMware distributed switch. This port group allows for enhanced quality of service (QoS) and dedicated assignment of physical network interface cards (NICs) on the ESX hosts. To use dedicated physical NICs while preserving HA capabilities if there was a NIC failure, the dedicated physical NIC is configured as an active uplink. Additional NICs are configured as standby uplinks in the teaming and failover settings of the SAP HANA port group. In addition, jumbo frames (MTU 9,000) must be enabled end to end on physical and virtual switches. In addition, turn off flow control on all ethernet ports used for storage traffic on servers, switches, and storage systems. The following figure shows an example of such a configuration.
 
 [NOTE]
 LRO (large receive offload) must be turned off for interfaces used for NFS traffic. For all other network configuration guidelines, see the respective VMware best practices guides for SAP HANA.
 
-image:image12.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image12.png[Error: Missing Graphic Image]
 
 link:time_synchronization.html[Next: Time synchronization.]

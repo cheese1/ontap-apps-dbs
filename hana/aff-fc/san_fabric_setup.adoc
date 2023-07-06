@@ -26,7 +26,7 @@ Each SAP HANA server must have a redundant FCP SAN connection with a minimum of 
 
 The following figure shows an example with four SAP HANA hosts attached to two storage controllers. Each SAP HANA host has two FCP ports connected to the redundant fabric. At the storage layer, four FCP ports are configured to provide the required throughput for each SAP HANA host.
 
-image:image9.png[Error: Missing Graphic Image]
+image:saphana_aff_fc_image9.png[Error: Missing Graphic Image]
 
 In addition to the zoning on the switch layer, you must map each LUN on the storage system to the hosts that connect to this LUN. Keep the zoning on the switch simple; that is, define one zone set in which all host HBAs can see all controller HBAs.
 

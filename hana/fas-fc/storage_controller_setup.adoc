@@ -65,11 +65,11 @@ The following overview summarizes the required storage configuration steps. Each
 
 With HDDs, a maximum of two DS2246 disk shelves or four DS224C disk shelves can be connected to one SAS stack to provide the required performance for the SAP HANA hosts, as shown in the following figure. The disks within each shelf must be distributed equally to both controllers of the HA pair.
 
-image:image10.png[Error: Missing Graphic Image]
+image:saphana_fas_fc_image10.png[Error: Missing Graphic Image]
 
 With SSDs, a maximum of one disk shelf can be connected to one SAS stack to provide the required performance for the SAP HANA hosts, as shown in the following figure. The disks within each shelf must be distributed equally to both controllers of the HA pair. With the DS224C disk shelf, quad-path SAS cabling can also be used but is not required.
 
-image:image11.png[Error: Missing Graphic Image]
+image:saphana_fas_fc_image11.png[Error: Missing Graphic Image]
 
 == Aggregate configuration
 
@@ -79,7 +79,7 @@ In general, you must configure two aggregates per controller, independent of whi
 
 The following figure shows a configuration for eight SAP HANA hosts. Four SAP HANA hosts are attached to each storage controller. Two separate aggregates, one at each storage controller, are configured. Each aggregate is configured with 4 × 10 = 40 data disks (HDDs).
 
-image:image12.png[Error: Missing Graphic Image]
+image:saphana_fas_fc_image12.png[Error: Missing Graphic Image]
 
 === Aggregate configuration with SDD-only systems
 
@@ -87,7 +87,7 @@ In general, two aggregates per controller must be configured, independently of w
 
 The following figure shows a configuration of 12 SAP HANA hosts running on a 12Gb SAS shelf configured with ADPv2. Six SAP HANA hosts are attached to each storage controller. Four separate aggregates, two at each storage controller, are configured. Each aggregate is configured with 11 disks with nine data and two parity disk partitions. For each controller, two spare partitions are available.
 
-image:image13.jpg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image13.jpg[Error: Missing Graphic Image]
 
 == Storage virtual machine configuration
 
@@ -97,19 +97,19 @@ Multiple-host SAP landscapes with SAP HANA databases can use a single SVM. An SV
 
 Within the storage cluster configuration, one network interface (LIF) must be created and assigned to a dedicated FCP port. If, for example, four FCP ports are required for performance reasons, four LIFs must be created. The following figure shows a screenshot of the four LIFs (named `fc_*_*)` that were configured on the `hana` SVM.
 
-image:image14.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image14.jpeg[Error: Missing Graphic Image]
 
 During SVM creation with ONTAP 9.8 System Manager, all the required physical FCP ports can be selected, and one LIF per physical port is created automatically.
 
 The following figure depicts the creation of SVM and LIFs with ONTAP 9.8 System Manager.
 
-image:image15.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image15.jpeg[Error: Missing Graphic Image]
 
 == FCP port sets
 
 An FCP port set is used to define which LIFs are to be used by a specific igroup. Typically, all LIFs created for the HANA systems are placed in the same port set. The following figure shows the configuration of a port set named 32g, which includes the four LIFs that were already created.
 
-image:image16.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image16.jpeg[Error: Missing Graphic Image]
 
 [NOTE]
 With ONTAP 9.8, a port set is not required, but it can be created and used through the command line.
@@ -134,7 +134,7 @@ The `sanlun` tool is part of the NetApp Host Utilities and must be installed on 
 
 The following figure shows the list of initiators for SS3_HANA. The igroup contains all WWPNs of the servers and is assigned to the port set of the storage controller.
 
-image:image17.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image17.jpeg[Error: Missing Graphic Image]
 
 == Volume and LUN configuration for SAP HANA single-host systems
 
@@ -143,7 +143,7 @@ The following figure shows the volume configuration of four single-host SAP HANA
 [NOTE]
 If only one storage controller of a high-availability (HA) pair is used for the SAP HANA systems, data volumes and log volumes can also be stored on the same storage controller.
 
-image:image18.jpg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image18.jpg[Error: Missing Graphic Image]
 
 For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/shared` are configured. The following table shows an example configuration with four SAP HANA single-host systems.
 
@@ -237,7 +237,7 @@ The `/hana/shared` volume must be accessible by all HANA hosts and is therefore 
 [NOTE]
 If only one storage controller of an HA pair is used for the SAP HANA system, data and log volumes can also be stored on the same storage controller.
 
-image:image19.jpg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image19.jpg[Error: Missing Graphic Image]
 
 For each SAP HANA host, a data volume and a log volume are created. The `/hana/shared` volume is used by all hosts of the SAP HANA system. The following figure shows an example configuration for a 4+1 multiple-host SAP HANA system.
 
@@ -381,37 +381,37 @@ The following steps show the configuration of a 2+1 multiple-host HANA system wi
 
 . Start the Create LUN Wizard in NetApp ONTAP System Manager.
 +
-image:image20.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image20.jpeg[Error: Missing Graphic Image]
 
 . Enter the LUN name, select the LUN type, and enter the size of the LUN.
 +
-image:image21.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image21.jpeg[Error: Missing Graphic Image]
 
 . Enter the volume name and the hosting aggregate.
 +
-image:image22.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image22.jpeg[Error: Missing Graphic Image]
 
 . Select the igroups to which the LUNs should be mapped.
 +
-image:image23.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image23.jpeg[Error: Missing Graphic Image]
 
 . Provide the QoS settings.
 +
-image:image24.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image24.jpeg[Error: Missing Graphic Image]
 
 . Click Next on the Summary page.
 +
-image:image25.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image25.jpeg[Error: Missing Graphic Image]
 
 . Click Finish on the Completion page.
 +
-image:image26.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image26.jpeg[Error: Missing Graphic Image]
 
 . Repeat steps 2 to 7 for each LUN.
 +
 The following figure shows a summary of all LUNs that need to be created for 2+1 multiple-host setup.
 +
-image:image27.jpeg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image27.jpeg[Error: Missing Graphic Image]
 
 == Creating LUNs, volumes, and mapping LUNs to igroups using the CLI
 

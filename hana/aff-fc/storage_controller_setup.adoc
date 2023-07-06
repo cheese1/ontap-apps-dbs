@@ -66,13 +66,13 @@ A maximum of one disk shelf can be connected to one SAS stack to provide the req
 [NOTE]
 With the DS224C disk shelf, quad-path SAS cabling can also be used but is not required.
 
-image:image10.png[Error: Missing Graphic Image]
+image:saphana_aff_fc_image10.png[Error: Missing Graphic Image]
 
 === NVMe(100GbE)-based disk shelves
 
 Each NS224 NVMe desk shelf is connected with two 100GbE ports per controller, as shown in the following figure. The disks within each shelf must be distributed equally to both controllers of the HA pair. ADPv2 is also used for the NS224 disk shelf.
 
-image:image11.png[Error: Missing Graphic Image]
+image:saphana_aff_fc_image11.png[Error: Missing Graphic Image]
 
 == Aggregate configuration
 
@@ -80,7 +80,7 @@ In general, you must configure two aggregates per controller, independent of whi
 
 The following figure shows a configuration of 12 SAP HANA hosts running on a 12Gb SAS shelf configured with ADPv2. Six SAP HANA hosts are attached to each storage controller. Four separate aggregates, two at each storage controller, are configured. Each aggregate is configured with 11 disks with nine data and two parity disk partitions. For each controller, two spare partitions are available.
 
-image:image12.jpg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image12.jpg[Error: Missing Graphic Image]
 
 == Storage virtual machine configuration
 
@@ -96,17 +96,17 @@ vserver modify -vserver <svm-name> -qos-policy-group none
 
 Within the storage cluster configuration, one network interface (LIF) must be created and assigned to a dedicated FCP port. If, for example, four FCP ports are required for performance reasons, four LIFs must be created. The following figure shows a screenshot of the eight LIFs (named `fc_*_*`) that were configured on the `hana` SVM.
 
-image:image13.jpeg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image13.jpeg[Error: Missing Graphic Image]
 
 During the SVM creation with ONTAP 9.8 System Manager, you can select all of the required physical FCP ports, and one LIF per physical port is created automatically.
 
-image:image14.jpeg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image14.jpeg[Error: Missing Graphic Image]
 
 == FCP port sets
 
 An FCP port set is used to define which LIFs are to be used by a specific initiator group. Typically, all LIFs created for the HANA systems are placed in the same port set. The following figure shows the configuration of a port set named 32g that includes the four LIFs that were already created.
 
-image:image15.jpeg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image15.jpeg[Error: Missing Graphic Image]
 
 [NOTE]
 With ONTAP 9.8,  a port set is not required,  but it can be created and used through the command line.
@@ -118,7 +118,7 @@ The following figure shows the volume configuration of four single-host SAP HANA
 [NOTE]
 If only one storage controller of a HA pair is used for the SAP HANA systems, data volumes and log volumes can also be stored on the same storage controller.
 
-image:image16.jpg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image16.jpg[Error: Missing Graphic Image]
 
 For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/shared` are configured. The following table shows an example configuration with four SAP HANA single-host systems.
 
@@ -215,7 +215,7 @@ If only one storage controller of an HA pair is used for the SAP HANA system, da
 [NOTE]
 NetApp ASA AFF systems do not support NFS as a protocol. NetApp recommends using an additional AFF or FAS system for the `/hana/shared` file system.
 
-image:image17.jpg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image17.jpg[Error: Missing Graphic Image]
 
 For each SAP HANA host, a data volume and a log volume are created. The `/hana/shared` volume is used by all hosts of the SAP HANA system. The following table shows an example configuration for a 4+1 multiple-host SAP HANA system.
 
@@ -377,11 +377,11 @@ The following steps show the configuration of a 2+1 multiple-host HANA system wi
 . Start the Application Provisioning wizard for SAP HANA in System Manager and provide the required information. All initiators (WWPNs) from all hosts must be added.
 +
 
-image:image18.jpeg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image18.jpeg[Error: Missing Graphic Image]
 
 . Confirm that storage is successfully provisioned.
 
-image:image19.jpeg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image19.jpeg[Error: Missing Graphic Image]
 
 == Creating LUNs, volumes, and mapping LUNs to initiator groups using the CLI
 

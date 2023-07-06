@@ -27,7 +27,7 @@ Different models of the AFF system product family can be mixed and matched at th
 
 The following figure shows an example configuration with eight SAP HANA hosts attached to a storage HA pair.
 
-image:image2.png[Error: Missing Graphic Image]
+image:saphana_aff_fc_image2.png[Error: Missing Graphic Image]
 
 This architecture can be scaled in two dimensions:
 
@@ -36,8 +36,8 @@ This architecture can be scaled in two dimensions:
 
 The following figure shows a configuration example in which more SAP HANA hosts are attached to the storage controllers. In this example, more disk shelves are necessary to meet the capacity and performance requirements of the 16 SAP HANA hosts. Depending on the total throughput requirements, you must add additional FC connections to the storage controllers.
 
-image:image3.png[Error: Missing Graphic Image]
+image:saphana_aff_fc_image3.png[Error: Missing Graphic Image]
 
 Independently of the deployed AFF system, the SAP HANA landscape can also be scaled by adding any certified storage controllers to meet the desired node density, as shown in the following figure.
 
-image:image4.png[Error: Missing Graphic Image]
+image:saphana_aff_fc_image4.png[Error: Missing Graphic Image]

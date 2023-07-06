@@ -19,11 +19,11 @@ SAP HANA hosts are connected to storage controllers by using a redundant 10GbE o
 
 Different models of the FAS system product family can be mixed and matched at the storage layer to allow for growth and differing performance and capacity needs. The maximum number of SAP HANA hosts that can be attached to the storage system is defined by the SAP HANA performance requirements and the model of NetApp controller used. The number of required disk shelves is only determined by the capacity and performance requirements of the SAP HANA systems. The following figure shows an example configuration with eight SAP HANA hosts attached to a storage high availability (HA) pair.
 
-image:image2.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image2.png[Error: Missing Graphic Image]
 
 The following figure shows an example of using VMware vSphere as virtualization layer.
 
-image:image3.jpg[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image3.jpg[Error: Missing Graphic Image]
 
 The architecture can be scaled in two dimensions:
 
@@ -32,11 +32,11 @@ The architecture can be scaled in two dimensions:
 
 The following figure shows an example configuration in which more SAP HANA hosts are attached to the storage controllers. In this example, more disk shelves are necessary to fulfill both the capacity and performance requirements of 16 SAP HANA hosts. Depending on the total throughput requirements, additional 10GbE (or faster) connections to the storage controllers must be added.
 
-image:image4.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image4.png[Error: Missing Graphic Image]
 
 Independent of the deployed FAS system, the SAP HANA landscape can also be scaled by adding any of the certified storage controllers to meet the desired node density (the following figure).
 
-image:image5.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image5.png[Error: Missing Graphic Image]
 
 == SAP HANA backup
 
@@ -48,7 +48,7 @@ NetApp SnapMirror technology allows snapshots that were created on one storage s
 
 The database logs can be backed up directly to the secondary storage by using an NFS mount, as shown in the following figure.
 
-image:image6.jpg[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image6.jpg[Error: Missing Graphic Image]
 
 Storage-based Snapshot backups provide significant advantages when compared to conventional file-based backups. These advantages include, but are not limited to, the following:
 
@@ -79,7 +79,7 @@ The servers at the disaster recovery sites can be used as dev/test systems durin
 
 Both replication methods allow to you execute disaster recovery workflow testing without influencing the RPO and RTO. FlexClone volumes are created on the storage and are attached to the disaster recovery testing servers.
 
-image:image7.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image7.png[Error: Missing Graphic Image]
 
 Synchronous replication offers StrictSync mode. If the write to secondary storage is not completed for any reason, the application I/O fails, thereby ensuring that the primary and secondary storage systems are identical. Application I/O to the primary resumes only after the SnapMirror relationship returns to InSync status. If the primary storage fails, application I/O can be resumed on the secondary storage after failover, with no loss of data. In StrictSync mode, the RPO is always zero.
 
@@ -87,6 +87,6 @@ Synchronous replication offers StrictSync mode. If the write to secondary storag
 
 The following figure shows a high-level overview of the solution. The storage cluster at each site provides local high availability and is used for the production workload. The data of each site is synchronously replicated to the other location and is available if there is disaster failover.
 
-image:image8.png[Error: Missing Graphic Image]
+image:saphana-fas-nfs_image8.png[Error: Missing Graphic Image]
 
 link:storage_sizing.html[Next: Storage sizing.]

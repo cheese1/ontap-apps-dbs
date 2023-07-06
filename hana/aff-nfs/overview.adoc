@@ -69,7 +69,7 @@ See the relevant SAP notes for operating system configuration guidelines and HAN
 
 NetApp AFF storage controllers are certified in the SAP HANA TDI program using both NFS (NAS) and FC (SAN) protocols. They can be deployed in any of the current SAP HANA scenarios, such as SAP Business Suite on HANA, S/4HANA, BW/4HANA, or SAP Business Warehouse on HANA in either single-host or multiple-host configurations. Any server that is certified for use with SAP HANA can be combined with NetApp certified storage solutions. See the following figure for an architecture overview of SAP HANA TDI.
 
-image:image1.png[Error: Missing Graphic Image]
+image:saphana_aff_nfs_image1.png[Error: Missing Graphic Image]
 
 For more information regarding the prerequisites and recommendations for producti SAP HANA systems, see the following resource:
 

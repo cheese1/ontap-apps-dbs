@@ -203,6 +203,6 @@ The size of the RAM, the net data size on the disk of each SAP HANA host, and th
 
 The following figure summarizes the sizing process.
 
-image:image8.jpg[Error: Missing Graphic Image]
+image:saphana_fas_fc_image8.jpg[Error: Missing Graphic Image]
 
 link:infrastructure_setup_and_configuration_overview.html[Next: Infrastructure setup and configuration.]

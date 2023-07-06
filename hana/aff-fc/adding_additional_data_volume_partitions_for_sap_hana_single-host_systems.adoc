@@ -120,6 +120,6 @@ To add an additional datavolume partition to your tenant database, execute the f
 ALTER SYSTEM ALTER DATAVOLUME ADD PARTITION PATH '/hana/data2/SID/';
 ....
 
-image:image20.jpg[Error: Missing Graphic Image]
+image:saphana_aff_fc_image20.jpg[Error: Missing Graphic Image]
 
 link:where_to_find_additional_information.html[Next: Where to find additional information.]

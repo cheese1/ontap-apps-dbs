@@ -38,7 +38,7 @@ In an SAP HANA multiple-host environment, the standard SAP HANA storage connecto
 
 NetApp FAS storage controllers are certified in the SAP HANA Tailored Data Center Integration (TDI) program using NFS (NAS) and Fibre Channel (SAN) protocols. They can be deployed in any SAP HANA scenario, such as, SAP Business Suite on HANA, S/4HANA, BW/4HANA or SAP Business Warehouse on HANA in single-host or multiple-host configurations. Any server that is certified for use with SAP HANA can be combined with the certified storage solution. See the following figure for an architecture overview.
 
-image:image1.png[Error: Missing Graphic Image]
+image:saphana_fas_fc_image1.png[Error: Missing Graphic Image]
 
 For more information regarding the prerequisites and recommendations for productive SAP HANA systems, see the following resource:
 
