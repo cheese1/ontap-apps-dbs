@@ -1,7 +1,7 @@
 ---
 permalink: common/smbc/failure-scenarios.html
 sidebar: sidebar
-keywords: Tsm-bc, smbc, failover
+keywords: SM-BC, smbc, failover
 summary: "SM-BC: Failure Scenarios"
 ---
 = SM-BC Failure Scenarios

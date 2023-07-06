@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/tiering/logs.html
-keywords: TR-4695, oracle, storage, tiering, fabricpool
+keywords: tiering, fabricpool
 summary: Database Transaction Log Tiering with FabricPool
 ---
 

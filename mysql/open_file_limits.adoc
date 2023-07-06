@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/open_file_limits.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,open_file_limits
 summary: MySQL on ONTAP
 ---
 

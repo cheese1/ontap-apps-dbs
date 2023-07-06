@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/tiering/introduction.html
-keywords: TR-4695, oracle, storage, tiering, fabricpool
+keywords: tiering, fabricpool
 summary: Introduction to database tiering with FabricPool
 ---
 

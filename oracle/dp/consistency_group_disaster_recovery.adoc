@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/consistency_group_disaster_recovery.html
-keywords: TR-4591, oracle, data protection, DR, CG
+keywords: oracle, data protection, DR, CG
 summary: Consistency group replication for Oracle databases
 ---
 

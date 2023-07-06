@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/configuration.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB
 summary: MySQL Configuration
 ---
 

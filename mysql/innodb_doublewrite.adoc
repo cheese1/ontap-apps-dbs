@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_doublewrite.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,innodb_doublewrite
 summary: MySQL on ONTAP
 ---
 

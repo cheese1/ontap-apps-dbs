@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/host-configuration/linux.html
-keywords: TR-3633, oracle, database, ontap, linux, nfs, xfs, ext4, slot tables
+keywords: oracle, database, ontap, linux, nfs, xfs, ext4, slot tables
 summary: Oracle on ONTAP using Linux
 ---
 

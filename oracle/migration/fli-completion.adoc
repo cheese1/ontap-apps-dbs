@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/migration/fli-completion.html
-keywords: TR-4534, migration, oracle, FLI
+keywords: migration, oracle, FLI
 summary: Completing an FLI cutover
 ---
 

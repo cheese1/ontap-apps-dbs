@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: common/dp/snapshots-and-apps.html
 keywords: database, ontap, snapshots
-summary: Oracle on ONTAP and the role of snapshots
+summary: ONTAP and the role of snapshots
 ---
 
 = Snapshots and application backups

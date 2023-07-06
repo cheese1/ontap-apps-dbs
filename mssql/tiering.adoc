@@ -1,7 +1,7 @@
 ---
 permalink: mssql/tiering.html
 sidebar: sidebar
-keywords: TR-4695, storage, tiering, fabricpool
+keywords: storage, tiering, fabricpool
 summary: FabricPool overview
 ---
 = Microsoft SQL Server tiering with FabricPool

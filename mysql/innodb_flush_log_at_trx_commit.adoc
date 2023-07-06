@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_flush_log_at_trx_commit.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,innodb_doublewrite
 summary: MySQL on ONTAP
 ---
 
-= innodb_flush_log_at_trx_commit
+= c
 [.lead]
 When there is a change to the data, the change is not immediately written to storage. 
 

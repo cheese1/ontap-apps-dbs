@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/migration/sample_scripts.html
-keywords: TR-4534, oracle, Scripts
+keywords: oracle, Scripts
 summary: Sample scripts for automating Oracle migration operations
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/dp/integrity.html
-keywords: TR-4591, oracle, data protection, integrity, checksums, corruption, RAID
+keywords: data protection, integrity, checksums, corruption, RAID
 summary: Data integrity features for Oracle on ONTAP
 ---
 

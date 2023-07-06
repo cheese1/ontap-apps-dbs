@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: common/metrocluster/overview.html
-keywords: TR-4592, oracle, metrocluster, syncmirror
-summary: Oracle on ONTAP and the role of syncmirror
+keywords: metrocluster, syncmirror
+summary: MetroCluster and the role of syncmirror
 ---
 
 = SyncMirror

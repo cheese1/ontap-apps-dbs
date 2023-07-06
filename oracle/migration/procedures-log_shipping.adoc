@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/migration/procedures-log_shipping.html
-keywords: TR-4534, migration, oracle, log shipping
+keywords: migration, oracle, log shipping
 summary: "Oracle migration via log shipping"
 ---
 = Procedures - log shipping

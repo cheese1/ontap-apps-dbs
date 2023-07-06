@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/containers.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,containers
 summary: MySQL on ONTAP
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/smbc/overview.html
-keywords: TR-4899, oracle, smbc, sm-bc
+keywords: smbc, sm-bc
 summary: SM-BC overview
 ---
 

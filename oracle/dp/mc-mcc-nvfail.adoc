@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/mc-mcc-nvfail.html
-keywords: TR-4592, oracle, metrocluster, extended rac, rac, nvfail, switchover
+keywords: oracle, metrocluster, extended rac, rac, nvfail, switchover
 summary: Oracle on MetroCluster - NVFAIL 
 ---
 

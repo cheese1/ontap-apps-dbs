@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/snapshots.html
-keywords: TR-3633, oracle, database, ontap, snapshots
+keywords: oracle, database, ontap, snapshots
 summary: Oracle on ONTAP and the role of snapshots
 ---
 

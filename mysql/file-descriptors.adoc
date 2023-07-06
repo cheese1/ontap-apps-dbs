@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: mysql/open-file-limits.html
+permalink: mysql/file-descriptors.html
 keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 
-= Open File Limits 
+= File descriptors
 
 [.lead]
 

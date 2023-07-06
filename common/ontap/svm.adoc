@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/ontap/svm.html
-keywords: ontap, svm
+keywords: svm
 summary: SVM provisioning
 ---
 

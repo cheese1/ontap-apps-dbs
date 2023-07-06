@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/mysql-over-san.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,SAN
 summary: MySQL on ONTAP
 ---
 

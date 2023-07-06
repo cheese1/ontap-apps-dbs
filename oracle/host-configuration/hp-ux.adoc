@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/host-configuration/hp-ux.html
-keywords: TR-3633, oracle, database, ontap, hp-ux
+keywords: oracle, database, ontap, hp-ux
 summary: Oracle on ONTAP using HP-UX
 ---
 

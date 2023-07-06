@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/snapshot_optimized_backup.html
-keywords: TR-4591, oracle, data protection, snapshot-optimized, crash-consistent
+keywords: oracle, data protection, snapshot-optimized, crash-consistent
 summary: Snapshot-optimized backup
 ---
 

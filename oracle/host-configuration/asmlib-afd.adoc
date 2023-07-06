@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/host-configuration/asmlib-afd.html
-keywords: TR-3633, oracle, database, ontap, asmlib, block size, oracleasm, multipath, afd
+keywords: oracle, database, ontap, asmlib, block size, oracleasm, multipath, afd
 summary: Oracle on ONTAP using Linux and ASMlib/ASM Filter Driver
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/host-configuration/solaris.html
-keywords: TR-3633, oracle, database, ontap, solaris, zfs
+keywords: oracle, database, ontap, solaris, zfs
 summary: Oracle on ONTAP using Solaris
 ---
 

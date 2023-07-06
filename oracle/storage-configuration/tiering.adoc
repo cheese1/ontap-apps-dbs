@@ -1,7 +1,7 @@
 ---
 permalink: oracle/storage-configuration/tiering.html
 sidebar: sidebar
-keywords: TR-4695, storage, tiering, fabricpool
+keywords: storage, tiering, fabricpool
 summary: FabricPool overview
 ---
 = Oracle tiering with FabricPool

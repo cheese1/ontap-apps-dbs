@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/migration/procedures-host_data_copy.html
-keywords: TR-4534, migration, oracle, data copy, lvm, rebalance, asm
+keywords: migration, oracle, data copy, lvm, rebalance, asm
 summary: Oracle migration using the host-side storage stack
 ---
 

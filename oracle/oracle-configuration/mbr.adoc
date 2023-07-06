@@ -1,7 +1,7 @@
 ---
 permalink: oracle/oracle-configuration/mbr.html
 sidebar: sidebar
-keywords: TR-3633, oracle, database, ontap, db_file_multiblock_read_count, multiblock
+keywords: oracle, database, ontap, db_file_multiblock_read_count, multiblock
 summary: Oracle multblock read parameter
 ---
 = db_file_multiblock_read_count

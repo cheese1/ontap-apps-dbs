@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/oracle_hot_backup.html
-keywords: TR-4591, oracle, data protection, hot backup
+keywords: oracle, data protection, hot backup
 summary: Oracle on ONTAP online backup procedures
 ---
 

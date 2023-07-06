@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/mcc-rac.html
-keywords: TR-4592, oracle, metrocluster, extended rac, RAC
+keywords: oracle, metrocluster, extended rac, RAC
 summary: Oracle Extended RAC with MetroCluster
 ---
 

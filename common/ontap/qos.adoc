@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/ontap/qos.html
-keywords: ontap, qos, bandwidth, minimum, guaranteed
+keywords: qos, bandwidth, minimum, guaranteed
 summary: Safely consolidating multiple workloads with ONTAP QoS
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/mysql-over-nfs.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,NFS
 summary: MySQL on ONTAP
 ---
 

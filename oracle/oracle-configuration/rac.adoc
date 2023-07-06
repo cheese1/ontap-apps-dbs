@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/oracle-configuration/rac.html
-keywords: TR-3633, oracle, database, ontap, rac, disktimeout, misscount
+keywords: oracle, database, ontap, rac, disktimeout, misscount
 summary: Oracle RAC settings with networked storage
 ---
 

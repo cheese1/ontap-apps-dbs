@@ -33,8 +33,8 @@ entries:
       url: /mysql/slot-tables.html
     - title: I/O schedulers
       url: /mysql/schedules.html
-    - title: Open file limits 
-      url: /mysql/open-file-limits.html
+    - title: File descriptors
+      url: /mysql/file-descriptors.html
   - title: Storage configuration
     entries:
     - title: NFS Configuration

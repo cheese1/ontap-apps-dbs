@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_flush_method.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,innodb_flush_method
 summary: MySQL on ONTAP
 ---
 

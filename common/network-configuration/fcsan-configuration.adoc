@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/network-configuration/fcsan-configuration.html
-keywords: ontap, SAN, zoning
+keywords: SAN, zoning
 summary: FC SAN configuration
 ---
 

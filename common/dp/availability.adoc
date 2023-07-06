@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/dp/availability.html
-keywords: TR-4591, oracle, data protection, availability, takeover, giveback, switchover, switchback
+keywords: data protection, availability, takeover, giveback, switchover, switchback
 summary: Maximizing availability with Oracle on ONTAP
 ---
 

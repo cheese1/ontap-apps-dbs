@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/disaster_recovery_with_log_replay.html
-keywords: TR-4591, oracle, ontap, disaster recovery, log reply, log shipping
+keywords: oracle, ontap, disaster recovery, log reply, log shipping
 summary: Oracle on ONTAP DR procedure with log shipping
 ---
 

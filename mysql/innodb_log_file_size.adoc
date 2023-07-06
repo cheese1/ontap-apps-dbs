@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_log_file_size.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,innodb_log_file_size
 summary: MySQL on ONTAP
 ---
 

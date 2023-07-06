@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/host-configuration/windows.html
-keywords: TR-3633, oracle, database, ontap, windows
+keywords: oracle, database, ontap, windows
 summary: Oracle on ONTAP using Microsoft Windows
 ---
 

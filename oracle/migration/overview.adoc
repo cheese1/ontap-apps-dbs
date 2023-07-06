@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/migration/overview.html
-keywords: TR-4534, oracle, ontap, migrations
+keywords: oracle, ontap, migrations, TR-4534
 summary: Introduction to Oracle storage migration
 ---
 

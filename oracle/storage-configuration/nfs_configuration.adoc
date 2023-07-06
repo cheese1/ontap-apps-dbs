@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/storage-configuration/nfs_configuration.html
-keywords: TR-3633, oracle, database, ontap, nfs, ADR, dNFS
+keywords: oracle, database, ontap, nfs, ADR, dNFS
 summary: Oracle databases can use NFS in two ways.
 ---
 

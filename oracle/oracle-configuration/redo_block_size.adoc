@@ -1,7 +1,7 @@
 ---
 permalink: oracle/oracle-configuration/redo_block_size.html
 sidebar: sidebar
-keywords: TR-3633, oracle, database, ontap, redo, block size
+keywords: oracle, database, ontap, redo, block size
 summary: "Redo block size selection"
 ---
 = Redo Block Size

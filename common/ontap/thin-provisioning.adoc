@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/ontap/thin-provisioning.html
-keywords: ontap, thin provisioning
+keywords: thin provisioning
 summary: Thin provisioning with ONTAP
 ---
 

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: common/tiering/snapshots.html
-keywords: TR-4695, oracle, storage, tiering, fabricpool
-summary: Database Snapshot Tiering with FabricPool
+keywords: tiering, fabricpool
+summary: Snapshot Tiering with FabricPool
 ---
 
 = Snapshot Tiering

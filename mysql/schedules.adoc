@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mysql/schedules.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,schedulers
 summary: MySQL on ONTAP
 ---
 
