@@ -18,7 +18,7 @@ entries:
         - title: Ethernet configuration
           url: /common/network-configuration/ethernet.html
         - title: FC SAN configuration
-          url: /common/network-configuration/fcsan.html
+          url: /common/network-configuration/fc.html
       - title: Storage configuration
         entries:
         - title: NFS
