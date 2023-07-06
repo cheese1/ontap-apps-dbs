@@ -15,15 +15,15 @@ summary: SVM provisioning
 [.lead]
 A Storage Virtual Machine (SVM), known as a vserver at the ONTAP CLI, is a basic functional unit of storage, and it is useful to compare an SVM to a guest on a VMware ESX server.
 
-When first installed, ESX has no preconfigured capabilities, such as hosting a guest OS or supporting an end-user application. It is an empty container until a virtual machine (VM) is defined. ONTAP is similar. When first installed, this OS has no data-serving capabilities, and an SVM must be defined. It is the SVM personality that defines the data services.
+When first installed, ESX has no preconfigured capabilities, such as hosting a guest OS or supporting an end-user application. It is an empty container until a virtual machine (VM) is defined. ONTAP is similar. When ONTAP is first installed, it has no data-serving capabilities until an SVM is created. It is the SVM personality that defines the data services.
 
-As with other aspects of database architecture, the best options for SVM and logical interface (LIF) design depend heavily on scaling requirements and business needs.
+As with other aspects of storage architecture, the best options for SVM and logical interface (LIF) design depend heavily on scaling requirements and business needs.
 
 == SVMs
 
 There is no official best practice for provisioning SVMs for ONTAP. The right approach depends on management and security requirements.
 
-Most customers operate one primary SVM for most of their day-to-day requirements but then create a small number of SVMs for special needs, including the following situations:
+Most customers operate one primary SVM for most of their day-to-day requirements but then create a small number of SVMs for special needs. For example, you might wish to create:
 
 * An SVM for a critical business database managed by a specialist team
 * An SVM for a development group to whom complete administrative control has been given so that they can manage their own storage independently
