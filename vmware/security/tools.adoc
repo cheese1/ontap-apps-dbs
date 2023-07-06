@@ -5,20 +5,12 @@ keywords: wp-7353, wp7353, 7353, security, vmware, vsphere, Tools
 summary: This document discusses product security for ONTAP tools for VMware vSphere.
 ---
 
-= WP-7353: ONTAP tools for VMware vSphere - Product Security
+= ONTAP tools for VMware vSphere
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-11-18 11:53:05.966614
-//
-
-Chance Bingen, Dan Tulledge, Jenn Schrie, NetApp
 
 [.lead]
 == Secure development activities

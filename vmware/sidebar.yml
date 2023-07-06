@@ -4,7 +4,7 @@ entries:
   - title: "VMware Virtualization for ONTAP"
     entries:
       - title: "Introduction"
-        url: /vmware/vsphere/introduction.html
+        url: /vmware/vsphere/overview.html
       - title: "Unified storage"
         url: /vmware/vsphere/unified_storage.html
       - title: "Storage efficiencies"
@@ -95,5 +95,11 @@ entries:
         url: /vmware/links/nva-1129-deploy.html
       - title: "End user computing with VMware for 3D graphics"
         url: /vmware/links/tr-4792-link.htm
+  - title: Product Security
+    entries:
+      - title: ONTAP tools for VMware vSphere
+        url: /vmware/security/tools.html
+      - title: SnapCenter Plug-in for VMware vSphere
+        url: /vmware/security/snapcenter.html
   - title: "Videos"
     url: /vmware/vsphere_demos_videos.html

@@ -1,25 +1,17 @@
 ---
 sidebar: sidebar
 permalink: vmware/security/snapcenter.html
-keywords: security, snapcenter, treat modeling, dast, vulnerability scanning, penetration testing
+keywords: WP-7355, security, snapcenter, treat modeling, dast, vulnerability scanning, penetration testing
 summary: 
 ---
 
-= WP-7355: SnapCenter Plug-in VMware vSphere - Product security
+= SnapCenter Plug-in VMware vSphere
 
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2022-12-08 12:59:38.084334
-//
-
-Chance Bingen, NetApp
 
 [.lead]
 NetApp SnapCenter Plug-in for VMware vSphere software engineering uses the following secure development activities:
