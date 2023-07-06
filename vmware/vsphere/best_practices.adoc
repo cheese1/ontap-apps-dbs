@@ -160,7 +160,7 @@ The following table lists supported backup features.
 |===
 |Capability/Feature |FC/FCoE |iSCSI |NVMe-oF |NFS
 
-|ONTAP Snapshot copies
+|ONTAP Snapshots
 |Yes
 |Yes
 |Yes

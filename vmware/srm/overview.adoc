@@ -5,20 +5,12 @@ keywords: ontap, vsphere, srm, srm, hybrid, cloud, migration, vmware, site, reco
 summary: NetApp ONTAP has been a leading storage solution for VMware vSphere environments since its introduction into the modern datacenter in 2002, and it continues to add innovative capabilities to simplify management while reducing costs.
 ---
 
-= TR-4900: VMware Site Recovery Manager with NetApp ONTAP 9
+= VMware Site Recovery Manager with NetApp ONTAP 9
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-24 16:18:25.221133
-//
-
-Chance Bingen, NetApp
 
 [.lead]
 == ONTAP for vSphere
@@ -31,7 +23,7 @@ This document is focused on capabilities in recent releases of ONTAP 9 when used
 
 == Why use ONTAP with SRM?
 
-NetApp data management platforms powered by ONTAP software are some of the most widely adopted storage solutions for SRM. The reasons are plentiful: A secure, high performance, unified protocol (NAS and SAN together) data management platform that provides industry defining storage efficiency, multitenancy, quality of service controls, data protection with space-efficient Snapshot copies and replication with SnapMirror. All leveraging native hybrid multi-cloud integration for the protection of VMware workloads and a plethora of automation and orchestration tools at your fingertips.
+NetApp data management platforms powered by ONTAP software are some of the most widely adopted storage solutions for SRM. The reasons are plentiful: A secure, high performance, unified protocol (NAS and SAN together) data management platform that provides industry defining storage efficiency, multitenancy, quality of service controls, data protection with space-efficient snapshots and replication with SnapMirror. All leveraging native hybrid multi-cloud integration for the protection of VMware workloads and a plethora of automation and orchestration tools at your fingertips.
 
 When you use SnapMirror for array-based replication, you take advantage of one of ONTAP’s most proven and mature technologies. SnapMirror gives you the advantage of secure and highly efficient data transfers, copying only changed file system blocks, not entire VMs or datastores. Even those blocks take advantage of space savings, such as deduplication, compression, and compaction. Modern ONTAP systems now use version- independent SnapMirror, allowing you flexibility in selecting your source and destination clusters. SnapMirror has truly become one of the most powerful tools available for disaster recovery.
 

@@ -13,7 +13,7 @@ summary: Basic principles of ONTAP data protection
 :imagesdir: ./../media/
 
 [.lead]
-The primary value of ONTAP in a database environment comes from the core ONTAP technologies such as instant Snapshot copies, simple SnapMirror replication, and efficient creation of FlexClone volumes. 
+The primary value of ONTAP in a database environment comes from the core ONTAP technologies such as instant snapshots, simple SnapMirror replication, and efficient creation of FlexClone volumes. 
 
 In some cases, simple configuration of these features within ONTAP meets requirements, but more complicated needs require an orchestration layer.
 

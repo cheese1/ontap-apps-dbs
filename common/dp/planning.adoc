@@ -131,7 +131,7 @@ The more important factor in determining RTO is not the storage system but rathe
 
 In some cases, customers have prepared disaster recovery instances ahead of time with the storage prediscovered on operating systems. In these cases, activating the disaster recovery scenario can require nothing more than breaking a mirror and starting the database server. In other cases, the OS and associated applications might be mirrored alongside the database as an ESX virtual machine disk (VMDK). In these cases, the RPO is determined by how much a customer has invested in automation to boot that VMDK so that the database can be started.
 
-The retention time is controlled in part by the snapshot limit. For example, volumes in ONTAP have a limit of 255 Snapshot copies. In some cases, customers have multiplexed replication to increase the limit. For example, if 500 days of backups are required, a source can be replicated to two volumes with updates occurring on alternate days. This requires an increase in the initial space required, but it still represents a much more efficient approach than a traditional backup system, which involves multiple full backups.
+The retention time is controlled in part by the snapshot limit. For example, volumes in ONTAP have a limit of 255 snapshots. In some cases, customers have multiplexed replication to increase the limit. For example, if 500 days of backups are required, a source can be replicated to two volumes with updates occurring on alternate days. This requires an increase in the initial space required, but it still represents a much more efficient approach than a traditional backup system, which involves multiple full backups.
 
 === Single-volume consistency group
 

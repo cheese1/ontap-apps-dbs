@@ -22,7 +22,7 @@ Place the host log directory on a dedicated volume or LUN. The amount of data in
 
 The following are NetApp recommendations for a host log directory:
 
-* Make sure that the host log directory is not shared by any other type of data that can potentially corrupt the backup Snapshot copies.
+* Make sure that the host log directory is not shared by any other type of data that can potentially corrupt the backup snapshot data.
 
 * Do not place user databases or system databases on a LUN that hosts mount points.
 
@@ -36,7 +36,7 @@ The following are NetApp recommendations for a host log directory:
 
 The following are NetApp recommendations for databases on LUNs:
 
-* Make sure that the user database and the host log directory are on separate volumes to prevent the retention policy from overwriting Snapshot copies when these are used with SnapVault technology.
+* Make sure that the user database and the host log directory are on separate volumes to prevent the retention policy from overwriting snapshots when these are used with SnapVault technology.
 
 * Make sure that SQL Server databases reside on LUNs separate from LUNs that have nondatabase files, such as full-text search-related files.
 

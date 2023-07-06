@@ -43,9 +43,9 @@ From a recovery perspective, the key values of SnapMirror are as follows:
 * SnapMirror is highly granular. It is based on simple volume-to-volume relationships, allowing for the creation of hundreds of independently managed replicas and replication intervals. Replication does not need to be one-size-fits-all.
 * The mirroring direction can be easily reversed while preserving the ability to update the relationship based on the changes alone. This delivers rapid failback capability after the primary site is restored to service after a disaster such as a power failure. Only the changes must be synchronized back to the source.
 * Mirrors can easily be broken and efficiently resynced to permit rehearsal of disaster recovery procedures.
-* SnapMirror operating in full block-level replication mode replicates not just the data in a volume, but also the Snapshot copies. This capability provides both a copy of the data and a complete set of backups on the disaster recovery site.
+* SnapMirror operating in full block-level replication mode replicates not just the data in a volume, but also the snapshots. This capability provides both a copy of the data and a complete set of backups on the disaster recovery site.
 
-SnapMirror operating in version-flexible mode allows for replication of specific Snapshot copies, permitting different retention times at the primary and secondary sites.
+SnapMirror operating in version-flexible mode allows for replication of specific snapshots, permitting different retention times at the primary and secondary sites.
 
 == SnapMirror Synchronous
 

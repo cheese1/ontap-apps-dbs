@@ -24,7 +24,7 @@ There are two primary approaches to snapshot-based backups:
 * Crash-consistent backups
 * Snapshot-protected hot backups
 
-A crash-consistent backup of a database refers to the capture of the entire database structure, including datafiles, redo logs, and control files, at a single point in time. If the database is stored in a single NetApp FlexVol volume, then the process is simple; a Snapshot can be created at any time. If a database spans volumes, a consistency group (CG) snapshot must be created. Several options exist for creating CG Snapshot copies, including NetApp SnapCenter software, native ONTAP consistency group features, and user-maintained scripts.
+A crash-consistent backup of a database refers to the capture of the entire database structure, including datafiles, redo logs, and control files, at a single point in time. If the database is stored in a single NetApp FlexVol volume, then the process is simple; a Snapshot can be created at any time. If a database spans volumes, a consistency group (CG) snapshot must be created. Several options exist for creating CG snapshots, including NetApp SnapCenter software, native ONTAP consistency group features, and user-maintained scripts.
 
 Crash-consistent Snapshot backups are primarily used when point-of-the-backup recovery is sufficient. Archive logs can be applied under some circumstances, but when more granular point-in-time recovery is required, a online backup is preferable.
 
@@ -34,9 +34,9 @@ The basic procedure for a snapshot-based online backup is as follows:
 . Create a snapshot of all volumes hosting datafiles.
 . Exit `backup` mode.
 . Run the command `alter system archive log current` to force log archiving.
-. Create Snapshot copies of all volumes hosting the archive logs.
+. Create snapshots of all volumes hosting the archive logs.
 
-This procedure yields a set of Snapshot copies containing datafiles in backup mode and the critical archive logs generated while in backup mode. These are the two requirements for recovering a database. Files such as control files should also be protected for convenience, but the only absolute requirement is protection for datafiles and archive logs.
+This procedure yields a set of snapshots containing datafiles in backup mode and the critical archive logs generated while in backup mode. These are the two requirements for recovering a database. Files such as control files should also be protected for convenience, but the only absolute requirement is protection for datafiles and archive logs.
 
 Although different customers might have very different strategies, almost all of these strategies are ultimately based on the principles outlined in this section.
 
@@ -63,9 +63,9 @@ In an NFS environment, there are two options:
 
 With the first option, `percent-snapshot-space` is set to a nonzero value, typically around 20%. This space is then hidden from the user. This value does not, however, create a limit on utilization. If a database with a 20% reservation experiences 30% turnover, the snapshot space can grow beyond the bounds of the 20% reserve and occupy unreserved space.
 
-The main benefit of setting a reserve to a value such as 20% is to verify that some space is always available for Snapshot copies. For example, a 1TB volume with a 20% reserve would only permit a database administrator (DBA) to store 800GB of data. This configuration guarantees at least 200GB of space for snapshot consumption.
+The main benefit of setting a reserve to a value such as 20% is to verify that some space is always available for snapshots. For example, a 1TB volume with a 20% reserve would only permit a database administrator (DBA) to store 800GB of data. This configuration guarantees at least 200GB of space for snapshot consumption.
 
-When `percent-snapshot-space` is set to zero, all space in the volume is available to the end user, which delivers better visibility. A DBA must understand that, if he or she sees a 1TB volume that leverages Snapshot copies, this 1TB of space is shared between active data and Snapshot turnover.
+When `percent-snapshot-space` is set to zero, all space in the volume is available to the end user, which delivers better visibility. A DBA must understand that, if he or she sees a 1TB volume that leverages snapshots, this 1TB of space is shared between active data and Snapshot turnover.
 
 There is no clear preference between option one and option two among end users.
 

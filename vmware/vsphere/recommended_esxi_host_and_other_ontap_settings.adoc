@@ -116,7 +116,7 @@ ONTAP tools also specify certain default settings when creating ONTAP FlexVol vo
 |False
 |Minimum readahead (-min-readahead)
 |False
-|Scheduled Snapshot copies
+|Scheduled snapshots
 |None
 |Storage efficiency
 |Enabled

@@ -16,13 +16,6 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:40:51.335674
-//
-link:time_synchronization.html[Previous: Time synchronization.]
-
 This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 
 == Storage efficiency
@@ -52,7 +45,7 @@ NetApp FabricPool technology must not be used for active primary file systems in
 Using the “snapshot-only” tiering policy is possible as well as using FabricPool in general at a backup target such as SnapVault or SnapMirror destination.
 
 [NOTE]
-Using FabricPool for tiering Snapshot copies at primary storage or using FabricPool at a backup target changes the required time for the restore and recovery of a database or other tasks such as creating system clones or repair systems. Take this into consideration for planning your overall lifecycle- management strategy, and check to make sure that your SLAs are still being met while using this function.
+Using FabricPool for tiering snapshots at primary storage or using FabricPool at a backup target changes the required time for the restore and recovery of a database or other tasks such as creating system clones or repair systems. Take this into consideration for planning your overall lifecycle- management strategy, and check to make sure that your SLAs are still being met while using this function.
 
 FabricPool is a good option for moving log backups to another storage tier. Moving backups affects the time needed to recover an SAP HANA database. Therefore, the option “tiering-minimum-cooling-days” should be set to a value that places log backups, which are routinely needed for recovery, on the local fast storage tier.
 
@@ -374,7 +367,7 @@ The volume options listed in the following table must be verified and set on all
 |===
 |Action |ONTAP 9
 
-|Disable automatic Snapshot copies
+|Disable automatic snapshots
 |vol modify –vserver <vserver-name> -volume <volname> -snapshot-policy none
 |Disable visibility of Snapshot directory
 |vol modify -vserver <vserver-name> -volume <volname> -snapdir-access false
