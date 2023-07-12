@@ -15,9 +15,9 @@ summary: NFS leases and locks
 [.lead]
 NFSv3 is stateless. That effectively means that the NFS server (ONTAP) doesn't keep track of which filesystems are mounted, by whom, or which locks are truly in place.
 
- ONTAP does have some features that will record mount attempts so you have an idea which clients may be accessing data, and there may be advisory locks present, but that information isn't guaranteed to be 100% complete. It can't be complete, because tracking NFS client state is not part of the NFSv3 standard.
+ONTAP does have some features that will record mount attempts so you have an idea which clients may be accessing data, and there may be advisory locks present, but that information isn't guaranteed to be 100% complete. It can't be complete, because tracking NFS client state is not part of the NFSv3 standard.
 
- == NFSv4 statefulness
+== NFSv4 statefulness
 
 In contrast, NFSv4 is stateful. The NFSv4 server tracks which clients are using which filesystems, which files exist, which files and/or regions of files are locked, etc. This means there needs to be regular communication between an NFSv4 server to keep the state data current.
 
@@ -47,8 +47,8 @@ This means that an NFSv4 client needs to check in with the NFSv4 server every 30
 
 The lease is automatically renewed by any activity, so if the client is doing work there's no need to perform addition operations. If an application becomes quiet and is not doing real work, it's going to need to perform a sort of keep-alive operation (called a SEQUENCE) instead. It's essentially just saying "I'm still here, please refresh my leases."
 
-*Question:* What happens if you lose network connectivity for 31 seconds? 
-
+ *Question:* What happens if you lose network connectivity for 31 seconds? 
+ 
 NFSv3 is stateless. It's not expecting communication from the clients. NFSv4 is stateful, and once that lease period elapses, the lease expires, and locks are revoked and the locked files are made available to other clients. 
 
 With NFSv3, you could move network cables around, reboot network switches, make configuration changes, and be fairly sure that nothing bad would happen. Applications would normally just wait patiently for the network connection to work again. 

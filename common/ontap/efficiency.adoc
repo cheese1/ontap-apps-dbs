@@ -59,25 +59,27 @@ With the use of NFS, file I/O is aligned. Each block of a file is aligned with r
 SAN environments require data to be aligned to an 8KB boundary for optimum compression. There are two aspects of alignment for SAN: the LUN and the filesystem. The LUN must be configured as either a whole- drive device (no partition) or with a partition that aligns to an 8K boundary. See the OS-specific sections that follow for details on compression and alignment on a configuration-by-configuration basis.
 
 [NOTE]
-See the section link:../thin_provisioning.html#Fractional%20reservations[Fractional Reservations] for an explanation of the interaction between compression and fractional reservation.
+See the section link:../thin-provisioning.html#Fractional%20reservations[Fractional Reservations] for an explanation of the interaction between compression and fractional reservation.
 
-== Inline data compaction
+== Data compaction
 
-Inline data compaction is a technology introduced in ONTAP 9 that improves compression efficiency. As stated previously, adaptive compression alone can provide at best 2:1 savings because it is limited to storing an 8K I/O in a 4K WAFL block. Compression methods with larger block sizes deliver better efficiency. However, they are not suitable for data that is subject to small block overwrites. Decompressing 32KB units of data, updating an 8K portion, recompressing, and writing back to the drives creates overhead.
+Data compaction is a technology introduced in ONTAP 9 that improves compression efficiency. As stated previously, adaptive compression alone can provide at best 2:1 savings because it is limited to storing an 8K I/O in a 4K WAFL block. Compression methods with larger block sizes deliver better efficiency. However, they are not suitable for data that is subject to small block overwrites. Decompressing 32KB units of data, updating an 8K portion, recompressing, and writing back to the drives creates overhead.
 
-Inline data compaction works by allowing multiple logical blocks to be stored within physical blocks. For example, a database with highly compressible data such as text or partially full blocks may compress from 8KB to 1KB. Without compaction, that 1KB of data would still occupy an entire 4KB block. Inline data compaction allows that 1KB of compressed data to be stored in just 1KB of physical space alongside other compressed data. It is not a compression technology; it is simply a more efficient way of allocating space on the drives and therefore should not create any detectable performance effect.
+Data compaction works by allowing multiple logical blocks to be stored within physical blocks. For example, a database with highly compressible data such as text or partially full blocks may compress from 8KB to 1KB. Without compaction, that 1KB of data would still occupy an entire 4KB block. Inline data compaction allows that 1KB of compressed data to be stored in just 1KB of physical space alongside other compressed data. It is not a compression technology; it is simply a more efficient way of allocating space on the drives and therefore should not create any detectable performance effect.
 
-The degree of savings obtained vary. Data that is already compressed or encrypted cannot generally be further compressed, and therefore such datasets do not benefit from compaction. Newly initialized Oracle datafiles that contain little more than block metadata and zeros compress up to 80:1. This creates an extremely wide range of possibilities. The best way to evaluate potential savings is by using the NetApp Space Savings Estimation Tool (SSET) available on NetApp Field Portal or through your NetApp representative.
+The degree of savings obtained vary. Data that is already compressed or encrypted cannot generally be further compressed, and therefore such datasets do not benefit from compaction. Newly initialized Oracle datafiles that contain little more than block metadata and zeros compress up to 80:1. This creates an extremely wide range of possibilities. 
 
 == Deduplication
 
-An Oracle block contains a header that is globally unique to the database and a trailer that is nearly unique. As a result, deduplication of an Oracle database rarely delivers more than 1% savings.
+Deduplication is the removal of duplicate block sizes from a dataset. For example, if the same 4K block existed in 10 different files, deduplication would redirect that 4K block within all 10 files to the same 4K physical block. The result would be a 10:1 improvment in efficiency for that data.
+
+Data such as VMware guest boot LUNs usually deduplicate extremely well because they consist of multiple copies of the same operating system files. Efficiency of 100:1 and greater have been observed.
+
+Some data does not contain duplicate data. For example, an Oracle block contains a header that is globally unique to the database and a trailer that is nearly unique. As a result, deduplication of an Oracle database rarely delivers more than 1% savings.
 
 Space savings of up to 15% in databases with 16k and large block sizes have been observed in a few cases. The initial 4KB of each block contains the globally unique header, and the final 4KB block contains the nearly unique trailer. The internal blocks are candidates for deduplication, although in practice this is almost entirely attributed to the deduplication of zeroed data.
 
 Many competing arrays claim the ability to deduplicate Oracle databases based on the presumption that a database is copied multiple times. In this respect, NetApp deduplication could also be used, but ONTAP offers a better option: NetApp FlexClone technology. The end result is the same; multiple copies of an Oracle database that share most of the underlying physical blocks are created. Using FlexClone is much more efficient than taking the time to copy datafiles and then deduplicating them. It is, in effect, nonduplication rather than deduplication, because a duplicate is never created in the first place.
-
-In the unusual case in which multiple copies of the same datafiles exist, deduplication can provide benefits.
 
 == Efficiency and thin provisioning
 
@@ -99,8 +101,7 @@ Volumes created on ONTAP running on an all-flash AFF system are thin provisioned
 
 === General recommendations
 
-* Post-processing volume-level deduplication should not normally be used due to the potential performance effect of scanning data for duplicate blocks that do not exist in an Oracle database. Inline deduplication, in contrast, should not cause problems because it only operates on previously identified duplicate blocks.
-* If volumes and/or LUNs are not thin provisioned, you should disable efficiency settings because using these features provides no savings. In addition, ensure that efficiency is fully deconfigured before using a thick-provisioning strategy.
-* If a very large number of archive logs are retained, you can achieve greater efficiency by moving the archive logs to a volume using 32KB block compression.
-* A datafile might contain a significant amount of uncompressible data, for example when compression is already enabled at the database level. A database might also contain compressed objects, or it might be encrypted. If any of these scenarios are true, consider disabling compression to allow more efficient operation on other volumes containing compressible data.
-* Do not use both 32KB compression and deduplication with Oracle RMAN backups. See the section <<Adaptive-compression,Adaptive Compression>> for details.
+* If volumes and/or LUNs are not thin provisioned, you should must disable all efficiency settings because using these features provides no savings and the combination of thick provisioing with space efficiency enabled can cause unexpected behavior, including out-of-space errors. 
+* If data is not subjuct to overwrites, such as with backups or database transaction logs, you can achieve greater efficiency by enabling TSSE with a low cooling period. 
+* Some files might contain a significant amount of uncompressible data, for example when compression is already enabled at the application level of files are encrypted. If any of these scenarios are true, consider disabling compression to allow more efficient operation on other volumes containing compressible data.
+* Do not use both 32KB compression and deduplication with database backups. See the section <<Adaptive%20compression,Adaptive compression>> for details.
