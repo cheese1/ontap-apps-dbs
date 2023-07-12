@@ -25,7 +25,7 @@ entries:
         - title: NFS
           url: /common/storage-configuration/nfs.html
         - title: NFS leases and locks
-          url: /common/storage-configuration/lease-and-locks.html
+          url: /common/storage-configuration/leases-and-locks.html
       - title: Quality of service (QoS)
         url: /common/ontap/qos.html
       - title: Efficiency
