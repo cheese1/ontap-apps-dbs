@@ -38,7 +38,7 @@ entries:
       - title: Architecture
         url: /hana/aff-nfs/architecture.html
       - title: Storage sizing
-        url: /hana/storage_sizing.html
+        url: /hana/aff-nfs/storage_sizing.html
       - title: Infrastructure setup and configuration
         entries:
           - title: Infrastructure setup and configuration overview

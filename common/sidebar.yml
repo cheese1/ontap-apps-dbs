@@ -32,7 +32,7 @@ entries:
     - title: Efficiency
       url: /common/ontap/efficiency.html
     - title: Thin provisioning
-      url: /common/ontap/thin_provisioning.html
+      url: /common/ontap/thin-provisioning.html
     - title: Data integrity
       url: /common/ontap/integrity.html
     - title: Snapshots
