@@ -5,39 +5,40 @@ entries:
     url: /common/overview.html
   - title: Core technologies
     entries:
-      - title: RAID
-        url: /common/ontap/raid.html
-      - title: Capacity limits
-        url: /common/ontap/capacity-limits.html
-      - title: Storage virtual machines
-        url: /common/ontap/svm.html
-      - title: Network configuration
-        entries:
-        - title: Logical interfaces
-          url: /common/network-configuration/lif.html
-        - title: Ethernet configuration
-          url: /common/network-configuration/ethernet.html
-        - title: FC SAN configuration
-      - title: Storage configuration
-        entries:
-        - title: FC SAN
-          url: /common/storage-configuration/fcsan.html
-        - title: NFS
-          url: /common/storage-configuration/nfs.html
-        - title: NFS leases and locks
-          url: /common/storage-configuration/leases-and-locks.html
-      - title: Quality of service (QoS)
-        url: /common/ontap/qos.html
-      - title: Efficiency
-        url: /common/ontap/efficiency.html
-      - title: Thin provisioning
-        url: /common/ontap/thin_provisioning.html
-      - title: Data integrity
-        url: /common/ontap/integrity.html
-      - title: Snapshots
-        url: /common/ontap/snapshots.html
-      - title: Failover and switchover
-        url: /common/ontap/failover.html
+    - title: RAID
+      url: /common/ontap/raid.html
+    - title: Capacity limits
+      url: /common/ontap/capacity-limits.html
+    - title: Storage virtual machines
+      url: /common/ontap/svm.html
+    - title: Network configuration
+      entries:
+      - title: Logical interfaces
+        url: /common/network-configuration/lif.html
+      - title: Ethernet configuration
+        url: /common/network-configuration/ethernet.html
+      - title: FC SAN configuration
+        url: /common/network-configuration/fc.html
+    - title: Storage configuration
+      entries:
+      - title: FC SAN
+        url: /common/storage-configuration/fcsan.html
+      - title: NFS
+        url: /common/storage-configuration/nfs.html
+      - title: NFS leases and locks
+        url: /common/storage-configuration/leases-and-locks.html
+    - title: Quality of service (QoS)
+      url: /common/ontap/qos.html
+    - title: Efficiency
+      url: /common/ontap/efficiency.html
+    - title: Thin provisioning
+      url: /common/ontap/thin_provisioning.html
+    - title: Data integrity
+      url: /common/ontap/integrity.html
+    - title: Snapshots
+      url: /common/ontap/snapshots.html
+    - title: Failover and switchover
+      url: /common/ontap/failover.html
   - title: Data protection
     entries:
     - title: Overview
