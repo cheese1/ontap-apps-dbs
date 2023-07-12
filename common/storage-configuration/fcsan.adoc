@@ -64,7 +64,7 @@ The primary goal of a striped configuration is to ensure that single-file I/O ca
 
 The following figure shows three possible options for stripe size and width tuning. The number of LUNs is selected to meet performance requirements as described above, but in all cases the total data within a single stripe is 1MB.
 
-image:ontap-lvm-striping.jpeg[pdfwidth=25vw,width=25%]
+image:ontap-lvm-striping.jpeg[pdfwidth=10vw,width=10%]
 
 == LUN alignment
 
