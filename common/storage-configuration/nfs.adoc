@@ -19,11 +19,13 @@ The NFS protocol includes multiple versions with varying requirements. For a com
 
 == NFS versions
 
-The operating system NFS client must be supported by NetApp, and if Oracle dNFS is used then it too must be supported.
+The operating system NFS client must be supported by NetApp.
 
-* NFSv3 is supported with OSs that follow the NFSv3 standard. dNFS is supported with NFSv3 with all versions of Oracle.
-* NFSv4 is supported with all OSs that follow the NFSv4 standard. dNFS support for NFSv4 requires Oracle 12.2.0.2 or higher.
-* NFSv4.1 and NFSv4.2 require specific OS support. Consult the NetApp IMT for supported OSs. 
+* NFSv3 is supported with OSs that follow the NFSv3 standard. 
+* NFSv3 is supported with the Oracle dNFS client
+* NFSv4 is supported with all OSs that follow the NFSv4 standard. 
+* NFSv4.1 and NFSv4.2 require specific OS support. Consult the NetApp IMT for supported OSs
+* Oracle dNFS support for NFSv4.1 requires Oracle 12.2.0.2 or higher
 
 [NOTE]
 The NetApp support matrix for NFSv3 and NFSv4 does not include specific operating systems. All OSs that obey the RFC are generally supported. When searching the online IMT for NFSv3 or NFSv4 support, do not select a specific OS because there will be no matches displayed. All OSs are implicitly supported by the general policy.
@@ -116,7 +118,7 @@ The NFSv4 domain name on the host is set in `/etc/idmap.cfg`
 Domain = jfs.lab
 ....
 
-The domain names must match. If they do not, mapping errors similar to the following appear in` /var/log/messages`:
+The domain names must match. If they do not, mapping errors similar to the following appear in `/var/log/messages`:
 
 ....
 Apr 12 11:43:08 jfs0 nfsidmap[16298]: nss_getpwnam: name 'root@jfs.lab' does not map into domain 'default.com'
@@ -125,21 +127,15 @@ Apr 12 11:43:08 jfs0 nfsidmap[16298]: nss_getpwnam: name 'root@jfs.lab' does not
 Application binaries, such as Oracle database binaries, include files owned by root with the setuid bit, which means a mismatch in the NFSv4 domain names causes failures with Oracle startup and a warning about the ownership or permissions of a file called `oradism`, which is located in the `$ORACLE_HOME/bin` directory. It should appear as follows:
 
 ....
-`[root@jfs0 etc]# ls -l /orabin/product/19.3.0.0/dbhome_1/bin/oradism`
-`-rwsr-x--- 1 root oinstall 147848 Apr 17  2019 /orabin/product/19.3.0.0/dbhome_1/bin/oradism`
+[root@jfs0 etc]# ls -l /orabin/product/19.3.0.0/dbhome_1/bin/oradism
+-rwsr-x--- 1 root oinstall 147848 Apr 17  2019 /orabin/product/19.3.0.0/dbhome_1/bin/oradism
 ....
 
 If this file appears with ownership of nobody, there may be an NFSv4 domain mapping problem.
 
 ....
-`[root@jfs0 bin]# ls -l oradism`
-`-rwsr-x--- 1 nobody oinstall 147848 Apr 17  2019 oradism`
+[root@jfs0 bin]# ls -l oradism
+-rwsr-x--- 1 nobody oinstall 147848 Apr 17  2019 oradism
 ....
 
 To fix this, check the `/etc/idmap.cfg` file against the v4-id-domain setting on ONTAP and ensure they are consistent. If they are not, make the required changes, run `nfsidmap -c`, and wait a moment for the changes to propagate. The file ownership should then be properly recognized as root. If a user had attempted to run `chown root` on this file before the NFS domains configure was corrected, it might be necessary to run `chown root` again.
-
-=== NFSv4 lease period
-
-
-
-=== NFSv4 grace period

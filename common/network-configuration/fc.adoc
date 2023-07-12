@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: common/network-configuration/fc.html
 keywords: SAN, zoning
-summary: FC SAN configuration
+summary: FC Network configuration
 ---
 
-= General SAN configuration
+= FC configuration
 :hardbreaks:
 :nofooter:
 :icons: font

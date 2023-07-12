@@ -17,7 +17,7 @@ Safely and efficiently managing multiple workloads requires an effective QoS str
 
 Specifically, the increased adoption of all-flash storage has enabled consolidation of workloads. Storage arrays relying on spinning media tended to support only a limited number of I/O-intensive workloads because of the limited IOPS capabilities of older drive technology. One or two highly active databases would saturate the underlying drives long before the storage controllers reached their limits. This has changed. A performance capability of a relatively small number of SSD drives can saturate even the most powerful storage controllers. This means the full capabilities of the controllers can be leveraged without the fear of sudden collapse of performance as spinning media latency spiked.
 
-As a reference example, a simple two-node HA A800 system was capable of servicing up to one million random IOPS before latency climbs above one millisecond. Very few databases or virtualization datastores would be expected to reach such levels. Fully utilizing this A800 system array will involve hosting multiple workloads, and doing this safely while ensuring predictability requires QoS controls.
+As a reference example, a simple two-node HA A800 system is capable of servicing up to one million random IOPS before latency climbs above one millisecond. Very few single workloads would be expected to reach such levels. Fully utilizing this A800 system array will involve hosting multiple workloads, and doing this safely while ensuring predictability requires QoS controls.
 
 There are two types of quality of service (QoS) in ONTAP: IOPS and bandwidth. QoS controls can be applied to SVMs, volumes, LUNs, and files.
 

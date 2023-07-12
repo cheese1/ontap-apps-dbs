@@ -5,7 +5,7 @@ keywords: SAN, ASM, LVM
 summary: Basic guidelines for configuration FC SAN for maximum reliability, managability, and resiliency
 ---
 
-= SAN configuration
+= FC SAN configuration
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -64,7 +64,7 @@ The primary goal of a striped configuration is to ensure that single-file I/O ca
 
 The following figure shows three possible options for stripe size and width tuning. The number of LUNs is selected to meet performance requirements as described above, but in all cases the total data within a single stripe is 1MB.
 
-image:ontap-lvm-striping.jpeg[{half-width}]
+image:ontap-lvm-striping.jpeg[scaledwidth=50%]
 
 == LUN alignment
 

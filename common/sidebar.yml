@@ -18,13 +18,14 @@ entries:
         - title: Ethernet configuration
           url: /common/network-configuration/ethernet.html
         - title: FC SAN configuration
-          url: /common/network-configuration/fc.html
       - title: Storage configuration
         entries:
+      - title: FC SAN
+          url: /common/storage-configuration/fcsan.html
         - title: NFS
           url: /common/storage-configuration/nfs.html
-        - title: FC SAN
-          url: /common/storage-configuration/fcsan.html
+        - title: NFS leases and locks
+          url: /common/storage-configuration/lease-and-locks.html
       - title: Quality of service (QoS)
         url: /common/ontap/qos.html
       - title: Efficiency
