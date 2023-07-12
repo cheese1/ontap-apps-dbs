@@ -20,7 +20,7 @@ entries:
         - title: FC SAN configuration
       - title: Storage configuration
         entries:
-      - title: FC SAN
+        - title: FC SAN
           url: /common/storage-configuration/fcsan.html
         - title: NFS
           url: /common/storage-configuration/nfs.html
