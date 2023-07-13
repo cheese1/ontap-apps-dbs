@@ -35,8 +35,6 @@ entries:
       url: /common/ontap/thin-provisioning.html
     - title: Data integrity
       url: /common/ontap/integrity.html
-    - title: Snapshots
-      url: /common/ontap/snapshots.html
     - title: Failover and switchover
       url: /common/ontap/failover.html
   - title: Data protection
@@ -57,8 +55,6 @@ entries:
       url: /common/dp/snapshots-and-apps.html
     - title: SnapRestore
       url: /common/dp/snaprestore.html
-    - title: SnapMirror and SyncMirror
-      url: /common/dp/snaprestore.html
     - title: SnapCenter and other tools
       url: /common/dp/tools.html
   - title: Disaster recovery
@@ -76,7 +72,7 @@ entries:
     - title: MetroCluster
       entries:
       - title: Overview
-        url: /common/metrocluster/overview
+        url: /common/metrocluster/overview.html
       - title: MetroCluster physical architecture
         url: /common/metrocluster/metrocluster_physical_architecture.html
       - title: MetroCluster logical architecture

@@ -29,9 +29,7 @@ A crash-consistent backup of a dataset refers to the capture of the entire datas
 
 Crash-consistent backups are primarily used when point-of-the-backup recovery is sufficient. When more granular recover is required, application-consistent backups are usually required.
 
-The word "consistent" is often a minomer. For example, placing an Oracle database in backup mode is referred to as an application-consistent backup, but the data is not made consistent or quiesced in any way. The data continue to change throughout the backup. In contrast, most MySQL and Microsoft SQL Server backups do indeed quiesce the data before executing the backup. VMware may or may not make certain files consistent.
-
-The 
+The word "consistent" in "application-consistent" is often a minomer. For example, placing an Oracle database in backup mode is referred to as an application-consistent backup, but the data is not made consistent or quiesced in any way. The data continue to change throughout the backup. In contrast, most MySQL and Microsoft SQL Server backups do indeed quiesce the data before executing the backup. VMware may or may not make certain files consistent.
 
 == Snapshot-based recovery
 
@@ -59,15 +57,3 @@ The main benefit of setting a reserve to a value such as 20% is to verify that s
 When `percent-snapshot-space` is set to zero, all space in the volume is available to the end user, which delivers better visibility. An administrator must understand that, if they see a 1TB volume that leverages snapshots, this 1TB of space is shared between active data and snapshot space consumed.
 
 There is no clear preference between option one and option two among end users.
-
-== ONTAP and third-party snapshots
-
-Oracle Doc ID 604683.1 explains the requirements for third-party snapshot support and the multiple options available for backup and restore operations.
-
-The third-party vendor must guarantee that the company’s snapshots conform to the following requirements:
-
-* Snapshots must integrate with Oracle's recommended restore and recovery operations.
-* Snapshots must be database crash consistent at the point of the snapshot.
-* Write ordering is preserved for each file within a snapshot.
-
-ONTAP and NetApp Oracle management products comply with these requirements.

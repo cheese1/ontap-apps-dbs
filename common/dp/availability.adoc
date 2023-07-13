@@ -47,17 +47,17 @@ The nature of the disruption depends on the protocol:
 * A network interface supporting NFS and CIFS traffic issues an ARP (Address Resolution Protocol) request to the network after the transition to a new physical location. This causes the network switches to update their MAC address tables and resume processing I/O. Disruption in the case of planned takeover and giveback is usually measured in seconds and in many cases is not detectable. Some networks might be slower to fully recognize the change in network path, and some OSs might queue up a lot of I/O in a very short time that must be retried. This can extend the time required to resume I/O.
 * A network interface supporting SAN protocols does not transition to a new location. A host OS must change the path or paths in use. The pause in I/O observed by the host depends on multiple factors. From a storage system point of view, the period where I/O cannot be served is just a few seconds. However, different host OSs might require additional time to allow an I/O to time out before retry. Newer OSs are better able to recognize a path change much more quickly, but older OSs typically require up to 30 seconds to recognize a change.
 
-The expected takeover times during which the storage system cannot serve data to a database environment are shown in the table below.
+The expected takeover times during which the storage system cannot serve data to an application environment are shown in the table below. There should not be any errors in any application environment, the takeover should instead appear as a short pause in IO processing. 
 
 |===
-| |NAS |SANOptimized OS |SAN
+| |NFs |AFF |ASA
 
 |Planned Takeover
-|15sec
-|2sec-10sec
-|2sec-10sec
+|15 sec
+|6-10 sec
+|2-3 sec
 |Unplanned Takeover
-|30sec
-|2sec-15sec
-|30sec
+|30 sec
+|6-10 sec
+|2-3 sec
 |===

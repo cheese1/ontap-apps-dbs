@@ -15,12 +15,12 @@ summary: SnapRestore
 [.lead]
 Rapid data restoration in ONTAP from a snapshot is delivered by NetApp SnapRestore technology. 
 
-The key values are as follows:
+When a critical dataset is unavailable, critical business operations are down. Tapes can break, and even restores from disk-based backups can be slow to transfer across the network. SnapRestore avoids these problems by delivering near instantaneous restoration of datasets. Even petabyte-scale databases can be completely restored with just a few minutes of effort.
+
+There are two forms of SnapRestore - file/LUN and whole-volume.
 
 * Individual files or LUNs can be restored in seconds, whether it is a 2TB LUN or a 4KB file.
 * An entire container (a NetApp FlexVol volume) of LUNs and/or files can be restored in seconds, whether it is 10GB or 100TB of data.
-
-When a critical dataset is unavailable, critical business operations are down. Tapes can break, and even restores from disk-based backups can be slow to transfer across the network. SnapRestore avoids these problems by delivering near instantaneous restoration of datasets. Even petabyte-scale databases can be completely restored with just a few minutes of effort.
 
 The reason SnapRestore works so quickly and efficiently is due to the nature of a Snapshot copy, which is essentially a parallel read-only view of the contents of a volume at a specific point in time. The active blocks are the real blocks that can be changed, while the snapshot is a read-only view into the state of the blocks that constitute the files and LUNs at the time the snapshot was created.
 
