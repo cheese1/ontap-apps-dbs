@@ -19,11 +19,9 @@ SM-BC was introduced in the ONTAP 9.8 release for customer preview and was made 
 
 SM-BC makes storage devices visible to host operating systems from both the primary and remote storage arrays. Paths are managed through asymmetric logical unit access (ALUA), which is an industry standard protocol for identifying optimized paths between a storage system and a host.
 
-As an example consider an Oracle database 
+The device path that is the shortest to access I/O is considered Active/Optimized paths and the rest of the paths are considered Active/Nonoptimized paths. 
 
-image:smbc-paths1.png[Error: Missing Graphic Image]
-
-The device path that is the shortest to access I/O is considered Active/Optimized paths and the rest of the paths are considered Active/Nonoptimized paths. In the event of a site failure or storage failover to a remote site, the Active/Nonoptimized paths are transitioned to optimized paths, as shown below.
+As shown below, the SM-BC relationship is between a pair of SVMs located on different clusters. Both SVMs are capable of serving data, but ALUA will preferantially use the SVM that currently has ownership of the drives on which the LUNs reside. IO to the remote SVM will be proxied across the SM-BC interconnect.
 
 image:smbc-paths2.png[Error: Missing Graphic Image]
 
@@ -33,11 +31,15 @@ SM-BC supports two types of storage failover operations: planned and unplanned, 
 
 A planned failover is initiated manually by the administrator for quick switchover to a remote site whereas unplanned failover is initiated automatically by the mediator on the third site. The primary purpose of a planned failover is to perform incremental patching and upgrades, perform disaster recovery testing, or adopt a formal policy of switching operations between sites throughout the year to prove full business continuity capability.
 
-image:smbc-failover1.png[Error: Missing Graphic Image]
+Prior to failover, IO is 
 
-image:smbc-failover2.png[Error: Missing Graphic Image]
+image:smbc-failover-1.png[Error: Missing Graphic Image]
 
-image:smbc-failover3.png[Error: Missing Graphic Image]
+image:smbc-failover-2.png[Error: Missing Graphic Image]
+
+image:smbc-failover-3.png[Error: Missing Graphic Image]
+
+image:smbc-failover-4.png[Error: Missing Graphic Image]
 
 == Storage Hardware
 
