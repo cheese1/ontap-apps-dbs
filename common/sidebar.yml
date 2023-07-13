@@ -63,10 +63,6 @@ entries:
       entries:
       - title: Overview
         url: /common/smbc/overview.html
-      - title: SM-BC with Oracle Single Instance
-        url: /common/smbc/si.html
-      - title: SM-BC with Oracle RAC
-        url: /common/smbc/rac.html
       - title: Failure Scenarios
         url: /common/smbc/failure-scenarios.html
     - title: MetroCluster

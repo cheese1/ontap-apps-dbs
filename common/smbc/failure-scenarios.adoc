@@ -20,13 +20,13 @@ summary: "SM-BC: Failure Scenarios"
 |Replication Link failure
 
 image:smbc-replinkfail.png[Error: Missing Graphic Image]
-|Mediator recognizes this split-brain scenario and resumes Oracle I/O on the node that holds the master copy. When the connectivity between sites is back online, the alternate site performs automatic resync.
+|Mediator recognizes this split-brain scenario and resumes I/O on the node that holds the master copy. When the connectivity between sites is back online, the alternate site performs automatic resync.
 
 |Primary site storage failure
 
 image:smbc-primarystoragefailure.png[Error: Missing Graphic Image]
 |Automated unplanned failover is initiated by Mediator.
-No I/O disruption in the Oracle database.
+No I/O disruption.
 
 |Remote site storage failure
 
@@ -37,7 +37,7 @@ There is an automatic resync when the site is online.
 |Loss of Mediator or link between Mediator and the storage arrays
 
 image:smbc-mediatorfail.png[Error: Missing Graphic Image]
-|Oracle I/O continues and remains in sync with the remote cluster but automated unplanned/planned failover and failback is not possible in the absence of Mediator.
+|I/O continues and remains in sync with the remote cluster but automated unplanned/planned failover and failback is not possible in the absence of Mediator.
 
 |Loss of one of the storage controllers in the HA cluster
 
@@ -45,12 +45,12 @@ image:smbc-controllerfail.png[Error: Missing Graphic Image]
 |The partner node in the HA cluster attempts a takeover (NDO). If takeover fails, Mediator notices that both the node in the storage is down and performs an automatic unplanned failover to the remote cluster.
 
 |Loss of disks
-|Oracle continues to perform I/O for up to three consecutive disk failures. This is part of RAID-TEC.
+|IO continues for up to three consecutive disk failures. This is part of RAID-TEC.
 
-|Loss of the entire site in a typical Oracle deployment
+|Loss of the entire site in a typical  deployment
 
 image:smbc-sitefailure.png[Error: Missing Graphic Image]
-|In the absence of Extended RAC, you must have a passive RAC setup or standalone Oracle binaries on the remote site that are already zoned or connected with the secondary storage devices. Post storage failover from the primary site to the disaster recovery site, rediscover the storage devices, mount, recover, and bring up the database .
+|Servers on the failed site will obviously no longer be available. Applications that support clustering can be configured to run at both sites and continue operations on the alternate site, although most such applications require a 3rd site tiebreaker similar to how SM-BC requires the mediator.
 
-Restarting the database under the control of an alternate set of binaries would require additional time, however RPO=0 is preserved. No data would be lost.
+Without application level clusters, applications will need to be started at the surviving site. This would affect availbility, but RPO=0 is preserved. No data would be lost.
 |===

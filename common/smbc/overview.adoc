@@ -19,6 +19,8 @@ SM-BC was introduced in the ONTAP 9.8 release for customer preview and was made 
 
 SM-BC makes storage devices visible to host operating systems from both the primary and remote storage arrays. Paths are managed through asymmetric logical unit access (ALUA), which is an industry standard protocol for identifying optimized paths between a storage system and a host.
 
+As an example consider an Oracle database 
+
 image:smbc-paths1.png[Error: Missing Graphic Image]
 
 The device path that is the shortest to access I/O is considered Active/Optimized paths and the rest of the paths are considered Active/Nonoptimized paths. In the event of a site failure or storage failover to a remote site, the Active/Nonoptimized paths are transitioned to optimized paths, as shown below.
