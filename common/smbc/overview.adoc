@@ -37,7 +37,7 @@ image:smbc-failover1.png[Error: Missing Graphic Image]
 
 image:smbc-failover2.png[Error: Missing Graphic Image]
 
-image:smbc-failover2.png[Error: Missing Graphic Image]
+image:smbc-failover3.png[Error: Missing Graphic Image]
 
 == Storage Hardware
 
