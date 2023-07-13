@@ -21,11 +21,11 @@ SM-BC makes storage devices visible to host operating systems from both the prim
 
 As an example consider an Oracle database 
 
-image:smbc-paths1.png[Error: Missing Graphic Image]
+image:smbc-paths1.png[Error: Missing Graphic Image,599,234]
 
 The device path that is the shortest to access I/O is considered Active/Optimized paths and the rest of the paths are considered Active/Nonoptimized paths. In the event of a site failure or storage failover to a remote site, the Active/Nonoptimized paths are transitioned to optimized paths, as shown below.
 
-image:smbc-paths2.png[Error: Missing Graphic Image]
+image:smbc-paths2.png[Error: Missing Graphic Image,600,367]
 
 == Failover
 
