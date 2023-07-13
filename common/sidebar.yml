@@ -59,12 +59,6 @@ entries:
       url: /common/dp/tools.html
   - title: Disaster recovery
     entries:
-    - title: SnapMirror Business Continuity
-      entries:
-      - title: Overview
-        url: /common/smbc/overview.html
-      - title: Failure Scenarios
-        url: /common/smbc/failure-scenarios.html
     - title: MetroCluster
       entries:
       - title: Overview
@@ -79,6 +73,12 @@ entries:
         url: /common/metrocluster/apps-on-metrocluster.html
       - title: MetroCluster and NVFAIL
         url: /common/metrocluster/nvfail.html
+    - title: SnapMirror Business Continuity
+      entries:
+      - title: Overview
+        url: /common/smbc/overview.html
+      - title: Failure Scenarios
+        url: /common/smbc/failure-scenarios.html
   - title: Tiering
     entries:
     - title: Overview
