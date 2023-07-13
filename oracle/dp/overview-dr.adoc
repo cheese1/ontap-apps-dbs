@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: oracle/dp/overview-dr.html
+keywords: oracle, database, ontap
+summary: NetApp ONTAP is a powerful data-management platform with native capabilities that include everything from instant backup, restore and cloning capabilities, efficiency features such as inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
+---
+
+= Oracle Databases on NetApp MetroCluster
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+NetApp MetroCluster delivers a highly available, zero data-loss solution for mission-critical Oracle workloads. 
+
+In addition, integrated solutions such as MetroCluster simplify today's complicated, scale-out Oracle database, application, and virtualization infrastructures. MetroCluster replaces multiple, external data protection products and strategies with one simple, central storage array. It provides integrated backup, recovery, disaster recovery, and high availability (HA) within a single clustered storage system.
+
+[NOTE]
+This section is based on TR-4592: Oracle on MetroCluster.
+

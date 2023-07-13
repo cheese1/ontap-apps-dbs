@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/migration/procedures-datafile_move.html
-keywords: TR-4534, migration, oracle, move datafile
+keywords: migration, oracle, move datafile
 summary: Migrating individual Oracle datafiles
 ---
 

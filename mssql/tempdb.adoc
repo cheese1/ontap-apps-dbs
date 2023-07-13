@@ -5,16 +5,12 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = tempdb files
 
-NetApp recommends proactively inflating tempdb files to their full size to avoid disk fragmentation. Page contention can occur on lobal allocation map (GAM), shared global allocation map (SGAM), or page free space (PFS) pages when SQL Server must write to special system pages to allocate new objects. Latches protect (lock) these pages in memory. On a busy SQL Server instance, it can take a long time to get a latch on a system page in tempdb. This results in slower query run times and is known as latch contention. See the following best practices for creating tempdb data files:
+[.lead]
+NetApp recommends proactively inflating tempdb files to their full size to avoid disk fragmentation.
+
+Page contention can occur on lobal allocation map (GAM), shared global allocation map (SGAM), or page free space (PFS) pages when SQL Server must write to special system pages to allocate new objects. Latches protect (lock) these pages in memory. On a busy SQL Server instance, it can take a long time to get a latch on a system page in tempdb. This results in slower query run times and is known as latch contention. See the following best practices for creating tempdb data files:
 
 * For < or = to 8 cores: tempdb data files = number of cores
 dd

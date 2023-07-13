@@ -1,8 +1,8 @@
 ---
 permalink: common/tiering/overview.html
 sidebar: sidebar
-keywords: TR-4695, oracle, storage, tiering, fabricpool
-summary: "FabricPool Overview"
+keywords: tiering, fabricpool
+summary: FabricPool overview
 ---
 = FabricPool overview
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: "FabricPool Overview"
 :imagesdir: ./../media/
 
 [.lead]
-Understanding how FabricPool tiering affects and Oracle database requires an understanding of low-level FabricPool architecture.
+Understanding how FabricPool tiering affects applications and databases requires an understanding of low-level FabricPool architecture.
 
 == Architecture
 
@@ -35,7 +35,7 @@ Support is included for the following configurations:
 
 Object storage protocols use simple HTTP or HTTPS requests for storing large numbers of data objects. Access to the object storage must be reliable, because data access from ONTAP depends on prompt servicing of requests. Options include the Amazon S3 Standard and Infrequent Access options, and Microsoft Azure Hot and Cool Blob Storage, IBM Cloud, and Google Cloud. Archival options such as Amazon Glacier and Amazon Archive are not supported because the time required to retrieve data can exceed the tolerances of host operating systems and applications.
 
-NetApp StorageGRID is also supported and is an optimal enterprise-class solution. It is a high-performance, scalable, and highly secure object storage system that can provide geographic redundancy for FabricPool data as well as other object store applications that are increasingly likely to be part of enterprise database environments.
+NetApp StorageGRID is also supported and is an optimal enterprise-class solution. It is a high-performance, scalable, and highly secure object storage system that can provide geographic redundancy for FabricPool data as well as other object store applications that are increasingly likely to be part of enterprise application environments.
 
 StorageGRID can also reduce costs by avoiding the egress charges imposed by many public cloud providers for reading data back from their services.
 

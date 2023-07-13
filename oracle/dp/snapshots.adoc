@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/snapshots.html
-keywords: TR-3633, oracle, database, ontap, snapshots
+keywords: oracle, database, ontap, snapshots
 summary: Oracle on ONTAP and the role of snapshots
 ---
 
@@ -24,19 +24,19 @@ There are two primary approaches to snapshot-based backups:
 * Crash-consistent backups
 * Snapshot-protected hot backups
 
-A crash-consistent backup of a database refers to the capture of the entire database structure, including datafiles, redo logs, and control files, at a single point in time. If the database is stored in a single NetApp FlexVol volume, then the process is simple; a Snapshot can be created at any time. If a database spans volumes, a consistency group (CG) Snapshot copy must be created. Several options exist for creating CG Snapshot copies, including NetApp SnapCenter software, native ONTAP consistency group features, and user-maintained scripts.
+A crash-consistent backup of a database refers to the capture of the entire database structure, including datafiles, redo logs, and control files, at a single point in time. If the database is stored in a single NetApp FlexVol volume, then the process is simple; a Snapshot can be created at any time. If a database spans volumes, a consistency group (CG) snapshot must be created. Several options exist for creating CG snapshots, including NetApp SnapCenter software, native ONTAP consistency group features, and user-maintained scripts.
 
 Crash-consistent Snapshot backups are primarily used when point-of-the-backup recovery is sufficient. Archive logs can be applied under some circumstances, but when more granular point-in-time recovery is required, a online backup is preferable.
 
 The basic procedure for a snapshot-based online backup is as follows:
 
 . Place the database in `backup` mode.
-. Create a Snapshot copy of all volumes hosting datafiles.
+. Create a snapshot of all volumes hosting datafiles.
 . Exit `backup` mode.
 . Run the command `alter system archive log current` to force log archiving.
-. Create Snapshot copies of all volumes hosting the archive logs.
+. Create snapshots of all volumes hosting the archive logs.
 
-This procedure yields a set of Snapshot copies containing datafiles in backup mode and the critical archive logs generated while in backup mode. These are the two requirements for recovering a database. Files such as control files should also be protected for convenience, but the only absolute requirement is protection for datafiles and archive logs.
+This procedure yields a set of snapshots containing datafiles in backup mode and the critical archive logs generated while in backup mode. These are the two requirements for recovering a database. Files such as control files should also be protected for convenience, but the only absolute requirement is protection for datafiles and archive logs.
 
 Although different customers might have very different strategies, almost all of these strategies are ultimately based on the principles outlined in this section.
 
@@ -46,7 +46,7 @@ When designing volume layouts for Oracle databases, the first decision is whethe
 
 Volume-based SnapRestore allows a volume to be almost instantly reverted to an earlier point in time. Because all of the data on the volume is reverted, VBSR might not be appropriate for all use cases. For example, if an entire database, including datafiles, redo logs, and archive logs, is stored on a single volume and this volume is restored with VBSR, then data is lost because the newer archive log and redo data are discarded.
 
-VBSR is not required for restore. Many databases can be restored by using file-based single-file SnapRestore (SFSR) or by simply copying files from the Snapshot copy back into the active file system.
+VBSR is not required for restore. Many databases can be restored by using file-based single-file SnapRestore (SFSR) or by simply copying files from the snapshot back into the active file system.
 
 VBSR is preferred when a database is very large or when it must be recovered as quickly as possible, and the use of VBSR requires isolation of the datafiles. In an NFS environment, the datafiles of a given database must be stored in dedicated volumes that are uncontaminated by any other type of file. In a SAN environment, datafiles must be stored in dedicated LUNs on dedicated FlexVol volumes. If a volume manager is used (including Oracle Automatic Storage Management [ASM]), the diskgroup must also be dedicated to datafiles.
 
@@ -54,18 +54,18 @@ Isolating datafiles in this manner allows them to be reverted to an earlier stat
 
 == Snapshot reserve
 
-For each volume with Oracle data in a SAN environment, the `percent-snapshot-space` should be set to zero because reserving space for a Snapshot copy in a LUN environment is not useful. If the fractional reserve is set to 100, a Snapshot copy of a volume with LUNs requires enough free space in the volume, excluding the snapshot reserve, to absorb 100% turnover of all of the data. If the fractional reserve is set to a lower value, then a correspondingly smaller amount of free space is required, but it always excludes the Snapshot copy reserve. This means that the Snapshot copy reserve space in a LUN environment is wasted.
+For each volume with Oracle data in a SAN environment, the `percent-snapshot-space` should be set to zero because reserving space for a snapshot in a LUN environment is not useful. If the fractional reserve is set to 100, a snapshot of a volume with LUNs requires enough free space in the volume, excluding the snapshot reserve, to absorb 100% turnover of all of the data. If the fractional reserve is set to a lower value, then a correspondingly smaller amount of free space is required, but it always excludes the snapshot reserve. This means that the snapshot reserve space in a LUN environment is wasted.
 
 In an NFS environment, there are two options:
 
-* Set the `percent-snapshot-space` based on expected Snapshot copy space consumption.
-* Set the `percent-snapshot-space` to zero and manage active and Snapshot copy space consumption collectively.
+* Set the `percent-snapshot-space` based on expected snapshot space consumption.
+* Set the `percent-snapshot-space` to zero and manage active and snapshot space consumption collectively.
 
-With the first option, `percent-snapshot-space` is set to a nonzero value, typically around 20%. This space is then hidden from the user. This value does not, however, create a limit on utilization. If a database with a 20% reservation experiences 30% turnover, the Snapshot copy space can grow beyond the bounds of the 20% reserve and occupy unreserved space.
+With the first option, `percent-snapshot-space` is set to a nonzero value, typically around 20%. This space is then hidden from the user. This value does not, however, create a limit on utilization. If a database with a 20% reservation experiences 30% turnover, the snapshot space can grow beyond the bounds of the 20% reserve and occupy unreserved space.
 
-The main benefit of setting a reserve to a value such as 20% is to verify that some space is always available for Snapshot copies. For example, a 1TB volume with a 20% reserve would only permit a database administrator (DBA) to store 800GB of data. This configuration guarantees at least 200GB of space for Snapshot copy consumption.
+The main benefit of setting a reserve to a value such as 20% is to verify that some space is always available for snapshots. For example, a 1TB volume with a 20% reserve would only permit a database administrator (DBA) to store 800GB of data. This configuration guarantees at least 200GB of space for snapshot consumption.
 
-When `percent-snapshot-space` is set to zero, all space in the volume is available to the end user, which delivers better visibility. A DBA must understand that, if he or she sees a 1TB volume that leverages Snapshot copies, this 1TB of space is shared between active data and Snapshot turnover.
+When `percent-snapshot-space` is set to zero, all space in the volume is available to the end user, which delivers better visibility. A DBA must understand that, if he or she sees a 1TB volume that leverages snapshots, this 1TB of space is shared between active data and Snapshot turnover.
 
 There is no clear preference between option one and option two among end users.
 

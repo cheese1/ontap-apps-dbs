@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/dp/oracle_consistency_group_backup.html
-keywords: TR-4591, oracle, data, protection, consistency, group, backup, volume, archive, log, redo, controlfiles
+keywords: oracle, data, protection, consistency, group, backup, volume, archive, log, redo, controlfiles
 summary: Consistency group backups for Oracle on ONTAP
 ---
 

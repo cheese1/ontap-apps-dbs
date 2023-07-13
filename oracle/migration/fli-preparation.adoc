@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/migration/fli-preparation.html
-keywords: TR-4534, migration, oracle, fli
+keywords: migration, oracle, fli
 summary: Preparing ONTAP for an FLI migration
 ---
 
@@ -144,9 +144,9 @@ EcoSystems-8060::*>
 
 == Create volumes to host migrated LUNs
 
-A volume is needed to host the migrated LUNs. The exact volume configuration depends on the overall plan to leverage ONTAP features. In this example, the ASM LUNs are placed into one volume and the LVM LUNs are placed in a second volume. Doing so allows you to manage the LUNs as independent groups for purposes such as tiering, creation of Snapshot copies, or setting QoS controls.
+A volume is needed to host the migrated LUNs. The exact volume configuration depends on the overall plan to leverage ONTAP features. In this example, the ASM LUNs are placed into one volume and the LVM LUNs are placed in a second volume. Doing so allows you to manage the LUNs as independent groups for purposes such as tiering, creation of snapshots, or setting QoS controls.
 
-Set the `snapshot-policy `to `none`. The migration process can include a great deal of data turnover. Therefore, there might be a large increase in space consumption if Snapshot copies are created by accident because unwanted data is captured in the Snapshot copies.
+Set the `snapshot-policy `to `none`. The migration process can include a great deal of data turnover. Therefore, there might be a large increase in space consumption if snapshots are created by accident because unwanted data is captured in the snapshots.
 
 ....
 EcoSystems-8060::> volume create -volume new_asm -aggregate data_02 -size 120G -snapshot-policy none

@@ -1,20 +1,16 @@
 ---
 sidebar: sidebar
 permalink: mysql/mysql-over-san.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,SAN
 summary: MySQL on ONTAP
 ---
 
+= MySQL over SAN
 
 [.lead]
+There are two options to configure MySQL with SAN using the usual two-volume model. 
 
-Placeholder
-
-
-
-MySQL over SAN
-
-There are two options to configure MySQL with SAN using the previously described two-volume model. Smaller databases can be placed on a pair of standard LUNs as long as the I/O and capacity demands are within the limits of a single LUN file system. For example, a database that requires approximately 2K random IOPS can be hosted on a single file system on a single LUN. Likewise, a database that is only 100GB in size would fit on a single LUN without creating a management problem.
+Smaller databases can be placed on a pair of standard LUNs as long as the I/O and capacity demands are within the limits of a single LUN file system. For example, a database that requires approximately 2K random IOPS can be hosted on a single file system on a single LUN. Likewise, a database that is only 100GB in size would fit on a single LUN without creating a management problem.
 
 Larger databases require multiple LUNs. For example, a database that requires 100K IOPS would most likely need at least eight LUNs. A single LUN would become a bottleneck because of the inadequate number of SCSI channels to drives. A 10TB database would similarly be difficult to manage on a single 10TB LUN. Logical volume managers are designed to bond the performance and capacity capabilities of multiple LUNs together to improve performance and manageability.
 

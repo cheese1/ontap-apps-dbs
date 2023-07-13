@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/network-configuration/lif.html
-keywords: ontap, LIF, multipath, multipathing
+keywords: LIF, multipath, multipathing
 summary: LIF configuration
 ---
 
@@ -15,7 +15,7 @@ summary: LIF configuration
 [.lead]
 Logical Interfaces (LIFs) are the network plumbing that connects a Storage Virtual Machine (SVM) to the network. Proper LIF design is required to ensure sufficient bandwidth exists for each database workload, and failover does not result in a loss of storage services.
 
-This section provides an overview of key LIF design principles. For more comprehensive documentation, see the ONTAP Network Management Guide for the version of ONTAP in use. As with other aspects of database architecture, the best options for storage virtual machine (SVM; formally known as Vserver) and logical interface (LIF) design depend heavily on scaling requirements and business needs.
+This section provides an overview of key LIF design principles. For more comprehensive documentation, see the ONTAP Network Management Guide for the version of ONTAP in use. As with other aspects of database architecture, the best options for storage virtual machine (SVM, known as a vserver at the CLI) and logical interface (LIF) design depend heavily on scaling requirements and business needs.
 
 Consider the following primary topics when building a LIF strategy:
 
@@ -30,7 +30,7 @@ These topics apply to the end-to-end solution, from the host through the switche
 There are multiple LIF types. Official ONTAP documentation provides more complete information on this topic, but from a functional perspective LIFs can be divided into the following groups:
 
 * *Cluster and node management LIFs.* LIFs used to manage the storage cluster.
-* *SVM management LIFs.* Interfaces that permit access to an SVM through the ONTAP API (known as ZAPI) for functions such as Snapshot copy creation or volume resizing. Products such as SMO must have access to an SVM management LIF.
+* *SVM management LIFs.* Interfaces that permit access to an SVM through the ONTAP API (known as ZAPI) for functions such as snapshot creation or volume resizing. Products such as SMO must have access to an SVM management LIF.
 * *Data LIFs.* Interfaces that carry FC, iSCSI, NFS, or CIFS data.
 
 [NOTE]
@@ -44,11 +44,11 @@ If a path becomes unavailable, the client automatically selects a different path
 
 === Performance
 
-The most important consideration with LIF performance in a SAN environment is bandwidth. For example, a four-node ONTAP AFF cluster with two 16Gb FC ports per node allows up to 32Gb of bandwidth from each node. I/O is automatically balanced between ports, and all I/O is directed down the most optimal path.
+The most important consideration with LIF performance in a SAN environment is bandwidth. For example, a two-node ONTAP AFF cluster with two 16Gb FC ports per node allows up to 32Gb of bandwidth to/from each node. 
 
 === Resiliency
 
-SAN LIFs do not fail over within a storage system. If a SAN LIF fails, then the client's multipathing software detects the loss of a path and redirects I/O to a different LIF.
+SAN LIFs do not fail over on an AFF storage system. If a SAN LIF fails because of controller failover, then the client's multipathing software detects the loss of a path and redirects I/O to a different LIF. With ASA storage systems, LIFs will be failed over after a short delay, but this does not interrupt IO because there are already active paths on the other controller. The failover process occurs in order to restore host access on all defined ports.
 
 === Manageability
 
@@ -68,11 +68,11 @@ In the event a LUN must be migrated outside of the two controllers, the addition
 
 == NFS LIF design
 
-In contrast to SAN protocols, NFS has a limited ability to define multiple paths to data. The parallel NFS (pNFS) extensions to NFSv4.1 address this limitation
+In contrast to SAN protocols, NFS has a limited ability to define multiple paths to data. The parallel NFS (pNFS) extensions to NFSv4 address this limitation, but as ethernet speeds have reached 100Gb there is rarely value in adding additional paths.
 
 === Performance and resiliency
 
-Although measuring SAN LIF performance is primarily a matter of calculating the total bandwidth from all primary paths, determining NFS LIF performance requires taking a closer look at the exact network configuration. For example, two 10Gb ports can be configured as raw physical ports, or they can be configured as a Link Aggregation Control Protocol (LACP) interface group. If they are configured as an interface group, multiple load balancing policies are available that work differently depending on whether traffic is switched or routed. Finally, Direct NFS (DNFS) offers load-balancing configurations that do not exist in any OS NFS clients at this time.
+Although measuring SAN LIF performance is primarily a matter of calculating the total bandwidth from all primary paths, determining NFS LIF performance requires taking a closer look at the exact network configuration. For example, two 10Gb ports can be configured as raw physical ports, or they can be configured as a Link Aggregation Control Protocol (LACP) interface group. If they are configured as an interface group, multiple load balancing policies are available that work differently depending on whether traffic is switched or routed. Finally, Oracle direct NFS (dNFS) offers load-balancing configurations that do not exist in any OS NFS clients at this time.
 
 Unlike SAN protocols, NFS file systems require resiliency at the protocol layer. For example, a LUN is always configured with multipathing enabled, meaning that multiple redundant channels are available to the storage system, each of which uses the FC protocol. An NFS file system, on the other hand, depends on the availability of a single TCP/IP channel that can only be protected at the physical layer. This arrangement is why options such as port failover and LACP port aggregation exist.
 
@@ -87,7 +87,7 @@ To bind a LIF to a port group, associate the LIF IP address with a group of phys
 * LACP does not evenly distribute traffic all the time. In a large environment with many NFS clients, the result is typically even use of all ports in an LACP aggregation. However, any one NFS file system in the environment is limited to the bandwidth of only one port, not the entire aggregation.
 * Although robin-robin LACP policies are available on ONTAP, these policies do not address the connection from a switch to a host. For example, a configuration with a four-port LACP trunk on a host and a four-port LACP trunk on ONTAP is still only able to read a file system using a single port. Although ONTAP can transmit data through all four ports, no switch technologies are currently available that send from the switch to the host through all four ports. Only one is used.
 
-The most common approach in larger environments consisting of many database hosts is to build an LACP aggregate of an appropriate number of 10Gb interfaces by using IP load balancing. This approach enables ONTAP to deliver even use of all ports, as long as enough clients exist. Load balancing breaks down when there are fewer clients in the configuration because LACP trunking does not dynamically redistribute load.
+The most common approach in larger environments consisting of many database hosts is to build an LACP aggregate of an appropriate number of 10Gb (or faster) interfaces by using IP load balancing. This approach enables ONTAP to deliver even use of all ports, as long as enough clients exist. Load balancing breaks down when there are fewer clients in the configuration because LACP trunking does not dynamically redistribute load.
 
 When a connection is established, traffic in a particular direction is placed on only one port. For example, a database performing a full table scan against an NFS file system connected through a four-port LACP trunk reads data though only one network interface card (NIC). If only three database servers are in such an environment, it is possible that all three are reading from the same port, while the other three ports are idle.
 
@@ -99,7 +99,7 @@ Binding a LIF to a physical port results in more granular control over network c
 
 The behavior of LIFs during network disruption is controlled by failover policies and failover groups. Configuration options have changed with the different versions of ONTAP. Consult the ONTAP Network Management Guide for specific details for the version of ONTAP being deployed.
 
-ONTAP 8.3 and higher allow management of LIF failover based on broadcast domains. Therefore, an administrator can define all of the ports that have access to a given subnet and allow ONTAP to select an appropriate failover LIF. This approach can be used by some customers, but it has limitations in a high-speed database storage network environment because of the lack of predictability. For example, an environment can include both 1Gb ports for routine file system access and 10Gb ports for datafile I/O. If both types of ports exist in the same broadcast domain, LIF failover can result in moving datafile I/O from a 10Gb port to a 1Gb port.
+ONTAP 8.3 and higher allow management of LIF failover based on broadcast domains. Therefore, an administrator can define all of the ports that have access to a given subnet and allow ONTAP to select an appropriate failover LIF. This approach can be used by some customers, but it has limitations in a high-speed storage network environment because of the lack of predictability. For example, an environment can include both 1Gb ports for routine file system access and 10Gb ports for datafile I/O. If both types of ports exist in the same broadcast domain, LIF failover can result in moving datafile I/O from a 10Gb port to a 1Gb port.
 
 In summary, consider the following practices:
 

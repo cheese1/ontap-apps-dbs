@@ -1,0 +1,46 @@
+---
+sidebar: sidebar
+permalink: common/smbc/overview.html
+keywords: smbc, sm-bc
+summary: SM-BC overview
+---
+
+= Overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+SM-BC was introduced in the ONTAP 9.8 release for customer preview and was made generally available for production use in the ONTAP 9.9.1 release. SM-BC and SM-S share a replication engine, however, SM-BC includes additional features such as transparent application failover and failback for enterprise applications.
+
+== Path Access
+
+SM-BC makes storage devices visible to host operating systems from both the primary and remote storage arrays. Paths are managed through asymmetric logical unit access (ALUA), which is an industry standard protocol for identifying optimized paths between a storage system and a host.
+
+As an example consider an Oracle database 
+
+image:smbc-paths1.png[Error: Missing Graphic Image]
+
+The device path that is the shortest to access I/O is considered Active/Optimized paths and the rest of the paths are considered Active/Nonoptimized paths. In the event of a site failure or storage failover to a remote site, the Active/Nonoptimized paths are transitioned to optimized paths, as shown below.
+
+image:smbc-paths2.png[Error: Missing Graphic Image]
+
+== Failover
+
+SM-BC supports two types of storage failover operations: planned and unplanned, which work in slightly different ways. Figure 3 illustrates an unplanned failover and Figure 4 illustrates a planned failover.
+
+A planned failover is initiated manually by the administrator for quick switchover to a remote site whereas unplanned failover is initiated automatically by the mediator on the third site. The primary purpose of a planned failover is to perform incremental patching and upgrades, perform disaster recovery testing, or adopt a formal policy of switching operations between sites throughout the year to prove full business continuity capability.
+Storage hardware
+
+image:smbc-failover1.png[Error: Missing Graphic Image]
+image:smbc-failover2.png[Error: Missing Graphic Image]
+
+== Storage Hardware
+
+Unlike other storage disaster recovery solutions, SM-BC offers asymmetric platform flexibility—the hardware at each site does not need to be identical. This capability allows you to right-size the hardware used to support SM-BC. The remote storage system can be identical to the primary site if it needs to support a full production workload, but if a disaster results in reduced I/O, than a smaller system at the remote site might be more cost-effective.
+
+== ONTAP Mediator
+
+The ONTAP Mediator is a software application that is downloaded from NetApp support. Mediator automates failover operations for both the primary and remote site storage cluster. It can be deployed on a small virtual machine (VM) hosted either on-premises or in the cloud. After it is configured, it acts as a third site to monitor failover scenarios for both the sites.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/tiering/data_retrieval_policies.html
-keywords: TR-4695, oracle, storage, tiering, fabricpool
+keywords: tiering, fabricpool
 summary: FabricPool Data Retrieval Policies
 ---
 

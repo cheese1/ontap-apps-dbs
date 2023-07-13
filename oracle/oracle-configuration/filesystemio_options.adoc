@@ -1,7 +1,7 @@
 ---
 permalink: oracle/oracle-configuration/filesystemio_options.html
 sidebar: sidebar
-keywords: TR-3633, oracle, database, ontap, filesystemio_options, filesystemio, async, directio
+keywords: oracle, database, ontap, filesystemio_options, filesystemio, async, directio
 summary: "Oracle async IO and direct IO"
 ---
 = filesystemio_options

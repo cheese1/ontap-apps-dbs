@@ -3,51 +3,53 @@ title: Microsoft SQL Server on ONTAP
 entries:
   - title: Overview
     url: /mssql/overview.html
-  - title: SQL server workload types
-    url: /mssql/workloads.html
-  - title: Benchmarking
-    url: /mssql/benchmarking.html
-  - title: SQL Server configuration
-    url: /mssql/server-configuration.html
-  - title: Shared instance versus dedicated instance
-    url: /mssql/shared-vs-dedicated.html
-  - title: Hyperthreading
-    url: /mssql/hyperthreading.html
-  - title: Nonuniform memory access
-    url: /mssql/numa.html
-  - title: Processor affinity
-    url: /mssql/cpu-affinity.html
-  - title: Max Degree of Parallelism (MAXDOP)
-    url: /mssql/parallelism.html
-  - title: Max server memory
-    url: /mssql/max-server-memory.html
-  - title: Max worker threads
-    url: /mssql/max-worker-threads.html
-  - title: Index create memory
-    url: /mssql/index-create.html
-  - title: Min memory per query
-    url: /mssql/min-memory-per-query.html
-  - title: Buffer pool extensions
-    url: /mssql/buffer-pool.html
-  - title: Database files and filegroups
-    url: /mssql/files-and-filegroups.html
-  - title: Database and storage considerations
-    url: /mssql/storage-considerations.html
-  - title: Volumes
-    url: /mssql/volumes.html
-  - title: tempdb files
-    url: /mssql/tempdb.html
-  - title: Host log directory
-    url: /mssql/host-log.html
-  - title: Data storage design
-    url: /mssql/storage-design.html
-  - title: Flexclones
-    url: /mssql/flexclones.html
-  - title: Compression
-    url: /mssql/compression.html
-  - title: Deduplication
-    url: /mssql/deduplication.html
+  - title: Database configuration
+    entries:
+    - title: Shared instance versus dedicated instance
+      url: /mssql/shared-vs-dedicated.html
+    - title: CPU Configuration
+      entries:
+      - title: Hyperthreading
+        url: /mssql/hyperthreading.html
+      - title: Processor affinity
+        url: /mssql/cpu-affinity.html
+      - title: Max Degree of Parallelism (MAXDOP)
+        url: /mssql/parallelism.html
+      - title: Max worker threads
+        url: /mssql/max-worker-threads.html
+    - title: Memory configuration
+      entries:
+      - title: Max server memory
+        url: /mssql/max-server-memory.html
+      - title: Nonuniform memory access
+        url: /mssql/numa.html
+      - title: Index create memory
+        url: /mssql/index-create.html
+      - title: Min memory per query
+        url: /mssql/min-memory-per-query.html
+      - title: Buffer pool extensions
+        url: /mssql/buffer-pool.html
+  - title: Storage configuration
+    entries:
+    - title: Workloads
+      url: /mssql/workloads.html
+    - title: Database files and filegroups
+      url: /mssql/files-and-filegroups.html
+    - title: Database and storage considerations
+      url: /mssql/storage-considerations.html
+    - title: Volumes
+      url: /mssql/volumes.html
+    - title: Compression
+      url: /mssql/compression.html
+    - title: tempdb files
+      url: /mssql/tempdb.html
+    - title: Host log directory
+      url: /mssql/host-log.html
+    - title: Flexclones
+      url: /mssql/flexclones.html
+    - title: Deduplication
+      url: /mssql/deduplication.html
+    - title: Tiering
+      url: /mssql/tiering.html
   - title: SnapCenter
     url: /mssql/snapcenter.html
-  - title: Additional information
-    url: /mssql/additional-information.html

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/tiering/data_tiering_policies.html
-keywords: TR-4695, oracle, storage, tiering, fabricpool
+keywords: tiering, fabricpool
 summary: FabricPool Data Tiering Policies
 ---
 
@@ -20,7 +20,7 @@ Four policies are available in ONTAP which control how a block on the performanc
 
 === Snapshot-only
 
-The `snapshot-only` `tiering-policy` applies only to blocks that are not shared with the active filesystem. It essentially results in tiering of database backups. Blocks become candidates for tiering after a snapshot is created and the block is then overwritten, resulting in a block that exists only within the snapshot copy. The delay before a `snapshot-only` block is considered cool is controlled by the `tiering-minimum-cooling-days` setting for the volume. The range as of ONTAP 9.8 is from 2 to 183 days.
+The `snapshot-only` `tiering-policy` applies only to blocks that are not shared with the active filesystem. It essentially results in tiering of database backups. Blocks become candidates for tiering after a snapshot is created and the block is then overwritten, resulting in a block that exists only within the snapshot. The delay before a `snapshot-only` block is considered cool is controlled by the `tiering-minimum-cooling-days` setting for the volume. The range as of ONTAP 9.8 is from 2 to 183 days.
 
 Most databases have low change rates, resulting in minimal savings from this policy. For example, a typical database observed on ONTAP has a change rate of less than 5% per week. Exceptions exist, but the rates are usually low. Database archive logs can occupy extensive space, but they usually continue to exist in the active filesystem and thus would not be candidates for tiering under this policy.
 

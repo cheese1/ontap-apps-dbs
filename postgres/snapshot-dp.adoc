@@ -16,11 +16,11 @@ Placeholder
 
 NetApp has developed a full portfolio of technologies and tools to help organizations build or adapt their backup and recovery plans to respond to all business demands. With the NetApp Snapshot technology that is included in ONTAP software, you can create backups or execute restore operations for datasets of any size in a matter of seconds. For PostgreSQL, you must enable Snapshots for data files, WAL files, and archived WAL files to provide full or point-in-time recovery.
 
-For PostgreSQL databases, the average backup time with Snapshot copies is in the range of a few seconds to a few minutes. This backup speed is 60 to 100 times faster than pg_basebackup and other file-system-based backup approaches.
+For PostgreSQL databases, the average backup time with snapshots is in the range of a few seconds to a few minutes. This backup speed is 60 to 100 times faster than pg_basebackup and other file-system-based backup approaches.
 
-Snapshot copies on NetApp storage can be both crash-consistent and application-consistent. A crash-consistent Snapshot copy is created on storage without quiescing the database, whereas an application-consistent Snapshot copy is created while the database is in backup mode. NetApp also ensures that subsequent Snapshot copies are incremental-forever backups to promote storage savings and network efficiency.
+Snapshots on NetApp storage can be both crash-consistent and application-consistent. A crash-consistent snapshot is created on storage without quiescing the database, whereas an application-consistent snapshot is created while the database is in backup mode. NetApp also ensures that subsequent snapshots are incremental-forever backups to promote storage savings and network efficiency.
 
-Because Snapshot copies are rapid and do not affect system performance, you can schedule multiple Snapshot copies daily instead of creating a single daily backup as with other streaming backup technology. When a restore and recovery operation is necessary, the system downtime is reduced by two key features:
+Because snapshots are rapid and do not affect system performance, you can schedule multiple snapshots daily instead of creating a single daily backup as with other streaming backup technology. When a restore and recovery operation is necessary, the system downtime is reduced by two key features:
 
 * NetApp SnapRestore data recovery technology means that the restore operation is executed in seconds.
 * Aggressive recovery point objectives (RPOs) mean that fewer database logs must be applied and forward recovery is also accelerated.

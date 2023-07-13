@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/storage-configuration/san_configuration.html
-keywords: TR-3633, oracle, database, ontap, SAN, ASM
+keywords: oracle, database, ontap, SAN, ASM
 summary: Oracle on SAN configuration overview
 ---
 

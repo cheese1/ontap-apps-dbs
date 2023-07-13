@@ -1,19 +1,13 @@
 ---
 sidebar: sidebar
 permalink: mysql/configuration.html
-keywords: MySQL,MariaDB,TR-4722
-summary: MySQL on ONTAP
+keywords: MySQL,MariaDB
+summary: MySQL Configuration
 ---
-
-
-[.lead]
-
-Placeholder
-
-
 
 = MySQL Configuration Overview
 
+[.lead]
 NetApp recommends a few important MySQL configuration parameters (listed in Table 1) to obtain optimal performance.
 
 Table 1) MySQL configuration parameters. 

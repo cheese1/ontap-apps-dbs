@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: oracle/host-configuration/aix.html
-keywords: TR-3633, oracle, database, ontap, aix, cio
+keywords: oracle, database, ontap, aix, cio
 summary: Oracle on ONTAP using AIX
 ---
 

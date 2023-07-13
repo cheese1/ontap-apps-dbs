@@ -5,15 +5,8 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
-
+= CPU affinity
 [.lead]
-
-Placeholder
-
-
-
-= Processor affinity
-
 You are unlikely ever to need to alter the processor affinity defaults unless you encounter performance problems, but it is still worth understanding what they are and how they work.
 
 SQL Server supports processor affinity by two options:

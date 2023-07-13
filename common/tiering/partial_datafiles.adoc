@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: common/tiering/partial_datafiles.html
-keywords: TR-4695, oracle, storage, tiering, fabricpool
-summary: Database Snapshot Subfile Tiering with FabricPool
+keywords: tiering, fabricpool
+summary: Subfile Tiering with FabricPool
 ---
 
 = Partial Datafile tiering

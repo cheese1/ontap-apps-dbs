@@ -1,20 +1,15 @@
 ---
 sidebar: sidebar
 permalink: mysql/innodb_flush_log_at_trx_commit.html
-keywords: MySQL,MariaDB,TR-4722
+keywords: MySQL,MariaDB,innodb_doublewrite
 summary: MySQL on ONTAP
 ---
 
-
+= c
 [.lead]
+When there is a change to the data, the change is not immediately written to storage. 
 
-Placeholder
-
-
-
-= innodb_flush_log_at_trx_commit
-
-When there is a change to the data, the change is not immediately written to storage. Instead, the data is recorded in a log buffer, which is a portion of memory that InnoDB allocates to buffer changes that are recorded in the log file. InnoDB flushes the buffer to the log file when a transaction is committed, when the buffer gets full, or once per second, whichever event happens first. The configuration variable that controls this process is innodb_flush_log_at_trx_commit. The value options include: 
+Instead, the data is recorded in a log buffer, which is a portion of memory that InnoDB allocates to buffer changes that are recorded in the log file. InnoDB flushes the buffer to the log file when a transaction is committed, when the buffer gets full, or once per second, whichever event happens first. The configuration variable that controls this process is innodb_flush_log_at_trx_commit. The value options include: 
 
 * 0: When you set innodb_flush_log_trx_at_commit=0, InnoDB writes the modified data (in the InnoDB buffer pool) to the log file (ib_logfile) and flushes the log file (write to storage) every second. However, it does not do anything when the transaction is committed. If there is a power failure or system crash, none of the unflushed data is recoverable because it is not written to either the log file or drives. 
 
