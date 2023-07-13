@@ -21,20 +21,22 @@ SM-BC makes storage devices visible to host operating systems from both the prim
 
 As an example consider an Oracle database 
 
-image:smbc-paths1.png[Error: Missing Graphic Image,599,234]
+image:smbc-paths1.png[Error: Missing Graphic Image]
 
 The device path that is the shortest to access I/O is considered Active/Optimized paths and the rest of the paths are considered Active/Nonoptimized paths. In the event of a site failure or storage failover to a remote site, the Active/Nonoptimized paths are transitioned to optimized paths, as shown below.
 
-image:smbc-paths2.png[Error: Missing Graphic Image,600,367]
+image:smbc-paths2.png[Error: Missing Graphic Image]
 
 == Failover
 
 SM-BC supports two types of storage failover operations: planned and unplanned, which work in slightly different ways. Figure 3 illustrates an unplanned failover and Figure 4 illustrates a planned failover.
 
 A planned failover is initiated manually by the administrator for quick switchover to a remote site whereas unplanned failover is initiated automatically by the mediator on the third site. The primary purpose of a planned failover is to perform incremental patching and upgrades, perform disaster recovery testing, or adopt a formal policy of switching operations between sites throughout the year to prove full business continuity capability.
-Storage hardware
 
 image:smbc-failover1.png[Error: Missing Graphic Image]
+
+image:smbc-failover2.png[Error: Missing Graphic Image]
+
 image:smbc-failover2.png[Error: Missing Graphic Image]
 
 == Storage Hardware
