@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: common/smbc/failover.html
+keywords: smbc, sm-bc
+summary: SM-BC overview
+---
+
+= Failover
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+SM-BC supports two types of storage failover operations: planned and unplanned, which work in slightly different ways. 
+
+A planned failover is initiated manually by the administrator for quick switchover to a remote site whereas unplanned failover is initiated automatically by the mediator on the third site. The primary purpose of a planned failover is to perform incremental patching and upgrades, perform disaster recovery testing, or adopt a formal policy of switching operations between sites throughout the year to prove full business continuity capability.
+
+Prior to failover, IO is 
+
+image:smbc-failover-1.png[Error: Missing Graphic Image]
+
+image:smbc-failover-2.png[Error: Missing Graphic Image]
+
+image:smbc-failover-3.png[Error: Missing Graphic Image]
+
+image:smbc-failover-4.png[Error: Missing Graphic Image]
