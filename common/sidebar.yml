@@ -86,21 +86,19 @@ entries:
   - title: Tiering
     entries:
     - title: Overview
-      url: /common/tiering/introduction.html
-    - title: FabricPool architecture
       url: /common/tiering/overview.html
     - title: Tiering Policies
       entries:
       - title: Sending data to Object Store
-        url: /common/data/tiering_policies.html
+        url: /common/data/tiering-policies.html
       - title: Retriving data from Object Store
-        url: /common/data_retrieval_policies.html
+        url: /common/retrieval-policies.html
     - title: Tiering strategies
       entries:
       - title: Whole datafiles
-        url: /common/tiering/whole_datafiles.html
+        url: /common/tiering/whole-files.html
       - title: Partial datafiles
-        url: /common/tiering/partial_datafiles.html
+        url: /common/tiering/partial-files.html
       - title: Archive logs
         url: /common/tiering/logs.html
       - title: Snapshots
