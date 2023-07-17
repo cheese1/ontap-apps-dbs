@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/tiering/whole_datafiles.html
+permalink: common/tiering/whole-files.html
 keywords: tiering, fabricpool
 summary: File tiering with FabricPool
 ---
