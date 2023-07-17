@@ -88,20 +88,20 @@ entries:
     - title: Tiering Policies
       entries:
       - title: Sending data to Object Store
-        url: /common/data/tiering-policies.html
+        url: /common/tiering/tiering-policies.html
       - title: Retriving data from Object Store
-        url: /common/retrieval-policies.html
+        url: /common/tiering/retrieval-policies.html
     - title: Tiering strategies
       entries:
-      - title: Whole datafiles
+      - title: Whole files
         url: /common/tiering/whole-files.html
-      - title: Partial datafiles
+      - title: Partial files
         url: /common/tiering/partial-files.html
-      - title: Archive logs
+      - title: Select files
         url: /common/tiering/logs.html
       - title: Snapshots
         url: /common/tiering/snapshots.html
-      - title: RMAN backups and exports
+      - title: Backups
         url: /common/tiering/backups.html
-      - title: Object store access interruptions
-        url: /common/tiering/access_interruptions.html
+    - title: Object store access interruptions
+      url: /common/tiering/access_interruptions.html
