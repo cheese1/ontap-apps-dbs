@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: common/tiering/whole-files.html
 keywords: tiering, fabricpool
-summary: File tiering with FabricPool
+summary: Full file tiering with FabricPool
 ---
 
-= Full Datafile tiering
+= Full file tiering
 
 :hardbreaks:
 :nofooter:
@@ -14,20 +14,15 @@ summary: File tiering with FabricPool
 :imagesdir: ./../media/
 
 [.lead]
-Many databases include datafiles organized by date, and such data is generally increasingly less likely to be accessed as it ages. For example, a large billing database might contain five years of customer data, but only the most recent few months are active. FabricPool can be used to relocate older datafiles to the capacity tier.
+Although FabricPool tiering operates at the block level, in some cases it can be used to provide file-level tiering.
 
-Some databases, such as an Oracle database using the Information Lifecycle Management assistant, can relocate datafiles between filesystems based on certain criteria. Such a system could be used with FabricPool to relocate files from active data volumes to archival data volumes. For example, the primary datafiles containing the most recent three months of data might reside on SSD storage without FabricPool. After 90 days, the individual datafiles are then moved to a volume configured with a two-day cooling period to drive rapid tiering to the capacity layer.
-
-The datafiles could also share a common FabricPool-enabled volume with a longer cooling period to make sure that required data remains available on the performance tier. There is some risk that data is relocated to the capacity tier earlier than desired, but the cooling period only applies after data is not accessed for the required period. Data does not immediately become tiered merely because the cooling period has elapsed.
-
-[NOTE]
-Any type of access to data resets the heat map data. Therefore, database full table scans and even backup activity that reads the source files prevents tiering because the required `tiering-minimum-cooling-days` threshhold is never reached.
+Many applications datasets are organized by date, and such data is generally increasingly less likely to be accessed as it ages. For example, a bank might have a repository of PDF files that contain five years of customer statements, but only the most recent few months are active. FabricPool can be used to relocate older datafiles to the capacity tier. A cooling period of 14 days would ensure the more recent 14 days of PDF files remain on the high-performance tier. Furthermore, files that are read at least every 14 days would remain hot and therefore remain on the high performance tier.
 
 == Policies
 
-The `tiering-minimum-cooling-days` policy should be set high enough so that files that you might need remain on the performance tier. For example, a database for which the most recent 60 days of data is required with the optimal performance warrants setting the `tiering-minimum-cooling-days` period to 60. Similar results can also be achieved based on the file access patterns. For example, if the most recent 90 days of data is required and the application is accessing that 90- day span of data, then the data would remain on the performance tier. By setting the `tiering-minimum-cooling-days` period to 2, you get prompt tiering after the data becomes less active.
+To implement a file-based tiering approach, you must have files that are written and not subsequently modified. The `tiering-minimum-cooling-days` policy should be set high enough so that files that you might need remain on the performance tier. For example, a dataset for which the most recent 60 days of data is required with optimal performance warrants setting the `tiering-minimum-cooling-days` period to 60. Similar results can also be achieved based on the file access patterns. For example, if the most recent 90 days of data is required and the application is accessing that 90-day span of data, then the data would remain on the performance tier. By setting the `tiering-minimum-cooling-days` period to 2, you get prompt tiering after the data becomes less active.
 
-The `auto` policy is required to drive tiering of datafiles because only the `auto` policy affects blocks that are in the active filesystem.
+The `auto` policy is required to drive tiering of these sblocks because only the `auto` policy affects blocks that are in the active filesystem.
 
 [NOTE]
-Any type of access to data resets the heat map data. Therefore, database full table scans and even backup activity that reads the source files prevents tiering because the required `tiering-minimum-cooling-days` threshhold is never reached.
+Any type of access to data resets the heat map data. Virus scanning, indexing, and even backup activity that reads the source files prevents tiering because the required `tiering-minimum-cooling-days` threshhold is never reached.
