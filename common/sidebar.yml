@@ -77,8 +77,6 @@ entries:
       entries:
       - title: Overview
         url: /common/smbc/overview.html
-      - title: Architecture
-        url: /common/smbc/architecture.html
       - title: Failover
         url: /common/smbc/failover.html
       - title: Failure Scenarios
