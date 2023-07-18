@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/smbc/overview.html
+permalink: common/smbc/architecture.html
 keywords: smbc, sm-bc
 summary: SM-BC overview
 ---

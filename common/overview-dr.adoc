@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/overview.html
+permalink: common/overview-dr.html
 keywords: metrocluster, syncmirror
 summary: Disaster Recovery with ONTAP
 ---

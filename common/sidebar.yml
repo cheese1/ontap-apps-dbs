@@ -57,8 +57,8 @@ entries:
       url: /common/dp/tools.html
   - title: Disaster recovery
     entries:
-  - title: Overview
-    url: /common/overview-dr.html
+    - title: Overview
+      url: /common/overview-dr.html
     - title: MetroCluster
       entries:
       - title: Physical architecture
