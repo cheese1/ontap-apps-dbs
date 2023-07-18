@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: common/tiering/whole-files.html
+keywords: tiering, fabricpool
+summary: Full file tiering with FabricPool
+---
+
+= Full file tiering
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+Although FabricPool tiering operates at the block level, in some cases it can be used to provide file-level tiering.
+
+Many applications datasets are organized by date, and such data is generally increasingly less likely to be accessed as it ages. For example, a bank might have a repository of PDF files that contain five years of customer statements, but only the most recent few months are active. FabricPool can be used to relocate older datafiles to the capacity tier. A cooling period of 14 days would ensure the more recent 14 days of PDF files remain on the high-performance tier. Furthermore, files that are read at least every 14 days would remain hot and therefore remain on the high performance tier.
+
+== Policies
+
+To implement a file-based tiering approach, you must have files that are written and not subsequently modified. The `tiering-minimum-cooling-days` policy should be set high enough so that files that you might need remain on the performance tier. For example, a dataset for which the most recent 60 days of data is required with optimal performance warrants setting the `tiering-minimum-cooling-days` period to 60. Similar results can also be achieved based on the file access patterns. For example, if the most recent 90 days of data is required and the application is accessing that 90-day span of data, then the data would remain on the performance tier. By setting the `tiering-minimum-cooling-days` period to 2, you get prompt tiering after the data becomes less active.
+
+The `auto` policy is required to drive tiering of these sblocks because only the `auto` policy affects blocks that are in the active filesystem.
+
+[NOTE]
+Any type of access to data resets the heat map data. Virus scanning, indexing, and even backup activity that reads the source files prevents tiering because the required `tiering-minimum-cooling-days` threshhold is never reached.

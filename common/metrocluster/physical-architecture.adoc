@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/metrocluster_physical_architecture.html
+permalink: common/metrocluster/physical-architecture.html
 keywords: metrocluster, MCC, MCC-IP
 summary: MetroCluster Physical Architecture
 ---
@@ -11,8 +11,6 @@ summary: MetroCluster Physical Architecture
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
-
-NetApp MetroCluster delivers a highly available, zero data- loss solution for mission-critical Oracle workloads. In addition, integrated solutions such as MetroCluster simplify today's complicated, scale-out Oracle database, application, and virtualization infrastructures. MetroCluster replaces multiple external data protection products and strategies with one simple, central storage array that provides integrated backup, recovery, disaster recovery, and high availability (HA) within a single clustered storage system.
 
 [.lead]
 MetroCluster clusters are available in three different configurations:
@@ -35,7 +33,7 @@ For additional information, refer to the official ONTAP documentation and https:
 
 The figure below depicts MetroCluster IP basic architecture.
 
-image:oracle-mc_image1.jpeg[Error: Missing Graphic Image]
+image:mccip.png[Error: Missing Graphic Image]
 
 == HA-Pair FC SAN-attached MetroCluster
 
@@ -43,7 +41,7 @@ The HA-pair MetroCluster configuration uses two nodes per site. This configurati
 
 The basic design is depicted in the figure below.
 
-image:oracle-mc_image2.jpeg[Error: Missing Graphic Image]
+image:mcc-4-node.png[Error: Missing Graphic Image]
 
 Some multisite infrastructures are not designed for active-active operations, but rather are used more as a primary site and disaster recovery site. In this situation, the HA-pair MetroCluster option is generally preferable for the following reasons:
 
@@ -57,7 +55,7 @@ The two-node MetroCluster configuration uses only one node per site. This design
 
 The figure below illustrates two-node FC SAN-attached MetroCluster basic architecture.
 
-image:oracle-mc_image3.jpeg[Error: Missing Graphic Image]
+image:mcc-2-node.png[Error: Missing Graphic Image]
 
 The obvious impact of this design is that controller failure on a single site means that data is available from the opposite site. This restriction is not necessarily a problem. Many enterprises have multisite data center operations with stretched, high-speed, low-latency networks that function essentially as a single infrastructure. In these cases, the two-node version of MetroCluster is the preferred configuration. Two-node systems are currently used at petabyte scale by several service providers.
 

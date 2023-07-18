@@ -5,13 +5,13 @@ keywords: data protection, availability, takeover, giveback, switchover, switchb
 summary: Maximizing availability with Oracle on ONTAP
 ---
 
-= Database Availability with ONTAP
+= Data availability with ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
-
+s
 [.lead]
 A complete description of ONTAP high availability features is beyond the scope of this document. However, as with data protection, a basic understanding of this functionality is important when designing a database infrastructure.
 
@@ -38,7 +38,7 @@ Additional paths to additional controllers can also be configured to support rel
 
 The second aspect of takeover and giveback is the transfer of disk ownership. The exact process depends on multiple factors including the reason for the takeover/giveback and the command line options issued. The goal is to perform the operation as efficiently as possible. Although the overall process might appear to require several minutes, the actual moment in which ownership of the drive is transitioned from node to node can generally be measured in seconds.
 
-== Takeover Time
+== Takeover time
 
 Host I/O experiences a short pause in I/O during takeover and giveback operations, but there should not be application disruption in a correctly configured environment. The actual transition process in which I/O is delayed is generally measured in seconds, but the host might require additional time to recognize the change in data paths and resubmit I/O operations.
 

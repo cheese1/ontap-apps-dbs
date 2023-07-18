@@ -1,5 +1,5 @@
 section: oracle
-title: Oracle on ONTAP
+title: Oracle Database
 entries:
   - title: Overview
     url: /oracle/overview.html

@@ -1,5 +1,5 @@
 section: mssql
-title: Microsoft SQL Server on ONTAP
+title: Microsoft SQL Server
 entries:
   - title: Overview
     url: /mssql/overview.html

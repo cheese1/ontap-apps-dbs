@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/tiering/data_retrieval_policies.html
+permalink: common/tiering/retrieval-policies.html
 keywords: tiering, fabricpool
 summary: FabricPool Data Retrieval Policies
 ---

@@ -1,5 +1,5 @@
 section: common
-title: ONTAP for enterprise applications
+title: Enterprise applications on ONTAP
 entries:
   - title: Overview
     url: /common/overview.html
@@ -59,49 +59,49 @@ entries:
       url: /common/dp/tools.html
   - title: Disaster recovery
     entries:
-    - title: SnapMirror Business Continuity
-      entries:
-      - title: Overview
-        url: /common/smbc/overview.html
-      - title: Failure Scenarios
-        url: /common/smbc/failure-scenarios.html
     - title: MetroCluster
       entries:
       - title: Overview
         url: /common/metrocluster/overview.html
-      - title: MetroCluster physical architecture
-        url: /common/metrocluster/metrocluster_physical_architecture.html
-      - title: MetroCluster logical architecture
-        url: /common/metrocluster/metrocluster_logical_architecture.html
       - title: SyncMirror
         url: /common/metrocluster/syncmirror.html
+      - title: Physical architecture
+        url: /common/metrocluster/physical-architecture.html
+      - title: Logical architecture
+        url: /common/metrocluster/logical-architecture.html
       - title: Applications on MetroCluster
         url: /common/metrocluster/apps-on-metrocluster.html
-      - title: MetroCluster and NVFAIL
+      - title: NVFAIL
         url: /common/metrocluster/nvfail.html
+    - title: SnapMirror Business Continuity
+      entries:
+      - title: Overview
+        url: /common/smbc/overview.html
+      - title: Failover
+        url: /common/smbc/failover.html
+      - title: Failure Scenarios
+        url: /common/smbc/failure-scenarios.html
   - title: Tiering
     entries:
     - title: Overview
-      url: /common/tiering/introduction.html
-    - title: FabricPool architecture
       url: /common/tiering/overview.html
     - title: Tiering Policies
       entries:
       - title: Sending data to Object Store
-        url: /common/data/tiering_policies.html
+        url: /common/tiering/tiering-policies.html
       - title: Retriving data from Object Store
-        url: /common/data_retrieval_policies.html
+        url: /common/tiering/retrieval-policies.html
     - title: Tiering strategies
       entries:
-      - title: Whole datafiles
-        url: /common/tiering/whole_datafiles.html
-      - title: Partial datafiles
-        url: /common/tiering/partial_datafiles.html
-      - title: Archive logs
+      - title: Whole files
+        url: /common/tiering/whole-files.html
+      - title: Partial files
+        url: /common/tiering/partial-files.html
+      - title: Select files
         url: /common/tiering/logs.html
       - title: Snapshots
         url: /common/tiering/snapshots.html
-      - title: RMAN backups and exports
+      - title: Backups
         url: /common/tiering/backups.html
-      - title: Object store access interruptions
-        url: /common/tiering/access_interruptions.html
+    - title: Object store access interruptions
+      url: /common/tiering/access_interruptions.html

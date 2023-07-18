@@ -1,5 +1,5 @@
 section: postgres
-title: PostgreSQL on ONTAP
+title: PostgreSQL
 entries:
   - title: Overview
     url: /postgres/overview.html

@@ -22,15 +22,6 @@ Multiple tiering policies are available that control how blocks are classified a
 
 image:oracle-fp_image1.png[Error: Missing Graphic Image]
 
-== Support
-
-Support is included for the following configurations:
-
-* AFF systems
-* Most FAS systems capable of running ONTAP 9.2. SSD aggregates are recommended, but HDD is also supported.
-* ONTAP Select. NetApp recommends using all- SSD FabricPool aggregates.
-* ONTAP Cloud
-
 == Object store providers
 
 Object storage protocols use simple HTTP or HTTPS requests for storing large numbers of data objects. Access to the object storage must be reliable, because data access from ONTAP depends on prompt servicing of requests. Options include the Amazon S3 Standard and Infrequent Access options, and Microsoft Azure Hot and Cool Blob Storage, IBM Cloud, and Google Cloud. Archival options such as Amazon Glacier and Amazon Archive are not supported because the time required to retrieve data can exceed the tolerances of host operating systems and applications.
