@@ -74,7 +74,7 @@ entries:
     - title: SnapMirror Business Continuity
       entries:
       - title: Architecture
-        url: /common/smbc/overview.html
+        url: /common/smbc/architecture.html
       - title: Failover
         url: /common/smbc/failover.html
       - title: Failure Scenarios
