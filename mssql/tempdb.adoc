@@ -15,9 +15,10 @@ Page contention can occur on lobal allocation map (GAM), shared global allocatio
 * For < or = to 8 cores: tempdb data files = number of cores
 * For > 8 cores: 8 tempdb data files
 
-The following example script modifies tempdb by creating eight tempdb files and moving tempdb to the mount point C:\MSSQL\tempdb for SQL Server 2012 and later.
+The following example script modifies tempdb by creating eight tempdb files and moving tempdb to the mount point `C:\MSSQL\tempdb`` for SQL Server 2012 and later.
 
-`use master
+....
+use master
 
 go
 
@@ -59,6 +60,7 @@ ALTER DATABASE [tempdb] ADD FILE ( NAME = N'tempdev07', FILENAME = N'C:\MSSQL\te
 
 ALTER DATABASE [tempdb] ADD FILE ( NAME = N'tempdev08', FILENAME = N'C:\MSSQL\tempdb\tempdev08.ndf' , SIZE = 10GB , FILEGROWTH = 10%);
 
-GO`
+GO
+....
 
 Beginning with SQL Server 2016, the number of CPU cores visible to the operating system is automatically detected during installation and, based on that number, SQL Server calculates and configures the number of tempdb files required for optimum performance.

@@ -24,7 +24,8 @@ image:./media/max-server-memory.png[Error: Missing Graphic Image]
 
 Using SQL Server Management Studio to adjust minimum or maximum server memory requires a restart of the SQL Server service. You can adjust server memory using transact SQL (T-SQL) using this code:
 
-`EXECUTE sp_configure 'show advanced options', 1
+....
+EXECUTE sp_configure 'show advanced options', 1
 
 GO
 
@@ -36,4 +37,5 @@ EXEC sp_configure 'max server memory (MB)', 120832
 
 GO
 
-RECONFIGURE WITH OVERRIDE`
+RECONFIGURE WITH OVERRIDE
+....

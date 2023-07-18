@@ -20,7 +20,8 @@ image:./media/max-worker-threads.png[Error: Missing Graphic Image]
 
 == Configuring max worker threads using SQL Server Management Studio.
 
-`The following example shows how to configure the max work threads option using T-SQL.
+....
+The following example shows how to configure the max work threads option using T-SQL.
 
 EXEC sp_configure 'show advanced options', 1;  
 
@@ -36,4 +37,5 @@ GO
 
 RECONFIGURE;  
 
-GO`
+GO
+....

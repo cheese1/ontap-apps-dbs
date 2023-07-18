@@ -29,7 +29,8 @@ For buffer pool extensions, NetApp recommends the following:
 
 The following example shows a T-SQL command to set up a buffer pool extension of 32GB.
 
-`USE master
+....
+USE master
 
 GO
 
@@ -39,4 +40,5 @@ SET BUFFER POOL EXTENSION ON
 
   (FILENAME = ‘P:\BUFFER POOL EXTENSION\SQLServerCache.BUFFER POOL EXTENSION’, SIZE = 32 GB);
 
-GO`
+GO
+....
