@@ -13,15 +13,14 @@ summary: SyncMirror
 :imagesdir: ./../media/
 
 [.lead]
-MetroCluster refers to ONTAP synchronously mirrored storage and numerous additional features that delivers a comprehensive, easily managed RPO=0 solution.
 
 The core of MetroCluster is SyncMirror, a maximum-performance, scale-out synchronous mirroring technology.
 
 == Data protection with SyncMirror
 
-At the simplest level, synchronous replication means any change must be made to both sides of mirrored storage before it is acknowledged. For example, an Oracle database is committing a transaction, and data is written to a redo log on synchronously mirrored storage. The storage system must not acknowledge the write until it has been committed to nonvolatile media on both sites. Only then is it safe to proceed without the risk of data loss.
+At the simplest level, synchronous replication means any change must be made to both sides of mirrored storage before it is acknowledged. For example, if a database is writing a log, or a VMware guest is being patched, a write must never be lost. As a protocol level, the storage system must not acknowledge the write until it has been committed to nonvolatile media on both sites. Only then is it safe to proceed without the risk of data loss.
 
-The use of a synchronous replication technology is the first step in designing and managing a synchronous replication solution. The most important consideration is understanding what could happen during various planned and unplanned failure scenarios. Not all synchronous replication solutions offer the same capabilities. When a customer asks for a solution that delivers a recovery point objective (RPO) of zero, meaning zero data loss, all failure scenarios must be considered. In particular, what is the expected result when replication is impossible due to loss of connectivity between sites?
+The use of a synchronous replication technology is the first step in designing and managing a synchronous replication solution. The most important consideration is understanding what could happen during various planned and unplanned failure scenarios. Not all synchronous replication solutions offer the same capabilities. If you need a solution that delivers a recovery point objective (RPO) of zero, meaning zero data loss, all failure scenarios must be considered. In particular, what is the expected result when replication is impossible due to loss of connectivity between sites?
 
 == SyncMirror Data Availability
 
@@ -31,4 +30,4 @@ Many synchronous replication solutions are only capable of operating in synchron
 
 Not only can SyncMirror seamlessly switch out of synchronous mode if the remote site is unreachable, it can also rapidly resync to an RPO = 0 state when connectivity is restored. The stale copy of data at the remote site can also be preserved in a usable state during resynchronization, which ensures that local and remote copies of data exist at all times.
 
-Where domino mode is required, NetApp offers SnapMirror Synchronous (SM-S) and SnapMirror Business Continuity (SM-BC). Non-storage also exist, such as Oracle DataGuard or extended timeouts for host-side disk mirroring. Consult your NetApp or partner account team for additional information and options.
+Where domino mode is required, NetApp offers SnapMirror Synchronous (SM-S) and SnapMirror Business Continuity (SM-BC). Application-level options also exist, such as Oracle DataGuard or extended timeouts for host-side disk mirroring. Consult your NetApp or partner account team for additional information and options.

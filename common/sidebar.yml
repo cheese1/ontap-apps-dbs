@@ -63,12 +63,12 @@ entries:
       entries:
       - title: Overview
         url: /common/metrocluster/overview.html
-      - title: MetroCluster physical architecture
-        url: /common/metrocluster/metrocluster_physical_architecture.html
-      - title: MetroCluster logical architecture
-        url: /common/metrocluster/metrocluster_logical_architecture.html
       - title: SyncMirror
         url: /common/metrocluster/syncmirror.html
+      - title: Physical architecture
+        url: /common/metrocluster/metrocluster_physical_architecture.html
+      - title: Logical architecture
+        url: /common/metrocluster/metrocluster_logical_architecture.html
       - title: Applications on MetroCluster
         url: /common/metrocluster/apps-on-metrocluster.html
       - title: MetroCluster and NVFAIL
