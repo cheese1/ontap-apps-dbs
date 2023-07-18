@@ -9,6 +9,8 @@ indexpage:
           url: common/ontap/overview.html
         - title: ONTAP data protection
           url: common/dp/overview.html
+        - title: Disaster recovery
+          url: common/overview-dr.html
         - title: Application and database tiering
           url: common/tiering/overview.html
     - title: MariaDB/MySQL
