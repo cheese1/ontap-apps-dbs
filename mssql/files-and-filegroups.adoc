@@ -18,9 +18,7 @@ Each database has one primary data file, which, by default, has the .mdf extensi
 
 All database files are grouped into filegroups. A filegroup is the logical unit, which simplifies database administration. They allow the separation between logical object placement and physical database files. When you create the database objects tables, you specify in what filegroup they should be placed without worrying about the underlying data file configuration.
 
-Figure 5) Filegroups.
-
-
+image:./media/filegroups.png[]
 
 The ability to put multiple data files inside the filegroup enables you to spread the load across different storage devices, which helps to improve the I/O performance of the system. The transaction log in contrast does not benefit from the multiple files because SQL Server writes to the transaction log in a sequential manner.
 
@@ -40,11 +38,11 @@ A small security risk is associated with instant file initialization. When this 
 
 You can enable instant file initialization by adding the SA_MANAGE_VOLUME_NAME permission, also known as “perform volume maintenance task,” to the SQL Server startup account. You can do this under the local security policy management application (secpol.msc), as shown in the following figure. Open the properties for the “perform volume maintenance task” permission and add the SQL Server startup account to the list of users there. 
 
-
+image:./media/security-policy.png[]
 
 To check if the permission is enabled, you can use the code from the following example. This code sets two trace flags that force SQL Server to write additional information to the error log, create a small database, and read the content of the log.
 
-DBCC TRACEON(3004,3605,-1)
+`DBCC TRACEON(3004,3605,-1)
 
 GO
 
@@ -62,18 +60,14 @@ GO
 
 DBCC TRACEOFF(3004,3605,-1)
 
-GO
+GO`
 
 When instant file initialization is not enabled, the SQL Server error log shows that SQL Server is zeroing the mdf data file in addition to zeroing the ldf log file, as shown in the following example. When instant file initialization is enabled, it displays only zeroing of the log file.
 
- 
+image:./media/zeroing.png[]
 
 The perform volume maintenance task is simplified in SQL Server 2016 and is later provided as an option during the installation process. Figure 6 displays the option to grant the SQL Server database engine service the privilege to perform the volume maintenance task.
 
-Figure 6) Option for granting perform volume maintenance task privilege during SQL Server installation.
-
-
-
-
+image:./media/maintenance.png[]
 
 Another important database option that controls the database file sizes is autoshrink. When this option is enabled, SQL Server regularly shrinks the database files, reduces their size, and releases space to the operating system. This operation is resource intensive and is rarely useful because the database files grow again after some time when new data comes into the system. Autoshrink must never be enabled on the database.

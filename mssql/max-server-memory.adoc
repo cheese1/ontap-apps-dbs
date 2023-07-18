@@ -16,13 +16,15 @@ Some applications only use whatever memory is available when they start and do n
 
 On a SQL Server cluster with several SQL Server instances, each instance could be competing for resources. Setting a memory limit for each SQL Server instance can help guarantee best performance for each instance.
 
-NetApp recommends leaving at least 4GB to 6GB of RAM for the operating system to avoid performance issues. Figure 2 displays how to set up minimum and maximum server memory.
+NetApp recommends leaving at least 4GB to 6GB of RAM for the operating system to avoid performance issues. 
 
-Figure 2) Adjusting minimum and maximum server memory using SQL Server Management Studio.
+image:./media/max-server-memory.png[]
+
+== Adjusting minimum and maximum server memory using SQL Server Management Studio.
 
 Using SQL Server Management Studio to adjust minimum or maximum server memory requires a restart of the SQL Server service. You can adjust server memory using transact SQL (T-SQL) using this code:
 
-EXECUTE sp_configure 'show advanced options', 1
+`EXECUTE sp_configure 'show advanced options', 1
 
 GO
 
@@ -34,4 +36,4 @@ EXEC sp_configure 'max server memory (MB)', 120832
 
 GO
 
-RECONFIGURE WITH OVERRIDE
+RECONFIGURE WITH OVERRIDE`

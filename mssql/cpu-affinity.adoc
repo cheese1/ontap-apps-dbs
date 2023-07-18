@@ -1,4 +1,4 @@
----
+s---
 sidebar: sidebar
 permalink: mssql/cpu-affinity.html
 keywords: MS-SQL,mssql,SQL Server
