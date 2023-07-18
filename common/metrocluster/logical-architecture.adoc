@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/metrocluster_logical_architecture.html
+permalink: common/metrocluster/logical-architecture.html
 keywords: metrocluster, mcc, mcc-ip
 summary: MetroCluster Logical Architecture
 ---

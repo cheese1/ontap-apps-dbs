@@ -66,12 +66,12 @@ entries:
       - title: SyncMirror
         url: /common/metrocluster/syncmirror.html
       - title: Physical architecture
-        url: /common/metrocluster/metrocluster_physical_architecture.html
+        url: /common/metrocluster/physical_architecture.html
       - title: Logical architecture
-        url: /common/metrocluster/metrocluster_logical_architecture.html
+        url: /common/metrocluster/logical_architecture.html
       - title: Applications on MetroCluster
         url: /common/metrocluster/apps-on-metrocluster.html
-      - title: MetroCluster and NVFAIL
+      - title: NVFAIL
         url: /common/metrocluster/nvfail.html
     - title: SnapMirror Business Continuity
       entries:
