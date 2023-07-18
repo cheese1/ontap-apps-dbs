@@ -18,7 +18,7 @@ On a SQL Server cluster with several SQL Server instances, each instance could b
 
 NetApp recommends leaving at least 4GB to 6GB of RAM for the operating system to avoid performance issues. 
 
-image:./media/max-server-memory.png[]
+image:./media/max-server-memory.png[Error: Missing Graphic Image]
 
 == Adjusting minimum and maximum server memory using SQL Server Management Studio.
 

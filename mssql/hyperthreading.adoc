@@ -18,6 +18,6 @@ There are two main schools of thought when licensing SQL Server. The first is kn
 
 == Log entries indicate number of cores being used after SQL Server startup.
 
-image:./media/hyperthreading.png[]
+image:./media/hyperthreading.png[Error: Missing Graphic Image]
 
 Therefore, to use all CPUs, you should use the per-processor core license. For detailed information about SQL Server licensing, see SQL Server 2019: Your modern data platform.

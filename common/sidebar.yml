@@ -1,5 +1,5 @@
 section: common
-title: ONTAP for enterprise applications
+title: Enterprise applications on ONTAP
 entries:
   - title: Overview
     url: /common/overview.html
@@ -66,9 +66,9 @@ entries:
       - title: SyncMirror
         url: /common/metrocluster/syncmirror.html
       - title: Physical architecture
-        url: /common/metrocluster/physical_architecture.html
+        url: /common/metrocluster/physical-architecture.html
       - title: Logical architecture
-        url: /common/metrocluster/logical_architecture.html
+        url: /common/metrocluster/logical-architecture.html
       - title: Applications on MetroCluster
         url: /common/metrocluster/apps-on-metrocluster.html
       - title: NVFAIL

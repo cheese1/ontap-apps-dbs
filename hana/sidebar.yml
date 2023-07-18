@@ -1,5 +1,5 @@
 section: hana
-title: SAP HANA on ONTAP
+title: SAP HANA
 entries:
   - title: SAP HANA on AFF with FCP
     entries:
