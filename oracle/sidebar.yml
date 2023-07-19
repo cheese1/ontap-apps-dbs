@@ -91,7 +91,7 @@ entries:
         url: /oracle/migration/host-data-copy.html
       - title: Foreign LUN import
         entries:
-        - title: Preparation
+        - title: Planning
           url: /oracle/migration/fli-planning.html
         - title: Cutover
           url: /oracle/migration/fli-cutover.html
