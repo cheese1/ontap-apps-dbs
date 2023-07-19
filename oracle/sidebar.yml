@@ -61,18 +61,18 @@ entries:
     entries:
     - title: Overview
       url: /oracle/dp/overview-dr.html
-    - title: Oracle Single Instance on MetroCluster
-      url: /oracle/dp/mcc-si.html
-    - title: Oracle Single Instance on SM-BC
-      url: /oracle/dp/smbc-si.html
-    - title: Oracle RAC and MetroCluster
-      url: /oracle/dp/mcc-rac.html
-    - title: Oracle RAC on SM-BC
-      url: /oracle/dp/smbc-rac.html
     - title: Consistency group disaster recovery
       url: /oracle/dp/consistency_group_disaster_recovery.html
     - title: Disaster recovery with log replay
       url: /oracle/dp/disaster_recovery_with_log_replay.html
+    - title: Single Instance on MetroCluster
+      url: /oracle/dp/mcc-si.html
+    - title: Single Instance on SM-BC
+      url: /oracle/dp/smbc-si.html
+    - title: Oracle RAC on MetroCluster
+      url: /oracle/dp/mcc-rac.html
+    - title: Oracle RAC on SM-BC
+      url: /oracle/dp/smbc-rac.html
   - title: Oracle database migration
     entries:
     - title: Introduction

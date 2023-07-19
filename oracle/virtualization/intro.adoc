@@ -40,7 +40,7 @@ As a general rule, avoid using datastores for Oracle files. There are many reaso
 * *Snapshot enablement.* In some cases, backups in a virtualized environment can become a problem because of the relatively limited bandwidth. For example, a four-port 10GbE trunk might be sufficient to support the day-to-day performance needs of many virtualized databases. However, such a trunk would be insufficient to perform backups using RMAN or other backup products that require streaming a full-sized copy of the data.
 +
 Using VM-owned file systems makes it easier to leverage Snapshot-based backups and restores. A VM-owned file system offloads the work of performing backups onto the storage system. There is no need to overbuild the hypervisor configuration purely to support the bandwidth and CPU requirements in the backup window.
-+
+
 NetApp recommends the following:
 
 * For optimum performance and manageability, avoid placing Oracle data on a datastore. Use guest-owned file systems such as NFS or iSCSI file systems managed by the guest or with RDMs.
@@ -50,8 +50,6 @@ NetApp recommends the following:
 For optimum performance, the use of paravirtualized network drivers is critical. When a datastore is used, a paravirtualized SCSI driver is required. A paravirtualized device driver allows a guest to integrate more deeply into the hypervisor, as opposed to an emulated driver in which the hypervisor spends more CPU time mimicking the behavior of physical hardware.
 
 The performance of most databases is limited by storage. Therefore, the extra latency introduced by a network or SCSI driver is particularly noticeable. NetApp Customer Support has encountered many performance complaints that were resolved by installing paravirtualized drivers. During one customer proof of concept, databases showed better performance under ESX than with the same hardware running as bare metal. The tests were very I/O intensive, and the performance difference was attributed to the use of the ESX paravirtualized network drivers.
-
-NetApp recommends the following:
 
 * Always use paravirtualized network drivers and SCSI drivers.
 
