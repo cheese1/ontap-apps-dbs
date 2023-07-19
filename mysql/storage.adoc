@@ -8,4 +8,4 @@ summary: MySQL on ONTAP
 = Storage configuration
 
 [.lead]
-For details on configuring storage used for MySQL databases, see the Storage Configuration section in link:../common/overview.html[Enterprise applications on ONTAP]
+For details on configuring storage used for MySQL databases, see link:../common/storage/overview.html[Enterprise applications on ONTAP storage configuration]

@@ -13,7 +13,7 @@ summary: Basic guidelines for configuration FC SAN for maximum reliability, mana
 :imagesdir: ./../media/
 
 [.lead]
-This section contains the high-level recommendations for configuration SAN storage. Additional notes can be found in the Hosts configuration guides for specific application elsewhere in this document.
+This section contains the high-level recommendations for configuring SAN storage. Additional notes can be found in the Hosts configuration guides for specific application elsewhere in this document.
 
 = Zoning
 
