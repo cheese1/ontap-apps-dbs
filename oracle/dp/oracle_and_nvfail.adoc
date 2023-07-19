@@ -29,30 +29,4 @@ A less obvious use of caching is at the OS file system layer. Blocks from a moun
 
 ONTAP protects databases and operating systems from this scenario with NVFAIL and its associated settings.
 
-== nvfail
-
-Any database volume on ONTAP storage should have the `nvfail` parameter set to `on`.
-
-This setting protects the volume from a catastrophic failure of NVRAM journaling that puts data integrity in question. The `nvfail` parameter takes effect during startup. If NVRAM errors are detected, then there might be uncommitted changes that have been lost, and the drive state might not match the database cache. ONTAP then sets volumes with an `nvfail` parameter of `on` to `in- nvfailed-state`. As a result, any database process attempting to access the data receives an I/O error, which leads to a protective crash or shutdown of the database.
-
-== in-nvfailed-state
-
-A volume with an `in- nvfailed-state `of `true` returns an error on I/O operations. Specifically, NFS access returns a stale file handle (`ESTALE`) to the client, and LUN access fails because the LUNs are forced offline. NFS files remain inaccessible until the `in- nvfailed-state` flag is cleared. LUNs remain offline until the `in- nvfailed-state` flag is cleared from the volume and the LUNs are brought online again.
-
-== dr-force-nvfail
-
-The `dr-force- nvfail` parameter protects data against certain unplanned MetroCluster switchover events. As discussed in the section link:../metrocluster/metrocluster_logical_architecture.html#high-availability[High Availability], SyncMirror has a 30-second timeout upon the loss of remote connectivity. It is possible that a rolling disaster could first interrupt replication and some minutes later destroy the remainder of the site. In addition, it is possible that a disaster could strike during maintenance when the states of the primary and remote copies of data were not in sync. If any applications were accessing data from the remote site, then a switchover could result in an older copy of data that does not match the state of the cache.
-
-The `nvfail` parameter is primarily intended to address takeover and giveback procedures within a single HA pair. While it does apply to MetroCluster switchover events where NVRAM inconsistencies are detected, it does not protect against loss of data during a forced switchover. An administrator performing a forced switchover is essentially acknowledging that the state of the controller at the disaster site may have unreplicated data, but the surviving copy of the data must be activated anyway. Databases may also need to be protected in this situation with a second parameter called `dr-force- nvfail`. Volumes with `dr-force- nvfail` enter `in- nvfailed-state` during a forced switchover. The reason this NVFAIL is forced is because the data might not actually be out of sync. The remote data could be completely consistent with the original data, but there is no way to guarantee consistency if the primary site is unreachable.
-
-The primary situation in which `dr-force- nvfail` is needed is a database cluster in which servers on both the primary and remote site are accessing data on the storage system. As a result, the servers on the remote site might have cached data that was committed to the primary site but was not replicated to the remote site due to maintenance or an unusual rolling disaster. A forced switchover in these circumstances would risk data corruption if the remote copy of data did not precisely match the state of the primary site.
-
-If no servers were accessing data from the remote site at the point of the disaster, there would generally be no reason to set `dr-force- nvfail` on a volume. It is still possible that a rolling disaster could result in a surviving copy of data that does not match the original data, but `dr-force- nvfail` provides no protection if there is no cached data that must be forcibly purged.
-
-For maximum protection, any volume that might be accessed by a remote server that caches data should have `dr-force- nvfail` set to `on`. It is only safe to leave the parameter set to `off` for data that is not cached by an application or operating system or when the switchover process is guaranteed to occur within the 30- second SyncMirror timeout.
-
-*Caution:* Prior to ONTAP 9.0, the `dr-force- nvfail` parameter also placed volumes into the `nvfailed` state during a graceful, planned switchover.
-
-== force-nvfail-all
-
-The `-force- nvfail-all` parameter is an optional argument used with a switchover command. It sets the `in- nvfailed-state` parameter to `true` for all volumes being switched over, and it sets the `- dr-force- nvfail` parameter to `true` for any volumes that do not already have it enabled.
+For important additional information, please read link:/common/dp/integrity.html#hardware-failure-protection-nvfail[NVFAIL with HA Pairs] and link:/common/metrocluster/nvfail.html[NVFAIL with MetroCluster]

@@ -74,13 +74,13 @@ Solaris 11 included a change in how it processes large I/O operations which can 
 Run the following command as root:
 
 ....
-`echo "zfs_mvector_max_size/W 0t131072" |mdb -kw`
+echo "zfs_mvector_max_size/W 0t131072" |mdb -kw
 ....
 
 If any unexpected problems arise from this change, it can be easily reversed by running the following command as root:
 
 ....
-`echo "zfs_mvector_max_size/W 0t1048576" |mdb -kw`
+echo "zfs_mvector_max_size/W 0t1048576" |mdb -kw
 ....
 
 == Kernel
@@ -116,13 +116,13 @@ An additional configuration file is required. First, the individual LDOM’s mus
 . Identify the LUN or LUNs to be used in the new zpool. In this example, it is the c2d1 device.
 +
 ....
-`root@LDOM1 # echo | format`
-`Searching for disks...done`
-`AVAILABLE DISK SELECTIONS:`
-`  0. c2d0 <Unknown-Unknown-0001-100.00GB>`
-`     /virtual-devices@100/channel-devices@200/disk@0`
-`  1. c2d1 <SUN-ZFS Storage 7330-1.0 cyl 1623 alt 2 hd 254 sec 254>`
-`     /virtual-devices@100/channel-devices@200/disk@1`
+root@LDOM1 # echo | format
+Searching for disks...done
+AVAILABLE DISK SELECTIONS:
+  0. c2d0 <Unknown-Unknown-0001-100.00GB>
+     /virtual-devices@100/channel-devices@200/disk@0
+  1. c2d1 <SUN-ZFS Storage 7330-1.0 cyl 1623 alt 2 hd 254 sec 254>
+     /virtual-devices@100/channel-devices@200/disk@1
 ....
 
 . Retrieve the vdc instance of the devices to be used for a ZFS pool:
