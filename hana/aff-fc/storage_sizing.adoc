@@ -5,9 +5,6 @@ keywords:
 summary:
 ---
 
-[.lead]
-Placeholder
-
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -15,13 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:47:33.693524
-//
-link:architecture.html[Previous: Architecture.]
-
+[.lead]
 The following section provides an overview of performance and capacity considerations required for sizing a storage system for SAP HANA.
 
 [NOTE]

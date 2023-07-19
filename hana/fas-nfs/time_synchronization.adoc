@@ -5,9 +5,6 @@ keywords: time, synchronization, sap, hana, nfs, fas
 summary: You must synchronize the time between the storage controllers and the SAP HANA database hosts.
 ---
 
-[.lead]
-Placeholder
-
 = Time synchronization
 :hardbreaks:
 :nofooter:
@@ -15,13 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-16 12:00:07.193608
-//
-link:network_setup.html[Previous: Network setup.]
+[.lead]
+You must synchronize the time between the storage controllers and the SAP HANA database hosts.
 
-You must synchronize the time between the storage controllers and the SAP HANA database hosts. To do so, set the same time server for all storage controllers and all SAP HANA hosts.
-
-link:storage_controller_setup.html[Next: Storage controller setup.]
+ To do so, set the same time server for all storage controllers and all SAP HANA hosts.

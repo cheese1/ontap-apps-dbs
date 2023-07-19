@@ -5,7 +5,7 @@ keywords: migration, oracle, FLI
 summary: Completing an FLI cutover
 ---
 
-= Foreign LUN import - completion
+= Completion
 :hardbreaks:
 :nofooter:
 :icons: font

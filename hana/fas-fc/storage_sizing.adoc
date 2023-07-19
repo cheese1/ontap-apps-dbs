@@ -5,9 +5,6 @@ keywords: performance, considerations, hard, disk, solid, state, drives, mixed, 
 summary: The following section provides an overview of performance and capacity considerations for sizing a storage system for SAP HANA.
 ---
 
-[.lead]
-Placeholder
-
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -15,6 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
+[.lead]
 The following section provides an overview of performance and capacity considerations for sizing a storage system for SAP HANA.
 
 [NOTE]
@@ -204,5 +202,3 @@ The size of the RAM, the net data size on the disk of each SAP HANA host, and th
 The following figure summarizes the sizing process.
 
 image:saphana_fas_fc_image8.jpg[Error: Missing Graphic Image]
-
-link:infrastructure_setup_and_configuration_overview.html[Next: Infrastructure setup and configuration.]

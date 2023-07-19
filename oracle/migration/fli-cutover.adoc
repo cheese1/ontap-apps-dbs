@@ -5,7 +5,7 @@ keywords: migration, oracle, FLI
 summary: FLI Cutover
 ---
 
-= Foreign LUN import - cutover
+= Cutover
 :hardbreaks:
 :nofooter:
 :icons: font

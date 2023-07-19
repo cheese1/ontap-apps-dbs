@@ -5,8 +5,7 @@ keywords: SUSE Linux Enterprise Server, configuration, mount points, LaMa
 summary: All the host-setup steps described in this section are valid for both SAP HANA environments on physical servers and for SAP HANA running on VMware vSphere.
 ---
 
-[.lead]
-Placeholder
+
 
 = Host setup
 :hardbreaks:
@@ -15,13 +14,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:44:23.338638
-//
-link:storage_controller_setup.html[Previous: Storage controller setup.]
-
+[.lead]
 All the host-setup steps described in this section are valid for both SAP HANA environments on physical servers and for SAP HANA running on VMware vSphere.
 
 == Configuration parameter for SUSE Linux Enterprise Server
@@ -276,5 +269,3 @@ stlrx300s8-5:/ # cat /etc/fstab
 ....
 
 . Run `mount â€“a` to mount the file systems on all hosts.
-
-link:sap_hana_installation_preparations_for_nfsv4.html[Next: SAP HANA installation preparations for NFSv4.]

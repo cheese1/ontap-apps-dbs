@@ -5,7 +5,7 @@ keywords: migration, oracle, move datafile
 summary: Migrating individual Oracle datafiles
 ---
 
-= Procedures - datafile move
+= Datafile move
 :hardbreaks:
 :nofooter:
 :icons: font

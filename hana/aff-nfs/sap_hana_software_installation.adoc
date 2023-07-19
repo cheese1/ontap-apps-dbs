@@ -5,9 +5,6 @@ keywords: single host, multiple host, software, installation, hdbclm, addhosts
 summary: This section describes how to configure a system for the installation of SAP HANA software on single-host and multiple-host systems.
 ---
 
-[.lead]
-Placeholder
-
 = SAP HANA software installation
 :hardbreaks:
 :nofooter:
@@ -15,18 +12,14 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:44:23.371664
-//
-link:sap_hana_data_volume_size.html[Previous: SAP HANA data volume size.]
+[.lead]
+This section describes the preparation necessary to install SAP HANA on single-host and multiple-host systems.
 
-== Install on a single-host system
+== Installation on single-host system
 
 SAP HANA software installation does not require any additional preparation for a single-host system.
 
-== Install on a multiple-host system
+== Installation on a multiple-host system
 
 To install SAP HANA on a multiple-host system, complete the following steps:
 
@@ -86,5 +79,3 @@ Enter Installation Path [/hana/shared]:
 ....
 
 . Verify that the installation tool installed all selected components at all worker and standby hosts.
-
-link:adding_additional_data_volume_partitions.html[Next: Adding additional data volume partitions.]

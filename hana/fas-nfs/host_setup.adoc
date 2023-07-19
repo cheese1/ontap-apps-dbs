@@ -5,9 +5,6 @@ keywords: host, setup, configuration, parameter, enterprise, suse, linux, subdir
 summary: All the steps described in this section are valid for both SAP HANA environments on physical servers and for SAP HANA running on VMware vSphere.
 ---
 
-[.lead]
-Placeholder
-
 = Host setup
 :hardbreaks:
 :nofooter:
@@ -15,13 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-16 12:00:07.213850
-//
-link:storage_controller_setup.html[Previous: Storage controller setup.]
-
+[.lead]
 All the steps described in this section are valid for both SAP HANA environments on physical servers and for SAP HANA running on VMware vSphere.
 
 == Configuration parameter for SUSE Linux Enterprise Server
@@ -276,5 +267,3 @@ sapcc-hana-tst-06:/ # cat /etc/fstab
 ....
 
 . Run `mount â€“a` to mount the file systems on all hosts.
-
-link:sap_hana_installation_preparations_for_nfsv4.html[Next: SAP HANA installation preparations for NFSv4.]

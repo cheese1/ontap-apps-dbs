@@ -92,7 +92,7 @@ entries:
       - title: Foreign LUN import
         entries:
         - title: Preparation
-          url: /oracle/migration/fli-preparation.html
+          url: /oracle/migration/fli-planning.html
         - title: Cutover
           url: /oracle/migration/fli-cutover.html
         - title: Completion

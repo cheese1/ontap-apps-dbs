@@ -5,9 +5,6 @@ keywords: i, o, stack, configuration, sap, hana, fas, fc
 summary: Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the I/O behavior and optimize the database for the file and storage system used.
 ---
 
-[.lead]
-Placeholder
-
 = I/O stack configuration for SAP HANA
 :hardbreaks:
 :nofooter:
@@ -15,13 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:40:51.392272
-//
-link:host_setup.html[Previous: Host setup.]
-
+[.lead]
 Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the I/O behavior and optimize the database for the file and storage system used.
 
 NetApp conducted performance tests to define the ideal values. The following table lists the optimal values as inferred from the performance tests.
@@ -72,5 +63,3 @@ python setParameter.py -set=SYSTEM/global.ini/fileio/async_read_submit=on
 python setParameter.py -set=SYSTEM/global.ini/fileio/async_write_submit_active=on
 python setParameter.py -set=SYSTEM/global.ini/fileio/async_write_submit_blocks=all
 ....
-
-link:sap_hana_software_installation.html[Next: SAP HANA software installation.]

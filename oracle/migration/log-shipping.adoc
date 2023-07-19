@@ -4,7 +4,7 @@ permalink: oracle/migration/log-shipping.html
 keywords: migration, oracle, log shipping
 summary: "Oracle migration via log shipping"
 ---
-= Procedures - log shipping
+= Log shipping
 :hardbreaks:
 :nofooter:
 :icons: font

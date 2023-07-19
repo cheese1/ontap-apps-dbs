@@ -5,9 +5,6 @@ keywords: storage efficiency, netapp volume encryption, quality of service, qos,
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding Data ONTAP setup and configuration guides.
 ---
 
-[.lead]
-Placeholder
-
 = Storage controller setup
 :hardbreaks:
 :nofooter:
@@ -15,6 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
+[.lead]
 This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding Data ONTAP setup and configuration guides.
 
 == Storage efficiency
@@ -435,5 +433,3 @@ lun map -path /vol/FC5_log2_mnt00001/FC5_log2_mnt00001  -igroup HANA-FC5
 lun map -path /vol/FC5_log_mnt00002/FC5_log_mnt00002  -igroup HANA-FC5
 lun map -path /vol/FC5_log2_mnt00002/FC5_log2_mnt00002  -igroup HANA-FC5
 ....
-
-link:sap_hana_storage_connector_api.html[Next: SAP HANA storage connector API.]

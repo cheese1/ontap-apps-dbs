@@ -5,9 +5,6 @@ keywords: adding, additional, data, volume, partitions, host, enabling sap, hana
 summary: Starting with SAP HANA 2.0 SPS4, you can configure additional data volume partitions, which allows you to configure two or more volumes for the data volume of an SAP HANA tenant database.
 ---
 
-[.lead]
-Placeholder
-
 = Adding additional data volume partitions
 :hardbreaks:
 :nofooter:
@@ -15,13 +12,10 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-16 12:00:07.267450
-//
-link:sap_hana_software_installation.html[Previous: SAP HANA software installation.]
-Starting with SAP HANA 2.0 SPS4, you can configure additional data volume partitions, which allows you to configure two or more volumes for the data volume of an SAP HANA tenant database. You can also scale beyond the size and performance limits of a single volume.
+[.lead]
+Starting with SAP HANA 2.0 SPS4, you can configure additional data volume partitions, which allows you to configure two or more volumes for the data volume of an SAP HANA tenant database.
+
+You can also scale beyond the size and performance limits of a single volume.
 
 [NOTE]
 Using two or more individual volumes for the data volume is available for SAP HANA single-host and multiple-host systems. You can add additional data volume partitions at any time, but doing so might require a restart of the SAP HANA database.
@@ -248,5 +242,3 @@ ALTER SYSTEM ALTER DATAVOLUME ADD PARTITION PATH '/hana/data2/SID/';
 ....
 
 image:saphana-fas-nfs_image19.jpg[Error: Missing Graphic Image]
-
-link:where_to_find_additional_information.html[Next: Where to find additional information.]

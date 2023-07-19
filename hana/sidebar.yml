@@ -41,8 +41,6 @@ entries:
         url: /hana/aff-nfs/storage_sizing.html
       - title: Infrastructure setup and configuration
         entries:
-          - title: Infrastructure setup and configuration overview
-            url: /hana/aff-nfs/infrastructure_setup_and_configuration_overview.html
           - title: Network setup
             url: /hana/aff-nfs/network_setup.html
           - title: Time synchronization
@@ -103,8 +101,6 @@ entries:
         url: /hana/fas-nfs/storage_sizing.html
       - title: Infrastructure setup and configuration
         entries:
-          - title: Infrastructure setup and configuration overview
-            url: /hana/fas-nfs/infrastructure_setup_and_configuration_overview.html
           - title: Network setup
             url: /hana/fas-nfs/network_setup.html
           - title: Time synchronization

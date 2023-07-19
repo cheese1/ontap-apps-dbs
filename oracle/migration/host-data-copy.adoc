@@ -5,7 +5,7 @@ keywords: migration, oracle, data copy, lvm, rebalance, asm
 summary: Oracle migration using the host-side storage stack
 ---
 
-= Procedures - host data copy
+= Host data copy
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -15,7 +15,7 @@ summary: Oracle migration using the host-side storage stack
 [.lead]
 As with database-level migration, migration at the host layer provides a storage vendor–independent approach.
 
-At the simplest level, data can be moved with a simple copy operation.
+In other words, sometime "just copy the files" is the best option.
 
 Although this low-tech approach might seem too basic, it does offer significant benefits because no special software is required and the original data remains safely untouched during the process. The primary limitation is the fact that a file-copy data migration is a disruptive process, because the database must be shut down before the copy operation begins. There is no good way to synchronize changes within a file, so the files must be completely quiesced before copying begins.
 

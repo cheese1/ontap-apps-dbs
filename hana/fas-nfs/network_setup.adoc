@@ -5,9 +5,6 @@ keywords: network, setup, vmware, sap, hana, storage, hosts
 summary: Use the following guidelines when configuring the network.
 ---
 
-[.lead]
-Placeholder
-
 = Network setup
 :hardbreaks:
 :nofooter:
@@ -15,13 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-16 12:00:07.188519
-//
-link:infrastructure_setup_and_configuration_overview.html[Previous: Infrastructure setup and configuration.]
-
+[.lead]
 Use the following guidelines when configuring the network:
 
 * A dedicated storage network must be used to connect the SAP HANA hosts to the storage controllers with a 10GbE or faster network.
@@ -59,5 +50,3 @@ Each SAP HANA node uses a dedicated port group on the VMware distributed switch.
 LRO (large receive offload) must be turned off for interfaces used for NFS traffic. For all other network configuration guidelines, see the respective VMware best practices guides for SAP HANA.
 
 image:saphana-fas-nfs_image12.png[Error: Missing Graphic Image]
-
-link:time_synchronization.html[Next: Time synchronization.]
