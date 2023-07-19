@@ -23,9 +23,7 @@ There is no single best practice for creating a migration strategy. Creating a p
 
 For example, one step raises the issue of the total database size. The next step depends on whether the database is more or less than 1TB. The recommended steps are just that—recommendations based on typical customer practices. Most customers would not use DataGuard to copy a small database, but some might. Most customers would not attempt to copy a 50TB database because of the time required, but some might have a sufficiently large maintenance window to permit such an operation.
 
-Furthermore, the flow chart does not offer just one path to a decision. Some of the decision trees take the reader through a number of possible migration options.
-
-image:oracle-migrate_image3.png[Error: Missing Graphic Image]
+You can find a flowchart of the types of considerations on which migration path is best link:../media/migration-options-flowchart.png[here].
 
 == Online datafile move
 
@@ -156,8 +154,6 @@ For example, on AIX, the block size can be viewed with `lsfs -q`. With Linux, `x
 The parameter that controls the block size is `ashift` and generally defaults to a value of 9, which means 2^9, or 512 bytes. For optimum performance, the `ashift` value must be 12 (2^12=4K). This value is set at the time the zpool is created and cannot be changed, which means that data zpools with an `ashift` other than 12 should be migrated by copying data to a newly created zpool.
 
 Oracle ASM does not have a fundamental block size. The only requirement is that the partition on which the ASM disk is built must be properly aligned.
-
-See http://www.netapp.com/us/media/tr-3633.pdf[TR-3633: Oracle Databases on Data ONTAP^] for further information on database block sizes and zpool configuration.
 
 === 7-Mode Transition Tool
 
