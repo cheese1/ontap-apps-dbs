@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/procedures-datafile_move.html
+permalink: oracle/migration/datafile-move.html
 keywords: migration, oracle, move datafile
 summary: Migrating individual Oracle datafiles
 ---

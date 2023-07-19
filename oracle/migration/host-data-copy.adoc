@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/procedures-host_data_copy.html
+permalink: oracle/migration/host-data-copy.html
 keywords: migration, oracle, data copy, lvm, rebalance, asm
 summary: Oracle migration using the host-side storage stack
 ---

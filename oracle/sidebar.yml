@@ -75,22 +75,20 @@ entries:
       url: /oracle/dp/smbc-rac.html
   - title: Oracle database migration
     entries:
-    - title: Introduction
-      url: /oracle/migration/introduction.html
+    - title: Overview
+      url: /oracle/migration/overview.html
     - title: Planning
       url: /oracle/migration/planning.html
     - title: Procedures
       entries:
-      - title: Introduction
-        url: /oracle/migration/procedures-introduction.html
       - title: Overview
-        url: /oracle/migration/options.html
+        url: /oracle/migration/overview-procedures.html
       - title: Datafile move
-        url: /oracle/migration/procedures-datafile_move.html
+        url: /oracle/migration/datafile-move.html
       - title: Log shipping
-        url: /oracle/migration/procedures-log_shipping.html
+        url: /oracle/migration/log-shipping.html
       - title: Host data copy
-        url: /oracle/migration/procedures-host_data_copy.html
+        url: /oracle/migration/host-data-copy.html
       - title: Foreign LUN import
         entries:
         - title: Preparation
@@ -100,7 +98,7 @@ entries:
         - title: Completion
           url: /oracle/migration/fli-completion.html
         - title: Protocol conversion
-          url: /oracle/migration/protocol_conversion.html
+          url: /oracle/migration/protocol-conversion.html
     - title: Sample scripts
       url: /oracle/migration/sample_scripts.html
   - title: Additional notes

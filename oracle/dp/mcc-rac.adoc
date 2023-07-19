@@ -55,8 +55,8 @@ Prior to Oracle 12cR2, it was not feasible to control which side would experienc
 Oracle 12cR2 introduces node weighting capability. This capability gives an administrator more control over how Oracle resolves split-brain conditions. As a simple example, the following command sets the preference for a particular node in an RAC:
 
 ....
-`[root@jfs3-a ~]# /grid/bin/crsctl set server css_critical yes`
-`CRS-4416: Server attribute 'CSS_CRITICAL' successfully changed. Restart Oracle High Availability Services for new value to take effect.`
+[root@jfs3-a ~]# /grid/bin/crsctl set server css_critical yes
+CRS-4416: Server attribute 'CSS_CRITICAL' successfully changed. Restart Oracle High Availability Services for new value to take effect.
 ....
 
 After restarting Oracle High- Availability Services, the configuration looks as follows:

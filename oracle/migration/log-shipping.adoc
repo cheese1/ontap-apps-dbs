@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/procedures-log_shipping.html
+permalink: oracle/migration/log-shipping.html
 keywords: migration, oracle, log shipping
 summary: "Oracle migration via log shipping"
 ---
