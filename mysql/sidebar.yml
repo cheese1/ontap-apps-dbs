@@ -5,9 +5,9 @@ entries:
     url: /mysql/overview.html
   - title: Database Configuration
     entries:
-    - title: MySQL File Structure
+    - title: File structure
       url: /mysql/file-structure.html
-    - title: MySQL configuration overview
+    - title: Configuration overview
       url: /mysql/configuration.html
     - title: innodb_log_file_size
       url: /mysql/innodb_log_file_size.html
@@ -32,14 +32,8 @@ entries:
     - title: Slot tables 
       url: /mysql/slot-tables.html
     - title: I/O schedulers
-      url: /mysql/schedules.html
+      url: /mysql/schedulers.html
     - title: File descriptors
       url: /mysql/file-descriptors.html
   - title: Storage configuration
-    entries:
-    - title: NFS Configuration
-      url: /mysql/nfs.html
-    - title: SAN Configuration
-      url: /mysql/san.html
-    - title: Tiering
-      url: /mysql/tiering.html
+    url: /mysql/storage.html

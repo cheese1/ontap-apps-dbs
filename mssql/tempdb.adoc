@@ -15,7 +15,7 @@ Page contention can occur on lobal allocation map (GAM), shared global allocatio
 * For < or = to 8 cores: tempdb data files = number of cores
 * For > 8 cores: 8 tempdb data files
 
-The following example script modifies tempdb by creating eight tempdb files and moving tempdb to the mount point `C:\MSSQL\tempdb`` for SQL Server 2012 and later.
+The following example script modifies tempdb by creating eight tempdb files and moving tempdb to the mount point `C:\MSSQL\tempdb` for SQL Server 2012 and later.
 
 ....
 use master
