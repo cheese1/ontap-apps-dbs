@@ -5,23 +5,14 @@ keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
 
-
-[.lead]
-
-Placeholder
-
-
-
 = Native data protection
-
+[.lead]
 There are three approaches to backing up PostgreSQL data:
 
 * SQL Server dump
-
 * File-system-level backup
-
 * Continuous archiving
 
-The idea behind the SQL Server dump method is to generate a file with SQL Server commands that, when returned to the server, can re-create the database as it was at the time of the dump. PostgreSQL provides the utility programs pg_dump and pg_dump_all for creating individual and cluster-level backup. These dumps are logical and do not contain enough information to be used by WAL replay.
+The idea behind the SQL Server dump method is to generate a file with SQL Server commands that, when returned to the server, can re-create the database as it was at the time of the dump. PostgreSQL provides the utility programs `pg_dump` and `pg_dump_all` for creating individual and cluster-level backup. These dumps are logical and do not contain enough information to be used by WAL replay.
 
 An alternative backup strategy is to use file-system-level backup, in which administrators directly copy the files that PostgreSQL uses to store the data in the database. This method is done in offline mode: the database or cluster must be shut down. Another alternative is to use pg_basebackup to run hot streaming backup of the PostgreSQL database.

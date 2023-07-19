@@ -5,11 +5,12 @@ keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
 
+= Filesystems
 
 [.lead]
 PostgreSQL can be hosted on either NFS or SAN filesystems
 
-= NFS
+== NFS
 
 With NFS, NetApp recommends using version 4.1, because it has an integrated locking feature that version 3 lacks. Also, it has new features such as statefulness, improved security, and strong authentication. 
 

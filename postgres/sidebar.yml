@@ -5,10 +5,14 @@ entries:
     url: /postgres/overview.html
   - title: Database configuration
     entries:
-    - title: PostgreSQL architecture
+    - title: Architecture
       url: /postgres/architecture.html
-    - title: Database configuration
+    - title: Initialization
+      url: /postgres/architecture.html
+    - title: Settings
       url: /postgres/db-config.html
+    - title: Tablespaces
+      url: /postgres/architecture.html
   - title: Storage Configuration
     entries:
     - title: Filesystem configuration
