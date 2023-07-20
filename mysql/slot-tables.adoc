@@ -8,18 +8,18 @@ summary: MySQL on ONTAP
 = Slot Tables 
 
 [.lead]
-NFS performance on Linux depends on a parameter called tcp_slot_table_entries.
+NFS performance on Linux depends on a parameter called `tcp_slot_table_entries`.
 
 This parameter regulates the number of outstanding NFS operations that are permitted on a Linux operating system. 
 
-The default value in most 2.6-derived kernels, which includes RH5 and OL5, is 16. However, this default frequently causes performance problems. The opposite problem occurs on newer kernels in which the tcp_slot_table_entries value is uncapped and can cause storage problems by flooding the system with excessive requests. The solution is to set this value statically. Use a value of 128 for any Linux operating system using NetApp NFS storage with a MySQL database. To set this value in Red Hat Enterprise Linux 6.2 and earlier, place the following entry in /etc/sysctl.conf: 
+The default value in most 2.6-derived kernels, which includes RH5 and OL5, is 16. However, this default frequently causes performance problems. The opposite problem occurs on newer kernels in which the `tcp_slot_table_entries` value is uncapped and can cause storage problems by flooding the system with excessive requests. The solution is to set this value statically. Use a value of 128 for any Linux operating system using NetApp NFS storage with a MySQL database. To set this value in Red Hat Enterprise Linux 6.2 and earlier, place the following entry in /etc/sysctl.conf: 
 
-# sysctl -a | grep tcp.*.slot_table sunrpc.tcp_max_slot_table_entries = 128 sunrpc.tcp_slot_table_entries = 128 
+....
+# sysctl -a | grep tcp.*.slot_table 
+sunrpc.tcp_max_slot_table_entries = 128 
+sunrpc.tcp_slot_table_entries = 128 
 
-# sysctl -a | grep tcp.*.slot_table sunrpc.tcp_max_slot_table_entries = 128 sunrpc.tcp_slot_table_entries = 128 
-
-In addition, there is a bug in most Linux distributions using 2.6 kernels. The startup process reads the contents of /etc/sysctl.conf before the NFS client is loaded. As a result, when the NFS client is eventually loaded, it takes the default value of 16. To avoid this problem, edit /etc/init.d/netfs to call /sbin/sysctl -p in the first line of the script so that tcp_slot_table_entries is set to 128 before NFS mounts any file systems. To set this value in Red Hat Enterprise Linux 6.3 and later, apply the following modification in the RPC configuration file:
-
-echo "options sunrpc udp_slot_table_entries=64 tcp_slot_table_entries=128
-
-tcp_max_slot_table_entries=128" >> /etc/modprobe.d/sunrpc.conf
+# sysctl -a | grep tcp.*.slot_table 
+sunrpc.tcp_max_slot_table_entries = 128 
+sunrpc.tcp_slot_table_entries = 128
+....

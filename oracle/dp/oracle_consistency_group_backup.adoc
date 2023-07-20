@@ -19,4 +19,6 @@ As an example, the entire database can be in a single volume with the following 
 
 * 72 hourly snapshots
 * 30 nightly snapshots
-* 12 monthly snapshotsThis delivers an RPO of one hour over the rolling period of the preceding 72 hours, plus additional nightly and monthly backups. Multiple databases or application files can also be included in the single volume or set of cg-snapshots to deliver consistent backups across a larger environment.
+* 12 monthly snapshots
+
+This delivers an RPO of one hour over the rolling period of the preceding 72 hours, plus additional nightly and monthly backups. Multiple databases or application files can also be included in the single volume or set of cg-snapshots to deliver consistent backups across a larger environment.

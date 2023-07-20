@@ -18,7 +18,6 @@ Leveraging the capabilities of a new storage platform has one unavoidable requir
 [NOTE]
 This section is based on TR-4534: Migration of Oracle Databases to NetApp Storage Systems
 
-
 == NetApp storage platforms
 
 This document is broadly applicable to all NetApp storage platforms, including NetApp ONTAP management software on FAS and All Flash FAS (AFF) platforms, NetApp SANtricity software on the E-Series, and NetApp SolidFire. The primary exception is the section on storage-level migration, which includes features specific to ONTAP.
@@ -29,7 +28,7 @@ Data migration can occur at one of three levels: the database, the host, or the 
 
 The figure below shows an example of the migration levels and the flow of data. In the case of database-level migration, the data is moved from the original storage system through the host and database layers into the new environment. Host-level migration is similar, but data does not pass through the application layer and is instead written to the new location by using host processes. Finally, with storage-level migration, an array such as a NetApp FAS system is responsible for data movement.
 
-image:oracle-migrate_image2.jpg[Error: Missing Graphic Image]
+image:../media/levels.png[Error: Missing Graphic Image]
 
 A database-level migration generally refers to the use of Oracle log shipping through a standby database to complete a migration at the Oracle layer. Host-level migrations are performed by using the native capability of the host operating system configuration. This configuration includes file copy operations using commands such as cp, tar, and Oracle Recovery Manager (RMAN) or using a logical volume manager (LVM) to relocate the underlying bytes of a file system. Oracle Automatic Storage Management (ASM) is categorized as a host- level capability because it runs below the level of the database application. ASM takes the place of the usual logical volume manager on a host. Finally, data can be migrated at the storage- array level, which means beneath the level of the operating system.
 
@@ -43,7 +42,7 @@ Some of the considerations for planning a migration strategy are discussed in th
 
 The sizes of the databases to be migrated obviously affect migration planning, although size does not necessarily affect the cutover time. See the following sections for a longer discussion on cutover time. When a large amount of data must be migrated, the primary consideration is bandwidth. Copy operations are usually performed with efficient sequential I/O. As a conservative estimate, assume 50% utilization of the available network bandwidth for copy operations. For example, an 8GB FC port can transfer about 800MBps in theory. Assuming 50% utilization, a database can be copied at a rate of about 400MBps. Therefore, a 10TB database can be copied in about seven hours at this rate.
 
-Migration over longer distances usually requires a more creative approach, such as the log shipping process explained in link:options.html#online-datafile-move[Online Datafile Move]. Long-distance IP networks rarely have bandwidth anywhere close to LAN or SAN speeds. In one case, NetApp assisted with the long-distance migration of a 220TB database with very high archive- log generation rates. The chosen approach for data transfer was daily shipment of tapes, because this method offered the maximum possible bandwidth.
+Migration over longer distances usually requires a more creative approach, such as the link:log-shipping.html[log shipping] process. Long-distance IP networks rarely have bandwidth anywhere close to LAN or SAN speeds. In one case, NetApp assisted with the long-distance migration of a 220TB database with very high archive- log generation rates. The chosen approach for data transfer was daily shipment of tapes, because this method offered the maximum possible bandwidth.
 
 === Database count
 
@@ -63,13 +62,13 @@ In contrast, migration to ONTAP generally requires more consideration of the dat
 
 With some planning, even more benefits are available. The most important considerations surround the use of snapshots. Snapshots are the basis for performing near-instantaneous backups, restores, and cloning operations. As an example of the power of snapshots, the largest known use is with a single database of 996TB running on about 250 LUNs on 6 controllers. This database can be backed up in 2 minutes, restored in 2 minutes, and cloned in 15 minutes. Additional benefits include the ability to move data around the cluster in response to changes in workload and the application of quality of service (QoS) controls to provide good, consistent performance in a multidatabase environment.
 
-Technologies such as QoS controls, data relocation, snapshots, and cloning work in nearly any configuration. However, some thought is generally required to maximize benefits. In some cases, database storage layouts can require design changes to maximize the investment in the new storage array. Such design changes can affect the migration strategy because host-based or storage-based migrations replicate the original data layout. Additional steps might be required to complete the migration and deliver a data layout optimized for ONTAP. The procedures shown in link:introduction.html[Introduction to Migration Procedures] and later demonstrate some of the methods to not just migrate a database, but to migrate it into the optimal final layout with minimal effort.
+Technologies such as QoS controls, data relocation, snapshots, and cloning work in nearly any configuration. However, some thought is generally required to maximize benefits. In some cases, database storage layouts can require design changes to maximize the investment in the new storage array. Such design changes can affect the migration strategy because host-based or storage-based migrations replicate the original data layout. Additional steps might be required to complete the migration and deliver a data layout optimized for ONTAP. The procedures shown in link:overview-procedures.html[Migration Procedures] and later demonstrate some of the methods to not just migrate a database, but to migrate it into the optimal final layout with minimal effort.
 
 === Cutover time
 
 The maximum allowable service outage during cutover should be determined. It is a common mistake to assume that the entire migration process causes disruption. Many tasks can be completed before any service interruption begins, and many options enable the completion of migration without disruption or outage. Even when disruption is unavoidable, you must still define the maximum allowable service outage because the duration of the cutover time varies from procedure to procedure.
 
-For example, copying a 10TB database typically requires approximately seven hours to complete. If business needs allow a seven- hour outage, file copying is an easy and safe option for migration. If five hours is unacceptable, a simple log-shipping process (see link:options.html#log-shipping[Log Shipping]) can be set up with minimal effort to reduce the cutover time to approximately 15 minutes. During this time, a database administrator can complete the process. If 15 minutes is unacceptable, the final cutover process can be automated through scripting to reduce the cutover time to just a few minutes. You can always speed up a migration, but doing so comes at the cost of time and effort. The cutover time targets should be based on what is acceptable to the business.
+For example, copying a 10TB database typically requires approximately seven hours to complete. If business needs allow a seven- hour outage, file copying is an easy and safe option for migration. If five hours is unacceptable, a simple link:log-shipping.html[log shipping]process can be set up with minimal effort to reduce the cutover time to approximately 15 minutes. During this time, a database administrator can complete the process. If 15 minutes is unacceptable, the final cutover process can be automated through scripting to reduce the cutover time to just a few minutes. You can always speed up a migration, but doing so comes at the cost of time and effort. The cutover time targets should be based on what is acceptable to the business.
 
 === Back-out path
 

@@ -5,29 +5,22 @@ keywords: MySQL,MariaDB
 summary: MySQL file structure
 ---
 
-= MySQL file structure
+= File structure
 [.lead]
-InnoDB acts as the middle layer between storage and the MySQL server—it stores the data to the drives. 
+InnoDB acts as the middle layer between storage and the MySQL server — it stores the data to the drives. 
 
-Figure 2 shows how InnoDB interacts with storage.
+The figure below shows how InnoDB interacts with storage.
 
-Figure 2) InnoDB engine architecture.
-
-graphic
+image:./media/file-structure1.png[Error: Graphic image not found]
 
 MySQL I/O is categorized into two types (as shown in Figure 3):
 
 * Random file I/O
 * Sequential file I/O
 
-Figure 3) MySQL file system structure.
-
-graphic
-
+image:./media/file-structure2.png[Error: Graphic image not found]
 
 Data files are randomly read and overwritten, which results in high IOPS levels. Therefore, SSD storage is recommended. 
-
-Note: A battery-backed write cache is also very effective on SSD.
 
 Redo log files and binary log files are transactional logs. They are sequentially written, so you can get good performance on HDD with the write cache. A sequential read happens on recovery, but it rarely causes a performance problem, because log file size is usually smaller than data files, and sequential reads are faster than random reads (occurring on data files).
 
@@ -42,7 +35,6 @@ Undo segments are random I/O oriented. To guarantee multiversion concurrency (MV
 Because of these InnoDB I/O characteristics, NetApp recommends the following storage design layout:
 
 * One volume to store random and sequential I/O-oriented files of MySQL
-
 * Another volume to store purely sequential I/O-oriented files of MySQL
 
-Note: This layout also helps you design data protection policies and strategy.
+This layout also helps you design data protection policies and strategy.

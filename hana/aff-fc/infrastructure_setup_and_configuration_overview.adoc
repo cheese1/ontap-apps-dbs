@@ -5,9 +5,6 @@ keywords:
 summary:
 ---
 
-[.lead]
-Placeholder
-
 = Infrastructure setup and configuration
 :hardbreaks:
 :nofooter:
@@ -15,19 +12,13 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:47:33.730667
-//
-link:storage_sizing.html[Previous: Storage sizing.]
+[.lead]
+The following sections provide SAP HANA infrastructure setup and configuration guidelines and describes all the steps needed to set up an SAP HANA system. 
 
-The following sections provide SAP HANA infrastructure setup and configuration guidelines and describes all the steps needed to set up an SAP HANA system. Within these sections, the following example configurations are used:
+Within these sections, the following example configurations are used:
 
 * HANA system with SID=SS3 and ONTAP 9.7 or earlier
 ** SAP HANA single and multiple host
 ** SAP HANA single host using SAP HANA multiple partitions
 * HANA system with SID=FC5 and ONTAP 9.8 using Linux logical volume manager (LVM)
 ** SAP HANA single and multiple host
-
-link:san_fabric_setup.html[Next: SAN fabric setup.]

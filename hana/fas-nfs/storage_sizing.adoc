@@ -5,9 +5,6 @@ keywords: storage, sizing, sap, hana, fas, nfs, performance, considerations, mix
 summary: The following section provides an overview of the required performance and capacity considerations needed for sizing a storage system for SAP HANA.
 ---
 
-[.lead]
-Placeholder
-
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -15,13 +12,7 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-16 12:00:07.166763
-//
-link:architecture.html[Previous: Architecture.]
-
+[.lead]
 The following section provides an overview of the required performance and capacity considerations needed for sizing a storage system for SAP HANA.
 
 [NOTE]
@@ -211,5 +202,3 @@ The size of the RAM, net data size on the disk of each SAP HANA host, and the sn
 The following figure summarizes the sizing process.
 
 image:saphana-fas-nfs_image9.jpg[Error: Missing Graphic Image]
-
-link:infrastructure_setup_and_configuration_overview.html[Next: Infrastructure setup and configuration.]

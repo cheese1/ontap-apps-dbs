@@ -5,9 +5,6 @@ keywords: configure, multipathing, create, lvm, volume, groups, logical, mount, 
 summary: The documentation also contains information about multipath configurations that are specific to the Linux version used.
 ---
 
-[.lead]
-Placeholder
-
 = Host setup
 :hardbreaks:
 :nofooter:
@@ -15,14 +12,10 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:40:51.362045
-//
-link:sap_hana_storage_connector_api.html[Previous: SAP HANA storage connector API.]
+[.lead]
+Before setting up the host, NetApp SAN Host Utilities must be downloaded from the http://mysupport.netapp.com/[NetApp Support^] site and installed on the HANA servers. 
 
-Before setting up the host, NetApp SAN Host Utilities must be downloaded from the http://mysupport.netapp.com/[NetApp Support^] site and installed on the HANA servers. The Host Utility documentation includes information about additional software that must be installed depending on the FCP HBA used.
+The Host Utility documentation includes information about additional software that must be installed depending on the FCP HBA used.
 
 The documentation also contains information about multipath configurations that are specific to the Linux version used. This document covers the required configuration steps for SLES 15 and Red Hat Enterprise Linux 7.6 or higher, as described in the https://library.netapp.com/ecm/ecm_download_file/ECMLP2547958[Linux Host Utilities 7.1 Installation and Setup Guide^].
 

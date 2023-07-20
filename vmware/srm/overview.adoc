@@ -15,6 +15,9 @@ summary: NetApp ONTAP has been a leading storage solution for VMware vSphere env
 [.lead]
 == ONTAP for vSphere
 
+[NOTE]
+This section is based on TR-4900: VMware Site Recovery Manager with ONTAP
+
 NetApp ONTAP has been a leading storage solution for VMware vSphere environments since its introduction into the modern datacenter in 2002, and it continues to add innovative capabilities to simplify management while reducing costs. This document introduces the ONTAP solution for VMware Site Recovery Manager (SRM), VMware’s industry leading disaster recovery (DR) software, including the latest product information and best practices to streamline deployment, reduce risk, and simplify ongoing management.
 
 Best practices supplement other documents such as guides and compatibility tools. They are developed based on lab testing and extensive field experience by NetApp engineers and customers. In some cases, recommended best practices might not be the right fit for your environment; however, they are generally the simplest solutions that meet the needs of the most customers.

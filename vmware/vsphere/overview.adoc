@@ -12,15 +12,10 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with Atom 1.57.0 (June 18, 2021)
-//
-//
-
 [.lead]
-== Why ONTAP for vSphere?
+NetApp ONTAP simplifies storage and data management operations and distinctly complements VMware environments, whether deploying on-premises or to the cloud. 
 
-NetApp ONTAP simplifies storage and data management operations and distinctly complements VMware environments, whether deploying on-premises or to the cloud. NetApp best-in-class data protection, storage efficiency innovations, and outstanding performance in both SAN- and NAS-based VMware architectures are among the reasons why tens of thousands of customers have selected ONTAP as their storage solution for vSphere deployments.
+NetApp best-in-class data protection, storage efficiency innovations, and outstanding performance in both SAN- and NAS-based VMware architectures are among the reasons why tens of thousands of customers have selected ONTAP as their storage solution for vSphere deployments.
 
 NetApp provides numerous VMware plug-ins, validations, and qualifications of various VMware products to support customers facing the unique challenges of administering a virtualization environment. NetApp does for storage and data management what VMware does for virtualization, allowing customers to focus on their core competencies rather than managing physical storage. This nearly 20-year partnership between VMware and NetApp continues to evolve and add customer value as new technologies, such as VMware Cloud Foundation and Tanzu, emerge, while continuing to support the foundation of vSphere.
 
@@ -30,7 +25,6 @@ Key factors customers value include:
 * *Storage efficiency*
 * *Virtual volumes and storage policy-based management*
 * *Hybrid cloud*
-
 
 For more information regarding supported NetApp and VMware solutions, see the following resources:
 

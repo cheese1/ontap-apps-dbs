@@ -15,6 +15,6 @@ summary: Consistency group replication for Oracle databases
 [.lead]
 Consistency group replication can be can be as simple as scheduling replication of a single volume SnapMirror. This includes datafiles, controlfiles, archive logs, and redo logs. Every SnapMirror update results in a new copy of the database at the destination site that is consistent and ready for activation by breaking the mirror.
 
-Where a database must span volumes, a consistency group snapshot (cg-snapshot) is required. See the section link:planning.html#log-replication[Log Replication] for additional information on managing cg-snapshots.
+Where a database must span volumes, a consistency group snapshot (cg-snapshot) is required.
 
 An additional benefit of this strategy when used with SnapMirror in block- level replication mode is complete replication of all snapshots on the source storage system. The full complement of backups is replicated in addition to the disaster recovery copy.

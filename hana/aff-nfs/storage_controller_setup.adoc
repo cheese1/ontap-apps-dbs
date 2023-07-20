@@ -5,9 +5,6 @@ keywords: storage, controller, efficiency, volume encryption, quality of service
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 ---
 
-[.lead]
-Placeholder
-
 = Storage controller setup
 :hardbreaks:
 :nofooter:
@@ -15,14 +12,10 @@ Placeholder
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-05-20 16:44:23.324201
-//
-link:time_synchronization.html[Previous: Time synchronization.]
+[.lead]
+This section describes the configuration of the NetApp storage system. 
 
-This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
+You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 
 == Storage efficiency
 
@@ -405,5 +398,3 @@ The parameters are within `nameserver.ini` as shown in the following table. Keep
 == Mount volumes to namespace and set export policies
 
 When a volume is created, the volume must be mounted to the namespace. In this document, we assume that the junction path name is the same as the volume name. By default, the volume is exported with the default policy. The export policy can be adapted if required.
-
-link:host_setup.html[Next: Host setup.]

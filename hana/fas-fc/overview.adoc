@@ -5,7 +5,6 @@ keywords: sap, hana, fas, systems, fibre, channel, protocol, configuration, data
 summary: The NetApp FAS product family has been certified for use with SAP HANA in TDI projects. The certified enterprise storage platform is characterized by the NetApp ONTAP operating system.
 ---
 
-
 = SAP HANA on NetApp FAS Systems with Fibre Channel Protocol
 :hardbreaks:
 :nofooter:
@@ -56,5 +55,3 @@ For more information about using vSphere with SAP HANA, see the following links:
 * http://www.vmware.com/files/pdf/SAP_HANA_on_vmware_vSphere_best_practices_guide.pdf[Best Practices and Recommendations for Scale-Up Deployments of SAP HANA on VMware vSphere^]
 * http://www.vmware.com/files/pdf/sap-hana-scale-out-deployments-on-vsphere.pdf[Best Practices and Recommendations for Scale-Out Deployments of SAP HANA on VMware vSphere^]
 * https://launchpad.support.sap.com/[2161991 - VMware vSphere configuration guidelines - SAP ONE Support Launchpad (Login required)^]
-
-link:architecture.html[Next: Architecture.]

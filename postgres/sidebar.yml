@@ -5,30 +5,20 @@ entries:
     url: /postgres/overview.html
   - title: Database configuration
     entries:
-    - title: PostgreSQL architecture
+    - title: Architecture
       url: /postgres/architecture.html
-    - title: Tablespaces
-      url: /postgres/tablespaces.html
-    - title: File system options
-      url: /postgres/filesystems.html
-    - title: PostgreSQL performance tuning
-      url: /postgres/performance-tuning.html
-    - title: Database configuration
+    - title: Initialization
+      url: /postgres/architecture.html
+    - title: Settings
       url: /postgres/db-config.html
-    - title: Best practices summary
-      url: /postgres/summary.html
-    - title: TOAST
-      url: /postgres/toast.html
-    - title: VACUUM
-      url: /postgres/vacuum.html
-    - title: PostgreSQL filesystem layout
-      url: /postgres/fs-layout.html
+    - title: Tablespaces
+      url: /postgres/architecture.html
   - title: Storage Configuration
     entries:
+    - title: Filesystem configuration
+      url: /postgres/filesystems.html
     - title: Tiering
       url: /postgres/tiering.html
-    - title: Database security
-      url: /postgres/security.html
   - title: Data protection
     entries:
     - title: Native data protection

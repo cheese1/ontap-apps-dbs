@@ -33,8 +33,6 @@ entries:
       url: /common/ontap/efficiency.html
     - title: Thin provisioning
       url: /common/ontap/thin-provisioning.html
-    - title: Data integrity
-      url: /common/ontap/integrity.html
     - title: Failover and switchover
       url: /common/ontap/failover.html
   - title: Data protection
@@ -59,24 +57,24 @@ entries:
       url: /common/dp/tools.html
   - title: Disaster recovery
     entries:
+    - title: Overview
+      url: /common/overview-dr.html
     - title: MetroCluster
       entries:
-      - title: Overview
-        url: /common/metrocluster/overview.html
-      - title: SyncMirror
-        url: /common/metrocluster/syncmirror.html
       - title: Physical architecture
         url: /common/metrocluster/physical-architecture.html
       - title: Logical architecture
         url: /common/metrocluster/logical-architecture.html
+      - title: SyncMirror
+        url: /common/metrocluster/syncmirror.html
       - title: Applications on MetroCluster
         url: /common/metrocluster/apps-on-metrocluster.html
       - title: NVFAIL
         url: /common/metrocluster/nvfail.html
     - title: SnapMirror Business Continuity
       entries:
-      - title: Overview
-        url: /common/smbc/overview.html
+      - title: Architecture
+        url: /common/smbc/architecture.html
       - title: Failover
         url: /common/smbc/failover.html
       - title: Failure Scenarios
