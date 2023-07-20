@@ -23,7 +23,7 @@ entries:
         url: /vmware/vsphere/other_capabilities_for_vsphere.html
       - title: "ONTAP and vSphere release-specific information"
         url: /vmware/vsphere/ontap_and_vsphere_release-specific_information.html
-      - title: "Recommended ESXi host and other ONTAP settings"
+      - title: "Recommended ESXi host and ONTAP settings"
         url: /vmware/vsphere/recommended_esxi_host_and_other_ontap_settings.html
       - title: "Where to find additional information"
         url: /vmware/vsphere/where_to_find_additional_information.html
