@@ -1,7 +1,7 @@
 section: vmware
 title: VMware
 entries:
-  - title: "VMware Virtualization for ONTAP"
+  - title: VMware vSphere with ONTAP
     entries:
       - title: "Introduction"
         url: /vmware/vsphere/overview.html
@@ -13,8 +13,6 @@ entries:
         url: /vmware/vsphere/vvols_and_spbm.html
       - title: "Hybrid cloud"
         url: /vmware/vsphere/hybrid_cloud.html
-  - title: VMware vSphere with ONTAP
-    entries:
       - title: Overview
         url: /vmware/vsphere/overview-vsphere.html
       - title: "ONTAP capabilities for vSphere"
@@ -29,8 +27,6 @@ entries:
         url: /vmware/vsphere/recommended_esxi_host_and_other_ontap_settings.html
       - title: "Where to find additional information"
         url: /vmware/vsphere/where_to_find_additional_information.html
-      - title: "Contact us"
-        url: /vmware/vsphere/contact_us.html
   - title: "VMware vSphere Virtual Volumes (vVols) with ONTAP"
     entries:
       - title: Overview
@@ -59,8 +55,6 @@ entries:
         url: /vmware/srm/appendix_a__troubleshooting_srm_when_using_vvols_replication.html
       - title: "Conclusion"
         url: /vmware/srm/conclusion.html
-      - title: "Additional Information"
-        url: /vmware/srm/additional_information.html
   - title: "VMware vSphere Automation"
     entries:
     - title: Overview
