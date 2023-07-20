@@ -1,13 +1,13 @@
 ---
 settings:
-  name: Implementation guides
+  name: Enterprise Applications
   internal:
     pdf_enabled: false
   prod:
     pdf_enabled: false
 sidebar:
   entries:
-    - title: Implementation guides
+    - title: Enterprise Applications
       url: /index.html
     - section: common
     - section: mssql
