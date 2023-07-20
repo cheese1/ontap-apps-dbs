@@ -16,7 +16,7 @@ entries:
   - title: VMware vSphere with ONTAP
     entries:
       - title: Overview
-        url: /vmware/vsphere/overview.html
+        url: /vmware/vsphere/overview-vsphere.html
       - title: "ONTAP capabilities for vSphere"
         url: /vmware/vsphere/ontap_capabilities_for_vsphere.html
       - title: "Datastores and protocols"

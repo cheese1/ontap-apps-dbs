@@ -12,8 +12,8 @@ summary:
 :linkattrs:
 :imagesdir: ./../media/
 
-[.lead]
-Author(s): Chance Bingen, NetApp
+[NOTE]
+This section is based on TR-4400: VMware vSphere Virtual Volumes (vVols) with NetApp ONTAP
 
 == Why vVols for vSphere?
 
