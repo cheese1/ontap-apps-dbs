@@ -11,7 +11,7 @@ entries:
         url: /vmware/vsphere/unified_storage.html
       - title: "Storage efficiencies"
         url: /vmware/vsphere/storage_efficiencies.html
-      - title: "Virtual Volume and Storage Policy Based Management"
+      - title: "Virtual Volume and storage policy based management"
         url: /vmware/vsphere/vvols_and_spbm.html
       - title: "Hybrid cloud"
         url: /vmware/vsphere/hybrid_cloud.html
