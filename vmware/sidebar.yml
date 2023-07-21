@@ -24,7 +24,7 @@ entries:
       - title: Storage policy based management
         url: /vmware/vsphere/polcy-and-vvols.html
       - title: VMware Storage Distributed Resource Scheduler
-        url: /vmware/vsphere/srds.html
+        url: /vmware/vsphere/sdrs.html
       - title: Recommended settings
         url: /vmware/vsphere/settings.html
   - title: "VMware vSphere Virtual Volumes (vVols) with ONTAP"
