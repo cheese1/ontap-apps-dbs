@@ -4,17 +4,9 @@ entries:
   - title: VMware vSphere with ONTAP
     entries:
       - title: Overview
-        url: /vmware/vsphere/overview-vsphere.html
-      - title: "Introduction"
         url: /vmware/vsphere/overview.html
-      - title: "Unified storage"
-        url: /vmware/vsphere/unified_storage.html
-      - title: "Storage efficiencies"
-        url: /vmware/vsphere/storage_efficiencies.html
       - title: "Virtual Volume and storage policy based management"
         url: /vmware/vsphere/vvols_and_spbm.html
-      - title: "Hybrid cloud"
-        url: /vmware/vsphere/hybrid_cloud.html
       - title: "ONTAP capabilities for vSphere"
         url: /vmware/vsphere/ontap_capabilities_for_vsphere.html
       - title: "Datastores and protocols"
