@@ -9,16 +9,24 @@ entries:
         url: /vmware/vsphere/unified.html
       - title: Virtualization tools
         url: /vmware/vsphere/vtools.html
-      - title: "Virtual Volume and storage policy based management"
+      - title: Virtual Volume and storage policy based management
         url: /vmware/vsphere/vvols_and_spbm.html
-      - title: "Datastores and protocols"
+      - title: Datastores and protocols
         url: /vmware/vsphere/datastores.html
-      - title: "Network configuration"
+      - title: Network configuration
         url: /vmware/vsphere/network.html
-      - title: "Other capabilities for vSphere"
-        url: /vmware/vsphere/other_capabilities_for_vsphere.html
-      - title: "Recommended ESXi host and ONTAP settings"
-        url: /vmware/vsphere/recommended_esxi_host_and_other_ontap_settings.html
+      - title: Cloning
+        url: /vmware/vsphere/cloning.html
+      - title: Data protection
+        url: /vmware/vsphere/dp.html
+      - title: QoS
+        url: /vmware/vsphere/qos.html
+      - title: Storage policy based management
+        url: /vmware/vsphere/polcy-and-vvols.html
+      - title: VMware Storage Distributed Resource Scheduler
+        url: /vmware/vsphere/srds.html
+      - title: Recommended settings
+        url: /vmware/vsphere/settings.html
   - title: "VMware vSphere Virtual Volumes (vVols) with ONTAP"
     entries:
       - title: Overview
