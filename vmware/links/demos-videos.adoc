@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/demos_videos.html
+permalink: vmware/links/demos-videos.html
 keywords: vSphere, cloud, hybrid cloud, AWS, Azure, Google cloud, snapmirror cloud, cloud backup service, Cloud Sync, FabricPool, ONTAP
 summary: This page provides and introduction to videos and tutorials.
 ---
