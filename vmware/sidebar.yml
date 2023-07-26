@@ -43,8 +43,6 @@ entries:
     entries:
       - title: Overview
         url: /vmware/overview.html
-      - title: "New features with SRM and ONTAP Tools"
-        url: /vmware/new_features_with_srm_and_ontap_tools.html
       - title: "Deployment best practices"
         url: /vmware/srm/deployment_best_practices.html
       - title: "Operational best practices"
@@ -53,32 +51,6 @@ entries:
         url: /vmware/srm/replication_topologies.html
       - title: "Troubleshooting SRM when using vVols replication"
         url: /vmware/srm/appendix_a__troubleshooting_srm_when_using_vvols_replication.html
-      - title: "Conclusion"
-        url: /vmware/srm/conclusion.html
-  - title: "VMware vSphere Automation"
-    entries:
-    - title: Overview
-      url: /vmware/auto/overview.html
-    - title: "Traditional block storage provisioning"
-      entries:
-      - title: Overview
-        url: /vmware/auto/block.html
-      - title: "VMFS - Fibre Channel"
-        url: /vmware/auto/block_fc.html
-      - title: "VMFS - Fibre Channel over Ethernet"
-        url: /vmware/auto/block_fcoe.html
-      - title: "VMFS - iSCSI"
-        url: /vmware/auto/block_iscsi.html
-      - title: "VMFS - NVMe over Fabric"
-        url: /vmware/auto/block_nvmeof.html
-    - title: "Traditional file storage provisioning"
-      entries:
-      - title: Overview
-        url: /vmware/auto/file.html
-      - title: "NFS - v3"
-        url: /vmware/auto/file_nfs.html
-      - title: "NFS - v4.1"
-        url: /vmware/auto/file_nfs41.html
   - title: "VMware Horizon"
     entries:
       - title: "End user computing with VMware (Design Guide)"
