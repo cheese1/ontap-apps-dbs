@@ -22,12 +22,12 @@ entries:
       - title: QoS
         url: /vmware/vsphere/qos.html
       - title: Storage policy based management
-        url: /vmware/vsphere/polcy-and-vvols.html
+        url: /vmware/vsphere/policy-and-vvols.html
       - title: VMware Storage Distributed Resource Scheduler
         url: /vmware/vsphere/sdrs.html
       - title: Recommended settings
         url: /vmware/vsphere/settings.html
-  - title: "VMware vSphere Virtual Volumes (vVols) with ONTAP"
+  - title: "Virtual Volumes (vVols) with ONTAP"
     entries:
       - title: Overview
         url: /vmware/vvols/overview.html
@@ -42,7 +42,7 @@ entries:
   - title: "VMware Site Recovery Manager with ONTAP"
     entries:
       - title: Overview
-        url: /vmware/overview.html
+        url: /vmware/srm/overview.html
       - title: "Deployment best practices"
         url: /vmware/srm/deployment_best_practices.html
       - title: "Operational best practices"
@@ -68,4 +68,4 @@ entries:
       - title: SnapCenter Plug-in for VMware vSphere
         url: /vmware/security/snapcenter.html
   - title: "Videos"
-    url: /vmware/vsphere_demos_videos.html
+    url: /vmware/links/demos_videos.html

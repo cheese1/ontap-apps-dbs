@@ -12,8 +12,6 @@ summary: "TR-4792 provides guidance for the use of the NetApp HCI 615C for 3D gr
 :linkattrs:
 :imagesdir: ./../media/
 
-Suresh Thoppay, NetApp
-
 [.lead]
 TR-4792 provides guidance on using the NetApp H615C compute node for 3D graphics workloads in a VMware Horizon environment powered by NVIDIA graphics processing units (GPUs) and virtualization software. It also provides the results from the preliminary testing of SPECviewperf 13 for the H615C.
 
