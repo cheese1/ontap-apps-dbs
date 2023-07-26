@@ -5,7 +5,7 @@ keywords: oracle, data protection, hot backup
 summary: Oracle on ONTAP online backup procedures
 ---
 
-= Oracle hot backup
+= Online backup
 :hardbreaks:
 :nofooter:
 :icons: font

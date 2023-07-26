@@ -49,9 +49,9 @@ entries:
       url: /oracle/dp/overview-dp.html
     - title: Data integrity
       url: /oracle/dp/integrity.html
-    - title: Snapshots
+    - title: Snapshot-based backups
       url: /oracle/dp/snapshots.html
-    - title: Oracle online backups
+    - title: Hot backups
       url: /oracle/dp/oracle_hot_backup.html
     - title: Consistency group backup
       url: /oracle/dp/oracle_consistency_group_backup.html
@@ -100,7 +100,7 @@ entries:
         - title: Protocol conversion
           url: /oracle/migration/protocol-conversion.html
     - title: Sample scripts
-      url: /oracle/migration/sample_scripts.html
+      url: /oracle/migration/sample-scripts.html
   - title: Additional notes
     entries:
     - title: Performance optimization and benchmarking

@@ -6,14 +6,9 @@ summary: PostgreSQL Databases on ONTAP
 ---
 
 
-[.lead]
-
-Placeholder
-
-
-
 = Data protection software
 
+[.lead]
 NetApp SnapCenter® plugin for PostgreSQL database, combined with Snapshot and NetApp FlexClone technologies, offer you benefits such as: 
 
 * Rapid backup and restore. 

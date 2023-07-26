@@ -4,30 +4,30 @@ entries:
   - title: VMware vSphere with ONTAP
     entries:
       - title: Overview
-        url: /vmware/vsphere/overview-vsphere.html
-      - title: "Introduction"
         url: /vmware/vsphere/overview.html
-      - title: "Unified storage"
-        url: /vmware/vsphere/unified_storage.html
-      - title: "Storage efficiencies"
-        url: /vmware/vsphere/storage_efficiencies.html
-      - title: "Virtual Volume and Storage Policy Based Management"
+      - title: Unified storage
+        url: /vmware/vsphere/unified.html
+      - title: Virtualization tools
+        url: /vmware/vsphere/vtools.html
+      - title: Virtual Volume and storage policy based management
         url: /vmware/vsphere/vvols_and_spbm.html
-      - title: "Hybrid cloud"
-        url: /vmware/vsphere/hybrid_cloud.html
-      - title: "ONTAP capabilities for vSphere"
-        url: /vmware/vsphere/ontap_capabilities_for_vsphere.html
-      - title: "Datastores and protocols"
-        url: /vmware/vsphere/best_practices.html
-      - title: "Other capabilities for vSphere"
-        url: /vmware/vsphere/other_capabilities_for_vsphere.html
-      - title: "ONTAP and vSphere release-specific information"
-        url: /vmware/vsphere/ontap_and_vsphere_release-specific_information.html
-      - title: "Recommended ESXi host and other ONTAP settings"
-        url: /vmware/vsphere/recommended_esxi_host_and_other_ontap_settings.html
-      - title: "Where to find additional information"
-        url: /vmware/vsphere/where_to_find_additional_information.html
-  - title: "VMware vSphere Virtual Volumes (vVols) with ONTAP"
+      - title: Datastores and protocols
+        url: /vmware/vsphere/datastores.html
+      - title: Network configuration
+        url: /vmware/vsphere/network.html
+      - title: Cloning
+        url: /vmware/vsphere/cloning.html
+      - title: Data protection
+        url: /vmware/vsphere/dp.html
+      - title: QoS
+        url: /vmware/vsphere/qos.html
+      - title: Storage policy based management
+        url: /vmware/vsphere/policy-and-vvols.html
+      - title: VMware Storage Distributed Resource Scheduler
+        url: /vmware/vsphere/sdrs.html
+      - title: Recommended settings
+        url: /vmware/vsphere/settings.html
+  - title: "Virtual Volumes (vVols) with ONTAP"
     entries:
       - title: Overview
         url: /vmware/vvols/overview.html
@@ -42,9 +42,7 @@ entries:
   - title: "VMware Site Recovery Manager with ONTAP"
     entries:
       - title: Overview
-        url: /vmware/overview.html
-      - title: "New features with SRM and ONTAP Tools"
-        url: /vmware/new_features_with_srm_and_ontap_tools.html
+        url: /vmware/srm/overview.html
       - title: "Deployment best practices"
         url: /vmware/srm/deployment_best_practices.html
       - title: "Operational best practices"
@@ -53,32 +51,6 @@ entries:
         url: /vmware/srm/replication_topologies.html
       - title: "Troubleshooting SRM when using vVols replication"
         url: /vmware/srm/appendix_a__troubleshooting_srm_when_using_vvols_replication.html
-      - title: "Conclusion"
-        url: /vmware/srm/conclusion.html
-  - title: "VMware vSphere Automation"
-    entries:
-    - title: Overview
-      url: /vmware/auto/overview.html
-    - title: "Traditional block storage provisioning"
-      entries:
-      - title: Overview
-        url: /vmware/auto/block.html
-      - title: "VMFS - Fibre Channel"
-        url: /vmware/auto/block_fc.html
-      - title: "VMFS - Fibre Channel over Ethernet"
-        url: /vmware/auto/block_fcoe.html
-      - title: "VMFS - iSCSI"
-        url: /vmware/auto/block_iscsi.html
-      - title: "VMFS - NVMe over Fabric"
-        url: /vmware/auto/block_nvmeof.html
-    - title: "Traditional file storage provisioning"
-      entries:
-      - title: Overview
-        url: /vmware/auto/file.html
-      - title: "NFS - v3"
-        url: /vmware/auto/file_nfs.html
-      - title: "NFS - v4.1"
-        url: /vmware/auto/file_nfs41.html
   - title: "VMware Horizon"
     entries:
       - title: "End user computing with VMware (Design Guide)"
@@ -96,4 +68,4 @@ entries:
       - title: SnapCenter Plug-in for VMware vSphere
         url: /vmware/security/snapcenter.html
   - title: "Videos"
-    url: /vmware/vsphere_demos_videos.html
+    url: /vmware/links/demos-videos.html

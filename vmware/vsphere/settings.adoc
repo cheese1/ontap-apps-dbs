@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vsphere/recommended_esxi_host_and_other_ontap_settings.html
+permalink: vmware/vsphere/settings.html
 keywords:
 summary:
 ---
