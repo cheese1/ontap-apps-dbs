@@ -8,11 +8,11 @@ entries:
     - title: Architecture
       url: /postgres/architecture.html
     - title: Initialization
-      url: /postgres/architecture.html
+      url: /postgres/initialization.html
     - title: Settings
       url: /postgres/db-config.html
     - title: Tablespaces
-      url: /postgres/architecture.html
+      url: /postgres/tablespaces.html
   - title: Storage Configuration
     entries:
     - title: Filesystem configuration
