@@ -3,6 +3,8 @@ title: Oracle Database
 entries:
   - title: Overview
     url: /oracle/overview.html
+  - title: ONTAP Configuration
+    url: /oracle/ontap.html
   - title: Database configuration
     entries:
     - title: db_file_multiblock_read_count
