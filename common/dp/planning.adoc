@@ -41,7 +41,7 @@ The RPO for this approach is usually limited to the point of the backup. As a ge
 
 The RTO can usually be measured in seconds. A an application is shut down, the volumes are restored, and the application is restarted. 
 
-The simplest approach is to place all the files or LUNS in a single volume consistency group, which allows a snapshot creation to be scheduled directly in ONTAP. Where a dataset must span volumes, a consistency group snapshot (cg-snapshot) is required. This can be configured using SystemManager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
+The simplest approach is to place all the files or LUNS in a single volume consistency group, which allows a snapshot creation to be scheduled directly in ONTAP. Where a dataset must span volumes, a consistency group snapshot (cg-snapshot) is required. This can be configured using System Manager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
 
 == Replication and disaster recovery architecture
 

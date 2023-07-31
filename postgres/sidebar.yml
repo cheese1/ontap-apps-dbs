@@ -13,7 +13,7 @@ entries:
       url: /postgres/db-config.html
     - title: Tablespaces
       url: /postgres/tablespaces.html
-  - title: Storage Configuration
+  - title: Storage configuration
     entries:
     - title: Filesystem configuration
       url: /postgres/filesystems.html
