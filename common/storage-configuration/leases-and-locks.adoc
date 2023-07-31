@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: common/storage-configuration/leases-and-locks.html
-keywords: NFS
+keywords: NFS, lease
 summary: NFS leases and locks
 ---
 

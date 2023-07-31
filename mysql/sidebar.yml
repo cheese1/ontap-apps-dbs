@@ -3,6 +3,8 @@ title: MySQL
 entries:
   - title: Overview
     url: /mysql/overview.html
+  - title: ONTAP Configuration
+    url: /mysql/ontap.html
   - title: Database Configuration
     entries:
     - title: File structure

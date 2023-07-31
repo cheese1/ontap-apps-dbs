@@ -1,0 +1,13 @@
+---
+sidebar: sidebar
+permalink: oracle/ontap.html
+keywords: MS-SQL,mssql,SQL Server,TR-4590
+summary: ONTAP Configuration
+---
+
+= ONTAP Configuration
+
+[.lead]
+ONTAP offers many features specifically designed for application and database workloads.
+
+You can find an overview of important ONTAP features including everything from data protection capabilites, storage efficiency recommendations, to disaster recovery options link:/common/overview.html[here.] This information is critical for properly architecting and managing your application environment on ONTAP storage systems.
