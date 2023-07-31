@@ -10,6 +10,4 @@ summary: ONTAP Configuration
 [.lead]
 ONTAP offers many features specifically designed for application and database workloads.
 
-You can find an overview of important ONTAP features including everything from data protection capabilites, storage efficiency recommendations, and disaster recovery options link:/common/overview.html[here.]
-
-This information is critical for properly architecting and managing your application environment on ONTAP storage systems.
+You can find an overview of important ONTAP features including everything from data protection capabilites, storage efficiency recommendations, to disaster recovery options link:/common/overview.html[here.] This information is critical for properly architecting and managing your application environment on ONTAP storage systems.
