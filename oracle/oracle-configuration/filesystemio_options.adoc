@@ -2,7 +2,7 @@
 permalink: oracle/oracle-configuration/filesystemio_options.html
 sidebar: sidebar
 keywords: oracle, database, ontap, filesystemio_options, filesystemio, async, directio
-summary: "Oracle async IO and direct IO"
+summary: Oracle filesystemio_options
 ---
 = filesystemio_options
 :hardbreaks:
