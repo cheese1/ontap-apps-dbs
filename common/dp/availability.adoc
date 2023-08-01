@@ -22,7 +22,6 @@ Both NVRAM and a database redo log are used to store data quickly, allowing chan
 If a controller fails abruptly, there are likely to be pending changes stored in NVRAM that have not yet been written to the drives. The partner controller detects the failure, take control of the drives, and applies the required changes that have been stored in NVRAM.
 
 == Takeover and giveback
-
 Takeover and giveback refers to the process of transferring responsibility for storage resources between nodes in an HA pair. There are two aspects to takeover and giveback:
 
 * Management of the network connectivity that allows access to the drives
@@ -38,7 +37,6 @@ Additional paths to additional controllers can also be configured to support rel
 The second aspect of takeover and giveback is the transfer of disk ownership. The exact process depends on multiple factors including the reason for the takeover/giveback and the command line options issued. The goal is to perform the operation as efficiently as possible. Although the overall process might appear to require several minutes, the actual moment in which ownership of the drive is transitioned from node to node can generally be measured in seconds.
 
 == Takeover time
-
 Host I/O experiences a short pause in I/O during takeover and giveback operations, but there should not be application disruption in a correctly configured environment. The actual transition process in which I/O is delayed is generally measured in seconds, but the host might require additional time to recognize the change in data paths and resubmit I/O operations.
 
 The nature of the disruption depends on the protocol:
@@ -50,11 +48,11 @@ The expected takeover times during which the storage system cannot serve data to
 
 |===
 | |NFS |AFF |ASA
-|Planned Takeover
+|Planned takeover
 |15 sec
 |6-10 sec
 |2-3 sec
-|Unplanned Takeover
+|Unplanned takeover
 |30 sec
 |6-10 sec
 |2-3 sec
