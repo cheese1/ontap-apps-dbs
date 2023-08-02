@@ -61,7 +61,7 @@ For a complete explanation of SM-S, see https://www.netapp.com/media/17174-tr473
 
 == Consistency groups
 
-ONTAP allows the creation of consistency group snapshots, and starting with 9.13.1, ONTAP can replicate groups of volumes (remember that a volume in ONTAP terminology is not a LUN, it is a management container consistenting of one or more files or LUNS) as consistent group.
+ONTAP allows the creation of consistency group snapshots, and starting with 9.13.1, ONTAP can replicate groups of volumes (remember that a volume in ONTAP terminology is not a LUN, it is a management container consistenting of one or more files or LUNs) as consistent group.
 
 SnapMirror replication and breaking CG SnapMirror relation preserves consistency across volumes, and SnapMirror Synchronous and SnapMirror Business Continuity both preserve consistency across constitutent volumes. 
 

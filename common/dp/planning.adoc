@@ -4,7 +4,6 @@ permalink: common/dp/planning.html
 keywords: data protection, DR, snapshots, CG
 summary: ONTAP data protection strategies
 ---
-
 = Data protection planning
 :hardbreaks:
 :nofooter:
@@ -22,7 +21,6 @@ Dataset size also affects strategy. For example, many options exist for backup a
 Finally, there are factors outside the backup and recovery process itself. For example, are there databases supporting critical production activities, making recovery a rare event that is only performed by skilled DBAs? Alternatively, are the databases part of a large development environment in which recovery is a frequent occurrence and managed by a generalist IT team?
 
 == Is a snapshot a backup?
-
 One commonly raised objection to the use of snapshots as a data protection strategy is the fact that the "real" data and the snapshot data are located on the same drives. Loss of those drives would result in the loss of both the primary data and the backup.
 
 This is a valid concern. Local snapshots are used for day-to-day backup and recovery needs, and in that respect the snapshot is a backup. Close to 99% of all recovery scenarios in NetApp environments rely on snapshots to meet even the most aggressive RTO requirements.
@@ -30,7 +28,6 @@ This is a valid concern. Local snapshots are used for day-to-day backup and reco
 Local snapshots should, however, never be the only backup strategy, which is why NetApp offers technology such as SnapMirror replication to quickly and efficiently replicate snapshots to an independent set of drives. In a properly architected solution with snapshots plus snapshot replication, the use of tape can be minimized to perhaps a quarterly archive or eliminated entirely.
 
 == Consistency group backups
-
 A consistency group backup involves capturing the state of a dataset (or multiple datasets) at a single atomic point in time. As a database example, this includes all database components, such as datafiles, log files, and other files directly associated with the database. This works with almost all relational database products, including Oracle RDBMS, Microsoft SQL Server, SAP HANA, PostgreSQL, MySQL, and MariaDB. Protecting a VMware configuration with a consistency group backup would be similar - capturing all of the datastores and potentially the ESX boot LUNs in a single atomic point in time.
 
 Creation of a such a consistency group snapshot is essentially simulating a crash, which is why such backups are frequently called crash-consistent backups. There are sometimes concerns with support for recovery scenarios, but it is important to understand that no recovery procedure is usually required. When the application starts up after restoring a consistency group backup, it performs the usual log recovery processes, filesystem journal replays, and other tasks to replay any I/O that was in-flight at the point of the backup. The application then starts as usual.
@@ -41,15 +38,14 @@ The RPO for this approach is usually limited to the point of the backup. As a ge
 
 The RTO can usually be measured in seconds. A an application is shut down, the volumes are restored, and the application is restarted. 
 
-The simplest approach is to place all the files or LUNS in a single volume consistency group, which allows a snapshot creation to be scheduled directly in ONTAP. Where a dataset must span volumes, a consistency group snapshot (cg-snapshot) is required. This can be configured using System Manager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
+The simplest approach is to place all the files or LUNs in a single volume consistency group, which allows a snapshot creation to be scheduled directly in ONTAP. Where a dataset must span volumes, a consistency group snapshot (cg-snapshot) is required. This can be configured using System Manager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
 
 == Replication and disaster recovery architecture
-
 This section addresses remote data protection, for which data is replicated to a remote site for the purposes of secure offsite storage and disaster recovery. Note that these tables do not address synchronous mirroring data protection. For this requirement, see the NetApp MetroCluster documentation including link:../metrocluster/overview.html[MetroCluster] and link:../smbc/overview.html[SnapMirror Business Continuity]
 
-The DR RPO is limited by the available network bandwidth and the total size of the data being protected. After the initial baseline transfer is created, the updates are only based on the changed data, which typically is a low percentage of the total data footprint, althogh exceptions do exist. 
+The DR RPO is limited by the available network bandwidth and the total size of the data being protected. After the initial baseline transfer is created, the updates are only based on the changed data, which typically is a low percentage of the total data footprint, although exceptions do exist. 
 
-For example, a 10TB database with a 10% weekly change rate averages approximately 6GB per hour of total changes. With 10Gb of connectivity, this database requires approximately six minutes to transfer. The change rate varies with fluctuation in the database change rate, but overall a 15-minute update interval and thus a 15- minute RPO should be achievable. If there are 100 such databases, then 600 minutes is required to transfer the data. Therefore, an RPO of one-hour is not possible. Likewise, a replica of a single database 100TB in size with a 10% weekly change rate cannot be updated reliably in one hour.
+For example, a 10TB database with a 10% weekly change rate averages approximately 6GB per hour of total changes. With 10Gb of connectivity, this database requires approximately six minutes to transfer. The change rate varies with fluctuation in the database change rate, but overall a 15-minute update interval and thus a 15-minute RPO should be achievable. If there are 100 such databases, then 600 minutes is required to transfer the data. Therefore, an RPO of one-hour is not possible. Likewise, a replica of a single database 100TB in size with a 10% weekly change rate cannot be updated reliably in one hour.
 
 Additional factors can affect replication, such as replication overhead and limitations on the number of concurrent replication operations. However, overall planning for a single-volume replication strategy can be based on available bandwidth, and a replication RPO of one hour is generally achievable. An RPO lower than one hour becomes more difficult to achieve and should only be performed after consulting NetApp Professional Services. In some cases, 15 minutes is feasible with very good site-to-site network connectivity. However, overall, when an RPO below one hour is required, the multi-volume log replay architecture yields better results.
 
@@ -62,11 +58,9 @@ In some cases, customers have prepared disaster recovery instances ahead of time
 The retention time is controlled in part by the snapshot limit. For example, volumes in ONTAP have a limit of 1024 snapshots. In some cases, customers have multiplexed replication to increase the limit. For example, if 2000 days of backups are required, a source can be replicated to two volumes with updates occurring on alternate days. This requires an increase in the initial space required, but it still represents a much more efficient approach than a traditional backup system, which involves multiple full backups.
 
 === Single-volume consistency group
-
-The simplest approach is to place all the files or LUNS in a single volume consistency group, which allows SnapMirror and SnapVault updates to be scheduled directly on the storage system. No external software is required.
+The simplest approach is to place all the files or LUNs in a single volume consistency group, which allows SnapMirror and SnapVault updates to be scheduled directly on the storage system. No external software is required.
 
 === Multi-volume consistency group
-
 When a database must span volumes, a consistency group snapshot (cg-snapshot) is required. As mentioned above, this can be configured using SystemManager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
 
 There is also one additional consideration on the use of multivolume, consistent snapshots for disaster recovery purposes. When performing an update of multiple volumes, it is possible that a disaster could occur while a transfer is still in progress. The result would be a set of volumes that are not consistent with one another. If this happened, some of the volumes must be restored to an earlier snapshot state to deliver a database image that is crash-consistent and ready for use.
@@ -74,11 +68,9 @@ There is also one additional consideration on the use of multivolume, consistent
 == Disaster recovery: activation
 
 === NFS
-
 The process of activating the disaster recovery copy depends on the type of storage. With NFS, the file systems can be premounted on the disaster recovery server. They are in a read-only state and become read-write when the mirror is broken. This delivers an extremely low RPO, and the overall disaster recovery process is more reliable because there are fewer parts to manage.
 
 === SAN
-
 Activating SAN configurations in the event of disaster recovery become more complicated. The simplest option is generally to temporarily break the mirrors and mount the SAN resources, including steps such as discovering LVM configuration (including application-specific features such as Oracle Automatic Storage Management [ASM]), and adding entries to /etc/fstab.
 
 The result is that the LUN device paths, volume groups names, and other device paths are made known to the target server. Those resources can then be shut down, and afterward the mirrors can be restored. The result is a server that is in a state that can rapidly bring the application online. The steps to activate volumes groups, mount file systems, or and start databases and applications are easily automated.
