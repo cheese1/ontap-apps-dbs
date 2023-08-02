@@ -61,7 +61,7 @@ The retention time is controlled in part by the snapshot limit. For example, vol
 The simplest approach is to place all the files or LUNs in a single volume consistency group, which allows SnapMirror and SnapVault updates to be scheduled directly on the storage system. No external software is required.
 
 === Multi-volume consistency group
-When a database must span volumes, a consistency group snapshot (cg-snapshot) is required. As mentioned above, this can be configured using SystemManager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
+When a database must span volumes, a consistency group snapshot (cg-snapshot) is required. As mentioned above, this can be configured using System Manager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
 
 There is also one additional consideration on the use of multivolume, consistent snapshots for disaster recovery purposes. When performing an update of multiple volumes, it is possible that a disaster could occur while a transfer is still in progress. The result would be a set of volumes that are not consistent with one another. If this happened, some of the volumes must be restored to an earlier snapshot state to deliver a database image that is crash-consistent and ready for use.
 
