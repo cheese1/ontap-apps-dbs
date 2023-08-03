@@ -27,7 +27,7 @@ Seven protocols are used to connect VMware vSphere to datastores on a system run
 
 FCP, FCoE, NVMe/FC, NVMe/TCP, and iSCSI are block protocols that use the vSphere Virtual Machine File System (VMFS) to store VMs inside ONTAP LUNs or NVMe namespaces that are contained in an ONTAP FlexVol volume. Note that, starting from vSphere 7.0, VMware no longer supports software FCoE in production environments. NFS is a file protocol that places VMs into datastores (which are simply ONTAP volumes) without the need for VMFS. SMB (CIFS), iSCSI, NVMe/TCP, or NFS can also be used directly from a guest OS to ONTAP.
 
-The following tables presents vSphere supported traditional datastore features with ONTAP. This information does not apply to vVols datastores, but it does generally applies to vSphere 6.x and later releases using supported ONTAP releases. You can also consult https://www.vmware.com/support/pubs/[VMware Configuration Maximums^] for specific vSphere releases to confirm specific limits.
+The following tables present vSphere-supported traditional datastore features with ONTAP. This information does not apply to vVols datastores, but it does generally applies to vSphere 6.x and later releases using supported ONTAP releases. You can also consult https://www.vmware.com/support/pubs/[VMware Configuration Maximums^] for specific vSphere releases to confirm specific limits.
 
 |===
 |Capability/Feature |FC/FCoE |iSCSI |NVMe-oF |NFS
@@ -52,10 +52,10 @@ Default NFS. MaxVolumes is 8. Use ONTAP tools for VMware vSphere to increase to 
 |62TB
 |62TB
 |62TB
-|16TB or 62TB with ONTAP 9.12.1RC1 and later with large files enabled
+|62TB with ONTAP 9.12.1P2 and later
 |Optimal queue depth per LUN or file system
-|64
-|64
+|64-256
+|64-256
 |Autonegotiated
 |Refer to NFS.MaxQueueDepth in https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_recommended_esxi_host_and_other_ontap_settings.html[Recommended ESXi host and other ONTAP settings^].
 |===
