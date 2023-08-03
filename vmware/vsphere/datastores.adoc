@@ -27,7 +27,7 @@ Seven protocols are used to connect VMware vSphere to datastores on a system run
 
 FCP, FCoE, NVMe/FC, NVMe/TCP, and iSCSI are block protocols that use the vSphere Virtual Machine File System (VMFS) to store VMs inside ONTAP LUNs or NVMe namespaces that are contained in an ONTAP FlexVol volume. Note that, starting from vSphere 7.0, VMware no longer supports software FCoE in production environments. NFS is a file protocol that places VMs into datastores (which are simply ONTAP volumes) without the need for VMFS. SMB (CIFS), iSCSI, NVMe/TCP, or NFS can also be used directly from a guest OS to ONTAP.
 
-The following tables presents vSphere supported traditional datastore features with ONTAP. This information does not apply to vVols datastores, but it does generally applies to vSphere 6.x and later releases using supported ONTAP releases. You can also consult https://www.vmware.com/support/pubs/[VMware Configuration Maximums^] for specific vSphere releases to confirm specific limits.
+The following tables present vSphere-supported traditional datastore features with ONTAP. This information does not apply to vVols datastores, but it does generally applies to vSphere 6.x and later releases using supported ONTAP releases. You can also consult https://www.vmware.com/support/pubs/[VMware Configuration Maximums^] for specific vSphere releases to confirm specific limits.
 
 |===
 |Capability/Feature |FC/FCoE |iSCSI |NVMe-oF |NFS
@@ -52,10 +52,10 @@ Default NFS. MaxVolumes is 8. Use ONTAP tools for VMware vSphere to increase to 
 |62TB
 |62TB
 |62TB
-|16TB or 62TB with ONTAP 9.12.1RC1 and later with large files enabled
+|62TB with ONTAP 9.12.1P2 and later
 |Optimal queue depth per LUN or file system
-|64
-|64
+|64-256
+|64-256
 |Autonegotiated
 |Refer to NFS.MaxQueueDepth in https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_recommended_esxi_host_and_other_ontap_settings.html[Recommended ESXi host and other ONTAP settings^].
 |===
@@ -226,7 +226,7 @@ ONTAP storage systems offer great flexibility in creating datastores for VMs and
 When migrating VMs from an existing datastore on another storage system to ONTAP, here are some practices to keep in mind:
 
 * Use Storage vMotion to move the bulk of your virtual machines to ONTAP. Not only is this approach nondisruptive to running VMs, it also allows ONTAP storage efficiency features such as inline deduplication and compression to process the data as it migrates. Consider using vCenter capabilities to select multiple VMs from the inventory list and then schedule the migration (use Ctrl key while clicking Actions) at an appropriate time.
-* While you could carefully plan a migration to appropriate destination datastores, it is often simpler to migrate in bulk and then organize later as needed. If you have specific data protection needs, such as different Snapshot schedules, you might want to use this approach to guide your migration to different datastores.
+* While you could carefully plan a migration to appropriate destination datastores, it is often simpler to migrate in bulk and then organize later as needed. You might want to use this approach to guide your migration to different datastores if you have specific data protection needs, such as different Snapshot schedules.
 * Most VMs and their storage may be migrated while running (hot), but migrating attached (not in datastore) storage such as ISOs, LUNs, or NFS volumes from another storage system might require cold migration.
 * Virtual machines that need more careful migration include databases and applications that use attached storage. In general, consider the use of the application’s tools to manage migration. For Oracle, consider using Oracle tools such as RMAN or ASM to migrate the database files. See https://www.netapp.com/us/media/tr-4534.pdf[TR-4534^] for more information. Likewise, for SQL Server, consider using either SQL Server Management Studio or NetApp tools such as SnapManager for SQL Server or SnapCenter.
 
@@ -249,10 +249,10 @@ Configuring network settings when using vSphere with systems running ONTAP softw
 * NetApp only recommends disabling network flow control on the cluster network ports within an ONTAP cluster. NetApp makes no other recommendations for best practices for the remaining network ports used for data traffic. You should enable or disable as necessary. See http://www.netapp.com/us/media/tr-4182.pdf[TR-4182^] for more background on flow control.
 * When ESXi and ONTAP storage arrays are connected to Ethernet storage networks, NetApp recommends configuring the Ethernet ports to which these systems connect as Rapid Spanning Tree Protocol (RSTP) edge ports or by using the Cisco PortFast feature. NetApp recommends enabling the Spanning-Tree PortFast trunk feature in environments that use the Cisco PortFast feature and that have 802.1Q VLAN trunking enabled to either the ESXi server or the ONTAP storage arrays.
 * NetApp recommends the following best practices for link aggregation:
-** Use switches that support link aggregation of ports on two separate switch chassis using a multichassis link aggregation group approach such as Cisco’s Virtual PortChannel (vPC).
+** Use switches that support link aggregation of ports on two separate switch chassis using a multi-chassis link aggregation group approach such as Cisco’s Virtual PortChannel (vPC).
 ** Disable LACP for switch ports connected to ESXi unless you are using dvSwitches 5.1 or later with LACP configured.
-** Use LACP to create link aggregates for ONTAP storage systems with dynamic multimode interface groups with IP hash.
-** Use an IP hash teaming policy on ESXi.
+** Use LACP to create link aggregates for ONTAP storage systems with dynamic multimode interface groups with port or IP hash.
+** Use an IP hash teaming policy on ESXi when using static link aggregation (e.g., EtherChannel) and standard vSwitches, or LACP-based link aggregation with vSphere Distributed Switches. If link aggregation is not used, then use "Route based on the originating virtual port ID" instead.
 
 The following table provides a summary of network configuration items and indicates where the settings are applied.
 
