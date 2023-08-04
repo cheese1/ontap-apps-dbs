@@ -5,7 +5,7 @@ keywords: tiering, fabricpool
 summary: Subfile Tiering with FabricPool
 ---
 
-= Partial file  tiering
+= Partial file tiering
 
 :hardbreaks:
 :nofooter:
