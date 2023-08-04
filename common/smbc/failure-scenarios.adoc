@@ -44,7 +44,7 @@ There is an automatic resync when the site is online.
 |Loss of disks
 |IO continues for up to three consecutive disk failures. This is part of RAID-TEC.
 
-|Loss of the entire site in a typical  deployment
+|Loss of the entire site in a typical deployment
 
 |Servers on the failed site will obviously no longer be available. Applications that support clustering can be configured to run at both sites and continue operations on the alternate site, although most such applications require a 3rd site tiebreaker similar to how SM-BC requires the mediator.
 

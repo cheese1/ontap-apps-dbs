@@ -53,7 +53,7 @@ NFSv3 is stateless. It's not expecting communication from the clients. NFSv4 is 
 
 With NFSv3, you could move network cables around, reboot network switches, make configuration changes, and be fairly sure that nothing bad would happen. Applications would normally just wait patiently for the network connection to work again. 
 
-With NFSv4, you have 30 seconds (unless you've increased the value of that parameter within ONTAP) to complete your work. If you exceed that, your leases time out.  Normally this results in application crashes.
+With NFSv4, you have 30 seconds (unless you've increased the value of that parameter within ONTAP) to complete your work. If you exceed that, your leases time out. Normally this results in application crashes.
 
 As an example, if you have an Oracle database, and you experience a loss of network connectivity (sometimes called a "network partition") that exceeds the lease timeout, you will crash the database.
 
@@ -83,7 +83,7 @@ Oct 11 15:52:55 jfs0 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
 Oct 11 15:52:55 jfs0 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
 ....
 
-The log messages are usually the first sign of a problem, other than the application freeze.  Typically, you see nothing at all during the network outage because processes and the OS itself are blocked attempting to access the NFS filesystem.
+The log messages are usually the first sign of a problem, other than the application freeze. Typically, you see nothing at all during the network outage because processes and the OS itself are blocked attempting to access the NFS filesystem.
 
 The errors appear after the network is operational again. In the example above, once connectivity was reestablished, the OS attempted to reacquire the locks, but it was too late. The lease had expired and the locks were removed. That results in an error that propagates up to the Oracle layer and causes the message in the alert log. You might see variations on these patterns depending on the version and configuration of the database.
 
