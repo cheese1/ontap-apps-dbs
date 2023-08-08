@@ -24,6 +24,6 @@ entries:
     - title: Storage considerations
       url: /mssql/Storage-considerations.html
     - title: Storage efficiency
-      url: /mssql/Storage-efficiency.html
+      url: /mssql/storage-efficiency.html
   - title: SnapCenter
     url: /mssql/data-protection.html

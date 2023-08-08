@@ -1,11 +1,12 @@
 ---
 sidebar: sidebar
-permalink: mssql/compression.html
+permalink: mssql/storage-efficiency.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 
 = Storage efficiency
+
 [.lead]
 Storage efficiency is the ability to store and manage SQL Server data in a way that consumes the least amount of storage space with little or no effect on the overall performance of the system. 
 
