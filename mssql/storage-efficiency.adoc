@@ -16,4 +16,4 @@ Row compression changes the data storage format. For example, it changes integer
 
 Data compression is currently supported in the Enterprise, Developer, and Evaluation editions of SQL Server 2008 and later. Although compression can be performed by the database itself, this is rarely observed in a SQL Server environment.
 
-NetApp have different ways to compress a database using ONTAP features explained in this link:CPUConfiguration.html[link].link:/common/ontap/efficiency.html[linka]
+NetApp have different ways to compress a database using ONTAP features explained in this link:CPUConfiguration.html[link].link:./common/ontap/efficiency.html[linka]
