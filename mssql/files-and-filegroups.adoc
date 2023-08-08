@@ -42,7 +42,8 @@ image:./media/security-policy.png[Error: Missing Graphic Image]
 
 To check if the permission is enabled, you can use the code from the following example. This code sets two trace flags that force SQL Server to write additional information to the error log, create a small database, and read the content of the log.
 
-`DBCC TRACEON(3004,3605,-1)
+....
+DBCC TRACEON(3004,3605,-1)
 
 GO
 
@@ -60,7 +61,8 @@ GO
 
 DBCC TRACEOFF(3004,3605,-1)
 
-GO`
+GO
+....
 
 When instant file initialization is not enabled, the SQL Server error log shows that SQL Server is zeroing the mdf data file in addition to zeroing the ldf log file, as shown in the following example. When instant file initialization is enabled, it displays only zeroing of the log file.
 
