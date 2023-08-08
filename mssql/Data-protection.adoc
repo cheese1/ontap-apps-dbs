@@ -10,7 +10,6 @@ summary: Microsoft SQL Server on ONTAP
 [.lead]
 SnapCenter is the NetApp data protection software for enterprise applications.SQL Server databases can be quickly and easily protected using NetApp SnapCenter software with the Plug-in for SQL Server and the Plug-in for Microsoft Windows.
 
-This products enable application-consistent backup, automated cloning, and restore and recovery of SQL Server databases, instances, or availability groups. NetApp recommends using SnapCenter to create Snapshot copies. For more details about the SQL Server Plug-in for SnapCenter, see TR-4714: Best Practice Guide for SQL Server Using NetApp
-SnapCenter.
+This products enable application-consistent backup, automated cloning, and restore and recovery of SQL Server databases, instances, or availability groups. NetApp recommends using SnapCenter to create Snapshot copies. For more details about the SQL Server Plug-in for SnapCenter, see link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf[TR-4714: Best Practice Guide for SQL Server Using NetApp SnapCenter.]
 
 NetApp and partner professional services experts are available for assistance in complex projects. Even if assistance is not required during the project, NetApp strongly encourages new customers to use professional services for assistance in developing a high-level approach. 
