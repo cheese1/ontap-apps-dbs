@@ -4,7 +4,6 @@ permalink: common/metrocluster/physical-architecture.html
 keywords: metrocluster, MCC, MCC-IP
 summary: MetroCluster Physical Architecture
 ---
-
 = MetroCluster physical architecture
 :hardbreaks:
 :nofooter:
@@ -15,15 +14,14 @@ summary: MetroCluster Physical Architecture
 [.lead]
 MetroCluster clusters are available in three different configurations:
 
-* HA Pairs with IP connectivity
-* HA Pairs with FC connectivity
-* Single controllers with FC connectivity
+* HA pairs with IP connectivity
+* HA pairs with FC connectivity
+* Single controller with FC connectivity
 
 Note: The term ‘connectivity’ refers to the cluster connection used for cross-site replication. It does not refer to the host protocols. All host-side protocols are supported as usual in a MetroCluster configuration irrespective of the type of connection used for inter-cluster communication.
 
 == MetroCluster IP
-
-MetroClusters using IP connectivity are configured with HA pairs on each site. At the time of writing, it is limited to a single HA pair on each site. Only SAN-attached MetroCluster includes a single controller option.
+The HA-pair MetroCluster IP configuration uses two or four nodes per site. This configuration option increases the complexity and costs relative to the two-node option, but it delivers an important benefit: intrasite redundancy. A simple controller failure does not require data access across the WAN. Data access remains local through the alternate local controller.
 
 Most customers are choosing IP connectivity because the infrastructure requirements are simpler. In the past, high-speed cross-site connectivity was generally easier to provision using dark fibre and FC switches, but today high-speed, low latency IP circuits are more readily available.
 
@@ -31,37 +29,28 @@ The architecture is also simpler because the only cross-site connections are for
 
 For additional information, refer to the official ONTAP documentation and https://www.netapp.com/pdf.html?item=/media/13481-tr4689.pdf[MetroCluster IP Solution Architecture and Design^].
 
-The figure below depicts MetroCluster IP basic architecture.
-
 image:mccip.png[Error: Missing Graphic Image]
 
 == HA-Pair FC SAN-attached MetroCluster
-
-The HA-pair MetroCluster configuration uses two nodes per site. This configuration option increases the complexity and costs relative to the two-node option, but it delivers an important benefit: intrasite redundancy. A simple controller failure does not require data access across the WAN. Data access remains local through the alternate local controller.
-
-The basic design is depicted in the figure below.
+The HA-pair MetroCluster FC configuration uses two or four nodes per site. This configuration option increases the complexity and costs relative to the two-node option, but it delivers an important benefit: intrasite redundancy. A simple controller failure does not require data access across the WAN. Data access remains local through the alternate local controller.
 
 image:mcc-4-node.png[Error: Missing Graphic Image]
 
-Some multisite infrastructures are not designed for active-active operations, but rather are used more as a primary site and disaster recovery site. In this situation, the HA-pair MetroCluster option is generally preferable for the following reasons:
+Some multisite infrastructures are not designed for active-active operations, but rather are used more as a primary site and disaster recovery site. In this situation, an HA-pair MetroCluster option is generally preferable for the following reasons:
 
 * Although a two-node MetroCluster cluster is an HA system, unexpected failure of a controller or planned maintenance requires that data services must come online on the opposite site. If the network connectivity between sites cannot support the required bandwidth, performance is affected. The only option would be to also fail over the various host OSs and associated services to the alternate site. The HA-pair MetroCluster cluster eliminates this problem because loss of a controller results in simple failover within the same site.
 * Some network topologies are not designed for cross-site access, but instead use different subnets or isolated FC SANs. In these cases, the two-node MetroCluster cluster no longer functions as an HA system because the alternate controller cannot serve data to the servers on the opposite site. The HA-pair MetroCluster option is required to deliver complete redundancy.
 * If a two-site infrastructure is viewed as a single highly available infrastructure, the two-node MetroCluster configuration is suitable. However, if the system must function for an extended period of time after site failure, then an HA pair is preferred because it continues to provide HA within a single site.
 
 == Two-node FC SAN-attached MetroCluster
-
 The two-node MetroCluster configuration uses only one node per site. This design is simpler than the HA-pair option because there are fewer components to configure and maintain. It also has reduced infrastructure demands in terms of cabling and FC switching. Finally, it reduces costs.
-
-The figure below illustrates two-node FC SAN-attached MetroCluster basic architecture.
 
 image:mcc-2-node.png[Error: Missing Graphic Image]
 
 The obvious impact of this design is that controller failure on a single site means that data is available from the opposite site. This restriction is not necessarily a problem. Many enterprises have multisite data center operations with stretched, high-speed, low-latency networks that function essentially as a single infrastructure. In these cases, the two-node version of MetroCluster is the preferred configuration. Two-node systems are currently used at petabyte scale by several service providers.
 
 == MetroCluster resiliency features
-
-As shown in the figures above, there are no single points of failure in a MetroCluster solution:
+There are no single points of failure in a MetroCluster solution:
 
 * Each controller has two independent paths to the drive shelves on the local site.
 * Each controller has two independent paths to the drive shelves on the remote site.
