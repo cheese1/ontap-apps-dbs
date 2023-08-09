@@ -211,7 +211,7 @@ File created.
 
 === Recreate controlfiles
 
-In a previous step, the output of `backup controlfile to trace` was copied to the new server. The specific portion of the output required is the `controlfile recreation` command. This information can be found in the file under the section `Set #1. NORESETLOGS`. It starts with the line `create controlfile reuse database` and should include the word `noresetlogs`. It ends with the semicolon (; ) character.
+In a previous step, the output of `backup controlfile to trace` was copied to the new server. The specific portion of the output required is the `controlfile recreation` command. This information can be found in the file under the section marked `Set #1. NORESETLOGS`. It starts with the line `create controlfile reuse database` and should include the word `noresetlogs`. It ends with the semicolon (; ) character.
 
 . In this example procedure, the file reads as follows.
 +
@@ -397,7 +397,7 @@ sent 204 bytes  received 75153219 bytes  150306846.00 bytes/sec
 total size is 399653376  speedup is 5.32
 ....
 
-After the logs have been received, they must be replayed. Previous sections show the use of sqlplus to manually run `recover database until cancel`, a process that can easily be automated. The example shown here uses the script described in link:sample-scripts.html#replay-logs-on-database[Replay Logs on Database]. The scripts accept an argument that specifies the database requiring a replay operation. This permits the same script to be used in a multidatabase migration effort.
+After the logs have been received, they must be replayed. Previous examples show the use of sqlplus to manually run `recover database until cancel`, a process that can easily be automated. The example shown here uses the script described in link:sample-scripts.html#replay-logs-on-database[Replay Logs on Database]. The scripts accept an argument that specifies the database requiring a replay operation. This permits the same script to be used in a multidatabase migration effort.
 
 ....
 [oracle@jfsc3 logs]$ ./replay.logs.pl WAFFLE
@@ -591,7 +591,7 @@ duplicate target database for standby backup location INSERT_PATH_HERE;
 PL/SQL procedure successfully completed.
 ....
 
-Capture the output of this screen. The `log_file_name_convert` parameter is placed in the pfile as described in the following section. The RMAN data file rename and duplicate script must be edited accordingly to place the data files in the desired locations. In this example, they are all placed in `/oradata/pancake`.
+Capture the output of this screen. The `log_file_name_convert` parameter is placed in the pfile as described below. The RMAN data file rename and duplicate script must be edited accordingly to place the data files in the desired locations. In this example, they are all placed in `/oradata/pancake`.
 
 ....
 run
@@ -923,7 +923,7 @@ ORA-19635: input and output file names are identical: /rman/pancake/logship/1_47
 Recovery Manager complete.
 ....
 
-After the logs have been received, they must be replayed. Previous sections showed the use of sqlplus to manually run `recover database until cancel`, which can be easily automated. The example shown here uses the script described in link:sample-scripts.html#replay-logs-on-standby-database[Replay Logs on Standby Database]. The script accepts an argument that specifies the database requiring a replay operation. This process permits the same script to be used in a multidatabase migration effort.
+After the logs have been received, they must be replayed. Previous examples showed the use of sqlplus to manually run `recover database until cancel`, which can be easily automated. The example shown here uses the script described in link:sample-scripts.html#replay-logs-on-standby-database[Replay Logs on Standby Database]. The script accepts an argument that specifies the database requiring a replay operation. This process permits the same script to be used in a multidatabase migration effort.
 
 ....
 [root@jfsc2 pancake]# ./replaylogs.pl PANCAKE

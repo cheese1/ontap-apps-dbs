@@ -15,7 +15,7 @@ summary: Oracle RAC settings with networked storage
 [.lead]
 Oracle RAC is a clusterware product with several types of internal heartbeat processes that monitor the health of the cluster. 
 
-.[NOTE] The link:#misscount[Misscount] section includes critical information for Oracle RAC environments using networked storage, and in many cases the default Oracle RAC settings will need to be changed to ensure the RAC cluster survives network path changes and storage failover/switchover operations.
+.[NOTE] The information at link:#misscount[Misscount] includes critical information for Oracle RAC environments using networked storage, and in many cases the default Oracle RAC settings will need to be changed to ensure the RAC cluster survives network path changes and storage failover/switchover operations.
 
 == disktimeout
 

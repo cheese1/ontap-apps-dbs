@@ -13,7 +13,7 @@ summary: Sample scripts for automating Oracle migration operations
 :imagesdir: ./../media/
 
 [.lead]
-The scripts presented in this section are provided as examples of how to script various OS and database tasks. They are supplied as is. If support is required for a particular procedure, contact NetApp or a NetApp reseller.
+The scripts presented are provided as examples of how to script various OS and database tasks. They are supplied as is. If support is required for a particular procedure, contact NetApp or a NetApp reseller.
 
 == Database shutdown
 

@@ -103,7 +103,7 @@ To configure a LUN, complete the following steps:
 
 . Create a LUN of type `solaris`.
 . Install the appropriate Host Utility Kit (HUK) specified by the IMT.
-. Follow the instructions in the HUK exactly as described. The basic steps are outlined in this section but refer to the latest documentation for the proper procedure.
+. Follow the instructions in the HUK exactly as described. The basic steps are outlined below, but refer to the latest documentation for the proper procedure.
 .. Run the `host_config` utility to update the `sd.conf/sdd.conf` file. Doing so allows the SCSI drives to correctly discover ONTAP LUNs.
 .. Follow the instructions given by the `host_config` utility to enable multipath input/output (MPIO).
 .. Reboot. This step is required so that any changes are recognized across the system.
@@ -111,7 +111,7 @@ To configure a LUN, complete the following steps:
 
 === zpools
 
-A zpool should only be created after the steps in the section link:solaris.html#lun-configuration[LUN Configuration] are performed. If the procedure is not done correctly, it can result in serious performance degradation due to the I/O alignment. Optimum performance on ONTAP requires I/O to be aligned to a 4K boundary on a drive. The file systems created on a zpool use an effective block size that is controlled through a parameter called `ashift`, which can be viewed by running the command `zdb -C`.
+A zpool should only be created after the steps in the link:solaris.html#lun-configuration[LUN Configuration] are performed. If the procedure is not done correctly, it can result in serious performance degradation due to the I/O alignment. Optimum performance on ONTAP requires I/O to be aligned to a 4K boundary on a drive. The file systems created on a zpool use an effective block size that is controlled through a parameter called `ashift`, which can be viewed by running the command `zdb -C`.
 
 The value of `ashift` defaults to 9, which means 2^9, or 512 bytes. For optimum performance, the `ashift` value must be 12 (2^12=4K). This value is set at the time the zpool is created and cannot be changed, which means that data in zpools with `ashift` other than 12 should be migrated by copying data to a newly created zpool.
 

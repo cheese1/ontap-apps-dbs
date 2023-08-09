@@ -15,9 +15,9 @@ summary: Oracle on ONTAP DR procedure with log shipping
 [.lead]
 The replication procedures for an Oracle database are essentially the same as the backup procedures. The primary requirement is that the snapshots that constitute a recoverable backup must be replicated to the remote storage system.
 
-As discussed previously in the section on local data protection, a recoverable backup can be created with the hot backup process or by leveraging snapshot-optimized backups.
+As discussed previously in the documentation on local data protection, a recoverable backup can be created with the hot backup process or by leveraging snapshot-optimized backups.
 
-The most important requirement is isolation of the datafiles into one or more dedicated volumes. They must be uncontaminated by any other file type. The reason is to make sure that datafile replication is wholly independent of replication of other data types such as archive logs. For additional information on file layouts and for important details on ensuring the storage layout is snapshot friendly, see section link:oracle_hot_backup.html#data-layout[Data Layout].
+The most important requirement is isolation of the datafiles into one or more dedicated volumes. They must be uncontaminated by any other file type. The reason is to make sure that datafile replication is wholly independent of replication of other data types such as archive logs. For additional information on file layouts and for important details on ensuring the storage layout is snapshot friendly, see  link:oracle_hot_backup.html#data-layout[Data Layout].
 
 Assuming the datafiles are encapsulated into dedicated volumes, the next question is how to manage the redo logs, archive logs, and controlfiles. The simplest approach is to place all those data types into a single volume. The benefit of this is that replicated redo logs, archive logs, and controlfiles are perfectly synchronized. There is no requirement for incomplete recovery or using a backup controlfile, although it might be desirable to also script creation of backup controlfiles for other potential recovery scenarios.
 
