@@ -17,7 +17,7 @@ Configuration topics specific to the Linux OS.
 
 == Slot tables
 
-NFS performance on Linux depends on a parameter called `tcp_slot_table_entries`. Please see the section link:/common/storage-configuration/nfs.html[NFS] for critical information.
+NFS performance on Linux depends on a parameter called `tcp_slot_table_entries`. Please see the section link:../../common/storage-configuration/nfs.html[NFS] for critical information.
 
 == Linux NFS mount options
 
@@ -56,7 +56,7 @@ Redo logs
 .^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
 timeo=600,rsize=262144,wsize=262144,
 nointr,actimeo=0`
-.^|CRS/votin
+.^|CRS/voting
 .^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
 timeo=600,rsize=262144,wsize=262144,
 nointr,noac,actimeo=0`
