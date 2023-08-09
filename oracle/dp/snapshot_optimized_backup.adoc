@@ -5,7 +5,7 @@ keywords: oracle, data protection, snapshot-optimized, crash-consistent
 summary: Snapshot-optimized backup
 ---
 
-= Oracle snapshot-optimized backup
+= Oracle storage snapshot-optimized backup
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -24,7 +24,7 @@ As discussed previously, recovering a snapshot-based hot backup requires two set
 
 During recovery, the database reads metadata from the datafiles to select the required archive logs for recovery.
 
-Snapshot-optimized recovery requires slightly different datasets to accomplish the same results:
+Storage snapshot-optimized recovery requires slightly different datasets to accomplish the same results:
 
 * A snapshot of the datafiles, plus a method to identify the time the snapshot was created
 * Archive logs from the time of the most recent datafile checkpoint through the exact time of the snapshot
@@ -43,7 +43,7 @@ If these guidelines are followed, snapshots can be scheduled directly on ONTAP w
 
 A complication arises in situations such as an ASM disk group that is distributed across volumes. In these cases, a cg-snapshot must be performed to make sure that the ASM metadata is consistent across all constituent volumes.
 
-*Caution:* Verify that the ASM spfile and passwd files are not in the disk group hosting the datafiles. This interferes with the ability to selectively restore datafiles and only datafiles.
+[Note]Verify that the ASM spfile and passwd files are not in the disk group hosting the datafiles. This interferes with the ability to selectively restore datafiles and only datafiles.
 
 == Local recovery procedure—NFS
 

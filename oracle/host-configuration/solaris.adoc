@@ -13,7 +13,7 @@ summary: Oracle on ONTAP using Solaris
 :imagesdir: ./../media/
 
 [.lead]
-This section addresses configuration topics specific to the Solaris OS.
+Configuration topics specific to the Solaris OS.
 
 == Solaris NFS mount options
 
@@ -23,13 +23,13 @@ The following table lists the Solaris NFS mount options for a single instance.
 .^|File type |Mount options
 
 .^|ADR Home
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144`
+.^|`rw, bg, hard, [vers=3,vers=4.1], roto=tcp, timeo=600, rsize=262144, wsize=262144`
 .^|Controlfiles
 Datafiles
 Redo logs
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,llock,suid`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, llock, suid`
 .^|`ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,suid`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, suid`
 |===
 
 The use of `llock` has been proven to dramatically improve performance in customer environments by removing the latency associated with acquiring and releasing locks on the storage system. Use this option with care in environments in which numerous servers are configured to mount the same file systems and Oracle is configured to mount these databases. Although this is a highly unusual configuration, it is used by a small number of customers. If an instance is accidentally started a second time, data corruption can occur because Oracle is unable to detect the lock files on the foreign server. NFS locks do not otherwise offer protection; as in NFS version 3, they are advisory only.
@@ -42,17 +42,17 @@ The following table lists the Solaris NFS RAC mount options.
 .^|File type |Mount options
 
 .^|ADR Home
-.^|`rw, bg, hard, [vers=3,vers=4,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, noac`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, noac`
 .^|Control files
 Data files
 Redo logs
-.^|`rw, bg, hard, [vers=3,vers=4,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac, forcedirectio`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac, forcedirectio`
 .^|CRS/Voting
-.^|`rw, bg, hard, [vers=3,vers=4,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac, forcedirectio`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac, forcedirectio`
 .^|Dedicated `ORACLE_HOME`
-.^|`rw, bg, hard, [vers=3,vers=4,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, suid`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, suid`
 .^|Shared `ORACLE_HOME`
-.^|`rw, bg, hard, [vers=3,vers=4,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac, suid`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac, suid`
 |===
 
 The primary difference between single-instance and RAC mount options is the addition of `noac` and `forcedirectio` to the mount options. This addition has the effect of disabling the host OS caching, which enables all instances in the RAC cluster to have a consistent view of the state of the data. Although using the `init.ora` parameter `filesystemio_options=setall` has the same effect of disabling host caching, it is still necessary to use `noac` and `forcedirectio`.
@@ -101,7 +101,7 @@ To configure a LUN, complete the following steps:
 
 === zpools
 
-A zpool should only be created after the steps in the section link:oracle-ontap__solaris.html#lun-configuration[LUN Configuration] are performed. If the procedure is not done correctly, it can result in serious performance degradation due to the I/O alignment. Optimum performance on ONTAP requires I/O to be aligned to a 4K boundary on a drive. The file systems created on a zpool use an effective block size that is controlled through a parameter called `ashift`, which can be viewed by running the command `zdb -C`.
+A zpool should only be created after the steps in the section link:solaris.html#lun-configuration[LUN Configuration] are performed. If the procedure is not done correctly, it can result in serious performance degradation due to the I/O alignment. Optimum performance on ONTAP requires I/O to be aligned to a 4K boundary on a drive. The file systems created on a zpool use an effective block size that is controlled through a parameter called `ashift`, which can be viewed by running the command `zdb -C`.
 
 The value of `ashift` defaults to 9, which means 2^9, or 512 bytes. For optimum performance, the `ashift` value must be 12 (2^12=4K). This value is set at the time the zpool is created and cannot be changed, which means that data in zpools with `ashift` other than 12 should be migrated by copying data to a newly created zpool.
 

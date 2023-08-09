@@ -13,9 +13,9 @@ summary: Oracle RAC settings with networked storage
 :imagesdir: ./../media/
 
 [.lead]
-This section applies to Oracle 10.2.0.2 and later. For earlier versions of Oracle, consult Oracle Doc ID 294430.1 in conjunction with this document to determine optimal settings.
+Oracle RAC is a clusterware product with several types of internal heartbeat processes that monitor the health of the cluster. 
 
-[NOTE] The link:#misscount[Misscount] section includes critical information for Oracle RAC environments using networked storage, and in many cases the default Oracle RAC settings will need to be changed to ensure the RAC cluster survives network path changes and storage failover/switchover operations.
+.[NOTE] The link:#misscount[Misscount] section includes critical information for Oracle RAC environments using networked storage, and in many cases the default Oracle RAC settings will need to be changed to ensure the RAC cluster survives network path changes and storage failover/switchover operations.
 
 == disktimeout
 
@@ -43,4 +43,4 @@ NetApp recommends the following:
 * Leave the `misscount` parameter at the default value of 30 unless one of the following conditions applies:
 ** `grid` binaries are located on a network-attached drive, including NFS, iSCSI, FC, and datastore-based drives.
 ** The OS is SAN booted.
-* In such cases, evaluate the effect of network interruptions that affect access to OS or `GRID_HOME` file systems. In some cases, such interruptions cause the Oracle RAC daemons to stall, which can lead to a `misscount`-based timeout and eviction. The timeout defaults to 27 seconds, which is the value of `misscount `minus `reboottime`. In such cases, increase `misscount` to 200 to match `disktimeout`.
+* In such cases, evaluate the effect of network interruptions that affect access to OS or `GRID_HOME` file systems. In some cases, such interruptions cause the Oracle RAC daemons to stall, which can lead to a `misscount`-based timeout and eviction. The timeout defaults to 27 seconds, which is the value of `misscount` minus `reboottime`. In such cases, increase `misscount` to 200 to match `disktimeout`.

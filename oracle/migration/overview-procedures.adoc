@@ -13,7 +13,7 @@ summary: Oracle migration procedures - overview
 :imagesdir: ./../media/
 
 [.lead]
-The procedures detailed in the following sections are examples of the many available options.
+Many procedures are available for Oracle migration database. The right one depends on your business needs.
 
 In many cases, system administrators and DBAs have their own preferred methods of relocating physical volume data, mirroring and demirroring, or leveraging Oracle RMAN to copy data.
 

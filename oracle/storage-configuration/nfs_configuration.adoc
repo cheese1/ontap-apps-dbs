@@ -35,11 +35,8 @@ In addition, Oracle dNFS includes an *option* for network interface multipathing
 
 When dNFS is used, it is critical that all patches described in Oracle Doc 1495104.1 are installed. If a patch cannot be installed, the environment must be evaluated to make sure that the bugs described in that document do not cause problems. In some cases, an inability to install the required patches prevents the use of dNFS.
 
-|===
-|Caution
-
-|Do not use dNFS with any type of round-robin name resolution, including DNS, DDNS, NIS or any other method. This includes the DNS load balancing feature available in ONTAP. When an Oracle database using dNFS resolves a host name to an IP address it must not change on subsequent lookups. This can result in Oracle database crashes and possible data corruption.
-|===
+[Note]
+Do not use dNFS with any type of round-robin name resolution, including DNS, DDNS, NIS or any other method. This includes the DNS load balancing feature available in ONTAP. When an Oracle database using dNFS resolves a host name to an IP address it must not change on subsequent lookups. This can result in Oracle database crashes and possible data corruption.
 
 === Direct NFS and host file system access
 
@@ -50,7 +47,7 @@ When the mount options for single-instance databases are used, they enable cachi
 Only change mount options when (a) dNFS is used and (b) a problem results from a lag in file visibility. If dNFS is not in use, using Oracle RAC mount options on a single-instance database results in degraded performance.
 
 [NOTE]
-See the note about `nosharecache` in the section link:oracle-ontap__linux.html#linux-nfs-mount-options[Linux NFS Mount Options] for a Linux-specific dNFS issue that can produce unusual results.
+See the note about `nosharecache` in the section link:../host-configuration/linux.html#linux-direct-nfs[Linux NFS Mount Options] for a Linux-specific dNFS issue that can produce unusual results.
 
 == NFS versions
 
@@ -79,11 +76,8 @@ EcoSystems-A200-A::*> nfs server modify -vserver jfsCloud3 -tcp-max-xfer-size 26
 EcoSystems-A200-A::*>
 ....
 
-|===
-|Caution
-
+[Note]
 |Never decrease the maximum allowable transfer size on ONTAP below the value of rsize/wsize of currently mounted NFS filesystems. This can create hangs or even data corruption with some operating systems. For example, if NFS clients are currently set at an rsize/wsize of 65536, then the ONTAP maximum transfer size could be adjusted between 65536 and 1048576 with no effect because the clients themselves are limited. Reducing the maximum transfer size below 65536 can damage availability or data.
-|===
 
 == Installation and patching
 

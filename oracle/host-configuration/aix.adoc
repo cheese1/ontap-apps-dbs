@@ -12,14 +12,8 @@ summary: Oracle on ONTAP using AIX
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-08-12 10:15:58.768345
-//
-
 [.lead]
-This section addresses configuration topics specific to the IBM AIX operating system.
+Configuration topics specific to the IBM AIX operating system.
 
 == Concurrent I/O
 
@@ -38,19 +32,19 @@ NetApp recommends the following:
 
 == AIX NFS mount options
 
-The following table lists the AIX NFS mount options for a single instance.
+The following table lists the AIX NFS mount options for Oracle single instance databases.
 
 |===
 |File type |Mount options
 
 .^|ADR Home
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144`
 .^|Controlfiles
 Datafiles
 Redo logs
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144`
 .^|`ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,intr`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144,intr`
 |===
 
 The following table lists the AIX NFS mount options for RAC.
@@ -59,17 +53,17 @@ The following table lists the AIX NFS mount options for RAC.
 |File type |Mount options
 
 .^|ADR Home
-.^|`rw,bg,hard,[[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144`
 .^|Controlfiles
 Datafiles
 Redo logs
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=cp,timeo=600,rsize=262144,wsize=262144,nointr, noac`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac`
 .^|`CRS/Voting`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,noac`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac`
 .^|Dedicated `ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144`
 .^|Shared `ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr`
+.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr`
 |===
 
 The primary difference between single-instance and RAC mount options is the addition of `noac` to the mount options. This addition has the effect of disabling the host OS caching that enables all instances in the RAC cluster to have a consistent view of the state of the data.
@@ -93,4 +87,4 @@ Redo logs
 .^|Defaults
 |===
 
-Before using AIX hdisk devices in any environment, including databases, check the parameter `queue_depth`. This parameter is not the HBA queue depth; rather it relates to the SCSI queue depth of the individual hdisk device. Depending on how the LUNs are configured, the value for `queue_depth `might be too low for good performance. Testing has shown the optimum value to be 64.
+Before using AIX hdisk devices in any environment, including databases, check the parameter `queue_depth. This parameter is not the HBA queue depth; rather it relates to the SCSI queue depth of the individual hdisk device. Depending on how the LUNs are configured, the value for `queue_depth` might be too low for good performance. Testing has shown the optimum value to be 64.
