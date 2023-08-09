@@ -27,13 +27,18 @@ The following table lists the Linux NFS mount options for a single instance.
 .^|File type |Mount options
 
 .^|ADR Home
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
 .^|Control files
 Datafiles
 Redo logs
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr`
 .^|ORACLE_HOME
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr`
 |===
 
 The following table lists the Linux NFS mount options for RAC.
@@ -42,17 +47,26 @@ The following table lists the Linux NFS mount options for RAC.
 .^|File type |Mount options
 
 .^|ADR Home
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, actimeo=0`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+actimeo=0`
 .^|Control files
 Data files
 Redo logs
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, actimeo=0`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,actimeo=0`
 .^|CRS/votin
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, noac, actimeo=0`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,noac,actimeo=0`
 .^|Dedicated `ORACLE_HOME`
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
 .^|Shared `ORACLE_HOME`
-.^|`rw, bg, hard, [vers=3,vers=4.1], proto=tcp, timeo=600, rsize=262144, wsize=262144, nointr, actimeo=0`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,actimeo=0`
 |===
 
 The primary difference between single-instance and RAC mount options is the addition of `actimeo=0` to the mount options. This addition has the effect of disabling the host OS caching, which enables all instances in the RAC cluster to have a consistent view of the state of the data. Although using the `init.ora` parameter `filesystemio_options=setall` has the same effect of disabling host caching, it is still necessary to use `actimeo=0`.
