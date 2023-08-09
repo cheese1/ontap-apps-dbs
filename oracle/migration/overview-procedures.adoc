@@ -13,7 +13,7 @@ summary: Oracle migration procedures - overview
 :imagesdir: ./../media/
 
 [.lead]
-The procedures detailed in the following sections are examples of the many available options.
+Many procedures are available for Oracle migration database. The right one depends on your business needs.
 
 In many cases, system administrators and DBAs have their own preferred methods of relocating physical volume data, mirroring and demirroring, or leveraging Oracle RMAN to copy data.
 
@@ -33,7 +33,7 @@ In addition, simply moving a datafile is a good option for migrating parts of ex
 
 == Database-level migration
 
-Migration at the database level means allowing the database to relocate data. Specifically, this means log shipping. Technologies such as RMAN and ASM are Oracle products, but, for the purposes of this document, they operate at the host level where they copy files and manage volumes.
+Migration at the database level means allowing the database to relocate data. Specifically, this means log shipping. Technologies such as RMAN and ASM are Oracle products, but, for the purposes of migration, they operate at the host level where they copy files and manage volumes.
 
 === Log shipping
 
@@ -86,7 +86,7 @@ Replatforming refers to a change in the CPU type. When a database is migrated fr
 
 Traditionally, customers have used DataPump to replicate data across platforms. DataPump is a utility that creates a special type of logical data export that can be more rapidly imported at the destination database. Because it creates a logical copy of the data, DataPump leaves the dependencies of processor endianness behind. DataPump is still used by some customers for replatforming, but a faster option has become available with Oracle 11g: cross-platform transportable tablespaces. This advance allows a tablespace to be converted to a different endian format in place. This is a physical transformation that offers better performance than a DataPump export, which must convert physical bytes to logical data and then convert back to physical bytes.
 
-A complete discussion of DataPump and transportable tablespaces is beyond the scope of this document. However, NetApp has some recommendations based on our experience assisting customers during migration to a new storage array log with a new CPU architecture:
+A complete discussion of DataPump and transportable tablespaces is beyond the scope NetApp documentation, but NetApp has some recommendations based on our experience assisting customers during migration to a new storage array log with a new CPU architecture:
 
 * If DataPump is being used, the time required to complete the migration should be measured in a test environment. Customers are sometimes surprised at the time required to complete the migration. This unexpected additional downtime can cause disruption.
 * Many customers mistakenly believe that cross-platform transportable tablespaces do not require data conversion. When a CPU with a different endian is used, an RMAN `convert` operation must be performed on the data files beforehand. This is not an instantaneous operation. In some cases, the conversion process can be sped up by having multiple threads operating on different data files, but the conversion process cannot be avoided.
