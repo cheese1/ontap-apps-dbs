@@ -8,7 +8,9 @@ summary: Microsoft SQL Server on ONTAP
 = Storage considerations
 
 [.lead]
-The combination of NetApp storage solutions and Microsoft SQL Server enables the creation of enterprise-level database storage designs that can meet today’s most demanding application requirements. To optimize both technologies, it is vital to understand the SQL Server I/O pattern and characteristics. A well-designed storage layout for a SQL Server database supports the performance of SQL Server and the management of the SQL Server infrastructure. A good storage layout also allows the initial deployment to be successful and the environment to grow smoothly over time as the business grows.
+The combination of NetApp storage solutions and Microsoft SQL Server enables the creation of enterprise-level database storage designs that can meet today’s most demanding application requirements. 
+
+To optimize both technologies, it is vital to understand the SQL Server I/O pattern and characteristics. A well-designed storage layout for a SQL Server database supports the performance of SQL Server and the management of the SQL Server infrastructure. A good storage layout also allows the initial deployment to be successful and the environment to grow smoothly over time as the business grows.
 
 == Data storage design
 
@@ -18,34 +20,20 @@ When you create a new database, Microsoft recommends specifying separate drives 
 
 == Aggregates
 
-Aggregates are the primary storage containers for NetApp storage configurations and contain one or
-more RAID groups consisting of both data disks and parity disks.
-NetApp has performed various I/O workload characterization tests using shared and dedicated
-aggregates with data files and transaction log files separated. The tests show that one large aggregate
-with more RAID groups and spindles optimizes and improves storage performance and is easier for
-administrators to manage for two reasons:
+Aggregates are the primary storage containers for NetApp storage configurations and contain one or more RAID groups consisting of both data disks and parity disks. NetApp has performed various I/O workload characterization tests using shared and dedicated aggregates with data files and transaction log files separated. The tests show that one large aggregate with more RAID groups and spindles optimizes and improves storage performance and is easier for administrators to manage for two reasons:
 
 • One large aggregate makes the I/O capabilities of all spindles available to all files.
 • One large aggregate enables the most efficient use of disk space.
 
-For high availability (HA), place the SQL Server Always On Availability Group secondary synchronous
-replica on a separate storage virtual machine (SVM) in the aggregate. For disaster recovery purposes,
-place the asynchronous replica on an aggregate that is part of a separate storage cluster in the DR site,
-with content replicated by using NetApp SnapMirror® technology.
-NetApp recommends having at least 10% free space available in an aggregate for optimal storage
-performance.
+For high availability (HA), place the SQL Server Always On Availability Group secondary synchronous replica on a separate storage virtual machine (SVM) in the aggregate. For disaster recovery purposes, place the asynchronous replica on an aggregate that is part of a separate storage cluster in the DR site, with content replicated by using NetApp SnapMirror® technology. NetApp recommends having at least 10% free space available in an aggregate for optimal storage performance.
 
 == Volumes
 
-NetApp FlexVol volumes are created and reside inside aggregates. Many volumes can be created in a
-single aggregate, and each volume can be expanded, shrunk, or moved between aggregates with no
-user downtime.
+NetApp FlexVol volumes are created and reside inside aggregates. Many volumes can be created in a single aggregate, and each volume can be expanded, shrunk, or moved between aggregates with no user downtime.
 
 === Volume design considerations
 
-Before you create a database volume design, it is important to understand how the SQL Server I/O
-pattern and characteristics vary depending on the workload and on the backup and recovery
-requirements. See the following NetApp recommendations for flexible volumes:
+Before you create a database volume design, it is important to understand how the SQL Server I/O pattern and characteristics vary depending on the workload and on the backup and recovery requirements. See the following NetApp recommendations for flexible volumes:
 
 • Use flexible volumes to store SQL Server database files and avoid sharing volumes between hosts.
 • Use NTFS mount points instead of drive letters to surpass the 26-drive-letter limitation in Windows. When using volume mount points, it is a general recommendation to give the volume label the same name as the mount point.
@@ -66,7 +54,7 @@ requirements. See the following NetApp recommendations for flexible volumes:
 * Placing database secondary files (as part of a filegroup) on separate volumes improves the performance of the SQL Server database. This separation is valid only if the database’s .mdf file does not share its LUN with any other .mdf files.
 * If you create LUNs with DiskManager or other tools, make sure that the allocation unit size is set to 64K for partitions when formatting the LUNs.
 
-== Log directory
+=== Log directory
 
 Log directory is specified in SQL Server to store transaction log backup data at the host level. If you are using SnapCenter to backup log files then each SQL Server host used by SnapCenter must have a host log directory configured to perform log backups. SnapCenter has a database repository, so metadata related to backup, restore, or cloning operations is stored in a central database repository.
 

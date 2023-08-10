@@ -22,7 +22,7 @@ There are two main schools of thought when licensing SQL Server. The first is kn
 
 image:./media/hyperthreading.png[Error: Missing Graphic Image]
 
-Therefore, to use all CPUs, you should use the per-processor core license. For detailed information about SQL Server licensing, see SQL Server 2019: Your modern data platform.
+Therefore, to use all CPUs, you should use the per-processor core license. For detailed information about SQL Server licensing, see link:https://www.microsoft.com/en-us/sql-server/sql-server-2022-comparison[SQL Server 2022: Your modern data platform].
 
 == CPU affinity
 
@@ -53,7 +53,7 @@ Normally, a separate operating system thread is created for each query request. 
 
 The default value is 0, which allows SQL Server to automatically configure the number of worker threads at startup. This works for most systems. Max worker threads is an advanced option and should not be altered without assistance from an experienced database administrator (DBA).
 
-When should you configure SQL Server to use more worker threads? If the average work queue length for each scheduler is above 1, you might benefit from adding more threads to the system, but only if the load is not CPU-bound or experiencing any other heavy waits. If either of those is happening, adding more threads does not help because they end up waiting for other system bottlenecks. For more information about max worker threads, see Configure the max worker threads Server Configuration Option. 
+When should you configure SQL Server to use more worker threads? If the average work queue length for each scheduler is above 1, you might benefit from adding more threads to the system, but only if the load is not CPU-bound or experiencing any other heavy waits. If either of those is happening, adding more threads does not help because they end up waiting for other system bottlenecks. For more information about max worker threads, see link:https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-max-worker-threads-server-configuration-option?view=sql-server-ver16&redirectedfrom=MSDN[Configure the max worker threads Server Configuration Option]. 
 
 image:./media/max-worker-threads.png[Error: Missing Graphic Image]
 

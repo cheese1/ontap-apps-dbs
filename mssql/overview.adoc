@@ -27,7 +27,7 @@ The best practices and recommendations described in this guide enable SQL Server
 * SnapCenter Plug-in for SQL Server
 * Microsoft SQL Server architecture and administration 
 
-For configuration compatibility across the NetApp stack, see the NetApp Interoperability Matrix Tool (IMT).
+For configuration compatibility across the NetApp stack, see the link:http://mysupport.netapp.com/NOW/products/interoperability/[NetApp Interoperability Matrix Tool (IMT)].
 
 == Intended audience
 
