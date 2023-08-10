@@ -13,9 +13,7 @@ summary: Oracle on SAN configuration overview
 :imagesdir: ./../media/
 
 [.lead]
-This section contains the high-level recommendations for configuration of Oracle database SAN storage.
-
-The primary requirements are found in link:common/storage-configuration/fcsan.html[SAN Configuration], with additional guidance as follows:
+The primary requirements for Oracle databases on SAN are found in link:../../common/storage-configuration/fcsan.html[SAN Configuration], with additional guidance as follows:
 
 == LUN misalignment warnings
 

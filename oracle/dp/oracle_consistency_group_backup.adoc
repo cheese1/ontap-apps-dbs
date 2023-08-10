@@ -5,7 +5,7 @@ keywords: oracle, data, protection, consistency, group, backup, volume, archive,
 summary: Consistency group backups for Oracle on ONTAP
 ---
 
-= Oracle Consistency Group backup
+= Oracle consistency group backup
 :hardbreaks:
 :nofooter:
 :icons: font

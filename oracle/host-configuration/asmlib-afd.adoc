@@ -13,7 +13,7 @@ summary: Oracle on ONTAP using Linux and ASMlib/ASM Filter Driver
 :imagesdir: ./../media/
 
 [.lead]
-This section addresses configuration topics specific to the Linux OS.
+Configuration topics specific to the Linux OS using AFD and ASMlib
 
 == ASMlib block sizes
 

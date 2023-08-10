@@ -35,11 +35,8 @@ In addition, Oracle dNFS includes an *option* for network interface multipathing
 
 When dNFS is used, it is critical that all patches described in Oracle Doc 1495104.1 are installed. If a patch cannot be installed, the environment must be evaluated to make sure that the bugs described in that document do not cause problems. In some cases, an inability to install the required patches prevents the use of dNFS.
 
-|===
-|Caution
-
-|Do not use dNFS with any type of round-robin name resolution, including DNS, DDNS, NIS or any other method. This includes the DNS load balancing feature available in ONTAP. When an Oracle database using dNFS resolves a host name to an IP address it must not change on subsequent lookups. This can result in Oracle database crashes and possible data corruption.
-|===
+[Note]
+Do not use dNFS with any type of round-robin name resolution, including DNS, DDNS, NIS or any other method. This includes the DNS load balancing feature available in ONTAP. When an Oracle database using dNFS resolves a host name to an IP address it must not change on subsequent lookups. This can result in Oracle database crashes and possible data corruption.
 
 === Direct NFS and host file system access
 
@@ -50,7 +47,7 @@ When the mount options for single-instance databases are used, they enable cachi
 Only change mount options when (a) dNFS is used and (b) a problem results from a lag in file visibility. If dNFS is not in use, using Oracle RAC mount options on a single-instance database results in degraded performance.
 
 [NOTE]
-See the note about `nosharecache` in the section link:oracle-ontap__linux.html#linux-nfs-mount-options[Linux NFS Mount Options] for a Linux-specific dNFS issue that can produce unusual results.
+See the note about `nosharecache` in link:../host-configuration/linux.html#linux-direct-nfs[Linux NFS Mount Options] for a Linux-specific dNFS issue that can produce unusual results.
 
 == NFS versions
 
@@ -79,11 +76,8 @@ EcoSystems-A200-A::*> nfs server modify -vserver jfsCloud3 -tcp-max-xfer-size 26
 EcoSystems-A200-A::*>
 ....
 
-|===
-|Caution
-
+[Note]
 |Never decrease the maximum allowable transfer size on ONTAP below the value of rsize/wsize of currently mounted NFS filesystems. This can create hangs or even data corruption with some operating systems. For example, if NFS clients are currently set at an rsize/wsize of 65536, then the ONTAP maximum transfer size could be adjusted between 65536 and 1048576 with no effect because the clients themselves are limited. Reducing the maximum transfer size below 65536 can damage availability or data.
-|===
 
 == Installation and patching
 
@@ -180,11 +174,11 @@ From an Oracle database perspective, there is very little difference between NFS
 
 If NFSv4 capabilities are required, NetApp recommends using NFSv4.1. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency in certain edge cases. NFSv4.2 is not yet supported with Oracle databases.
 
-Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP Best Practices^]. The following sections of this TR explain some of the basic requirements for using Oracle on NFSv4.
+Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP Best Practices^]. 
 
 === NFSv4 domain
 
-A complete explanation of NFSv4/4.1 configuration is beyond the scope of this document, but one commonly encountered problem is a mismatch in domain mapping. From a sysadmin point of view, the NFS filesystems appear to behave normally, but the database reports an error about permissions and/or setuid on the `oradism` file. In some cases, DBA’s have incorrectly concluded that the permissions of the Oracle binaries have been damaged and have run chown or chmod commands when the actual problem was the domain name.
+One commonly encountered problem is a mismatch in domain mapping. From a sysadmin point of view, the NFS filesystems appear to behave normally, but the database reports an error about permissions and/or setuid on the `oradism` file. In some cases, DBA’s have incorrectly concluded that the permissions of the Oracle binaries have been damaged and have run chown or chmod commands when the actual problem was the domain name.
 
 The NFSv4 domain name is set on the ONTAP SVM:
 

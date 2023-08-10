@@ -12,14 +12,8 @@ summary: Oracle on ONTAP using Microsoft Windows
 :linkattrs:
 :imagesdir: ./../media/
 
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-08-12 10:15:58.810042
-//
-
 [.lead]
-This section addresses configuration topics specific to the Microsoft Windows OS.
+Configuration topics specific to the Microsoft Windows OS.
 
 == NFS
 

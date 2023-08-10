@@ -13,7 +13,7 @@ summary: Oracle on ONTAP using HP-UX
 :imagesdir: ./../media/
 
 [.lead]
-This section addresses configuration topics specific to the HP-UX operating system.
+Configuration topics specific to the sHP-UX operating system.
 
 == HP-UX NFS Mount Options
 
@@ -23,13 +23,18 @@ The following table lists the HP-UX NFS mount options for a single instance.
 .^|File type |Mount options
 
 .^|ADR Home
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,suid`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+suid`
 .^|Control files
 Datafiles
 Redo logs
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,forcedirectio,nointr,suid`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,forcedirectio, nointr,suid`
 .^|`ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,suid`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+suid`
 |===
 
 The following table lists the HP-UX NFS mount options for RAC.
@@ -38,18 +43,28 @@ The following table lists the HP-UX NFS mount options for RAC.
 .^|File type |Mount options
 
 .^|ADR Home
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,noac,suid`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+noac,suid`
 .^|Control files
 Datafiles
 Redo logs
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,noac,forcedirectio,suid`
+.^|`rw, bg,hard, [vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,noac,forcedirectio,suid`
 .^|CRS/Voting
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,noac,
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,noac, 
 forcedirectio,suid`
 .^|Dedicated `ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,suid`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+suid`
 .^|Shared `ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,noac,suid`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,noac,suid`
 |===
 
 The primary difference between single-instance and RAC mount options is the addition of `noac` and `forcedirectio` to the mount options. This addition has the effect of disabling host OS caching, which enables all instances in the RAC cluster to have a consistent view of the state of the data. Although using the `init.ora` parameter `filesystemio_options=setall` has the same effect of disabling host caching, it is still necessary to use `noac` and `forcedirectio`.
