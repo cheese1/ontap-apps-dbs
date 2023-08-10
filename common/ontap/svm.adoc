@@ -27,4 +27,4 @@ Most customers operate one primary SVM for most of their day-to-day requirements
 * An SVM for a development group to whom complete administrative control has been given so that they can manage their own storage independently
 * An SVM for sensitive business data, such as human resources or financial reporting data, for which the administrative team must be limited
 
-In a multitenant environment, each tenant's data can be given a dedicated SVM. The limit for the number of SVMs and LIFs per cluster, HA pair, and node are dependant on the protocol being used and the version of ONTAP.
+In a multitenant environment, each tenant's data can be given a dedicated SVM. The limit for the number of SVMs and LIFs per cluster, HA pair, and node are dependant on the protocol being used, the node model, and the version of ONTAP.  Consult the link:https://hwu.netapp.com/[NetApp Hardware Universe] for these limits.

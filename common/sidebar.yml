@@ -77,17 +77,17 @@ entries:
         url: /common/smbc/architecture.html
       - title: Failover
         url: /common/smbc/failover.html
-      - title: Failure Scenarios
+      - title: Failure scenarios
         url: /common/smbc/failure-scenarios.html
   - title: Tiering
     entries:
     - title: Overview
       url: /common/tiering/overview.html
-    - title: Tiering Policies
+    - title: Tiering policies
       entries:
-      - title: Sending data to Object Store
+      - title: Sending data to an object store
         url: /common/tiering/tiering-policies.html
-      - title: Retriving data from Object Store
+      - title: Retrieving data from object store
         url: /common/tiering/retrieval-policies.html
     - title: Tiering strategies
       entries:
@@ -97,7 +97,7 @@ entries:
         url: /common/tiering/partial-files.html
       - title: Select files
         url: /common/tiering/logs.html
-      - title: Snapshots
+      - title: Snapshot copies
         url: /common/tiering/snapshots.html
       - title: Backups
         url: /common/tiering/backups.html
