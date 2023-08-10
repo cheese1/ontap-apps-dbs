@@ -128,7 +128,7 @@ Support for NS224 shelf connectivity to MCC-IP switch on A900 and FAS9500 platfo
 ////
 
 === Virtual third site with ClusterLion
-ClusterLion is an advanced MetroCluster monitoring appliance that functions as a virtual third site. This approach allows MetroCluster to be safely deployed in a two-site configuration with fully automated switchover capability. Furthermore, ClusterLion can perform additional network level monitor and execute post-switchover operations. Complete documentation is available from ProLion. The figure below shows some of the highlights.
+ClusterLion is an advanced MetroCluster monitoring appliance that functions as a virtual third site. This approach allows MetroCluster to be safely deployed in a two-site configuration with fully automated switchover capability. Furthermore, ClusterLion can perform additional network level monitor and execute post-switchover operations. Complete documentation is available from ProLion.
 
 image:clusterlion.png[Error: Missing Graphic Image]
 
