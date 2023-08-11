@@ -41,15 +41,15 @@ The block size used by adaptive compression can be increased up to 32KB. This ma
 Temperature sensitive storage efficiency (TSSE) is a available in ONTAP 9.8 and later that relies on block access heat maps to identify infrequently accessed blocks and compress them with greater efficiency.
 
 === Compression alignment
-Adaptive compression in a database environment requires some consideration of compression block alignment. Doing so is only a concern for data that is subject to random overwrites of very specific blocks. This approach is similar in concept to overall filesystem alignment, as is described in the section link:../storage-configuration/fcsan.html#LUN%20alignment[LUN Alignment].
+Adaptive compression in a database environment requires some consideration of compression block alignment. Doing so is only a concern for data that is subject to random overwrites of very specific blocks. This approach is similar in concept to overall file system alignment, as is described in the section link:../storage-configuration/fcsan.html#LUN%20alignment[LUN Alignment].
 
-For example, an 8KB write to a file is compressed only if it aligns with an 8KB boundary within the filesystem itself. This point means that it must fall on the first 8KB of the file, the second 8KB of the file, and so forth. Data such as RMAN backups or archive logs are sequentially written operations that span multiple blocks, all of which are compressed. Therefore, there is no need to consider alignment. The only I/O pattern of concern is the random overwrites of files.
+For example, an 8KB write to a file is compressed only if it aligns with an 8KB boundary within the file system itself. This point means that it must fall on the first 8KB of the file, the second 8KB of the file, and so forth. Data such as RMAN backups or archive logs are sequentially written operations that span multiple blocks, all of which are compressed. Therefore, there is no need to consider alignment. The only I/O pattern of concern is the random overwrites of files.
 
 ==== NFS
 With the use of NFS, file I/O is aligned. Each block of a file is aligned with respect to the start of the file.
 
 ==== SAN
-SAN environments require data to be aligned to an 8KB boundary for optimum compression. There are two aspects of alignment for SAN: the LUN and the filesystem. The LUN must be configured as either a whole-drive device (no partition) or with a partition that aligns to an 8KB boundary.
+SAN environments require data to be aligned to an 8KB boundary for optimum compression. There are two aspects of alignment for SAN: the LUN and the file system. The LUN must be configured as either a whole-drive device (no partition) or with a partition that aligns to an 8KB boundary.
 
 [NOTE]
 See the section link:../thin-provisioning.html#Fractional%20reservations[fractional reservations] for an explanation of the interaction between compression and fractional reservation.

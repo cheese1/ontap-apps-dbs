@@ -61,7 +61,7 @@ The following figure shows three possible options for stripe size and width tuni
 image:ontap-lvm-striping.png[Error: Missing Graphic Image]
 
 == LUN alignment
-LUN alignment refers to optimizing I/O with respect to the underlying file system layout. On a ONTAP system, storage is organized in 4KB units. A database or filesystem 8KB block should map to exactly two 4KB blocks. If an error in LUN configuration shifts the alignment by 1KB in either direction, each 8KB block would exist on three different 4KB storage blocks rather than two. This arrangement would cause increased latency and cause additional I/O to be performed within the storage system.
+LUN alignment refers to optimizing I/O with respect to the underlying file system layout. On a ONTAP system, storage is organized in 4KB units. A database or file system 8KB block should map to exactly two 4KB blocks. If an error in LUN configuration shifts the alignment by 1KB in either direction, each 8KB block would exist on three different 4KB storage blocks rather than two. This arrangement would cause increased latency and cause additional I/O to be performed within the storage system.
 
 Alignment also affects LVM architectures. If a physical volume within a logical volume group is defined on the whole drive device (no partitions are created), the first 4KB block on the LUN aligns with the first 4KB block on the storage system. This is a correct alignment. Problems arise with partitions because they shift the starting location where the OS uses the LUN. As long as the offset is shifted in whole units of 4KB, the LUN is aligned.
 
