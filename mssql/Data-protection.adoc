@@ -10,7 +10,7 @@ summary: Microsoft SQL Server on ONTAP
 [.lead]
 Protecting database is critical to any organization. As data size and count of databases have increased, maintaining recovery time objective (RTO) and recovery point objective (RPO) is very crucial.
 
-The main consideration for database backup is leveraging NetApp Snapshot technology. Data protection planning on ONTAP is discussed in link:../common/dp/overview.html[here]. Application consistent backup and database layout are other key consideration to achieve RTO and RPO which can be orchestrated by NetApp SnapCenter.
+The main consideration for database backup is leveraging NetApp Snapshot technology. Data protection planning on ONTAP is discussed link:../common/dp/overview.html[here]. Application consistent backup and database layout are other key consideration to achieve RTO and RPO which can be orchestrated by NetApp SnapCenter.
 
 == SnapCenter
 

@@ -68,7 +68,7 @@ When instant file initialization is not enabled, the SQL Server error log shows 
 
 image:./media/zeroing.png[Error: Missing Graphic Image]
 
-The perform volume maintenance task is simplified in SQL Server 2016 and is later provided as an option during the installation process. Figure 6 displays the option to grant the SQL Server database engine service the privilege to perform the volume maintenance task.
+The perform volume maintenance task is simplified in SQL Server 2016 and is later provided as an option during the installation process. This figure displays the option to grant the SQL Server database engine service the privilege to perform the volume maintenance task.
 
 image:./media/maintenance.png[Error: Missing Graphic Image]
 
