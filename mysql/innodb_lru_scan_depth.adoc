@@ -4,7 +4,6 @@ permalink: mysql/innodb_lru_scan_depth.html
 keywords: MySQL,MariaDB,innodb_lru_scan_depth
 summary: MySQL on ONTAP
 ---
-
 = innodb_lru_scan_depth
 
 [.lead]
@@ -12,6 +11,6 @@ The `innodb_lru_scan_depth` parameter influences the algorithms and heuristics o
 
 This parameter is primarily of interest to performance experts tuning I/O-intensive workloads. For each buffer pool instance, this parameter specifies how far down in the least recently used (LRU) page list the page cleaner thread should continue scanning, looking for dirty pages to flush. This background operation is performed once per second.
 
-You can adjust the value up or down to minimize the number of free pages. Don’t set the value much higher than needed, because the scans can have a significant performance cost. Also, consider adjusting this parameter when changing the number of buffer pool instances, because `innodb_lru_scan_depth` X `innodb_buffer_pool_instances` defines the amount of work performed by the page cleaner thread each second.
+You can adjust the value up or down to minimize the number of free pages. Don't set the value much higher than needed, because the scans can have a significant performance cost. Also, consider adjusting this parameter when changing the number of buffer pool instances, because `innodb_lru_scan_depth * innodb_buffer_pool_instances` defines the amount of work performed by the page cleaner thread each second.
 
 A setting smaller than the default is suitable for most workloads. Consider increasing the value only if you have spare I/O capacity under a typical workload. Conversely, if a write-intensive workload saturates your I/O capacity, decrease the value, especially if you have a large buffer pool.
