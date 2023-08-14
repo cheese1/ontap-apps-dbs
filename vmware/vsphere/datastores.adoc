@@ -251,7 +251,7 @@ Configuring network settings when using vSphere with systems running ONTAP softw
 * NetApp recommends the following best practices for link aggregation:
 ** Use switches that support link aggregation of ports on two separate switch chassis using a multi-chassis link aggregation group approach such as Cisco’s Virtual PortChannel (vPC).
 ** Disable LACP for switch ports connected to ESXi unless you are using dvSwitches 5.1 or later with LACP configured.
-** Use LACP to create link aggregates for ONTAP storage systems with dynamic multimode interface groups with port or IP hash.
+** Use LACP to create link aggregates for ONTAP storage systems with dynamic multimode interface groups with port or IP hash. Refer to https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html#dynamic-multimode-interface-group[Network Management^] for further guidance.
 ** Use an IP hash teaming policy on ESXi when using static link aggregation (e.g., EtherChannel) and standard vSwitches, or LACP-based link aggregation with vSphere Distributed Switches. If link aggregation is not used, then use "Route based on the originating virtual port ID" instead.
 
 The following table provides a summary of network configuration items and indicates where the settings are applied.
