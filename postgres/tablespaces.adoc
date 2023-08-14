@@ -4,12 +4,12 @@ permalink: postgres/tablespaces.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Tablespaces
 ---
-
 = Tablespaces
+
 [.lead]
 Two tablespaces are automatically created when the database cluster is initialized. 
 
-The pg_global tablespace is used for shared system catalogs. The pg_default tablespace is the default tablespace of the template1 and template0 databases. If the partition or volume on which the cluster was initialized runs out of space and cannot be extended, a tablespace can be created on a different partition and used until the system can be reconfigured.
+The `pg_global tablespace is used for shared system catalogs. The `pg_default` tablespace is the default tablespace of the template1 and template0 databases. If the partition or volume on which the cluster was initialized runs out of space and cannot be extended, a tablespace can be created on a different partition and used until the system can be reconfigured.
 
 An index that is heavily used can be placed on a fast, highly available disk, like a solid-state device. Also, a table storing archived data that is rarely used or not performance critical can be stored on a less expensive, slower disk system like SAS or SATA drives.
 

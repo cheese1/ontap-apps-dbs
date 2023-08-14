@@ -4,14 +4,12 @@ permalink: postgres/filesystems.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
-
 = Filesystems
 
 [.lead]
-PostgreSQL can be hosted on either NFS or SAN filesystems
+PostgreSQL can be hosted on either NFS or SAN filesystems.
 
 == NFS
-
 With NFS, NetApp recommends using version 4.1, because it has an integrated locking feature that version 3 lacks. Also, it has new features such as statefulness, improved security, and strong authentication. 
 
 Use the following mount option while mounting an NFS file system:
@@ -19,8 +17,7 @@ Use the following mount option while mounting an NFS file system:
 nfs4 rw, hard,nointr,bg,vers=4,sync,proto=tcp,noatime,rsize=65536,wsize=65536
 ....
 
-For higher performance options, see link:/common/storage-configuration/nfs.html#ontap-nfs-transfer-sizes[NFS Transfer Sizes]
+To improve NFS performance, see link:../common/storage-configuration/nfs.html#ontap-nfs-transfer-sizes[NFS transfer sizes].
 
 == SAN
-
-For guidance on SAN configuration and important details about LVM striping and LUN counts, see link:/common/storage-configuration/fcsan.html[FC SAN]
+For guidance on SAN configuration and important details about LVM striping and LUN counts, see link:..//common/storage-configuration/fcsan.html[FC SAN].
