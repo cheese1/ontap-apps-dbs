@@ -25,7 +25,7 @@ There are multiple reasons for separating data in this manner, including:
 
 * The I/O patterns of data files and log files differ. Separating them would allow more options with QoS controls.
 
-* Optimal use of Snapshot technology requires the ability to independently restore the data files. Comingling data files with log files interferes with data file restoration.
+* Optimal use of Snapshot technology requires the ability to independently restore the data files. Commingling data files with log files interferes with data file restoration.
 
 * NetApp SnapMirror technology can be used to provide a simple, low-RPO disaster recovery capability for a database; however, it requires different replication schedules for the data files and logs.
 
