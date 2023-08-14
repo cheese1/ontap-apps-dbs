@@ -16,7 +16,7 @@ summary: Oracle RAC settings with networked storage
 Oracle RAC is a clusterware product with several types of internal heartbeat processes that monitor the health of the cluster. 
 
 [NOTE]
-.The information in the link:#misscount[misscount] section includes critical information for Oracle RAC environments using networked storage, and in many cases the default Oracle RAC settings will need to be changed to ensure the RAC cluster survives network path changes and storage failover/switchover operations.
+The information in the link:#misscount[misscount] section includes critical information for Oracle RAC environments using networked storage, and in many cases the default Oracle RAC settings will need to be changed to ensure the RAC cluster survives network path changes and storage failover/switchover operations.
 
 == disktimeout
 The primary storage-related RAC parameter is `disktimeout`. This parameter controls the threshold within which voting file I/O must complete. If the `disktimeout` parameter is exceeded, then the RAC node is evicted from the cluster. The default for this parameter is 200. This value should be sufficient for standard storage takeover and giveback procedures.
