@@ -11,18 +11,18 @@ NFS performance on Linux depends on a parameter called `tcp_max_slot_table_entri
 
 This parameter regulates the number of outstanding NFS operations that are permitted on a Linux operating system.
 
-The default value in most 2.6-derived kernels, which includes RH5 and OL5, is 16. However, this default frequently causes performance problems. The opposite problem occurs on newer kernels in which the `tcp_slot_table_entries value defaults to 65536, and can cause storage problems by flooding the system with excessive requests. RHEL 7 and RHEL 8 have a default of 65536. The solution is to set this value statically. Use a value of 128 for any Linux operating system using NetApp NFS storage with a MySQL database. To set this value in Red Hat Enterprise Linux, place the following entry in /etc/sysctl.conf:
+The default value in most 2.6-derived kernels, which includes RH5 and OL5, is 16. However, this default frequently causes performance problems. The opposite problem occurs on newer kernels in which the `tcp_slot_table_entries` value defaults to 65536, and can cause storage problems by flooding the system with excessive requests. RHEL 7 and RHEL 8 have a default of 65536. The solution is to set this value statically. Use a value of 128 for any Linux operating system using NetApp NFS storage with a MySQL database. To set this value in Red Hat Enterprise Linux, place the following entry in /etc/sysctl.conf:
 
-Set `tcp_max_slot_table_entries`
+Set `tcp_max_slot_table_entries`:
 ....
 [root@host1 ~]# echo "sunrpc.tcp_max_slot_table_entries = 128" >> /etc/sysctl.conf
 [root@host1 ~]# sysctl -p
 ....
-Confirm the value is set
+Confirm the value is set:
 ....
 [root@host1 ~]# sysctl sunrpc.tcp_max_slot_table_entries
 sunrpc.tcp_max_slot_table_entries = 128
 ....
 
 [NOTE]
-There is another parameter very similarly named -- tcp_max_slot_table_entries. This value defines how many slots are assigned to a TCP session when first established. You do not need to modify this value.
+There is another parameter very similarly named `tcp_max_slot_table_entries. This value defines how many slots are assigned to a TCP session when first established. You do not need to modify this value.
