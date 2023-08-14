@@ -4,37 +4,35 @@ permalink: mysql/file-structure.html
 keywords: MySQL,MariaDB
 summary: MySQL file structure
 ---
-
 = File structure
-[.lead]
-InnoDB acts as the middle layer between storage and the MySQL server — it stores the data to the drives. 
 
-The figure below shows how InnoDB interacts with storage.
+[.lead]
+InnoDB acts as the middle layer between storage and the MySQL server, it stores the data to the drives. 
 
 image:./media/file-structure1.png[Error: Graphic image not found]
 
-MySQL I/O is categorized into two types (as shown in Figure 3):
+MySQL I/O is categorized into two types:
 
 * Random file I/O
 * Sequential file I/O
 
 image:./media/file-structure2.png[Error: Graphic image not found]
 
-Data files are randomly read and overwritten, which results in high IOPS levels. Therefore, SSD storage is recommended. 
+Data files are randomly read and overwritten, which results in high IOPS. Therefore, SSD storage is recommended. 
 
 Redo log files and binary log files are transactional logs. They are sequentially written, so you can get good performance on HDD with the write cache. A sequential read happens on recovery, but it rarely causes a performance problem, because log file size is usually smaller than data files, and sequential reads are faster than random reads (occurring on data files).
 
-The double-write buffer is a special feature of InnoDB. InnoDB first writes flushed pages to the double-write buffer, and then writes the pages to their correct positions on the data files. This process prevents page corruption. Without the double-write buffer, the page might become corrupted if a power failure occurs during the write-to-drives process. Because writing to the double-write buffer is sequential, it is highly optimized for HDDs. Sequential reads occur on recovery. 
+The double-write buffer is a special feature of InnoDB. InnoDB first writes flushed pages to the double-write buffer and then writes the pages to their correct positions on the data files. This process prevents page corruption. Without the double-write buffer, the page might become corrupted if a power failure occurs during the write-to-drives process. Because writing to the double-write buffer is sequential, it is highly optimized for HDDs. Sequential reads occur on recovery. 
 
-Because ONTAP NVRAM already provides write protection, double-write buffering is not required. MySQL has a parameter, skip_innodb_doublewrite, to disable the double-write buffer. This feature can substantially improve performance.
+Because ONTAP NVRAM already provides write protection, double-write buffering is not required. MySQL has a parameter, `skip_innodb_doublewrite`, to disable the double-write buffer. This feature can substantially improve performance.
 
-The insert buffer is also a special feature of InnoDB. If nonunique secondary index blocks are not in memory, InnoDB inserts entries into the insert buffer to avoid random I/O operations. Periodically, the insert buffer is merged into the secondary index trees in the database. The insert buffer reduces the number of I/O operations by merging I/O requests to the same block; random I/O operations can be sequential. The insert buffer is also highly optimized for HDDs. Both sequential writes and reads occur during normal operations.
+The insert buffer is also a special feature of InnoDB. If non-unique secondary index blocks are not in memory, InnoDB inserts entries into the insert buffer to avoid random I/O operations. Periodically, the insert buffer is merged into the secondary index trees in the database. The insert buffer reduces the number of I/O operations by merging I/O requests to the same block; random I/O operations can be sequential. The insert buffer is also highly optimized for HDDs. Both sequential writes and reads occur during normal operations.
 
-Undo segments are random I/O oriented. To guarantee multiversion concurrency (MVCC), InnoDB must register old images in the undo segments. Reading previous images from the undo segments requires random reads. If you run a long transaction with repeatable reads (such as mysqldump—single transaction) or run a long query, random reads can occur. Therefore, storing undo segments on SSDs is better in this instance. If you run only short transactions or queries, the random reads are not an issue.
+Undo segments are random I/O oriented. To guarantee multi-version concurrency (MVCC), InnoDB must register old images in the undo segments. Reading previous images from the undo segments requires random reads. If you run a long transaction with repeatable reads (such as mysqldump—single transaction) or run a long query, random reads can occur. Therefore, storing undo segments on SSDs is better in this instance. If you run only short transactions or queries, the random reads are not an issue.
 
 Because of these InnoDB I/O characteristics, NetApp recommends the following storage design layout:
 
 * One volume to store random and sequential I/O-oriented files of MySQL
 * Another volume to store purely sequential I/O-oriented files of MySQL
 
-This layout also helps you design data protection policies and strategy.
+This layout also helps you design data protection policies and strategies.

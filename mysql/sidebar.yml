@@ -38,4 +38,12 @@ entries:
     - title: File descriptors
       url: /mysql/file-descriptors.html
   - title: Storage configuration
-    url: /mysql/storage.html
+    entries:
+    - title: General storage configuration
+      url: /mysql/storage.html
+    - title: MySQL over NFS
+      url: /mysql/mysql-over-nfs.html
+    - title: MySQL over SAN
+      url: /mysql/mysql-over-san.html
+    - title: MySQL tiering with FabricPool
+      url: /mysql/tiering.html

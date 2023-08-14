@@ -21,6 +21,8 @@ entries:
         url: /common/network-configuration/fc.html
     - title: Storage configuration
       entries:
+      - title: Overview
+        url: /common/storage-configuration/overview.html
       - title: FC SAN
         url: /common/storage-configuration/fcsan.html
       - title: NFS
