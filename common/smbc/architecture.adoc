@@ -2,9 +2,8 @@
 sidebar: sidebar
 permalink: common/smbc/architecture.html
 keywords: smbc, sm-bc
-summary: SM-BC overview
+summary: SnapMirror Business Continuity (SM-BC) overview
 ---
-
 = Overview
 :hardbreaks:
 :nofooter:
@@ -13,34 +12,30 @@ summary: SM-BC overview
 :imagesdir: ./../media/
 
 [.lead]
-SM-BC is an essentially an enhanced SnapMirror capability for SAN that allows hosts to access a LUN from both the system hosting the LUN as well as the system hosting its replica.
+SnapMirror Business Continuity (SM-BC) is essentially an enhanced SnapMirror capability for SAN that allows hosts to access a LUN from both the system hosting the LUN as well as the system hosting its replica.
 
-SM-BC and SM-S share a replication engine, however, SM-BC includes additional features such as transparent application failover and failback for enterprise applications. 
+SM-BC and SnapMirror Sync (SM-S) share a replication engine, however, SM-BC includes additional features such as transparent application failover and failback for enterprise applications. 
 
 In practice, it works similar to a granular version of MetroCluster by enabling selective and granular RPO=0 synchronous replication for individual workloads. The low-level path behavior is very different from MetroCluster, but the end result from a host point of view is similar. 
 
 == Path access
-
 SM-BC makes storage devices visible to host operating systems from both the primary and remote storage arrays. Paths are managed through asymmetric logical unit access (ALUA), which is an industry standard protocol for identifying optimized paths between a storage system and a host.
 
 The device path that is the shortest to access I/O is considered Active/Optimized paths and the rest of the paths are considered Active/Nonoptimized paths. 
 
-As shown below, the SM-BC relationship is between a pair of SVMs located on different clusters. Both SVMs are capable of serving data, but ALUA will preferantially use the SVM that currently has ownership of the drives on which the LUNs reside. IO to the remote SVM will be proxied across the SM-BC interconnect.
+The SM-BC relationship is between a pair of SVMs located on different clusters. Both SVMs are capable of serving data, but ALUA will preferentially use the SVM that currently has ownership of the drives on which the LUNs reside. IO to the remote SVM will be proxied across the SM-BC interconnect.
 
 image:smbc-failover-1.png[Error: Missing Graphic Image]
 
-== Modes
-
+== Operating modes
 SM-BC can operate in one of two modes:
 
-*Sync* mode means that in normal operation, the remote copy is an RPO=0 synchronous replica at all times, with one exception. If data cannot be replicated, SM-BC will release the requirement to replicate data and resume serving IO. This option is preferred by customers who consider loss of the replication link a near-disaster, or who do not want business operations to halt when data cannot be replicated.
+* *Sync* mode means that in normal operation, the remote copy is an RPO=0 synchronous replica at all times, with one exception. If data cannot be replicated, SM-BC will release the requirement to replicate data and resume serving IO. This option is preferred by customers who consider loss of the replication link a near-disaster, or who do not want business operations to halt when data cannot be replicated.
 
-*StrictSync* mode guarantees RPO=0. If writes cannot be replicated, the LUNs will go offline. This option was created for customers with critical data or strict SLAs where all changes must be replicated at all times. The LUNs are taken offline if the replication timeout lapses in order to produce errors at the file level. This is normally required to trigger BC automation and avoid unbreakable hangs of application processes. 
+* *StrictSync* mode guarantees RPO=0. If writes cannot be replicated, the LUNs will go offline. This option was created for customers with critical data or strict SLAs where all changes must be replicated at all times. The LUNs are taken offline if the replication timeout lapses in order to produce errors at the file level. This is normally required to trigger business continuity automation and avoid unbreakable hangs of application processes. 
 
 == Storage hardware
-
-Unlike other storage disaster recovery solutions, SM-BC offers asymmetric platform flexibility—the hardware at each site does not need to be identical. This capability allows you to right-size the hardware used to support SM-BC. The remote storage system can be identical to the primary site if it needs to support a full production workload, but if a disaster results in reduced I/O, than a smaller system at the remote site might be more cost-effective.
+Unlike other storage disaster recovery solutions, SM-BC offers asymmetric platform flexibility. The hardware at each site does not need to be identical. This capability allows you to right-size the hardware used to support SM-BC. The remote storage system can be identical to the primary site if it needs to support a full production workload, but if a disaster results in reduced I/O, than a smaller system at the remote site might be more cost-effective.
 
 == ONTAP mediator
-
 The ONTAP Mediator is a software application that is downloaded from NetApp support. Mediator automates failover operations for both the primary and remote site storage cluster. It can be deployed on a small virtual machine (VM) hosted either on-premises or in the cloud. After it is configured, it acts as a third site to monitor failover scenarios for both the sites.

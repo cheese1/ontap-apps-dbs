@@ -14,4 +14,4 @@ summary: Oracle and stale NFSv3 Locks
 
 [.lead]
 
-Consult link:/common/network-configuration/ethernet.html[Ethernet Configuration] and link:/common/network-configuration/fc.html[FC Configuration] for critical information about configuring your network for for maximum performance and resiliency.
+Consult link:../../common/network-configuration/ethernet.html[Ethernet Configuration] and link:../../common/network-configuration/fc.html[FC Configuration] for critical information about configuring your network for for maximum performance and resiliency.

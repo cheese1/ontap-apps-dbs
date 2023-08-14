@@ -16,7 +16,7 @@ summary: Oracle on ONTAP and the role of snapshots
 [.lead]
 The most important consideration for a database file system layout is the plan for leveraging NetApp Snapshot technology. 
 
-This topic is discussed in much more detail in subsequent sections of this document, but it is important to understand the basic procedures in order to begin designing your Oracle storage layout.
+This topic is discussed in much more detail in subsequent parts of this documentation, but it is important to understand the basic procedures in order to begin designing your Oracle storage layout.
 
 There are two primary approaches to snapshot-based backups:
 
@@ -37,7 +37,7 @@ The basic procedure for a snapshot-based online backup is as follows:
 
 This procedure yields a set of snapshots containing datafiles in backup mode and the critical archive logs generated while in backup mode. These are the two requirements for recovering a database. Files such as control files should also be protected for convenience, but the only absolute requirement is protection for datafiles and archive logs.
 
-Although different customers might have very different strategies, almost all of these strategies are ultimately based on the principles outlined in this section.
+Although different customers might have very different strategies, almost all of these strategies are ultimately based on the the same principles outlined below.
 
 == Snapshot-based recovery
 

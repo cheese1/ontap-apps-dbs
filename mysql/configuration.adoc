@@ -2,10 +2,9 @@
 sidebar: sidebar
 permalink: mysql/configuration.html
 keywords: MySQL,MariaDB
-summary: MySQL Configuration
+summary: MySQL configuration
 ---
-
-= Configuration Overview
+= Configuration overview
 
 [.lead]
 NetApp recommends a few important MySQL configuration parameters (listed in Table 1) to obtain optimal performance.
@@ -44,4 +43,4 @@ NetApp recommends a few important MySQL configuration parameters (listed in Tabl
 |65535
 |===
 
-To set the parameters described in this section, you must change them in the MySQL configuration file (my.cnf). The NetApp best practices are a result of the tests performed in-house. Detailed test results and the hardware configuration of the server are detailed in section 15, “Performance Results.”
+To set the parameters described in this section, you must change them in the MySQL configuration file (my.cnf). The NetApp best practices are a result of tests performed in-house.

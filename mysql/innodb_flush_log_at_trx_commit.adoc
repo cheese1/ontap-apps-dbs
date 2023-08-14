@@ -4,10 +4,10 @@ permalink: mysql/innodb_flush_log_at_trx_commit.html
 keywords: MySQL,MariaDB,innodb_doublewrite
 summary: MySQL on ONTAP
 ---
+= innodb_flush_log_at_trx_commit
 
-= c
 [.lead]
-When there is a change to the data, the change is not immediately written to storage. 
+When there is a change to the data, the change is not immediately written to storage.
 
 Instead, the data is recorded in a log buffer, which is a portion of memory that InnoDB allocates to buffer changes that are recorded in the log file. InnoDB flushes the buffer to the log file when a transaction is committed, when the buffer gets full, or once per second, whichever event happens first. The configuration variable that controls this process is innodb_flush_log_at_trx_commit. The value options include: 
 
@@ -15,7 +15,7 @@ Instead, the data is recorded in a log buffer, which is a portion of memory that
 
 * When you set `innodb_flush_log_trx_commit=1`, InnoDB writes the log buffer to the transaction log and flushes to durable storage for every transaction. For example, for all transaction commits, InnoDB writes to the log and then writes to storage. Slower storage negatively affects performance; for example, the number of InnoDB transactions per second is reduced.
 
-* When you set `innodb_flush_log_trx_commit=2`, InnoDB writes the log buffer to the log file at every commit; however, it doesn’t write data to storage. InnoDB flushes data once every second. Even if there is a power failure or system crash, option 2 data is available in the log file and is recoverable.
+* When you set `innodb_flush_log_trx_commit=2`, InnoDB writes the log buffer to the log file at every commit; however, it doesn't write data to storage. InnoDB flushes data once every second. Even if there is a power failure or system crash, option 2 data is available in the log file and is recoverable.
 
 If performance is the main goal, set the value to 2. Since InnoDB writes to the drives once per second, not for every transaction commit, performance improves dramatically. If a power failure or crash occurs, data can be recovered from the transaction log.
 

@@ -4,7 +4,6 @@ permalink: common/tiering/partial-files.html
 keywords: tiering, fabricpool
 summary: Subfile Tiering with FabricPool
 ---
-
 = Partial file tiering
 
 :hardbreaks:
@@ -14,7 +13,7 @@ summary: Subfile Tiering with FabricPool
 :imagesdir: ./../media/
 
 [.lead]
-Because FabricPool works at the block level, files that are subject to change can be partially tiered to object storage while also remaining partially on local SSD storage.
+Because FabricPool works at the block level, files that are subject to change can be partially tiered to object storage while also remaining partially on performance tier.
 
 This is common with databases. Databases that are known to contain inactive blocks are also candidates for FabricPool tiering. For example, a supply chain management database might contain historical information that must be available if needed but is not accessed during normal operations. FabricPool can be used to selectively relocate the inactive blocks.
 
@@ -24,10 +23,9 @@ For example, datafiles running on a FabricPool volume with a `tiering-minimum-co
 The `auto` policy should be used with care with databases. Many databases have periodic activities such as end-of-quarter process or reindexing operations. If the period of these operations is greater than the `tiering-minimum-cooling-days` performance problems can occur. For example, if end-of-quarter processing requires 1TB of data that was otherwise untouched, that data might now be present on the capacity tier. Reads from the capacity tier is often extremely fast and may not cause performance problems, but the exact results will depend on the object store configuration.
 
 == Policies
-
 The `tiering-minimum-cooling-days` policy should be set high enough to retain files that might be required on the performance tier. For example, a database in which the most recent 60 days of data might be required with optimal performance would warrant setting the `tiering-minimum-cooling-days` period to 60 days. Similar results could also be achieved based on the access patterns of files. For example, if the most recent 90 days of data is required and the application is accessing that 90- day span of data, then the data would remain on the performance tier. Setting the `tiering-minimum-cooling-days` period to 2 days would tier the data promptly after the data becomes less active.
 
-The `auto` policy is required to drive tiering of these blocks because only the `auto` policy affects blocks that are in the active filesystem.
+The `auto` policy is required to drive tiering of these blocks because only the `auto` policy affects blocks that are in the active file system.
 
 [NOTE]
 Any type of access to data resets the heat map data. Therefore, database full table scans and even backup activity that reads the source files prevents tiering because the required `tiering-minimum-cooling-days` threshold is never reached.
