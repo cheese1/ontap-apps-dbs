@@ -15,13 +15,11 @@ Larger databases require multiple LUNs. For example, a database that requires 10
 
 In both cases, a pair of ONTAP volumes should be sufficient. With a simple configuration, the data file LUN would be placed in a dedicated volume, as would the log LUN. With a logical volume manager configuration, all the LUNs in the data file volume group would be in a dedicated volume, and the LUNs of the log volume group would be in a second dedicated volume. 
 
-|===
 *NetApp recommends* two file systems for MySQL deployments on SAN:
 
 * The first file system stores all MySQL data including tablespace, data, and index.
 
 * The second file system stores all logs (binary logs, slow logs, and transaction logs).
-|===
 
 There are multiple reasons for separating data in this manner, including: 
 
@@ -34,7 +32,6 @@ There are multiple reasons for separating data in this manner, including:
 [NOTE]
 Use this basic two-volume layout to future-proof the solution so that all ONTAP features can be used if needed. 
 
-|===
 *NetApp recommends* that you format your drive with the ext4 file system because of the following features:
 
 * Extended approach to block management features used in the journaling file system (JFS) and delayed allocation features of the extended file system (XFS).
@@ -44,13 +41,10 @@ Use this basic two-volume layout to future-proof the solution so that all ONTAP 
 * In ext4 file systems, multiblock allocation (mballoc) allocates multiple blocks for a file in a single operation, instead of allocating them one by one, as in ext3. This configuration reduces the overhead of calling the block allocator several times, and it optimizes the allocation of memory.
 
 * Although XFS is the default for many Linux distributions, it manages metadata differently and is not suitable for some MySQL configurations.
-|===
 
-|===
 *NetApp recommends* using 4k block size options with the mkfs utility to align with existing block LUN size.
 
 mkfs.ext4 -b 4096
-|===
 
 NetApp LUNs store data in 4KB physical blocks, which yields eight 512-byte logical blocks.
 
