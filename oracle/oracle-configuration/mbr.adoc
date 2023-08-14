@@ -2,9 +2,10 @@
 permalink: oracle/oracle-configuration/mbr.html
 sidebar: sidebar
 keywords: oracle, database, ontap, db_file_multiblock_read_count, multiblock
-summary: Oracle multblock read parameter
+summary: Oracle multiblock read parameter
 ---
 = db_file_multiblock_read_count
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -20,6 +21,5 @@ Oracle recommends that the user leave this parameter unset. Doing so allows the 
 
 Most database performance problems observed by NetApp at customer sites involve an incorrect setting for this parameter. There were valid reasons to change this value with Oracle versions 8 and 9. As a result, the parameter might be unknowingly present in `init.ora` files because the database was upgraded in place to Oracle 10 and later. A legacy setting of 8 or 16, compared to a default value of 128, significantly damages sequential I/O performance.
 
-NetApp recommends the following:
-
-* The `db_file_multiblock_read_count` parameter should not be present in the `init.ora` file. NetApp has never encountered a situation in which changing this parameter improved performance, but there are many cases in which it caused clear damage to sequential I/O throughput.
+*NetApp recommends:* 
+Setting the `db_file_multiblock_read_count` parameter should not be present in the `init.ora` file. NetApp has never encountered a situation in which changing this parameter improved performance, but there are many cases in which it caused clear damage to sequential I/O throughput.
