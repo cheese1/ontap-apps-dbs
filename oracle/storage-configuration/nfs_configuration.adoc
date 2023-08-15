@@ -142,7 +142,7 @@ For optimum performance and to prevent performance problems, adjust the kernel p
 Run the `sysctl -a | grep tcp.*.slot_table` command, and observe the following parameters:
 
 ....
-# sysctl -a | grep tcp.*.slot_table
+[root@host1 ~]# sysctl -a | grep tcp.*.slot_table
 sunrpc.tcp_max_slot_table_entries = 128
 sunrpc.tcp_slot_table_entries = 128
 ....
@@ -162,48 +162,48 @@ From an Oracle database perspective, there is very little difference between NFS
 
 If NFSv4 capabilities are required, NetApp recommends using NFSv4.1. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency in certain edge cases. NFSv4.2 is not yet supported with Oracle databases.
 
-Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP best practices^]. 
+Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see link:https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP best practices^]. 
 
 === NFSv4 domain
-One commonly encountered problem is a mismatch in domain mapping. From a sysadmin point of view, the NFS filesystems appear to behave normally, but the database reports an error about permissions and/or setuid on the `oradism` file. In some cases, DBA’s have incorrectly concluded that the permissions of the Oracle binaries have been damaged and have run chown or chmod commands when the actual problem was the domain name.
+One commonly encountered problem is a mismatch in domain mapping. From a sysadmin point of view, the NFS filesystems appear to behave normally, but the database reports an error about permissions and/or setuid on the `oradism` file. In some cases, DBA's have incorrectly concluded that the permissions of the Oracle binaries have been damaged and have run chown or chmod commands when the actual problem was the domain name.
 
 The NFSv4 domain name is set on the ONTAP SVM:
 
 ....
-EcoSystems-A200-A::> nfs server show -fields v4-id-domain
+Cluster01::> nfs server show -fields v4-id-domain
 vserver   v4-id-domain
 --------- ------------
-jfsCloud3 jfs.lab
+vserver1  my.lab
 ....
 
 The NFSv4 domain name on the host is set in `/etc/idmap.cfg`
 
 ....
-[root@jfs0 etc]# head /etc/idmapd.conf
+[root@host1 etc]# head /etc/idmapd.conf
 [General]
 #Verbosity = 0
 # The following should be set to the local NFSv4 domain name
 # The default is the host's DNS domain name.
-Domain = jfs.lab
+Domain = my.lab
 ....
 
 The domain names must match. If they do not, mapping errors similar to the following appear in` /var/log/messages`:
 
 ....
-Apr 12 11:43:08 jfs0 nfsidmap[16298]: nss_getpwnam: name 'root@jfs.lab' does not map into domain 'default.com'
+Apr 12 11:43:08 host1 nfsidmap[16298]: nss_getpwnam: name 'root@my.lab' does not map into domain 'default.com'
 ....
 
 Oracle binaries include files owned by root with the setuid bit, which means a mismatch in the NFSv4 domain names causes failures with Oracle dNFS startup and a warning about the ownership or permissions of a file called `oradism`, which is located in the `$ORACLE_HOME/bin` directory. It should appear as follows:
 
 ....
-`[root@jfs0 etc]# ls -l /orabin/product/19.3.0.0/dbhome_1/bin/oradism`
+`[root@host1 etc]# ls -l /orabin/product/19.3.0.0/dbhome_1/bin/oradism`
 `-rwsr-x--- 1 root oinstall 147848 Apr 17  2019 /orabin/product/19.3.0.0/dbhome_1/bin/oradism`
 ....
 
 If this file appears with ownership of nobody, there may be an NFSv4 domain mapping problem.
 
 ....
-`[root@jfs0 bin]# ls -l oradism`
+`[root@host1 bin]# ls -l oradism`
 `-rwsr-x--- 1 nobody oinstall 147848 Apr 17  2019 oradism`
 ....
 
