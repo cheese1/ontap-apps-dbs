@@ -4,8 +4,8 @@ permalink: oracle/host-configuration/windows.html
 keywords: oracle, database, ontap, windows
 summary: Oracle on ONTAP using Microsoft Windows
 ---
-
 = Microsoft Windows
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,9 +16,7 @@ summary: Oracle on ONTAP using Microsoft Windows
 Configuration topics specific to the Microsoft Windows OS.
 
 == NFS
-
 Oracle supports the use of Microsoft Windows with the direct NFS client. This capability offers a path to the management benefits of NFS, including the ability to view files across environments, dynamically resize volumes, and leverage a less expensive IP protocol. See the official Oracle documentation for information on installing and configuring a database on Microsoft Windows using DNFS. No special best practices exist.
 
 == SAN
-
-For optimum compression efficiency, make sure that NTFS file systems use an 8192 byte or larger allocation unit. Use of a 4096-byte allocation unit, which is generally the default, damages efficiency.
+For optimal compression efficiency, ensure the NTFS file system uses an 8K or larger allocation unit. Use of a 4K allocation unit, which is generally the default, negatively impacts compression efficiency.
