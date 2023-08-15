@@ -5,6 +5,7 @@ keywords: storage, tiering, fabricpool
 summary: FabricPool overview
 ---
 = Oracle tiering with FabricPool
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,4 +15,4 @@ summary: FabricPool overview
 [.lead]
 Understanding how FabricPool tiering affects applications and databases requires an understanding of low-level FabricPool architecture.
 
-For a detailed overview for succesfully implementing a tiering strategy with Oracle, click link:../../common/tiering/overview.html[here].
+For a detailed overview for successfully implementing a tiering strategy with Oracle, click link:../../common/tiering/overview.html[here].

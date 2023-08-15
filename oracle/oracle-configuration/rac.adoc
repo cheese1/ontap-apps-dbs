@@ -26,6 +26,7 @@ NetApp strongly recommends testing RAC configurations thoroughly before placing 
 If an actual storage takeover or giveback cannot be performed, the effect can be simulated with cable pull tests on the database server.
 
 *NetApp recommends:*
+
 * Leaving the `disktimeout` parameter at the default value of 200.
 * Always test a RAC configuration thoroughly.
 
@@ -37,6 +38,7 @@ If access to a boot drive is interrupted by a storage takeover or giveback, it i
 In the case of nonlocal boot drives or a nonlocal file system hosting `grid` binaries, the `misscount` will need to be changed to match `disktimeout`. If this parameter is changed, conduct further testing to also identify any effects on RAC behavior, such as node failover time.
 
 *NetApp recommends:*
+
 * Leave the `misscount` parameter at the default value of 30 unless one of the following conditions applies:
 ** `grid` binaries are located on a network-attached drive, including NFS, iSCSI, FC, and datastore-based drives.
 ** The OS is SAN booted.
