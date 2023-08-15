@@ -49,12 +49,12 @@ See the note about `nosharecache` in link:../host-configuration/linux.html#linux
 == NFS versions
 The operating system NFS client must be supported by NetApp, and if dNFS is used then it too must be supported.
 
-* NFSv3 is supported with OS’s that follow the NFSv3 standard. dNFS is supported with NFSv3 with all versions of Oracle.
-* NFSv4 is supported with all OS’s that follow the NFSv4 standard. dNFS support for NFSv4 requires Oracle 12.2.0.2 or higher.
-* NFSv4.1 requires specific OS support. Consult the NetApp IMT for supported OS’s. dNFS support for NFSv4.1 requires Oracle version 19.3.0.0 or higher.
+* NFSv3 is supported with OS's that follow the NFSv3 standard. dNFS is supported with NFSv3 with all versions of Oracle.
+* NFSv4 is supported with all OS's that follow the NFSv4 standard. dNFS support for NFSv4 requires Oracle 12.2.0.2 or higher.
+* NFSv4.1 requires specific OS support. Consult the NetApp IMT for supported OS's. dNFS support for NFSv4.1 requires Oracle version 19.3.0.0 or higher.
 
 [NOTE]
-The NetApp support matrix for NFSv3 and NFSv4 does not include specific operating systems. All OSs that obey the RFC are generally supported. When searching the online IMT for NFSv3 or NFSv4 support, do not select a specific OS because there will be no matches displayed. All OSs are implicitly supported by the general policy.
+The NetApp support matrix for NFSv3 and NFSv4 does not include specific operating systems. All OSs that obey the RFC are generally supported. When searching the online link:https://imt.netapp.com/matrix/#search[NetApp Interoperability Matrix Tool (IMT)^] for NFSv3 or NFSv4 support, do not select a specific OS because there will be no matches displayed. All OSs are implicitly supported by the general policy.
 
 == ONTAP NFS transfer sizes
 By default, ONTAP limits NFS I/O sizes to 64K. Random I/O with an Oracle database uses a much smaller block size which is well below the 64K maximum. Large-block I/O is usually parallelized, so the 64K maximum is also not a limitation.
@@ -64,18 +64,17 @@ There are some workloads where the 64K maximum does create a limitation. In part
 The maximum transfer size for a given ONTAP SVM can be changed as follows:
 
 ....
-EcoSystems-A200-A::> set advanced
+Cluster01::> set advanced
 Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
 Do you want to continue? {y|n}: y
-EcoSystems-A200-A::*> nfs server modify -vserver jfsCloud3 -tcp-max-xfer-size 262144
-EcoSystems-A200-A::*>
+Cluster01::*> nfs server modify -vserver vserver1 -tcp-max-xfer-size 262144
+Cluster01::*>
 ....
 
-[Note]
-|Never decrease the maximum allowable transfer size on ONTAP below the value of rsize/wsize of currently mounted NFS filesystems. This can create hangs or even data corruption with some operating systems. For example, if NFS clients are currently set at an rsize/wsize of 65536, then the ONTAP maximum transfer size could be adjusted between 65536 and 1048576 with no effect because the clients themselves are limited. Reducing the maximum transfer size below 65536 can damage availability or data.
+[NOTE]
+Never decrease the maximum allowable transfer size on ONTAP below the value of rsize/wsize of currently mounted NFS filesystems. This can create hangs or even cause data corruption with some operating systems. For example, if a NFS client are currently set at an rsize/wsize of 65536, then the ONTAP maximum transfer size could be adjusted between 65536 and 1048576 with no effect because the clients themselves are limited. Reducing the maximum transfer size below 65536 can damage availability or data.
 
 == Installation and patching
-
 The presence of any of the following mount options for `ORACLE_HOME` causes host caching to be disabled:
 
 ....
@@ -85,17 +84,15 @@ cio, actimeo=0, noac, forcedirectio
 This action can have a severe negative effect on the speed of Oracle software installation and patching. Many customers temporarily remove these mount options during installation or patching of the Oracle binaries. This removal can be performed safely if the user verifies that no other processes are actively using the target `ORACLE_HOME` during the installation or patching process.
 
 == ADR and NFS
-
 Some customers have reported performance problems resulting from an excessive amount of I/O on data in the `ADR` location. The problem does not generally occur until a lot of performance data has accumulated. The reason for the excessive I/O is unknown, but this problem appears to be a result of Oracle processes repeatedly scanning the target directory for changes.
 
 Removal of the `noac` and/or `actimeo=0` mount options allows host OS caching to occur and reduces storage I/O levels.
 
-NetApp recommends the following:
+*NetApp recommends:*
 
 * Do not place `ADR` data on a file system with `noac` or `actimeo=0` because performance problems are likely. Separate `ADR` data into a different mount point if necessary.
 
 == nfs-rootonly and mount-rootonly
-
 ONTAP includes an NFS option called `nfs-rootonly` that controls whether the server accepts NFS traffic connections from high ports. As a security measure, only the root user is permitted to open TCP/IP connections using a source port below 1024 because such ports are normally reserved for OS use, not user processes. This restriction helps ensure that NFS traffic is from an actual operating system NFS client, and not a malicious process emulating an NFS client. The Oracle dNFS client is a userspace driver, but the process runs as root, so it is generally not required to change the value of `nfs-rootonly`. The connections is made from low ports.
 
 The `mount-rootonly` option only applies to NFSv3. It controls whether the RPC MOUNT call be accepted from ports greater than 1024. When dNFS is used, the client is again running as root, so it able to open ports below 1024. This parameter has no effect.
@@ -117,15 +114,13 @@ Redo Buffers                7868416 bytes
 The parameter can be changed as follows:
 
 ....
-EcoSystems-A200-A::> nfs server modify -nfs-rootonly disabled
-EcoSystems-A200-A::>
+Cluster01::> nfs server modify -nfs-rootonly disabled
 ....
 
 [NOTE]
 In rare situations, you might need to change both nfs-rootonly and mount-rootonly to disabled. If a server is managing an extremely large number of TCP connections, it is possible that no ports below 1024 is available, and the OS is forced to use higher ports. These two ONTAP parameters would need to be changed to allow the connection to complete.
 
 == NFS export polices: superuser and setuid
-
 If Oracle binaries are located on an NFS share, the export policy must include superuser and setuid permissions.
 
 Shared NFS exports used for generic file services such as user home directories usually squash the root user. This means a request from the root user on a host that has mounted a filesystem is remapped as a different user with lower privileges. This helps secure data by preventing a root user on a particular server from accessing data on the shared server. The setuid bit can also be a security risk on a shared environment. The setuid bit allows a process to be run as a different user than the user invoking the command. For example, a shell script that was owned by root with the setuid bit runs as root. If that shell script could be changed by other users, any non-root user could issue a command as root by updating the script.
@@ -133,14 +128,13 @@ Shared NFS exports used for generic file services such as user home directories 
 The Oracle binaries include files owned by root and use the setuid bit. If Oracle binaries are installed on an NFS share, the export policy must include the appropriate superuser and setuid permissions. In the example below, the rule includes both `allow-suid` and permits `superuser` (root) access for NFS clients using system authentication.
 
 ....
-EcoSystems-A200-A::> export-policy rule show -vserver jfsCloud3 -policyname jfs0 -fields allow-suid,superuser
+Cluster01::> export-policy rule show -vserver vserver1 -policyname orabin -fields allow-suid,superuser
 vserver   policyname ruleindex superuser allow-suid
 --------- ---------- --------- --------- ----------
-jfsCloud3 jfs0       1         sys       true
+vserver1  orabin     1         sys       true
 ....
 
 == NFSv3 TCP slot tables
-
 TCP slot tables are the NFSv3 equivalent of host bus adapter (HBA) queue depth. These tables control the number of NFS operations that can be outstanding at any one time. The default value is usually 16, which is far too low for optimum performance. The opposite problem occurs on newer Linux kernels, which can automatically increase the TCP slot table limit to a level that saturates the NFS server with requests.
 
 For optimum performance and to prevent performance problems, adjust the kernel parameters that control the TCP slot tables.
@@ -164,15 +158,13 @@ In other cases, I/O latencies increases as the linux OS attempts to issue more I
 |===
 
 == NFSv4/4.1 configuration
-
 From an Oracle database perspective, there is very little difference between NFSv3 and NFSv4. Oracle I/O is very simple I/O and does not benefit significantly from some of the advanced features available in NFSv4. Higher versions of NFS should not be viewed as an “upgrade” from a database storage perspective, but instead as versions of NFS that include additional features. For example, if the end-to-end security of kerberos privacy mode (krb5p) is required, then NFSv4 is required.
 
 If NFSv4 capabilities are required, NetApp recommends using NFSv4.1. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency in certain edge cases. NFSv4.2 is not yet supported with Oracle databases.
 
-Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP Best Practices^]. 
+Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP best practices^]. 
 
 === NFSv4 domain
-
 One commonly encountered problem is a mismatch in domain mapping. From a sysadmin point of view, the NFS filesystems appear to behave normally, but the database reports an error about permissions and/or setuid on the `oradism` file. In some cases, DBA’s have incorrectly concluded that the permissions of the Oracle binaries have been damaged and have run chown or chmod commands when the actual problem was the domain name.
 
 The NFSv4 domain name is set on the ONTAP SVM:
