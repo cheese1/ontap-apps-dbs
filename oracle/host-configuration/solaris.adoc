@@ -116,7 +116,7 @@ Solaris LDOMs create an additional requirement for making sure that I/O alignmen
 An additional configuration file is required. First, the individual LDOM’s must be patched for Oracle bug 15824910 to enable the additional configuration options. This patch has been ported into all currently used versions of Solaris. Once the LDOM is patched, it is ready for configuration of the new properly aligned LUNs as follows:
 
 . Identify the LUN or LUNs to be used in the new zpool. In this example, it is the c2d1 device.
-
++
 ....
 [root@LDOM1 ~]# echo | format
 Searching for disks...done
@@ -128,7 +128,7 @@ AVAILABLE DISK SELECTIONS:
 ....
 
 . Retrieve the vdc instance of the devices to be used for a ZFS pool:
-
++
 ....
 [root@LDOM1 ~]#  cat /etc/path_to_inst
 #
@@ -181,7 +181,7 @@ block-size-list="1:8192","2:8192","3:8192","4:8192","5:8192","6:8192";
 .^|The LDOM must be rebooted after vdc.conf is configured and the vdsk is created. This step cannot be avoided. The block size change only takes effect after a reboot. Proceed with zpool configuration and ensure that ashift is properly set to 12 as described previously.
 |===
 
-=== ZIL
+=== ZFS Intent Log (ZIL)
 Generally, there is no reason to locate the ZFS Intent Log (ZIL) on a different device. The log can share space with the main pool. The primary use of a separate ZIL is when using physical drives that lack the write caching features in modern storage arrays.
 
 === logbias
