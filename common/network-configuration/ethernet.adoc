@@ -42,6 +42,7 @@ Problems with this arrangement are rare in a completely switched environment. Ho
 [TIP]
 ====
 *NetApp recommends* configuring the following:
+
 * Jumbo frames are desirable but not required with 1Gb Ethernet (GbE).
 * Jumbo frames are required for maximum performance with 10GbE and faster.
 ====
