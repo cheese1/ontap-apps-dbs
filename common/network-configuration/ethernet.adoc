@@ -40,9 +40,11 @@ For jumbo-frame implementations, there is the common but incorrect belief that a
 Problems with this arrangement are rare in a completely switched environment. However, take care in a routed environment that no intermediate router is forced to fragment jumbo frames.
 
 [TIP]
+====
 *NetApp recommends* configuring the following:
 * Jumbo frames are desirable but not required with 1Gb Ethernet (GbE).
 * Jumbo frames are required for maximum performance with 10GbE and faster.
+====
 
 == TCP parameters
 Three settings are often misconfigured: TCP timestamps, selective acknowledgment (SACK), and TCP window scaling. Many out-of-date documents on the Internet recommend disabling one or more of these parameters to improve performance. There was some merit to this recommendation many years ago when CPU capabilities were much lower and there was a benefit to reducing the overhead on TCP processing whenever possible.
