@@ -30,6 +30,5 @@ File systems supporting redo logs must use a block size that is a multiple of th
 
 A few customer problems have been identified with databases using redo logs with a 512-byte block size on a file system with a 4KB block size and many very small transactions. The overhead involved in applying multiple 512-byte changes to a single 4KB file system block led to performance problems that were resolved by changing the file system to use a block size of 512 bytes.
 
-*NetApp recommends:*
-
-Do not change the redo block size unless advised by a relevant customer support or professional services organization or the change is based on official product documentation.
+[TIP]
+*NetApp recommends* that you do not change the redo block size unless advised by a relevant customer support or professional services organization or the change is based on official product documentation.

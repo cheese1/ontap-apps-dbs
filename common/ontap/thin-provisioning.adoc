@@ -68,7 +68,10 @@ The first scenario includes 2.5GB of space consumption for current data and 5GB 
 
 Although this situation might seem confusing, it is unlikely to be encountered in practice. Compression implies thin provisioning, and thin provisioning in a LUN environment requires fractional reservations. It is always possible for compressed data to be overwritten by something uncompressible, which means a volume must be thin provisioned for compression to result in any savings.
 
-NetApp recommends the following reserve configurations:
+[TIP]
+====
+*NetApp recommends* the following reserve configurations:
 
 * Set `fractional-reserve` to 0 when basic capacity monitoring is in place along with `volume-autogrow` and `snapshot-autodelete`.
 * Set `fractional-reserve` to 100 if there is no monitoring ability or if it is impossible to exhaust space under any circumstance.
+====

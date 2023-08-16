@@ -84,7 +84,8 @@ All Linux systems should include `sunrpc.tcp_slot_table_entries`, but only some 
 == NFSv4/4.1 configuration
 For most applications, there is very little difference between NFSv3 and NFSv4. Application I/O is usually very simple I/O and does not benefit significantly from some of the advanced features available in NFSv4. Higher versions of NFS should not be viewed as an “upgrade” from a database storage perspective, but instead as versions of NFS that include additional features. For example, if the end-to-end security of kerberos privacy mode (krb5p) is required, then NFSv4 is required.
 
-If NFSv4 capabilities are required, NetApp recommends using NFSv4.1. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency in certain edge cases.
+[TIP]
+*NetApp recommends* using NFSv4.1 if NFSv4 capabilities are required. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency in certain edge cases.
 
 Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP best practices^]. The following sections of this TR explain some of the basic requirements for using NFSv4.
 

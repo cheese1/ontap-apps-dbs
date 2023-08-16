@@ -25,10 +25,13 @@ NetApp strongly recommends testing RAC configurations thoroughly before placing 
 
 If an actual storage takeover or giveback cannot be performed, the effect can be simulated with cable pull tests on the database server.
 
-*NetApp recommends:*
+[TIP]
+====
+*NetApp recommends*
 
 * Leaving the `disktimeout` parameter at the default value of 200.
 * Always test a RAC configuration thoroughly.
+====
 
 == misscount
 The `misscount` parameter normally affects only the network heartbeat between RAC nodes. The default is 30 seconds. If the grid binaries are on a storage array or the OS boot drive is not local, this parameter might become important. This includes hosts with boot drives located on an FC SAN, NFS-booted OSs, and boot drives located on virtualization datastores such as a VMDK file.
@@ -37,9 +40,12 @@ If access to a boot drive is interrupted by a storage takeover or giveback, it i
 
 In the case of nonlocal boot drives or a nonlocal file system hosting `grid` binaries, the `misscount` will need to be changed to match `disktimeout`. If this parameter is changed, conduct further testing to also identify any effects on RAC behavior, such as node failover time.
 
-*NetApp recommends:*
+[TIP]
+=====
+*NetApp recommends*
 
 * Leave the `misscount` parameter at the default value of 30 unless one of the following conditions applies:
 ** `grid` binaries are located on a network-attached drive, including NFS, iSCSI, FC, and datastore-based drives.
 ** The OS is SAN booted.
 * In such cases, evaluate the effect of network interruptions that affect access to OS or `GRID_HOME` file systems. In some cases, such interruptions cause the Oracle RAC daemons to stall, which can lead to a `misscount`-based timeout and eviction. The timeout defaults to 27 seconds, which is the value of `misscount` minus `reboottime`. In such cases, increase `misscount` to 200 to match `disktimeout`.
+====

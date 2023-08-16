@@ -88,9 +88,12 @@ Some customers have reported performance problems resulting from an excessive am
 
 Removal of the `noac` and/or `actimeo=0` mount options allows host OS caching to occur and reduces storage I/O levels.
 
-*NetApp recommends:*
+[TIP]
+====
+*NetApp recommends*
 
 * Do not place `ADR` data on a file system with `noac` or `actimeo=0` because performance problems are likely. Separate `ADR` data into a different mount point if necessary.
+====
 
 == nfs-rootonly and mount-rootonly
 ONTAP includes an NFS option called `nfs-rootonly` that controls whether the server accepts NFS traffic connections from high ports. As a security measure, only the root user is permitted to open TCP/IP connections using a source port below 1024 because such ports are normally reserved for OS use, not user processes. This restriction helps ensure that NFS traffic is from an actual operating system NFS client, and not a malicious process emulating an NFS client. The Oracle dNFS client is a userspace driver, but the process runs as root, so it is generally not required to change the value of `nfs-rootonly`. The connections is made from low ports.
@@ -160,7 +163,8 @@ In other cases, I/O latencies increases as the linux OS attempts to issue more I
 == NFSv4/4.1 configuration
 From an Oracle database perspective, there is very little difference between NFSv3 and NFSv4. Oracle I/O is very simple I/O and does not benefit significantly from some of the advanced features available in NFSv4. Higher versions of NFS should not be viewed as an “upgrade” from a database storage perspective, but instead as versions of NFS that include additional features. For example, if the end-to-end security of kerberos privacy mode (krb5p) is required, then NFSv4 is required.
 
-If NFSv4 capabilities are required, NetApp recommends using NFSv4.1. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency in certain edge cases. NFSv4.2 is not yet supported with Oracle databases.
+[TIP]
+*NetApp recommends* using NFSv4.1 if NFSv4 capabilities are required. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency in certain edge cases. NFSv4.2 is not yet supported with Oracle databases.
 
 Switching to NFSv4 is more complicated than simply changing the mount options from vers=3 to vers=4.1. A more complete explanation of NFSv4 configuration with ONTAP, including guidance on configuring the OS, see link:https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf[TR-4067 NFS on NetApp ONTAP best practices^]. 
 
