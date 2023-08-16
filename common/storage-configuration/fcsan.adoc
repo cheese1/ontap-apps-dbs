@@ -35,10 +35,10 @@ NetApp customers have generally experienced minimal benefit from increasing the 
 
 [TIP]
 ====
-NetApp recommends the following:
+*NetApp recommends* the following:
 
 In general, four to sixteen LUNs are sufficient to support the I/O needs of any given workload. Less than four LUNs might create performance limitations because of limitations in host SCSI implementations.
-=====
+====
 
 == LUN resizing and LVM-based resizing
 When a SAN-based file system has reached its capacity limit, there are two options for increasing the space available:
