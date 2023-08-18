@@ -45,7 +45,6 @@ Before you create a database volume design, it is important to understand how th
 • Place the SQL Server system databases on a dedicated volume or VMDK.
 • tempdb is a system database used by SQL Server as a temporary workspace, especially for I/Ointensive DBCC CHECKDB operations. Therefore, place this database on a dedicated volume with a separate set of spindles. In large environments in which volume count is a challenge, you can consolidate tempdb into fewer volumes and store it in the same volume as other system databases after careful planning. Data protection for tempdb is not a high priority because this database is recreated every time SQL Server is restarted.
 • Place user data files (.mdf) on separate volumes because they are random read/write workloads. It is common to create transaction log backups more frequently than database backups. For this reason, place transaction log files (.ldf) on a separate volume or VMDK from the data files so that independent backup schedules can be created for each. This separation also isolates the sequential write I/O of the log files from the random read/write I/O of data files and significantly improves SQL Server performance.
-• Create the host log directory on the dedicated FlexVol volume to which SnapCenter copies transaction logs.
 
 == LUN
 
@@ -53,6 +52,7 @@ Before you create a database volume design, it is important to understand how th
 * Make sure that SQL Server databases reside on LUNs separate from LUNs that have nondatabase files, such as full-text search-related files.
 * Placing database secondary files (as part of a filegroup) on separate volumes improves the performance of the SQL Server database. This separation is valid only if the database’s .mdf file does not share its LUN with any other .mdf files.
 * If you create LUNs with DiskManager or other tools, make sure that the allocation unit size is set to 64K for partitions when formatting the LUNs.
+* See the link:https://www.netapp.com/media/10680-tr4080.pdf[Microsoft Windows and native MPIO under ONTAP best practices for modern SAN] to apply multipathing support on Windows to iSCSI devices in the MPIO propeties.
 
 === Log directory
 
@@ -68,7 +68,8 @@ The following are NetApp recommendations for a host log directory:
 
 * Make sure that the host log directory is not shared by any other type of data that can potentially corrupt the backup snapshot data.
 * Do not place user databases or system databases on a LUN that hosts mount points.
-*  Use SnapCenter wizards to migrate databases to NetApp storage so that the databases are stored in valid locations, enabling successful SnapCenter backup and restore operations. Keep in mind that the migration process is disruptive and can cause the databases to go offline while the migration is in progress.
+* Create the host log directory on the dedicated FlexVol volume to which SnapCenter copies transaction logs.
+* Use SnapCenter wizards to migrate databases to NetApp storage so that the databases are stored in valid locations, enabling successful SnapCenter backup and restore operations. Keep in mind that the migration process is disruptive and can cause the databases to go offline while the migration is in progress.
 * The following conditions must be in place for failover cluster instances (FCIs) of SQL Server:
     - If you are using a failover cluster instance, the host log directory LUN must be a cluster disk resource in the same cluster group as the SQL Server instance being backed up SnapCenter.
     - If you are using a failover cluster instance, user databases must be placed on shared LUNs that are physical disk cluster resources assigned to the cluster group associated with the SQL Server instance.

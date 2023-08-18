@@ -27,3 +27,7 @@ entries:
       url: /mssql/storage-efficiency.html
   - title: Data protection
     url: /mssql/data-protection.html
+  - title: Disaster recovery
+    url: /mssql/SQL-disaster-recovery.html
+  - title: Data security
+    url: /mssql/data-security.html

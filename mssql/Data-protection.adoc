@@ -14,28 +14,19 @@ The main consideration for database backup is leveraging NetApp Snapshot technol
 
 == SnapCenter
 
-SnapCenter is the NetApp data protection software for enterprise applications.SQL Server databases can be quickly and easily protected using NetApp SnapCenter software with the Plug-in for SQL Server and the Plug-in for Microsoft Windows.
+SnapCenter is the NetApp data protection software for enterprise applications.SQL Server databases can be quickly and easily protected using NetApp SnapCenter software with the Plug-in for SQL Server and the Plug-in for Microsoft Windows and supports SQL Server version 2014 and later.
 
 This products enable application-consistent backup, automated cloning, and restore and recovery of SQL Server databases, instances, or availability groups. NetApp recommends using SnapCenter to create Snapshot copies. For more details about the SQL Server Plug-in for SnapCenter, see link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf[TR-4714: Best Practice Guide for SQL Server Using NetApp SnapCenter.]
 
-== NetApp SnapMirror
+== Protecting database using T-SQL snapshots
 
-NetApp SnapMirror technology offers a fast and flexible enterprise solution for mirroring or replicating data over LANs and WANs. SnapMirror technology transfers only modified 4KB data blocks to the destination after the initial base transfer, significantly reducing network bandwidth requirements. SnapMirror provides asynchronous volume-level replication that is based on a configured replication update interval. 
-The following are recommendations for SnapMirror for SQL Server:
+In SQL Server 2022, Microsoft introduced T-SQL snapshots that offers built-in advantage than traditional method that was not easily consumed by database administrator. Leveraging ONTAP REST API's, you can call commands to snapshot volumes. 
 
-• If CIFS is used, the destination SVM must be a member of the same Active Directory domain of which the source
-SVM is a member so that the access control lists (ACLs) stored within NAS files are not broken
-during recovery from a disaster.
-• Using destination volume names that are the same as the source volume names is not required but
-can make the process of mounting destination volumes into the destination simpler to manage. If
-CIFS is used, you must make the destination NAS namespace identical in paths and directory
-structure to the source namespace.
-• For consistency purposes, do not schedule SnapMirror update from the controllers. However, enable
-SnapMirror update from SnapCenter to update SnapMirror after either full or log backup is completed.
-• Distribute volumes that contain SQL Server data across different nodes in the cluster to allow all
-cluster nodes to share SnapMirror replication activity. This distribution optimizes the use of node
-resources.
+Following summarized the backup workflow--
 
-For more information about SnapMirror, see link:https://www.netapp.com/us/media/tr-4015.pdf[TR-4015: SnapMirror Configuration and Best Practices Guide for ONTAP 9].
+1. Freeze a database with ALTER command – providing an opportunity to perform a consistent snapshot on the underlying storage. After this you can thaw the database and record the snapshot with BACKUP command.
+2. Perform snapshots of multiple databases on the storage volumes simultaneously with the new BACKUP GROUP and BACKUP SERVER commands. 
+3. Perform FULL backups or COPY_ONLY FULL backups. These backups are recorded in msdb as well.
+4. Perform point-in-time recovery using log backups taken with the normal streaming approach after the snapshot FULL backup. Streaming differential backups are also supported if desired.
 
-NetApp and partner professional services experts are available for assistance in complex projects. Even if assistance is not required during the project, NetApp strongly encourages new customers to use professional services for assistance in developing a high-level approach. 
+For more information, see Microsoft documentation to know about the T-SQL snapshots link:https://learn.microsoft.com/en-us/sql/relational-databases/databases/create-a-database-snapshot-transact-sql?view=sql-server-ver16[here].
