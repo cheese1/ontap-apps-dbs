@@ -23,5 +23,3 @@ The following are recommendations for SnapMirror for SQL Server:
 • Distribute volumes that contain SQL Server data across different nodes in the cluster to allow all cluster nodes to share SnapMirror replication activity. This distribution optimizes the use of node resources.
 
 For more information about SnapMirror, see link:https://www.netapp.com/us/media/tr-4015.pdf[TR-4015: SnapMirror Configuration and Best Practices Guide for ONTAP 9].
-
-NetApp and partner professional services experts are available for assistance in complex projects. Even if assistance is not required during the project, NetApp strongly encourages new customers to use professional services for assistance in developing a high-level approach. 

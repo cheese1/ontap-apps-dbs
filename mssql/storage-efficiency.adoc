@@ -12,7 +12,7 @@ Storage efficiency is the ability to store and manage SQL Server data in a way t
 
 Storage efficiency is a combination of RAID, provisioning (overall layout and utilization), mirroring, and other data protection technologies. NetApp technologies like Snapshot copies, Thin provisioning,  FlexClone helps in creating cost benefits by optimizing existing storage in the infrastructure and deferring or avoiding future storage expenditures. The more you use these technologies together, the larger the savings. For more information, see link:../common/ontap/thin-provisioning.html[provisioning recommendations]
 
-Storage compression, compaction, deduplication is other storage efficiency option that enhances amount of logical data that fits on a given amount of physical storage and its recommendation are available link:../common/ontap/efficiency.html[here]. 
+Storage compression, compaction, deduplication are other storage efficiency options that enhances amount of logical data that fits on a given amount of physical storage. For more detailed information, see link:../common/ontap/efficiency.html[efficiency best practices]. 
 
 SQL Server also have feature to compress and efficiently manage data. SQL Server currently supports two types of data compression: row compression and page compression. 
 
@@ -21,6 +21,7 @@ Row compression changes the data storage format. For example, it changes integer
 Data compression is currently supported in the Enterprise, Developer, and Evaluation editions of SQL Server 2008 and later. Although compression can be performed by the database itself, this is rarely observed in a SQL Server environment.
 
 Here are the recommendation for managing space for SQL Server data files
+
 - Use thin provisioning in SQL Server environments to improve space utilization and to reduce the overall storage requirements when the space guarantee functionality is used.
 - Use autogrow for most common deployment configurations because the storage admin only needs to monitor space usage in the aggregate.
 - Advice not to enable deduplication on any volumes containing SQL Server data files unless the volume is known to contain multiple copies of the same data, such as restoring database from backups to a single volume.
