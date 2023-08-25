@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mssql/Storage-considerations.html
-keywords: MS-SQL,mssql,SQL Server
+keywords: MS-SQL,mssql,SQL Server, database layout
 summary: Microsoft SQL Server on ONTAP
 ---
 

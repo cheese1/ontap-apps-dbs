@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: mssql/data-protection.html
-keywords: MS-SQL,mssql,SQL Server
+keywords: MS-SQL,mssql,SQL Server, SnapCenter, data protection
 summary: Microsoft SQL Server on ONTAP
 ---
 
