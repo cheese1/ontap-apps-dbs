@@ -131,4 +131,8 @@ These settings create a 120-second timeout for ASM devices. The timeout is calcu
 A lower `no_path_retry` value can shorten the time required for ASM to switch to an alternate fail group, but this also increases the risk of an unwanted failover during maintenance activities such as a controller takeover. The risk can be mitigated by careful monitoring of the ASM mirroring state. If an unwanted failover occurs, the mirrors can be rapidly resynced if the resync is performed relatively quickly. For additional information, see the Oracle documentation on ASM Fast Mirror Resync for the version of Oracle software in use.
 
 == Linux xfs, ext3, and ext4 mount options
+
+[TIP]
+====
 *NetApp recommends* using the default mount options.
+====
