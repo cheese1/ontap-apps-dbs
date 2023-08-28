@@ -41,7 +41,7 @@ If access to a boot drive is interrupted by a storage takeover or giveback, it i
 In the case of nonlocal boot drives or a nonlocal file system hosting `grid` binaries, the `misscount` will need to be changed to match `disktimeout`. If this parameter is changed, conduct further testing to also identify any effects on RAC behavior, such as node failover time.
 
 [TIP]
-=====
+====
 *NetApp recommends*
 
 * Leave the `misscount` parameter at the default value of 30 unless one of the following conditions applies:
