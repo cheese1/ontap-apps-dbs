@@ -4,7 +4,8 @@ sidebar: sidebar
 keywords: oracle, database, ontap, redo, block size
 summary: "Redo block size selection"
 ---
-= Redo Block Size
+= Redo block size
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -18,4 +19,5 @@ The best option is expected to be 512 bytes because this size minimizes the amou
 
 It is not correct that all I/O operations are performed in single units of the redo log block size. At very high logging rates, the database generally performs very large I/O operations composed of multiple redo blocks. The actual size of those redo blocks does not generally affect the efficiency of logging.
 
-NetApp recommends only changing the default block size for cause, such as a documented requirement for a particular application or because of a recommendation made by NetApp or Oracle customer support.
+[TIP]
+*NetApp recommends* only changing the default block size for cause, such as a documented requirement for a particular application or because of a recommendation made by NetApp or Oracle customer support.

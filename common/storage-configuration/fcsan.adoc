@@ -33,9 +33,12 @@ Unlike the LUN size, the LUN count does affect performance. Application performa
 
 NetApp customers have generally experienced minimal benefit from increasing the number of LUNs beyond sixteen, although the testing of 100%-SSD environments with very heavy random I/O has demonstrated further improvement up to 64 LUNs.
 
-NetApp recommends the following:
+[TIP]
+====
+*NetApp recommends* the following:
 
 In general, four to sixteen LUNs are sufficient to support the I/O needs of any given workload. Less than four LUNs might create performance limitations because of limitations in host SCSI implementations.
+====
 
 == LUN resizing and LVM-based resizing
 When a SAN-based file system has reached its capacity limit, there are two options for increasing the space available:

@@ -5,8 +5,8 @@ permalink: oracle/index.html
 lead: Oracle on ONTAP General Configuration
 summary: SProtocols
 ---
+= Oracle on ONTAP implementation guides
 
-= Oracle on ONTAP Implementation Guides
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -4,8 +4,8 @@ permalink: oracle/storage-configuration/asmru.html
 keywords: ontap, thin provisioning
 summary: ASM Reclamation Utility with ONTAP
 ---
-
 = ASM Reclamation Utility and zero-block detection
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,6 @@ summary: ASM Reclamation Utility with ONTAP
 :imagesdir: ./../media/
 
 [.lead]
-
 ONTAP efficiently removes zeroed blocks written to a file or LUN when inline compression is enabled. Utilities such as the Oracle ASM Reclamation Utility (ASRU) work by writing zeros to unused ASM extents.
 
 This allows DBAs to reclaim space on the storage array after files are deleted. ONTAP intercepts the zeros and deallocates the space from the LUN. The reclamation process is extremely fast because no data is being written within the storage system.

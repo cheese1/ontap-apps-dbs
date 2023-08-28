@@ -4,8 +4,8 @@ permalink: oracle/host-configuration/hp-ux.html
 keywords: oracle, database, ontap, hp-ux
 summary: Oracle on ONTAP using HP-UX
 ---
-
 = HP-UX
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,10 +13,9 @@ summary: Oracle on ONTAP using HP-UX
 :imagesdir: ./../media/
 
 [.lead]
-Configuration topics specific to the sHP-UX operating system.
+Configuration topics specific to the HP-UX operating system.
 
 == HP-UX NFS Mount Options
-
 The following table lists the HP-UX NFS mount options for a single instance.
 
 |===
@@ -72,7 +71,6 @@ The primary difference between single-instance and RAC mount options is the addi
 The reason `noac` is required for shared `ORACLE_HOME` deployments is to facilitate consistency of files such as Oracle password files and spfiles. If each instance in a RAC cluster has a dedicated `ORACLE_HOME`, this parameter is not required.
 
 == HP-UX VxFS mount options
-
 Use the following mount options for file systems hosting Oracle binaries:
 
 ....

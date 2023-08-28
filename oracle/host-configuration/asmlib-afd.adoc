@@ -4,8 +4,8 @@ permalink: oracle/host-configuration/asmlib-afd.html
 keywords: oracle, database, ontap, asmlib, block size, oracleasm, multipath, afd
 summary: Oracle on ONTAP using Linux and ASMlib/ASM Filter Driver
 ---
-
 = ASMlib and ASM Filter Driver
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -16,7 +16,6 @@ summary: Oracle on ONTAP using Linux and ASMlib/ASM Filter Driver
 Configuration topics specific to the Linux OS using AFD and ASMlib
 
 == ASMlib block sizes
-
 ASMlib is an optional ASM management library and associated utilities. Its primary value is the capability to stamp a LUN or an NFS-based file as an ASM resource with a human-readable label.
 
 Recent versions of ASMlib detect a LUN parameter called Logical Blocks Per Physical Block Exponent (LBPPBE). This value was not reported by the ONTAP SCSI target until recently. It now returns a value that indicates that a 4KB block size is preferred. This is not a definition of block size, but it is a hint to any application that uses LBPPBE that I/Os of a certain size might be handled more efficiently. ASMlib does, however, interpret LBPPBE as a block size and persistently stamps the ASM header when the ASM device is created.
@@ -33,19 +32,16 @@ The option does not change the block size on LUNs that were previously stamped b
 If ASMlib cannot be patched, ASMlib can be removed from the configuration. This change is disruptive and requires the unstamping of ASM disks and making sure that the `asm_diskstring` parameter is set correctly. This change does not, however, require the migration of data.
 
 == ASM Filter Drive (AFD) block sizes
-
 AFD is an optional ASM management library which is becoming the replacement for ASMlib. From a storage point of view, it is very similar to ASMlib, but it includes additional features such as the ability to block non-Oracle I/O to reduce the chances of user or application errors that could corrupt data.
 
 === Device block sizes
-
 Like ASMlib, AFD also reads the LUN parameter Logical Blocks Per Physical Block Exponent (LBPPBE) and by default uses the physical block size, not the logical block size.
 
 This could create a problem if AFD is added to an existing configuration where the ASM devices are already formatted as 512 byte block devices. The AFD driver would recognize the LUN as a 4K device and the mismatch between the ASM label and the physical device would prevent access. Likewise, migrations would be affected because it is not possible to mix both 512-byte and 4KB devices in the same ASM diskgroup. Doing so would block a user from increasing the size of the ASM diskgroup using LUNs from two arrays or leveraging ASM as a migration tool. In other cases, RMAN might not permit the copying of files between an ASM diskgroup with a 512-byte block size and an ASM diskgroup with a 4KB block size.
 
-The solution is simple – AFD includes a parameter to control whether it uses the logical or physical block sizes. This is a global parameter affecting all devices on the system. To force AFD to use the logical block size, set `options oracleafd oracleafd_use_logical_block_size=1` in the `/etc/modprobe.d/oracleafd.conf` file.
+The solution is simple - AFD includes a parameter to control whether it uses the logical or physical block sizes. This is a global parameter affecting all devices on the system. To force AFD to use the logical block size, set `options oracleafd oracleafd_use_logical_block_size=1` in the `/etc/modprobe.d/oracleafd.conf` file.
 
 === Multipath transfer sizes
-
 Recent linux kernel changes enforce I/O size restrictions sent to multipath devices, and AFD does not honor these restrictions. The I/Os are then rejected, which causes the LUN path to go offline. The result is an inability to install Oracle Grid, configure ASM, or create a database.
 
 The solution is to manually specify the maximum transfer length in the multipath.conf file for ONTAP LUNs:
@@ -60,4 +56,5 @@ devices {
     }
 ....
 
-*Caution:* Even if no problems currently exist, this parameter should be set if AFD is used to ensure that a future linux upgrade does not unexpectedly cause problems.
+[CAUTION]
+Even if no problems currently exist, this parameter should be set if AFD is used to ensure that a future linux upgrade does not unexpectedly cause problems.
