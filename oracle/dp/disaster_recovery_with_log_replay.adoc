@@ -70,7 +70,7 @@ This is an example of a disaster recovery strategy based on the replication of h
 The example database is located on a basic two-volume architecture. `/oradata` contains datafiles and `/oralogs` is used for combined redo logs, archive logs, and controlfiles.
 
 ....
-[root@jfs2 ~]# ls /ora*
+[root@host1 ~]# ls /ora*
 /oradata:
 dbf
 /oralogs:
@@ -91,22 +91,22 @@ midnight            @0:00
 These schedules are then used inside the snapshot policies `NTAP-datafile-backups` and `NTAP-log-backups`, as shown below:
 
 ....
-Cluster01::> snapshot policy show -vserver jfsCloud0 -policy NTAP-* -fields schedules,counts
+Cluster01::> snapshot policy show -vserver vserver1 -policy NTAP-* -fields schedules,counts
 vserver   policy                schedules                    counts
 --------- --------------------- ---------------------------- ------
-jfsCloud0 NTAP-datafile-backups midnight                     60
-jfsCloud0 NTAP-log-backups      15minutes                    72
+vserver1  NTAP-datafile-backups midnight                     60
+vserver1  NTAP-log-backups      15minutes                    72
 2 entries were displayed.
 ....
 
 Finally, these snapshot policies are applied to the volumes.
 
 ....
-Cluster01::> volume show -vserver jfsCloud0 -volume jfs2_oracle* -fields snapshot-policy
+Cluster01::> volume show -vserver vserver1 -volume vol_oracle* -fields snapshot-policy
 vserver   volume                 snapshot-policy
 --------- ---------------------- ---------------------
-jfsCloud0 jfs2_oracle_datafiles  NTAP-datafile-backups
-jfsCloud0 jfs2_oracle_logs       NTAP-log-backups
+vserver1  vol_oracle_datafiles   NTAP-datafile-backups
+vserver1  vol_oracle_logs        NTAP-log-backups
 ....
 
 This defines the backup schedule of the volumes. Datafile snapshots are created at midnight and retained for 60 days. The log volume contains 72 snapshots created at 15-minute intervals, which adds up to 18 hours of coverage.
@@ -123,11 +123,11 @@ This step makes sure that the database is in hot backup mode during a four-minut
 The replication to the disaster recovery site is configured as follows:
 
 ....
-Cluster01::> snapmirror show -destination-path jfsCloud1:jfsdr2* -fields source-path,destination-path,schedule
+Cluster01::> snapmirror show -destination-path drvserver1:dr_oracle* -fields source-path,destination-path,schedule
 source-path                      destination-path                   schedule
 -------------------------------- ---------------------------------- --------
-jfsCloud0:jfs2_oracle_datafiles  jfsCloud1:jfsdr2_oracle_datafiles  6hours
-jfsCloud0:jfs2_oracle_logs       jfsCloud1:jfsdr2_oracle_logs       15minutes
+vserver1:vol_oracle_datafiles    drvserver1:dr_oracle_datafiles     6hours
+vserver1:vol_oracle_logs         drvserver1:dr_oracle_logs          15minutes
 2 entries were displayed.
 ....
 
@@ -138,20 +138,20 @@ The datafile volume destination is updated every six hours. This does not affect
 If a disaster occurs, the first step is to break the mirrors for both volumes:
 
 ....
-Cluster01::> snapmirror break -destination-path jfsCloud1:jfsdr2_oracle_datafiles -force
-Operation succeeded: snapmirror break for destination "jfsCloud1:jfsdr2_oracle_datafiles".
-Cluster01::> snapmirror break -destination-path jfsCloud1:jfsdr2_oracle_logs -force
-Operation succeeded: snapmirror break for destination "jfsCloud1:jfsdr2_oracle_logs".
+Cluster01::> snapmirror break -destination-path drvserver1:dr_oracle_datafiles -force
+Operation succeeded: snapmirror break for destination "drvserver1:dr_oracle_datafiles".
+Cluster01::> snapmirror break -destination-path drvserver1:dr_oracle_logs -force
+Operation succeeded: snapmirror break for destination "drvserver1:dr_oracle_logs".
 Cluster01::>
 ....
 
 The replicas are now read-write. The next step is to verify the timestamp of the log volume.
 
 ....
-Cluster01::> snapmirror show -destination-path jfsCloud1:jfsdr2_oracle_logs -field newest-snapshot-timestamp
+Cluster01::> snapmirror show -destination-path drvserver1:dr_oracle_logs -field newest-snapshot-timestamp
 source-path                destination-path             newest-snapshot-timestamp
 -------------------------- ---------------------------- -------------------------
-jfsCloud0:jfs2_oracle_logs jfsCloud1:jfsdr2_oracle_logs 03/14 13:30:00
+vserver1:vol_oracle_logs   drvserver1:dr_oracle_logs    03/14 13:30:00
 ....
 
 The most recent copy of the log volume is March 14th at 13:30:00.
@@ -159,16 +159,16 @@ The most recent copy of the log volume is March 14th at 13:30:00.
 Next, identify the hot backup snapshot created immediately prior to the state of the log volume. This is required because the log replay process requires all archive logs created during hot backup mode. The log volume replica therefore must be older than the hot backup images or it would not contain the required logs.
 
 ....
-Cluster01::> snapshot list -vserver jfsCloud1 -volume jfsdr2_oracle_datafiles -fields create-time -snapshot midnight*
+Cluster01::> snapshot list -vserver drvserver1 -volume dr_oracle_datafiles -fields create-time -snapshot midnight*
 vserver   volume                    snapshot                   create-time
 --------- ------------------------  -------------------------- ------------------------
-jfsCloud1 jfsdr2_oracle_datafiles   midnight.2017-01-14_0000   Sat Jan 14 00:00:00 2017
-jfsCloud1 jfsdr2_oracle_datafiles   midnight.2017-01-15_0000   Sun Jan 15 00:00:00 2017
+drvserver1 dr_oracle_datafiles      midnight.2017-01-14_0000   Sat Jan 14 00:00:00 2017
+drvserver1 dr_oracle_datafiles      midnight.2017-01-15_0000   Sun Jan 15 00:00:00 2017
 ...
 
-jfsCloud1 jfsdr2_oracle_datafiles   midnight.2017-03-12_0000   Sun Mar 12 00:00:00 2017
-jfsCloud1 jfsdr2_oracle_datafiles   midnight.2017-03-13_0000   Mon Mar 13 00:00:00 2017
-jfsCloud1 jfsdr2_oracle_datafiles   midnight.2017-03-14_0000   Tue Mar 14 00:00:00 2017
+drvserver1 dr_oracle_datafiles      midnight.2017-03-12_0000   Sun Mar 12 00:00:00 2017
+drvserver1 dr_oracle_datafiles      midnight.2017-03-13_0000   Mon Mar 13 00:00:00 2017
+drvserver1 dr_oracle_datafiles      midnight.2017-03-14_0000   Tue Mar 14 00:00:00 2017
 60 entries were displayed. 
 Cluster01::>
 ....
@@ -176,7 +176,7 @@ Cluster01::>
 The most recently created snapshot is `midnight.2017-03-14_0000`. This is the most recent hot backup image of the datafiles, and it is then restored as follows:
 
 ....
-Cluster01::> snapshot restore -vserver jfsCloud1 -volume jfsdr2_oracle_datafiles -snapshot midnight.2017-03-14_0000
+Cluster01::> snapshot restore -vserver drvserver1 -volume dr_oracle_datafiles -snapshot midnight.2017-03-14_0000
 Cluster01::>
 ....
 
@@ -185,7 +185,7 @@ At this stage, the database is now ready to be recovered. If this was a SAN envi
 The database can now be recovered to the desired point in time, or it can be fully recovered with respect to the copy of the redo logs that was replicated. This example illustrates the value of the combined archive log, controlfile, and redo log volume. The recovery process is dramatically simpler because there is no requirement to rely on backup controlfiles or reset log files.
 
 ....
-[oracle@jfsdr2 ~]$ sqlplus / as sysdba
+[oracle@drhost1 ~]$ sqlplus / as sysdba
 Connected to an idle instance.
 SQL> startup mount;
 ORACLE instance started.
@@ -233,7 +233,7 @@ The disaster recovery procedure using snapshot-optimized backups is nearly ident
 The example database is located on a basic two-volume architecture. `/oradata` contains datafiles, and `/oralogs` is used for combined redo logs, archive logs, and controlfiles.
 
 ....
- [root@jfs3 ~]# ls /ora*
+ [root@host2 ~]# ls /ora*
 /oradata:
 dbf
 /oralogs:
@@ -254,22 +254,22 @@ midnight            @0:00
 These schedules are then used inside the snapshot policies `NTAP-datafile-backups` and `NTAP-log-backups`, as shown below:
 
 ....
-Cluster01::> snapshot policy show -vserver jfsCloud0 -policy NTAP-* -fields schedules,counts
+Cluster01::> snapshot policy show -vserver vserver2  -policy NTAP-* -fields schedules,counts
 vserver   policy                schedules                    counts
 --------- --------------------- ---------------------------- ------
-jfsCloud0 NTAP-datafile-backups midnight                     60
-jfsCloud0 NTAP-log-backups      15minutes                    72
+vserver2  NTAP-datafile-backups midnight                     60
+vserver2  NTAP-log-backups      15minutes                    72
 2 entries were displayed.
 ....
 
 Finally, these snapshot policies are applied to the volumes.
 
 ....
-Cluster01::> volume show -vserver jfsCloud0 -volume jfs3_oracle* -fields snapshot-policy
+Cluster01::> volume show -vserver vserver2  -volume vol_oracle* -fields snapshot-policy
 vserver   volume                 snapshot-policy
 --------- ---------------------- ---------------------
-jfsCloud0 jfs2_oracle_datafiles  NTAP-datafile-backups
-jfsCloud0 jfs2_oracle_logs       NTAP-log-backups
+vserver2  vol_oracle_datafiles   NTAP-datafile-backups
+vserver2  vol_oracle_logs        NTAP-log-backups
 ....
 
 This controls the ultimate backup schedule of the volumes. Snapshots are created at midnight and retained for 60 days. The log volume contains 72 snapshots created at 15-minute intervals which adds up to 18 hours of coverage.
@@ -277,11 +277,11 @@ This controls the ultimate backup schedule of the volumes. Snapshots are created
 The replication to the disaster recovery site is configured as follows:
 
 ....
-Cluster01::> snapmirror show -destination-path jfsCloud1:jfsdr3* -fields source-path,destination-path,schedule
+Cluster01::> snapmirror show -destination-path drvserver2:dr_oracle* -fields source-path,destination-path,schedule
 source-path                      destination-path                   schedule
 -------------------------------- ---------------------------------- --------
-jfsCloud0:jfs3_oracle_datafiles  jfsCloud1:jfsdr3_oracle_datafiles  6hours
-jfsCloud0:jfs3_oracle_logs       jfsCloud1:jfsdr3_oracle_logs       15minutes
+vserver2:vol_oracle_datafiles    drvserver2:dr_oracle_datafiles     6hours
+vserver2:vol_oracle_logs         drvserver2:dr_oracle_logs          15minutes
 2 entries were displayed.
 ....
 
@@ -292,35 +292,35 @@ The datafile volume destination is updated every 6 hours. This does not affect t
 If a disaster occurs, first step is to break the mirrors for all the volumes:
 
 ....
-Cluster01::> snapmirror break -destination-path jfsCloud1:jfsdr3_oracle_datafiles -force
-Operation succeeded: snapmirror break for destination "jfsCloud1:jfsdr3_oracle_datafiles".
-Cluster01::> snapmirror break -destination-path jfsCloud1:jfsdr3_oracle_logs -force
-Operation succeeded: snapmirror break for destination "jfsCloud1:jfsdr3_oracle_logs".
+Cluster01::> snapmirror break -destination-path drvserver2:dr_oracle_datafiles -force
+Operation succeeded: snapmirror break for destination "drvserver2:dr_oracle_datafiles".
+Cluster01::> snapmirror break -destination-path drvserver2:dr_oracle_logs -force
+Operation succeeded: snapmirror break for destination "drvserver2:dr_oracle_logs".
 Cluster01::>
 ....
 
 The replicas are now read-write. The next step is to verify the timestamp of the log volume.
 
 ....
-Cluster01::> snapmirror show -destination-path jfsCloud1:jfsdr3_oracle_logs -field newest-snapshot-timestamp
+Cluster01::> snapmirror show -destination-path drvserver2:dr_oracle_logs -field newest-snapshot-timestamp
 source-path                destination-path             newest-snapshot-timestamp
 -------------------------- ---------------------------- -------------------------
-jfsCloud0:jfs3_oracle_logs jfsCloud1:jfsdr3_oracle_logs 03/14 13:30:00
+vserver2:vol_oracle_logs   drvserver2:dr_oracle_logs    03/14 13:30:00
 ....
 
 The most recent copy of the log volume is March 14th at 13:30. Next, identify the datafile snapshot created immediately prior to the state of the log volume. This is required because the log replay process requires all archive logs from just prior to the snapshot to the desired recovery point.
 
 ....
-Cluster01::> snapshot list -vserver jfsCloud1 -volume jfsdr3_oracle_datafiles -fields create-time -snapshot midnight*
+Cluster01::> snapshot list -vserver drvserver2 -volume dr_oracle_datafiles -fields create-time -snapshot midnight*
 vserver   volume                    snapshot                   create-time
 --------- ------------------------  -------------------------- ------------------------
-jfsCloud1 jfsdr3_oracle_datafiles   midnight.2017-01-14_0000   Sat Jan 14 00:00:00 2017
-jfsCloud1 jfsdr3_oracle_datafiles   midnight.2017-01-15_0000   Sun Jan 15 00:00:00 2017
+drvserver2 dr_oracle_datafiles      midnight.2017-01-14_0000   Sat Jan 14 00:00:00 2017
+drvserver2 dr_oracle_datafiles      midnight.2017-01-15_0000   Sun Jan 15 00:00:00 2017
 ...
 
-jfsCloud1 jfsdr3_oracle_datafiles   midnight.2017-03-12_0000   Sun Mar 12 00:00:00 2017
-jfsCloud1 jfsdr3_oracle_datafiles   midnight.2017-03-13_0000   Mon Mar 13 00:00:00 2017
-jfsCloud1 jfsdr3_oracle_datafiles   midnight.2017-03-14_0000   Tue Mar 14 00:00:00 2017
+drvserver2 dr_oracle_datafiles      midnight.2017-03-12_0000   Sun Mar 12 00:00:00 2017
+drvserver2 dr_oracle_datafiles      midnight.2017-03-13_0000   Mon Mar 13 00:00:00 2017
+drvserver2 dr_oracle_datafiles      midnight.2017-03-14_0000   Tue Mar 14 00:00:00 2017
 60 entries were displayed.
 Cluster01::>
 ....
@@ -328,7 +328,7 @@ Cluster01::>
 The most recently created snapshot is `midnight.2017-03-14_0000`. Restore this snapshot.
 
 ....
-Cluster01::> snapshot restore -vserver jfsCloud1 -volume jfsdr3_oracle_datafiles -snapshot midnight.2017-03-14_0000
+Cluster01::> snapshot restore -vserver drvserver2 -volume dr_oracle_datafiles -snapshot midnight.2017-03-14_0000
 Cluster01::>
 ....
 
@@ -337,7 +337,7 @@ The database is now ready to be recovered. If this was a SAN environment, you wo
 The database can now be recovered to the desired point in time, or it can be fully recovered with respect to the copy of the redo logs that was replicated. This example illustrates the value of the combined archive log, controlfile, and redo log volume. The recover process is dramatically simpler because there is no requirement to rely on backup controlfiles or reset log files.
 
 ....
-[oracle@jfsdr3 ~]$ sqlplus / as sysdba
+[oracle@drhost2 ~]$ sqlplus / as sysdba
 SQL*Plus: Release 12.1.0.2.0 Production on Wed Mar 15 12:26:51 2017
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
 Connected to an idle instance.
