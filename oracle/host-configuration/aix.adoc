@@ -24,9 +24,13 @@ The best method for enabling concurrent I/O is to set the `init.ora` parameter `
 
 Using `cio` as a mount option forces the use of concurrent I/O, which can have negative consequences. For example, forcing concurrent I/O disables readahead on file systems, which can damage performance for I/O occurring outside the Oracle database software, such as copying files and performing tape backups. Furthermore, products such as Oracle GoldenGate and SAP BR*Tools are not compatible with using the `cio` mount option with certain versions of Oracle.
 
-*NetApp recommends:*
+[TIP]
+====
+*NetApp recommends*
+
 * Do not use the `cio` mount option at the file system level. Rather, enable concurrent I/O through the use of `filesystemio_options=setall`.
 * Only use the `cio` mount option should if it is not possible to set `filesystemio_options=setall`.
+====
 
 == AIX NFS mount options
 The following table lists the AIX NFS mount options for Oracle single instance databases.

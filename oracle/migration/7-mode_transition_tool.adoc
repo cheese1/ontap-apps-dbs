@@ -4,7 +4,6 @@ permalink: oracle/migration/7-mode_transition_tool.html
 keywords: migration, oracle, database, storage, system, 7, mode, transition, tool, 7mtt
 summary: Documentation on 7MTT is available on the NetApp Support site and includes guidance on both the copy-based and copy-free options. 
 ---
-
 = 7-Mode Transition Tool
 :hardbreaks:
 :nofooter:
