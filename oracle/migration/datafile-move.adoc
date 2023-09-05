@@ -4,7 +4,6 @@ permalink: oracle/migration/datafile-move.html
 keywords: migration, oracle, move datafile
 summary: Migrating individual Oracle datafiles
 ---
-
 = Datafile move
 :hardbreaks:
 :nofooter:
