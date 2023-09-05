@@ -5,6 +5,7 @@ keywords: oracle, ontap, disaster recovery, log reply, log shipping
 summary: Oracle on ONTAP DR procedure with log shipping
 ---
 = Disaster recovery with log replay
+
 :hardbreaks:
 :nofooter:
 :icons: font

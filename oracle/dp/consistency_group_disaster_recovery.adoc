@@ -5,6 +5,7 @@ keywords: oracle, data protection, DR, CG
 summary: Consistency group replication for Oracle databases
 ---
 = Consistency group disaster recovery
+
 :hardbreaks:
 :nofooter:
 :icons: font

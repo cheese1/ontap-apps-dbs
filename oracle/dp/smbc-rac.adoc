@@ -4,8 +4,8 @@ permalink: oracle/dp/smbc-rac.html
 keywords: oracle, smbc, sm-bc, RAC
 summary: Oracle RAC on ONTAP with SM-BC
 ---
-
 = Oracle RAC with SM-BC
+
 :hardbreaks:
 :nofooter:
 :icons: font

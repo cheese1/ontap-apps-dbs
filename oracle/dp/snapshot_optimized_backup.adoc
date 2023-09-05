@@ -5,6 +5,7 @@ keywords: oracle, data protection, snapshot-optimized, crash-consistent
 summary: Snapshot-optimized backup
 ---
 = Oracle storage snapshot-optimized backup
+
 :hardbreaks:
 :nofooter:
 :icons: font
