@@ -4,7 +4,6 @@ permalink: oracle/migration/fli-completion.html
 keywords: migration, oracle, FLI
 summary: Completing an FLI cutover
 ---
-
 = Completion
 :hardbreaks:
 :nofooter:
