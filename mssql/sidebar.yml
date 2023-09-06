@@ -12,36 +12,22 @@ entries:
     - title: Shared instance versus dedicated instance
       url: /mssql/shared-vs-dedicated.html
     - title: CPU Configuration
-      entries:
-      - title: Hyperthreading
-        url: /mssql/hyperthreading.html
-      - title: Processor affinity
-        url: /mssql/cpu-affinity.html
-      - title: Max Degree of Parallelism (MAXDOP)
-        url: /mssql/parallelism.html
-      - title: Max worker threads
-        url: /mssql/max-worker-threads.html
+      url: /mssql/CPUConfiguration.html
     - title: Memory configuration
-      entries:
-      - title: Max server memory
-        url: /mssql/max-server-memory.html
-      - title: Nonuniform memory access
-        url: /mssql/numa.html
-      - title: Index create memory
-        url: /mssql/index-create.html
-      - title: Min memory per query
-        url: /mssql/min-memory-per-query.html
-      - title: Buffer pool extensions
-        url: /mssql/buffer-pool.html
+      url: /mssql/Memoryconfiguration.html
   - title: Storage configuration
     entries:
-    - title: Compression
-      url: /mssql/compression.html
-    - title: Files and filegroups
+    - title:  Database Files and filegroups
       url: /mssql/files-and-filegroups.html
-    - title: Host log directory
-      url: /mssql/host-log.html
     - title: Tempdb files
       url: /mssql/tempdb.html
-  - title: SnapCenter
-    url: /mssql/snapcenter.html
+    - title: Storage considerations
+      url: /mssql/Storage-considerations.html
+    - title: Storage efficiency
+      url: /mssql/storage-efficiency.html
+  - title: Data protection
+    url: /mssql/data-protection.html
+  - title: Disaster recovery
+    url: /mssql/SQL-disaster-recovery.html
+  - title: Data security
+    url: /mssql/data-security.html
