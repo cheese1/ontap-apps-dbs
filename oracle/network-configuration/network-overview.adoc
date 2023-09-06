@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
 permalink: oracle/network-configuration/network-overview.html
-keywords: oracle, database, ontap, stale, nfs, locks
-summary: Oracle and stale NFSv3 Locks
+keywords: oracle, database, ontap, network
+summary: Network configuration overview
 ---
+= Network configuration overview
 
-= Network Configuration Overview
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,5 +13,4 @@ summary: Oracle and stale NFSv3 Locks
 :imagesdir: ./../media/
 
 [.lead]
-
-Consult link:/common/network-configuration/ethernet.html[Ethernet Configuration] and link:/common/network-configuration/fc.html[FC Configuration] for critical information about configuring your network for for maximum performance and resiliency.
+Consult link:../../common/network-configuration/ethernet.html[Ethernet configuration] and link:../../common/network-configuration/fc.html[FC configuration] for critical information about configuring your network for for maximum performance and resiliency.

@@ -4,8 +4,7 @@ permalink: oracle/dp/snapshot_optimized_backup.html
 keywords: oracle, data protection, snapshot-optimized, crash-consistent
 summary: Snapshot-optimized backup
 ---
-
-= Oracle snapshot-optimized backup
+= Oracle storage snapshot-optimized backup
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -24,7 +23,7 @@ As discussed previously, recovering a snapshot-based hot backup requires two set
 
 During recovery, the database reads metadata from the datafiles to select the required archive logs for recovery.
 
-Snapshot-optimized recovery requires slightly different datasets to accomplish the same results:
+Storage snapshot-optimized recovery requires slightly different datasets to accomplish the same results:
 
 * A snapshot of the datafiles, plus a method to identify the time the snapshot was created
 * Archive logs from the time of the most recent datafile checkpoint through the exact time of the snapshot
@@ -34,7 +33,6 @@ During recovery, the database reads metadata from the datafiles to identify the 
 For complete details, see Oracle's documentation on the topic, "Recovery Using Storage Snapshot Optimization" available in various releases of the Oracle 12c documentation. Also, see Oracle Document ID Doc ID 604683.1 regarding Oracle third-party snapshot support.
 
 == Data layout
-
 The simplest layout is to isolate the datafiles into one or more dedicated volumes. They must be uncontaminated by any other file type. This is to make sure that the datafile volumes can be rapidly restored with a SnapRestore operation without destroying an important redo log, controlfile, or archive log.
 
 SAN has similar requirements for datafile isolation within dedicated volumes. With an operating system such as Microsoft Windows, a single volume might contain multiple datafile LUNs, each with an NTFS file system. With other operating systems, there is generally a logical volume manager as well. For example, with Oracle ASM, the simplest option would be to confine disk groups to a single volume that can be backed up and restored as a unit. If additional volumes are required for performance or capacity management reasons, creating an additional disk group on the new volume results in easier management.
@@ -43,10 +41,9 @@ If these guidelines are followed, snapshots can be scheduled directly on ONTAP w
 
 A complication arises in situations such as an ASM disk group that is distributed across volumes. In these cases, a cg-snapshot must be performed to make sure that the ASM metadata is consistent across all constituent volumes.
 
-*Caution:* Verify that the ASM spfile and passwd files are not in the disk group hosting the datafiles. This interferes with the ability to selectively restore datafiles and only datafiles.
+[Note]Verify that the ASM spfile and passwd files are not in the disk group hosting the datafiles. This interferes with the ability to selectively restore datafiles and only datafiles.
 
 == Local recovery procedure—NFS
-
 This procedure can be driven manually or through an application such as SnapCenter. The basic procedure is as follows:
 
 . Shut down the database.
@@ -58,7 +55,6 @@ This procedure assumes that the desired archive logs are still present in the ac
 In addition, for smaller databases, datafiles can be recovered by an end user directly from the `.snapshot` directory without assistance from automation tools or a storage administrator to execute a SnapRestore command.
 
 == Local recovery procedure—SAN
-
 This procedure can be driven manually or through an application such as SnapCenter. The basic procedure is as follows:
 
 . Shut down the database.
@@ -70,11 +66,10 @@ This procedure can be driven manually or through an application such as SnapCent
 This procedure assumes that the desired archive logs are still present in the active file system. If they are not, the archive logs must be restored by taking the archive log LUNs offline and performing a restore. This is also an example in which dividing up archive logs into dedicated volumes is useful. If the archive logs share a volume group with redo logs, the redo logs must be copied elsewhere before restoration of the overall set of LUNs to avoid losing the final recorded transactions.
 
 == Full recovery example
-
 Assume the datafiles have been corrupted or destroyed and full recovery is required. The procedure to do so is as follows:
 
 ....
-[oracle@jfs2 ~]$ sqlplus / as sysdba
+[oracle@host1 ~]$ sqlplus / as sysdba
 Connected to an idle instance.
 SQL> startup mount;
 ORACLE instance started.
@@ -92,22 +87,21 @@ SQL>
 ....
 
 == Point-in-time recovery example
-
 The entire recovery procedure is a single command: `recover automatic`.
 
 If point-in-time recovery is required, the timestamp of the snapshot(s) must be known and can be identified as follows:
 
 ....
-EcoSystems-8060::> snapshot show -vserver svm0 -volume NTAP_oradata -fields create-time
+Cluster01::> snapshot show -vserver vserver1 -volume NTAP_oradata -fields create-time
 vserver   volume        snapshot   create-time
 --------  ------------  ---------  ------------------------
-svm0      NTAP_oradata  my-backup  Thu Mar 09 10:10:06 2017
+vserver1  NTAP_oradata  my-backup  Thu Mar 09 10:10:06 2017
 ....
 
 The snapshot creation time is listed as March 9th and 10:10:06. To be safe, one minute is added to the snapshot time:
 
 ....
-[oracle@jfs2 ~]$ sqlplus / as sysdba
+[oracle@host1 ~]$ sqlplus / as sysdba
 Connected to an idle instance.
 SQL> startup mount;
 ORACLE instance started.

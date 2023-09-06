@@ -4,8 +4,8 @@ permalink: oracle/dp/oracle_and_nvfail.html
 keywords: oracle, metrocluster, nvfail
 summary: Configuring NVFAIL to protect Oracle databases
 ---
-
 = Oracle and NVFAIL
+
 :hardbreaks:
 :nofooter:
 :icons: font

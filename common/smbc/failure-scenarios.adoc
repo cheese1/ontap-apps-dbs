@@ -2,9 +2,9 @@
 permalink: common/smbc/failure-scenarios.html
 sidebar: sidebar
 keywords: SM-BC, smbc, failover
-summary: "SM-BC: Failure Scenarios"
+summary: "SM-BC: failure scenarios"
 ---
-= SM-BC Failure Scenarios
+= SnapMirror Business Continuity failure scenarios
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,12 +12,13 @@ summary: "SM-BC: Failure Scenarios"
 :imagesdir: ./../media/
 
 [.lead]
+There are multiple SnapMirror Business Continuity (SM-BC) failure scenarios each having different results.
 
 [cols="1,1"]
 |===
 |Scenario|Result
 
-|Replication Link failure
+|Replication link failure
 
 |Mediator recognizes this split-brain scenario and resumes I/O on the node that holds the master copy. When the connectivity between sites is back online, the alternate site performs automatic resync.
 
@@ -44,7 +45,7 @@ There is an automatic resync when the site is online.
 |Loss of disks
 |IO continues for up to three consecutive disk failures. This is part of RAID-TEC.
 
-|Loss of the entire site in a typical  deployment
+|Loss of the entire site in a typical deployment
 
 |Servers on the failed site will obviously no longer be available. Applications that support clustering can be configured to run at both sites and continue operations on the alternate site, although most such applications require a 3rd site tiebreaker similar to how SM-BC requires the mediator.
 

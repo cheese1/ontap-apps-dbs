@@ -2,9 +2,10 @@
 permalink: oracle/oracle-configuration/mbr.html
 sidebar: sidebar
 keywords: oracle, database, ontap, db_file_multiblock_read_count, multiblock
-summary: Oracle multblock read parameter
+summary: Oracle multiblock read parameter
 ---
 = db_file_multiblock_read_count
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,12 +15,11 @@ summary: Oracle multblock read parameter
 [.lead]
 The `db_file_multiblock_read_count` parameter controls the maximum number of Oracle database blocks that Oracle reads as a single operation during sequential I/O.
 
-This parameter does not, however, affect the number of blocks that Oracle reads during any and all read operations, nor does it affect random I/O. Only sequential I/O is affected.
+This parameter does not, however, affect the number of blocks that Oracle reads during any and all read operations, nor does it affect random I/O. Only the block size of sequential I/O is affected.
 
 Oracle recommends that the user leave this parameter unset. Doing so allows the database software to automatically set the optimum value. This generally means that this parameter is set to a value that yields an I/O size of 1MB. For example, a 1MB read of 8KB blocks would require 128 blocks to be read, and the default value for this parameter would therefore be 128.
 
 Most database performance problems observed by NetApp at customer sites involve an incorrect setting for this parameter. There were valid reasons to change this value with Oracle versions 8 and 9. As a result, the parameter might be unknowingly present in `init.ora` files because the database was upgraded in place to Oracle 10 and later. A legacy setting of 8 or 16, compared to a default value of 128, significantly damages sequential I/O performance.
 
-NetApp recommends the following:
-
-* The `db_file_multiblock_read_count` parameter should not be present in the `init.ora` file. NetApp has never encountered a situation in which changing this parameter improved performance, but there are many cases in which it caused clear damage to sequential I/O throughput.
+[TIP]
+*NetApp recommends* setting the `db_file_multiblock_read_count` parameter should not be present in the `init.ora` file. NetApp has never encountered a situation in which changing this parameter improved performance, but there are many cases in which it caused clear damage to sequential I/O throughput.

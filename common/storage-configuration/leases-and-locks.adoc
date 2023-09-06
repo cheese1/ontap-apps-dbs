@@ -4,7 +4,6 @@ permalink: common/storage-configuration/leases-and-locks.html
 keywords: NFS, lease
 summary: NFS leases and locks
 ---
-
 = NFS leases and locks
 :hardbreaks:
 :nofooter:
@@ -13,34 +12,31 @@ summary: NFS leases and locks
 :imagesdir: ./../media/
 
 [.lead]
-NFSv3 is stateless. That effectively means that the NFS server (ONTAP) doesn't keep track of which filesystems are mounted, by whom, or which locks are truly in place.
+NFSv3 is stateless. That effectively means that the NFS server (ONTAP) doesn't keep track of which file systems are mounted, by whom, or which locks are truly in place.
 
 ONTAP does have some features that will record mount attempts so you have an idea which clients may be accessing data, and there may be advisory locks present, but that information isn't guaranteed to be 100% complete. It can't be complete, because tracking NFS client state is not part of the NFSv3 standard.
 
 == NFSv4 statefulness
-
-In contrast, NFSv4 is stateful. The NFSv4 server tracks which clients are using which filesystems, which files exist, which files and/or regions of files are locked, etc. This means there needs to be regular communication between an NFSv4 server to keep the state data current.
+In contrast, NFSv4 is stateful. The NFSv4 server tracks which clients are using which file systems, which files exist, which files and/or regions of files are locked, etc. This means there needs to be regular communication between an NFSv4 server to keep the state data current.
 
 The most important states being managed by the NFS server are NFSv4 Locks and NFSv4 Leases, and they are very much intertwined. You need to understand how each works by itself, and how they relate to one another.
 
 == NFSv4 locks
-
 With NFSv3, locks are advisory. An NFS client can still modify or delete a "locked" file. An NFSv3 lock doesn't expire by itself, it must be removed. This creates problems. For example, if you have a clustered application that creates NFSv3 locks, and one of the nodes fails, what do you do? You can code the application on the surviving nodes to remove the locks, but how do you know that's safe? Maybe the "failed" node is operational, but isn't communicating with the rest of the cluster?
 
- With NFSv4, locks have a limited duration. As long as the client holding the locks continues to check in with the NFSv4 server, no other client is permitted to acquire those locks. If a client fails to check in with the NFSv4, the locks eventually get revoked by the server and other clients will be able to request and obtain locks.
+With NFSv4, locks have a limited duration. As long as the client holding the locks continues to check in with the NFSv4 server, no other client is permitted to acquire those locks. If a client fails to check in with the NFSv4, the locks eventually get revoked by the server and other clients will be able to request and obtain locks.
 
- == NFsv4 leases
-
+== NFsv4 leases
 NFSv4 locks are associated with an NFSv4 lease. When an NFSv4 client establishes a connection with an NFSv4 server, it gets a lease. If the client obtains a lock (there are many types of locks) then the lock is associated with the lease.
 
 This lease has a defined timeout. By default, ONTAP will set the timeout value to 30 seconds:
 
 ....
-EcoSystems-A200-B::*> nfs server show -vserver jfsCloud4 -fields v4-lease-seconds
+Cluster01::*> nfs server show -vserver vserver1 -fields v4-lease-seconds
 
 vserver   v4-lease-seconds
 --------- ----------------
-jfsCloud4 30
+vserver1  30
 ....
 
 This means that an NFSv4 client needs to check in with the NFSv4 server every 30 seconds to renew its leases.
@@ -53,7 +49,7 @@ NFSv3 is stateless. It's not expecting communication from the clients. NFSv4 is 
 
 With NFSv3, you could move network cables around, reboot network switches, make configuration changes, and be fairly sure that nothing bad would happen. Applications would normally just wait patiently for the network connection to work again. 
 
-With NFSv4, you have 30 seconds (unless you've increased the value of that parameter within ONTAP) to complete your work. If you exceed that, your leases time out.  Normally this results in application crashes.
+With NFSv4, you have 30 seconds (unless you've increased the value of that parameter within ONTAP) to complete your work. If you exceed that, your leases time out. Normally this results in application crashes.
 
 As an example, if you have an Oracle database, and you experience a loss of network connectivity (sometimes called a "network partition") that exceeds the lease timeout, you will crash the database.
 
@@ -78,12 +74,12 @@ ORA-27061: waiting for async I/Os failed
 If you look at the syslogs, you should see several of these errors:
 
 ....
-Oct 11 15:52:55 jfs0 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
-Oct 11 15:52:55 jfs0 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
-Oct 11 15:52:55 jfs0 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
+Oct 11 15:52:55 host1 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
+Oct 11 15:52:55 host1 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
+Oct 11 15:52:55 host1 kernel: NFS: nfs4_reclaim_open_state: Lock reclaim failed!
 ....
 
-The log messages are usually the first sign of a problem, other than the application freeze.  Typically, you see nothing at all during the network outage because processes and the OS itself are blocked attempting to access the NFS filesystem.
+The log messages are usually the first sign of a problem, other than the application freeze. Typically, you see nothing at all during the network outage because processes and the OS itself are blocked attempting to access the NFS file system.
 
 The errors appear after the network is operational again. In the example above, once connectivity was reestablished, the OS attempted to reacquire the locks, but it was too late. The lease had expired and the locks were removed. That results in an error that propagates up to the Oracle layer and causes the message in the alert log. You might see variations on these patterns depending on the version and configuration of the database.
 
@@ -92,7 +88,6 @@ In summary, NFSv3 tolerates network interruption, but NFSv4 is more sensitive an
 What if a 30 second timeout isn't acceptable? What if you manage a dynamically changing network where switches are rebooted or cables are relocated and the result is the occasional network interruption? You could choose to extend the lease period, but whether you want to do that requires an explanation of NFSv4 grace periods.
 
 == NFSv4 grace periods
-
 If an NFSv3 server is rebooted, it's ready to serve IO almost instantly. It was not maintaining any sort of state about clients. The result is that an ONTAP takeover operation often appears to be close to instantaneous. The moment a controller is ready to start serving data it will send an ARP to the network that signals the change in topology. Clients normally detect this almost instantly and data resumes flowing. 
 
 NFSv4, however, will produce a brief pause. It's just part of how NFSv4 works.
@@ -102,19 +97,18 @@ NFSv4 servers need to track the leases, locks, and who's using what data. If an 
 If you suddenly power cycle your NFSv4 server. When it comes back up, clients that attempt to resume IO will get a response that essentially says, "I have lost lease/lock information. Would you like to re-register your locks?" That's the start of the grace period. It defaults to 45 seconds on ONTAP:
 
 ....
-EcoSystems-A200-B::> nfs server show -vserver jfsCloud4 -fields v4-grace-seconds
+Cluster01::> nfs server show -vserver vserver1 -fields v4-grace-seconds
 
 vserver   v4-grace-seconds
 --------- ----------------
-jfsCloud4 45
+vserver1  45
 ....
 
 The result is that, after a restart, a controller will pause IO while all the clients reclaim their leases and locks. Once the grace period ends, the server will resume IO operations.
 
 == Lease timeouts vs grace periods
- 
 The grace period and the lease period are connected. As mentioned above, the default lease timeout is 30 seconds, which means NFSv4 clients must check in with the server at least every 30 seconds or they lose their leases and, in turn, their locks. The grace period exists to allow an NFS server to rebuild lease/lock data, and it defaults to 45 seconds. ONTAP requires the grace period to be 15 seconds longer than the lease period. This ensures that an NFS client environment that is designed to renew leases at least every 30 seconds will have the ability to check in with the server after a restart. A grace period of 45 seconds ensures that all those clients that expect to renew their leases at least every 30 seconds definitely have the opportunity to do so. 
 
-If a 30 second timeout isn't acceptable, you could choose to extend the lease period. If you want to increase the lease timeout to 60 seconds in order to withstand a 60 second network outage, you're going to have to increase the grace period to at least 75 seconds. ONTAP requires it to be 15 seconds higher than the lease period. That means you're going to experience longer IO pauses during controller failovers.
+If a 30 second timeout isn't acceptable, you could choose to extend the lease period. If you want to increase the lease timeout to 60 seconds in order to withstand a 60 second network outage, you're going to have to increase the grace period to at least 75 seconds. ONTAP requires it to be 15 seconds higher than the lease period. That means you're going to experience longer IO pauses during controller failover.
 
-This shouldn't normally be a problem. Typical users only update ONTAP controllers once or twice per year, and unplanned failovers due to hardware failures are extremely rare. In addition, if you had a network where a 60-second network outage was a concerning possibility, and you needed to the lease timeout to 60 seconds, then you probably wouldn't object to rare storage system failovers resulting in a 75 second pause either. You've already acknowledged you have a network that's pausing for 60+ seconds rather frequently.
+This shouldn't normally be a problem. Typical users only update ONTAP controllers once or twice per year, and unplanned failover due to hardware failures are extremely rare. In addition, if you had a network where a 60-second network outage was a concerning possibility, and you needed to the lease timeout to 60 seconds, then you probably wouldn't object to rare storage system failover resulting in a 75 second pause either. You've already acknowledged you have a network that's pausing for 60+ seconds rather frequently.

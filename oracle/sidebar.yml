@@ -53,7 +53,7 @@ entries:
       url: /oracle/dp/integrity.html
     - title: Snapshot-based backups
       url: /oracle/dp/snapshots.html
-    - title: Hot backups
+    - title: Online (hot) backups
       url: /oracle/dp/oracle_hot_backup.html
     - title: Consistency group backup
       url: /oracle/dp/oracle_consistency_group_backup.html

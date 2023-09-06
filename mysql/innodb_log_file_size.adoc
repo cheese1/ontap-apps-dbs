@@ -4,7 +4,6 @@ permalink: mysql/innodb_log_file_size.html
 keywords: MySQL,MariaDB,innodb_log_file_size
 summary: MySQL on ONTAP
 ---
-
 = innodb_log_file_size
 
 [.lead]

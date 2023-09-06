@@ -4,8 +4,8 @@ permalink: oracle/overview.html
 keywords: oracle, database, ontap, TR-3633
 summary: NetApp ONTAP is a powerful data-management platform with native capabilities that include everything from instant backup, restore and cloning capabilities, efficiency features such as inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
 ---
-
 = Oracle Databases on ONTAP
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,11 +13,11 @@ summary: NetApp ONTAP is a powerful data-management platform with native capabil
 :imagesdir: ./../media/
 
 [.lead]
-ONTAP is designed for Oracle databases. For decades, ONTAP has been optimized for the unique demands of relational database IO and multiple ONTAP features were created specifically to service the needs of Oracle databases and even at the request of Oracle Inc. itself.
+ONTAP is designed for Oracle databases. For decades, ONTAP has been optimized for the unique demands of relational database I/O and multiple ONTAP features were created specifically to service the needs of Oracle databases and even at the request of Oracle Inc. itself.
 
 [NOTE]
-This section is based on TR-3633: Oracle databases on ONTAP. Subsection of this document include content from TR-4591: Oracle data protection: Backup, recovery, replication, TR-4592: Oracle on MetroCluster, and TR-4534: Migration of Oracle Databases to NetApp Storage Systems
+This documentation replaces previously published technical reports TR-3633: Oracle databases on ONTAP, TR-4591: Oracle data protection: Backup, recovery, replication, TR-4592: Oracle on MetroCluster, and TR-4534: Migration of Oracle Databases to NetApp Storage Systems
 
 In addition to the many possible ways ONTAP brings value to your database environment, there is also a wide variety of user requirements, including database size, performance requirements, and data protection needs. Known deployments of NetApp storage include everything from a virtualized environment of approximately 6,000 databases running under VMware ESX to a single-instance data warehouse currently sized at 996TB and growing. As a result, there are few clear best practices for configuring an Oracle database on NetApp storage.
 
-This document addresses the requirements for operating an Oracle database on NetApp storage in two ways. First, when a clear best practice exists, it is called out specifically. Second, this document reviews the many design considerations that must be addressed by architects of Oracle storage solutions based on their specific business requirements.
+The requirements for operating an Oracle database on NetApp storage are addressed in two ways. First, when a clear best practice exists, it will be called out specifically. At a high level, many design considerations that must be addressed by architects of Oracle storage solutions based on their specific business requirements will be explained.

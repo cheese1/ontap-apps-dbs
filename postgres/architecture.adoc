@@ -4,11 +4,10 @@ permalink: postgres/architecture.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
-
-= PostgreSQL Architecture
+= PostgreSQL architecture
 
 [.lead]
-PostgreSQL is an RDBMS based on client and server architecture. A PostgreSQL instance is known as a database cluster, which is a collection of databases as opposed to a collection of servers. Figure 1 shows a brief overview of the PostgreSQL architecture.
+PostgreSQL is an RDBMS based on client and server architecture. A PostgreSQL instance is known as a database cluster, which is a collection of databases as opposed to a collection of servers.
 
 image:./media/architecture.png[Error: Graphic not found]
 
@@ -16,7 +15,7 @@ There are three major elements in a PostgreSQL database: the postmaster, the fro
 
 A PostgreSQL instance is based on a multiprocess model instead of a multithreaded model. It spawns multiple processes for different jobs, and each process has its own functionality. The major processes include the client process, the WAL writer process, the background writer process, and the checkpointer process:
 
-* When a client (foreground) process sends read or write requests to the PostgreSQL instance, it doesn’t read or write data directly to the disk. It first buffers the data in shared buffers and write-ahead logging (WAL) buffers.
+* When a client (foreground) process sends read or write requests to the PostgreSQL instance, it doesn't read or write data directly to the disk. It first buffers the data in shared buffers and write-ahead logging (WAL) buffers.
 * A WAL writer process manipulates the content of the shared buffers and WAL buffers to write into the WAL logs. WAL logs are typically transaction logs of PostgreSQL and are sequentially written. Therefore, to improve the response time from the database, PostgreSQL first writes into the transaction logs and acknowledges the client.
 * To put the database in a consistent state, the background writer process checks the shared buffer periodically for dirty pages. It then flushes the data onto the data files that are stored on NetApp volumes or LUNs.
 * The checkpointer process also runs periodically (less frequently than the background process) and prevents any modification to the buffers. It signals to the WAL writer process to write and flush the checkpoint record to the end of WAL logs that are stored on the NetApp disk. It also signals the background writer process to write and flush all dirty pages to the disk.

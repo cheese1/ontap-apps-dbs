@@ -4,7 +4,6 @@ permalink: common/dp/overview.html
 keywords: ontap, data protection
 summary: Basic principles of ONTAP data protection
 ---
-
 = ONTAP data protection overview
 :hardbreaks:
 :nofooter:

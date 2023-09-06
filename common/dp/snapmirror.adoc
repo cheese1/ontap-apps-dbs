@@ -4,7 +4,6 @@ permalink: common/dp/snapmirror.html
 keywords: ontap, snapmirror
 summary: SnapMirror and SyncMirror
 ---
-
 = SnapMirror and SyncMirror
 :hardbreaks:
 :nofooter:
@@ -24,7 +23,6 @@ The primary ONTAP replication technologies applicable to applications are the Ne
 The right choice depends on the specific replication, recovery, and retention requirements.
 
 == ONTAP SnapMirror
-
 SnapMirror is the NetApp asynchronous replication solution, ideally suited for protecting large, complicated, and dynamic datasets such as databases and their associated applications. Its key values are as follows:
 
 * *Manageability.* SnapMirror is easy to configure and manage because it is a native part of the storage software. No add-on products are required. Replication relationships can be established in minutes and can be managed directly on the storage system.
@@ -48,7 +46,6 @@ From a recovery perspective, the key values of SnapMirror are as follows:
 SnapMirror operating in version-flexible mode allows for replication of specific snapshots, permitting different retention times at the primary and secondary sites.
 
 == SnapMirror Synchronous
-
 SnapMirror Synchronous (SM-S) is an enhancement to SnapMirror that delivers RPO=0 synchronous replication. It is most often used in storage architectures where only subset of the total data requires synchronous mirroring.
 
 SM-S can operate in two slightly different modes, Sync and StrictSync.
@@ -60,15 +57,13 @@ StrictSync guarantees an RPO=0. A failure to replicate changes results in an I/O
 For a complete explanation of SM-S, see https://www.netapp.com/media/17174-tr4733.pdf?v=1221202075448P[TR-4733^] and the official ONTAP documentation. Features are continuously added with new versions of ONTAP.
 
 == Consistency groups
+ONTAP allows the creation of consistency group snapshots, and starting with 9.13.1, ONTAP can replicate groups of volumes (remember that a volume in ONTAP terminology is not a LUN, it is a management container consisting of one or more files or LUNs) as consistent group.
 
-ONTAP allows the creation of consistency group snapshots, and starting with 9.13.1, ONTAP can replicate groups of volumes (remember that a volume in ONTAP terminology is not a LUN, it is a management container consistenting of one or more files or LUNS) as consistent group.
-
-SnapMirror replication and breaking CG SnapMirror relation preserves consistency across volumes, and SnapMirror Synchronous and SnapMirror Business Continuity both preserve consistency across constitutent volumes. 
+SnapMirror replication and breaking CG SnapMirror relation preserves consistency across volumes, and SnapMirror Synchronous and SnapMirror Business Continuity both preserve consistency across constituent volumes. 
 
 The result is you can replicate a multi-volume dataset and ensure all volumes are cross-consistent. Among other things, this allows "break the mirror and go" DR operations without a need for additional application or database recovery steps.
 
 == MetroCluster and SyncMirror
-
 MetroCluster is also a synchronous replication solution, aimed at large-scale mission-critical workloads. Replication is based on SyncMirror. At the simplest layer, SyncMirror creates two complete sets of RAID-protected data in two different locations. They could be in adjoining rooms within a data center, or they could be located many kilometers apart.
 
 SyncMirror is fully integrated with ONTAP and operates just above the RAID level. Therefore, all the usual ONTAP features, such as Snapshot copies, SnapRestore, and NetApp FlexClone, work seamlessly. It is still ONTAP, it just includes an additional layer of synchronous data mirroring.

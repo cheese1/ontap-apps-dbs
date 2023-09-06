@@ -4,8 +4,8 @@ permalink: oracle/host-configuration/linux.html
 keywords: oracle, database, ontap, linux, nfs, xfs, ext4, slot tables
 summary: Oracle on ONTAP using Linux
 ---
-
 = Linux
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,27 +13,30 @@ summary: Oracle on ONTAP using Linux
 :imagesdir: ./../media/
 
 [.lead]
-This section addresses configuration topics specific to the Linux OS.
+Configuration topics specific to the Linux OS.
 
 == Slot tables
-
-NFS performance on Linux depends on a parameter called `tcp_slot_table_entries`. Please see the section link:/common/storage-configuration/nfs.html[NFS] for critical information.
+NFS performance on Linux depends on a parameter called `tcp_max_slot_table_entries`. Please see the link:../../common/storage-configuration/nfs.html[NFS] for critical information.
 
 == Linux NFS mount options
-
 The following table lists the Linux NFS mount options for a single instance.
 
 |===
 .^|File type |Mount options
 
 .^|ADR Home
-.^|rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
 .^|Control files
 Datafiles
 Redo logs
-.^|rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr`
 .^|ORACLE_HOME
-.^|rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr`
 |===
 
 The following table lists the Linux NFS mount options for RAC.
@@ -42,17 +45,26 @@ The following table lists the Linux NFS mount options for RAC.
 .^|File type |Mount options
 
 .^|ADR Home
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144‬,wsize=262144,actimeo=0
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+actimeo=0`
 .^|Control files
 Data files
 Redo logs
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,actimeo=0`
-.^|CRS/votin
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,noac,actimeo=0`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,actimeo=0`
+.^|CRS/voting
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,noac,actimeo=0`
 .^|Dedicated `ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
 .^|Shared `ORACLE_HOME`
-.^|`rw,bg,hard,[vers=3,vers=4,vers=4.1],proto=tcp,timeo=600,rsize=262144,wsize=262144,nointr,actimeo=0`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,actimeo=0`
 |===
 
 The primary difference between single-instance and RAC mount options is the addition of `actimeo=0` to the mount options. This addition has the effect of disabling the host OS caching, which enables all instances in the RAC cluster to have a consistent view of the state of the data. Although using the `init.ora` parameter `filesystemio_options=setall` has the same effect of disabling host caching, it is still necessary to use `actimeo=0`.
@@ -62,55 +74,48 @@ The reason `actimeo=0` is required for shared `ORACLE_HOME` deployments is to fa
 Generally, nondatabase files should be mounted with the same options used for single-instance datafiles, although specific applications might have different requirements. Avoid the mount options `noac` and `actimeo=0` if possible because these options disable file system-level readahead and buffering. This can cause severe performance problems for processes such as extraction, translation, and loading.
 
 === ACCESS and GETATTR
-
 Some customers have noted that an extremely high level of other IOPS such as ACCESS and GETATTR can dominate their workloads. In extreme cases, operations such as reads and writes can be as low as 10% of the total. This is normal behavior with any database that includes using `actimeo=0` and/or `noac` on Linux because these options cause the Linux OS to constantly reload file metadata from the storage system. Operations such as ACCESS and GETATTR are low-impact operations that are serviced from the ONTAP cache in a database environment. They should not be considered genuine IOPS, such as reads and writes, that create true demand on storage systems. These other IOPS do create some load, however, especially in RAC environments. To address this situation, enable DNFS, which bypasses the OS buffer cache and avoids these unnecessary metadata operations.
 
 === Linux Direct NFS
-
 One additional mount option, called `nosharecache`, is required when (a) DNFS is enabled and (b) a source volume is mounted more than once on a single server (c) with a nested NFS mount. This configuration is seen primarily in environments supporting SAP applications. For example, a single volume on a NetApp system could have a directory located at `/vol/oracle/base` and a second at `/vol/oracle/home`. If `/vol/oracle/base` is mounted at `/oracle` and `/vol/oracle/home` is mounted at `/oracle/home`, the result is nested NFS mounts that originate on the same source.
 
 The OS can detect the fact that `/oracle` and `/oracle/home` reside on the same volume, which is the same source file system. The OS then uses the same device handle for accessing the data. Doing so improves the use of OS caching and certain other operations, but it interferes with DNFS. If DNFS must access a file, such as the `spfile`, on `/oracle/home`, it might erroneously attempt to use the wrong path to the data. The result is a failed I/O operation. In these configurations, add the `nosharecache` mount option to any NFS file system that shares a source FlexVol volume with another NFS file system on that host. Doing so forces the Linux OS to allocate an independent device handle for that file system.
 
 === Linux Direct NFS and Oracle RAC
-
 The use of DNFS has special performance benefits for Oracle RAC on the Linux OS because Linux does not have a method to force direct I/O, which is required with RAC for coherency across the nodes. As a workaround, Linux requires the use of the `actimeo=0` mount option, which causes file data to expire immediately from the OS cache. This option in turn forces the Linux NFS client to constantly reread attribute data, which damages latency and increases load on the storage controller.
 
 Enabling DNFS bypasses the host NFS client and avoids this damage. Multiple customers have reported significant performance improvements on RAC clusters and significant decreases in ONTAP load (especially with respect to other IOPS) when enabling DNFS.
 
 === Linux Direct NFS and oranfstab file
-
 When using DNFS on Linux with the multipathing option, multiple subnets must be used. On other OSs, multiple DNFS channels can be established by using the `LOCAL` and `DONTROUTE` options to configure multiple DNFS channels on a single subnet. However, this does not work properly on Linux and unexpected performance problems can result. With Linux, each NIC used for DNFS traffic must be on a different subnet.
 
 === I/O scheduler
-
 The Linux kernel allows low-level control over the way that I/O to block devices is scheduled. The defaults on various distribution of Linux vary considerably. Testing shows that Deadline usually offers the best results, but on occasion NOOP has been slightly better. The difference in performance is minimal, but test both options if it is necessary to extract the maximum possible performance from a database configuration. CFQ is the default in many configurations, and it has demonstrated significant performance problems with database workloads.
 
 See the relevant Linux vendor documentation for instructions on configuring the I/O scheduler.
 
 === Multipathing
-
 Some customers have encountered crashes during network disruption because the multipath daemon was not running on their system. On recent versions of Linux, the installation process of the OS and the multipathing daemon might leave these OSs vulnerable to this problem. The packages are installed correctly, but they are not configured for automatic startup after a reboot.
 
 For example, the default for the multipath daemon on RHEL5.5 might appear as follows:
 
 ....
-[root@jfs0 iscsi]# chkconfig --list | grep multipath
+[root@host1 iscsi]# chkconfig --list | grep multipath
 multipathd      0:off   1:off   2:off   3:off   4:off   5:off   6:off
 ....
 
 This can be corrected with the following commands:
 
 ....
-[root@jfs0 iscsi]# chkconfig multipathd on
-[root@jfs0 iscsi]# chkconfig --list | grep multipath
+[root@host1 iscsi]# chkconfig multipathd on
+[root@host1 iscsi]# chkconfig --list | grep multipath
 multipathd      0:off   1:off   2:on    3:on    4:on    5:on    6:off
 ....
 
 == ASM mirroring
-
 ASM mirroring might require changes to the Linux multipath settings to allow ASM to recognize a problem and switch over to an alternate fail group. Most ASM configurations on ONTAP use external redundancy, which means that data protection is provided by the external array and ASM does not mirror data. Some sites use ASM with normal redundancy to provide two-way mirroring, normally across different sites.
 
-The Linux settings shown in the NetApp Host Utilities documentation include multipath parameters that result in indefinite queuing of I/O. This means an I/O on a LUN device with no active paths waits as long as required for the I/O to complete. This is usually desirable because Linux hosts wait as long as needed for SAN path changes to complete, for FC switches to reboot, or for a storage system to complete a failover.
+The Linux settings shown in the link:https://docs.netapp.com/us-en/ontap-sanhost/hu_fcp_scsi_index.html[NetApp Host Utilities documentation] include multipath parameters that result in indefinite queuing of I/O. This means an I/O on a LUN device with no active paths waits as long as required for the I/O to complete. This is usually desirable because Linux hosts wait as long as needed for SAN path changes to complete, for FC switches to reboot, or for a storage system to complete a failover.
 
 This unlimited queuing behavior causes a problem with ASM mirroring because ASM must receive an I/O failure for it to retry I/O on an alternate LUN.
 
@@ -121,10 +126,13 @@ polling_interval 5
 no_path_retry 24
 ....
 
-These settings create a 120- second timeout for ASM devices. The timeout is calculated as the `polling_interval` * `no_path_retry` as seconds. The exact value might need to be adjusted in some circumstances, but a 120 second timeout should be sufficient for most uses. Specifically, 120 seconds should allow a controller takeover or giveback to occur without producing an I/O error that would result in the fail group being taken offline.
+These settings create a 120-second timeout for ASM devices. The timeout is calculated as the `polling_interval` * `no_path_retry` as seconds. The exact value might need to be adjusted in some circumstances, but a 120 second timeout should be sufficient for most uses. Specifically, 120 seconds should allow a controller takeover or giveback to occur without producing an I/O error that would result in the fail group being taken offline.
 
 A lower `no_path_retry` value can shorten the time required for ASM to switch to an alternate fail group, but this also increases the risk of an unwanted failover during maintenance activities such as a controller takeover. The risk can be mitigated by careful monitoring of the ASM mirroring state. If an unwanted failover occurs, the mirrors can be rapidly resynced if the resync is performed relatively quickly. For additional information, see the Oracle documentation on ASM Fast Mirror Resync for the version of Oracle software in use.
 
 == Linux xfs, ext3, and ext4 mount options
 
-NetApp recommends using the default mount options.
+[TIP]
+====
+*NetApp recommends* using the default mount options.
+====

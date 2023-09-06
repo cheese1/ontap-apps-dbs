@@ -4,7 +4,6 @@ permalink: oracle/dp/consistency_group_disaster_recovery.html
 keywords: oracle, data protection, DR, CG
 summary: Consistency group replication for Oracle databases
 ---
-
 = Consistency group disaster recovery
 :hardbreaks:
 :nofooter:
@@ -13,7 +12,7 @@ summary: Consistency group replication for Oracle databases
 :imagesdir: ./../media/
 
 [.lead]
-Consistency group replication can be can be as simple as scheduling replication of a single volume SnapMirror. This includes datafiles, controlfiles, archive logs, and redo logs. Every SnapMirror update results in a new copy of the database at the destination site that is consistent and ready for activation by breaking the mirror.
+Consistency group replication can be can be as simple as scheduling replication of a single volume via SnapMirror. This includes datafiles, controlfiles, archive logs, and redo logs. Every SnapMirror update results in a new copy of the database at the destination site that is consistent and ready for activation by breaking the mirror.
 
 Where a database must span volumes, a consistency group snapshot (cg-snapshot) is required.
 

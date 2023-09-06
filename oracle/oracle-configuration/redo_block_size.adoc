@@ -4,7 +4,8 @@ sidebar: sidebar
 keywords: oracle, database, ontap, redo, block size
 summary: "Redo block size selection"
 ---
-= Redo Block Size
+= Redo block size
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,8 +15,9 @@ summary: "Redo block size selection"
 [.lead]
 Oracle supports either a 512-byte or 4KB redo block size. The default is 512 bytes.
 
-The best option is expected to be 512 bytes because this size minimizes the amount of data written during redo operations. However, it is possible that the 4KB size could offer a performance benefit at very high logging rates. For example, a single database with 50MBps of redo logging might be more efficient if the redo block size is larger. A storage system supporting many databases with a large total amount of redo logging might benefit from a 4KB redo block size. This is because this setting would eliminate inefficient partial I/O processing when only a part of a 4KB block must be updated.
+The best option is expected to be 512 bytes because this size minimizes the amount of data written during redo operations. However, it is possible that the 4KB size could offer a performance benefit at very high logging rates. For example, a single database with 50MB/sec of redo logging might be more efficient if the redo block size is larger. A storage system supporting many databases with a large total amount of redo logging might benefit from a 4KB redo block size. This is because this setting would eliminate inefficient partial I/O processing when only a part of a 4KB block must be updated.
 
 It is not correct that all I/O operations are performed in single units of the redo log block size. At very high logging rates, the database generally performs very large I/O operations composed of multiple redo blocks. The actual size of those redo blocks does not generally affect the efficiency of logging.
 
-NetApp recommends only changing the default block size for cause, such as a documented requirement for a particular application or because of a recommendation made by NetApp or Oracle customer support.
+[TIP]
+*NetApp recommends* only changing the default block size for cause, such as a documented requirement for a particular application or because of a recommendation made by NetApp or Oracle customer support.

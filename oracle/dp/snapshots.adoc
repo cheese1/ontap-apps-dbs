@@ -4,7 +4,6 @@ permalink: oracle/dp/snapshots.html
 keywords: oracle, database, ontap, snapshots
 summary: Oracle on ONTAP and the role of snapshots
 ---
-
 = Snapshot-based backups
 
 :hardbreaks:
@@ -16,7 +15,7 @@ summary: Oracle on ONTAP and the role of snapshots
 [.lead]
 The most important consideration for a database file system layout is the plan for leveraging NetApp Snapshot technology. 
 
-This topic is discussed in much more detail in subsequent sections of this document, but it is important to understand the basic procedures in order to begin designing your Oracle storage layout.
+This topic is discussed in much more detail in subsequent parts of this documentation, but it is important to understand the basic procedures in order to begin designing your Oracle storage layout.
 
 There are two primary approaches to snapshot-based backups:
 
@@ -37,10 +36,9 @@ The basic procedure for a snapshot-based online backup is as follows:
 
 This procedure yields a set of snapshots containing datafiles in backup mode and the critical archive logs generated while in backup mode. These are the two requirements for recovering a database. Files such as control files should also be protected for convenience, but the only absolute requirement is protection for datafiles and archive logs.
 
-Although different customers might have very different strategies, almost all of these strategies are ultimately based on the principles outlined in this section.
+Although different customers might have very different strategies, almost all of these strategies are ultimately based on the the same principles outlined below.
 
 == Snapshot-based recovery
-
 When designing volume layouts for Oracle databases, the first decision is whether to use volume-based NetApp SnapRestore (VBSR) technology.
 
 Volume-based SnapRestore allows a volume to be almost instantly reverted to an earlier point in time. Because all of the data on the volume is reverted, VBSR might not be appropriate for all use cases. For example, if an entire database, including datafiles, redo logs, and archive logs, is stored on a single volume and this volume is restored with VBSR, then data is lost because the newer archive log and redo data are discarded.
@@ -52,7 +50,6 @@ VBSR is preferred when a database is very large or when it must be recovered as 
 Isolating datafiles in this manner allows them to be reverted to an earlier state without damaging other file systems.
 
 == Snapshot reserve
-
 For each volume with Oracle data in a SAN environment, the `percent-snapshot-space` should be set to zero because reserving space for a snapshot in a LUN environment is not useful. If the fractional reserve is set to 100, a snapshot of a volume with LUNs requires enough free space in the volume, excluding the snapshot reserve, to absorb 100% turnover of all of the data. If the fractional reserve is set to a lower value, then a correspondingly smaller amount of free space is required, but it always excludes the snapshot reserve. This means that the snapshot reserve space in a LUN environment is wasted.
 
 In an NFS environment, there are two options:
@@ -69,7 +66,6 @@ When `percent-snapshot-space` is set to zero, all space in the volume is availab
 There is no clear preference between option one and option two among end users.
 
 == ONTAP and third-party snapshots
-
 Oracle Doc ID 604683.1 explains the requirements for third-party snapshot support and the multiple options available for backup and restore operations.
 
 The third-party vendor must guarantee that the company’s snapshots conform to the following requirements:

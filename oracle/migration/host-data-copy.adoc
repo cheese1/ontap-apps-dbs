@@ -77,7 +77,7 @@ With the Partitioning, OLAP, Advanced Analytics and Real Application Testing opt
 NTAP shut down
 ....
 
-. Convert the file systems to read-only. This can be done more quickly by using a script, as shown in link:sample_scripts.html#convert-file-system-to-read-only[Convert File System to Read Only].
+. Convert the file systems to read-only. This can be done more quickly by using a script, as shown in link:sample-scripts.html#convert-file-system-to-read-only[Convert File System to Read Only].
 +
 ....
 [root@jfs0 current]# ./mk.fs.readonly.pl /oradata
@@ -152,7 +152,7 @@ sent 527098156 bytes  received 278 bytes  95836078.91 bytes/sec
 total size is 527032832  speedup is 1.00
 ....
 
-. Unmount the old file systems and relocate the copied data. This can be done more quickly by using a script, as shown in link:sample_scripts.html#replace-file-system[Replace File System].
+. Unmount the old file systems and relocate the copied data. This can be done more quickly by using a script, as shown in link:sample-scripts.html#replace-file-system[Replace File System].
 +
 ....
 [root@jfs0 current]# ./swap.fs.pl /logs,/new/logs
@@ -751,7 +751,7 @@ GROUP#||''||BYTES
 3 52428800
 ....
 
-. For each redo log, create a new group with a matching configuration. If you are not using OMF, you must specify the full path. This is also an example that uses the `db_create_online_log` parameters. As was shown previously in this section, this parameter was set to +NEWLOGS. This configuration allows you to use the following commands to create new online logs without the need to specify a file location or even a specific ASM disk group.
+. For each redo log, create a new group with a matching configuration. If you are not using OMF, you must specify the full path. This is also an example that uses the `db_create_online_log` parameters. As was shown previously, this parameter was set to +NEWLOGS. This configuration allows you to use the following commands to create new online logs without the need to specify a file location or even a specific ASM disk group.
 +
 ....
 RMAN> alter database add logfile size 52428800;
@@ -1239,7 +1239,7 @@ ASMCMD>
 
 === Data file cleanup procedure
 
-The migration process might result in data files with long or cryptic syntax, depending on how Oracle RMAN was used. In the example shown here, the backup was performed with the file format of `/oradata/TOAST/%U`. `%U` indicates that RMAN should create a default unique name for each data file. The result is similar to what is shown in the following text. The traditional names for the data files are embedded within the names. This can be cleaned up by using the scripted approach shown in link:sample_scripts.html#asm-migration-cleanup[ASM Migration Cleanup].
+The migration process might result in data files with long or cryptic syntax, depending on how Oracle RMAN was used. In the example shown here, the backup was performed with the file format of `/oradata/TOAST/%U`. `%U` indicates that RMAN should create a default unique name for each data file. The result is similar to what is shown in the following text. The traditional names for the data files are embedded within the names. This can be cleaned up by using the scripted approach shown in link:sample-scripts.html#asm-migration-cleanup[ASM Migration Cleanup].
 
 ....
 [root@jfsc1 current]# ./fixuniquenames.pl TOAST

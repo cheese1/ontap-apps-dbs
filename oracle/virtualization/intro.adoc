@@ -4,8 +4,8 @@ permalink: oracle/virtualization/intro.html
 keywords: oracle, database, ontap, virtualization, esx, hyper-v, KVM
 summary: Introduction to database virtualization
 ---
-
 = Virtualization
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -20,7 +20,6 @@ Many misconceptions exist on the support policies for virtualization, particular
 A customer with a problem unknown to Oracle might be asked to reproduce the problem on physical hardware. An Oracle customer running a bleeding-edge version of a product might not want to use virtualization because of the potential for new bug discovery. However, this situation has not been a problem in practice for virtualization customers using generally available product versions.
 
 == Storage presentation
-
 Customers considering virtualization of their databases should base their storage decisions on their business needs. Although this is a generally true statement for all IT decisions, it is especially important for virtualization, because the size and scope of projects vary considerably.
 
 There are four basic options for storage presentation:
@@ -41,22 +40,19 @@ As a general rule, avoid using datastores for Oracle files. There are many reaso
 +
 Using VM-owned file systems makes it easier to leverage Snapshot-based backups and restores. A VM-owned file system offloads the work of performing backups onto the storage system. There is no need to overbuild the hypervisor configuration purely to support the bandwidth and CPU requirements in the backup window.
 
-NetApp recommends the following:
-
-* For optimum performance and manageability, avoid placing Oracle data on a datastore. Use guest-owned file systems such as NFS or iSCSI file systems managed by the guest or with RDMs.
+[TIP]
+*NetApp recommends* to avoid placing Oracle data on a datastore to achieve optimum performance and manageability,. Use guest-owned file systems such as NFS or iSCSI file systems managed by the guest or with RDMs.
 
 == Paravirtualized drivers
-
 For optimum performance, the use of paravirtualized network drivers is critical. When a datastore is used, a paravirtualized SCSI driver is required. A paravirtualized device driver allows a guest to integrate more deeply into the hypervisor, as opposed to an emulated driver in which the hypervisor spends more CPU time mimicking the behavior of physical hardware.
 
 The performance of most databases is limited by storage. Therefore, the extra latency introduced by a network or SCSI driver is particularly noticeable. NetApp Customer Support has encountered many performance complaints that were resolved by installing paravirtualized drivers. During one customer proof of concept, databases showed better performance under ESX than with the same hardware running as bare metal. The tests were very I/O intensive, and the performance difference was attributed to the use of the ESX paravirtualized network drivers.
 
-* Always use paravirtualized network drivers and SCSI drivers.
+[TIP]
+*NetApp recommends* always using paravirtualized network drivers and SCSI drivers.
 
 == Overcommitting RAM
-
 Overcommitting RAM means configuring more virtualized RAM on various hosts than exists on the physical hardware. Doing so can cause unexpected performance problems. When virtualizing a database, the underlying blocks of the Oracle SGA must not be swapped out to storage by the hypervisor. Doing so causes highly unstable performance results.
 
-NetApp recommends the following:
-
-* Do not configure a hypervisor in a way that allows Oracle SGA blocks to be swapped out.
+[TIP]
+*NetApp recommends* to not configure a hypervisor in a way that allows Oracle SGA blocks to be swapped out.
