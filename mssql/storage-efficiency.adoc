@@ -1,0 +1,35 @@
+---
+sidebar: sidebar
+permalink: mssql/storage-efficiency.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+= Storage efficiency
+
+[.lead]
+Storage efficiency is the ability to store and manage SQL Server data in a way that consumes the least amount of storage space with little or no effect on the overall performance of the system. 
+
+Storage efficiency is a combination of RAID, provisioning (overall layout and utilization), mirroring, and other data protection technologies. NetApp technologies like Snapshot copies, Thin provisioning,  FlexClone helps in creating cost benefits by optimizing existing storage in the infrastructure and deferring or avoiding future storage expenditures. The more you use these technologies together, the larger the savings. For more information, see link:../common/ontap/thin-provisioning.html[provisioning recommendations]
+
+Storage compression, compaction, deduplication are other storage efficiency options that enhances amount of logical data that fits on a given amount of physical storage. For more detailed information, see link:../common/ontap/efficiency.html[efficiency best practices]. 
+
+SQL Server also have feature to compress and efficiently manage data. SQL Server currently supports two types of data compression: row compression and page compression. 
+
+Row compression changes the data storage format. For example, it changes integers and decimals to the variable-length format instead of their native fixed-length format. It also changes fixed-length character strings to the variable-length format by eliminating blank spaces. Page compression implements row compression and two other compression strategies (prefix compression and dictionary compression). You can find more details about page compression in link:https://learn.microsoft.com/en-us/sql/relational-databases/data-compression/page-compression-implementation?view=sql-server-ver16&redirectedfrom=MSDN[Page Compression Implementation]. 
+
+Data compression is currently supported in the Enterprise, Developer, and Evaluation editions of SQL Server 2008 and later. Although compression can be performed by the database itself, this is rarely observed in a SQL Server environment.
+
+Here are the recommendation for managing space for SQL Server data files
+
+- Use thin provisioning in SQL Server environments to improve space utilization and to reduce the overall storage requirements when the space guarantee functionality is used.
+- Use autogrow for most common deployment configurations because the storage admin only needs to monitor space usage in the aggregate.
+- Advice not to enable deduplication on any volumes containing SQL Server data files unless the volume is known to contain multiple copies of the same data, such as restoring database from backups to a single volume.
+
+== Space reclamation
+
+Space reclamation can be initiated periodically to recover unused space in a LUN. With SnapCenter, you can use the following PowerShell command to start space reclamation. 
+----
+Invoke-SdHostVolumeSpaceReclaim -Path drive_path
+----
+If you need to run space reclamation, this process should be run during periods of low activity because it initially consumes cycles on the host.

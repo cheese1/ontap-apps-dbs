@@ -1,0 +1,80 @@
+---
+sidebar: sidebar
+permalink: mssql/CPUConfiguration.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+
+= CPU configuration
+[.lead]
+
+== Hyperthreading
+
+Hyperthreading is Intel’s proprietary simultaneous multithreading (SMT) implementation, which improves parallelization of computations (multitasking) performed on x86 microprocessors.
+
+Hardware that uses hyperthreading allows the logical hyperthread CPUs to appear as physical CPUs to the operating system. SQL Server then sees the physical CPUs, which the operating system presents, and so can use the hyperthreaded processors.
+
+The caveat here is that each SQL Server version has its own limitations on the compute power it can use. For more information, see Compute Capacity Limits by Edition of SQL Server.
+
+There are two main schools of thought when licensing SQL Server. The first is known as a server + client access license (CAL) model; the second is the per processor core model. Although you can access all the product features available in SQL Server with the server + CAL strategy, there is a hardware limit of 20 CPU cores per socket. Even if you have SQL Server Enterprise Edition + CAL for a server with more than 20 CPU cores per socket, the application cannot use all those cores at a time on that instance. Figure shows the SQL Server log message after startup indicating the enforcement of the core limit.
+
+=== Log entries indicate number of cores being used after SQL Server startup.
+
+image:./media/hyperthreading.png[Error: Missing Graphic Image]
+
+Therefore, to use all CPUs, you should use the per-processor core license. For detailed information about SQL Server licensing, see link:https://www.microsoft.com/en-us/sql-server/sql-server-2022-comparison[SQL Server 2022: Your modern data platform].
+
+== CPU affinity
+
+You are unlikely ever to need to alter the processor affinity defaults unless you encounter performance problems, but it is still worth understanding what they are and how they work.
+
+SQL Server supports processor affinity by two options:
+
+* CPU affinity mask
+* Affinity I/O mask
+
+SQL Server uses all CPUs available from the operating system (if the per-processor core license is chosen). It creates schedulers on all the CPUs to make best use of the resources for any given workload. When multitasking, the operating system or other applications on the server can switch process threads from one processor to another. SQL Server is a resource-intensive application, and so performance can be affected when this occurs. To minimize the effect, you can configure the processors such that all the SQL Server load is directed to a preselected group of processors. This is achieved by using the CPU affinity mask.
+
+The affinity I/O mask option binds SQL Server disk I/O to a subset of CPUs. In SQL Server OLTP environments, this extension can enhance the performance of SQL Server threads issuing I/O operations.
+
+== Max Degree of Parallelism (MAXDOP)
+
+By default, SQL Server uses all available CPUs during query execution (if the per-processor core license chosen). 
+
+Although this is great for large queries, it can cause performance problems and limit concurrency. A better approach is to limit parallelism to the number of physical cores in a single CPU socket. For example, on a server with two physical CPU sockets with 12 cores per socket, regardless of hyperthreading, MAXDOP should be set to 12. MAXDOP cannot restrict or dictate which CPU is to be used. Instead, it restricts the number of CPUs that can be used by a single batch query.
+
+For DSS such as data warehouses, NetApp recommends starting with this setting at 50 or so and tuning up or down as appropriate. Make sure you measure for the critical queries in your application and adjust if necessary.
+
+== Max worker threads
+
+The max worker threads option helps to optimize performance when large numbers of clients are connected to SQL Server.
+
+Normally, a separate operating system thread is created for each query request. If hundreds of simultaneous connections are made to SQL Server, then one thread per query request consumes large amounts of system resources. The max worker threads option helps improve performance by enabling SQL Server to create a pool of worker threads to service a larger number of query requests.
+
+The default value is 0, which allows SQL Server to automatically configure the number of worker threads at startup. This works for most systems. Max worker threads is an advanced option and should not be altered without assistance from an experienced database administrator (DBA).
+
+When should you configure SQL Server to use more worker threads? If the average work queue length for each scheduler is above 1, you might benefit from adding more threads to the system, but only if the load is not CPU-bound or experiencing any other heavy waits. If either of those is happening, adding more threads does not help because they end up waiting for other system bottlenecks. For more information about max worker threads, see link:https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-max-worker-threads-server-configuration-option?view=sql-server-ver16&redirectedfrom=MSDN[Configure the max worker threads Server Configuration Option]. 
+
+image:./media/max-worker-threads.png[Error: Missing Graphic Image]
+
+=== Configuring max worker threads using SQL Server Management Studio.
+
+....
+The following example shows how to configure the max work threads option using T-SQL.
+
+EXEC sp_configure 'show advanced options', 1;  
+
+GO  
+
+RECONFIGURE ;  
+
+GO  
+
+EXEC sp_configure 'max worker threads', 900 ;  
+
+GO  
+
+RECONFIGURE;  
+
+GO
+....
