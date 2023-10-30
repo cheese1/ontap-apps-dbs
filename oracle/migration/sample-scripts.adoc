@@ -190,10 +190,10 @@ As an example of this script’s use, assume that data in `/oradata` is migrated
 . Assume that the old and new file systems are present in the `/etc/fstab` file as follows:
 +
 ....
-cluster01:/jfsc3_oradata /oradata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-cluster01:/jfsc3_logs /logs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-cluster01:/jfsc3_neworadata /neworadata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-cluster01:/jfsc3_newlogs /newlogs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+cluster01:/vol_oradata /oradata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+cluster01:/vol_logs /logs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+cluster01:/vol_neworadata /neworadata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+cluster01:/vol_newlogs /newlogs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
 ....
 
 . When run, this script unmounts the current file system and replaces it with the new:
@@ -212,12 +212,12 @@ Mounted updated /logs
 . The script also updates the `/etc/fstab` file accordingly. In the example shown here, it includes the following changes:
 +
 ....
-#Removed by swap script cluster01:/jfsc3_oradata /oradata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-#Removed by swap script cluster01:/jfsc3_neworadata /neworadata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-cluster01:/jfsc3_neworadata /oradata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-#Removed by swap script cluster01:/jfsc3_logs /logs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-#Removed by swap script cluster01:/jfsc3_newlogs /newlogs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
-cluster01:/jfsc3_newlogs /logs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+#Removed by swap script cluster01:/vol_oradata /oradata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+#Removed by swap script cluster01:/vol_neworadata /neworadata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+cluster01:/vol_neworadata /oradata nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+#Removed by swap script cluster01:/vol_logs /logs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+#Removed by swap script cluster01:/vol_newlogs /newlogs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
+cluster01:/vol_newlogs /logs nfs rw,bg,vers=3,rsize=65536,wsize=65536 0 0
 ....
 
 == Automated database migration

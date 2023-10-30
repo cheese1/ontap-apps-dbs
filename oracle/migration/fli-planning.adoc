@@ -23,7 +23,6 @@ Reference the NetApp Compatibility Matrix for information on supported configura
 This example shows the migration of both ASM and LVM LUNs hosted on a Linux server. FLI is supported on other operating systems, and, although the host-side commands might differ, the principles are the same, and the ONTAP procedures are identical.
 
 == Identify LVM LUNs
-
 The first step in preparation is to identify the LUNs to be migrated. In the example shown here, two SAN-based file systems are mounted at `/orabin` and `/backups`.
 
 ....
@@ -58,7 +57,6 @@ The `pvdisplay` command can be used as follows to identify the LUNs that support
 ....
 
 == Identify ASM LUNs
-
 ASM LUNs must also be migrated. To obtain the number of LUNs and LUN paths from sqlplus as the sysasm user, run the following command:
 
 ....
@@ -80,7 +78,6 @@ SQL>
 ....
 
 == FC network changes
-
 The current environment contains 20 LUNs to be migrated. Update the current SAN so that ONTAP can access the current LUNs. Data is not migrated yet, but ONTAP must read configuration information from the current LUNs to create the new home for that data.
 
 At a minimum, at least one HBA port on the AFF/FAS system must be configured as an initiator port. In addition, the FC zones must be updated so that ONTAP can access the LUNs on the foreign storage array. Some storage arrays have LUN masking configured, which limits which WWNs can access a given LUN. In such cases, LUN masking must also be updated to grant access to the ONTAP WWNs.
@@ -98,7 +95,6 @@ Cluster01::>
 ....
 
 == Identify foreign LUNs
-
 The LUNs can be listed by passing the `array-name` to the `storage disk show` command. The data returned is referenced multiple times during the migration procedure.
 
 ....
@@ -130,7 +126,6 @@ Cluster01::>
 ....
 
 == Register foreign array LUNs as import candidates
-
 The foreign LUNs are initially classified as any particular LUN type. Before data can be imported, the LUNs must be tagged as foreign and therefore a candidate for the import process. This step is completed by passing the serial number to the `storage disk modify` command, as shown in the following example. Note that this process tags only the LUN as foreign within ONTAP. No data is written to the foreign LUN itself.
 
 ....
@@ -143,7 +138,6 @@ Cluster01::*>
 ....
 
 == Create volumes to host migrated LUNs
-
 A volume is needed to host the migrated LUNs. The exact volume configuration depends on the overall plan to leverage ONTAP features. In this example, the ASM LUNs are placed into one volume and the LVM LUNs are placed in a second volume. Doing so allows you to manage the LUNs as independent groups for purposes such as tiering, creation of snapshots, or setting QoS controls.
 
 Set the `snapshot-policy `to `none`. The migration process can include a great deal of data turnover. Therefore, there might be a large increase in space consumption if snapshots are created by accident because unwanted data is captured in the snapshots.
@@ -157,7 +151,6 @@ Cluster01::>
 ....
 
 == Create ONTAP LUNs
-
 After the volumes are created, the new LUNs must be created. Normally, the creation of a LUN requires the user to specify such information as the LUN size, but in this case the foreign-disk argument is passed to the command. As a result, ONTAP replicates the current LUN configuration data from the specified serial number. It also uses the LUN geometry and partition table data to adjust LUN alignment and establish optimum performance.
 
 In this step, serial numbers must be cross-referenced against the foreign array to make sure that the correct foreign LUN is matched to the correct new LUN.
@@ -176,7 +169,6 @@ Created a LUN of size 10g (10737418240)
 ....
 
 == Create import relationships
-
 The LUNs have now been created but are not configured as a replication destination. Before this step can be taken, the LUNs must first be placed offline. This extra step is designed to protect data from user errors. If ONTAP allowed a migration to be performed on an online LUN, it would create a risk that a typographical error could result in overwriting active data. The extra step of forcing the user to first take a LUN offline helps verify that the correct target LUN is used as a migration destination.
 
 ....
@@ -221,7 +213,6 @@ Cluster01::*>
 ....
 
 == Create initiator group
-
 An initiator group (igroup) is part of the ONTAP LUN masking architecture. A newly created LUN is not accessible unless a host is first granted access. This is done by creating an igroup that lists either the FC WWNs or iSCSI initiator names that should be granted access. At the time this report was written, FLI was supported only for FC LUNs. However, converting to iSCSI postmigration is a simple task, as shown in link:protocol-conversion.html[Protocol Conversion].
 
 In this example, an igroup is created that contains two WWNs that correspond to the two ports available on the host's HBA.
@@ -231,7 +222,6 @@ Cluster01::*> igroup create linuxhost -protocol fcp -ostype linux -initiator 21:
 ....
 
 == Map new LUNs to host
-
 Following igroup creation, the LUNs are then mapped to the defined igroup. These LUNs are available only to the WWNs included in this igroup. NetApp assumes at this stage in the migration process that the host has not been zoned to ONTAP. This is important because if the host is simultaneously zoned to the foreign array and the new ONTAP system, then there is a risk that LUNs bearing the same serial number could be discovered on each array. This situation could lead to multipath malfunctions or damage to data.
 
 ....

@@ -26,7 +26,6 @@ This process can be summarized as follows:
 You do not need to wait for the migration process to complete. As soon as the migration for a given LUN begins, it is available on ONTAP and can serve data while the data copy process continues. All reads are passed through to the foreign LUN, and all writes are synchronously written to both arrays. The copy operation is very fast and the overhead of redirecting FC traffic is minimal, so any impact on performance should be transient and minimal. If there is concern, you can delay restarting the environment until after the migration process is complete and the import relationships have been deleted.
 
 == Shut down database
-
 The first step in quiescing the environment in this example is to shut down the database.
 
 ....
@@ -48,7 +47,6 @@ SQL>
 ....
 
 == Shut down grid services
-
 One of the SAN-based file systems being migrated also includes the Oracle ASM services. Quiescing the underlying LUNs requires dismounting the file systems, which in turn means stopping any processes with open files on this file system.
 
 ....
@@ -70,7 +68,6 @@ CRS-4133: Oracle High Availability Services has been stopped.
 ....
 
 == Dismount file systems
-
 If all the processes are shut down, the umount operation succeeds. If permission is denied, there must be a process with a lock on the file system. The `fuser` command can help identify these processes.
 
 ....
@@ -79,7 +76,6 @@ If all the processes are shut down, the umount operation succeeds. If permission
 ....
 
 == Deactivate volume groups
-
 After all file systems in a given volume group are dismounted, the volume group can be deactivated.
 
 ....
@@ -89,11 +85,9 @@ After all file systems in a given volume group are dismounted, the volume group 
 ....
 
 == FC network changes
-
 The FC zones can now be updated to remove all access from the host to the foreign array and establish access to ONTAP.
 
 == Start import process
-
 To start the LUN import processes, run the `lun import start` command.
 
 ....
@@ -106,7 +100,6 @@ Cluster01::lun import*>
 ....
 
 == Monitor import progress
-
 The import operation can be monitored with the `lun import show` command. As shown below, the import of all 20 LUNs is underway, which means that data is now accessible through ONTAP even though the data copy operation still progresses.
 
 ....
@@ -266,7 +259,6 @@ tmpfs                             13179736         0  13179736   0% /run/user/0
 ....
 
 == Rescan for ASM devices
-
 The ASMlib devices should have been rediscovered when the SCSI devices were rescanned. Rediscovery can be verified online by restarting ASMlib and then scanning the disks.
 
 [NOTE]
@@ -301,7 +293,6 @@ Instantiating disk "ASM9"
 ....
 
 == Restart grid services
-
 Now that the LVM and ASM devices are online and available, the grid services can be restarted.
 
 ....
@@ -310,7 +301,6 @@ Now that the LVM and ASM devices are online and available, the grid services can
 ....
 
 == Restart database
-
 After the grid services have been restarted, the database can be brought up. It might be necessary to wait a few minutes for the ASM services to become fully available before trying to start the database.
 
 ....

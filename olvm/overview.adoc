@@ -12,7 +12,6 @@ summary: ONTAP is a powerful data-management platform with native capabilities t
 :imagesdir: ./../media/
 
 [.lead]
-
 NetApp ONTAP is a powerful data management platform with native capabilities that include inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
 
 Up to 24 nodes can be clustered together, simultaneously serving data through Network File System (NFS), Server Message Block (SMB), iSCSI, Fibre Channel (FC), and Nonvolatile Memory Express (NVMe) protocols. In addition, NetApp Snapshot technology is the basis for creating tens of thousands of online backups of your application environments to provide local recovery, disaster recovery, and cloning services.

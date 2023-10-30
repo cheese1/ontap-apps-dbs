@@ -53,48 +53,48 @@ The backup must now be restored in the new environment. This can be done in a nu
 
 In this example, SnapMirror is used to replicate the Snapshot copy called hotbackup to a new location.
 
-. Create a new volume to receive the snapshot data. Initialize the mirroring from `jfsc1_oradata` to `jfsc3_oradata`.
+. Create a new volume to receive the snapshot data. Initialize the mirroring from `jfsc1_oradata` to `vol_oradata`.
 +
 ....
-Cluster01::*> volume create -vserver vserver1 -volume jfsc3_oradata -aggregate data_01 -size 20g -state online -type DP -snapshot-policy none -policy jfsc3
+Cluster01::*> volume create -vserver vserver1 -volume vol_oradata -aggregate data_01 -size 20g -state online -type DP -snapshot-policy none -policy jfsc3
 [Job 833] Job succeeded: Successful
 ....
 +
 ....
-Cluster01::*> snapmirror initialize -source-path vserver1:jfsc1_oradata -destination-path vserver1:jfsc3_oradata
-Operation is queued: snapmirror initialize of destination "vserver1:jfsc3_oradata".
-Cluster01::*> volume mount -vserver vserver1 -volume jfsc3_oradata -junction-path /jfsc3_oradata
+Cluster01::*> snapmirror initialize -source-path vserver1:jfsc1_oradata -destination-path vserver1:vol_oradata
+Operation is queued: snapmirror initialize of destination "vserver1:vol_oradata".
+Cluster01::*> volume mount -vserver vserver1 -volume vol_oradata -junction-path /vol_oradata
 Cluster01::*>
 ....
 
 . After the state is set by SnapMirror, indicating that synchronization is complete, update the mirror based specifically on the desired snapshot.
 +
 ....
-Cluster01::*> snapmirror show -destination-path vserver1:jfsc3_oradata -fields state
+Cluster01::*> snapmirror show -destination-path vserver1:vol_oradata -fields state
 source-path             destination-path        state
 ----------------------- ----------------------- ------------
-vserver1:jfsc1_oradata vserver1:jfsc3_oradata Snapmirrored
+vserver1:jfsc1_oradata vserver1:vol_oradata Snapmirrored
 ....
 +
 ....
-Cluster01::*> snapmirror update -destination-path vserver1:jfsc3_oradata -source-snapshot hotbackup
-Operation is queued: snapmirror update of destination "vserver1:jfsc3_oradata".
+Cluster01::*> snapmirror update -destination-path vserver1:vol_oradata -source-snapshot hotbackup
+Operation is queued: snapmirror update of destination "vserver1:vol_oradata".
 ....
 
 . Successful synchronization can be verified by viewing the `newest-snapshot` field on the mirror volume.
 +
 ....
-Cluster01::*> snapmirror show -destination-path vserver1:jfsc3_oradata -fields newest-snapshot
+Cluster01::*> snapmirror show -destination-path vserver1:vol_oradata -fields newest-snapshot
 source-path             destination-path        newest-snapshot
 ----------------------- ----------------------- ---------------
-vserver1:jfsc1_oradata vserver1:jfsc3_oradata hotbackup
+vserver1:jfsc1_oradata vserver1:vol_oradata hotbackup
 ....
 
 . The mirror can then be broken.
 +
 ....
-Cluster01::> snapmirror break -destination-path vserver1:jfsc3_oradata
-Operation succeeded: snapmirror break for destination "vserver1:jfsc3_oradata".
+Cluster01::> snapmirror break -destination-path vserver1:vol_oradata
+Operation succeeded: snapmirror break for destination "vserver1:vol_oradata".
 Cluster01::>
 ....
 
@@ -103,8 +103,8 @@ Cluster01::>
 In this example, a simple NFS file system is used. This file system can be mounted directly.
 +
 ....
-fas8060-nfs1:/jfsc3_oradata        19922944   1639360   18283584   9% /oradata
-fas8060-nfs1:/jfsc3_logs            9961472       128    9961344   1% /logs
+fas8060-nfs1:/vol_oradata        19922944   1639360   18283584   9% /oradata
+fas8060-nfs1:/vol_logs            9961472       128    9961344   1% /logs
 ....
 
 === Create controlfile creation template
