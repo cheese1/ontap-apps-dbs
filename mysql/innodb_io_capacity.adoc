@@ -14,11 +14,7 @@ It controls the maximum number of IOPS that InnoDB performs (which includes the 
 Set the innodb_io_capacity parameter to the approximate number of I/O operations that the system can perform per second. Ideally, keep the setting as low as possible, but not so low that background activities slow down. If the setting is too high, data is removed from the buffer pool and insert buffer too quickly for caching to provide a significant benefit. 
 
 [TIP]
-====
-*NetApp recommends*:
-
-If you are using this setting over NFS, analyzing the test result of IOPS (SysBench/Fio) and set the parameter accordingly. Use the smallest value possible for flushing and purging to keep up unless you see more modified or dirty pages than you want in the InnoDB buffer pool.
-====
+*NetApp recommends*: If you are using this setting over NFS, analyzing the test result of IOPS (SysBench/Fio) and set the parameter accordingly. Use the smallest value possible for flushing and purging to keep up unless you see more modified or dirty pages than you want in the InnoDB buffer pool.
 
 [CAUTION]
 Do not use extreme values such as 20,000 or more unless you've proved that lower values are not sufficient for your workload. 
