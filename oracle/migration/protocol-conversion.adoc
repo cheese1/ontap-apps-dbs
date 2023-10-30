@@ -4,7 +4,6 @@ permalink: oracle/migration/protocol-conversion.html
 keywords: migration, oracle, FLI
 summary: Changing the SAN protocol after FLI migration
 ---
-
 = Protocol conversion
 :hardbreaks:
 :nofooter:
@@ -20,11 +19,10 @@ In some cases, it is part of an overall strategy to migrate data to the cloud. T
 The following procedure demonstrates conversion from FC to iSCSI, but the overall principles apply to a reverse iSCSI to FC conversion.
 
 == Install iSCSI initiator
-
 Most operating systems include a software iSCSI initiator by default, but if one is not included, it can be easily installed.
 
 ....
-[root@stlrx300s7-78 /]# yum install -y iscsi-initiator-utils
+[root@host1 /]# yum install -y iscsi-initiator-utils
 Loaded plugins: langpacks, product-id, search-disabled-repos, subscription-
               : manager
 Resolving Dependencies
@@ -73,7 +71,7 @@ Updated:
 Dependency Updated:
   iscsi-initiator-utils-iscsiuio.x86_64 0:6.2.0.873-32.0.2.el7
 Complete!
-[root@stlrx300s7-78 /]#
+[root@host1 /]#
 ....
 
 == Identify iSCSI initiator name
@@ -81,7 +79,7 @@ Complete!
 A unique iSCSI initiator name is generated during the installation process. On Linux, it is located in the `/etc/iscsi/initiatorname.iscsi` file. This name is used to identify the host on the IP SAN.
 
 ....
-[root@stlrx300s7-78 /]# cat /etc/iscsi/initiatorname.iscsi
+[root@host1 /]# cat /etc/iscsi/initiatorname.iscsi
 InitiatorName=iqn.1992-05.com.redhat:497bd66ca0
 ....
 
@@ -132,7 +130,7 @@ There are two phases to iSCSI discovery. The first is to discover the targets, w
 This command can take several minutes to complete if any of the target IP addresses cannot be reached.
 
 ....
-[root@stlrx300s7-78 ~]# iscsiadm -m discovery -t st -p fas8060-iscsi-public1
+[root@host1 ~]# iscsiadm -m discovery -t st -p fas8060-iscsi-public1
 10.63.147.197:3260,1033 iqn.1992-08.com.netapp:sn.807615e9ef6111e5a5ae90e2ba5b9464:vs.3
 10.63.147.198:3260,1034 iqn.1992-08.com.netapp:sn.807615e9ef6111e5a5ae90e2ba5b9464:vs.3
 172.20.108.203:3260,1030 iqn.1992-08.com.netapp:sn.807615e9ef6111e5a5ae90e2ba5b9464:vs.3
@@ -144,7 +142,7 @@ This command can take several minutes to complete if any of the target IP addres
 After the iSCSI targets are discovered, restart the iSCSI service to discover the available iSCSI LUNs and build associated devices such as multipath or ASMlib devices.
 
 ....
-[root@stlrx300s7-78 ~]# service iscsi restart
+[root@host1 ~]# service iscsi restart
 Redirecting to /bin/systemctl restart  iscsi.service
 ....
 

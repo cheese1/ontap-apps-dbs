@@ -4,7 +4,6 @@ permalink: oracle/notes/wafl_alignment_verification.html
 keywords: oracle, database, ontap, wafl, alignment
 summary: Storage alignment for Oracle databases
 ---
-
 = WAFL alignment verification
 :hardbreaks:
 :nofooter:
@@ -26,7 +25,6 @@ There are, however, some exceptions. A database might have been migrated from an
 The following examples are Linux-specific, but the procedure can be adapted for any OS.
 
 == Aligned
-
 The following example shows an alignment check on a single LUN with a single partition.
 
 First, create the partition that uses all partitions available on the drive.

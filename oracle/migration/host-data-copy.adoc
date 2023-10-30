@@ -4,7 +4,6 @@ permalink: oracle/migration/host-data-copy.html
 keywords: migration, oracle, data copy, lvm, rebalance, asm
 summary: Oracle migration using the host-side storage stack
 ---
-
 = Host data copy
 :hardbreaks:
 :nofooter:
@@ -34,15 +33,15 @@ The environment to be migrated is as follows:
 * Current file systems
 +
 ....
-ontap-nfs1:/jfs0_oradata       52428800  16196928  36231872  31% /oradata
-ontap-nfs1:/jfs0_logs          49807360    548032  49259328   2% /logs
+ontap-nfs1:/host1_oradata       52428800  16196928  36231872  31% /oradata
+ontap-nfs1:/host1_logs          49807360    548032  49259328   2% /logs
 ....
 
 * New file systems
 +
 ....
-ontap-nfs1:/jfs0_logs_new      49807360       128  49807232   1% /new/logs
-ontap-nfs1:/jfs0_oradata_new   49807360       128  49807232   1% /new/oradata
+ontap-nfs1:/host1_logs_new      49807360       128  49807232   1% /new/logs
+ontap-nfs1:/host1_oradata_new   49807360       128  49807232   1% /new/oradata
 ....
 
 ==== Overview
@@ -62,7 +61,7 @@ The example scripts shown automate the following operations:
 . Shut down the database.
 +
 ....
-[root@jfs0 current]# ./dbshut.pl NTAP
+[root@host1 current]# ./dbshut.pl NTAP
 ORACLE_SID = [oracle] ? The Oracle base has been set to /orabin
 SQL*Plus: Release 12.1.0.2.0 Production on Thu Dec 3 15:58:48 2015
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
@@ -80,10 +79,10 @@ NTAP shut down
 . Convert the file systems to read-only. This can be done more quickly by using a script, as shown in link:sample-scripts.html#convert-file-system-to-read-only[Convert File System to Read Only].
 +
 ....
-[root@jfs0 current]# ./mk.fs.readonly.pl /oradata
+[root@host1 current]# ./mk.fs.readonly.pl /oradata
 /oradata unmounted
 /oradata mounted read-only
-[root@jfs0 current]# ./mk.fs.readonly.pl /logs
+[root@host1 current]# ./mk.fs.readonly.pl /logs
 /logs unmounted
 /logs mounted read-only
 ....
@@ -91,14 +90,14 @@ NTAP shut down
 . Confirm that the file systems are now read-only.
 +
 ....
-ontap-nfs1:/jfs0_oradata on /oradata type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
-ontap-nfs1:/jfs0_logs on /logs type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_oradata on /oradata type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_logs on /logs type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
 ....
 
 . Synchronize file system contents with the `rsync` command.
 +
 ....
-[root@jfs0 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /oradata/ /new/oradata/
+[root@host1 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /oradata/ /new/oradata/
 sending incremental file list
 ./
 NTAP/
@@ -124,7 +123,7 @@ Total bytes sent: 18572359828
 Total bytes received: 228
 sent 18572359828 bytes  received 228 bytes  162204017.96 bytes/sec
 total size is 18570092218  speedup is 1.00
-[root@jfs0 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /logs/ /new/logs/
+[root@host1 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /logs/ /new/logs/
 sending incremental file list
 ./
 NTAP/
@@ -155,11 +154,11 @@ total size is 527032832  speedup is 1.00
 . Unmount the old file systems and relocate the copied data. This can be done more quickly by using a script, as shown in link:sample-scripts.html#replace-file-system[Replace File System].
 +
 ....
-[root@jfs0 current]# ./swap.fs.pl /logs,/new/logs
+[root@host1 current]# ./swap.fs.pl /logs,/new/logs
 /new/logs unmounted
 /logs unmounted
 Updated /logs mounted
-[root@jfs0 current]# ./swap.fs.pl /oradata,/new/oradata
+[root@host1 current]# ./swap.fs.pl /oradata,/new/oradata
 /new/oradata unmounted
 /oradata unmounted
 Updated /oradata mounted
@@ -168,14 +167,14 @@ Updated /oradata mounted
 . Confirm that the new file systems are in position.
 +
 ....
-ontap-nfs1:/jfs0_logs_new on /logs type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
-ontap-nfs1:/jfs0_oradata_new on /oradata type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_logs_new on /logs type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_oradata_new on /oradata type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
 ....
 
 . Start the database.
 +
 ....
-[root@jfs0 current]# ./dbstart.pl NTAP
+[root@host1 current]# ./dbstart.pl NTAP
 ORACLE_SID = [oracle] ? The Oracle base has been set to /orabin
 SQL*Plus: Release 12.1.0.2.0 Production on Thu Dec 3 16:10:07 2015
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
@@ -198,7 +197,7 @@ NTAP started
 This sample script accepts arguments of the database SID followed by common-delimited pairs of file systems. For the example shown above, the command is issued as follows:
 
 ....
-[root@jfs0 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
+[root@host1 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
 ....
 
 When executed, the example script attempts to perform the following sequence. It terminates if it encounters an error in any step:
@@ -217,7 +216,7 @@ When executed, the example script attempts to perform the following sequence. It
 The following text provides an execution example for this script:
 
 ....
-[root@jfs0 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
+[root@host1 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
 ORACLE_SID = [oracle] ? The Oracle base has been set to /orabin
 SQL*Plus: Release 12.1.0.2.0 Production on Thu Dec 3 17:05:50 2015
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
@@ -308,7 +307,7 @@ Database opened.
 SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
 With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
 NTAP started
-[root@jfs0 current]#
+[root@host1 current]#
 ....
 
 == Oracle ASM spfile and passwd migration
@@ -807,7 +806,7 @@ SQL> select name, value from v$parameter where value is not null;
 . The following script demonstrates how to simplify this process:
 +
 ....
-[root@jfs0 current]# ./checkdbdata.pl TOAST
+[root@host1 current]# ./checkdbdata.pl TOAST
 TOAST datafiles:
 +NEWDATA/TOAST/DATAFILE/system.259.897759609
 +NEWDATA/TOAST/DATAFILE/sysaux.263.897759615
@@ -1388,7 +1387,7 @@ The procedure presented here shows the principles of an LVM-based migration of a
 . Identify the LUNs currently in the `datavg` volume group.
 +
 ....
-[root@jfs0 ~]# pvdisplay -C | grep datavg
+[root@host1 ~]# pvdisplay -C | grep datavg
   /dev/mapper/3600a098038303537762b47594c31582f datavg lvm2 a--  10.00g 10.00g
   /dev/mapper/3600a098038303537762b47594c31585a datavg lvm2 a--  10.00g 10.00g
   /dev/mapper/3600a098038303537762b47594c315859 datavg lvm2 a--  10.00g 10.00g
@@ -1398,33 +1397,33 @@ The procedure presented here shows the principles of an LVM-based migration of a
 . Create new LUNs of the same or slightly larger physical size and define them as physical volumes.
 +
 ....
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315864
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315864
   Physical volume "/dev/mapper/3600a098038303537762b47594c315864" successfully created
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315863
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315863
   Physical volume "/dev/mapper/3600a098038303537762b47594c315863" successfully created
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315862
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315862
   Physical volume "/dev/mapper/3600a098038303537762b47594c315862" successfully created
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315861
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315861
   Physical volume "/dev/mapper/3600a098038303537762b47594c315861" successfully created
 ....
 
 . Add the new volumes to the volume group.
 +
 ....
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315864
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315864
   Volume group "datavg" successfully extended
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315863
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315863
   Volume group "datavg" successfully extended
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315862
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315862
   Volume group "datavg" successfully extended
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315861
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315861
   Volume group "datavg" successfully extended
 ....
 
 . Issue the `pvmove` command to relocate the extents of each current LUN to the new LUN. The `- i [seconds]` argument monitors the progress of the operation.
 +
 ....
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31582f /dev/mapper/3600a098038303537762b47594c315864
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31582f /dev/mapper/3600a098038303537762b47594c315864
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 14.2%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 28.4%
@@ -1433,7 +1432,7 @@ The procedure presented here shows the principles of an LVM-based migration of a
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 72.3%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 87.3%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 100.0%
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31585a /dev/mapper/3600a098038303537762b47594c315863
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31585a /dev/mapper/3600a098038303537762b47594c315863
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 14.9%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 29.9%
@@ -1442,7 +1441,7 @@ The procedure presented here shows the principles of an LVM-based migration of a
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 75.8%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 90.9%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 100.0%
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c315859 /dev/mapper/3600a098038303537762b47594c315862
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c315859 /dev/mapper/3600a098038303537762b47594c315862
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 14.8%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 29.8%
@@ -1451,7 +1450,7 @@ The procedure presented here shows the principles of an LVM-based migration of a
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 76.6%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 91.7%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 100.0%
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31586c /dev/mapper/3600a098038303537762b47594c315861
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31586c /dev/mapper/3600a098038303537762b47594c315861
   /dev/mapper/3600a098038303537762b47594c31586c: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c31586c: Moved: 15.0%
   /dev/mapper/3600a098038303537762b47594c31586c: Moved: 30.4%
@@ -1465,12 +1464,12 @@ The procedure presented here shows the principles of an LVM-based migration of a
 . When this process is complete, drop the old LUNs from the volume group by using the `vgreduce` command. If successful, the LUN can now be safely removed from the system.
 +
 ....
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31582f
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31582f
 Removed "/dev/mapper/3600a098038303537762b47594c31582f" from volume group "datavg"
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31585a
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31585a
   Removed "/dev/mapper/3600a098038303537762b47594c31585a" from volume group "datavg"
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c315859
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c315859
   Removed "/dev/mapper/3600a098038303537762b47594c315859" from volume group "datavg"
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31586c
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31586c
   Removed "/dev/mapper/3600a098038303537762b47594c31586c" from volume group "datavg"
 ....

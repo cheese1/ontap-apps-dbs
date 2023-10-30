@@ -27,7 +27,7 @@ This example shows the migration of both ASM and LVM LUNs hosted on a Linux serv
 The first step in preparation is to identify the LUNs to be migrated. In the example shown here, two SAN-based file systems are mounted at `/orabin` and `/backups`.
 
 ....
-[root@stlrx300s7-78 ~]# df -k
+[root@host1 ~]# df -k
 Filesystem                       1K-blocks      Used Available Use% Mounted on
 /dev/mapper/rhel-root             52403200   8811464  43591736  17% /
 devtmpfs                          65882776         0  65882776   0% /dev
@@ -42,7 +42,7 @@ The name of the volume group can be extracted from the device name, which uses t
 The `pvdisplay` command can be used as follows to identify the LUNs that support this volume group. In this case, there are 10 LUNs that make up the `sanvg` volume group.
 
 ....
-[root@stlrx300s7-78 ~]# pvdisplay -C -o pv_name,pv_size,pv_fmt,vg_name
+[root@host1 ~]# pvdisplay -C -o pv_name,pv_size,pv_fmt,vg_name
   PV                                            PSize   VG
   /dev/mapper/3600a0980383030445424487556574266  10.00g sanvg
   /dev/mapper/3600a0980383030445424487556574267  10.00g sanvg

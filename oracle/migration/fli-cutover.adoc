@@ -30,10 +30,10 @@ You do not need to wait for the migration process to complete. As soon as the mi
 The first step in quiescing the environment in this example is to shut down the database.
 
 ....
-[oracle@stlrx300s7-78 bin]$ . oraenv
+[oracle@host1 bin]$ . oraenv
 ORACLE_SID = [oracle] ? FLIDB
 The Oracle base remains unchanged with value /orabin
-[oracle@stlrx300s7-78 bin]$ sqlplus / as sysdba
+[oracle@host1 bin]$ sqlplus / as sysdba
 SQL*Plus: Release 12.1.0.2.0
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
 Connected to:
@@ -52,21 +52,21 @@ SQL>
 One of the SAN-based file systems being migrated also includes the Oracle ASM services. Quiescing the underlying LUNs requires dismounting the file systems, which in turn means stopping any processes with open files on this file system.
 
 ....
-[oracle@stlrx300s7-78 bin]$ ./crsctl stop has -f
-CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'stlrx300s7-78'
-CRS-2673: Attempting to stop 'ora.evmd' on 'stlrx300s7-78'
-CRS-2673: Attempting to stop 'ora.DATA.dg' on 'stlrx300s7-78'
-CRS-2673: Attempting to stop 'ora.LISTENER.lsnr' on 'stlrx300s7-78'
-CRS-2677: Stop of 'ora.DATA.dg' on 'stlrx300s7-78' succeeded
-CRS-2673: Attempting to stop 'ora.asm' on 'stlrx300s7-78'
-CRS-2677: Stop of 'ora.LISTENER.lsnr' on 'stlrx300s7-78' succeeded
-CRS-2677: Stop of 'ora.evmd' on 'stlrx300s7-78' succeeded
-CRS-2677: Stop of 'ora.asm' on 'stlrx300s7-78' succeeded
-CRS-2673: Attempting to stop 'ora.cssd' on 'stlrx300s7-78'
-CRS-2677: Stop of 'ora.cssd' on 'stlrx300s7-78' succeeded
-CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'stlrx300s7-78' has completed
+[oracle@host1 bin]$ ./crsctl stop has -f
+CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'host1'
+CRS-2673: Attempting to stop 'ora.evmd' on 'host1'
+CRS-2673: Attempting to stop 'ora.DATA.dg' on 'host1'
+CRS-2673: Attempting to stop 'ora.LISTENER.lsnr' on 'host1'
+CRS-2677: Stop of 'ora.DATA.dg' on 'host1' succeeded
+CRS-2673: Attempting to stop 'ora.asm' on 'host1'
+CRS-2677: Stop of 'ora.LISTENER.lsnr' on 'host1' succeeded
+CRS-2677: Stop of 'ora.evmd' on 'host1' succeeded
+CRS-2677: Stop of 'ora.asm' on 'host1' succeeded
+CRS-2673: Attempting to stop 'ora.cssd' on 'host1'
+CRS-2677: Stop of 'ora.cssd' on 'host1' succeeded
+CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'host1' has completed
 CRS-4133: Oracle High Availability Services has been stopped.
-[oracle@stlrx300s7-78 bin]$
+[oracle@host1 bin]$
 ....
 
 == Dismount file systems
@@ -74,8 +74,8 @@ CRS-4133: Oracle High Availability Services has been stopped.
 If all the processes are shut down, the umount operation succeeds. If permission is denied, there must be a process with a lock on the file system. The `fuser` command can help identify these processes.
 
 ....
-[root@stlrx300s7-78 ~]# umount /orabin
-[root@stlrx300s7-78 ~]# umount /backups
+[root@host1 ~]# umount /orabin
+[root@host1 ~]# umount /backups
 ....
 
 == Deactivate volume groups
@@ -83,9 +83,9 @@ If all the processes are shut down, the umount operation succeeds. If permission
 After all file systems in a given volume group are dismounted, the volume group can be deactivated.
 
 ....
-[root@stlrx300s7-78 ~]# vgchange --activate n sanvg
+[root@host1 ~]# vgchange --activate n sanvg
   0 logical volume(s) in volume group "sanvg" now active
-[root@stlrx300s7-78 ~]#
+[root@host1 ~]#
 ....
 
 == FC network changes
@@ -149,7 +149,7 @@ Caution: Before restarting a host, make sure that all entries in `/etc/fstab` th
 The LUNs on the version of Linux used in this example can be rescanned with the `rescan-scsi-bus.sh` command. If the command is successful, each LUN path should appear in the output. The output can be difficult to interpret, but, if the zoning and igroup configuration was correct, many LUNs should appear that include a `NETAPP` vendor string.
 
 ....
-[root@stlrx300s7-78 /]# rescan-scsi-bus.sh
+[root@host1 /]# rescan-scsi-bus.sh
 Scanning SCSI subsystem for new devices
 Scanning host 0 for  SCSI target IDs  0 1 2 3 4 5 6 7, all LUNs
  Scanning for device 0 2 0 0 ...
@@ -197,7 +197,7 @@ The LUN discovery process also triggers the recreation of multipath devices, but
 Reference the host utilities documentation for the version of Linux you use to verify that the `/etc/multipath.conf` settings are correct.
 
 ....
-[root@stlrx300s7-78 /]# multipath -ll
+[root@host1 /]# multipath -ll
 3600a098038303558735d493762504b36 dm-5 NETAPP  ,LUN C-Mode
 size=10G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_handle' hwhandler='1 alua' wp=rw
 |-+- policy='service-time 0' prio=50 status=active
@@ -240,7 +240,7 @@ If the LVM LUNs have been properly discovered, the `vgchange --activate y` comma
 The OS scanned the LUNs and discovered a small amount of data written on the LUN that identifies it as a physical volume belonging to the `sanvg volumegroup`. It then built all of the required devices. All that is required is to reactivate the volume group.
 
 ....
-[root@stlrx300s7-78 /]# vgchange --activate y sanvg
+[root@host1 /]# vgchange --activate y sanvg
   Found duplicate PV fpCzdLTuKfy2xDZjai1NliJh3TjLUBiT: using /dev/mapper/3600a098038303558735d493762504b46 not /dev/sdp
   Using duplicate PV /dev/mapper/3600a098038303558735d493762504b46 from subsystem DM, ignoring /dev/sdp
   2 logical volume(s) in volume group "sanvg" now active
@@ -251,9 +251,9 @@ The OS scanned the LUNs and discovered a small amount of data written on the LUN
 After the volume group is reactivated, the file systems can be mounted with all of the original data intact. As discussed previously, the file systems are fully operational even if data replication is still active in the back group.
 
 ....
-[root@stlrx300s7-78 /]# mount /orabin
-[root@stlrx300s7-78 /]# mount /backups
-[root@stlrx300s7-78 /]# df -k
+[root@host1 /]# mount /orabin
+[root@host1 /]# mount /backups
+[root@host1 /]# df -k
 Filesystem                       1K-blocks      Used Available Use% Mounted on
 /dev/mapper/rhel-root             52403200   8837100  43566100  17% /
 devtmpfs                          65882776         0  65882776   0% /dev
@@ -281,14 +281,14 @@ Caution: Where ASMlib is not used, the `/dev/mapper` devices should have been au
 In this example, restarting ASMlib and scanning for disks show the same 10 ASM LUNs as the original environment.
 
 ....
-[root@stlrx300s7-78 /]# oracleasm exit
+[root@host1 /]# oracleasm exit
 Unmounting ASMlib driver filesystem: /dev/oracleasm
 Unloading module "oracleasm": oracleasm
-[root@stlrx300s7-78 /]# oracleasm init
+[root@host1 /]# oracleasm init
 Loading module "oracleasm": oracleasm
 Configuring "oracleasm" to use device physical block size
 Mounting ASMlib driver filesystem: /dev/oracleasm
-[root@stlrx300s7-78 /]# oracleasm scandisks
+[root@host1 /]# oracleasm scandisks
 Reloading disk partitions: done
 Cleaning any stale ASM disks...
 Scanning system for ASM disks...
@@ -309,8 +309,8 @@ Instantiating disk "ASM9"
 Now that the LVM and ASM devices are online and available, the grid services can be restarted.
 
 ....
-[root@stlrx300s7-78 /]# cd /orabin/product/12.1.0/grid/bin
-[root@stlrx300s7-78 bin]# ./crsctl start has
+[root@host1 /]# cd /orabin/product/12.1.0/grid/bin
+[root@host1 bin]# ./crsctl start has
 ....
 
 == Restart database
@@ -318,11 +318,11 @@ Now that the LVM and ASM devices are online and available, the grid services can
 After the grid services have been restarted, the database can be brought up. It might be necessary to wait a few minutes for the ASM services to become fully available before trying to start the database.
 
 ....
-[root@stlrx300s7-78 bin]# su - oracle
-[oracle@stlrx300s7-78 ~]$ . oraenv
+[root@host1 bin]# su - oracle
+[oracle@host1 ~]$ . oraenv
 ORACLE_SID = [oracle] ? FLIDB
 The Oracle base has been set to /orabin
-[oracle@stlrx300s7-78 ~]$ sqlplus / as sysdba
+[oracle@host1 ~]$ sqlplus / as sysdba
 SQL*Plus: Release 12.1.0.2.0
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
 Connected to an idle instance.
