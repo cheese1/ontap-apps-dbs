@@ -4,7 +4,6 @@ permalink: mssql/files-and-filegroups.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
-
 = Database files and filegroups
 
 [.lead]

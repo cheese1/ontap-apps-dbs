@@ -4,7 +4,6 @@ permalink: mssql/SQL-disaster-recovery.html
 keywords: MS-SQL,mssql,SQL Server, disaster recovery, snapmirror
 summary: Microsoft SQL Server on ONTAP
 ---
-
 = SQL Server disaster recovery
 
 [.lead]
@@ -13,7 +12,6 @@ NetApp provides various approaches to increase data availability if there is har
 NetApp offers technologies like MetroCluster, SnapMirror Business Continuity(SM-BC) , SnapMirror. You can find an descriptive of these features link:../common/overview-dr.html[here].  
 
 == NetApp SnapMirror
-
 NetApp SnapMirror technology offers a fast and flexible enterprise solution for mirroring or replicating data over LANs and WANs. SnapMirror technology transfers only modified 4KB data blocks to the destination after the initial base transfer, significantly reducing network bandwidth requirements. SnapMirror provides asynchronous volume-level replication that is based on a configured replication update interval. 
 The following are recommendations for SnapMirror for SQL Server:
 
@@ -22,4 +20,4 @@ The following are recommendations for SnapMirror for SQL Server:
 • For consistency purposes, do not schedule SnapMirror update from the controllers. However, enable SnapMirror update from SnapCenter to update SnapMirror after either full or log backup is completed.
 • Distribute volumes that contain SQL Server data across different nodes in the cluster to allow all cluster nodes to share SnapMirror replication activity. This distribution optimizes the use of node resources.
 
-For more information about SnapMirror, see link:https://www.netapp.com/us/media/tr-4015.pdf[TR-4015: SnapMirror Configuration and Best Practices Guide for ONTAP 9].
+For more information about SnapMirror, see link:https://www.netapp.com/us/media/tr-4015.pdf[TR-4015: SnapMirror Configuration and Best Practices Guide for ONTAP 9^].

@@ -4,7 +4,6 @@ permalink: olvm/overview.html
 keywords: oracle, database, ontap, HANA, VMware
 summary: ONTAP is a powerful data-management platform with native capabilities that include everything from instant backup, restore and cloning capabilities, efficiency features such as inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
 ---
-
 = Oracle Virtualization Landscape Manager
 :hardbreaks:
 :nofooter:
@@ -18,6 +17,6 @@ NetApp ONTAP is a powerful data management platform with native capabilities tha
 
 Up to 24 nodes can be clustered together, simultaneously serving data through Network File System (NFS), Server Message Block (SMB), iSCSI, Fibre Channel (FC), and Nonvolatile Memory Express (NVMe) protocols. In addition, NetApp Snapshot technology is the basis for creating tens of thousands of online backups of your application environments to provide local recovery, disaster recovery, and cloning services.
 
-In addition to the many possible ways ONTAP brings value to your enterprise application environment, there is also a wide variety of user requirements, including dataset size, performance requirements, and data protection needs. Known deployments of NetApp storage include everything from a virtualized environment of 6,000+ databases running under VMware ESX to a single-instance data warehouse currently sized at 996TB and growing to cloud-based SAP HANA as-a-service. As a result if this wide vareiety of needs, there are few true 'best practices' for configuration.
+In addition to the many possible ways ONTAP brings value to your enterprise application environment, there is also a wide variety of user requirements, including dataset size, performance requirements, and data protection needs. Known deployments of NetApp storage include everything from a virtualized environment of 6,000+ databases running under VMware ESX to a single-instance data warehouse currently sized at 996TB and growing to cloud-based SAP HANA as-a-service. As a result if this wide variety of needs, there are few true 'best practices' for configuration.
 
 This document addresses the requirements for operating an ONTAP storage system in two ways. First, when a clear best practice exists, it is called out specifically. Second, this document reviews the many design considerations that must be addressed by architects of enterprise application solutions based on their specific business requirements.
