@@ -27,7 +27,7 @@ If an actual storage takeover or giveback cannot be performed, the effect can be
 
 [TIP]
 ====
-*NetApp recommends*
+*NetApp recommends* the following:
 
 * Leaving the `disktimeout` parameter at the default value of 200.
 * Always test a RAC configuration thoroughly.
@@ -42,7 +42,7 @@ In the case of nonlocal boot drives or a nonlocal file system hosting `grid` bin
 
 [TIP]
 ====
-*NetApp recommends*
+*NetApp recommends* 
 
 * Leave the `misscount` parameter at the default value of 30 unless one of the following conditions applies:
 ** `grid` binaries are located on a network-attached drive, including NFS, iSCSI, FC, and datastore-based drives.

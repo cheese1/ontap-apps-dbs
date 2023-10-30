@@ -32,9 +32,7 @@ Undo segments are random I/O oriented. To guarantee multi-version concurrency (M
 
 [TIP]
 ====
-*NetApp recommends*:
-
-The following storage design layout because of the InnoDB I/O characteristics. 
+*NetApp recommends* the following storage design layout because of the InnoDB I/O characteristics. 
 
 * One volume to store random and sequential I/O-oriented files of MySQL
 * Another volume to store purely sequential I/O-oriented files of MySQL

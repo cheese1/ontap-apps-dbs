@@ -59,7 +59,8 @@ Place the log directory on a dedicated volume or LUN. The amount of data in the 
 
 [TIP]
 ====
-*NetApp recommends* the following for a host log directory: 
+*NetApp recommends* the following for a host log directory:
+
 * Make sure that the host log directory is not shared by any other type of data that can potentially corrupt the backup snapshot data.
 * Do not place user databases or system databases on a LUN that hosts mount points.
 * Create the host log directory on the dedicated FlexVol volume to which SnapCenter copies transaction logs.

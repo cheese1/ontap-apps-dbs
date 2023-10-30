@@ -26,7 +26,7 @@ Using `cio` as a mount option forces the use of concurrent I/O, which can have n
 
 [TIP]
 ====
-*NetApp recommends*
+*NetApp recommends* the following:
 
 * Do not use the `cio` mount option at the file system level. Rather, enable concurrent I/O through the use of `filesystemio_options=setall`.
 * Only use the `cio` mount option should if it is not possible to set `filesystemio_options=setall`.

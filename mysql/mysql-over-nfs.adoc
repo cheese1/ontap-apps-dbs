@@ -30,7 +30,7 @@ Never decrease the maximum allowable transfer size on ONTAP below the value of r
 
 [TIP]
 ====
-*NetApp recommends:*
+*NetApp recommends*
 
 Setting the following NFSv4 fstab (/etc/fstab) setting:
 

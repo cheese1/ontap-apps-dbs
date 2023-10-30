@@ -17,9 +17,7 @@ In both cases, a pair of ONTAP volumes should be sufficient. With a simple confi
 
 [TIP]
 ====
-*NetApp recommends*
-
-Using two file systems for MySQL deployments on SAN:
+*NetApp recommends* using two file systems for MySQL deployments on SAN:
 
 * The first file system stores all MySQL data including tablespace, data, and index.
 
@@ -39,9 +37,7 @@ Use this basic two-volume layout to future-proof the solution so that all ONTAP 
 
 [TIP]
 ====
-*NetApp recommends* 
-
-Formatting your drive with the ext4 file system because of the following features:
+*NetApp recommends* formatting your drive with the ext4 file system because of the following features:
 
 * Extended approach to block management features used in the journaling file system (JFS) and delayed allocation features of the extended file system (XFS).
 

@@ -41,7 +41,7 @@ As a general rule, avoid using datastores for Oracle files. There are many reaso
 Using VM-owned file systems makes it easier to leverage Snapshot-based backups and restores. A VM-owned file system offloads the work of performing backups onto the storage system. There is no need to overbuild the hypervisor configuration purely to support the bandwidth and CPU requirements in the backup window.
 
 [TIP]
-*NetApp recommends* to avoid placing Oracle data on a datastore to achieve optimum performance and manageability,. Use guest-owned file systems such as NFS or iSCSI file systems managed by the guest or with RDMs.
+*NetApp recommends* avoiding placing Oracle data on a datastore to achieve optimum performance and manageability,. Use guest-owned file systems such as NFS or iSCSI file systems managed by the guest or with RDMs.
 
 == Paravirtualized drivers
 For optimum performance, the use of paravirtualized network drivers is critical. When a datastore is used, a paravirtualized SCSI driver is required. A paravirtualized device driver allows a guest to integrate more deeply into the hypervisor, as opposed to an emulated driver in which the hypervisor spends more CPU time mimicking the behavior of physical hardware.
