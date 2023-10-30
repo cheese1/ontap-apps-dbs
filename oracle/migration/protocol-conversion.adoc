@@ -51,7 +51,7 @@ No Presto metadata available for ol7_latest
 (1/2): iscsi-initiator-utils-6.2.0.873-32.0.2.el7.x86_6 | 416 kB   00:00
 (2/2): iscsi-initiator-utils-iscsiuio-6.2.0.873-32.0.2. |  84 kB   00:00
 -----------------------------------------------------------------------------
-Total                                           2.8 MB/s | 501 kB  00:00
+Total                                           2.8 MB/s | 501 kB  00:00Cluster01
 Running transaction check
 Running transaction test
 Transaction test succeeded
@@ -75,7 +75,6 @@ Complete!
 ....
 
 == Identify iSCSI initiator name
-
 A unique iSCSI initiator name is generated during the installation process. On Linux, it is located in the `/etc/iscsi/initiatorname.iscsi` file. This name is used to identify the host on the IP SAN.
 
 ....
@@ -84,46 +83,41 @@ InitiatorName=iqn.1992-05.com.redhat:497bd66ca0
 ....
 
 == Create new initiator group
-
 An initiator group (igroup) is part of the ONTAP LUN masking architecture. A newly created LUN is not accessible unless a host is first granted access. This step is accomplished by creating an igroup that lists either the FC WWNs or iSCSI initiator names that require access.
 
 In this example, an igroup is created that contains the iSCSI initiator of the Linux host.
 
 ....
-EcoSystems-8060::*> igroup create -igroup linuxiscsi -protocol iscsi -ostype linux -initiator iqn.1994-05.com.redhat:497bd66ca0
+Cluster01::*> igroup create -igroup linuxiscsi -protocol iscsi -ostype linux -initiator iqn.1994-05.com.redhat:497bd66ca0
 ....
 
 == Shut down environment
-
 Before changing the LUN protocol, the LUNs must be fully quiesced. Any database on one of the LUNs being converted must be shut down, file systems must be dismounted, and volume groups must be deactivated. Where ASM is used, make sure that the ASM disk group is dismounted and shut down all grid services.
 
 == Unmap LUNs from FC network
-
 After the LUNs are fully quiesced, remove the mappings from the original FC igroup.
 
 ....
-EcoSystems-8060::*> lun unmap -vserver jfsCloud0 -path /vol/new_asm/LUN0 -igroup linuxhost
-EcoSystems-8060::*> lun unmap -vserver jfsCloud0 -path /vol/new_asm/LUN1 -igroup linuxhost
+Cluster01::*> lun unmap -vserver vserver1 -path /vol/new_asm/LUN0 -igroup linuxhost
+Cluster01::*> lun unmap -vserver vserver1 -path /vol/new_asm/LUN1 -igroup linuxhost
 ...
-EcoSystems-8060::*> lun unmap -vserver jfsCloud0 -path /vol/new_lvm/LUN8 -igroup linuxhost
-EcoSystems-8060::*> lun unmap -vserver jfsCloud0 -path /vol/new_lvm/LUN9 -igroup linuxhost
+Cluster01::*> lun unmap -vserver vserver1 -path /vol/new_lvm/LUN8 -igroup linuxhost
+Cluster01::*> lun unmap -vserver vserver1 -path /vol/new_lvm/LUN9 -igroup linuxhost
 ....
 
 == Remap LUNs to IP network
-
 Grant access to each LUN to the new iSCSI-based initiator group.
 
 ....
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_asm/LUN0 -igroup linuxiscsi
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_asm/LUN1 -igroup linuxiscsi
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_asm/LUN0 -igroup linuxiscsi
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_asm/LUN1 -igroup linuxiscsi
 ...
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_lvm/LUN8 -igroup linuxiscsi
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_lvm/LUN9 -igroup linuxiscsi
-EcoSystems-8060::*>
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_lvm/LUN8 -igroup linuxiscsi
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_lvm/LUN9 -igroup linuxiscsi
+Cluster01::*>
 ....
 
 == Discover iSCSI targets
-
 There are two phases to iSCSI discovery. The first is to discover the targets, which is not the same as discovering a LUN. The `iscsiadm` command shown below probes the portal group specified by the `-p argument` and stores a list of all IP addresses and ports that offer iSCSI services. In this case, there are four IP addresses that have iSCSI services on the default port 3260.
 
 [NOTE]
@@ -138,7 +132,6 @@ This command can take several minutes to complete if any of the target IP addres
 ....
 
 == Discover iSCSI LUNs
-
 After the iSCSI targets are discovered, restart the iSCSI service to discover the available iSCSI LUNs and build associated devices such as multipath or ASMlib devices.
 
 ....
@@ -147,7 +140,6 @@ Redirecting to /bin/systemctl restart  iscsi.service
 ....
 
 == Restart environment
-
 Restart the environment by reactivating volume groups, remounting file systems, restarting RAC services, and so on. As a precaution, NetApp recommends that you reboot the server after the conversion process is complete to be certain that all configuration files are correct and all stale devices are removed.
 
 Caution: Before restarting a host, make sure that all entries in `/etc/fstab` that reference migrated SAN resources are commented out. If this step is not taken and there are problems with LUN access, the result can be an OS that does not boot. This issue does not damage data. However, it can be very inconvenient to boot into rescue mode or a similar mode and correct `/etc/fstab` so that the OS can be booted to allow troubleshooting efforts to begin.

@@ -90,11 +90,11 @@ After this step is completed, ONTAP should be able to view the foreign storage a
 == Identify foreign array
 
 ....
-EcoSystems-8060::> storage array show -fields name,prefix
+Cluster01::> storage array show -fields name,prefix
 name          prefix
 ------------- ------
 FOREIGN_1     FOR-1
-EcoSystems-8060::>
+Cluster01::>
 ....
 
 == Identify foreign LUNs
@@ -102,7 +102,7 @@ EcoSystems-8060::>
 The LUNs can be listed by passing the `array-name` to the `storage disk show` command. The data returned is referenced multiple times during the migration procedure.
 
 ....
-EcoSystems-8060::> storage disk show -array-name FOREIGN_1 -fields disk,serial
+Cluster01::> storage disk show -array-name FOREIGN_1 -fields disk,serial
 disk     serial-number
 -------- -------------
 FOR-1.1  800DT$HuVWBX
@@ -126,7 +126,7 @@ FOR-1.18 800DT$HuVWBl
 FOR-1.19 800DT$HuVWBo
 FOR-1.20 800DT$HuVWBn
 20 entries were displayed.
-EcoSystems-8060::>
+Cluster01::>
 ....
 
 == Register foreign array LUNs as import candidates
@@ -134,12 +134,12 @@ EcoSystems-8060::>
 The foreign LUNs are initially classified as any particular LUN type. Before data can be imported, the LUNs must be tagged as foreign and therefore a candidate for the import process. This step is completed by passing the serial number to the `storage disk modify` command, as shown in the following example. Note that this process tags only the LUN as foreign within ONTAP. No data is written to the foreign LUN itself.
 
 ....
-EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBW} -is-foreign true
-EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBX} -is-foreign true
+Cluster01::*> storage disk modify {-serial-number 800DT$HuVWBW} -is-foreign true
+Cluster01::*> storage disk modify {-serial-number 800DT$HuVWBX} -is-foreign true
 ...
-EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBn} -is-foreign true
-EcoSystems-8060::*> storage disk modify {-serial-number 800DT$HuVWBo} -is-foreign true
-EcoSystems-8060::*>
+Cluster01::*> storage disk modify {-serial-number 800DT$HuVWBn} -is-foreign true
+Cluster01::*> storage disk modify {-serial-number 800DT$HuVWBo} -is-foreign true
+Cluster01::*>
 ....
 
 == Create volumes to host migrated LUNs
@@ -149,11 +149,11 @@ A volume is needed to host the migrated LUNs. The exact volume configuration dep
 Set the `snapshot-policy `to `none`. The migration process can include a great deal of data turnover. Therefore, there might be a large increase in space consumption if snapshots are created by accident because unwanted data is captured in the snapshots.
 
 ....
-EcoSystems-8060::> volume create -volume new_asm -aggregate data_02 -size 120G -snapshot-policy none
+Cluster01::> volume create -volume new_asm -aggregate data_02 -size 120G -snapshot-policy none
 [Job 1152] Job succeeded: Successful
-EcoSystems-8060::> volume create -volume new_lvm -aggregate data_02 -size 120G -snapshot-policy none
+Cluster01::> volume create -volume new_lvm -aggregate data_02 -size 120G -snapshot-policy none
 [Job 1153] Job succeeded: Successful
-EcoSystems-8060::>
+Cluster01::>
 ....
 
 == Create ONTAP LUNs
@@ -163,15 +163,15 @@ After the volumes are created, the new LUNs must be created. Normally, the creat
 In this step, serial numbers must be cross-referenced against the foreign array to make sure that the correct foreign LUN is matched to the correct new LUN.
 
 ....
-EcoSystems-8060::*> lun create -vserver jfsCloud0 -path /vol/new_asm/LUN0 -ostype linux -foreign-disk 800DT$HuVWBW
+Cluster01::*> lun create -vserver vserver1 -path /vol/new_asm/LUN0 -ostype linux -foreign-disk 800DT$HuVWBW
 Created a LUN of size 10g (10737418240)
-EcoSystems-8060::*> lun create -vserver jfsCloud0 -path /vol/new_asm/LUN1 -ostype linux -foreign-disk 800DT$HuVWBX
+Cluster01::*> lun create -vserver vserver1 -path /vol/new_asm/LUN1 -ostype linux -foreign-disk 800DT$HuVWBX
 Created a LUN of size 10g (10737418240)
 ...
 Created a LUN of size 10g (10737418240)
-EcoSystems-8060::*> lun create -vserver jfsCloud0 -path /vol/new_lvm/LUN8 -ostype linux -foreign-disk 800DT$HuVWBn
+Cluster01::*> lun create -vserver vserver1 -path /vol/new_lvm/LUN8 -ostype linux -foreign-disk 800DT$HuVWBn
 Created a LUN of size 10g (10737418240)
-EcoSystems-8060::*> lun create -vserver jfsCloud0 -path /vol/new_lvm/LUN9 -ostype linux -foreign-disk 800DT$HuVWBo
+Cluster01::*> lun create -vserver vserver1 -path /vol/new_lvm/LUN9 -ostype linux -foreign-disk 800DT$HuVWBo
 Created a LUN of size 10g (10737418240)
 ....
 
@@ -180,44 +180,44 @@ Created a LUN of size 10g (10737418240)
 The LUNs have now been created but are not configured as a replication destination. Before this step can be taken, the LUNs must first be placed offline. This extra step is designed to protect data from user errors. If ONTAP allowed a migration to be performed on an online LUN, it would create a risk that a typographical error could result in overwriting active data. The extra step of forcing the user to first take a LUN offline helps verify that the correct target LUN is used as a migration destination.
 
 ....
-EcoSystems-8060::*> lun offline -vserver jfsCloud0 -path /vol/new_asm/LUN0
+Cluster01::*> lun offline -vserver vserver1 -path /vol/new_asm/LUN0
 Warning: This command will take LUN "/vol/new_asm/LUN0" in Vserver
-         "jfsCloud0" offline.
+         "vserver1" offline.
 Do you want to continue? {y|n}: y
-EcoSystems-8060::*> lun offline -vserver jfsCloud0 -path /vol/new_asm/LUN1
+Cluster01::*> lun offline -vserver vserver1 -path /vol/new_asm/LUN1
 Warning: This command will take LUN "/vol/new_asm/LUN1" in Vserver
-         "jfsCloud0" offline.
+         "vserver1" offline.
 Do you want to continue? {y|n}: y
 ...
 Warning: This command will take LUN "/vol/new_lvm/LUN8" in Vserver
-         "jfsCloud0" offline.
+         "vserver1" offline.
 Do you want to continue? {y|n}: y
-EcoSystems-8060::*> lun offline -vserver jfsCloud0 -path /vol/new_lvm/LUN9
+Cluster01::*> lun offline -vserver vserver1 -path /vol/new_lvm/LUN9
 Warning: This command will take LUN "/vol/new_lvm/LUN9" in Vserver
-         "jfsCloud0" offline.
+         "vserver1" offline.
 Do you want to continue? {y|n}: y
 ....
 
 After the LUNs are offline, you can establish the import relationship by passing the foreign LUN serial number to the `lun import create` command.
 
 ....
-EcoSystems-8060::*> lun import create -vserver jfsCloud0 -path /vol/new_asm/LUN0 -foreign-disk 800DT$HuVWBW
-EcoSystems-8060::*> lun import create -vserver jfsCloud0 -path /vol/new_asm/LUN1 -foreign-disk 800DT$HuVWBX
+Cluster01::*> lun import create -vserver vserver1 -path /vol/new_asm/LUN0 -foreign-disk 800DT$HuVWBW
+Cluster01::*> lun import create -vserver vserver1 -path /vol/new_asm/LUN1 -foreign-disk 800DT$HuVWBX
 ...
-EcoSystems-8060::*> lun import create -vserver jfsCloud0 -path /vol/new_lvm/LUN8 -foreign-disk 800DT$HuVWBn
-EcoSystems-8060::*> lun import create -vserver jfsCloud0 -path /vol/new_lvm/LUN9 -foreign-disk 800DT$HuVWBo
-EcoSystems-8060::*>
+Cluster01::*> lun import create -vserver vserver1 -path /vol/new_lvm/LUN8 -foreign-disk 800DT$HuVWBn
+Cluster01::*> lun import create -vserver vserver1 -path /vol/new_lvm/LUN9 -foreign-disk 800DT$HuVWBo
+Cluster01::*>
 ....
 
 After all import relationships are established, the LUNs can be placed back online.
 
 ....
-EcoSystems-8060::*> lun online -vserver jfsCloud0 -path /vol/new_asm/LUN0
-EcoSystems-8060::*> lun online -vserver jfsCloud0 -path /vol/new_asm/LUN1
+Cluster01::*> lun online -vserver vserver1 -path /vol/new_asm/LUN0
+Cluster01::*> lun online -vserver vserver1 -path /vol/new_asm/LUN1
 ...
-EcoSystems-8060::*> lun online -vserver jfsCloud0 -path /vol/new_lvm/LUN8
-EcoSystems-8060::*> lun online -vserver jfsCloud0 -path /vol/new_lvm/LUN9
-EcoSystems-8060::*>
+Cluster01::*> lun online -vserver vserver1 -path /vol/new_lvm/LUN8
+Cluster01::*> lun online -vserver vserver1 -path /vol/new_lvm/LUN9
+Cluster01::*>
 ....
 
 == Create initiator group
@@ -227,7 +227,7 @@ An initiator group (igroup) is part of the ONTAP LUN masking architecture. A new
 In this example, an igroup is created that contains two WWNs that correspond to the two ports available on the host's HBA.
 
 ....
-EcoSystems-8060::*> igroup create linuxhost -protocol fcp -ostype linux -initiator 21:00:00:0e:1e:16:63:50 21:00:00:0e:1e:16:63:51
+Cluster01::*> igroup create linuxhost -protocol fcp -ostype linux -initiator 21:00:00:0e:1e:16:63:50 21:00:00:0e:1e:16:63:51
 ....
 
 == Map new LUNs to host
@@ -235,10 +235,10 @@ EcoSystems-8060::*> igroup create linuxhost -protocol fcp -ostype linux -initiat
 Following igroup creation, the LUNs are then mapped to the defined igroup. These LUNs are available only to the WWNs included in this igroup. NetApp assumes at this stage in the migration process that the host has not been zoned to ONTAP. This is important because if the host is simultaneously zoned to the foreign array and the new ONTAP system, then there is a risk that LUNs bearing the same serial number could be discovered on each array. This situation could lead to multipath malfunctions or damage to data.
 
 ....
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_asm/LUN0 -igroup linuxhost
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_asm/LUN1 -igroup linuxhost
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_asm/LUN0 -igroup linuxhost
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_asm/LUN1 -igroup linuxhost
 ...
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_lvm/LUN8 -igroup linuxhost
-EcoSystems-8060::*> lun map -vserver jfsCloud0 -path /vol/new_lvm/LUN9 -igroup linuxhost
-EcoSystems-8060::*>
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_lvm/LUN8 -igroup linuxhost
+Cluster01::*> lun map -vserver vserver1 -path /vol/new_lvm/LUN9 -igroup linuxhost
+Cluster01::*>
 ....

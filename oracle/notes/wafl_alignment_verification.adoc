@@ -30,7 +30,7 @@ The following example shows an alignment check on a single LUN with a single par
 First, create the partition that uses all partitions available on the drive.
 
 ....
-[root@jfs0 iscsi]# fdisk /dev/sdb
+[root@host0 iscsi]# fdisk /dev/sdb
 Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
 Building a new DOS disklabel with disk identifier 0xb97f94c1.
 Changes will remain in memory only, until you decide to write them.
@@ -52,13 +52,13 @@ Command (m for help): w
 The partition table has been altered!
 Calling ioctl() to re-read partition table.
 Syncing disks.
-[root@jfs0 iscsi]#
+[root@host0 iscsi]#
 ....
 
 The alignment can be checked mathematically with the following command:
 
 ....
-[root@jfs0 iscsi]# fdisk -u -l /dev/sdb
+[root@host0 iscsi]# fdisk -u -l /dev/sdb
 Disk /dev/sdb: 10.7 GB, 10737418240 bytes
 64 heads, 32 sectors/track, 10240 cylinders, total 20971520 sectors
 Units = sectors of 1 * 512 = 512 bytes
@@ -109,7 +109,7 @@ FAS8040SAP-02*>
 Be very careful with this command. Reversing the `if` and `of` arguments destroys data.
 +
 ....
-[root@jfs0 iscsi]# dd if=/dev/sdb1 of=/dev/null iflag=dsync count=1000 bs=4096
+[root@host0 iscsi]# dd if=/dev/sdb1 of=/dev/null iflag=dsync count=1000 bs=4096
 1000+0 records in
 1000+0 records out
 4096000 bytes (4.1 MB) copied, 0.0186706 s, 219 MB/s
@@ -138,7 +138,7 @@ The following example shows misaligned I/O:
 . Create a partition that does not align to a 4KB boundary. This is not default behavior on modern OSs.
 +
 ....
-[root@jfs0 iscsi]# fdisk -u /dev/sdb
+[root@host0 iscsi]# fdisk -u /dev/sdb
 Command (m for help): n
 Command action
    e   extended
