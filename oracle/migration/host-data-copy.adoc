@@ -45,7 +45,6 @@ ontap-nfs1:/host1_oradata_new   49807360       128  49807232   1% /new/oradata
 ....
 
 ==== Overview
-
 The database can be migrated by a DBA by simply shutting down the database and copying the files, but the process is easily scripted if many databases must be migrated or minimizing downtime is critical. The use of scripts also reduces the chance for user error.
 
 The example scripts shown automate the following operations:
@@ -57,7 +56,6 @@ The example scripts shown automate the following operations:
 * Remounting the new file systems at the same paths as the prior file systems
 
 === Procedure
-
 . Shut down the database.
 +
 ....
@@ -330,7 +328,6 @@ When that disk group also contains the ASM spfile/passwd file, the only way the 
 Relocating these files can be done nondisruptively. However, for safety, NetApp recommends shutting down the database environment so that you can be certain that the files have been relocated and the configuration is properly updated. This procedure must be repeated if multiple ASM instances are present on a server.
 
 ==== Identify ASM instances
-
 Identify the ASM instances based on the data recorded in the `oratab` file. The ASM instances are denoted by a + symbol.
 
 ....
@@ -341,7 +338,6 @@ Identify the ASM instances based on the data recorded in the `oratab` file. The 
 There is one ASM instance called +ASM on this server.
 
 ==== Make sure all databases are shut down
-
 The only smon process visible should be the smon for the ASM instance in use. The presence of another smon process indicates that a database is still running.
 
 ....
@@ -352,7 +348,6 @@ oracle     857     1  0 18:26 ?        00:00:00 asm_smon_+ASM
 The only smon process is the ASM instance itself. This means that no other databases are running, and it is safe to proceed without risk of disrupting database operations.
 
 ==== Locate files
-
 Identify the current location of the ASM spfile and password file by using the `spget` and `pwget` commands.
 
 ....
@@ -369,7 +364,6 @@ ASMCMD> pwget --asm
 The files are both located at the base of the `+DATA` disk group.
 
 === Copy files
-
 Copy the files to the new ASM disk group with the `spcopy` and `pwcopy` commands. If the new disk group was recently created and is currently empty, it might need to be mounted first.
 
 ....
@@ -389,7 +383,6 @@ copying +DATA/orapwasm -> +NEWDATA/orapwasm
 The files have now been copied from `+DATA` to `+NEWDATA`.
 
 ==== Update ASM instance
-
 The ASM instance must now be updated to reflect the change in location. The `spset` and `pwset` commands update the ASM metadata required for starting the ASM disk group.
 
 ....
@@ -398,7 +391,6 @@ ASMCMD> pwset --asm +NEWDATA/orapwasm
 ....
 
 ==== Activate ASM using updated files
-
 At this point, the ASM instance still uses the prior locations of these files. The instance must be restarted to force a reread of the files from their new locations and to release locks on the prior files.
 
 ....
@@ -422,7 +414,6 @@ ORA-15013: diskgroup "NEWDATA" is already mounted
 ....
 
 ==== Remove old spfile and password files
-
 If the procedure has been performed successfully, the prior files are no longer locked and can now be removed.
 
 ....
@@ -442,7 +433,6 @@ This risk can be avoided by copying the database to the new location rather than
 This procedure is one of many options involving RMAN. It is designed to allow a two-step process in which the initial backup is created and then later synchronized through log replay. This process is desirable to minimize downtime because it allows the database to remain operational and serving data during the initial baseline copy.
 
 === Copy database
-
 Oracle RMAN creates a level 0 (complete) copy of the source database currently located on the ASM disk group `+DATA` to the new location on `+NEWDATA`.
 
 ....
@@ -472,7 +462,6 @@ Finished backup at 06-DEC-15
 ....
 
 === Force archive log switch
-
 You must force an archive log switch to make sure that the archive logs contain all data required to make the copy fully consistent. Without this command, key data might still be present in the redo logs.
 
 ....
@@ -481,7 +470,6 @@ sql statement: alter system archive log current
 ....
 
 === Shut down source database
-
 Disruption begins in this step because the database is shut down and placed in a limited-access, read-only mode. To shut down the source database, run the following commands:
 
 ....
@@ -502,7 +490,6 @@ Redo Buffers                   5455872 bytes
 ....
 
 === Controlfile backup
-
 You must back up the controlfile in case you must abort the migration and revert to the original storage location. A copy of the backup controlfile isn't 100% required, but it does make the process of resetting the database file locations back to the original location easier.
 
 ....
@@ -518,7 +505,6 @@ Finished backup at 06-DEC-15
 ....
 
 === Parameter updates
-
 The current spfile contains references to the controlfiles on their current locations within the old ASM disk group. It must be edited, which is easily done by editing an intermediate pfile version.
 
 ....
@@ -527,7 +513,6 @@ Statement processed
 ....
 
 ==== Update pfile
-
 Update any parameters referring to old ASM disk groups to reflect the new ASM disk group names. Then save the updated pfile. Make sure that the `db_create` parameters are present.
 
 In the example below, the references to `+DATA` that were changed to `+NEWDATA` are highlighted in yellow. Two key parameters are the `db_create` parameters that create any new files at the correct location.
@@ -547,7 +532,6 @@ In the example below, the references to `+DATA` that were changed to `+NEWDATA` 
 ....
 
 ==== Update init.ora file
-
 Most ASM-based databases use an `init.ora` file located in the `$ORACLE_HOME/dbs` directory, which is a point to the spfile on the ASM disk group. This file must be redirected to a location on the new ASM disk group.
 
 ....
@@ -563,7 +547,6 @@ SPFILE=+NEWLOGS/TOAST/spfileTOAST.ora
 ....
 
 ==== Parameter file recreation
-
 The spfile is now ready to be populated by the data in the edited pfile.
 
 ....
@@ -669,7 +652,6 @@ Finished recover at 06-DEC-15
 ....
 
 === Activation
-
 The controlfile that was restored still references the data files at the original location, and it also contains the path information for the copied data files.
 
 . To change the active data files, run the `switch database to copy` command.
@@ -928,14 +910,12 @@ Finished backup at 08-DEC-15
 ....
 
 === Parameter updates
-
 ....
 RMAN> create pfile='/tmp/pfile' from spfile;
 Statement processed
 ....
 
 ==== Update pfile
-
 Any parameters referring to old ASM disk groups should be updated and, in some cases, deleted when they are no longer relevant. Update them to reflect the new file system paths and save the updated pfile. Make sure that the complete target path is listed. To update these parameters, run the following commands:
 
 ....
@@ -959,7 +939,6 @@ Any parameters referring to old ASM disk groups should be updated and, in some c
 ....
 
 ==== Disable the original init.ora file
-
 This file is located in the `$ORACLE_HOME/dbs` directory and is usually in a pfile that serves as a pointer to the spfile on the ASM disk group. To make sure that the original spfile is no longer used, rename it. Do not delete it, however, because this file is needed if the migration must be aborted.
 
 ....
@@ -971,7 +950,6 @@ SPFILE='+ASM0/TOAST/spfileTOAST.ora'
 ....
 
 ==== Parameter file recreation
-
 This is the final step in spfile relocation. The original spfile is no longer used and the database is currently started (but not mounted) using the intermediate file. The contents of this file can be written out to the new spfile location as follows:
 
 ....
