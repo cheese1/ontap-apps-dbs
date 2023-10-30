@@ -97,12 +97,12 @@ The FC zones can now be updated to remove all access from the host to the foreig
 To start the LUN import processes, run the `lun import start` command.
 
 ....
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_asm/LUN0
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_asm/LUN1
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_asm/LUN0
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_asm/LUN1
 ...
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_lvm/LUN8
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_lvm/LUN9
-EcoSystems-8060::lun import*>
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_lvm/LUN8
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_lvm/LUN9
+Cluster01::lun import*>
 ....
 
 == Monitor import progress
@@ -110,29 +110,29 @@ EcoSystems-8060::lun import*>
 The import operation can be monitored with the `lun import show` command. As shown below, the import of all 20 LUNs is underway, which means that data is now accessible through ONTAP even though the data copy operation still progresses.
 
 ....
-EcoSystems-8060::lun import*> lun import show -fields path,percent-complete
+Cluster01::lun import*> lun import show -fields path,percent-complete
 vserver   foreign-disk path              percent-complete
 --------- ------------ ----------------- ----------------
-jfsCloud0 800DT$HuVWB/ /vol/new_asm/LUN4 5
-jfsCloud0 800DT$HuVWBW /vol/new_asm/LUN0 5
-jfsCloud0 800DT$HuVWBX /vol/new_asm/LUN1 6
-jfsCloud0 800DT$HuVWBY /vol/new_asm/LUN2 6
-jfsCloud0 800DT$HuVWBZ /vol/new_asm/LUN3 5
-jfsCloud0 800DT$HuVWBa /vol/new_asm/LUN5 4
-jfsCloud0 800DT$HuVWBb /vol/new_asm/LUN6 4
-jfsCloud0 800DT$HuVWBc /vol/new_asm/LUN7 4
-jfsCloud0 800DT$HuVWBd /vol/new_asm/LUN8 4
-jfsCloud0 800DT$HuVWBe /vol/new_asm/LUN9 4
-jfsCloud0 800DT$HuVWBf /vol/new_lvm/LUN0 5
-jfsCloud0 800DT$HuVWBg /vol/new_lvm/LUN1 4
-jfsCloud0 800DT$HuVWBh /vol/new_lvm/LUN2 4
-jfsCloud0 800DT$HuVWBi /vol/new_lvm/LUN3 3
-jfsCloud0 800DT$HuVWBj /vol/new_lvm/LUN4 3
-jfsCloud0 800DT$HuVWBk /vol/new_lvm/LUN5 3
-jfsCloud0 800DT$HuVWBl /vol/new_lvm/LUN6 4
-jfsCloud0 800DT$HuVWBm /vol/new_lvm/LUN7 3
-jfsCloud0 800DT$HuVWBn /vol/new_lvm/LUN8 2
-jfsCloud0 800DT$HuVWBo /vol/new_lvm/LUN9 2
+vserver1  800DT$HuVWB/ /vol/new_asm/LUN4 5
+vserver1  800DT$HuVWBW /vol/new_asm/LUN0 5
+vserver1  800DT$HuVWBX /vol/new_asm/LUN1 6
+vserver1  800DT$HuVWBY /vol/new_asm/LUN2 6
+vserver1  800DT$HuVWBZ /vol/new_asm/LUN3 5
+vserver1  800DT$HuVWBa /vol/new_asm/LUN5 4
+vserver1  800DT$HuVWBb /vol/new_asm/LUN6 4
+vserver1  800DT$HuVWBc /vol/new_asm/LUN7 4
+vserver1  800DT$HuVWBd /vol/new_asm/LUN8 4
+vserver1  800DT$HuVWBe /vol/new_asm/LUN9 4
+vserver1  800DT$HuVWBf /vol/new_lvm/LUN0 5
+vserver1  800DT$HuVWBg /vol/new_lvm/LUN1 4
+vserver1  800DT$HuVWBh /vol/new_lvm/LUN2 4
+vserver1  800DT$HuVWBi /vol/new_lvm/LUN3 3
+vserver1  800DT$HuVWBj /vol/new_lvm/LUN4 3
+vserver1  800DT$HuVWBk /vol/new_lvm/LUN5 3
+vserver1  800DT$HuVWBl /vol/new_lvm/LUN6 4
+vserver1  800DT$HuVWBm /vol/new_lvm/LUN7 3
+vserver1  800DT$HuVWBn /vol/new_lvm/LUN8 2
+vserver1  800DT$HuVWBo /vol/new_lvm/LUN9 2
 20 entries were displayed.
 ....
 
@@ -141,7 +141,6 @@ If you require an offline process, delay rediscovering or restarting services un
 If you require an online migration, proceed to rediscover the LUNs in their new home and bring up the services.
 
 == Scan for SCSI device changes
-
 In most cases, the simplest option to rediscover new LUNs is to restart the host. Doing so automatically removes old stale devices, properly discovers all new LUNs, and builds associated devices such as multipathing devices. The example here shows a wholly online process for demonstration purposes.
 
 Caution: Before restarting a host, make sure that all entries in `/etc/fstab` that reference migrated SAN resources are commented out. If this is not done and there are problems with LUN access, the OS might not boot. This situation does not damage data. However, it can be very inconvenient to boot into rescue mode or a similar mode and correct the `/etc/fstab` so that the OS can be booted to enable troubleshooting.
@@ -190,7 +189,6 @@ OLD: Host: scsi9 Channel: 00 Id: 01 Lun: 19
 ....
 
 == Check for multipath devices
-
 The LUN discovery process also triggers the recreation of multipath devices, but the Linux multipathing driver is known to have occasional problems. The output of `multipath - ll` should be checked to verify that the output looks as expected. For example, the output below shows multipath devices associated with a `NETAPP` vendor string. Each device has four paths, with two at a priority of 50 and two at a priority of 10. Although the exact output can vary with different versions of Linux, this output looks as expected.
 
 [NOTE]
@@ -234,7 +232,6 @@ size=10G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_hand
 ....
 
 == Reactivate LVM volume group
-
 If the LVM LUNs have been properly discovered, the `vgchange --activate y` command should succeed. This is a good example of the value of a logical volume manager. A change in the WWN of a LUN or even a serial number is unimportant because the volume group metadata is written on the LUN itself.
 
 The OS scanned the LUNs and discovered a small amount of data written on the LUN that identifies it as a physical volume belonging to the `sanvg volumegroup`. It then built all of the required devices. All that is required is to reactivate the volume group.
@@ -247,7 +244,6 @@ The OS scanned the LUNs and discovered a small amount of data written on the LUN
 ....
 
 == Remount file systems
-
 After the volume group is reactivated, the file systems can be mounted with all of the original data intact. As discussed previously, the file systems are fully operational even if data replication is still active in the back group.
 
 ....
