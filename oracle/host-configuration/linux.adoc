@@ -133,6 +133,4 @@ A lower `no_path_retry` value can shorten the time required for ASM to switch to
 == Linux xfs, ext3, and ext4 mount options
 
 [TIP]
-====
 *NetApp recommends* using the default mount options.
-====

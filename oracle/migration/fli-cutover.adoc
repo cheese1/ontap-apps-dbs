@@ -26,14 +26,13 @@ This process can be summarized as follows:
 You do not need to wait for the migration process to complete. As soon as the migration for a given LUN begins, it is available on ONTAP and can serve data while the data copy process continues. All reads are passed through to the foreign LUN, and all writes are synchronously written to both arrays. The copy operation is very fast and the overhead of redirecting FC traffic is minimal, so any impact on performance should be transient and minimal. If there is concern, you can delay restarting the environment until after the migration process is complete and the import relationships have been deleted.
 
 == Shut down database
-
 The first step in quiescing the environment in this example is to shut down the database.
 
 ....
-[oracle@stlrx300s7-78 bin]$ . oraenv
+[oracle@host1 bin]$ . oraenv
 ORACLE_SID = [oracle] ? FLIDB
 The Oracle base remains unchanged with value /orabin
-[oracle@stlrx300s7-78 bin]$ sqlplus / as sysdba
+[oracle@host1 bin]$ sqlplus / as sysdba
 SQL*Plus: Release 12.1.0.2.0
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
 Connected to:
@@ -48,91 +47,85 @@ SQL>
 ....
 
 == Shut down grid services
-
 One of the SAN-based file systems being migrated also includes the Oracle ASM services. Quiescing the underlying LUNs requires dismounting the file systems, which in turn means stopping any processes with open files on this file system.
 
 ....
-[oracle@stlrx300s7-78 bin]$ ./crsctl stop has -f
-CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'stlrx300s7-78'
-CRS-2673: Attempting to stop 'ora.evmd' on 'stlrx300s7-78'
-CRS-2673: Attempting to stop 'ora.DATA.dg' on 'stlrx300s7-78'
-CRS-2673: Attempting to stop 'ora.LISTENER.lsnr' on 'stlrx300s7-78'
-CRS-2677: Stop of 'ora.DATA.dg' on 'stlrx300s7-78' succeeded
-CRS-2673: Attempting to stop 'ora.asm' on 'stlrx300s7-78'
-CRS-2677: Stop of 'ora.LISTENER.lsnr' on 'stlrx300s7-78' succeeded
-CRS-2677: Stop of 'ora.evmd' on 'stlrx300s7-78' succeeded
-CRS-2677: Stop of 'ora.asm' on 'stlrx300s7-78' succeeded
-CRS-2673: Attempting to stop 'ora.cssd' on 'stlrx300s7-78'
-CRS-2677: Stop of 'ora.cssd' on 'stlrx300s7-78' succeeded
-CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'stlrx300s7-78' has completed
+[oracle@host1 bin]$ ./crsctl stop has -f
+CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on 'host1'
+CRS-2673: Attempting to stop 'ora.evmd' on 'host1'
+CRS-2673: Attempting to stop 'ora.DATA.dg' on 'host1'
+CRS-2673: Attempting to stop 'ora.LISTENER.lsnr' on 'host1'
+CRS-2677: Stop of 'ora.DATA.dg' on 'host1' succeeded
+CRS-2673: Attempting to stop 'ora.asm' on 'host1'
+CRS-2677: Stop of 'ora.LISTENER.lsnr' on 'host1' succeeded
+CRS-2677: Stop of 'ora.evmd' on 'host1' succeeded
+CRS-2677: Stop of 'ora.asm' on 'host1' succeeded
+CRS-2673: Attempting to stop 'ora.cssd' on 'host1'
+CRS-2677: Stop of 'ora.cssd' on 'host1' succeeded
+CRS-2793: Shutdown of Oracle High Availability Services-managed resources on 'host1' has completed
 CRS-4133: Oracle High Availability Services has been stopped.
-[oracle@stlrx300s7-78 bin]$
+[oracle@host1 bin]$
 ....
 
 == Dismount file systems
-
 If all the processes are shut down, the umount operation succeeds. If permission is denied, there must be a process with a lock on the file system. The `fuser` command can help identify these processes.
 
 ....
-[root@stlrx300s7-78 ~]# umount /orabin
-[root@stlrx300s7-78 ~]# umount /backups
+[root@host1 ~]# umount /orabin
+[root@host1 ~]# umount /backups
 ....
 
 == Deactivate volume groups
-
 After all file systems in a given volume group are dismounted, the volume group can be deactivated.
 
 ....
-[root@stlrx300s7-78 ~]# vgchange --activate n sanvg
+[root@host1 ~]# vgchange --activate n sanvg
   0 logical volume(s) in volume group "sanvg" now active
-[root@stlrx300s7-78 ~]#
+[root@host1 ~]#
 ....
 
 == FC network changes
-
 The FC zones can now be updated to remove all access from the host to the foreign array and establish access to ONTAP.
 
 == Start import process
-
 To start the LUN import processes, run the `lun import start` command.
 
 ....
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_asm/LUN0
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_asm/LUN1
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_asm/LUN0
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_asm/LUN1
 ...
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_lvm/LUN8
-EcoSystems-8060::lun import*> lun import start -vserver jfsCloud0 -path /vol/new_lvm/LUN9
-EcoSystems-8060::lun import*>
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_lvm/LUN8
+Cluster01::lun import*> lun import start -vserver vserver1 -path /vol/new_lvm/LUN9
+Cluster01::lun import*>
 ....
 
 == Monitor import progress
-
 The import operation can be monitored with the `lun import show` command. As shown below, the import of all 20 LUNs is underway, which means that data is now accessible through ONTAP even though the data copy operation still progresses.
 
 ....
-EcoSystems-8060::lun import*> lun import show -fields path,percent-complete
+Cluster01::lun import*> lun import show -fields path,percent-complete
 vserver   foreign-disk path              percent-complete
 --------- ------------ ----------------- ----------------
-jfsCloud0 800DT$HuVWB/ /vol/new_asm/LUN4 5
-jfsCloud0 800DT$HuVWBW /vol/new_asm/LUN0 5
-jfsCloud0 800DT$HuVWBX /vol/new_asm/LUN1 6
-jfsCloud0 800DT$HuVWBY /vol/new_asm/LUN2 6
-jfsCloud0 800DT$HuVWBZ /vol/new_asm/LUN3 5
-jfsCloud0 800DT$HuVWBa /vol/new_asm/LUN5 4
-jfsCloud0 800DT$HuVWBb /vol/new_asm/LUN6 4
-jfsCloud0 800DT$HuVWBc /vol/new_asm/LUN7 4
-jfsCloud0 800DT$HuVWBd /vol/new_asm/LUN8 4
-jfsCloud0 800DT$HuVWBe /vol/new_asm/LUN9 4
-jfsCloud0 800DT$HuVWBf /vol/new_lvm/LUN0 5
-jfsCloud0 800DT$HuVWBg /vol/new_lvm/LUN1 4
-jfsCloud0 800DT$HuVWBh /vol/new_lvm/LUN2 4
-jfsCloud0 800DT$HuVWBi /vol/new_lvm/LUN3 3
-jfsCloud0 800DT$HuVWBj /vol/new_lvm/LUN4 3
-jfsCloud0 800DT$HuVWBk /vol/new_lvm/LUN5 3
-jfsCloud0 800DT$HuVWBl /vol/new_lvm/LUN6 4
-jfsCloud0 800DT$HuVWBm /vol/new_lvm/LUN7 3
-jfsCloud0 800DT$HuVWBn /vol/new_lvm/LUN8 2
-jfsCloud0 800DT$HuVWBo /vol/new_lvm/LUN9 2
+vserver1  800DT$HuVWB/ /vol/new_asm/LUN4 5
+vserver1  800DT$HuVWBW /vol/new_asm/LUN0 5
+vserver1  800DT$HuVWBX /vol/new_asm/LUN1 6
+vserver1  800DT$HuVWBY /vol/new_asm/LUN2 6
+vserver1  800DT$HuVWBZ /vol/new_asm/LUN3 5
+vserver1  800DT$HuVWBa /vol/new_asm/LUN5 4
+vserver1  800DT$HuVWBb /vol/new_asm/LUN6 4
+vserver1  800DT$HuVWBc /vol/new_asm/LUN7 4
+vserver1  800DT$HuVWBd /vol/new_asm/LUN8 4
+vserver1  800DT$HuVWBe /vol/new_asm/LUN9 4
+vserver1  800DT$HuVWBf /vol/new_lvm/LUN0 5
+vserver1  800DT$HuVWBg /vol/new_lvm/LUN1 4
+vserver1  800DT$HuVWBh /vol/new_lvm/LUN2 4
+vserver1  800DT$HuVWBi /vol/new_lvm/LUN3 3
+vserver1  800DT$HuVWBj /vol/new_lvm/LUN4 3
+vserver1  800DT$HuVWBk /vol/new_lvm/LUN5 3
+vserver1  800DT$HuVWBl /vol/new_lvm/LUN6 4
+vserver1  800DT$HuVWBm /vol/new_lvm/LUN7 3
+vserver1  800DT$HuVWBn /vol/new_lvm/LUN8 2
+vserver1  800DT$HuVWBo /vol/new_lvm/LUN9 2
 20 entries were displayed.
 ....
 
@@ -141,7 +134,6 @@ If you require an offline process, delay rediscovering or restarting services un
 If you require an online migration, proceed to rediscover the LUNs in their new home and bring up the services.
 
 == Scan for SCSI device changes
-
 In most cases, the simplest option to rediscover new LUNs is to restart the host. Doing so automatically removes old stale devices, properly discovers all new LUNs, and builds associated devices such as multipathing devices. The example here shows a wholly online process for demonstration purposes.
 
 Caution: Before restarting a host, make sure that all entries in `/etc/fstab` that reference migrated SAN resources are commented out. If this is not done and there are problems with LUN access, the OS might not boot. This situation does not damage data. However, it can be very inconvenient to boot into rescue mode or a similar mode and correct the `/etc/fstab` so that the OS can be booted to enable troubleshooting.
@@ -149,7 +141,7 @@ Caution: Before restarting a host, make sure that all entries in `/etc/fstab` th
 The LUNs on the version of Linux used in this example can be rescanned with the `rescan-scsi-bus.sh` command. If the command is successful, each LUN path should appear in the output. The output can be difficult to interpret, but, if the zoning and igroup configuration was correct, many LUNs should appear that include a `NETAPP` vendor string.
 
 ....
-[root@stlrx300s7-78 /]# rescan-scsi-bus.sh
+[root@host1 /]# rescan-scsi-bus.sh
 Scanning SCSI subsystem for new devices
 Scanning host 0 for  SCSI target IDs  0 1 2 3 4 5 6 7, all LUNs
  Scanning for device 0 2 0 0 ...
@@ -190,14 +182,13 @@ OLD: Host: scsi9 Channel: 00 Id: 01 Lun: 19
 ....
 
 == Check for multipath devices
-
 The LUN discovery process also triggers the recreation of multipath devices, but the Linux multipathing driver is known to have occasional problems. The output of `multipath - ll` should be checked to verify that the output looks as expected. For example, the output below shows multipath devices associated with a `NETAPP` vendor string. Each device has four paths, with two at a priority of 50 and two at a priority of 10. Although the exact output can vary with different versions of Linux, this output looks as expected.
 
 [NOTE]
 Reference the host utilities documentation for the version of Linux you use to verify that the `/etc/multipath.conf` settings are correct.
 
 ....
-[root@stlrx300s7-78 /]# multipath -ll
+[root@host1 /]# multipath -ll
 3600a098038303558735d493762504b36 dm-5 NETAPP  ,LUN C-Mode
 size=10G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_handle' hwhandler='1 alua' wp=rw
 |-+- policy='service-time 0' prio=50 status=active
@@ -234,26 +225,24 @@ size=10G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_hand
 ....
 
 == Reactivate LVM volume group
-
 If the LVM LUNs have been properly discovered, the `vgchange --activate y` command should succeed. This is a good example of the value of a logical volume manager. A change in the WWN of a LUN or even a serial number is unimportant because the volume group metadata is written on the LUN itself.
 
 The OS scanned the LUNs and discovered a small amount of data written on the LUN that identifies it as a physical volume belonging to the `sanvg volumegroup`. It then built all of the required devices. All that is required is to reactivate the volume group.
 
 ....
-[root@stlrx300s7-78 /]# vgchange --activate y sanvg
+[root@host1 /]# vgchange --activate y sanvg
   Found duplicate PV fpCzdLTuKfy2xDZjai1NliJh3TjLUBiT: using /dev/mapper/3600a098038303558735d493762504b46 not /dev/sdp
   Using duplicate PV /dev/mapper/3600a098038303558735d493762504b46 from subsystem DM, ignoring /dev/sdp
   2 logical volume(s) in volume group "sanvg" now active
 ....
 
 == Remount file systems
-
 After the volume group is reactivated, the file systems can be mounted with all of the original data intact. As discussed previously, the file systems are fully operational even if data replication is still active in the back group.
 
 ....
-[root@stlrx300s7-78 /]# mount /orabin
-[root@stlrx300s7-78 /]# mount /backups
-[root@stlrx300s7-78 /]# df -k
+[root@host1 /]# mount /orabin
+[root@host1 /]# mount /backups
+[root@host1 /]# df -k
 Filesystem                       1K-blocks      Used Available Use% Mounted on
 /dev/mapper/rhel-root             52403200   8837100  43566100  17% /
 devtmpfs                          65882776         0  65882776   0% /dev
@@ -270,7 +259,6 @@ tmpfs                             13179736         0  13179736   0% /run/user/0
 ....
 
 == Rescan for ASM devices
-
 The ASMlib devices should have been rediscovered when the SCSI devices were rescanned. Rediscovery can be verified online by restarting ASMlib and then scanning the disks.
 
 [NOTE]
@@ -281,14 +269,14 @@ Caution: Where ASMlib is not used, the `/dev/mapper` devices should have been au
 In this example, restarting ASMlib and scanning for disks show the same 10 ASM LUNs as the original environment.
 
 ....
-[root@stlrx300s7-78 /]# oracleasm exit
+[root@host1 /]# oracleasm exit
 Unmounting ASMlib driver filesystem: /dev/oracleasm
 Unloading module "oracleasm": oracleasm
-[root@stlrx300s7-78 /]# oracleasm init
+[root@host1 /]# oracleasm init
 Loading module "oracleasm": oracleasm
 Configuring "oracleasm" to use device physical block size
 Mounting ASMlib driver filesystem: /dev/oracleasm
-[root@stlrx300s7-78 /]# oracleasm scandisks
+[root@host1 /]# oracleasm scandisks
 Reloading disk partitions: done
 Cleaning any stale ASM disks...
 Scanning system for ASM disks...
@@ -305,24 +293,22 @@ Instantiating disk "ASM9"
 ....
 
 == Restart grid services
-
 Now that the LVM and ASM devices are online and available, the grid services can be restarted.
 
 ....
-[root@stlrx300s7-78 /]# cd /orabin/product/12.1.0/grid/bin
-[root@stlrx300s7-78 bin]# ./crsctl start has
+[root@host1 /]# cd /orabin/product/12.1.0/grid/bin
+[root@host1 bin]# ./crsctl start has
 ....
 
 == Restart database
-
 After the grid services have been restarted, the database can be brought up. It might be necessary to wait a few minutes for the ASM services to become fully available before trying to start the database.
 
 ....
-[root@stlrx300s7-78 bin]# su - oracle
-[oracle@stlrx300s7-78 ~]$ . oraenv
+[root@host1 bin]# su - oracle
+[oracle@host1 ~]$ . oraenv
 ORACLE_SID = [oracle] ? FLIDB
 The Oracle base has been set to /orabin
-[oracle@stlrx300s7-78 ~]$ sqlplus / as sysdba
+[oracle@host1 ~]$ sqlplus / as sysdba
 SQL*Plus: Release 12.1.0.2.0
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
 Connected to an idle instance.

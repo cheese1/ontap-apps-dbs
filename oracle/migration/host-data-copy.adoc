@@ -4,7 +4,6 @@ permalink: oracle/migration/host-data-copy.html
 keywords: migration, oracle, data copy, lvm, rebalance, asm
 summary: Oracle migration using the host-side storage stack
 ---
-
 = Host data copy
 :hardbreaks:
 :nofooter:
@@ -28,25 +27,23 @@ The usefulness of a simple copy operation should not be underestimated. This ope
 The following example demonstrates one option for a safe and rapid migration.
 
 === Environment
-
 The environment to be migrated is as follows:
 
 * Current file systems
 +
 ....
-ontap-nfs1:/jfs0_oradata       52428800  16196928  36231872  31% /oradata
-ontap-nfs1:/jfs0_logs          49807360    548032  49259328   2% /logs
+ontap-nfs1:/host1_oradata       52428800  16196928  36231872  31% /oradata
+ontap-nfs1:/host1_logs          49807360    548032  49259328   2% /logs
 ....
 
 * New file systems
 +
 ....
-ontap-nfs1:/jfs0_logs_new      49807360       128  49807232   1% /new/logs
-ontap-nfs1:/jfs0_oradata_new   49807360       128  49807232   1% /new/oradata
+ontap-nfs1:/host1_logs_new      49807360       128  49807232   1% /new/logs
+ontap-nfs1:/host1_oradata_new   49807360       128  49807232   1% /new/oradata
 ....
 
 ==== Overview
-
 The database can be migrated by a DBA by simply shutting down the database and copying the files, but the process is easily scripted if many databases must be migrated or minimizing downtime is critical. The use of scripts also reduces the chance for user error.
 
 The example scripts shown automate the following operations:
@@ -58,11 +55,10 @@ The example scripts shown automate the following operations:
 * Remounting the new file systems at the same paths as the prior file systems
 
 === Procedure
-
 . Shut down the database.
 +
 ....
-[root@jfs0 current]# ./dbshut.pl NTAP
+[root@host1 current]# ./dbshut.pl NTAP
 ORACLE_SID = [oracle] ? The Oracle base has been set to /orabin
 SQL*Plus: Release 12.1.0.2.0 Production on Thu Dec 3 15:58:48 2015
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
@@ -80,10 +76,10 @@ NTAP shut down
 . Convert the file systems to read-only. This can be done more quickly by using a script, as shown in link:sample-scripts.html#convert-file-system-to-read-only[Convert File System to Read Only].
 +
 ....
-[root@jfs0 current]# ./mk.fs.readonly.pl /oradata
+[root@host1 current]# ./mk.fs.readonly.pl /oradata
 /oradata unmounted
 /oradata mounted read-only
-[root@jfs0 current]# ./mk.fs.readonly.pl /logs
+[root@host1 current]# ./mk.fs.readonly.pl /logs
 /logs unmounted
 /logs mounted read-only
 ....
@@ -91,14 +87,14 @@ NTAP shut down
 . Confirm that the file systems are now read-only.
 +
 ....
-ontap-nfs1:/jfs0_oradata on /oradata type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
-ontap-nfs1:/jfs0_logs on /logs type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_oradata on /oradata type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_logs on /logs type nfs (ro,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
 ....
 
 . Synchronize file system contents with the `rsync` command.
 +
 ....
-[root@jfs0 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /oradata/ /new/oradata/
+[root@host1 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /oradata/ /new/oradata/
 sending incremental file list
 ./
 NTAP/
@@ -124,7 +120,7 @@ Total bytes sent: 18572359828
 Total bytes received: 228
 sent 18572359828 bytes  received 228 bytes  162204017.96 bytes/sec
 total size is 18570092218  speedup is 1.00
-[root@jfs0 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /logs/ /new/logs/
+[root@host1 current]# rsync -rlpogt --stats --progress --exclude=.snapshot /logs/ /new/logs/
 sending incremental file list
 ./
 NTAP/
@@ -155,11 +151,11 @@ total size is 527032832  speedup is 1.00
 . Unmount the old file systems and relocate the copied data. This can be done more quickly by using a script, as shown in link:sample-scripts.html#replace-file-system[Replace File System].
 +
 ....
-[root@jfs0 current]# ./swap.fs.pl /logs,/new/logs
+[root@host1 current]# ./swap.fs.pl /logs,/new/logs
 /new/logs unmounted
 /logs unmounted
 Updated /logs mounted
-[root@jfs0 current]# ./swap.fs.pl /oradata,/new/oradata
+[root@host1 current]# ./swap.fs.pl /oradata,/new/oradata
 /new/oradata unmounted
 /oradata unmounted
 Updated /oradata mounted
@@ -168,14 +164,14 @@ Updated /oradata mounted
 . Confirm that the new file systems are in position.
 +
 ....
-ontap-nfs1:/jfs0_logs_new on /logs type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
-ontap-nfs1:/jfs0_oradata_new on /oradata type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_logs_new on /logs type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
+ontap-nfs1:/host1_oradata_new on /oradata type nfs (rw,bg,vers=3,rsize=65536,wsize=65536,addr=172.20.101.10)
 ....
 
 . Start the database.
 +
 ....
-[root@jfs0 current]# ./dbstart.pl NTAP
+[root@host1 current]# ./dbstart.pl NTAP
 ORACLE_SID = [oracle] ? The Oracle base has been set to /orabin
 SQL*Plus: Release 12.1.0.2.0 Production on Thu Dec 3 16:10:07 2015
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
@@ -194,11 +190,10 @@ NTAP started
 ....
 
 === Fully automated cutover
-
 This sample script accepts arguments of the database SID followed by common-delimited pairs of file systems. For the example shown above, the command is issued as follows:
 
 ....
-[root@jfs0 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
+[root@host1 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
 ....
 
 When executed, the example script attempts to perform the following sequence. It terminates if it encounters an error in any step:
@@ -217,7 +212,7 @@ When executed, the example script attempts to perform the following sequence. It
 The following text provides an execution example for this script:
 
 ....
-[root@jfs0 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
+[root@host1 current]# ./migrate.oracle.fs.pl NTAP /logs,/new/logs /oradata,/new/oradata
 ORACLE_SID = [oracle] ? The Oracle base has been set to /orabin
 SQL*Plus: Release 12.1.0.2.0 Production on Thu Dec 3 17:05:50 2015
 Copyright (c) 1982, 2014, Oracle.  All rights reserved.
@@ -308,11 +303,10 @@ Database opened.
 SQL> Disconnected from Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
 With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options
 NTAP started
-[root@jfs0 current]#
+[root@host1 current]#
 ....
 
 == Oracle ASM spfile and passwd migration
-
 One difficulty in completing migration involving ASM is the ASM-specific spfile and the password file. By default, these critical metadata files are created on the first ASM disk group defined. If a particular ASM disk group must be evacuated and removed, the spfile and password file that govern that ASM instance must be relocated.
 
 Another use case in which these files might need to be relocated is during a deployment of database management software such as SnapManager for Oracle or the SnapCenter Oracle plug- in. One of the features of these products is to rapidly restore a database by reverting the state of the ASM LUNs hosting the data files. Doing so requires taking the ASM disk group offline before performing a restore. This is not a problem as long as a given database's data files are isolated in a dedicated ASM disk group.
@@ -320,18 +314,15 @@ Another use case in which these files might need to be relocated is during a dep
 When that disk group also contains the ASM spfile/passwd file, the only way the disk group can be brought offline is to shut down the entire ASM instance. This is a disruptive process, which means that the spfile/passwd file would need to be relocated.
 
 === Environment
-
 . Database SID = TOAST
 . Current data files on `+DATA`
 . Current logfiles and controlfiles on `+LOGS`
 . New ASM disk groups established as `+NEWDATA` and `+NEWLOGS`
 
 === ASM spfile/passwd file locations
-
 Relocating these files can be done nondisruptively. However, for safety, NetApp recommends shutting down the database environment so that you can be certain that the files have been relocated and the configuration is properly updated. This procedure must be repeated if multiple ASM instances are present on a server.
 
 ==== Identify ASM instances
-
 Identify the ASM instances based on the data recorded in the `oratab` file. The ASM instances are denoted by a + symbol.
 
 ....
@@ -342,7 +333,6 @@ Identify the ASM instances based on the data recorded in the `oratab` file. The 
 There is one ASM instance called +ASM on this server.
 
 ==== Make sure all databases are shut down
-
 The only smon process visible should be the smon for the ASM instance in use. The presence of another smon process indicates that a database is still running.
 
 ....
@@ -353,7 +343,6 @@ oracle     857     1  0 18:26 ?        00:00:00 asm_smon_+ASM
 The only smon process is the ASM instance itself. This means that no other databases are running, and it is safe to proceed without risk of disrupting database operations.
 
 ==== Locate files
-
 Identify the current location of the ASM spfile and password file by using the `spget` and `pwget` commands.
 
 ....
@@ -370,7 +359,6 @@ ASMCMD> pwget --asm
 The files are both located at the base of the `+DATA` disk group.
 
 === Copy files
-
 Copy the files to the new ASM disk group with the `spcopy` and `pwcopy` commands. If the new disk group was recently created and is currently empty, it might need to be mounted first.
 
 ....
@@ -390,7 +378,6 @@ copying +DATA/orapwasm -> +NEWDATA/orapwasm
 The files have now been copied from `+DATA` to `+NEWDATA`.
 
 ==== Update ASM instance
-
 The ASM instance must now be updated to reflect the change in location. The `spset` and `pwset` commands update the ASM metadata required for starting the ASM disk group.
 
 ....
@@ -399,7 +386,6 @@ ASMCMD> pwset --asm +NEWDATA/orapwasm
 ....
 
 ==== Activate ASM using updated files
-
 At this point, the ASM instance still uses the prior locations of these files. The instance must be restarted to force a reread of the files from their new locations and to release locks on the prior files.
 
 ....
@@ -423,7 +409,6 @@ ORA-15013: diskgroup "NEWDATA" is already mounted
 ....
 
 ==== Remove old spfile and password files
-
 If the procedure has been performed successfully, the prior files are no longer locked and can now be removed.
 
 ....
@@ -433,7 +418,6 @@ ASMCMD> rm +DATA/orapwasm
 ....
 
 == Oracle ASM to ASM copy
-
 Oracle ASM is essentially a lightweight combined volume manager and file system. Because the file system is not readily visible, RMAN must be used to perform copy operations. Although a copy-based migration process is safe and simple, it results in some disruption. The disruption can be minimized, but not fully eliminated.
 
 If you want nondisruptive migration of an ASM-based database, the best option is to leverage ASM’s capability to rebalance ASM extents to new LUNs while dropping the old LUNs. Doing so is generally safe and nondisruptive to operations, but it offers no back- out path. If functional or performance problems are encountered, the only option is to migrate the data back to the source.
@@ -443,7 +427,6 @@ This risk can be avoided by copying the database to the new location rather than
 This procedure is one of many options involving RMAN. It is designed to allow a two-step process in which the initial backup is created and then later synchronized through log replay. This process is desirable to minimize downtime because it allows the database to remain operational and serving data during the initial baseline copy.
 
 === Copy database
-
 Oracle RMAN creates a level 0 (complete) copy of the source database currently located on the ASM disk group `+DATA` to the new location on `+NEWDATA`.
 
 ....
@@ -473,7 +456,6 @@ Finished backup at 06-DEC-15
 ....
 
 === Force archive log switch
-
 You must force an archive log switch to make sure that the archive logs contain all data required to make the copy fully consistent. Without this command, key data might still be present in the redo logs.
 
 ....
@@ -482,7 +464,6 @@ sql statement: alter system archive log current
 ....
 
 === Shut down source database
-
 Disruption begins in this step because the database is shut down and placed in a limited-access, read-only mode. To shut down the source database, run the following commands:
 
 ....
@@ -503,7 +484,6 @@ Redo Buffers                   5455872 bytes
 ....
 
 === Controlfile backup
-
 You must back up the controlfile in case you must abort the migration and revert to the original storage location. A copy of the backup controlfile isn't 100% required, but it does make the process of resetting the database file locations back to the original location easier.
 
 ....
@@ -519,7 +499,6 @@ Finished backup at 06-DEC-15
 ....
 
 === Parameter updates
-
 The current spfile contains references to the controlfiles on their current locations within the old ASM disk group. It must be edited, which is easily done by editing an intermediate pfile version.
 
 ....
@@ -528,7 +507,6 @@ Statement processed
 ....
 
 ==== Update pfile
-
 Update any parameters referring to old ASM disk groups to reflect the new ASM disk group names. Then save the updated pfile. Make sure that the `db_create` parameters are present.
 
 In the example below, the references to `+DATA` that were changed to `+NEWDATA` are highlighted in yellow. Two key parameters are the `db_create` parameters that create any new files at the correct location.
@@ -548,7 +526,6 @@ In the example below, the references to `+DATA` that were changed to `+NEWDATA` 
 ....
 
 ==== Update init.ora file
-
 Most ASM-based databases use an `init.ora` file located in the `$ORACLE_HOME/dbs` directory, which is a point to the spfile on the ASM disk group. This file must be redirected to a location on the new ASM disk group.
 
 ....
@@ -564,7 +541,6 @@ SPFILE=+NEWLOGS/TOAST/spfileTOAST.ora
 ....
 
 ==== Parameter file recreation
-
 The spfile is now ready to be populated by the data in the edited pfile.
 
 ....
@@ -573,7 +549,6 @@ Statement processed
 ....
 
 ==== Start database to start using new spfile
-
 Start the database to make sure that it now uses the newly created spfile and that any further changes to system parameters are correctly recorded.
 
 ....
@@ -588,7 +563,6 @@ Redo Buffers                   5455872 bytes
 ....
 
 === Restore controlfile
-
 The backup controlfile created by RMAN can also be restored by RMAN directly to the location specified in the new spfile.
 
 ....
@@ -619,7 +593,6 @@ control_files                        string      +NEWLOGS/TOAST/CONTROLFILE/cur
 ....
 
 === Log replay
-
 The database currently uses the data files in the old location. Before the copy can be used, they must be synchronized. Time has passed during the initial copy process, and the changes have been logged primarily in the archive logs. These changes are replicated as follows:
 
 . Perform an RMAN incremental backup, which contains the archive logs.
@@ -670,7 +643,6 @@ Finished recover at 06-DEC-15
 ....
 
 === Activation
-
 The controlfile that was restored still references the data files at the original location, and it also contains the path information for the copied data files.
 
 . To change the active data files, run the `switch database to copy` command.
@@ -726,7 +698,6 @@ renamed tempfile 1 to +NEWDATA in control file
 ....
 
 === Redo log migration
-
 The migration process is nearly complete, but the redo logs are still located on the original ASM disk group. Redo logs cannot be directly relocated. Instead, a new set of redo logs is created and added to the configuration, followed by a drop of the old logs.
 
 . Identify the number of redo log groups and their respective group numbers.
@@ -807,7 +778,7 @@ SQL> select name, value from v$parameter where value is not null;
 . The following script demonstrates how to simplify this process:
 +
 ....
-[root@jfs0 current]# ./checkdbdata.pl TOAST
+[root@host1 current]# ./checkdbdata.pl TOAST
 TOAST datafiles:
 +NEWDATA/TOAST/DATAFILE/system.259.897759609
 +NEWDATA/TOAST/DATAFILE/sysaux.263.897759615
@@ -840,11 +811,9 @@ ASMCMD>
 ....
 
 == Oracle ASM to file system copy
-
 The Oracle ASM to file system copy procedure is very similar to the ASM to ASM copy procedure, with similar benefits and restrictions. The primary difference is the syntax of the various commands and configuration parameters when using a visible file system as opposed to an ASM disk group.
 
 === Copy database
-
 Oracle RMAN is used to create a level 0 (complete) copy of the source database currently located on the ASM disk group `+DATA` to the new location on `/oradata`.
 
 ....
@@ -884,7 +853,6 @@ Finished backup at 13-MAY-16
 ....
 
 === Force archive log switch
-
 Forcing the archive log switch is required to make sure that the archive logs contain all of the data required to make the copy fully consistent. Without this command, key data might still be present in the redo logs. To force an archive log switch, run the following command:
 
 ....
@@ -893,7 +861,6 @@ sql statement: alter system archive log current
 ....
 
 === Shut down source database
-
 Disruption begins in this step because the database is shut down and placed in a limited-access read-only mode. To shut down the source database, run the following commands:
 
 ....
@@ -914,7 +881,6 @@ Redo Buffers                5455872 bytes
 ....
 
 === Controlfile backup
-
 Back up controlfiles in case you must abort the migration and revert to the original storage location. A copy of the backup controlfile isn't 100% required, but it does make the process of resetting the database file locations back to the original location easier.
 
 ....
@@ -929,14 +895,12 @@ Finished backup at 08-DEC-15
 ....
 
 === Parameter updates
-
 ....
 RMAN> create pfile='/tmp/pfile' from spfile;
 Statement processed
 ....
 
 ==== Update pfile
-
 Any parameters referring to old ASM disk groups should be updated and, in some cases, deleted when they are no longer relevant. Update them to reflect the new file system paths and save the updated pfile. Make sure that the complete target path is listed. To update these parameters, run the following commands:
 
 ....
@@ -960,7 +924,6 @@ Any parameters referring to old ASM disk groups should be updated and, in some c
 ....
 
 ==== Disable the original init.ora file
-
 This file is located in the `$ORACLE_HOME/dbs` directory and is usually in a pfile that serves as a pointer to the spfile on the ASM disk group. To make sure that the original spfile is no longer used, rename it. Do not delete it, however, because this file is needed if the migration must be aborted.
 
 ....
@@ -972,7 +935,6 @@ SPFILE='+ASM0/TOAST/spfileTOAST.ora'
 ....
 
 ==== Parameter file recreation
-
 This is the final step in spfile relocation. The original spfile is no longer used and the database is currently started (but not mounted) using the intermediate file. The contents of this file can be written out to the new spfile location as follows:
 
 ....
@@ -981,7 +943,6 @@ Statement processed
 ....
 
 ==== Start database to start using new spfile
-
 You must start the database to release the locks on the intermediate file and start the database by using only the new spfile file. Starting the database also proves that the new spfile location is correct and its data is valid.
 
 ....
@@ -998,7 +959,6 @@ Redo Buffers                   5455872 bytes
 ....
 
 === Restore controlfile
-
 A backup controlfile was created at the path `/tmp/TOAST.ctrl` earlier in the procedure. The new spfile defines the controlfile locations as /`logfs/TOAST/ctrl/ctrlfile1.ctrl` and `/logfs/TOAST/redo/ctrlfile2.ctrl`. However, those files do not yet exist.
 
 . This command restores the controlfile data to the paths defined in the spfile.
@@ -1033,7 +993,6 @@ control_files                        string      /logs/TOAST/arch/control01.ctl
 ....
 
 === Log replay
-
 The database is currently using the data files in the old location. Before the copy can be used, the data files must be synchronized. Time has passed during the initial copy process, and changes were logged primarily in the archive logs. These changes are replicated in the following two steps.
 
 . Perform an RMAN incremental backup, which contains the archive logs.
@@ -1079,7 +1038,6 @@ RMAN-06497: WARNING: control file is not current, control file AUTOBACKUP skippe
 ....
 
 === Activation
-
 The controlfile that was restored still references the data files at the original location, and it also contains the path information for the copied data files.
 
 . To change the active data files, run the `switch database to copy` command:
@@ -1106,7 +1064,6 @@ Finished recover at 13-MAY-16
 ....
 
 ==== Relocate Temporary Data Files
-
 . Identify the location of temporary data files still in use on the original disk group.
 +
 ....
@@ -1128,7 +1085,6 @@ renamed tempfile 1 to /oradata/TOAST/temp01.dbf in control file
 ....
 
 === Redo log migration
-
 The migration process is nearly complete, but the redo logs are still located on the original ASM disk group. Redo logs cannot be directly relocated. Instead, a new set of redo logs is created and added to the configuration, following by a drop of the old logs.
 
 . Identify the number of redo log groups and their respective group numbers.
@@ -1238,7 +1194,6 @@ ASMCMD>
 ....
 
 === Data file cleanup procedure
-
 The migration process might result in data files with long or cryptic syntax, depending on how Oracle RMAN was used. In the example shown here, the backup was performed with the file format of `/oradata/TOAST/%U`. `%U` indicates that RMAN should create a default unique name for each data file. The result is similar to what is shown in the following text. The traditional names for the data files are embedded within the names. This can be cleaned up by using the scripted approach shown in link:sample-scripts.html#asm-migration-cleanup[ASM Migration Cleanup].
 
 ....
@@ -1258,13 +1213,11 @@ alter database open;
 ....
 
 == Oracle ASM rebalance
-
 As discussed previously, an Oracle ASM disk group can be transparently migrated to a new storage system by using the rebalancing process. In summary, the rebalancing process requires the addition of equal-sized LUNs to the existing group of LUNs followed by a drop operation of the prior LUN. Oracle ASM automatically relocates the underlying data to new storage in an optimal layout and then releases the old LUNs when complete.
 
 The migration process uses efficient sequential I/O and does not generally cause any performance disruption, but the migration rate can be throttled when needed.
 
 === Identify data to be migrated
-
 ....
 SQL> select name||' '||group_number||' '||total_mb||' '||path||' '||header_status from v$asm_disk;
 NEWDATA_0003 1 10240 /dev/mapper/3600a098038303537762b47594c315864 MEMBER
@@ -1276,7 +1229,6 @@ SQL> select group_number||' '||name from v$asm_diskgroup;
 ....
 
 === Create new LUNs
-
 Create new LUNs of the same size, and set user and group membership as required. The LUNs should appear as `CANDIDATE` disks.
 
 ....
@@ -1292,7 +1244,6 @@ NEWDATA_0001 1 10240 /dev/mapper/3600a098038303537762b47594c315862 MEMBER
 ....
 
 === Add new LUNS
-
 While the add and drop operations can be performed together, it is generally easier to add new LUNs in two steps. First, add the new LUNs to the disk group. This step results in half of the extents being migrated from the current ASM LUNs to the new LUNs.
 
 The rebalance power indicates the rate at which data is being transferred. The higher the number, the higher the parallelism of the data transfer. The migration is performed with efficient sequential I/O operations that are unlikely to cause performance problems. However, if desired, the rebalance power of an ongoing migration can be adjusted with the `alter diskgroup [name] rebalance power [level]` command. Typical migrations use a value of 5.
@@ -1309,7 +1260,6 @@ Diskgroup altered.
 ....
 
 === Monitor operation
-
 A rebalancing operation can be monitored and managed in multiple ways. We used the following command for this example.
 
 ....
@@ -1328,7 +1278,6 @@ no rows selected
 ....
 
 === Drop old LUNs
-
 The migration is now halfway complete. It might be desirable to perform some basic performance tests to make sure that the environment is healthy. After confirmation, the remaining data can be relocated by dropping the old LUNs. Note that this does not result in immediate release of the LUNs. The drop operation signals Oracle ASM to relocate the extents first and then release the LUN.
 
 ....
@@ -1344,7 +1293,6 @@ Diskgroup altered.
 ....
 
 === Monitor operation
-
 The rebalancing operation can be monitored and managed in multiple ways. We used the following command for this example:
 
 ....
@@ -1363,7 +1311,6 @@ no rows selected
 ....
 
 === Remove old LUNs
-
 Before you remove the old LUNs from the disk group, you should perform one final check on the header status. After a LUN is released from ASM, it no longer has a name listed and the header status is listed as `FORMER`. This indicates that these LUNs can safely be removed from the system.
 
 ....
@@ -1382,13 +1329,12 @@ NEWDATA_0006 1 10240 /dev/mapper/3600a098038303537762b47594c315858 MEMBER
 ....
 
 == LVM migration
-
 The procedure presented here shows the principles of an LVM-based migration of a volume group called `datavg`. The examples are drawn from the Linux LVM, but the principles apply equally to AIX, HP-UX, and VxVM. The precise commands might vary.
 
 . Identify the LUNs currently in the `datavg` volume group.
 +
 ....
-[root@jfs0 ~]# pvdisplay -C | grep datavg
+[root@host1 ~]# pvdisplay -C | grep datavg
   /dev/mapper/3600a098038303537762b47594c31582f datavg lvm2 a--  10.00g 10.00g
   /dev/mapper/3600a098038303537762b47594c31585a datavg lvm2 a--  10.00g 10.00g
   /dev/mapper/3600a098038303537762b47594c315859 datavg lvm2 a--  10.00g 10.00g
@@ -1398,33 +1344,33 @@ The procedure presented here shows the principles of an LVM-based migration of a
 . Create new LUNs of the same or slightly larger physical size and define them as physical volumes.
 +
 ....
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315864
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315864
   Physical volume "/dev/mapper/3600a098038303537762b47594c315864" successfully created
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315863
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315863
   Physical volume "/dev/mapper/3600a098038303537762b47594c315863" successfully created
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315862
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315862
   Physical volume "/dev/mapper/3600a098038303537762b47594c315862" successfully created
-[root@jfs0 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315861
+[root@host1 ~]# pvcreate /dev/mapper/3600a098038303537762b47594c315861
   Physical volume "/dev/mapper/3600a098038303537762b47594c315861" successfully created
 ....
 
 . Add the new volumes to the volume group.
 +
 ....
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315864
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315864
   Volume group "datavg" successfully extended
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315863
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315863
   Volume group "datavg" successfully extended
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315862
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315862
   Volume group "datavg" successfully extended
-[root@jfs0 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315861
+[root@host1 tmp]# vgextend datavg /dev/mapper/3600a098038303537762b47594c315861
   Volume group "datavg" successfully extended
 ....
 
 . Issue the `pvmove` command to relocate the extents of each current LUN to the new LUN. The `- i [seconds]` argument monitors the progress of the operation.
 +
 ....
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31582f /dev/mapper/3600a098038303537762b47594c315864
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31582f /dev/mapper/3600a098038303537762b47594c315864
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 14.2%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 28.4%
@@ -1433,7 +1379,7 @@ The procedure presented here shows the principles of an LVM-based migration of a
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 72.3%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 87.3%
   /dev/mapper/3600a098038303537762b47594c31582f: Moved: 100.0%
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31585a /dev/mapper/3600a098038303537762b47594c315863
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31585a /dev/mapper/3600a098038303537762b47594c315863
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 14.9%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 29.9%
@@ -1442,7 +1388,7 @@ The procedure presented here shows the principles of an LVM-based migration of a
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 75.8%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 90.9%
   /dev/mapper/3600a098038303537762b47594c31585a: Moved: 100.0%
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c315859 /dev/mapper/3600a098038303537762b47594c315862
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c315859 /dev/mapper/3600a098038303537762b47594c315862
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 14.8%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 29.8%
@@ -1451,7 +1397,7 @@ The procedure presented here shows the principles of an LVM-based migration of a
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 76.6%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 91.7%
   /dev/mapper/3600a098038303537762b47594c315859: Moved: 100.0%
-[root@jfs0 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31586c /dev/mapper/3600a098038303537762b47594c315861
+[root@host1 tmp]# pvmove -i 10 /dev/mapper/3600a098038303537762b47594c31586c /dev/mapper/3600a098038303537762b47594c315861
   /dev/mapper/3600a098038303537762b47594c31586c: Moved: 0.0%
   /dev/mapper/3600a098038303537762b47594c31586c: Moved: 15.0%
   /dev/mapper/3600a098038303537762b47594c31586c: Moved: 30.4%
@@ -1465,12 +1411,12 @@ The procedure presented here shows the principles of an LVM-based migration of a
 . When this process is complete, drop the old LUNs from the volume group by using the `vgreduce` command. If successful, the LUN can now be safely removed from the system.
 +
 ....
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31582f
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31582f
 Removed "/dev/mapper/3600a098038303537762b47594c31582f" from volume group "datavg"
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31585a
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31585a
   Removed "/dev/mapper/3600a098038303537762b47594c31585a" from volume group "datavg"
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c315859
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c315859
   Removed "/dev/mapper/3600a098038303537762b47594c315859" from volume group "datavg"
-[root@jfs0 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31586c
+[root@host1 tmp]# vgreduce datavg /dev/mapper/3600a098038303537762b47594c31586c
   Removed "/dev/mapper/3600a098038303537762b47594c31586c" from volume group "datavg"
 ....

@@ -21,4 +21,5 @@ If performance is the main goal, set the value to 2. Since InnoDB writes to the 
 
 If data safety is the main goal, set the value to 1 so that for every transaction commit, InnoDB flushes to the drives. However, performance might be affected.
 
-Note: For optimal performance from MySQL on ONTAP, set the value of this parameter to 2. 
+[TIP]
+*NetApp recommends* set the innodb_flush_log_trx_commit value to 2 for better performance.

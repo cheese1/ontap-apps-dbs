@@ -4,7 +4,6 @@ permalink: mssql/shared-vs-dedicated.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
-
 = Shared instance versus dedicated instance
 
 [.lead]
@@ -16,4 +15,7 @@ Troubleshooting performance issues can be complicated because you must figure ou
 
 Microsoft licenses SQL Server per core at the server level and not per instance. For this reason, database administrators are tempted to install as many SQL Server instances as the server can handle to save on licensing costs, which can lead to major performance issues later.
 
-To obtain optimal performance, NetApp recommends choosing dedicated SQL Server instances whenever possible.
+[TIP]
+*NetApp recommends* choosing dedicated SQL Server instances whenever possible to obtain optimal performance. 
+
+

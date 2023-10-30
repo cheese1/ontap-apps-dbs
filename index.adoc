@@ -4,7 +4,6 @@ sidebar: sidebar
 permalink: index.html
 summary: Enterprise applications
 ---
-
 = Enterprise application
 :hardbreaks:
 :nofooter:
