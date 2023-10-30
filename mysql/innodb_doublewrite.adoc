@@ -10,5 +10,5 @@ When `innodb_doublewrite` is enabled (the default), InnoDB stores all data twice
 
 You can turn off this parameter with `--skip-innodb_doublewrite` for benchmarks or when you're more concerned with top performance than data integrity or possible failures. InnoDB uses a file flush technique called double-write. Before it writes pages to the data files, InnoDB writes them to a contiguous area called the double-write buffer. After the write and the flush to the double-write buffer are complete, InnoDB writes the pages to their proper positions in the data file. If the operating system or a mysqld process crashes during a page write, InnoDB can later find a good copy of the page from the double-write buffer during crash recovery.
 
-[CAUTION]
-NetApp recommends disabling the double-write buffer. ONTAP NVRAM serves the same function. Double-buffering will unnecessarily damage performance.
+[TIP]
+*NetApp recommends* disabling the double-write buffer. ONTAP NVRAM serves the same function. Double-buffering will unnecessarily damage performance.
