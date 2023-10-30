@@ -15,7 +15,8 @@ Set the innodb_io_capacity parameter to the approximate number of I/O operations
 
 [TIP]
 ====
-*NetApp recommends*: 
+*NetApp recommends*:
+
 If you are using this setting over NFS, analyzing the test result of IOPS (SysBench/Fio) and set the parameter accordingly. Use the smallest value possible for flushing and purging to keep up unless you see more modified or dirty pages than you want in the InnoDB buffer pool.
 ====
 

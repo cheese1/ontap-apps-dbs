@@ -30,9 +30,14 @@ The insert buffer is also a special feature of InnoDB. If non-unique secondary i
 
 Undo segments are random I/O oriented. To guarantee multi-version concurrency (MVCC), InnoDB must register old images in the undo segments. Reading previous images from the undo segments requires random reads. If you run a long transaction with repeatable reads (such as mysqldump—single transaction) or run a long query, random reads can occur. Therefore, storing undo segments on SSDs is better in this instance. If you run only short transactions or queries, the random reads are not an issue.
 
-Because of these InnoDB I/O characteristics, NetApp recommends the following storage design layout:
+[TIP]
+====
+*NetApp recommends*:
+
+The following storage design layout because of the InnoDB I/O characteristics. 
 
 * One volume to store random and sequential I/O-oriented files of MySQL
 * Another volume to store purely sequential I/O-oriented files of MySQL
 
 This layout also helps you design data protection policies and strategies.
+====

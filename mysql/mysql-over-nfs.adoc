@@ -28,13 +28,14 @@ Cluster01::*> nfs server modify -vserver vserver1 -tcp-max-xfer-size 262144
 [CAUTION]
 Never decrease the maximum allowable transfer size on ONTAP below the value of rsize/wsize of currently mounted NFS filesystems. This can create hangs or even data corruption with some operating systems. For example, if NFS clients are currently set at a rsize/wsize of 65536, then the ONTAP maximum transfer size could be adjusted between 65536 and 1048576 with no effect because the clients themselves are limited. Reducing the maximum transfer size below 65536 can damage availability or data.
 
-
+[TIP]
+====
 *NetApp recommends:*
 
 Setting the following NFSv4 fstab (/etc/fstab) setting:
 
 `nfs4 rw, hard,nointr,bg,vers=4,proto=tcp,noatime,rsize=262144,wsize=262144`
-
+====
 
 [NOTE]
 A common issue with NFSv3 was the locked InnoDB log files after a power outage. Using time or switching log files solved this issue. However, NFSv4 has locking operations and keeps track of open files and delegations. 
