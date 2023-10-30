@@ -4,8 +4,8 @@ permalink: oracle/dp/oracle_consistency_group_backup.html
 keywords: oracle, data, protection, consistency, group, backup, volume, archive, log, redo, controlfiles
 summary: Consistency group backups for Oracle on ONTAP
 ---
-
 = Oracle consistency group backup
+
 :hardbreaks:
 :nofooter:
 :icons: font

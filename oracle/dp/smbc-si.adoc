@@ -4,8 +4,8 @@ permalink: oracle/dp/smbc-si.html
 keywords: TR-4899, oracle, smbc, sm-bc
 summary: Oracle Single Instance on ONTAP with SM-BC
 ---
-
 = Single-Instance Oracle with SM-BC
+
 :hardbreaks:
 :nofooter:
 :icons: font

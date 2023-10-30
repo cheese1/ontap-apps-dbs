@@ -4,8 +4,8 @@ permalink: oracle/dp/oracle_hot_backup.html
 keywords: oracle, data protection, hot backup
 summary: Oracle on ONTAP online backup procedures
 ---
-
 = Online backup
+
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -27,7 +27,6 @@ There are a number of ways to drive recovery of a hot backup. Many customers res
 Some large-scale customers have taken a simpler approach by configuring basic scripting on the hosts to place the databases in hot backup mode at a specific time in preparation for a scheduled snapshot. For example, schedule the command `alter database begin backup` at 23:58, `alter database end backup` at 00:02, and then schedule snapshots directly on the storage system at midnight. The result is a simple, highly scalable backup strategy that requires no external software or licenses.
 
 == Data layout
-
 The simplest layout is to isolate datafiles into one or more dedicated volumes. They must be uncontaminated by any other file type. This is to make sure that the datafile volumes can be rapidly restored through a SnapRestore operation without destroying an important redo log, controlfile, or archive log.
 
 SAN has similar requirements for datafile isolation within dedicated volumes. With an operating system such as Microsoft Windows, a single volume might contain multiple datafile LUNs, each with an NTFS file system. With other operating systems, there is generally a logical volume manager. For example, with Oracle ASM, the simplest option would be to confine the LUNs of an ASM disk group to a single volume that can be backed up and restored as a unit. If additional volumes are required for performance or capacity management reasons, creating an additional disk group on the new volume results in simpler management.
@@ -39,7 +38,6 @@ A complication arises in situations such as the use of an ASM disk group that is
 *Caution:* Verify that the ASM `spfile` and `passwd` files are not in the disk group hosting the datafiles. This interferes with the ability to selectively restore datafiles and only datafiles.
 
 == Local recovery procedure—NFS
-
 This procedure can be driven manually or through an application such as SnapCenter. The basic procedure is as follows:
 
 . Shut down the database.
@@ -52,7 +50,6 @@ This procedure assumes that the desired archive logs are still present in the ac
 In addition, for smaller databases, datafiles can be recovered by an end user directly from the `.snapshot` directory without assistance from automation tools or storage administrators to execute a `snaprestore` command.
 
 == Local recovery procedure—SAN
-
 This procedure can be driven manually or through an application such as SnapCenter. The basic procedure is as follows:
 
 . Shut down the database.

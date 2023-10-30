@@ -4,8 +4,8 @@ permalink: oracle/migration/sample-scripts.html
 keywords: oracle, Scripts
 summary: Sample scripts for automating Oracle migration operations
 ---
-
 = Sample scripts
+
 :hardbreaks:
 :nofooter:
 :icons: font
