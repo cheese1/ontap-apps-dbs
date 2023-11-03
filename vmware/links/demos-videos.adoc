@@ -28,19 +28,19 @@ See the following videos and demos highlighting specific features of the hybrid 
 .VMware Cloud on AWS with AWS FSx for NetApp ONTAP
 [%collapsible]
 ====
-* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0d03e040-634f-4086-8cb5-b01200fb8515[Windows Guest Connected Storage with FSx ONTAP using iSCSI]
+* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0d03e040-634f-4086-8cb5-b01200fb8515[Windows Guest Connected Storage with Amazon FSx for NetApp ONTAP using iSCSI]
 
-* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3befe1b-4f32-4839-a031-b01200fb6d60[Linux Guest Connected Storage with FSx ONTAP using NFS]
+* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3befe1b-4f32-4839-a031-b01200fb6d60[Linux Guest Connected Storage with Amazon FSx for NetApp ONTAP]
 
 * link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f0fedec5-dc17-47af-8821-b01200f00e08[VMware Cloud on AWS TCO savings with Amazon FSx for NetApp ONTAP]
 
-* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2065dcc1-f31a-4e71-a7d5-b01200f01171[VMware Cloud on AWS supplemental datastore w/ Amazon FSx for NetApp ONTAP]
+* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2065dcc1-f31a-4e71-a7d5-b01200f01171[VMware Cloud on AWS supplemental datastore with Amazon FSx for NetApp ONTAP]
 
 * link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6132c921-a44c-4c81-aab7-b01200fb5d29[VMware HCX Deployment and Configuration Setup for VMC]
 
-* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=52661f10-3f90-4f3d-865a-b01200f06d31[vMotion Migration Demonstration with VMware HCX for VMC and FSxN]
+* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=52661f10-3f90-4f3d-865a-b01200f06d31[vMotion Migration Demonstration with VMware HCX for VMC and Amazon FSx for NetApp ONTAP]
 
-* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=685c0dc2-9d8a-42ff-b46d-b01200f056b0[Cold Migration Demonstration with VMware HCX for VMC and FSxN]
+* link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=685c0dc2-9d8a-42ff-b46d-b01200f056b0[Cold Migration Demonstration with VMware HCX for VMC and Amazon FSx for NetApp ONTAP]
 
 ====
 
