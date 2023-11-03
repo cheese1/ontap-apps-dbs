@@ -39,7 +39,11 @@ indexpage:
       links:
         - title: SAP HANA on ONTAP
           url: hana/index.html
-    - title: Virtualization
+    - title: VMware
       links:
-        - title: VMware
-          url: virtualization/vmware/index.html
+        - title: VMware vSphere with ONTAP
+          url: /vmware/vsphere/overview.html
+        - title: Virtual Volumes (vVols) with ONTAP
+          url: /vmware/vvols/overview.html
+        - title: VMware Site Recovery Manager with ONTAP
+          url: /vmware/srm/overview.html
