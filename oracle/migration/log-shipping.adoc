@@ -1097,7 +1097,7 @@ There are times when a database is correctly organized overall with the exceptio
 
 This procedure is simple and can be performed nondisruptively.
 
-=== Current Redo Log Configuration
+=== Current redo log configuration
 
 . Identify the number of redo log groups and their respective group numbers.
 +

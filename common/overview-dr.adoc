@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: common/overview-dr.html
 keywords: metrocluster, syncmirror, business continuance, DR, BC, SVM DR, SVM-DR, SMBC, SM-BC, SnapMirror, SnapMirror Business Continuity
-summary: Disaster Recovery with ONTAP
+summary: Disaster recovery with ONTAP
 ---
-= Disaster Recovery with ONTAP
+= Disaster recovery with ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font

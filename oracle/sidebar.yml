@@ -3,7 +3,7 @@ title: Oracle Database
 entries:
   - title: Overview
     url: /oracle/overview.html
-  - title: ONTAP Configuration
+  - title: ONTAP configuration
     url: /oracle/ontap.html
   - title: Database configuration
     entries:

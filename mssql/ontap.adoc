@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: mssql/ontap.html
 keywords: MS-SQL,mssql,SQL Server,TR-4590
-summary: ONTAP Configuration
+summary: ONTAP configuration
 ---
-= ONTAP Configuration
+= ONTAP configuration
 
 [.lead]
 ONTAP offers many features specifically designed for application and database workloads.
