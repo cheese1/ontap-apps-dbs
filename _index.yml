@@ -1,5 +1,5 @@
 indexpage:
-  lead: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures.
+  lead: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures for ONTAP and enterprise applications and infrastructure.
   tiles:
     - title: ONTAP 
       links:

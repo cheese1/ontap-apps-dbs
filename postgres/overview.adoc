@@ -10,7 +10,7 @@ summary: PostgreSQL Databases on ONTAP
 PostgreSQL comes with variants that include PostgreSQL, PostgreSQL Plus, and EDB Postgres Advanced Server (EPAS). PostgreSQL is typically deployed as the back-end database for multitier applications. It is supported by common middleware packages (such as PHP, Java, Python, Tcl/Tk, ODBC, and JDBC) and has historically been a popular choice for open-source database management systems. NetApp ONTAP is a excellent choice for running PostgreSQL databases do to its reliability, high performing and efficent data management capabilities.
 
 [NOTE]
-This is based on TR-4770: PostgreSQL database on ONTAP best practices
+This documentation on ONTAP and the PostgreSQL database replaces the previously published TR-4770: PostgreSQL database on ONTAP best practices.
 
 As data grows exponentially, data management becomes more complex for enterprises. This complexity increases licensing, operational, support, and maintenance costs. To reduce the overall TCO, consider switching from commercial to open-source databases with reliable, high-performing back-end storage. PostgreSQL is an advanced open-source database that is widely used in academic, commercial, and large enterprises. It comes with a new set of features that addresses the gaps in other relational database management systems (RDBMSs). ONTAP is the operating system of NetApp FAS and NetApp AFF, NetApp ONTAP Select, Amazon FSx for NetApp ONTAP and NetApp Cloud Volumes ONTAP. With the release of ONTAP, data management becomes more and more unified across flash, disk, and the cloud. This unification enables you to simplify your storage environment and build the foundation for a Data Fabric that makes it easy to move your data anywhere.
 

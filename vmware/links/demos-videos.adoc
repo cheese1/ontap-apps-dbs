@@ -25,7 +25,7 @@ See the following videos and demos highlighting specific features of the hybrid 
 * link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a34bcd1c-3aaa-4917-9a5d-b01200f97f08[VMware NFS Datastore Provisioning with ONTAP]
 ====
 
-.VMware Cloud on AWS with AWS FSx for NetApp ONTAP
+.VMware Cloud on AWS with Amazon FSx for NetApp ONTAP
 [%collapsible]
 ====
 * link:https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0d03e040-634f-4086-8cb5-b01200fb8515[Windows Guest Connected Storage with Amazon FSx for NetApp ONTAP using iSCSI]

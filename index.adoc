@@ -2,9 +2,9 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-summary: Enterprise applications
+summary: ONTAP and enterprise applications
 ---
-= Enterprise application
+= ONTAP and enterprise applications
 :hardbreaks:
 :nofooter:
 :icons: font
