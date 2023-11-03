@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: mysql/ontap.html
 keywords: MS-SQL,mssql,SQL Server,TR-4590
-summary: ONTAP Configuration
+summary: ONTAP configuration
 ---
 = ONTAP configuration
 

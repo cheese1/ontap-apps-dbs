@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: common/storage-configuration/nfs.html
 keywords: NFS
-summary: NFS Configuration Overview
+summary: NFS configuration overview
 ---
 = NFS configuration
 :hardbreaks:

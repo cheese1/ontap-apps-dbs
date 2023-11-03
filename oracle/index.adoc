@@ -2,7 +2,7 @@
 layout: landing-page
 sidebar: sidebar
 permalink: oracle/index.html
-lead: Oracle on ONTAP General Configuration
+lead: Oracle on ONTAP general configuration
 summary: SProtocols
 ---
 = Oracle on ONTAP implementation guides

@@ -5,13 +5,13 @@ entries:
     url: /mssql/overview.html
   - title: Workloads
     url: /mssql/workloads.html
-  - title: ONTAP Configuration
+  - title: ONTAP configuration
     url: /postgres/ontap.html
   - title: Database configuration
     entries:
     - title: Shared instance versus dedicated instance
       url: /mssql/shared-vs-dedicated.html
-    - title: CPU Configuration
+    - title: CPU configuration
       url: /mssql/CPUConfiguration.html
     - title: Memory configuration
       url: /mssql/Memoryconfiguration.html
