@@ -10,7 +10,7 @@ summary: MySQL on ONTAP
 MySQL and its variants, including MariaDb and Percona MySQL, is the world's most popular database.
 
 [NOTE]
-This is based on TR-4722: MySQL Database on NetApp ONTAP Best Practices
+_This documentation on ONTAP and the MySQL database replaces the previously published TR-4722: MySQL database on NetApp ONTAP best practices._
 
 The features of MySQL include:
 

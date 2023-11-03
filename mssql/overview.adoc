@@ -10,7 +10,7 @@ summary: Microsoft SQL Server on ONTAP
 SQL Server is the foundation of Microsoft's data platform, delivering mission-critical performance with in-memory technologies and faster insights on any data, whether on the premises or in the cloud.
 
 [NOTE]
-This section replaces the previously published technical reports TR-4590: Best practice guide for Microsoft SQL Server with ONTAP
+_This section replaces the previously published technical reports TR-4590: Best practice guide for Microsoft SQL Server with ONTAP_
 
 Microsoft SQL Server builds on the mission-critical capabilities delivered in prior releases by providing breakthrough performance, availability, and manageability for mission-critical applications. The storage system is a key factor in the overall performance of a SQL Server database. NetApp provides several products to allow your SQL Server database to deliver enterprise-class performance while providing world-class tools to manage your environment.
 
