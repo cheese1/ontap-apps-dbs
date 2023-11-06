@@ -12,9 +12,9 @@ summary: MetroCluster Logical Architecture
 :imagesdir: ./../media/
 
 [.lead]
-This section reviews the MetroCluster-specific data protection and availability features.
+MetroCluster has many specific data protection and availability features.
 
-For a complete review of general ONTAP data protection features, see the Data Protection section of this document, including link:../dp/availability.html[Data Availability] and link:../dp/integrity.html[Data Integrity].
+For a complete review of general ONTAP data protection features, see the data protection documents, including link:../dp/availability.html[Data Availability] and link:../dp/integrity.html[Data Integrity].
 
 == Site failure protection: NVRAM and MetroCluster
 MetroCluster extends NVRAM data protection in the following ways:

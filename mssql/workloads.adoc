@@ -4,7 +4,7 @@ permalink: mssql/workloads.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
-= SQL Server workloads
+= Microsoft SQL Server workloads
 
 [.lead]
 The SQL Server database platform can support many applications. 

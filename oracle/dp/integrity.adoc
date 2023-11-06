@@ -4,7 +4,7 @@ permalink: oracle/dp/integrity.html
 keywords: checksums, data integrity
 summary: Checksums and Oracle data protection
 ---
-= Checksums and Data Integrity
+= Checksums and data integrity
 
 :hardbreaks:
 :nofooter:

@@ -4,7 +4,7 @@ permalink: mssql/Memoryconfiguration.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
-= Memory configuration
+= Microsoft SQL Server memory configuration
 [.lead]
 //Manohar, please add a intro paragraph.
 

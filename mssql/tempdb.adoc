@@ -4,7 +4,7 @@ permalink: mssql/tempdb.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
-= tempdb files
+= Microsoft SQL Server tempdb files
 
 [.lead]
 NetApp recommends proactively inflating tempdb files to their full size to avoid disk fragmentation.

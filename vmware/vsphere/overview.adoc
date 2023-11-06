@@ -4,7 +4,6 @@ permalink: vmware/vsphere/overview.html
 keywords: introduction, unified storage, virtual volumes, storage efficiency, hybrid cloud
 summary: NetApp ONTAP software has been a leading storage solution for VMware vSphere environments for almost two decades and continues to add innovative capabilities to simplify management while reducing costs. This document introduces the ONTAP solution for vSphere, including the latest product information and best practices, to streamline deployment, reduce risk, and simplify management.
 ---
-
 = VMware vSphere with ONTAP
 :hardbreaks:
 :nofooter:
@@ -16,14 +15,13 @@ summary: NetApp ONTAP software has been a leading storage solution for VMware vS
 NetApp ONTAP software has been a leading storage solution for VMware vSphere environments for almost two decades and continues to add innovative capabilities to simplify management while reducing costs. This document introduces the ONTAP solution for vSphere, including the latest product information and best practices, to streamline deployment, reduce risk, and simplify management.
 
 [NOTE]
-This section is based on TR-4597: VMware vSphere for ONTAP
+_This documentation replaces previously published technical reports  TR-4597: VMware vSphere for ONTAP_
 
 Best practices supplement other documents such as guides and compatibility lists. They are developed based on lab testing and extensive field experience by NetApp engineers and customers. They might not be the only supported practices that work in every environment, but they are generally the simplest solutions that meet the needs of most customers.
 
 This document is focused on capabilities in recent releases of ONTAP (9.x) running on vSphere 6.0 or later. See the section link:vsphere_ontap_ontap_and_vsphere_release-specific_information.html[ONTAP and vSphere release-specific information] for details related to specific releases.
 
 == Why ONTAP for vSphere?
-
 There are many reasons why tens of thousands of customers have selected ONTAP as their storage solution for vSphere, such as a unified storage system supporting both SAN and NAS protocols, robust data protection capabilities using space-efficient snapshots and a wealth of tools to help you manage application data. Using a storage system separate from the hypervisor allows you to offload many functions and maximize your investment in vSphere host systems. This approach not only makes sure your host resources are focused on application workloads, but it also avoids random performance effects on applications from storage operations.
 
 Using ONTAP together with vSphere is a great combination that lets you reduce host hardware and VMware software expenses. You can also protect your data at lower cost with consistent high performance. Because virtualized workloads are mobile, you can explore different approaches using Storage vMotion to move VMs across VMFS, NFS, or vVols datastores, all on the same storage system.

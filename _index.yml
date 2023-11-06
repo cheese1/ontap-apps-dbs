@@ -13,14 +13,22 @@ indexpage:
           url: common/dr/overview.html
         - title: Application and database tiering
           url: common/tiering/overview.html
-    - title: MariaDB/MySQL
-      links:
-        - title: MariaDB and MySQL on ONTAP
-          url: mysql/index.html
     - title: Microsoft SQL Server
       links:
-        - title: MS SQL Server on ONTAP
-          url: mssql/index.html
+        - title: Microsoft SQL Server on ONTAP
+          url: mssql/overview.html
+        - title: Microsoft SQL Server storage considerations
+          url: mssql/Storage-considerations.html
+        - title: Microsoft SQL Server data protection
+          url: mssql/Data-protection.html
+        - title: Microsoft SQL Server disaster recovery
+          url: mssql/SQL-disaster-recovery.html
+    - title: Open-source databases
+      links:
+        - title: MariaDB and MySQL on ONTAP
+          url: mysql/overview.html
+        - title: PostgreSQL on ONTAP
+          url: postgres/overview.html
     - title: Oracle Database
       links:
         - title: Oracle on ONTAP
@@ -31,15 +39,15 @@ indexpage:
           url: oracle/dp/overview.html
         - title: Oracle migration
           url: oracle/migration/overview.html
-    - title: PostgreSQL
-      links:
-        - title: PostgreSQL on ONTAP
-          url: postgres/index.html
     - title: SAP HANA
       links:
         - title: SAP HANA on ONTAP
           url: hana/index.html
-    - title: Virtualization
+    - title: VMware
       links:
-        - title: VMware
-          url: virtualization/vmware/index.html
+        - title: VMware vSphere with ONTAP
+          url: /vmware/vsphere/overview.html
+        - title: Virtual Volumes (vVols) with ONTAP
+          url: /vmware/vvols/overview.html
+        - title: VMware Site Recovery Manager with ONTAP
+          url: /vmware/srm/overview.html

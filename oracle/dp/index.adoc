@@ -5,7 +5,7 @@ permalink: oracle/dp/index.html
 lead: Oracle Data Protection 
 summary: SProtocols
 ---
-= Oracle Data Protection
+= Oracle data protection
 
 :hardbreaks:
 :nofooter:

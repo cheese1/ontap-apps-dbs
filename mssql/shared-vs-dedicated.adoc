@@ -4,7 +4,7 @@ permalink: mssql/shared-vs-dedicated.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
-= Shared instance versus dedicated instance
+= Microsoft SQL Server shared instance versus dedicated instance
 
 [.lead]
 If an application has many schemas and stored procedures, it could potentially affect other apps that share a SQL Server instance.
