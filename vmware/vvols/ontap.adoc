@@ -31,40 +31,40 @@ For new installations, deploy the virtual appliance into your vSphere environmen
 
 In-place upgrades of ONTAP tools are supported by using the upgrade ISO file available for download on the NetApp Support Site (NSS). Follow the Deployment and Setup Guide instructions to upgrade the appliance.
 
-For sizing your virtual appliance, and understanding the configuration limits, refer to this knowledge base article: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/VSC_and_VASA_Provider/OTV%3A_Sizing_Guide_for_ONTAP_tools_for_VMware_vSphere[Sizing Guide for ONTAP tools for VMware vSphere]
+For sizing your virtual appliance, and understanding the configuration limits, refer to this knowledge base article: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/VSC_and_VASA_Provider/OTV%3A_Sizing_Guide_for_ONTAP_tools_for_VMware_vSphere[Sizing Guide for ONTAP tools for VMware vSphere^]
 
 === Product Documentation
 
 The following documentation is available to help you deploy ONTAP tools.
 
-https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html[For the complete documentation repository&#44; visit this link to docs.netapp.com]
+https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html[For the complete documentation repository&#44; visit this link to docs.netapp.com^]
 
 ==== Get started 
 
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/release_notes.html[Release notes]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/concepts/concept_virtual_storage_console_overview.html[Learn about ONTAP tools for Vmware vSphere]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/qsg.html[ONTAP tools Quick start]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/deploy/task_deploy_ontap_tools.html[Deploy ONTAP tools]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html[Upgrade ONTAP tools]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/release_notes.html[Release notes^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/concepts/concept_virtual_storage_console_overview.html[Learn about ONTAP tools for Vmware vSphere^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/qsg.html[ONTAP tools Quick start^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/deploy/task_deploy_ontap_tools.html[Deploy ONTAP tools^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/deploy/task_upgrade_to_the_9_8_ontap_tools_for_vmware_vsphere.html[Upgrade ONTAP tools^]
 
 ==== Use ONTAP tools 
 
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/configure/task_provision_datastores.html[Provision traditional datastores]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/configure/task_provision_vvols_datastores.html[Provision vVols datastores]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html[Configure role-based access control]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html[Configure remote diagnostics]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html[Configure high availability]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/configure/task_provision_datastores.html[Provision traditional datastores^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/configure/task_provision_vvols_datastores.html[Provision vVols datastores^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html[Configure role-based access control^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/manage/task_configure_vasa_provider_to_use_ssh_for_remote_diag_access.html[Configure remote diagnostics^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html[Configure high availability^]
 
 ==== Protect and manage datastores 
 
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/protect/task_enable_storage_replication_adapter.html[Protect traditional datastores] with SRM
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/protect/concept_configure_replication_for_vvols_datastore.html[Protect vVols based virtual machines] with SRM
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/manage/task_monitor_datastores_using_the_traditional_dashboard.html[Monitor traditional datastores and virtual machines]
-* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html[Monitor vVols datastores and virtual machines]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/protect/task_enable_storage_replication_adapter.html[Protect traditional datastores^] with SRM
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/protect/concept_configure_replication_for_vvols_datastore.html[Protect vVols based virtual machines^] with SRM
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/manage/task_monitor_datastores_using_the_traditional_dashboard.html[Monitor traditional datastores and virtual machines^]
+* https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/manage/task_monitor_vvols_datastores_and_virtual_machines_using_vvols_dashboard.html[Monitor vVols datastores and virtual machines^]
 
 In addition to product documentation, there are Support Knowledgebase articles that may be useful.
 
-* https://kb.netapp.com/app/answers/answer_view/a_id/1031261[How to perform a VASA Provider Disaster Recovery]
+* https://kb.netapp.com/app/answers/answer_view/a_id/1031261[How to perform a VASA Provider Disaster Recovery^]
 
 === VASA Provider Dashboard
 
@@ -80,7 +80,7 @@ This section collects known best practices for using vVols with ONTAP along with
 
 *Limits*
 
-In general, ONTAP supports vVols limits as defined by VMware (see published https://configmax.esp.vmware.com/guest?vmwareproduct=vSphere&release=vSphere%207.0&categories=8-0[Configuration Maximums]). The following table summarizes specific ONTAP limits in size and number of vVols. Always check the https://hwu.netapp.com/[NetApp Hardware Universe] for updated limits on numbers and sizes of LUNs and files.
+In general, ONTAP supports vVols limits as defined by VMware (see published https://configmax.esp.vmware.com/guest?vmwareproduct=vSphere&release=vSphere%207.0&categories=8-0[Configuration Maximums^]). The following table summarizes specific ONTAP limits in size and number of vVols. Always check the https://hwu.netapp.com/[NetApp Hardware Universe^] for updated limits on numbers and sizes of LUNs and files.
 
 *ONTAP vVols Limits*
 
@@ -97,7 +97,7 @@ In general, ONTAP supports vVols limits as defined by VMware (see published http
 
 * Size limit based on ASA systems or AFF and FAS systems running ONTAP 9.12.1P2 and later.
 
-** Number of SAN vVols (NVMe namespaces or LUNs) varies based on platform. Always check the https://hwu.netapp.com/[NetApp Hardware Universe] for updated limits on numbers and sizes of LUNs and files.
+** Number of SAN vVols (NVMe namespaces or LUNs) varies based on platform. Always check the https://hwu.netapp.com/[NetApp Hardware Universe^] for updated limits on numbers and sizes of LUNs and files.
 
 *Best Practices*
 
@@ -125,9 +125,9 @@ image:vvols-image7.gif[Single initiator zoning withs four nodes,400]
 
 Refer to the following documents for more best practices:
 
-https://www.netapp.com/media/10680-tr4080.pdf[_TR-4080 Best practices for modern SAN ONTAP 9_]
+https://www.netapp.com/media/10680-tr4080.pdf[_TR-4080 Best practices for modern SAN ONTAP 9_^]
 
-https://www.netapp.com/pdf.html?item=/media/10681-tr4684.pdf[_TR-4684 Implementing and configuring modern SANs with NVMe-oF_]
+https://www.netapp.com/pdf.html?item=/media/10681-tr4684.pdf[_TR-4684 Implementing and configuring modern SANs with NVMe-oF_^]
 
 | *Plan your backing FlexVols according to your needs.* 
 | It can be desirable to add several backing volumes to your vVols datastore to distribute workload across the ONTAP cluster, to support different policy options, or to increase the number of allowed LUNs or files. However, if maximum storage efficiency is required, then place all your backing volumes on a single aggregate. Or if maximum cloning performance is required, then consider using a single FlexVol volume and keeping your templates or content library in the same volume. The VASA Provider offloads many vVols storage operations to ONTAP, including migration, cloning and snapshots. When this is done within a single FlexVol volume, space efficient file clones are used and are almost instantly available. When this is done across FlexVol volumes, the copies are quickly available and use inline deduplication and compression, but maximum storage efficiency may not be recovered until background jobs run on volumes using background deduplication and compression. Depending on the source and destination, some efficiency may be degraded.
