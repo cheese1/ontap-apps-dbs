@@ -16,13 +16,13 @@ indexpage:
     - title: Microsoft SQL Server
       links:
         - title: MS SQL Server on ONTAP
-          url: mssql/index.html
+          url: mssql/overview.html
     - title: Open-source databases
       links:
         - title: MariaDB and MySQL on ONTAP
-          url: mysql/index.html
+          url: mysql/overview.html
         - title: PostgreSQL on ONTAP
-          url: postgres/index.html
+          url: postgres/overview.html
     - title: Oracle Database
       links:
         - title: Oracle on ONTAP
