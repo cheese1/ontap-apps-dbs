@@ -68,7 +68,7 @@ There is no clear preference between option one and option two among end users.
 == ONTAP and third-party snapshots
 Oracle Doc ID 604683.1 explains the requirements for third-party snapshot support and the multiple options available for backup and restore operations.
 
-The third-party vendor must guarantee that the company’s snapshots conform to the following requirements:
+The third-party vendor must guarantee that the company's snapshots conform to the following requirements:
 
 * Snapshots must integrate with Oracle's recommended restore and recovery operations.
 * Snapshots must be database crash consistent at the point of the snapshot.

@@ -420,7 +420,7 @@ ASMCMD> rm +DATA/orapwasm
 == Oracle ASM to ASM copy
 Oracle ASM is essentially a lightweight combined volume manager and file system. Because the file system is not readily visible, RMAN must be used to perform copy operations. Although a copy-based migration process is safe and simple, it results in some disruption. The disruption can be minimized, but not fully eliminated.
 
-If you want nondisruptive migration of an ASM-based database, the best option is to leverage ASM’s capability to rebalance ASM extents to new LUNs while dropping the old LUNs. Doing so is generally safe and nondisruptive to operations, but it offers no back- out path. If functional or performance problems are encountered, the only option is to migrate the data back to the source.
+If you want nondisruptive migration of an ASM-based database, the best option is to leverage ASM's capability to rebalance ASM extents to new LUNs while dropping the old LUNs. Doing so is generally safe and nondisruptive to operations, but it offers no back- out path. If functional or performance problems are encountered, the only option is to migrate the data back to the source.
 
 This risk can be avoided by copying the database to the new location rather than moving data, so that the original data is untouched. The database can be fully tested in its new location before going live, and the original database is available as a fall- back option if problems are found.
 
@@ -1140,7 +1140,7 @@ RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
 RMAN-00571: ===========================================================
 RMAN-03002: failure of sql statement command at 12/08/2015 20:23:51
 ORA-01623: log 4 is current log for instance TOAST (thread 4) - cannot drop
-ORA-00312: online log 4 thread 1: '+NEWLOGS/TOAST/ONLINELOG/group_4.266.897763123’
+ORA-00312: online log 4 thread 1: '+NEWLOGS/TOAST/ONLINELOG/group_4.266.897763123'
 RMAN> alter system switch logfile;
 Statement processed
 RMAN> alter system checkpoint;

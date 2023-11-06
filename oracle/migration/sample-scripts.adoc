@@ -185,7 +185,7 @@ else{
 exit 0;
 ....
 +
-As an example of this script’s use, assume that data in `/oradata` is migrated to `/neworadata` and `/logs` is migrated to `/newlogs`. One of the simplest methods to perform this task is by using a simple file copy operation to relocate the new device back to the original mountpoint.
+As an example of this script's use, assume that data in `/oradata` is migrated to `/neworadata` and `/logs` is migrated to `/newlogs`. One of the simplest methods to perform this task is by using a simple file copy operation to relocate the new device back to the original mountpoint.
 
 . Assume that the old and new file systems are present in the `/etc/fstab` file as follows:
 +

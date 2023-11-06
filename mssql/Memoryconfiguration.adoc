@@ -74,11 +74,14 @@ The buffer pool extension feature offers the following benefits:
 * Improved read performance with a larger hybrid buffer pool
 * A caching architecture that can take advantage of existing and future low-cost memory
 
-For buffer pool extensions, NetApp recommends the following:
+[TIP]
+====
+*NetApp recommends* configuring the buffer pool extensions to:
 
 * Make sure that an SSD-backed LUN (such as NetApp AFF) is presented to the SQL Server host so that it can be used as a buffer pool extension target disk.
 
 * The extension file must be the same size as or larger than the buffer pool.
+====
 
 The following example shows a T-SQL command to set up a buffer pool extension of 32GB.
 
@@ -91,7 +94,7 @@ ALTER SERVER CONFIGURATION
 
 SET BUFFER POOL EXTENSION ON
 
-  (FILENAME = ‘P:\BUFFER POOL EXTENSION\SQLServerCache.BUFFER POOL EXTENSION’, SIZE = 32 GB);
+  (FILENAME = ‘P:\BUFFER POOL EXTENSION\SQLServerCache.BUFFER POOL EXTENSION', SIZE = 32 GB);
 
 GO
 ....
