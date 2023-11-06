@@ -4,7 +4,6 @@ permalink: vmware/srm/new_features_with_srm_and_ontap_tools.html
 keywords: vmware, site, recovery manager, vsrm, vsphere, ipv6, support, rest, api, replication, ccols, spbm, srm, appliance based
 summary: With the transition from the legacy virtual appliance, ONTAP tools brings a wealth of new features, higher limits, and new vVols support.
 ---
-
 = New features with SRM and ONTAP Tools
 :hardbreaks:
 :nofooter:
@@ -22,16 +21,14 @@ summary: With the transition from the legacy virtual appliance, ONTAP tools brin
 With the transition from the legacy virtual appliance, ONTAP tools brings a wealth of new features, higher limits, and new vVols support.
 
 == Latest versions of vSphere and Site Recovery Manager
-
 With the release of SRM 8.7 and later and the 9.12 and later releases of ONTAP tools, you are now able to protect VMs running on VMware vSphere 8 update 1.
 
 NetApp has shared a deep partnership with VMware for nearly two decades and strives to provide support for the latest releases as soon as possible. Always check the NetApp Interoperability Matrix Tool (IMT) for the latest qualified combinations of software.
 
-The NetApp IMT can be found https://mysupport.netapp.com/matrix[here^].
+The NetApp IMT can be found at link:https://mysupport.netapp.com/matrix[https://mysupport.netapp.com/matrix^].
 
-== vVols support (and why SPBM matters, even with SRM)
-
-Starting with the 8.3 release, SRM now supports storage policy-based management (SPBM) of replication leveraging vVols and array-based replication for datastores using iSCSI, FCP, and NFS v3. To accomplish this, the SRM server was updated to include a new SRM vVols provider service, which communicates to the vCenter server’s SMS service for VASA related tasks.
+== vVols support (and why Storage Policy Based Management (SPBM) matters, even with SRM)
+Starting with the 8.3 release, SRM now supports storage policy based management (SPBM) of replication leveraging vVols and array-based replication for datastores using iSCSI, FCP, and NFS v3. To accomplish this, the SRM server was updated to include a new SRM vVols provider service, which communicates to the vCenter server’s SMS service for VASA related tasks.
 
 One advantage to this architecture is that an SRA is no longer needed since everything is handled using VASA.
 
@@ -43,13 +40,11 @@ image:vsrm-ontap9_image1.png[Error: Missing Graphic Image]
 
 
 == Support for appliance-based SRM servers
-
 Photon OS-based SRM servers are now supported, in addition to legacy Windows-based platforms.
 
 You can now install SRA adapters regardless of your preferred SRM server type.
 
 == Support for IPv6
-
 IPv6 is now supported with the following limitations:
 
 * vCenter 6.7 or later
@@ -57,7 +52,6 @@ IPv6 is now supported with the following limitations:
 * Check the https://mysupport.netapp.com/matrix/imt.jsp?components=84943;&solution=1777&isHWU&src=IMT[Interoperability Matrix Tool^] for the latest qualified versions.
 
 == Improved performance
-
 Operational performance is a key requirement for SRM task execution. To meet the requirements of modern RTOs and RPOs, the SRA with ONTAP tools has added three new improvements.
 
 * *Support for concurrent reprotect operations.* First introduced in SRA 9.7.1, enabling this feature allows you to run reprotect on two or more recovery plans concurrently, thus reducing the time required to reprotect datastores after a failover or migration and remain within your RTO and RPO parameters.
@@ -65,13 +59,10 @@ Operational performance is a key requirement for SRM task execution. To meet the
 * *ONTAP Tools 9.12 added support for ONTAP's SnapMirror quick resync feature.* This enables rapid resyncronization of mirrors at the exense of having to recalculate storage efficency savings post process. This feature is not used by default, but can be enabled in large scale environments where traditional resync takes too long or is timing out.
 
 == Greater scale
-
 The ONTAP tools SRA can now support up to 500 protection groups (PGs) when used with SRM 8.3 and later.
 
 == Synchronous replication
-
 A long awaited and much anticipated new feature is SnapMirror Synchronous (SM-S) with ONTAP 9.5 and later which delivers a volume granular zero RPO data replication solution for your mission-critical applications. SM-S requires ONTAP tools 9.8 or later.
 
 == REST API support
-
 SRA server configuration can now be managed by REST APIs. A Swagger UI has been added to assist in building your automation workflows and can be found on your ONTAP tools appliance at `https://<appliance>:8143/api/rest/swagger-ui.html#/`.

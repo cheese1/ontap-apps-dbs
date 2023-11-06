@@ -73,7 +73,7 @@ ONTAP QoS and VMware vSphere Storage I/O Control (SIOC) are complementary techno
 |Set QoS on SVM (tenant)?
 |Yes
 |No
-|Policy-based approach?
+|Policy based approach?
 |Yes; can be shared by all workloads in the policy or applied in full to each workload in the policy.
 |Yes, with vSphere 6.5 and later.
 |License required
@@ -95,7 +95,7 @@ Other ONTAP best practices for SDRS include the following:
 ** After SDRS moves VMDKs, NetApp recommends recreating the snapshots at the source datastore because space is otherwise locked by the VM that was moved.
 ** Moving VMDKs between datastores on the same aggregate has little benefit, and SDRS does not have visibility into other workloads that might share the aggregate.
 
-=== Storage policy-based management and vVols
+=== Storage policy based management and vVols
 
 VMware vSphere APIs for Storage Awareness (VASA) make it easy for a storage administrator to configure datastores with well-defined capabilities and let the VM administrator use those whenever needed to provision VMs without having to interact with each other. It’s worth taking a look at this approach to see how it can streamline your virtualization storage operations and avoid a lot of trivial work.
 
@@ -107,7 +107,7 @@ The following figure depicts ONTAP tools for VMware vSphere 9.8 vVols dashboard.
 
 image:vsphere_ontap_image7.png[Error: Missing Graphic Image]
 
-After the storage capability profile is defined, it can be used to provision VMs using the storage policy that identifies its requirements. The mapping between the VM storage policy and the datastore storage capability profile allows vCenter to display a list of compatible datastores for selection. This approach is known as storage policy-based management.
+After the storage capability profile is defined, it can be used to provision VMs using the storage policy that identifies its requirements. The mapping between the VM storage policy and the datastore storage capability profile allows vCenter to display a list of compatible datastores for selection. This approach is known as storage policy based management.
 
 VASA provides the technology to query storage and return a set of storage capabilities to vCenter. VASA vendor providers supply the translation between the storage system APIs and constructs and the VMware APIs that are understood by vCenter. NetApp’s VASA Provider for ONTAP is offered as part of the ONTAP tools for VMware vSphere appliance VM, and the vCenter plug-in provides the interface to provision and manage vVol datastores, as well as the ability to define storage capability profiles (SCPs).
 
