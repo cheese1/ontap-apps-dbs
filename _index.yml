@@ -13,14 +13,16 @@ indexpage:
           url: common/dr/overview.html
         - title: Application and database tiering
           url: common/tiering/overview.html
-    - title: MariaDB/MySQL
-      links:
-        - title: MariaDB and MySQL on ONTAP
-          url: mysql/index.html
     - title: Microsoft SQL Server
       links:
         - title: MS SQL Server on ONTAP
           url: mssql/index.html
+    - title: Open-source databases
+      links:
+        - title: MariaDB and MySQL on ONTAP
+          url: mysql/index.html
+        - title: PostgreSQL on ONTAP
+          url: postgres/index.html
     - title: Oracle Database
       links:
         - title: Oracle on ONTAP
@@ -31,10 +33,6 @@ indexpage:
           url: oracle/dp/overview.html
         - title: Oracle migration
           url: oracle/migration/overview.html
-    - title: PostgreSQL
-      links:
-        - title: PostgreSQL on ONTAP
-          url: postgres/index.html
     - title: SAP HANA
       links:
         - title: SAP HANA on ONTAP
