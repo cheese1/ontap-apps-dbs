@@ -35,7 +35,7 @@ This requirement for a software tool is even more important to manage vVols repl
 
 ONTAP tools 9.7.1 in conjunction with the VMware Site Recovery Manager (SRM) 8.3 release added support for disaster recovery and migration workflow orchestration taking advantage of NetApp SnapMirror technology.
 
-In the initial release of SRM support with ONTAP tools 9.7.1 it was a requirement to pre-create FlexVols and enable SnapMirror protection before using them as backing volumes for a vVols datastore. Beginning in ONTAP tools 9.10 that process is no longer required. You can now add SnapMirror protection to existing backing volumes and update your VM storage policies to take advantage of policy-based management with disaster recovery and migration orchestration and automation integrated with SRM.
+In the initial release of SRM support with ONTAP tools 9.7.1 it was a requirement to pre-create FlexVols and enable SnapMirror protection before using them as backing volumes for a vVols datastore. Beginning in ONTAP tools 9.10 that process is no longer required. You can now add SnapMirror protection to existing backing volumes and update your VM storage policies to take advantage of policy based management with disaster recovery and migration orchestration and automation integrated with SRM.
 
 Currently, VMware SRM is the only disaster recovery and migration automation solution for vVols supported by NetApp, and ONTAP tools will check for the existence of an SRM 8.3 or later server registered with your vCenter before allowing you to enable vVols replication, although it is possible to leverage the ONTAP tools REST APIs to create your own services.
 
