@@ -4,7 +4,7 @@ permalink: mssql/files-and-filegroups.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
-= Database files and filegroups
+= Microsoft SQL Server database files and filegroups
 
 [.lead]
 A SQL Server database is a collection of objects that allows you to store and manipulate data. 

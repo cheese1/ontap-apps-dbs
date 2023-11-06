@@ -4,7 +4,7 @@ permalink: mssql/SQL-disaster-recovery.html
 keywords: MS-SQL,mssql,SQL Server, disaster recovery, snapmirror
 summary: Microsoft SQL Server on ONTAP
 ---
-= SQL Server disaster recovery
+= Microsoft SQL Server disaster recovery
 
 [.lead]
 NetApp provides various approaches to increase data availability if there is hardware,software or site failure. 

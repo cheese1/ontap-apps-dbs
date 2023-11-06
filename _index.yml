@@ -15,13 +15,13 @@ indexpage:
           url: common/tiering/overview.html
     - title: Microsoft SQL Server
       links:
-        - title: MS SQL Server on ONTAP
+        - title: Microsoft SQL Server on ONTAP
           url: mssql/overview.html
-        - title: MS SQL Server storage considerations
+        - title: Microsoft SQL Server storage considerations
           url: mssql/Storage-considerations.html
-        - title: MS SQL Server data protection
+        - title: Microsoft SQL Server data protection
           url: mssql/Data-protection.html
-        - title: MS SQL Server disaster recovery
+        - title: Microsoft SQL Server disaster recovery
           url: mssql/SQL-disaster-recovery.html
     - title: Open-source databases
       links:

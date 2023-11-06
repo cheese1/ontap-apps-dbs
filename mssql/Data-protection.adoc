@@ -4,7 +4,7 @@ permalink: mssql/data-protection.html
 keywords: MS-SQL,mssql,SQL Server, SnapCenter, data protection
 summary: Microsoft SQL Server on ONTAP
 ---
-= SQL Server data protection with ONTAP
+= Microsoft SQL Server data protection with ONTAP
 
 [.lead]
 Protecting database is critical to any organization. As data size and count of databases have increased, maintaining recovery time objective (RTO) and recovery point objective (RPO) is very crucial.
