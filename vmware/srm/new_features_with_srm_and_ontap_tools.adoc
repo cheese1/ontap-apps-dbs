@@ -28,7 +28,7 @@ NetApp has shared a deep partnership with VMware for nearly two decades and stri
 The NetApp IMT can be found at link:https://mysupport.netapp.com/matrix[https://mysupport.netapp.com/matrix^].
 
 == vVols support (and why Storage Policy Based Management (SPBM) matters, even with SRM)
-Starting with the 8.3 release, SRM now supports storage policy based management (SPBM) of replication leveraging vVols and array-based replication for datastores using iSCSI, FCP, and NFS v3. To accomplish this, the SRM server was updated to include a new SRM vVols provider service, which communicates to the vCenter server’s SMS service for VASA related tasks.
+Starting with the 8.3 release, SRM now supports storage policy based management (SPBM) of replication leveraging vVols and array-based replication for datastores using iSCSI, FCP, and NFS v3. To accomplish this, the SRM server was updated to include a new SRM vVols provider service, which communicates to the vCenter server's SMS service for VASA related tasks.
 
 One advantage to this architecture is that an SRA is no longer needed since everything is handled using VASA.
 

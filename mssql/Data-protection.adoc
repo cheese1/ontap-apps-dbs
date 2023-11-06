@@ -16,7 +16,7 @@ SnapCenter is the NetApp data protection software for enterprise applications.SQ
 
 This products enable application-consistent backup, automated cloning, and restore and recovery of SQL Server databases, instances, or availability groups. 
 
-[NOTE]
+[TIP]
 *NetApp recommends* using SnapCenter to create Snapshot copies. 
 
 For more details about the SQL Server Plug-in for SnapCenter, see link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf[TR-4714: Best practice guide for SQL Server using NetApp SnapCenter^].
@@ -24,7 +24,7 @@ For more details about the SQL Server Plug-in for SnapCenter, see link:https://w
 == Protecting database using T-SQL snapshots
 In SQL Server 2022, Microsoft introduced T-SQL snapshots that offers built-in advantage than traditional method that was not easily consumed by database administrator. Leveraging ONTAP REST API's, you can call commands to snapshot volumes. 
 
-Following summarized the backup workflow:
+The following is a sample backup workflow:
 
 1. Freeze a database with ALTER command - providing an opportunity to perform a consistent snapshot on the underlying storage. After this you can thaw the database and record the snapshot with BACKUP command.
 2. Perform snapshots of multiple databases on the storage volumes simultaneously with the new BACKUP GROUP and BACKUP SERVER commands. 

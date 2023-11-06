@@ -123,10 +123,11 @@ entries:
         url: /hana/fas-nfs/where_to_find_additional_information.html
   - title: SAP HANA on IBM Power Systems with AFF and NFS
     url: /hana/links/saphana-ibm-aff-nfs_pdf_link.html
-#  - title: SAP HANA on VMware vSphere with NetApp
-#    url: /hana/links/saphana-vsphere-fas-aff_pdf_link.html
   - title: SAP with Microsoft SQL Server
     url: /hana/links/sap-sqls-sc_pdf_link.html
   - title: SAP with Oracle with NFS
     url: /hana/links/sap-oracle-snapman_pdf_link.html
+# The below doc is no longer available - chrisgeb - 11/6/2023
+#  - title: SAP HANA on VMware vSphere with NetApp
+#    url: /hana/links/saphana-vsphere-fas-aff_pdf_link.html
 

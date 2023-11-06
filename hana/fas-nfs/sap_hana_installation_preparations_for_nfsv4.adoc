@@ -21,7 +21,7 @@ The administration user `<sidadm>` and the `sapsys` group must be created manual
 
 == SAP HANA hosts
 
-If it doesn’t exist, the `sapsys` group must be created on the SAP HANA host. A unique group ID must be chosen that does not conflict with the existing group IDs on the storage controllers.
+If it doesn't exist, the `sapsys` group must be created on the SAP HANA host. A unique group ID must be chosen that does not conflict with the existing group IDs on the storage controllers.
 
 The user `<sidadm>` is created on the SAP HANA host. A unique ID must be chosen that does not conflict with existing user IDs on the storage controllers.
 
