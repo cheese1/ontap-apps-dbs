@@ -17,7 +17,7 @@ NetApp ONTAP software has been a leading storage solution for VMware vSphere env
 This document covers ONTAP capabilities for VMware vSphere Virtual Volumes (vVols), including the latest product information and use cases along with best practices and other information to streamline deployment and reduce errors.
 
 [NOTE]
-_This documentation replaces previously published technical reports TR-4400: VMware vSphere Virtual Volumes (vVols) with NetApp ONTAP_
+This documentation replaces previously published technical reports _TR-4400: VMware vSphere Virtual Volumes (vVols) with NetApp ONTAP_
 
 Best practices supplement other documents such as guides and compatibility lists. They are developed based on lab testing and extensive field experience by NetApp engineers and customers. They might not be the only practices that work or are supported but are generally the simplest solutions that meet the needs of most customers.
 

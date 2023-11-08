@@ -20,4 +20,4 @@ An enterprise cannot operate without access to its data, and sometimes, the data
 The other side of data protection is data recovery. When data is inaccessible, the enterprise is affected and might be inoperative until data is restored. This process must be fast and reliable. Finally, most databases must be protected against disasters, which means maintaining a replica of the database. The replica must be sufficiently up to date. It must also be quick and simple to make the replica a fully operational database.
 
 [NOTE]
-_This documentation replaces previously published technical report TR-4591: Oracle data protection: Backup, recovery, and replication._
+This documentation replaces previously published technical report _TR-4591: Oracle data protection: Backup, recovery, and replication._
