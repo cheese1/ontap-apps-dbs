@@ -16,4 +16,4 @@ This reference architecture document helps customers design and deploy SAP HANA 
 
 This reference architecture is a deployed and documented solution based on experiences with existing VMware and NetApp customers, real-world simulations, and NetApp Engineering Lab validations. This document helps customers through the entire project lifecycle, including requirement assessment, solution design, installation, and administration.
 
-link:https://www.netapp.com/pdf.html?item=/media/17192-tr4338pdf.pdf[https://www.netapp.com/pdf.html?item=/media/17192-tr4338pdf.pdf^]
+link:https://www.netapp.com/pdf.html?item=/media/17192-tr4338pdf.pdf[TR-4338: SAP HANA on VMware vSphere with NetApp - FAS and AFF Systems^]

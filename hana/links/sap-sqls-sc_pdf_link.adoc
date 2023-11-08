@@ -16,4 +16,4 @@ summary: This document provides customers and partners with best practices for d
 [.lead]
 This document provides customers and partners with best practices for deploying NetApp ONTAP in support of SAP Business Suite solutions running in a Microsoft SQL Server in a Windows environment.
 
-link:https://www.netapp.com/media/16865-tr-4467.pdf[https://www.netapp.com/media/16865-tr-4467.pdf^]
+link:https://www.netapp.com/media/16865-tr-4467.pdf[TR-4467: SAP with Microsoft SQL Server on Windows - Best Practices Using NetApp ONTAP and SnapCenter^]
