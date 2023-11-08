@@ -32,15 +32,13 @@ indexpage:
         - title: Oracle on ONTAP
           url: oracle/overview.html
         - title: Oracle data protection
-          url: oracle/dp/overview.html
+          url: oracle/dp/overview-dp.html
         - title: Oracle disaster recovery
-          url: oracle/dp/overview.html
+          url: oracle/dp/overview-dr.html
         - title: Oracle migration
           url: oracle/migration/overview.html
     - title: SAP HANA
       links:
-        - title: SAP HANA on ONTAP
-          url: hana/index.html
         - title: SAP HANA on AFF with FCP
           url: hana/aff-fc/overview.html
         - title: SAP HANA on AFF with NFS
