@@ -16,7 +16,7 @@ summary: Introduction to Oracle storage migration
 Leveraging the capabilities of a new storage platform has one unavoidable requirement; data must be placed on the new storage system. 
 
 [NOTE]
-_This documentation replaces previously published technical report TR-4534: Migration of Oracle Databases to NetApp Storage Systems_
+This documentation replaces previously published technical report _TR-4534: Migration of Oracle Databases to NetApp Storage Systems_
 
 In the case of a new database project, this is not a concern because the database and application environments are constructed in place. Migration, however, poses special challenges regarding business disruption, the time required for the completion of migration, needed skill sets, and risk minimization. 
 
