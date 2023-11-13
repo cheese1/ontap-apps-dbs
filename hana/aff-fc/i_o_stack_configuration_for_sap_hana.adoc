@@ -45,13 +45,13 @@ Starting with SAP HANA 2.0, `hdbparam` is deprecated, and the parameters are mov
 
 ....
 SS3adm@stlrx300s8-6: /usr/sap/SS3/SYS/global/hdb/custom/config> cat global.ini
-â€¦
+
 [fileio]
 async_read_submit = on
 async_write_submit_active = on
 max_parallel_io_requests = 128
 async_write_submit_blocks = all
-â€¦
+
 ....
 
 For SAP HANA 2.0 SPS5 and later, use the `setParameter.py` script to set the correct parameters.
