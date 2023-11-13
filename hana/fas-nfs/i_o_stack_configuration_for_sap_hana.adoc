@@ -4,7 +4,6 @@ permalink: hana/fas-nfs/i_o_stack_configuration_for_sap_hana.html
 keywords: io, stack, configuration, sap, hana, fas, nfs
 summary: Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the IO behavior and optimize the database for the file and storage systems used.
 ---
-
 = I/O stack configuration for SAP HANA
 :hardbreaks:
 :nofooter:

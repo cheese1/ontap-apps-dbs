@@ -30,7 +30,7 @@ NetApp conducted performance tests to define the ideal values. The following tab
 |all
 |===
 
-For SAP HANA 1.0 up to SPS12, these parameters can be set during the installation of the SAP HANA database, as described in SAP Note https://launchpad.support.sap.com/[2267798 â€“ Configuration of the SAP HANA Database during Installation Using hdbparam^].
+For SAP HANA 1.0 up to SPS12, these parameters can be set during the installation of the SAP HANA database, as described in SAP Note https://launchpad.support.sap.com/[2267798 - Configuration of the SAP HANA Database during Installation Using hdbparam^].
 
 Alternatively, the parameters can be set after the SAP HANA database installation by using the `hdbparam` framework.
 
