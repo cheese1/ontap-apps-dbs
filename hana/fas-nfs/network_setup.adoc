@@ -4,7 +4,6 @@ permalink: hana/fas-nfs/network_setup.html
 keywords: network, setup, vmware, sap, hana, storage, hosts
 summary: Use the following guidelines when configuring the network.
 ---
-
 = Network setup
 :hardbreaks:
 :nofooter:
@@ -20,7 +19,7 @@ Use the following guidelines when configuring the network:
 * Disable flow control on all physical ports used for storage traffic on the storage network switch and host layer.
 * Each SAP HANA host must have a redundant network connection with a minimum of 10Gb of bandwidth.
 * Jumbo frames with a maximum transmission unit (MTU) size of 9,000 must be enabled on all network components between the SAP HANA hosts and the storage controllers.
-* In a VMware setup, dedicated VMXNET3 network adapters must be assigned to each running virtual machine. Check the relevant papers mentioned in the link:introduction.html[Introduction] for further requirements.
+* In a VMware setup, dedicated VMXNET3 network adapters must be assigned to each running virtual machine.
 * To avoid interference between each other, use separate network/IO paths for the log and data area.
 
 The following figure shows an example with four SAP HANA hosts attached to a storage controller HA pair using a 10GbE network. Each SAP HANA host has an active-passive connection to the redundant fabric.

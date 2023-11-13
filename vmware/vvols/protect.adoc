@@ -4,7 +4,6 @@ permalink: vmware/vvols/protect.html
 keywords: tr-4400, vvols, ontap, virtual volumes, protect
 summary: 
 ---
-
 = Protecting vVols
 :nofooter:
 :icons: font
@@ -12,9 +11,9 @@ summary:
 :imagesdir: ./../media/
 
 [.lead]
+This page describes the best practices for protecting vVols.
 
 == VASA Provider High Availability
-
 The NetApp VASA Provider runs as part of the virtual appliance together with the vCenter plugin and REST API server (formerly known as the Virtual Storage Console [VSC]) and Storage Replication Adapter. If the VASA Provider is not available, VMs using vVols will continue to run. However, new vVols datastores cannot be created, and vVols cannot be created or bound by vSphere. This means that VMs using vVols cannot be powered on as vCenter will not be able to request creation of the swap vVol. And running VMs cannot use vMotion for migration to another host because the vVols cannot be bound to the new host.
 
 VASA Provider 7.1 and later support new capabilities to make sure the services are available when needed. It includes new watchdog processes that monitor VASA Provider and integrated database services. If it detects a failure, it updates the log files and then restarts the services automatically.

@@ -4,7 +4,6 @@ permalink: hana/fas-nfs/sap_hana_software_installation.html
 keywords: sap, hana, software, installation, single, multiple, system, host
 summary: The following are requirements for software installation for SAP HANA.
 ---
-
 = SAP HANA software installation
 :hardbreaks:
 :nofooter:

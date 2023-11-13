@@ -4,7 +4,6 @@ permalink: hana/aff-fc/storage_sizing.html
 keywords:
 summary:
 ---
-
 = Storage sizing
 :hardbreaks:
 :nofooter:
@@ -19,7 +18,6 @@ The following section provides an overview of performance and capacity considera
 Contact your NetApp or NetApp partner sales representative to support the storage sizing process and to assist you with creating a properly sized storage environment.
 
 == Performance considerations
-
 SAP has defined a static set of storage key performance indicators (KPIs). These KPIs are valid for all production SAP HANA environments independent of the memory size of the database hosts and the applications that use the SAP HANA database. These KPIs are valid for single-host, multiple-host, Business Suite on HANA, Business Warehouse on HANA, S/4HANA, and BW/4HANA environments. Therefore, the current performance sizing approach depends on only the number of active SAP HANA hosts that are attached to the storage system.
 
 [NOTE]
@@ -32,7 +30,6 @@ NetApp tested and predefined the maximum number of SAP HANA hosts that can be at
 The maximum number of SAP HANA hosts that can be run on a disk shelf and the minimum number of SSDs required per SAP HANA host were determined by running the SAP performance test tool. This test does not consider the actual storage capacity requirements of the hosts. You must also calculate the capacity requirements to determine the actual storage configuration needed.
 
 === SAS disk shelf
-
 With the 12Gb SAS disk shelf (DS224C), the performance sizing is performed by using fixed disk- shelf configurations:
 
 * Half-loaded disk shelves with 12 SSDs
@@ -58,14 +55,12 @@ The 6Gb SAS disk shelf (DS2246) supports a maximum of 4 SAP HANA hosts. The SSDs
 This calculation is independent of the storage controller used. Adding more disk shelves does not increase the maximum number of SAP HANA hosts that a storage controller can support.
 
 === NS224 NVMe shelf
-
 The minimum number of 12 NVMe SSDs for the first shelf supports up to 16 SAP HANA hosts. A fully populated shelf supports up to 48 SAP HANA hosts.
 
 [NOTE]
 Adding more disk shelves does not increase the maximum number of SAP HANA hosts that a storage controller can support.
 
 == Mixed workloads
-
 SAP HANA and other application workloads running on the same storage controller or in the same storage aggregate are supported. However, it is a NetApp best practice to separate SAP HANA workloads from all other application workloads.
 
 You might decide to deploy SAP HANA workloads and other application workloads on either the same storage controller or the same aggregate. If so, you must make sure that adequate performance is available for SAP HANA within the mixed workload environment. NetApp also recommends that you use quality of service (QoS) parameters to regulate the effect these other applications could have on SAP HANA applications and to guarantee throughput for SAP HANA applications.
@@ -73,14 +68,12 @@ You might decide to deploy SAP HANA workloads and other application workloads on
 The SAP HCMT test tool must be used to check if additional SAP HANA hosts can be run on an existing storage controller that is already in use for other workloads. SAP application servers can be safely placed on the same storage controller and/or aggregate as the SAP HANA databases.
 
 == Capacity considerations
-
 A detailed description of the capacity requirements for SAP HANA is in the https://launchpad.support.sap.com/#/notes/1900823[SAP Note 1900823^] white paper.
 
 [NOTE]
 The capacity sizing of the overall SAP landscape with multiple SAP HANA systems must be determined by using SAP HANA storage sizing tools from NetApp. Contact NetApp or your NetApp partner sales representative to validate the storage sizing process for a properly sized storage environment.
 
 == Configuration of performance test tool
-
 Starting with SAP HANA 1.0 SPS10, SAP introduced parameters to adjust the I/O behavior and optimize the database for the file and storage system used. These parameters must also be set for the performance test tool from SAP when the storage performance is being tested with the SAP test tool.
 
 NetApp conducted performance tests to define the optimal values. The following table lists the parameters that must be set within the configuration file of the SAP test tool.
@@ -103,7 +96,6 @@ For more information about the configuration of SAP test tool, see https://servi
 The following example shows how variables can be set for the HCMT/HCOT execution plan.
 
 ....
-â€¦
 {
          "Comment": "Log Volume: Controls whether read requests are submitted asynchronously, default is 'on'",
          "Name": "LogAsyncReadSubmit",
@@ -151,13 +143,12 @@ The following example shows how variables can be set for the HCMT/HCOT execution
          "Name": "DataExtMaxParallelIoRequests",
          "Value": "128",
          "Request": "false"
-      }, â€¦
+      },
 ....
 
 These variables must be used for the test configuration. This is usually the case with the predefined execution plans SAP delivers with the HCMT/HCOT tool. The following example for a 4k log write test is from an execution plan.
 
 ....
-â€¦
       {
          "ID": "D664D001-933D-41DE-A904F304AEB67906",
          "Note": "File System Write Test",
@@ -189,7 +180,6 @@ These variables must be used for the test configuration. This is usually the cas
                   "ExtSizeKernelIoQueue": "${ExtSizeKernelIoQueue}"
                }
             },
-â€¦
 ....
 
 == Storage sizing process overview
@@ -203,5 +193,3 @@ The size of the RAM, net data size on the disk of each SAP HANA host, and the sn
 The following figure summarizes the sizing process.
 
 image:saphana_aff_fc_image8.jpg[Error: Missing Graphic Image]
-
-link:infrastructure_setup_and_configuration_overview.html[Next: Infrastructure setup and configuration.]

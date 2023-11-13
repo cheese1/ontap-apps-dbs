@@ -4,7 +4,6 @@ permalink: hana/aff-nfs/adding_additional_data_volume_partitions.html
 keywords: data volume, tenant database, sps4
 summary: Starting with SAP HANA 2.0 SPS4, additional data volume partitions can be configured. This allows you to configure two or more volumes for the data volume of an SAP HANA tenant database and scale beyond the size and performance limits of a single volume.
 ---
-
 = Adding additional data volume partitions
 :hardbreaks:
 :nofooter:
@@ -21,7 +20,6 @@ This allows you to configure two or more volumes for the data volume of an SAP H
 Using two or more individual volumes for the data volume is available for SAP HANA single-host and SAP HANA multiple-host systems. You can add additional data volume partitions at any time.
 
 == Enabling additional data volume partitions
-
 To enable additional data volume partitions, add the following entry within `global.ini` by using SAP HANA Studio or Cockpit in the SYSTEMDB configuration.
 
 ....
@@ -33,7 +31,6 @@ persistence_datavolume_partition_multipath = true
 Adding the parameter manually to the `global.ini` file requires the restart of the database.
 
 == Volume configuration for single-host SAP HANA systems
-
 The layout of volumes for a single-host SAP HANA system with multiple partitions is like the layout for a system with one data volume partition but with an additional data volume stored on a different aggregate as the log volume and the other data volume. The following table shows an example configuration of an SAP HANA single-host system with two data volume partitions.
 
 |===
@@ -51,13 +48,13 @@ The following table shows an example of the mount point configuration for a sing
 |Junction path |Directory |Mount point at HANA host
 
 |SID_data_mnt00001
-|â€“
+|
 |/hana/data/SID/mnt00001
 |SID_data2_mnt00001
-|â€“
+|
 |/hana/data2/SID/mnt00001
 |SID_log_mnt00001
-|â€“
+|
 |/hana/log/SID/mnt00001
 |SID_shared
 |usr-sap
@@ -69,7 +66,6 @@ shared
 You can create the new data volume and mount it to the namespace using either NetApp ONTAP System Manager or the ONTAP CLI.
 
 == Volume configuration for multiple-host SAP HANA systems
-
 The layout of volumes is like the layout for a multiple- host SAP HANA system with one data volume partition but with an additional data volume stored on a different aggregate as log volume and the other data volume. The following table shows an example configuration of an SAP HANA multiple-host system with two data volume partitions.
 
 |===
@@ -77,29 +73,29 @@ The layout of volumes is like the layout for a multiple- host SAP HANA system wi
 
 |Data and log volumes for node 1
 |Data volume: SID_data_mnt00001
-|â€“
+|
 |Log volume: SID_log_mnt00001
 |Data2 volume: SID_data2_mnt00001
 |Data and log volumes for node 2
 |Log volume: SID_log_mnt00002
 |Data2 volume: SID_data2_mnt00002
 |Data volume: SID_data_mnt00002
-|â€“
+|
 |Data and log volumes for node 3
-|â€“
+|
 |Data volume: SID_data_mnt00003
 |Data2 volume: SID_data2_mnt00003
 |Log volume: SID_log_mnt00003
 |Data and log volumes for node 4
 |Data2 volume: SID_data2_mnt00004
 |Log volume: SID_log_mnt00004
-|â€“
+|
 |Data volume: SID_data_mnt00004
 |Shared volume for all hosts
 |Shared volume: SID_shared
-|â€“
-|â€“
-|â€“
+|
+|
+|
 |===
 
 The following table shows an example of the mount point configuration for a single-host system with two data volume partitions.
@@ -108,31 +104,31 @@ The following table shows an example of the mount point configuration for a sing
 |Junction path |Directory |Mount point at SAP HANA host |Note
 
 |SID_data_mnt00001
-|â€“
+|
 |/hana/data/SID/mnt00001
 |Mounted at all hosts
 |SID_data2_mnt00001
-|â€“
+|
 |/hana/data2/SID/mnt00001
 |Mounted at all hosts
 |SID_log_mnt00001
-|â€“
+|
 |/hana/log/SID/mnt00001
 |Mounted at all hosts
 |SID_data_mnt00002
-|â€“
+|
 |/hana/data/SID/mnt00002
 |Mounted at all hosts
 |SID_data2_mnt00002
-|â€“
+|
 |/hana/data2/SID/mnt00002
 |Mounted at all hosts
 |SID_log_mnt00002
-|â€“
+|
 |/hana/log/SID/mnt00002
 |Mounted at all hosts
 |SID_data_mnt00003
-|â€“
+|
 |/hana/data/SID/mnt00003
 |Mounted at all hosts
 |SID_data2_mnt00003
@@ -148,11 +144,11 @@ The following table shows an example of the mount point configuration for a sing
 |/hana/data/SID/mnt00004
 |Mounted at all hosts
 |SID_data2_mnt00004
-|â€“
+|
 |/hana/data2/SID/mnt00004
 |Mounted at all hosts
 |SID_log_mnt00004
-|â€“
+|
 |/hana/log/SID/mnt00004
 |Mounted at all hosts
 |SID_shared
@@ -193,7 +189,7 @@ In addition to the tasks described in the section link:host_setup.html["Host Set
 +
 ....
 sapcc-hana-tst-06:/ # mkdir -p /hana/data2/SID/mnt00001
-sapcc-hana-tst-06:/ # chmod â€“R 777 /hana/data2/SID
+sapcc-hana-tst-06:/ # chmod R 777 /hana/data2/SID
 ....
 
 * For a multiple-host system, create mount points and set the permissions on all worker and standby hosts.
@@ -237,7 +233,7 @@ minorversion=1,hard,timeo=600,rsize=1048576,wsize=262144,bg,noatime,lock 0 0
 [NOTE]
 Use a different storage virtual interface for connecting each data volume to ensure that you are using different TCP sessions for each volume or use the nconnect mount option, if available for your OS.
 
-. Mount the file systems by running the `mount â€“a` command.
+. Mount the file systems by running the `mount a` command.
 
 == Adding an additional data volume partition
 

@@ -103,7 +103,7 @@ For more information about the configuration of the different SAP test tools,  s
 The following example shows how variables can be set for the HCMT/HCOT execution plan.
 
 ....
-â€¦{
+{
          "Comment": "Log Volume: Controls whether read requests are submitted asynchronously, default is 'on'",
          "Name": "LogAsyncReadSubmit",
          "Value": "on",
@@ -150,13 +150,12 @@ The following example shows how variables can be set for the HCMT/HCOT execution
          "Name": "DataExtMaxParallelIoRequests",
          "Value": "128",
          "Request": "false"
-      }, â€¦
+      },
 ....
 
 These variables must be used for the test configuration. This is usually the case with the predefined execution plans SAP delivers with the HCMT/HCOT tool. The following example for a 4k log write test is from an execution plan.
 
 ....
-â€¦
       {
          "ID": "D664D001-933D-41DE-A904F304AEB67906",
          "Note": "File System Write Test",
@@ -187,7 +186,7 @@ These variables must be used for the test configuration. This is usually the cas
                   "ExtNumSubmitQueues": "${LogExtNumSubmitQueues}",
                   "ExtSizeKernelIoQueue": "${ExtSizeKernelIoQueue}"
                }
-            }, â€¦
+            },
 ....
 
 == Storage sizing process overview

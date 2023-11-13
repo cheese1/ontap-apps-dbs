@@ -4,7 +4,6 @@ permalink: hana/fas-nfs/sap_hana_data_volume_size.html
 keywords: sap, hana, data, volume, size, fas, nfs
 summary: As the default, SAP HANA uses only one data volume per SAP HANA service. Due to the maximum file size limitation of the file system, we recommend limiting the maximum data volume size.
 ---
-
 = SAP HANA data volume size
 :hardbreaks:
 :nofooter:

@@ -4,19 +4,12 @@ permalink: vmware/vsphere/sdrs.html
 keywords: Data protection, Space reclamation, VM and datastore cloning, Storage efficiency, thin provisioning, QoS, SIOC, Storage Distributed Resource Scheduler, DRS, Active IQ Unified Manager, Encryption
 summary: SnapCenter allows you to create backup policies that can be applied to multiple jobs. These policies can define schedule, retention, replication, and other capabilities. They continue to allow optional selection of VM-consistent snapshots, which leverages the hypervisor's ability to quiesce I/O before taking a VMware snapshot.
 ---
-
 = VMware Storage Distributed Resource Scheduler
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-02-16 10:32:05.253630
-//
 
 [.lead]
 VMware Storage Distributed Resource Scheduler (SDRS) is a vSphere feature that places VMs on storage based on the current I/O latency and space usage. 

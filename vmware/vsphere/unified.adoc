@@ -4,8 +4,7 @@ permalink: vmware/vsphere/unified.html
 keywords: introduction, unified storage, virtual volumes, storage efficiency, hybrid cloud
 summary: NetApp ONTAP software has been a leading storage solution for VMware vSphere environments for almost two decades and continues to add innovative capabilities to simplify management while reducing costs. This document introduces the ONTAP solution for vSphere, including the latest product information and best practices, to streamline deployment, reduce risk, and simplify management.
 ---
-
-== Unified Storage
+== Unified storage
 :hardbreaks:
 :nofooter:
 :icons: font

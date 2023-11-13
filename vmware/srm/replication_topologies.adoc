@@ -4,7 +4,6 @@ permalink: vmware/srm/replication_topologies.html
 keywords: vmware, site, recovery manager, vsrm, replication, technologies, snapmirror layouts, array manager, snapvault, qtress, fc, iscsi, supported
 summary: In ONTAP 9, the physical components of a cluster are visible to cluster administrators, but they are not directly visible to the applications and hosts that use the cluster.
 ---
-
 = Replication topologies
 :hardbreaks:
 :nofooter:
@@ -22,11 +21,7 @@ A single VM cannot own data—Virtual Machine Disk (VMDK) or RDM—on more than 
 * SRM sees only the SVM, not an individual physical controller.
 * An SVM can control LUNs and volumes that span multiple nodes in a cluster.
 
-|===
-|Best Practice
-
-|To determine supportability, keep this rule in mind: to protect a VM by using SRM and the NetApp SRA, all parts of the VM must exist on only one SVM. This rule applies at both the protected site and the recovery site.
-|===
+[TIP]*NetApp recommends* to determine supportability, keep this rule in mind: to protect a VM by using SRM and the NetApp SRA, all parts of the VM must exist on only one SVM. This rule applies at both the protected site and the recovery site.
 
 == Supported SnapMirror layouts
 
@@ -47,7 +42,6 @@ When you use array-based replication (ABR) in SRM, protection groups are isolate
 image:vsrm-ontap9_image11.png[Error: Missing Graphic Image]
 
 == Unsupported layouts
-
 Unsupported configurations have data (VMDK or RDM) on multiple SVMs that is owned by an individual VM. In the examples shown in the following figures, `VM1` cannot be configured for protection with SRM because `VM1` has data on two SVMs.
 
 image:vsrm-ontap9_image12.png[Error: Missing Graphic Image]

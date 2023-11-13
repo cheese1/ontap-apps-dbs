@@ -24,11 +24,7 @@ http://www.vmware.com/files/pdf/sap-hana-scale-out-deployments-on-vsphere.pdf[ht
 
 * SAP certified enterprise storage hardware for SAP HANA
 +
-https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/enterprise-storage.html[https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/enterprise-storage.html^]
-
-* SAP HANA storage requirements
-+
-http://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html[http://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html^]
+https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=v:deCertified;ve:13[https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/#/solutions?filters=v:deCertified;ve:13^]
 
 * SAP HANA tailored data center integration frequently asked questions
 +

@@ -30,7 +30,7 @@ The configuration described in this paper is necessary to achieve the required S
 == Introduction
 This document describes AFF configurations that use the Fibre Channel Protocol (FCP).
 
-In an SAP HANA multiple-host environment, the standard SAP HANA storage connector is used to provide fencing in the event of an SAP HANA host failover. Always refer to the relevant SAP notes for operating system configuration guidelines and HANA specific Linux kernel dependencies. For more information, see https://launchpad.support.sap.com/[SAP Note 2235581 â€“ SAP HANA Supported Operating Systems^].
+In an SAP HANA multiple-host environment, the standard SAP HANA storage connector is used to provide fencing in the event of an SAP HANA host failover. Always refer to the relevant SAP notes for operating system configuration guidelines and HANA specific Linux kernel dependencies. For more information, see https://launchpad.support.sap.com/[SAP Note 2235581 - SAP HANA Supported Operating Systems^].
 
 == SAP HANA tailored data center integration
 

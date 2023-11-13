@@ -1,10 +1,9 @@
 ---
 sidebar: sidebar
 permalink: hana/aff-fc/storage_controller_setup.html
-keywords: storage efficiency, netapp volume encryption, quality of service, qos, fabricpool, Disk shelf, sas, fcp port sets, linux lvm,
+keywords: storage efficiency, netapp volume encryption, quality of service, qos, FabricPool, Disk shelf, sas, fcp port sets, linux lvm,
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding Data ONTAP setup and configuration guides.
 ---
-
 = Storage controller setup
 :hardbreaks:
 :nofooter:
@@ -16,15 +15,12 @@ summary: This section describes the configuration of the NetApp storage system. 
 This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding Data ONTAP setup and configuration guides.
 
 == Storage efficiency
-
 Inline deduplication, cross-volume inline deduplication, inline compression, and inline compaction are supported with SAP HANA in an SSD configuration.
 
 == NetApp Volume Encryption
-
 The use of NetApp Volume Encryption (NVE) is supported with SAP HANA.
 
 == Quality of service
-
 QoS can be used to limit the storage throughput for specific SAP HANA systems or no- SAP applications on a shared-use controller. One use case would be to limit the throughput of development and test systems so that they cannot influence production systems in a mixed setup.
 
 During the sizing process, you should determine the performance requirements of a nonproduction system. Development and test systems can be sized with lower performance values, typically in the range of 20% to 50% of a production-system KPI as defined by SAP.
@@ -34,7 +30,6 @@ Starting with ONTAP 9, QoS is configured on the storage volume level and uses ma
 Large write I/O has the biggest performance effect on the storage system. Therefore, the QoS throughput limit should be set to a percentage of the corresponding write SAP HANA storage performance KPI values in the data and log volumes.
 
 === NetApp FabricPool
-
 NetApp FabricPool technology must not be used for active primary file systems in SAP HANA systems. This includes the file systems for the data and log area as well as the `/hana/shared` file system. Doing so results in unpredictable performance, especially during the startup of an SAP HANA system.
 
 You can use the Snapshot-Only tiering policy along with FabricPool at a backup target such as SnapVault or SnapMirror destination.
@@ -45,7 +40,6 @@ Using FabricPool for tiering snapshots at primary storage or using FabricPool at
 FabricPool is a good option for moving log backups to another storage tier. Moving backups affects the time needed to recover an SAP HANA database. Therefore, the option `tiering-minimum-cooling-days` should be set to a value that places log backups, which are routinely needed for recovery, on the local fast storage tier.
 
 == Configure storage
-
 The following overview summarizes the required storage configuration steps. Each step is covered in more detail in the subsequent sections. In this section, we assume that the storage hardware is set up and that the ONTAP software is already installed. Also, the connection of the storage FCP ports to the SAN fabric must already be in place.
 
 . Check the correct disk shelf configuration, as described in "<<Disk shelf connection>>."
@@ -53,12 +47,10 @@ The following overview summarizes the required storage configuration steps. Each
 . Create a storage virtual machine (SVM), as described in "<<Storage virtual machine configuration>>."
 . Create logical interfaces (LIFs), as described in "<<Logical interface configuration>>."
 . Create a port set, as described in "<<FCP port sets>>."
-. Create initiator groups, volumes, and LUNs within the aggregates, as described in creating "<<LUNs and volumes and mapping LUNs to initiator groups>>."
+. Create initiator groups, volumes, and LUNs within the aggregates, as described in "<<Creating LUNs volumes and mapping LUNs to initiator groups>>."
 
 == Disk shelf connection
-
 === SAS-based disk shelves
-
 A maximum of one disk shelf can be connected to one SAS stack to provide the required performance for the SAP HANA hosts, as shown in the following figure. The disks within each shelf must be distributed equally between both controllers of the HA pair. ADPv2 is used with ONTAP 9 and the new DS224C disk shelves.
 
 [NOTE]
@@ -66,14 +58,12 @@ With the DS224C disk shelf, quad-path SAS cabling can also be used but is not re
 
 image:saphana_aff_fc_image10.png[Error: Missing Graphic Image]
 
-=== NVMe(100GbE)-based disk shelves
-
+=== NVMe (100GbE) -based disk shelves
 Each NS224 NVMe desk shelf is connected with two 100GbE ports per controller, as shown in the following figure. The disks within each shelf must be distributed equally to both controllers of the HA pair. ADPv2 is also used for the NS224 disk shelf.
 
 image:saphana_aff_fc_image11.png[Error: Missing Graphic Image]
 
 == Aggregate configuration
-
 In general, you must configure two aggregates per controller, independent of which disk shelf or disk technology (SSD or HDD) is used. This step is necessary so that you can use all available controller resources. For AFF A200 series systems, one data aggregate is sufficient.
 
 The following figure shows a configuration of 12 SAP HANA hosts running on a 12Gb SAS shelf configured with ADPv2. Six SAP HANA hosts are attached to each storage controller. Four separate aggregates, two at each storage controller, are configured. Each aggregate is configured with 11 disks with nine data and two parity disk partitions. For each controller, two spare partitions are available.
@@ -81,7 +71,6 @@ The following figure shows a configuration of 12 SAP HANA hosts running on a 12G
 image:saphana_aff_fc_image12.jpg[Error: Missing Graphic Image]
 
 == Storage virtual machine configuration
-
 Multiple SAP landscapes with SAP HANA databases can use a single SVM. An SVM can also be assigned to each SAP landscape, if necessary, in case they are managed by different teams within a company.
 
 If there is a QoS profile automatically created and assigned while creating a new SVM, remove this automatically created profile from the SVM to ensure the required performance for SAP HANA:
@@ -91,7 +80,6 @@ vserver modify -vserver <svm-name> -qos-policy-group none
 ....
 
 == Logical interface configuration
-
 Within the storage cluster configuration, one network interface (LIF) must be created and assigned to a dedicated FCP port. If, for example, four FCP ports are required for performance reasons, four LIFs must be created. The following figure shows a screenshot of the eight LIFs (named `fc_*_*`) that were configured on the `hana` SVM.
 
 image:saphana_aff_fc_image13.jpeg[Error: Missing Graphic Image]
@@ -110,7 +98,6 @@ image:saphana_aff_fc_image15.jpeg[Error: Missing Graphic Image]
 With ONTAP 9.8,  a port set is not required,  but it can be created and used through the command line.
 
 == Volume and LUN configuration for SAP HANA single-host systems
-
 The following figure shows the volume configuration of four single-host SAP HANA systems. The data and log volumes of each SAP HANA system are distributed to different storage controllers. For example, volume `SID1_data_mnt00001` is configured on controller A, and volume `SID1_log_mnt00001` is configured on controller B. Within each volume, a single LUN is configured.
 
 [NOTE]
@@ -126,10 +113,10 @@ For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/sha
 |Data, log, and shared volumes for system SID1
 |Data volume: SID1_data_mnt00001
 |Shared volume: SID1_shared
-|â€“
+|
 |Log volume: SID1_log_mnt00001
 |Data, log, and shared volumes for system SID2
-|â€“
+|
 |Log volume: SID2_log_mnt00001
 |Data volume: SID2_data_mnt00001
 |Shared volume: SID2_shared
@@ -137,10 +124,10 @@ For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/sha
 |Shared volume: SID3_shared
 |Data volume: SID3_data_mnt00001
 |Log volume: SID3_log_mnt00001
-|â€“
+|
 |Data, log, and shared volumes for system SID4
 |Log volume: SID4_log_mnt00001
-|â€“
+|
 |Shared volume: SID4_shared
 |Data volume: SID4_data_mnt00001
 |===
@@ -165,7 +152,6 @@ The following table shows an example of the mount point configuration for a sing
 With the described configuration, the `/usr/sap/SID1` directory in which the default home directory of user SID1adm is stored, is on the local disk. In a disaster recovery setup with disk-based replication, NetApp recommends creating an additional LUN within the `SID1_shared` volume for the `/usr/sap/SID1` directory so that all file systems are on the central storage.
 
 == Volume and LUN configuration for SAP HANA single-host systems using Linux LVM
-
 The Linux LVM can be used to increase performance and to address LUN size limitations. The different LUNs of an LVM volume group should be stored within a different aggregate and at a different controller. The following table shows an example for two LUNs per volume group.
 
 [NOTE]
@@ -202,7 +188,6 @@ At the SAP HANA host, volume groups and logical volumes need to be created and m
 With the described configuration, the `/usr/sap/SID1` directory in which the default home directory of user SID1adm is stored, is on the local disk. In a disaster recovery setup with disk-based replication, NetApp recommends creating an additional LUN within the `SID1_shared` volume for the `/usr/sap/SID1` directory so that all file systems are on the central storage.
 
 == Volume and LUN configuration for SAP HANA multiple-host systems
-
 The following figure shows the volume configuration of a 4+1 multiple-host SAP HANA system. The data volumes and log volumes of each SAP HANA host are distributed to different storage controllers. For example, the volume `SID_data_mnt00001` is configured on controller A and the volume `SID_log_mnt00001` is configured on controller B. One LUN is configured within each volume.
 
 The `/hana/shared` volume must be accessible by all HANA hosts and is therefore exported by using NFS. Even though there are no specific performance KPIs for the `/hana/shared` file system, NetApp recommends using a 10Gb Ethernet connection.
@@ -222,29 +207,29 @@ For each SAP HANA host, a data volume and a log volume are created. The `/hana/s
 
 |Data and log volumes for node 1
 |Data volume: SID_data_mnt00001
-|â€“
+|
 |Log volume: SID_log_mnt00001
-|â€“
+|
 |Data and log volumes for node 2
 |Log volume: SID_log_mnt00002
-|â€“
+|
 |Data volume: SID_data_mnt00002
-|â€“
+|
 |Data and log volumes for node 3
-|â€“
+|
 |Data volume: SID_data_mnt00003
-|â€“
+|
 |Log volume: SID_log_mnt00003
 |Data and log volumes for node 4
-|â€“
+|
 |Log volume: SID_log_mnt00004
-|â€“
+|
 |Data volume: SID_data_mnt00004
 |Shared volume for all hosts
 |Shared volume: SID_shared
-|â€“
-|â€“
-|â€“
+|
+|
+|
 |===
 
 The following table shows the configuration and the mount points of a multiple-host system with four active SAP HANA hosts.
@@ -285,7 +270,6 @@ The following table shows the configuration and the mount points of a multiple-h
 With the described configuration, the `/usr/sap/SID` directory in which the default home directory of user SIDadm is stored, is on the local disk for each HANA host. In a disaster recovery setup with disk-based replication, NetApp recommends creating four additional subdirectories in the `SID_shared` volume for the `/usr/sap/SID` file system so that each database host has all its file systems on the central storage.
 
 == Volume and LUN configuration for SAP HANA multiple-host systems using Linux LVM
-
 The Linux LVM can be used to increase performance and to address LUN size limitations. The different LUNs of an LVM volume group should be stored within a different aggregate and at a different controller.
 
 [NOTE]
@@ -308,9 +292,9 @@ The following table shows an example for two LUNs per volume group for a 2+1 SAP
 |Log volume: SID_log_mnt00002
 |Shared volume for all hosts
 |Shared volume: SID_shared
-|â€“
-|â€“
-|â€“
+|
+|
+|
 |===
 
 At the SAP HANA host, volume groups and logical volumes need to be created and mounted, as indicated in the following table.
@@ -346,13 +330,12 @@ The volume options listed in the following table must be verified and set on all
 |Action |
 
 |Disable automatic snapshots
-|vol modify â€“vserver <vserver-name> -volume <volname> -snapshot-policy none
+|vol modify vserver <vserver-name> -volume <volname> -snapshot-policy none
 |Disable visibility of Snapshot directory
 |vol modify -vserver <vserver-name> -volume <volname> -snapdir-access false
 |===
 
-=== Creating LUNs, volumes, and mapping LUNs to initiator groups
-
+=== Creating LUNs volumes and mapping LUNs to initiator groups
 You can use NetApp ONTAP System Manager to create storage volumes and LUNs and map them to the servers.
 
 NetApp offers an automated application wizard for SAP HANA within ONTAP System Manager 9.7 and earlier, which simplifies the volume and LUN provisioning process significantly. It creates and configures the volumes and LUNs automatically according to NetApp best practices for SAP HANA.
@@ -381,8 +364,7 @@ image:saphana_aff_fc_image18.jpeg[Error: Missing Graphic Image]
 
 image:saphana_aff_fc_image19.jpeg[Error: Missing Graphic Image]
 
-== Creating LUNs, volumes, and mapping LUNs to initiator groups using the CLI
-
+== Creating LUNs volumes and mapping LUNs to initiator groups using the CLI
 This section shows an example configuration using the command line with ONTAP 9.8 for a 2+1 SAP HANA multiple host system with SID FC5 using LVM and two LUNs per LVM volume group:
 
 . Create all necessary volumes.

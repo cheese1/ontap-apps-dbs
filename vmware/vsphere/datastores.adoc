@@ -4,7 +4,6 @@ permalink: vmware/vsphere/datastores.html
 keywords: vSphere, datastore, VMFS, FC, FCoE, NVMe/FC, iSCSI, NFS, vVols
 summary: This page describes the best practices for implementing a NetApp ONTAP storage solution in a VMware vSphere environment.
 ---
-
 = Datastores and protocols
 :hardbreaks:
 :nofooter:
@@ -13,6 +12,8 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :imagesdir: ./../media/
 
 [.lead]
+This page describes the best practices for implementing a NetApp ONTAP storage solution in a VMware vSphere environment.
+
 == vSphere datastore and protocol features
 Seven protocols are used to connect VMware vSphere to datastores on a system running ONTAP software:
 
@@ -56,7 +57,7 @@ Default NFS. MaxVolumes is 8. Use ONTAP tools for VMware vSphere to increase to 
 |64-256
 |64-256
 |Autonegotiated
-|Refer to NFS.MaxQueueDepth in https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_recommended_esxi_host_and_other_ontap_settings.html[Recommended ESXi host and other ONTAP settings^].
+|Refer to NFS.MaxQueueDepth in link:settings.html[Recommended ESXi host and other ONTAP settings^].
 |===
 
 The following table lists supported VMware storage-related functionalities.
@@ -191,7 +192,7 @@ The following table lists supported backup features.
 |Datastore or VM
 |===
 
-*NetApp recommends using in-guest iSCSI for Microsoft clusters rather than multiwriter-enabled VMDKs in a VMFS datastore. This approach is fully supported by Microsoft and VMware, offers great flexibility with ONTAP (SnapMirror to ONTAP systems on-premises or in the cloud), is easy to configure and automate, and can be protected with SnapCenter. vSphere 7 adds a new clustered VMDK option. This is different from multiwriter-enabled VMDKs, which requires a datastore presented via the FC protocol that has clustered VMDK support enabled. Other restrictions apply. See VMware's https://docs.vmware.com/en/VMware-vSphere/7.0/vsphere-esxi-vcenter-server-70-setup-wsfc.pdf[Setup for Windows Server Failover Clustering^] documentation for configuration guidelines.
+*NetApp recommends using in-guest iSCSI for Microsoft clusters rather than multiwriter-enabled VMDKs in a VMFS datastore. This approach is fully supported by Microsoft and VMware, offers great flexibility with ONTAP (SnapMirror to ONTAP systems on-premises or in the cloud), is easy to configure and automate, and can be protected with SnapCenter. vSphere 7 adds a new clustered VMDK option. This is different from multiwriter-enabled VMDKs, which requires a datastore presented via the FC protocol that has clustered VMDK support enabled. Other restrictions apply. See VMware's https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.wsfc.doc/GUID-1A2476C0-CA66-4B80-B6F9-8421B6983808.html[Setup for Windows Server Failover Clustering^] documentation for configuration guidelines.
 
 **Datastores using NVMe-oF and NFS v4.1 require vSphere replication. Array-based replication is not supported by SRM.
 
@@ -206,7 +207,7 @@ The following factors might be useful in considering a choice of protocol:
 * *Storage space transparency.* Storage utilization is typically easier to see in NFS environments because thin provisioning returns savings immediately. Likewise, deduplication and cloning savings are immediately available for other VMs in the same datastore or for other storage system volumes. VM density is also typically greater in an NFS datastore, which can improve deduplication savings as well as reduce management costs by having fewer datastores to manage.
 
 == Datastore layout
-ONTAP storage systems offer great flexibility in creating datastores for VMs and virtual disks. Although many ONTAP best practices are applied when using the VSC to provision datastores for vSphere (listed in the section link:vsphere_ontap_recommended_esxi_host_and_other_ontap_settings.html[Recommended ESXi host and other ONTAP settings]), here are some additional guidelines to consider:
+ONTAP storage systems offer great flexibility in creating datastores for VMs and virtual disks. Although many ONTAP best practices are applied when using the VSC to provision datastores for vSphere (listed in the section link:settings.html[Recommended ESXi host and other ONTAP settings]), here are some additional guidelines to consider:
 
 * Deploying vSphere with ONTAP NFS datastores results in a high-performing, easy-to-manage implementation that provides VM-to-datastore ratios that cannot be obtained with block-based storage protocols. This architecture can result in a tenfold increase in datastore density with a correlating reduction in the number of datastores. Although a larger datastore can benefit storage efficiency and provide operational benefits, consider using at least four datastores (FlexVol volumes) to store your VMs on a single ONTAP controller to get maximum performance from the hardware resources. This approach also allows you to establish datastores with different recovery policies. Some can be backed up or replicated more frequently than others based on business needs. Multiple datastores are not required with FlexGroup volumes for performance because they scale by design.
 * NetApp recommends the use of FlexVol volumes for most NFS datastores. Starting with ONTAP 9.8 FlexGroup volumes are supported for use as datastores as well, and are generally recommended for certain use cases. Other ONTAP storage containers such as qtrees are not generally recommended because these are not currently supported by either ONTAP tools for VMware vSphere or the NetApp SnapCenter plugin for VMware vSphere. That being said, deploying datastores as multiple qtrees in a single volume might be useful for highly automated environments that can benefit from datastore-level quotas or VM file clones.

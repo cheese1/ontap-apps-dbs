@@ -4,7 +4,6 @@ permalink: hana/fas-nfs/architecture.html
 keywords: sap, hana, backup, storage, replication, snapmirror, metrocluster, disaster, recovery
 summary: SAP HANA hosts are connected to storage controllers by using a redundant 10GbE or faster network infrastructure.
 ---
-
 = Architecture
 :hardbreaks:
 :nofooter:

@@ -17,7 +17,7 @@ The key to using vVols with ONTAP is the VASA Provider software included as part
 
 ONTAP tools also includes the vCenter UI extensions, REST API server, Storage Replication Adapter for VMware Site Recovery Manager, Monitoring and Host configuration tools, and an array of reports which help you better manage your VMware environment.
 
-== Products and Documentation
+== Products and documentation
 
 The ONTAP FlexClone license (included with ONTAP One) and the ONTAP tools appliance are the only additional products required to use vVols with NetApp ONTAP. Recent releases of ONTAP tools are supplied as a single unified appliance that runs on ESXi, providing the functionality of what formerly were three different appliances and servers. For vVols, it is important to use the ONTAP tools vCenter UI extensions or REST APIs as general management tools and user interfaces for ONTAP functions with vSphere, together with the VASA Provider which provides specific vVols functionality. The SRA component is included for traditional datastores, but VMware Site Recovery Manager does not use SRA for vVols, instead implementing new services in SRM 8.3 and later which leverage the VASA provider for vVols replication.
 
@@ -64,7 +64,7 @@ https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html[For the comp
 
 In addition to product documentation, there are Support Knowledgebase articles that may be useful.
 
-* https://kb.netapp.com/app/answers/answer_view/a_id/1031261[How to perform a VASA Provider Disaster Recovery^]
+* https://kb.netapp.com/mgmt/OTV/NetApp_VASA_Provider/How_to_perform_a_VASA_Provider_Disaster_Recovery_-_Resolution_Guide[How to perform a VASA Provider Disaster Recovery^]
 
 === VASA Provider Dashboard
 
