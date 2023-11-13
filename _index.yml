@@ -15,7 +15,7 @@ indexpage:
       links:
         - title: MariaDB and MySQL on ONTAP
           url: mysql/overview.html
-    - title: Oracle Database
+    - title: Oracle database
       links:
         - title: Oracle on ONTAP
           url: oracle/overview.html

@@ -4,19 +4,12 @@ permalink: vmware/srm/deployment_best_practices.html
 keywords: vmware, site, recovery manager, vsrm, svm, layout, segmentation, smt, best, practices, deploy, ontap, tools, vvols
 summary: With ONTAP, the concept of the storage virtual machine (SVM) provides strict segmentation in secure multitenant environments.
 ---
-
 = Deployment best practices
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
-
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-24 16:18:25.236609
-//
 
 [.lead]
 == SVM layout and segmentation for SMT

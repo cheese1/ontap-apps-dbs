@@ -4,7 +4,6 @@ permalink: vmware/vvols/resources.html
 keywords: tr-4400, vvols, ontap, virtual volumes, protect
 summary: 
 ---
-
 = Troubleshooting
 :nofooter:
 :icons: font
@@ -15,7 +14,6 @@ summary:
 There are several troubleshooting resources available with additional information.
 
 == NetApp Support Site
-
 In addition to a variety of Knowledgebase articles for NetApp virtualization products, the NetApp Support site also offers a convenient landing page for the https://mysupport.netapp.com/site/products/all/details/otv/docs-tab[ONTAP tools for VMware vSphere] product. This portal provides links to articles, downloads, technical reports, and VMware Solutions Discussions on NetApp Community. It is available at:
 
 https://mysupport.netapp.com/site/products/all/details/otv/docs-tab[_NetApp Support Site_]

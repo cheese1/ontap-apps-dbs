@@ -4,8 +4,7 @@ permalink: vmware/vvols/deploy.html
 keywords: tr-4400, vvols, ontap, virtual volumes, deploy
 summary: 
 ---
-
-= Deploying vVols Storage
+= Deploying vVols storage
 :nofooter:
 :icons: font
 :linkattrs:
