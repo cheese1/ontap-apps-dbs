@@ -4,7 +4,6 @@ permalink: hana/aff-nfs/storage_controller_setup.html
 keywords: storage, controller, efficiency, volume encryption, quality of service, qos, fabricpool, DS224C, svm, configuration
 summary: This section describes the configuration of the NetApp storage system. You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 ---
-
 = Storage controller setup
 :hardbreaks:
 :nofooter:
@@ -18,11 +17,9 @@ This section describes the configuration of the NetApp storage system.
 You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 
 == Storage efficiency
-
 Inline deduplication, cross-volume inline deduplication, inline compression, and inline compaction are supported with SAP HANA in an SSD configuration.
 
 == NetApp Volume Encryption
-
 The use of NetApp Volume Encryption (NVE) is supported with SAP HANA.
 
 == Quality of Service
@@ -36,7 +33,6 @@ Starting with ONTAP 9, QoS is configured on the storage volume level and uses ma
 Large write I/O has the biggest performance effect on the storage system. Therefore, the QoS throughput limit should be set to a percentage of the corresponding write SAP HANA storage performance KPI values in the data and log volumes.
 
 == NetApp FabricPool
-
 NetApp FabricPool technology must not be used for active primary file systems in SAP HANA systems. This includes the file systems for the data and log area as well as the `/hana/shared` file system. Doing so results in unpredictable performance, especially during the startup of an SAP HANA system.
 
 Using the “snapshot-only” tiering policy is possible as well as using FabricPool in general at a backup target such as a NetApp SnapVault or SnapMirror destination.
@@ -47,22 +43,19 @@ Using FabricPool for tiering snapshots at primary storage or using FabricPool at
 FabricPool is a good option for moving log backups to another storage tier. Moving backups affects the time needed to recover an SAP HANA database. Therefore, the option “tiering-minimum-cooling-days” should be set to a value that places log backups, which are routinely needed for recovery, on the local fast storage tier.
 
 == Storage configuration
-
 The following overview summarizes the required storage configuration steps. Each step is covered in detail in the subsequent sections. In this section, we assume that the storage hardware is set up and that the ONTAP software is already installed. Also, the connections between the storage ports (10GbE or faster) and the network must already be in place.
 
 . Check the correct disk shelf configuration as described in "<<Disk shelf connection>>."
 . Create and configure the required aggregates as described in "<<Aggregate configuration>>."
 . Create a storage virtual machine (SVM) as described in "<<SVM configuration>>."
 . Create LIFs as described in "<<LIF configuration>>."
-. Create volumes within the aggregates as described in "<<Volume configuration for SAP HANA single host systems>>" and "<<Volume configuration for SAP HANA multiple host systems>>."
+. Create volumes within the aggregates as described in "<<Volume configuration for SAP HANA single-host systems>>" and "<<Volume configuration for SAP HANA multiple-host systems>>."
 . Set the required volume options as described in "<<Volume options>>."
 . Set the required options for NFSv3 as described in "<<NFS configuration for NFSv3>>" or for NFSv4 as described in "<<NFS configuration for NFSv4>>."
 . Mount the volumes to namespace and set export policies as described in "<<Mount volumes to namespace and set export policies>>."
 
 == Disk shelf connection
-
 === SAS disk shelves
-
 A maximum of one disk shelf can be connected to one SAS stack to provide the required performance for the SAP HANA hosts, as shown in the following figure. The disks within each shelf must be distributed equally to both controllers of the HA pair. ADPv2 is used with ONTAP 9 and the DS224C disk shelves.
 
 [NOTE]
@@ -71,13 +64,11 @@ With the DS224C disk shelf, quad-path SAS cabling can also be used but is not re
 image:saphana_aff_nfs_image13.png[Error: Missing Graphic Image]
 
 === NVMe (100GbE) disk shelves
-
 Each NS224 NVMe disk shelf is connected using two 100GbE ports per controller. The disks within each shelf must be distributed equally to both controllers of the HA pair. ADPv2, as described in the aggregate configuration chapter, is also used for the NS224 disk shelf. The following figure depicts the disk shelf connection with an NVMe drive.
 
 image:saphana_aff_nfs_image14.jpg[Error: Missing Graphic Image]
 
 == Aggregate configuration
-
 In general, you must configure two aggregates per controller, independent of the disk shelf or drive technology (SAS SSDs or NVMe SSDs) that is used.  This step is necessary so that you can use all available controller resources. For AFF A200 series systems, one data aggregate is enough.
 
 The following image shows a configuration of 12 SAP HANA hosts running on a 12Gb SAS shelf configured with ADPv2. Six SAP HANA hosts are attached to each storage controller. Four separate aggregates, two at each storage controller, are configured. Each aggregate is configured with 11 disks with nine data and two parity disk partitions. For each controller, two spare partitions are available.
@@ -85,7 +76,6 @@ The following image shows a configuration of 12 SAP HANA hosts running on a 12Gb
 image:saphana_aff_nfs_image15.jpg[Error: Missing Graphic Image]
 
 == SVM configuration
-
 Multiple SAP landscapes with SAP HANA databases can use a single SVM.  An SVM can also be assigned to each SAP landscape, if necessary, in case they are managed by different teams within a company.
 
 If there is a QoS profile automatically created and assigned while creating a new SVM, remove this automatically created profile from the SVM to enable the required performance for SAP HANA:
@@ -95,7 +85,6 @@ vserver modify -vserver <svm-name> -qos-policy-group none
 ....
 
 == LIF configuration
-
 For SAP HANA production systems, you must use different LIFs to mount the data volume and the log volume from the SAP HANA host. Therefore at least two LIFs are required.
 
 The data and log volume mounts of different SAP HANA hosts can share a physical storage network port by either using the same LIFs or by using individual LIFs for each mount.
@@ -120,7 +109,6 @@ Development and test systems can use more data and volume mounts or LIFs on a ph
 For production, development, and test systems, the `/hana/shared` file system can use the same LIF as the data or log volume.
 
 == Volume configuration for SAP HANA single-host systems
-
 The following figure shows the volume configuration of four single-host SAP HANA systems. The data and log volumes of each SAP HANA system are distributed to different storage controllers. For example, volume `SID1_data_mnt00001` is configured on controller A, and volume `SID1_log_mnt00001` is configured on controller B.
 
 [NOTE]
@@ -139,10 +127,10 @@ For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/sha
 |Data, log, and shared volumes for system SID1
 |Data volume: SID1_data_mnt00001
 |Shared volume: SID1_shared
-|–
+|-
 |Log volume: SID1_log_mnt00001
 |Data, log, and shared volumes for system SID2
-|–
+|-
 |Log volume: SID2_log_mnt00001
 |Data volume: SID2_data_mnt00001
 |Shared volume: SID2_shared
@@ -150,10 +138,10 @@ For each SAP HANA host, a data volume, a log volume, and a volume for `/hana/sha
 |Shared volume: SID3_shared
 |Data volume: SID3_data_mnt00001
 |Log volume: SID3_log_mnt00001
-|–
+|-
 |Data, log, and shared volumes for system SID4
 |Log volume: SID4_log_mnt00001
-|–
+|-
 |Shared volume: SID4_shared
 |Data volume: SID4_data_mnt00001
 |===
@@ -177,7 +165,6 @@ shared
 |===
 
 == Volume configuration for SAP HANA multiple-host systems
-
 The following figure shows the volume configuration of a 4+1 SAP HANA system. The data and log volumes of each SAP HANA host are distributed to different storage controllers. For example, volume `SID1_data1_mnt00001` is configured on controller A, and volume `SID1_log1_mnt00001` is configured on controller B.
 
 [NOTE]
@@ -195,23 +182,23 @@ For each SAP HANA host, a data volume and a log volume are created. The `/hana/s
 
 |Data and log volumes for node 1
 |Data volume: SID_data_mnt00001
-|–
+|-
 |Log volume: SID_log_mnt00001
-|–
+|-
 |Data and log volumes for node 2
 |Log volume: SID_log_mnt00002
-|–
+|-
 |Data volume: SID_data_mnt00002
-|–
+|-
 |Data and log volumes for node 3
-|–
+|-
 |Data volume: SID_data_mnt00003
-|–
+|-
 |Log volume: SID_log_mnt00003
 |Data and log volumes for node 4
-|–
+|-
 |Log volume: SID_log_mnt00004
-|–
+|-
 |Data volume: SID_data_mnt00004
 |Shared volume for all hosts
 |Shared volume: SID_shared
@@ -226,35 +213,35 @@ The following table shows the configuration and the mount points of a multiple-h
 |Junction path |Directory |Mount point at SAP HANA host |Note
 
 |SID_data_mnt00001
-|–
+|-
 |/hana/data/SID/mnt00001
 |Mounted at all hosts
 |SID_log_mnt00001
-|–
+|-
 |/hana/log/SID/mnt00001
 |Mounted at all hosts
 |SID_data_mnt00002
-|–
+|-
 |/hana/data/SID/mnt00002
 |Mounted at all hosts
 |SID_log_mnt00002
-|–
+|-
 |/hana/log/SID/mnt00002
 |Mounted at all hosts
 |SID_data_mnt00003
-|–
+|-
 |/hana/data/SID/mnt00003
 |Mounted at all hosts
 |SID_log_mnt00003
-|–
+|-
 |/hana/log/SID/mnt00003
 |Mounted at all hosts
 |SID_data_mnt00004
-|–
+|-
 |/hana/data/SID/mnt00004
 |Mounted at all hosts
 |SID_log_mnt00004
-|–
+|-
 |/hana/log/SID/mnt00004
 |Mounted at all hosts
 |SID_shared
@@ -284,7 +271,6 @@ The following table shows the configuration and the mount points of a multiple-h
 |===
 
 == Volume options
-
 You must verify and set the volume options listed in the following table on all SVMs. For some of the commands, you must switch to the advanced privilege mode within ONTAP.
 
 |===
@@ -293,7 +279,7 @@ You must verify and set the volume options listed in the following table on all 
 |Disable visibility of Snapshot directory
 |vol modify -vserver <vserver-name> -volume <volname> -snapdir-access false
 |Disable automatic snapshots
-|vol modify –vserver <vserver-name> -volume <volname> -snapshot-policy none
+|vol modify -vserver <vserver-name> -volume <volname> -snapshot-policy none
 |Disable access time update, except of the SID_shared volume
 |set advanced
 vol modify -vserver <vserver-name> -volume <volname> -atime-update false
@@ -301,7 +287,6 @@ set admin
 |===
 
 == NFS configuration for NFSv3
-
 The NFS options listed in the following table must be verified and set on all storage controllers. For some of the commands shown in this table, you must switch to the advanced privilege mode.
 
 |===
@@ -323,7 +308,6 @@ set admin
 |===
 
 == NFS configuration for NFSv4
-
 The NFS options listed in the following table must be verified and set on all SVMs.
 
 For some of the commands in this table, you must switch to the advanced privilege mode.
@@ -396,5 +380,4 @@ The parameters are within `nameserver.ini` as shown in the following table. Keep
 |===
 
 == Mount volumes to namespace and set export policies
-
 When a volume is created, the volume must be mounted to the namespace. In this document, we assume that the junction path name is the same as the volume name. By default, the volume is exported with the default policy. The export policy can be adapted if required.

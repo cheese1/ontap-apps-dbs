@@ -18,7 +18,6 @@ This section describes the configuration of the NetApp storage system.
 You must complete the primary installation and setup according to the corresponding ONTAP setup and configuration guides.
 
 == Storage efficiency
-
 Inline deduplication, cross- volume inline deduplication, inline compression, and inline compaction are supported with SAP HANA in an SSD configuration.
 
 Enabling storage efficiency features in an HDD-based configuration is not supported.
@@ -52,8 +51,8 @@ FabricPool is a good option for moving log backups to another storage tier. Movi
 
 The following overview summarizes the required storage configuration steps. Each step is covered in detail in the subsequent sections. In this section, we assume that the storage hardware is set up and that the ONTAP software is already installed. Also, the connections between the storage ports (10GbE or faster) and the network must already be in place.
 
-. Check the correct SAS stack configuration as described in link:storage_controller_setup.html#disk-shelf-connection[Disk shelf connection.]
-. Create and configure the required aggregates as described in link:storage_controller_setup.html#aggregate-configuration[Aggregate configuration.]
+. Check the correct SAS stack configuration as described in <<Disk shelf connection>>.
+. Create and configure the required aggregates as described in <<Aggregate configuration>>.
 . Create a storage virtual machine (SVM) as described in link:storage_controller_setup.html#storage-virtual-machine-configuration[Storage virtual machine configuration.]
 . Create LIFs as described in link:storage_controller_setup.html#logical-interface-configuration[Logical interface configuration.]
 . Create volumes within the aggregates as described in link:storage_controller_setup.html#volume-configuration-for-sap-hana-single-host-systems[Volume configuration for SAP HANA single-host systems] and link:saphana-fas-nfs_storage_controller_setup.html#volume-configuration-for-sap-hana-multiple-host-systems[Volume configuration for SAP HANA multiple-host systems.]
