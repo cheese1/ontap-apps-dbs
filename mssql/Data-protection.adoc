@@ -9,7 +9,7 @@ summary: Microsoft SQL Server data protection with ONTAP
 [.lead]
 Protecting database is critical to any organization. As data size and count of databases have increased, maintaining recovery time objective (RTO) and recovery point objective (RPO) is very crucial.
 
-The main consideration for database backup is leveraging NetApp Snapshot technology. Data protection planning on ONTAP is discussed link:../common/dp/overview.html[here]. Application consistent backup and database layout are other key consideration to achieve RTO and RPO which can be orchestrated by NetApp SnapCenter.
+The main consideration for database backup is leveraging NetApp Snapshot technology. Application consistent backup and database layout are other key consideration to achieve RTO and RPO which can be orchestrated by NetApp SnapCenter.
 
 == SnapCenter
 SnapCenter is the NetApp data protection software for enterprise applications.SQL Server databases can be quickly and easily protected using NetApp SnapCenter software with the Plug-in for SQL Server and the Plug-in for Microsoft Windows.

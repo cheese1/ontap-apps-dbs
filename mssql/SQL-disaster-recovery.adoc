@@ -9,7 +9,7 @@ summary: Microsoft SQL Server on ONTAP
 [.lead]
 NetApp provides various approaches to increase data availability if there is hardware,software or site failure. 
 
-NetApp offers technologies like MetroCluster, SnapMirror Business Continuity(SM-BC) , SnapMirror. You can find an descriptive of these features link:../common/overview-dr.html[here].  
+NetApp offers technologies like link:https://docs.netapp.com/us-en/ontap-metrocluster/[MetroCluster^], link:https://docs.netapp.com/us-en/ontap/smbc/index.html[SnapMirror Business Continuity(SM-BC)^], link:https://docs.netapp.com/us-en/ontap/concept_dp_overview.html[SnapMirror^].
 
 == NetApp SnapMirror
 NetApp SnapMirror technology offers a fast and flexible enterprise solution for mirroring or replicating data over LANs and WANs. SnapMirror technology transfers only modified 4KB data blocks to the destination after the initial base transfer, significantly reducing network bandwidth requirements. SnapMirror provides asynchronous volume-level replication that is based on a configured replication update interval. 

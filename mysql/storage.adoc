@@ -7,4 +7,4 @@ summary: MySQL on ONTAP
 = Storage configuration
 
 [.lead]
-For details on configuring storage used for MySQL databases, see link:../common/storage-configuration/overview.html[Enterprise applications on ONTAP storage configuration]
+For details on configuring storage used for MySQL databases, see link:https://docs.netapp.com/us-en/ontap/nas-management/index.html[configuring NAS^] and link:https://docs.netapp.com/us-en/ontap/san-management/index.html[configuring SAN^] documentation.

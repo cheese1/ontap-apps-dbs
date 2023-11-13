@@ -23,4 +23,4 @@ A less obvious use of caching is at the OS file system layer. Blocks from a moun
 
 ONTAP protects databases and operating systems from this scenario with NVFAIL and its associated settings.
 
-For important additional information, please read link:../../common/dp/integrity.html#hardware-failure-protection-nvfail[NVFAIL with HA Pairs] and link:../../common/metrocluster/nvfail.html[NVFAIL with MetroCluster]
+For important additional information, please read link:https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_monitoring_and_protecting_database_validity_by_using_nvfail.html[NVFAIL with MetroCluster^]
