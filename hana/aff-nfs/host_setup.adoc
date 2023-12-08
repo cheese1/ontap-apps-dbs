@@ -124,8 +124,8 @@ sapcc-hana-tst-06:/ # mkdir -p /hana/log/NF2/mnt00001
 sapcc-hana-tst-06:/ # mkdir -p /hana/shared
 sapcc-hana-tst-06:/ # mkdir -p /usr/sap/NF2
 
-sapcc-hana-tst-06:/ # chmod -R 777 /hana/log/NF2
-sapcc-hana-tst-06:/ # chmod -R 777 /hana/data/NF2
+sapcc-hana-tst-06:/ # chmod â€“R 777 /hana/log/NF2
+sapcc-hana-tst-06:/ # chmod â€“R 777 /hana/data/NF2
 sapcc-hana-tst-06:/ # chmod -R 777 /hana/shared
 sapcc-hana-tst-06:/ # chmod -R 777 /usr/sap/NF2
 ....
@@ -247,7 +247,7 @@ sapcc-hana-tst-06:/ # cat /etc/fstab
 <storage-vif-data01>:/NF2_shared/shared /hana/shared nfs rw,nfsvers=3,hard,timeo=600,nconnect=8,rsize=1048576,wsize=262144,bg,noatime,nolock 0 0
 ....
 
-. Run `mount -a` to mount the file systems on all hosts.
+. Run `mount â€“a` to mount the file systems on all hosts.
 
 The next example shows a multiple-host SAP HANA database with SID=NF2 using NFSv4.1 for data and log file systems and NFSv3 for the `/hana/shared` and `/usr/sap/NF2` file systems. An NFS transfer size of 1MB for reads and 256k for writes is used.
 
@@ -268,4 +268,4 @@ stlrx300s8-5:/ # cat /etc/fstab
 <storage-vif-data02>:/NF2_shared/shared /hana/shared nfs rw,nfsvers=3,hard,timeo=600,nconnect=8,rsize=1048576,wsize=262144,bg,noatime,nolock 0 0
 ....
 
-. Run `mount -a` to mount the file systems on all hosts.
+. Run `mount â€“a` to mount the file systems on all hosts.

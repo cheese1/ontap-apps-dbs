@@ -1,6 +1,16 @@
 indexpage:
   lead: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures for ONTAP and enterprise applications and infrastructure.
   tiles:
+    - title: ONTAP for enterprise applications
+      links:
+        - title: ONTAP core technologies
+          url: common/overview.html
+        - title: ONTAP data protection
+          url: common/dp/overview.html
+        - title: Disaster recovery
+          url: common/overview.html
+        - title: Application and database tiering
+          url: common/tiering/overview.html
     - title: Microsoft SQL Server
       links:
         - title: Microsoft SQL Server on ONTAP
@@ -11,11 +21,13 @@ indexpage:
           url: mssql/Data-protection.html
         - title: Microsoft SQL Server disaster recovery
           url: mssql/SQL-disaster-recovery.html
-    - title: MySQL database
+    - title: Open-source databases
       links:
         - title: MariaDB and MySQL on ONTAP
           url: mysql/overview.html
-    - title: Oracle database
+        - title: PostgreSQL on ONTAP
+          url: postgres/overview.html
+    - title: Oracle Database
       links:
         - title: Oracle on ONTAP
           url: oracle/overview.html
@@ -25,10 +37,6 @@ indexpage:
           url: oracle/dp/overview-dr.html
         - title: Oracle migration
           url: oracle/migration/overview.html
-    - title: PostgreSQL
-      links:
-        - title: PostgreSQL on ONTAP
-          url: postgres/overview.html
     - title: SAP HANA
       links:
         - title: SAP HANA on AFF with FCP

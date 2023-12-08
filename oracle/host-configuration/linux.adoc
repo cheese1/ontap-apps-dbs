@@ -15,26 +15,8 @@ summary: Oracle on ONTAP using Linux
 [.lead]
 Configuration topics specific to the Linux OS.
 
-== Linux NFSv3 TCP slot tables 
-TCP slot tables are the NFSv3 equivalent of host bus adapter (HBA) queue depth. These tables control the number of NFS operations that can be outstanding at any one time. The default value is usually 16, which is far too low for optimum performance. The opposite problem occurs on newer Linux kernels, which can automatically increase the TCP slot table limit to a level that saturates the NFS server with requests.
-
-For optimum performance and to prevent performance problems, adjust the kernel parameters that control the TCP slot tables.
-
-Run the `sysctl -a | grep tcp.*.slot_table` command, and observe the following parameters:
-
-....
-# sysctl -a | grep tcp.*.slot_table
-sunrpc.tcp_max_slot_table_entries = 128
-sunrpc.tcp_slot_table_entries = 128
-....
-
-All Linux systems should include `sunrpc.tcp_slot_table_entries`, but only some include `sunrpc.tcp_max_slot_table_entries`. They should both be set to 128.
-
-|===
-|Caution
-
-|Failure to set these parameters may have significant effects on performance. In some cases, performance is limited because the linux OS is not issuing sufficient I/O. In other cases, I/O latencies increases as the linux OS attempts to issue more I/O than can be serviced.
-|===
+== Slot tables
+NFS performance on Linux depends on a parameter called `tcp_max_slot_table_entries`. Please see the link:../../common/storage-configuration/nfs.html[NFS] for critical information.
 
 == Linux NFS mount options
 The following table lists the Linux NFS mount options for a single instance.

@@ -18,15 +18,7 @@ Use the following mount option while mounting an NFS file system:
 nfs4 rw, hard,nointr,bg,vers=4,sync,proto=tcp,noatime,rsize=65536,wsize=65536
 ....
 
-== ONTAP NFS transfer sizes
-By default, ONTAP limits NFS I/O sizes to 64K. Random I/O with an most applications and databases uses a much smaller block size which is well below the 64K maximum. Large-block I/O is usually parallelized, so the 64K maximum is also not a limitation to obtaining maximum bandwidth.
+To improve NFS performance, see link:../common/storage-configuration/nfs.html#ontap-nfs-transfer-sizes[NFS transfer sizes].
 
-There are some workloads where the 64K maximum does create a limitation. In particular, single-threaded operations such as backup or recovery operation or a database full table scan run faster and more efficiently if the database can perform fewer but larger I/Os. The optimum I/O handling size for ONTAP is 256K. 
-
-The maximum transfer size for a given ONTAP SVM can be changed by following the proceedure found link:https://docs.netapp.com/us-en/ontap/performance-admin/check-nfs-tcp-read-write-size-task.html[here^].
-
-|===
-|Caution
-
-|Never decrease the maximum allowable transfer size on ONTAP below the value of rsize/wsize of currently mounted NFS file systems. This can create hangs or even data corruption with some operating systems. For example, if NFS clients are currently set at an rsize/wsize of 65536, then the ONTAP maximum transfer size could be adjusted between 65536 and 1048576 with no effect because the clients themselves are limited. Reducing the maximum transfer size below 65536 can damage availability or data.
-|===
+== SAN
+For guidance on SAN configuration and important details about LVM striping and LUN counts, see link:..//common/storage-configuration/fcsan.html[FC SAN].
