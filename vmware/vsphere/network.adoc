@@ -4,6 +4,7 @@ permalink: vmware/vsphere/network.html
 keywords: vSphere, datastore, VMFS, FC, FCoE, NVMe/FC, iSCSI, NFS, vVols
 summary: This page describes the best practices for implementing a NetApp ONTAP storage solution in a VMware vSphere environment.
 ---
+
 = Network configuration
 :hardbreaks:
 :nofooter:

@@ -4,6 +4,7 @@ permalink: hana/fas-nfs/sap_hana_installation_preparations_for_nfsv4.html
 keywords: sap, hana, installation, preparations, nfsv4, user, authentication, storage, controller, hosts
 summary: NFS version 4 and higher requires user authentication. This authentication can be accomplished by using a central user management tool such as a Lightweight Directory Access Protocol (LDAP) server or with local user accounts.
 ---
+
 = SAP HANA installation preparations for NFSv4
 :hardbreaks:
 :nofooter:
@@ -40,6 +41,7 @@ systemctl start nfs-idmapd.service
 The latest Linux kernels do not require this step. Warning messages can be safely ignored.
 
 == Storage controllers
+
 The user ID and group ID must be the same on the SAP HANA hosts and the storage controllers. The group and user are created by entering the following commands on the storage cluster:
 
 ....

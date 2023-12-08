@@ -101,10 +101,10 @@ stlrx300s8-6:/ # cat /etc/fstab
 +
 ....
 stlrx300s8-6:/ # mkdir -p /hana/data2/SS3/mnt00001
-stlrx300s8-6:/ # chmod -R 777 /hana/data2/SS3
+stlrx300s8-6:/ # chmod â€“R 777 /hana/data2/SS3
 ....
 
-. To mount the file systems, run the `mount -a` command.
+. To mount the file systems, run the `mount â€“a` command.
 
 == Adding an additional datavolume partition
 

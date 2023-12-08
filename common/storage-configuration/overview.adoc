@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: common/storage-configuration/overview.html
+keywords: SAN, ASM, LVM
+summary: Storage configuration for enterprise applications
+---
+= Storage configuration overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+This section contains the high-level recommendations for configuring ONTAP storage systems for use with enterprise applications.
+
+There is no one-size-fits-all approach. The requirements in terms of protocol, network, NFS/SAN layout, and many other aspect of storage configuration will vary from project to project.
+
+The purpose of this section it to call out many of the high-level concepts and critical settings required for creating a high-performance, resilient, manageable storage configuration.

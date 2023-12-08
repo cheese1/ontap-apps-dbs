@@ -4,12 +4,19 @@ permalink: vmware/srm/additional_information.html
 keywords: vmware, site, recovery manager, vsrm, hybrid, cloud, additional, information
 summary: To learn more about the information that is described in this document, review the following documents and/or websites.
 ---
-= Additional information
+
+= Additional Information
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ./../media/
+
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-06-24 16:18:25.271968
+//
 
 [.lead]
 To learn more about the information that is described in this document, review the following documents and/or websites:

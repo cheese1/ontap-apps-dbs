@@ -15,4 +15,4 @@ summary: FabricPool overview
 [.lead]
 Understanding how FabricPool tiering affects applications and databases requires an understanding of low-level FabricPool architecture.
 
-A detailed overview of FabricPool can be found link:https://docs.netapp.com/us-en/ontap/fabricpool/index.html[here^].
+For a detailed overview for successfully implementing a tiering strategy with MySQL, click link:../common/tiering/overview.html[here].

@@ -4,6 +4,7 @@ permalink: vmware/links/demos-videos.html
 keywords: vSphere, cloud, hybrid cloud, AWS, Azure, Google cloud, snapmirror cloud, cloud backup service, Cloud Sync, FabricPool, ONTAP
 summary: This page provides and introduction to videos and tutorials.
 ---
+
 = Hybrid Cloud, virtualization and containers videos and demos
 :hardbreaks:
 :nofooter:
@@ -112,4 +113,7 @@ For more information about VMware Tanzu, see the https://tanzu.vmware.com/tanzu[
 Red Hat OpenShift, an enterprise Kubernetes platform, enables you to run container-based applications with an open hybrid-cloud strategy. Available as a cloud service on leading public clouds or as self-managed software, Red Hat OpenShift provides customers with the flexibility they need when designing their container-based solution.
 
 For more information regarding Red Hat OpenShift, see this https://www.redhat.com/en/technologies/cloud-computing/openshift[Red Hat OpenShift Overview^]. You can also review the product documentation and deployment options to learn more about Red Hat OpenShift.
+
+* https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_videos_workload_migration_manual.html[Workload Migration - Red Hat OpenShift with NetApp^]
+* https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_videos_RHV_deployment.html[Red Hat OpenShift Deployment on RHV: Red Hat OpenShift with NetApp^]
 ====
