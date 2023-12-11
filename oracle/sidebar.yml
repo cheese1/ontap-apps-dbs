@@ -6,7 +6,7 @@ entries:
   - title: ONTAP configuration
     entries:
     - title: RAID
-      url: /oracle/ontap-configuration/raid.html
+      url: /oracle/ontap-configuration/raid-oracle.html
     - title: Capacity limits
       url: /oracle/ontap-configuration/capacity-limits.html
     - title: Storage virtual machines
