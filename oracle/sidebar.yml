@@ -4,6 +4,7 @@ entries:
   - title: Overview
     url: /oracle/overview.html
   - title: ONTAP configuration
+    entries:
     - title: RAID
       url: /oracle/ontap-configuration/raid.html
     - title: Capacity limits
