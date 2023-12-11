@@ -14,19 +14,19 @@ summary:
 [.lead]
 There are several steps to creating vVols storage for your VMs. 
 
-The first two steps may not be needed for an existing vSphere environment that uses ONTAP for traditional datastores. You may already be using ONTAP tools for managing, automating, and reporting your VMFS or traditional NFSv3 based storage. These steps are covered in more detail in the following section.
+The first two steps may not be needed for an existing vSphere environment that uses ONTAP for traditional datastores. You may already be using ONTAP tools for managing, automating, and reporting with your VMFS or traditional NFS based storage. These steps are covered in more detail in the following section.
 
-. Create the SVM (protocol configuration, either NVMe/FC, NFSv3, iSCSI, FCP, or a mix of those options) using either ONTAP System Manager wizards, or command line.
-* At least one LIF per node for each switch/fabric connection. Preferably two or more per node for SAN protocols.
+. Create the Storage Virtual Machine (SVM) and its protocol configuration. You will select NVMe/FC, NFSv3, NFSv4.1, iSCSI, FCP, or a mix of those options. You may use either ONTAP System Manager wizards, or the cluster shell command line.
+* At least one LIF per node for each switch/fabric connection. As a best practice, create two or more per node for FCP, iSCSI, or NVMe-based protocols.
 * Volumes may be created at this time, but it is simpler to let the _Provision Datastore_ wizard create them. The only exception to this rule is if you plan to use vVols replication with VMware Site Recovery Manager. This is easier to set up with pre-existing FlexVol volumes with existing SnapMirror relationships. Be mindful to not enable QoS on any volumes to be used for vVols as this is intended to be managed by SPBM and ONTAP tools.
 
 . Deploy ONTAP tools for VMware vSphere using the OVA downloaded from the NetApp Support Site.
 
 . Configure ONTAP tools for your environment.
 * Add the ONTAP cluster to ONTAP tools under _Storage Systems_
-** While ONTAP tools and SRA support both cluster-level and SVM-level credentials, the VASA Provider supports only cluster-level credentials for storage systems. Therefore, if you plan to use vVols, you must add your ONTAP clusters using cluster scoped credentials.
+** While ONTAP tools and SRA support both cluster-level and SVM-level credentials, the VASA Provider supports only cluster-level credentials for storage systems. This is becuase many of the APIs used for vVols are only avaialble at the cluster level. Therefore, if you plan to use vVols, you must add your ONTAP clusters using cluster-scoped credentials.
 * If your ONTAP data LIFs are on different subnets from your VMkernel adapters, then you must add the VMkernel adapter subnets to the selected subnets list in the settings menu of ONTAP tools. By default, ONTAP tools will secure your storage traffic by only allowing local subnet access.
-* The ONTAP tools comes with several pre-defined policies that may be used or see Section 3.3 for guidance on creating SCPs.
+* The ONTAP tools comes with several pre-defined policies that may be used or see <<Managing VMs with policies>> for guidance on creating SCPs.
 
 . Use the _ONTAP tools_ menu in vCenter to start the _Provision datastore_ wizard.
 
@@ -53,7 +53,7 @@ To automate storage provisioning with policy based management, we need to:
 * Define the capabilities of the storage (ONTAP node and FlexVol volume) with Storage Capability Profiles (SCPs).
 * Create VM storage policies that map to the defined SCPs.
 
-NetApp has simplified the capabilities and mapping beginning with VASA Provider 7.2 with continuing improvements throughout later versions. This section focuses on this new approach. Earlier releases supported a greater number of capabilities and allowed them to be mapped individually to storage policies, but this approach is no longer supported. Table 3 compares capabilities across releases.
+NetApp has simplified the capabilities and mapping beginning with VASA Provider 7.2 with continuing improvements throughout later versions. This section focuses on this new approach. Earlier releases supported a greater number of capabilities and allowed them to be mapped individually to storage policies, but this approach is no longer supported.
 
 === Storage Capability Profile capabilities by ONTAP tools release
 [%autwidth.stretch,options="header",]
@@ -62,7 +62,7 @@ NetApp has simplified the capabilities and mapping beginning with VASA Provider 
 | *Compression* | Yes, No, Any | All | Mandatory for AFF in 7.2 and later.
 | *Deduplication* | Yes, No, Any | All |M andatory for AFF in 7.2 and later.
 | *Encryption* | Yes, No, Any | 7.2 and later | Selects/creates encrypted FlexVol volume.. ONTAP license required.
-| *Max IOPS* | <number> | 7.1 and later, but differences | Listed under QoS Policy Group for 7.2 and later. See Table 4 for more information.
+| *Max IOPS* | <number> | 7.1 and later, but differences | Listed under QoS Policy Group for 7.2 and later. See <<Performance management with ONTAP tools 9.10 and later>> for more information.
 | *Personality* |A FF, FAS | 7.2 and later | FAS also includes other non-AFF systems, such as ONTAP Select. AFF includes ASA.
 | *Protocol* | NFS, NFS 4.1, iSCSI, FCP, NVMe/FC, Any | 7.1 and earlier, 9.10 and later | 7.2-9.8 is effectively “Any”. Beginning again in 9.10 where NFS 4.1 and NVMe/FC were added to the original list.
 | *Space Reserve (Thin Provisioning)* | Thin, Thick, (Any) | All, but differences | Called Thin Provisioning in 7.1 and earlier, which also allowed value of Any. Called Space Reserve in 7.2. All releases default to Thin.
@@ -91,9 +91,9 @@ Once the necessary SCPs have been created, they may be used to create the vVols 
 === Creating VM Storage Policies
 VM Storage Policies are used in vSphere to manage optional features such as Storage I/O Control or vSphere Encryption. They are also used with vVols to apply specific storage capabilities to the VM. Use the “NetApp.clustered.Data.ONTAP.VP.vvol” storage type and “ProfileName” rule to apply a specific SCP to VMs through use of the Policy. See Figure 6 for an example of this with the ONTAP tools VASA Provider. Rules for “NetApp.clustered.Data.ONTAP.VP.VASA10” storage are to be used with non-vVols based datastores.
 
-Earlier releases are similar, but as mentioned in Table 3, your options will vary.
+Earlier releases are similar, but as mentioned in <<Storage Capability Profile capabilities by ONTAP tools release>>, your options will vary.
 
-Once the storage policy has been created, it can be used when provisioning new VMs as shown in Figure 1. Guidelines for using performance management capabilities with VASA Provider 7.2 are covered in Table 4.
+Once the storage policy has been created, it can be used when provisioning new VMs as shown in Figure 1. Guidelines for using performance management capabilities with VASA Provider 7.2 are covered in <<Performance management with ONTAP tools 9.10 and later>>.
 
 ==== VM storage policy creation with ONTAP tools VASA Provider 9.10
 image:vvols-image15.png["VM Storage Policy creation with ONTAP tools VASA Provider 9.10",300]
