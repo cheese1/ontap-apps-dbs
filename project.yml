@@ -9,7 +9,6 @@ sidebar:
   entries:
     - title: Enterprise applications
       url: /index.html
-    - section: common
     - section: mssql
     - section: mysql
     - section: oracle
