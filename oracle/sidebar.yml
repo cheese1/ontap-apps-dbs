@@ -8,17 +8,17 @@ entries:
     - title: RAID
       url: /oracle/ontap-configuration/raid-oracle.html
     - title: Capacity limits
-      url: /oracle/ontap-configuration/capacity-limits.html
+      url: /oracle/ontap-configuration/oracle-capacity-limits.html
     - title: Storage virtual machines
-      url: /oracle/ontap-configuration/svm.html
+      url: /oracle/ontap-configuration/oracle-svm.html
     - title: Quality of service (QoS)
-      url: /oracle/ontap-configuration/qos.html
+      url: /oracle/ontap-configuration/oracle-qos.html
     - title: Efficiency
-      url: /oracle/ontap-configuration/efficiency.html
+      url: /oracle/ontap-configuration/oracle-efficiency.html
     - title: Thin provisioning
-      url: /oracle/ontap-configuration/thin-provisioning.html
+      url: /oracle/ontap-configuration/oracle-thin-provisioning.html
     - title: Failover and switchover
-      url: /oracle/ontap-configuration/failover.html
+      url: /oracle/ontap-configuration/oracle-and-ontap-failover.html
   - title: Database configuration
     entries:
     - title: db_file_multiblock_read_count

@@ -1,0 +1,29 @@
+---
+sidebar: sidebar
+permalink: oracle/ontap-configuration/oracle-thin-provisioning.html
+keywords: thin provisioning, oracle
+summary: Oracle and ONTAP thin provisioning
+---
+= Thin provisioning with Oracle
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+Thin provisioning for an Oracle database requires careful planning because the result is configuring more space on a storage system than is necessarily physically available. It is very much worth the effort because, when done correctly, the result is significant cost savings and improvements in manageability.
+
+include::_include/thin-provisioning.adoc[]
+
+== ASM Reclamation Utility and zero-block detection
+ONTAP efficiently removes zeroed blocks written to a file or LUN when inline compression is enabled. Utilities such as the Oracle ASM Reclamation Utility (ASRU) work by writing zeros to unused ASM extents.
+
+This allows DBAs to reclaim space on the storage array after files are deleted. ONTAP intercepts the zeros and deallocates the space from the LUN. The reclamation process is extremely fast because no data is being written within the storage system.
+
+From a database perspective, the ASM diskgroup contains zeros, and reading those regions of the LUNs would result in a stream of zeros, but ONTAP does not store the zeros on drives. Instead, simple metadata changes are made that internally mark the zeroed regions of the LUN as empty of any data.
+
+For similar reasons, performance testing involving zeroed data is not valid since blocks of zeros are not actually processed as writes within the storage array.
+
+[NOTE]
+When using ASRU, ensure that all Oracle-recommended patches are installed.

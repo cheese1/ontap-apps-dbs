@@ -5,7 +5,7 @@ keywords: oracle,raid,mirroring
 summary: RAID and Oracle Databases
 ---
 
-= RAID levels - Oracle
+= Oracle RAID requirements
 :hardbreaks:
 :nofooter:
 :icons: font
