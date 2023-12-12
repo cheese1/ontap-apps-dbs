@@ -146,7 +146,7 @@ https://www.netapp.com/pdf.html?item=/media/10681-tr4684.pdf[_TR-4684 Implementi
 
 | *Follow all protocol best practices.* 
 | Refer to NetApp and VMware's other best practice guides specific to the protocol you've selected. In general, there are not any changes other than those already mentioned.
-
+[[Figure_6]]
 Example network configuration using vVols over NFS v3:
 
 image:vvols-image18.png[network configuration using vVols over NFS v3,500]
