@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracld/dr/metrocluster/physical-architecture.html
+permalink: oracle/dr/metrocluster/physical-architecture.html
 keywords: metrocluster, MCC, MCC-IP
 summary: MetroCluster Physical Architecture
 ---
