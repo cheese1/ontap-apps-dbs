@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/tiering/logs.html
+permalink: oracle/tiering/logs.html
 keywords: tiering, fabricpool
 summary: Selective file tiering
 ---

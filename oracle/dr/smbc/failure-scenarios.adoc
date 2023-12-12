@@ -1,5 +1,5 @@
 ---
-permalink: common/smbc/failure-scenarios.html
+permalink: oracle/dr/smbc/failure-scenarios.html
 sidebar: sidebar
 keywords: SM-BC, smbc, failover
 summary: "SM-BC: failure scenarios"

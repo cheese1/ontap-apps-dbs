@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/tiering/access_interruptions.html
+permalink: oracle/tiering/access_interruptions.html
 keywords: tiering, fabricpool, interruption
 summary: Databases on FabricPool during object store access interruptions
 ---

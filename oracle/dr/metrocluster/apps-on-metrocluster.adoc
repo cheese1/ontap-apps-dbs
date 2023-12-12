@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/apps-on-metrocluster.html
+permalink: oracle/dr/metrocluster/apps-on-metrocluster.html
 keywords: Metrocluster, mcc, MCC-IP
 summary: Applications with MetroCluster
 ---

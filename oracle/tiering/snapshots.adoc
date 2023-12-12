@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/tiering/snapshots.html
+permalink: oracle/tiering/snapshots.html
 keywords: tiering, fabricpool
 summary: Snapshot tiering
 ---

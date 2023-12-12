@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/smbc/failover.html
+permalink: oracle/dr/smbc/failover.html
 keywords: smbc, sm-bc
 summary: SnapMirror Business Continuity (SM-BC) overview
 ---

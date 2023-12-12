@@ -1,5 +1,5 @@
 ---
-permalink: common/tiering/overview.html
+permalink: oracle/tiering/overview.html
 sidebar: sidebar
 keywords: tiering, fabricpool
 summary: FabricPool overview

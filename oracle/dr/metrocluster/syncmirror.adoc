@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/syncmirror.html
+permalink: oracle/dr/metrocluster/syncmirror.html
 keywords: metrocluster, syncmirror
 summary: SyncMirror is a maximum-performance, scale-out synchronous mirroring technology
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/tiering/backups.html
+permalink: oracle/tiering/backups.html
 keywords: tiering, fabricpool
 summary: Backup file tiering
 ---

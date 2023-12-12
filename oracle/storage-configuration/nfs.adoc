@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/storage-configuration/nfs.html
+permalink: oracle/storage-configuration/nfs.html
 keywords: NFS
 summary: NFS configuration overview
 ---

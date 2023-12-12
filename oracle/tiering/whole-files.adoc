@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/tiering/whole-files.html
+permalink: oracle/tiering/whole-files.html
 keywords: tiering, fabricpool
 summary: Full file tiering with FabricPool
 ---

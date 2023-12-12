@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: common/metrocluster/nvfail.html
+permalink: oracle/dr/metrocluster/nvfail.html
 keywords: metrocluster, nvfail, switchover
 summary: NVFAIL 
 ---
