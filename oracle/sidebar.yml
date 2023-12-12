@@ -46,11 +46,11 @@ entries:
   - title: Network configuration
     entries:
     - title: Logical interfaces
-      url: /oracle/network-configuration/lif.html
+      url: /oracle/network-configuration/oracle-lif.html
     - title: Ethernet configuration
-      url: /oracle/network-configuration/ethernet.html
+      url: /oracle/network-configuration/oracle-ethernet.html
     - title: FC SAN configuration
-      url: /oracle/network-configuration/fc.html
+      url: /oracle/network-configuration/oracle-fc.html
   - title: Storage configuration
     entries:
     - title: FC SAN
