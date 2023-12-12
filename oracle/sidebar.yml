@@ -4,7 +4,21 @@ entries:
   - title: Overview
     url: /oracle/overview.html
   - title: ONTAP configuration
-    url: /oracle/ontap.html
+    entries:
+    - title: RAID
+      url: /oracle/ontap-configuration/raid-oracle.html
+    - title: Capacity limits
+      url: /oracle/ontap-configuration/oracle-capacity-limits.html
+    - title: Storage virtual machines
+      url: /oracle/ontap-configuration/oracle-svm.html
+    - title: Quality of service (QoS)
+      url: /oracle/ontap-configuration/oracle-qos.html
+    - title: Efficiency
+      url: /oracle/ontap-configuration/oracle-efficiency.html
+    - title: Thin provisioning
+      url: /oracle/ontap-configuration/oracle-thin-provisioning.html
+    - title: Failover and switchover
+      url: /oracle/ontap-configuration/oracle-and-ontap-failover.html
   - title: Database configuration
     entries:
     - title: db_file_multiblock_read_count
@@ -30,25 +44,79 @@ entries:
     - title: Solaris
       url: /oracle/host-configuration/solaris.html
   - title: Network configuration
-    url: /oracle/network-configuration/network-overview.html
+    entries:
+    - title: Logical interfaces
+      url: /oracle/network-configuration/oracle-lif.html
+    - title: Ethernet configuration
+      url: /oracle/network-configuration/oracle-ethernet.html
+    - title: FC SAN configuration
+      url: /oracle/network-configuration/oracle-fc.html
   - title: Storage configuration
     entries:
-    - title: NFS storage
-      url: /oracle/storage-configuration/nfs_configuration.html
-    - title: SAN storage
-      url: /oracle/storage-configuration/san_configuration.html
+    - title: FC SAN
+      entries:
+      - title: Overview
+        url: /oracle/storage-configuration/fcsan.html
+      - title: SAN storage
+        url: /oracle/storage-configuration/san_configuration.html
+    - title: NFS
+      entries:
+      - title: Overview
+        url: /oracle/storage-configuration/nfs.html
+      - title: NFS leases and locks
+        url: /oracle/storage-configuration/leases-and-locks.html
+      - title: NFS storage
+        url: /oracle/storage-configuration/nfs_configuration.html
     - title: Oracle and NVFAIL
       url: /oracle/dp/oracle_and_nvfail.html
     - title: ASM Reclamation Utility
       url: /oracle/storage-configuration/asmru.html
-    - title: Tiering
-      url: /oracle/storage-configuration/tiering.html
   - title: Virtualization
     url: /oracle/virtualization/intro.html
+  - title: Tiering
+    entries:
+    - title: Overview
+      url: /oracle/tiering/overview.html
+    - title: Tiering policies
+      entries:
+      - title: Sending data to an object store
+        url: /oracle/tiering/tiering-policies.html
+      - title: Retrieving data from object store
+        url: /oracle/tiering/retrieval-policies.html
+    - title: Tiering strategies
+      entries:
+      - title: Whole files
+        url: /oracle/tiering/whole-files.html
+      - title: Partial files
+        url: /oracle/tiering/partial-files.html
+      - title: Select files
+        url: /oracle/tiering/logs.html
+      - title: Snapshot copies
+        url: /oracle/tiering/snapshots.html
+      - title: Backups
+        url: /oracle/tiering/backups.html
+    - title: Object store access interruptions
+      url: /oracle/tiering/access_interruptions.html
   - title: Oracle data protection
     entries:
     - title: Overview
       url: /oracle/dp/overview-dp.html
+    - title: Data protection planning
+      url: /oracle/dp/planning.html
+    - title: RPO, TRO, and SLAs
+      url: /oracle/dp/slas.html
+    - title: Data availability
+      url: /oracle/dp/availability.html
+    - title: Data integrity
+      url: /oracle/dp/integrity.html
+    - title: Snapshots
+      url: /oracle/dp/snapshots.html
+    - title: Snapshots and applications
+      url: /oracle/dp/snapshots-and-apps.html
+    - title: SnapRestore
+      url: /oracle/dp/snaprestore.html
+    - title: SnapCenter and other tools
+      url: /oracle/dp/tools.html
     - title: Data integrity
       url: /oracle/dp/integrity.html
     - title: Snapshot-based backups
@@ -63,6 +131,26 @@ entries:
     entries:
     - title: Overview
       url: /oracle/dp/overview-dr.html
+    - title: MetroCluster
+      entries:
+      - title: Physical architecture
+        url: /oracle/dr/metrocluster/physical-architecture.html
+      - title: Logical architecture
+        url: /oracle/dr/metrocluster/logical-architecture.html
+      - title: SyncMirror
+        url: /oracle/dr/metrocluster/syncmirror.html
+      - title: Applications on MetroCluster
+        url: /oracle/dr/metrocluster/apps-on-metrocluster.html
+      - title: NVFAIL
+        url: /oracle/dr/metrocluster/nvfail.html
+    - title: SnapMirror Business Continuity
+      entries:
+      - title: Architecture
+        url: /oracle/dr/smbc/architecture.html
+      - title: Failover
+        url: /oracle/dr/smbc/failover.html
+      - title: Failure scenarios
+        url: /oracle/dr/smbc/failure-scenarios.html
     - title: Consistency group disaster recovery
       url: /oracle/dp/consistency_group_disaster_recovery.html
     - title: Disaster recovery with log replay

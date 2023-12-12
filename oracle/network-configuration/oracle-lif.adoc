@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/network-configuration/oracle-lif.html
+keywords: LIF, multipath, multipathing
+summary: Logical interface design for Oracle databases
+---
+= Logical interface design for Oracle databases
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+Oracle databases need access to storage. Logical interfaces (LIFs) are the network plumbing that connects a storage virtual machine (SVM) to the network and in turn to the database. Proper LIF design is required to ensure sufficient bandwidth exists for each database workload, and failover does not result in a loss of storage services.
+
+include::_include/lif.adoc[]

@@ -1,0 +1,40 @@
+---
+sidebar: sidebar
+permalink: oracle/tiering/retrieval-policies.html
+keywords: tiering, FabricPool
+summary: FabricPool Data Retrieval Policies
+---
+= Retrieval policies
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+The tiering policies control which blocks are tiered from the performance tier to the capacity tier. Retrieval policies control what happens when a block that has been tiered is read.
+
+== Default
+All FabricPool volumes are initially set at `default`, which means the behavior is controlled by the `cloud-retrieval-policy. `The exact behavior depends on the tiering policy used.
+
+* `auto`– only retrieve randomly read data
+* `snapshot-only`– retrieve all sequentially or randomly read data
+* `none`– retrieve all sequentially or randomly read data
+* `all`– do not retrieve data from the capacity tier
+
+== On-read
+Setting `cloud-retrieval-policy` to on-read overrides the default behavior so a read of any tiered data results in that data being returned to the performance tier.
+
+For example, a volume might have been lightly used for a long time under the `auto` tiering policy and most of the blocks are now tiered out.
+
+If an unexpected change in business needs required some of the data to be repeatedly scanned in order to prepare a certain report, it may be desirable to change the `cloud-retrieval-policy` to `on-read` to ensure that all data that is read is returned to the performance tier, including both sequentially and randomly read data. This would improve performance of sequential I/O against the volume.
+
+== Promote
+The behavior of the promote policy depends on the tiering policy. If the tiering policy is `auto`, then setting the `cloud-retrieval-policy `to `promote` brings back all blocks from the capacity tier on the next tiering scan.
+
+If the tiering policy is `snapshot-only`, then the only blocks that are returned are the blocks that are associated with the active file system. Normally this would not have any effect because the only blocks tiered under the `snapshot-only` policy would be blocks associated exclusively with snapshots. There would be no tiered blocks in the active file system.
+
+If, however, data on a volume was restored by a volume SnapRestore or file-clone operation from a snapshot, some of the blocks that were tiered out because they were only associated with snapshots may now be required by the active file system. It may be desirable to temporarily change the `cloud-retrieval-policy` policy to `promote` to quickly retrieve all locally required blocks.
+
+== Never
+Do not retrieve blocks from the capacity tier.

@@ -1,0 +1,20 @@
+---
+sidebar: sidebar
+permalink: oracle/ontap-configuration/raid-oracle.html
+keywords: oracle,raid,mirroring
+summary: RAID and Oracle Databases
+---
+
+= Oracle RAID requirements
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+RAID refers to the use of redundancy to protect data against the loss of a drive.
+
+Questions occasionally arise concerning RAID levels in the configuration of NetApp storage used for Oracle databases and other enterprise applications. Many legacy Oracle best practices regarding storage array configuration contain warnings about using RAID mirroring and/or avoiding certain types of RAID. Although they raise valid points, these sources do not apply to RAID 4 and the NetApp RAID DP and RAID-TEC technologies used in ONTAP.
+
+include::_include/raid.adoc[]
