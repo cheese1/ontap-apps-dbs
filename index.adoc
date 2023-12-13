@@ -11,6 +11,3 @@ summary: ONTAP and enterprise applications
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
-
-[.lead]
-Implementation guides for enterprise applications on ONTAP
