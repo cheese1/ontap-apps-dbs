@@ -1,0 +1,12 @@
+---
+layout: astra
+sidebar: sidebar
+permalink: index.html
+summary: ONTAP and enterprise applications
+---
+= ONTAP and enterprise applications
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
