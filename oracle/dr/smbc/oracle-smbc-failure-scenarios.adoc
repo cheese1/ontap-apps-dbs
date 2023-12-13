@@ -1,15 +1,15 @@
 ---
-permalink: oracle/dr/smbc/failure-scenarios.html
+permalink: oracle/dr/smbc/oracle-smbc-failure-scenarios.html
 sidebar: sidebar
 keywords: SM-BC, smbc, failover
-summary: "SM-BC: failure scenarios"
+summary: Oracle SM-BC Failure Scenarios
 ---
-= SnapMirror Business Continuity failure scenarios
+= Oracle SM-BC failure scenarios
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 There are multiple SnapMirror Business Continuity (SM-BC) failure scenarios each having different results.

@@ -10,7 +10,7 @@ summary: ONTAP and the role of snapshots
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 The most important consideration for a file system layout is the plan for leveraging NetApp Snapshot technology. 

@@ -9,7 +9,7 @@ summary: Oracle database LUN sizing and LUN count guidelines
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 Selecting the optimal LUN size and the number of LUNs to be used is critical for optimal performance and manageability of Oracle databases.

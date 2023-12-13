@@ -9,7 +9,7 @@ summary: Disaster recovery with ONTAP
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 Disaster recovery refers to restoring data services after a catastrophic event, such as a fire that destroys a storage system or even an entire site.

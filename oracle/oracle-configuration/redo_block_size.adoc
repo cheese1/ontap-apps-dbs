@@ -10,7 +10,7 @@ summary: "Redo block size selection"
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 Oracle supports either a 512-byte or 4KB redo block size. The default is 512 bytes.

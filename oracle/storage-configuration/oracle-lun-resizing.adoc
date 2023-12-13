@@ -9,7 +9,7 @@ summary: LUN and LVM resizing with Oracle databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 When a SAN-based file system has reached its capacity limit, there are two options for increasing the space available:

@@ -10,7 +10,7 @@ summary: Oracle on ONTAP and the role of snapshots
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 The foundation of NetApp ONTAP data protection software is NetApp Snapshot technology. 

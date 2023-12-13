@@ -10,7 +10,7 @@ summary: Oracle on MetroCluster - NVFAIL
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 NVFAIL is a general data integrity feature in ONTAP that is especially critical with database workload, and is discussed in detail in link:../ontap-configuration/oracle_and_nvfail.html[NVFAIL]. There are also MetroCluster-specific considerations for NVFAIL.

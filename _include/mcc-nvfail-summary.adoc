@@ -1,21 +1,5 @@
----
-sidebar: sidebar
-permalink: oracle/dr/metrocluster/nvfail.html
-keywords: metrocluster, nvfail, switchover
-summary: NVFAIL 
----
-= MetroCluster and NVFAIL
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: ./../media/
-
-[.lead]
-NVFAIL is a general data integrity feature in ONTAP that is especially critical with database workloads.
-
 [NOTE]
-This section expands on the explanation of NVFAIL to cover MetroCluster-specific topics.
+This section expands on the explanation of basic ONTAP NVFAIL to cover MetroCluster-specific topics.
 
 With MetroCluster, a write is not acknowledged until it has been logged into local NVRAM and NVRAM on at least one other controller. This approach makes sure that a hardware failure or power outage does not result in the loss of in-flight I/O. If the local NVRAM fails or the connectivity to other nodes fails, then data would no longer be mirrored.
 

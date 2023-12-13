@@ -9,7 +9,7 @@ summary: Rapid data restoration in ONTAP from a Snapshot copy is delivered by Ne
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 Rapid data restoration in ONTAP from a Snapshot copy is delivered by NetApp SnapRestore technology. 

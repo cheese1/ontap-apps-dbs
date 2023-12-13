@@ -146,23 +146,23 @@ entries:
     - title: MetroCluster
       entries:
       - title: Physical architecture
-        url: /oracle/dr/metrocluster/physical-architecture.html
+        url: /oracle/dr/metrocluster/oracle-physical-metrocluster.html
       - title: Logical architecture
-        url: /oracle/dr/metrocluster/logical-architecture.html
+        url: /oracle/dr/metrocluster/oracle-logical-metrocluster.html
       - title: SyncMirror
-        url: /oracle/dr/metrocluster/syncmirror.html
+        url: /oracle/dr/metrocluster/oracle-and-syncmirror.html
       - title: Applications on MetroCluster
-        url: /oracle/dr/metrocluster/apps-on-metrocluster.html
+        url: /oracle/dr/metrocluster/oracle-on-metrocluster.html
       - title: NVFAIL
         url: /oracle/dr/metrocluster/nvfail.html
     - title: SnapMirror Business Continuity
       entries:
       - title: Architecture
-        url: /oracle/dr/smbc/architecture.html
+        url: /oracle/dr/smbc/oracle-smbc-architecture.html
       - title: Failover
-        url: /oracle/dr/smbc/failover.html
+        url: /oracle/dr/smbc/oracle-smbc-failover.html
       - title: Failure scenarios
-        url: /oracle/dr/smbc/failure-scenarios.html
+        url: /oracle/dr/smbc/oracle-smbc-failure-scenarios.html
     - title: Consistency group disaster recovery
       url: /oracle/dp/consistency_group_disaster_recovery.html
     - title: Disaster recovery with log replay

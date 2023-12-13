@@ -10,7 +10,7 @@ summary: Oracle on ONTAP using HP-UX
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 Configuration topics specific to the HP-UX operating system.

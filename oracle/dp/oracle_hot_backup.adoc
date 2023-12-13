@@ -10,7 +10,7 @@ summary: Oracle on ONTAP online backup procedures
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 Two sets of data are required to recover from a hot backup:

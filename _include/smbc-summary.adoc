@@ -1,17 +1,3 @@
----
-sidebar: sidebar
-permalink: oracle/dr/smbc/architecture.html
-keywords: smbc, sm-bc
-summary: SnapMirror Business Continuity (SM-BC) overview
----
-= Overview
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: ./../media/
-
-[.lead]
 SnapMirror Business Continuity (SM-BC) is essentially an enhanced SnapMirror capability for SAN that allows hosts to access a LUN from both the system hosting the LUN as well as the system hosting its replica.
 
 SM-BC and SnapMirror Sync (SM-S) share a replication engine, however, SM-BC includes additional features such as transparent application failover and failback for enterprise applications. 
@@ -27,12 +13,9 @@ The SM-BC relationship is between a pair of SVMs located on different clusters. 
 
 image:smbc-failover-1.png[Error: Missing Graphic Image]
 
-== Operating modes
-SM-BC can operate in one of two modes:
+== Synchronous replication
 
-* *Sync* mode means that in normal operation, the remote copy is an RPO=0 synchronous replica at all times, with one exception. If data cannot be replicated, SM-BC will release the requirement to replicate data and resume serving IO. This option is preferred by customers who consider loss of the replication link a near-disaster, or who do not want business operations to halt when data cannot be replicated.
-
-* *StrictSync* mode guarantees RPO=0. If writes cannot be replicated, the LUNs will go offline. This option was created for customers with critical data or strict SLAs where all changes must be replicated at all times. The LUNs are taken offline if the replication timeout lapses in order to produce errors at the file level. This is normally required to trigger business continuity automation and avoid unbreakable hangs of application processes. 
+In normal operation, the remote copy is an RPO=0 synchronous replica at all times, with one exception. If data cannot be replicated, SM-BC will release the requirement to replicate data and resume serving IO. This option is preferred by customers who consider loss of the replication link a near-disaster, or who do not want business operations to halt when data cannot be replicated.
 
 == Storage hardware
 Unlike other storage disaster recovery solutions, SM-BC offers asymmetric platform flexibility. The hardware at each site does not need to be identical. This capability allows you to right-size the hardware used to support SM-BC. The remote storage system can be identical to the primary site if it needs to support a full production workload, but if a disaster results in reduced I/O, than a smaller system at the remote site might be more cost-effective.
