@@ -1,0 +1,23 @@
+---
+sidebar: sidebar
+permalink: oracle/storage-configuration/oracle-redo-block-size.html
+keywords: oracle, database, ontap, SAN, ASM
+summary: Oracle redo block size
+---
+= Redo block size
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+File systems supporting redo logs must use a block size that is a multiple of the redo block size. This generally requires that both the redo log file system and the redo log itself use a block size of 512 bytes. 
+
+At very high redo rates, it is possible that 4KB block sizes would perform better because high redo rates allow I/O to be performed in fewer and more efficient operations. If redo rates are greater than 50MBps, consider testing a 4KB block size.
+
+A few customer problems have been identified with databases using redo logs with a 512-byte block size on a file system with a 4KB block size and many very small transactions. The overhead involved in applying multiple 512-byte changes to a single 4KB file system block led to performance problems that were resolved by changing the file system to use a block size of 512 bytes.
+
+[TIP]
+*NetApp recommends* that you do not change the redo block size unless advised by a relevant customer support or professional services organization or the change is based on official product documentation.

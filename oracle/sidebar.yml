@@ -55,10 +55,14 @@ entries:
     entries:
     - title: FC SAN
       entries:
-      - title: Overview
-        url: /oracle/storage-configuration/fcsan.html
-      - title: SAN storage
-        url: /oracle/storage-configuration/san_configuration.html
+      - title: LUN Alignment
+        url: /oracle/storage-configuration/oracle-lun-alignment.html
+      - title: LUN Count and LUN Size
+        url: /oracle/storage-configuration/oracle-lun-sizing.html
+      - title: LUN Resizing
+        url: /oracle/storage-configuration/oracle-lun-resizing.html
+      - title: LVM Striping
+        url: /oracle/storage-configuration/oracle-lvm-striping.html
     - title: NFS
       entries:
       - title: Overview
@@ -67,6 +71,10 @@ entries:
         url: /oracle/storage-configuration/leases-and-locks.html
       - title: NFS storage
         url: /oracle/storage-configuration/nfs_configuration.html
+    - title: Oracle datafile block size
+      url: /oracle/storage-configuration/oracle-datafile-block-size.html
+    - title: Oracle redo block size
+      url: /oracle/storage-configuration/oracle-redo-block-size.html
     - title: Oracle and NVFAIL
       url: /oracle/dp/oracle_and_nvfail.html
     - title: ASM Reclamation Utility
