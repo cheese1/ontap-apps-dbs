@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dr/metrocluster/apps-on-metrocluster.html
+permalink: oracle/dr/metrocluster/oracle-on-metrocluster.html
 keywords: Metrocluster, mcc, MCC-IP
 summary: Applications with MetroCluster
 ---
@@ -9,7 +9,7 @@ summary: Applications with MetroCluster
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 The use of MetroCluster does not necessarily add to or change any best practices for operating a enterprise applications and databases.

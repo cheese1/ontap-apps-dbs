@@ -10,7 +10,7 @@ summary: Configuring NVFAIL to protect Oracle databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 NVFAIL is a feature within ONTAP that ensures the integrity during catastrophic failover scenarios.

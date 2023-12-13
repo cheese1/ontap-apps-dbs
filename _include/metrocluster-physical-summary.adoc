@@ -1,18 +1,4 @@
----
-sidebar: sidebar
-permalink: oracle/dr/metrocluster/physical-architecture.html
-keywords: metrocluster, MCC, MCC-IP
-summary: MetroCluster Physical Architecture
----
-= MetroCluster physical architecture
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: ./../media/
-
-[.lead]
-MetroCluster clusters are available in three different configurations:
+== MetroCluster is avialable in 3 different configurations
 
 * HA pairs with IP connectivity
 * HA pairs with FC connectivity

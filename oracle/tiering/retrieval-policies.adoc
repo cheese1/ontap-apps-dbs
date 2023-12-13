@@ -9,7 +9,7 @@ summary: FabricPool Data Retrieval Policies
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 The tiering policies control which blocks are tiered from the performance tier to the capacity tier. Retrieval policies control what happens when a block that has been tiered is read.

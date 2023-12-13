@@ -9,7 +9,7 @@ summary: FabricPool Data Tiering Policies
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 
 [.lead]

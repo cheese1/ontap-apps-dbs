@@ -9,7 +9,7 @@ summary: SnapMirror and SyncMirror
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: /media/
 
 [.lead]
 Nearly every application requires data replication. 
