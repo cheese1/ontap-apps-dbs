@@ -65,12 +65,16 @@ entries:
         url: /oracle/storage-configuration/oracle-lvm-striping.html
     - title: NFS
       entries:
-      - title: Overview
-        url: /oracle/storage-configuration/nfs.html
+      - title: Configuration
+        url: /oracle/storage-configuration/oracle-nfs-configuration.html
+      - title: Oracle Direct NFS (dNFS)
+        url: /oracle/storage-configuration/oracle-direct-nfs.html
       - title: NFS leases and locks
-        url: /oracle/storage-configuration/leases-and-locks.html
-      - title: NFS storage
-        url: /oracle/storage-configuration/nfs_configuration.html
+        url: /oracle/storage-configuration/oracle-leases-and-locks.html
+      - title: NFS caching
+        url: /oracle/storage-configuration/oracle-nfs-caching.html
+      - title: NFS transfer sizes
+        url: /oracle/storage-configuration/oracle-nfs-transfer-sizes.html
     - title: Oracle datafile block size
       url: /oracle/storage-configuration/oracle-datafile-block-size.html
     - title: Oracle redo block size
