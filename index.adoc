@@ -2,7 +2,6 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-keywords: Oracle, database, MySQL, PostgreSQL, MS SQL Server, VMware, HANA
 summary: ONTAP and enterprise applications
 ---
 = ONTAP and enterprise applications
@@ -10,4 +9,4 @@ summary: ONTAP and enterprise applications
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: /media/
