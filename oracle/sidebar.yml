@@ -21,14 +21,14 @@ entries:
       url: /oracle/ontap-configuration/oracle-and-ontap-failover.html
   - title: Database configuration
     entries:
+    - title: Datafile and redo block sizes
+      url: /oracle/oracle-configuration/oracle-block-sizes.html
     - title: db_file_multiblock_read_count
       url: /oracle/oracle-configuration/mbr.html
     - title: filesystemio_options
       url: /oracle/oracle-configuration/filesystemio_options.html
     - title: Oracle RAC
       url: /oracle/oracle-configuration/rac.html
-    - title: Redo block size
-      url: /oracle/oracle-configuration/redo_block_size.html
   - title: Host configuration
     entries:
     - title: AIX
@@ -75,10 +75,6 @@ entries:
         url: /oracle/storage-configuration/oracle-nfs-caching.html
       - title: NFS transfer sizes
         url: /oracle/storage-configuration/oracle-nfs-transfer-sizes.html
-    - title: Oracle datafile block size
-      url: /oracle/storage-configuration/oracle-datafile-block-size.html
-    - title: Oracle redo block size
-      url: /oracle/storage-configuration/oracle-redo-block-size.html
     - title: Oracle and NVFAIL
       url: /oracle/dp/oracle_and_nvfail.html
     - title: ASM Reclamation Utility
@@ -129,8 +125,6 @@ entries:
       url: /oracle/dp/snaprestore.html
     - title: SnapCenter and other tools
       url: /oracle/dp/tools.html
-    - title: Data integrity
-      url: /oracle/dp/integrity.html
     - title: Snapshot-based backups
       url: /oracle/dp/snapshots.html
     - title: Online (hot) backups
