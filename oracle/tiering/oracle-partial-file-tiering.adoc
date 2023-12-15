@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/tiering/oracle-partial-file-tiering.html
+keywords: tiering, fabricpool
+summary: Partial file tiering with FabricPool
+---
+= Oracle partial file tiering
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: /media/
+
+[.lead]
+Because FabricPool works at the block level, files that are subject to change can be partially tiered to object storage while also remaining partially on performance tier.
+
+include::_include/tiering-database-subfile.adoc[]

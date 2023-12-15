@@ -84,27 +84,27 @@ entries:
   - title: Tiering
     entries:
     - title: Overview
-      url: /oracle/tiering/overview.html
+      url: /oracle/tiering/oracle-tiering-overview.html
     - title: Tiering policies
       entries:
       - title: Sending data to an object store
-        url: /oracle/tiering/tiering-policies.html
+        url: /oracle/tiering/oracle-tiering-policies.html
       - title: Retrieving data from object store
-        url: /oracle/tiering/retrieval-policies.html
+        url: /oracle/tiering/oracle-retrieval-policies.html
     - title: Tiering strategies
       entries:
       - title: Whole files
-        url: /oracle/tiering/whole-files.html
+        url: /oracle/tiering/oracle-whole-file-tiering.html
       - title: Partial files
-        url: /oracle/tiering/partial-files.html
+        url: /oracle/tiering/oracle-partial-file-tiering.html
       - title: Select files
-        url: /oracle/tiering/logs.html
-      - title: Snapshot copies
+        url: /oracle/tiering/oracle-partial-file-tiering.html
+      - title: Snapshots
         url: /oracle/tiering/snapshots.html
       - title: Backups
-        url: /oracle/tiering/backups.html
+        url: /oracle/tiering/oracle-backup-tiering.html
     - title: Object store access interruptions
-      url: /oracle/tiering/access_interruptions.html
+      url: /oracle/tiering/oracle-object-store-access-interruptions.html
   - title: Oracle data protection
     entries:
     - title: Overview

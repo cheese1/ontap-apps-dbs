@@ -1,19 +1,4 @@
----
-sidebar: sidebar
-permalink: oracle/tiering/logs.html
-keywords: tiering, fabricpool
-summary: Selective file tiering
----
-= Selective file tiering
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: /media/
-
-[.lead]
-Perhaps the most important use for FabricPool is improving the efficiency of known cold data, such as database transaction logs.
-
-Most relational databases operate in log archival mode to deliver point-in-time recovery. Changes to the databases are committed by recording the changes in the transaction logs, and the transaction log is retained without being overwritten. The result can be a requirement to retain an enormous volume of archived transaction logs. Similar examples exist with many other application workflows that generate data that must be retained, but is highly unlikely to ever be accessed.
+Most relational databases operate in transaction log archival mode to deliver point-in-time recovery. Changes to the databases are committed by recording the changes in the transaction logs, and the transaction log is retained without being overwritten. The result can be a requirement to retain an enormous volume of archived transaction logs. Similar examples exist with many other application workflows that generate data that must be retained, but is highly unlikely to ever be accessed.
 
 FabricPool solves these problems by delivering a single solution with integrated tiering. Files are stored and remain accessible in their usual location, but take up virtually no space on the primary array.
 

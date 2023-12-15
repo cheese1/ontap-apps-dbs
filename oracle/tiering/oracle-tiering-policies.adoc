@@ -1,0 +1,18 @@
+---
+sidebar: sidebar
+permalink: oracle/tiering/oracle-tiering-policies.html
+keywords: tiering, fabricpool
+summary: Oracle tiering policies
+---
+= Oracle database tiering policies
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: /media/
+
+
+[.lead]
+Four policies are available in ONTAP which control how Oracle data on the performance tier become a candidate to be relocated to the capacity tier.
+
+include::_include/tiering-policies-databases.adoc[]

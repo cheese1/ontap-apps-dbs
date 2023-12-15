@@ -1,20 +1,3 @@
----
-sidebar: sidebar
-permalink: oracle/tiering/tiering-policies.html
-keywords: tiering, fabricpool
-summary: FabricPool Data Tiering Policies
----
-= Tiering policies
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: /media/
-
-
-[.lead]
-Four policies are available in ONTAP which control how a block on the performance tier become a candidate to be relocated to the capacity tier.
-
 == Snapshot-only
 The `snapshot-only` `tiering-policy` applies only to blocks that are not shared with the active file system. It essentially results in tiering of database backups. Blocks become candidates for tiering after a snapshot is created and the block is then overwritten, resulting in a block that exists only within the snapshot. The delay before a `snapshot-only` block is considered cool is controlled by the `tiering-minimum-cooling-days` setting for the volume. The range as of ONTAP 9.8 is from 2 to 183 days.
 

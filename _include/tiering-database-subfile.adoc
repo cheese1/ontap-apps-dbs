@@ -1,20 +1,3 @@
----
-sidebar: sidebar
-permalink: oracle/tiering/partial-files.html
-keywords: tiering, fabricpool
-summary: Subfile Tiering with FabricPool
----
-= Partial file tiering
-
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: /media/
-
-[.lead]
-Because FabricPool works at the block level, files that are subject to change can be partially tiered to object storage while also remaining partially on performance tier.
-
 This is common with databases. Databases that are known to contain inactive blocks are also candidates for FabricPool tiering. For example, a supply chain management database might contain historical information that must be available if needed but is not accessed during normal operations. FabricPool can be used to selectively relocate the inactive blocks.
 
 For example, datafiles running on a FabricPool volume with a `tiering-minimum-cooling-days` period of 90 days retains any blocks accessed in the preceding 90 days on the performance tier. However, anything that is not accessed for 90 days is relocated to the capacity tier. In other cases, normal application activity preserves the correct blocks on the correct tier. For example, if a database is normally used to process the previous 60 days of data on a regular basis, a much lower `tiering-minimum-cooling-days` period can be set because the natural activity of the application makes sure that blocks are not relocated prematurely.

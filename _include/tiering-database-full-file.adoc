@@ -1,20 +1,3 @@
----
-sidebar: sidebar
-permalink: oracle/tiering/whole-files.html
-keywords: tiering, fabricpool
-summary: Full file tiering with FabricPool
----
-= Full file tiering
-
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: /media/
-
-[.lead]
-Although FabricPool tiering operates at the block level, in some cases it can be used to provide file-level tiering.
-
 Many applications datasets are organized by date, and such data is generally increasingly less likely to be accessed as it ages. For example, a bank might have a repository of PDF files that contain five years of customer statements, but only the most recent few months are active. FabricPool can be used to relocate older datafiles to the capacity tier. A cooling period of 14 days would ensure the more recent 14 days of PDF files remain on the performance tier. Furthermore, files that are read at least every 14 days would remain hot and therefore remain on the performance tier.
 
 == Policies

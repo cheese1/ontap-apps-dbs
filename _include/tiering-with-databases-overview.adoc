@@ -1,25 +1,9 @@
----
-permalink: oracle/tiering/overview.html
-sidebar: sidebar
-keywords: tiering, fabricpool
-summary: FabricPool overview
----
-= FabricPool overview
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: /media/
-
-[.lead]
-Understanding how FabricPool tiering affects applications and databases requires an understanding of low-level FabricPool architecture.
-
 == Architecture
 FabricPool is a tiering technology that classifies blocks as hot or cool and places them in the most appropriate tier of storage. The performance tier is most often located on SSD storage and hosts the hot data blocks. The capacity tier is located on an object store and hosts the cool data blocks. Object storage support includes NetApp StorageGRID, ONTAP S3, Microsoft Azure Blob storage, Alibaba Cloud Object Storage service, IBM Cloud Object Storage, Google Cloud storage, and Amazon AWS S3.
 
 Multiple tiering policies are available that control how blocks are classified as hot or cool, and policies can be set on a per-volume basis and changed as required. Only the data blocks are moved between the performance and capacity tiers. The metadata that defines the LUN and file system structure always remains on the performance tier. As a result, management is centralized on ONTAP. Files and LUNs appear no different from data stored on any other ONTAP configuration. The NetApp AFF or FAS controller applies the defined policies to move data to the appropriate tier.
 
-image:oracle-fp_image1.png[Error: Missing Graphic Image]
+image:./media/oracle-fp_image1.png[Error: Missing Graphic Image]
 
 == Object store providers
 Object storage protocols use simple HTTP or HTTPS requests for storing large numbers of data objects. Access to the object storage must be reliable, because data access from ONTAP depends on prompt servicing of requests. Options include the Amazon S3 Standard and Infrequent Access options, and Microsoft Azure Hot and Cool Blob Storage, IBM Cloud, and Google Cloud. Archival options such as Amazon Glacier and Amazon Archive are not supported because the time required to retrieve data can exceed the tolerances of host operating systems and applications.

@@ -1,20 +1,4 @@
----
-sidebar: sidebar
-permalink: oracle/tiering/backups.html
-keywords: tiering, fabricpool
-summary: Backup file tiering
----
-= Backup file
-:hardbreaks:
-:nofooter:
-:icons: font
-:linkattrs:
-:imagesdir: /media/
-
-[.lead]
-Traditional application backups include products such as Oracle Recovery Manager, which create file-based backups outside the location of the original database.
-
-A `tiering-minimum-cooling-days` policy of a few days preserves the most recent backups, and therefore the backups most likely to be required for an urgent recovery situation, on the performance tier. The data blocks of the older files are then moved to the capacity tier.
+ `tiering-minimum-cooling-days` policy of a few days preserves the most recent backups, and therefore the backups most likely to be required for an urgent recovery situation, on the performance tier. The data blocks of the older files are then moved to the capacity tier.
 
 The `auto` policy is the most appropriate policy for backup data. This ensures prompt tiering when the cooling threshold has been reached irrespective of whether the files have been deleted or continue to exist in the primary file system. Storing all the potentially required files in a single location in the active file system also simplifies management. There is no reason to search through snapshots to locate a file that needs to be restored.
 
