@@ -13,7 +13,7 @@ summary: Oracle block size
 :imagesdir: /media/
 
 [.lead]
-
+ONTAP internally uses a variable block size, which means Oracle databases can be configured with any block size desired. However, filesystem block sizes can affect performance and in some cases a larger redo block size can improve performance.
 
 == Datafile block sizes
 
