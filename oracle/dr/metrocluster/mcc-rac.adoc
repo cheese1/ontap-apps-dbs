@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/mcc-rac.html
+permalink: oracle/dr/metrocluster/mcc-rac.html
 keywords: oracle, metrocluster, extended rac, RAC
 summary: Oracle Extended RAC with MetroCluster
 ---

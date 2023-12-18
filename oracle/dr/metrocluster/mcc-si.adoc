@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/mcc-si.html
+permalink: oracle/dr/metrocluster/mcc-si.html
 keywords: oracle, metrocluster, mcc, MCC-IP
 summary: Oracle Single Instance on MetroCluster
 ---

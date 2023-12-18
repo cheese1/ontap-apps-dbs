@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/mc-mcc-nvfail.html
+permalink: oracle/dr/metrocluster/mc-mcc-nvfail.html
 keywords: oracle, metrocluster, extended rac, rac, nvfail, switchover
 summary: Oracle on MetroCluster - NVFAIL 
 ---
