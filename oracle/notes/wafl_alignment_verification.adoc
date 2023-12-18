@@ -154,7 +154,7 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 ....
 
-. The partition has been created with a 33-sector offset instead of the default 32. Repeat the procedure outlined in link:oracle-ontap_wafl_alignment_verification.html#aligned[Aligned]. The histogram appears as follows:
+. The partition has been created with a 33-sector offset instead of the default 32. Repeat the procedure outlined in link:./oracle-ontap_wafl_alignment_verification.html#aligned[Aligned]. The histogram appears as follows:
 +
 ....
 FAS8040SAP-02*> stats stop

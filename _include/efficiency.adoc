@@ -24,7 +24,7 @@ Compression block sizes larger than 8KB should not be used alongside deduplicati
 Temperature sensitive storage efficiency (TSSE) is a available in ONTAP 9.8 and later that relies on block access heat maps to identify infrequently accessed blocks and compress them with greater efficiency.
 
 === Compression alignment
-Adaptive compression in a database environment requires some consideration of compression block alignment. Doing so is only a concern for data that is subject to random overwrites of very specific blocks. This approach is similar in concept to overall file system alignment, as is described in the section link:../storage-configuration/fcsan.html#LUN%20alignment[LUN Alignment].
+Adaptive compression in a database environment requires some consideration of compression block alignment. Doing so is only a concern for data that is subject to random overwrites of very specific blocks. This approach is similar in concept to overall file system alignment, as is described in the section link:../storage-configuration/oracle-lun-alignment.html#LUN%20alignment[LUN Alignment for Oracle I/O].
 
 For example, an 8KB write to a file is compressed only if it aligns with an 8KB boundary within the file system itself. This point means that it must fall on the first 8KB of the file, the second 8KB of the file, and so forth. Data such as RMAN backups or archive logs are sequentially written operations that span multiple blocks, all of which are compressed. Therefore, there is no need to consider alignment. The only I/O pattern of concern is the random overwrites of files.
 
