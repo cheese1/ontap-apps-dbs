@@ -53,7 +53,7 @@ The following overview summarizes the required storage configuration steps. Each
 . Create a storage virtual machine (SVM), as described in "<<Storage virtual machine configuration>>."
 . Create logical interfaces (LIFs), as described in "<<Logical interface configuration>>."
 . Create a port set, as described in "<<FCP port sets>>."
-. Create initiator groups, volumes, and LUNs within the aggregates, as described in creating "<<LUNs and volumes and mapping LUNs to initiator groups>>."
+. Create initiator groups, volumes, and LUNs within the aggregates, as described in creating "<<Creating LUNs, volumes, and mapping LUNs to initiator groups using the CLI>>."
 
 == Disk shelf connection
 
