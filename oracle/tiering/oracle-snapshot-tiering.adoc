@@ -9,7 +9,7 @@ summary: Oracle snapshot tiering
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 include::_include/tiering-database-snapshots.adoc[]

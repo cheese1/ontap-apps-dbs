@@ -9,7 +9,7 @@ summary: Rapid Oracle database recovery in ONTAP from a Snapshot copy is deliver
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Rapid data restoration in ONTAP from a snapshot is delivered by NetApp SnapRestore technology. 

@@ -121,16 +121,16 @@ entries:
         url: /oracle/dp/snapshots.html
       - title: SnapRestore
         url: /oracle/dp/snaprestore.html
-      - title: Snapshot-based backups with Oracle
+      - title: Snapshot-based online backups
         url: /oracle/dp/oracle-online-backups.html
       - title: Storage Snapshot Optimized backups
-        url: /oracle/dp/snapshot_optimized_backup.html
+        url: /oracle/dp/oracle-storage-snapshot-optimized-backups.html
       - title: SnapCenter and other tools
         url: /oracle/dp/oracle-backup-tools.html
   - title: Oracle disaster recovery
     entries:
     - title: Overview
-      url: /oracle/dp/overview-dr.html
+      url: /oracle/dr/oracle-dr-overview.html
     - title: MetroCluster
       entries:
       - title: Physical architecture
@@ -139,9 +139,13 @@ entries:
         url: /oracle/dr/metrocluster/oracle-logical-metrocluster.html
       - title: SyncMirror
         url: /oracle/dr/metrocluster/oracle-and-syncmirror.html
-      - title: Applications on MetroCluster
+      - title: Oracle Failover
         url: /oracle/dr/metrocluster/oracle-on-metrocluster.html
       - title: NVFAIL
+        url: /oracle/dp/mcc-rac.html
+      - title: Single Instance on MetroCluster
+        url: /oracle/dp/mcc-si.html
+      - title: Oracle RAC on MetroCluster
         url: /oracle/dr/metrocluster/nvfail.html
     - title: SnapMirror Business Continuity
       entries:
@@ -149,20 +153,18 @@ entries:
         url: /oracle/dr/smbc/oracle-smbc-architecture.html
       - title: Failover
         url: /oracle/dr/smbc/oracle-smbc-failover.html
+      - title: Single Instance on SM-BC
+        url: /oracle/dp/smbc-si.html
+      - title: Oracle RAC on SM-BC
+        url: /oracle/dp/smbc-rac.html
       - title: Failure scenarios
         url: /oracle/dr/smbc/oracle-smbc-failure-scenarios.html
-    - title: Consistency group disaster recovery
-      url: /oracle/dp/consistency_group_disaster_recovery.html
-    - title: Disaster recovery with log replay
-      url: /oracle/dp/disaster_recovery_with_log_replay.html
-    - title: Single Instance on MetroCluster
-      url: /oracle/dp/mcc-si.html
-    - title: Single Instance on SM-BC
-      url: /oracle/dp/smbc-si.html
-    - title: Oracle RAC on MetroCluster
-      url: /oracle/dp/mcc-rac.html
-    - title: Oracle RAC on SM-BC
-      url: /oracle/dp/smbc-rac.html
+    - title: SnapMirror
+      entries:
+      - title: Consistency group disaster recovery
+        url: /oracle/dr/snapmirror/consistency_group_disaster_recovery.html
+      - title: Disaster recovery with log replay
+        url: /oracle/dr/snapmirror/disaster_recovery_with_log_replay.html
   - title: Oracle database migration
     entries:
     - title: Overview

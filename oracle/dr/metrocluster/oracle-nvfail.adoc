@@ -4,7 +4,7 @@ permalink: oracle/dr/metrocluster/oracle-nvfail.html
 keywords: metrocluster, nvfail, switchover
 summary: NVFAIL 
 ---
-= MetroCluster and NVFAIL
+= Oracle, MetroCluster, and NVFAIL
 :hardbreaks:
 :nofooter:
 :icons: font

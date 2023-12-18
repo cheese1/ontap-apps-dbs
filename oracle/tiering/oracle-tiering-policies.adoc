@@ -9,7 +9,7 @@ summary: Oracle tiering policies
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 
 [.lead]

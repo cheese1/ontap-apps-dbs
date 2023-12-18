@@ -9,7 +9,7 @@ summary: Completing an FLI cutover
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 From a host point of view, the migration is complete, but I/O is still served from the foreign array until the import relationships are deleted.

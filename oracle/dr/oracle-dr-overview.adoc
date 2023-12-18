@@ -1,18 +1,21 @@
 ---
 sidebar: sidebar
-permalink: oracle/dr/overview-dr.html
-keywords: metrocluster, syncmirror, business continuance, DR, BC, SVM DR, SVM-DR, SMBC, SM-BC, SnapMirror, SnapMirror Business Continuity
-summary: Disaster recovery with ONTAP
+permalink: oracle/dr/oracle-dr-overview.html
+keywords: metrocluster, syncmirror, oracle
+summary: Oracle disaster recovery with ONTAP
 ---
 = Disaster recovery with ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Disaster recovery refers to restoring data services after a catastrophic event, such as a fire that destroys a storage system or even an entire site.
+
+[NOTE]
+This documentation replaces previously published technical reports _TR-4591: Oracle Data Protection_ and _TR-4592: Oracle on MetroCluster._ 
 
 Disaster recovery can be accomplished by simple replication of data using SnapMirror, of course, with many customers updating mirrored replicas as often as hourly. 
 

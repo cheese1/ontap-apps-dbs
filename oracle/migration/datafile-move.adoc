@@ -10,7 +10,7 @@ summary: Migrating individual Oracle datafiles
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Individual datafiles can be moved with a single command.
