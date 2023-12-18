@@ -4,12 +4,12 @@ permalink: oracle/dr/metrocluster/oracle-and-syncmirror.html
 keywords: metrocluster, syncmirror
 summary: Oracle and Syncmirror
 ---
-= SyncMirror
+= SyncMirror - Oracle
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../../media/
 
 [.lead]
 The foundation of Oracle data protection with a MetroCluster system is SyncMirror, a maximum-performance, scale-out synchronous mirroring technology.

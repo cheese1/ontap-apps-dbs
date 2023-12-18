@@ -10,7 +10,7 @@ summary: Documentation on 7MTT is available on the NetApp Support site and inclu
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Documentation on 7MTT is available on the NetApp http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61584[Support^] site and includes guidance on both the copy-based and copy-free options. In particular, see the release notes for specific guidance on approaching a 7MTT project. Additional assistance is available from NetApp and partner professional services.

@@ -21,14 +21,14 @@ entries:
       url: /oracle/ontap-configuration/oracle-and-ontap-failover.html
   - title: Database configuration
     entries:
+    - title: Datafile and redo block sizes
+      url: /oracle/oracle-configuration/oracle-block-sizes.html
     - title: db_file_multiblock_read_count
       url: /oracle/oracle-configuration/mbr.html
     - title: filesystemio_options
       url: /oracle/oracle-configuration/filesystemio_options.html
     - title: Oracle RAC
       url: /oracle/oracle-configuration/rac.html
-    - title: Redo block size
-      url: /oracle/oracle-configuration/redo_block_size.html
   - title: Host configuration
     entries:
     - title: AIX
@@ -75,10 +75,6 @@ entries:
         url: /oracle/storage-configuration/oracle-nfs-caching.html
       - title: NFS transfer sizes
         url: /oracle/storage-configuration/oracle-nfs-transfer-sizes.html
-    - title: Oracle datafile block size
-      url: /oracle/storage-configuration/oracle-datafile-block-size.html
-    - title: Oracle redo block size
-      url: /oracle/storage-configuration/oracle-redo-block-size.html
     - title: Oracle and NVFAIL
       url: /oracle/dp/oracle_and_nvfail.html
     - title: ASM Reclamation Utility
@@ -88,61 +84,53 @@ entries:
   - title: Tiering
     entries:
     - title: Overview
-      url: /oracle/tiering/overview.html
+      url: /oracle/tiering/oracle-tiering-overview.html
     - title: Tiering policies
       entries:
       - title: Sending data to an object store
-        url: /oracle/tiering/tiering-policies.html
+        url: /oracle/tiering/oracle-tiering-policies.html
       - title: Retrieving data from object store
-        url: /oracle/tiering/retrieval-policies.html
+        url: /oracle/tiering/oracle-retrieval-policies.html
     - title: Tiering strategies
       entries:
       - title: Whole files
-        url: /oracle/tiering/whole-files.html
+        url: /oracle/tiering/oracle-whole-file-tiering.html
       - title: Partial files
-        url: /oracle/tiering/partial-files.html
+        url: /oracle/tiering/oracle-partial-file-tiering.html
       - title: Select files
-        url: /oracle/tiering/logs.html
-      - title: Snapshot copies
+        url: /oracle/tiering/oracle-partial-file-tiering.html
+      - title: Snapshots
         url: /oracle/tiering/snapshots.html
       - title: Backups
-        url: /oracle/tiering/backups.html
+        url: /oracle/tiering/oracle-backup-tiering.html
     - title: Object store access interruptions
-      url: /oracle/tiering/access_interruptions.html
+      url: /oracle/tiering/oracle-object-store-access-interruptions.html
   - title: Oracle data protection
     entries:
     - title: Overview
-      url: /oracle/dp/overview-dp.html
-    - title: Data protection planning
-      url: /oracle/dp/planning.html
+      url: /oracle/dp/oracle-data-protection-introduction.html
     - title: RPO, TRO, and SLAs
-      url: /oracle/dp/slas.html
+      url: /oracle/dp/oracle-data-protection-slas.html
     - title: Data availability
-      url: /oracle/dp/availability.html
+      url: /oracle/dp/oracle-data-availability.html
     - title: Data integrity
-      url: /oracle/dp/integrity.html
-    - title: Snapshots
-      url: /oracle/dp/snapshots.html
-    - title: Snapshots and applications
-      url: /oracle/dp/snapshots-and-apps.html
-    - title: SnapRestore
-      url: /oracle/dp/snaprestore.html
-    - title: SnapCenter and other tools
-      url: /oracle/dp/tools.html
-    - title: Data integrity
-      url: /oracle/dp/integrity.html
-    - title: Snapshot-based backups
-      url: /oracle/dp/snapshots.html
-    - title: Online (hot) backups
-      url: /oracle/dp/oracle_hot_backup.html
-    - title: Consistency group backup
-      url: /oracle/dp/oracle_consistency_group_backup.html
-    - title: Storage Snapshot Optimized backups
-      url: /oracle/dp/snapshot_optimized_backup.html
+      url: /oracle/dp/oracle-data-integrity.html
+    - title: Backup and Recovery Basics
+      entries:
+      - title: Snapshots
+        url: /oracle/dp/snapshots.html
+      - title: SnapRestore
+        url: /oracle/dp/snaprestore.html
+      - title: Snapshot-based online backups
+        url: /oracle/dp/oracle-online-backups.html
+      - title: Storage Snapshot Optimized backups
+        url: /oracle/dp/oracle-storage-snapshot-optimized-backups.html
+      - title: SnapCenter and other tools
+        url: /oracle/dp/oracle-backup-tools.html
   - title: Oracle disaster recovery
     entries:
     - title: Overview
-      url: /oracle/dp/overview-dr.html
+      url: /oracle/dr/oracle-dr-overview.html
     - title: MetroCluster
       entries:
       - title: Physical architecture
@@ -151,30 +139,32 @@ entries:
         url: /oracle/dr/metrocluster/oracle-logical-metrocluster.html
       - title: SyncMirror
         url: /oracle/dr/metrocluster/oracle-and-syncmirror.html
-      - title: Applications on MetroCluster
+      - title: Oracle Failover
         url: /oracle/dr/metrocluster/oracle-on-metrocluster.html
       - title: NVFAIL
-        url: /oracle/dr/metrocluster/nvfail.html
+        url: /oracle/dr/metrocluster/oracle-nvfail.html
+      - title: Single Instance on MetroCluster
+        url: /oracle/dp/mcc-si.html
+      - title: Oracle RAC on MetroCluster
+        url: /oracle/dp/mcc-rac.html
     - title: SnapMirror Business Continuity
       entries:
       - title: Architecture
         url: /oracle/dr/smbc/oracle-smbc-architecture.html
       - title: Failover
         url: /oracle/dr/smbc/oracle-smbc-failover.html
+      - title: Single Instance on SM-BC
+        url: /oracle/dp/smbc-si.html
+      - title: Oracle RAC on SM-BC
+        url: /oracle/dp/smbc-rac.html
       - title: Failure scenarios
         url: /oracle/dr/smbc/oracle-smbc-failure-scenarios.html
-    - title: Consistency group disaster recovery
-      url: /oracle/dp/consistency_group_disaster_recovery.html
-    - title: Disaster recovery with log replay
-      url: /oracle/dp/disaster_recovery_with_log_replay.html
-    - title: Single Instance on MetroCluster
-      url: /oracle/dp/mcc-si.html
-    - title: Single Instance on SM-BC
-      url: /oracle/dp/smbc-si.html
-    - title: Oracle RAC on MetroCluster
-      url: /oracle/dp/mcc-rac.html
-    - title: Oracle RAC on SM-BC
-      url: /oracle/dp/smbc-rac.html
+    - title: SnapMirror
+      entries:
+      - title: Consistency group disaster recovery
+        url: /oracle/dr/snapmirror/consistency_group_disaster_recovery.html
+      - title: Disaster recovery with log replay
+        url: /oracle/dr/snapmirror/disaster_recovery_with_log_replay.html
   - title: Oracle database migration
     entries:
     - title: Overview

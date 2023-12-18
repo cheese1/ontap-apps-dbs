@@ -9,4 +9,4 @@ summary: ONTAP and enterprise applications
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/

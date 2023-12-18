@@ -4,14 +4,17 @@ permalink: oracle/dr/metrocluster/oracle-physical-metrocluster.html
 keywords: metrocluster, MCC, MCC-IP
 summary: MetroCluster Physical Architecture - Oracle
 ---
-= MetroCluster physical architecture
+= MetroCluster physical architecture - Oracle
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../../media/
 
 [.lead]
-Understanding how Oracle databases operate in a MetroCluster environment requires some explanation of physical design of a MetroClustert system.
+Understanding how Oracle databases operate in a MetroCluster environment requires some explanation of physical design of a MetroCluster system.
+
+[NOTE]
+This documentation replaces previously published technical report _TR-4592: Oracle on MetroCluster._ 
 
 include::_include/metrocluster-physical-summary.adoc[]

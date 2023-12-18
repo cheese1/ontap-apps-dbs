@@ -10,7 +10,7 @@ summary: FabricPool overview
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Understanding how FabricPool tiering affects applications and databases requires an understanding of low-level FabricPool architecture.
