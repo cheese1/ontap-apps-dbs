@@ -142,11 +142,11 @@ entries:
       - title: Oracle Failover
         url: /oracle/dr/metrocluster/oracle-on-metrocluster.html
       - title: NVFAIL
-        url: /oracle/dp/mcc-rac.html
+        url: /oracle/dr/metrocluster/oracle-nvfail.html
       - title: Single Instance on MetroCluster
         url: /oracle/dp/mcc-si.html
       - title: Oracle RAC on MetroCluster
-        url: /oracle/dr/metrocluster/nvfail.html
+        url: /oracle/dp/mcc-rac.html
     - title: SnapMirror Business Continuity
       entries:
       - title: Architecture

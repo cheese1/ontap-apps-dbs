@@ -12,7 +12,7 @@ summary: MetroCluster Physical Architecture - Oracle
 :imagesdir: ../../../media/
 
 [.lead]
-Understanding how Oracle databases operate in a MetroCluster environment requires some explanation of physical design of a MetroClustert system.
+Understanding how Oracle databases operate in a MetroCluster environment requires some explanation of physical design of a MetroCluster system.
 
 [NOTE]
 This documentation replaces previously published technical report _TR-4592: Oracle on MetroCluster._ 
