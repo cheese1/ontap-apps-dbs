@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/snaprestore.html
+permalink: oracle/dp/oracle-snaprestore-basics.html
 keywords: ontap, snaprestore
-summary: Rapid data restoration in ONTAP from a Snapshot copy is delivered by NetApp SnapRestore technology. 
+summary: Rapid Oracle database recovery in ONTAP from a Snapshot copy is delivered by NetApp SnapRestore technology. 
 ---
 = SnapRestore
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Rapid data restoration in ONTAP from a Snapshot copy is delivered by Ne
 :imagesdir: /media/
 
 [.lead]
-Rapid data restoration in ONTAP from a Snapshot copy is delivered by NetApp SnapRestore technology. 
+Rapid data restoration in ONTAP from a snapshot is delivered by NetApp SnapRestore technology. 
 
 When a critical dataset is unavailable, critical business operations are down. Tapes can break, and even restores from disk-based backups can be slow to transfer across the network. SnapRestore avoids these problems by delivering near instantaneous restoration of datasets. Even petabyte-scale databases can be completely restored with just a few minutes of effort.
 

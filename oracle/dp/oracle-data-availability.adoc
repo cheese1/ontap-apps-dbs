@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/availability.html
+permalink: oracle/dp/oracle-data-availability.html
 keywords: data protection, availability, takeover, giveback, switchover, switchback
 summary: Maximizing availability with Oracle on ONTAP
 ---
-= Data availability with ONTAP
+= Oracle data availability with ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,7 +12,7 @@ summary: Maximizing availability with Oracle on ONTAP
 :imagesdir: /media/
 
 [.lead]
-A complete description of ONTAP high availability features is beyond the scope of this document. However, as with data protection, a basic understanding of this functionality is important when designing a database infrastructure.
+ONTAP is designed to deliver maximum Oracle database availability. A complete description of ONTAP high availability features is beyond the scope of this document. However, as with data protection, a basic understanding of this functionality is important when designing a database infrastructure.
 
 == HA pairs
 The basic unit of high availability is the HA pair. Each pair contains redundant links to support replication of data to NVRAM. NVRAM is not a write cache. The RAM inside the controller serves as the write cache. The purpose of NVRAM is to temporarily journal data as a safeguard against unexpected system failure. In this respect, it is similar to a database redo log.

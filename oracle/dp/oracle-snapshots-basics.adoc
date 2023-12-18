@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/snapshots.html
+permalink: oracle/dp/oracle-snapshots-bascis.html
 keywords: oracle, database, ontap, snapshots
 summary: Oracle on ONTAP and the role of snapshots
 ---
@@ -13,7 +13,7 @@ summary: Oracle on ONTAP and the role of snapshots
 :imagesdir: /media/
 
 [.lead]
-The foundation of NetApp ONTAP data protection software is NetApp Snapshot technology. 
+The foundation of Oracle data protection on ONTAP is NetApp Snapshot technology. 
 
 The key values are as follows:
 
@@ -39,6 +39,20 @@ One commonly asked question about the use of snapshots as a data protection stra
 This is a valid concern. Local snapshots are used for day-to-day backup and recovery needs, and in that respect the snapshot is a backup. Close to 99% of all recovery scenarios in NetApp environments rely on snapshots to meet even the most aggressive RTO requirements.
 
 Local snapshots should, however, never be the only backup strategy, which is why NetApp offers technology such as SnapMirror and SnapVault replication to quickly and efficiently replicate snapshots to an independent set of drives. In a properly architected solution with snapshots plus snapshot replication, the use of tape can be minimized to perhaps a quarterly archive or eliminated entirely.
+
+== Snapshot-based backups
+There are many options for using ONTAP Snapshot copies to protect your data, and snapshots are the basis for many other ONTAP features, including replication, disaster recovery, and cloning. A complete description of snapshot technology is beyond the scope of this document, but the following sections provide a general overview.
+
+There are two primary approaches to creating a snapshot of a dataset:
+
+* Crash-consistent backups
+* Application-consistent backups
+
+A crash-consistent backup of a dataset refers to the capture of the entire dataset structure at a single point in time. If the dataset is stored in a single NetApp FlexVol volume, then the process is simple; a Snapshot can be created at any time. If a dataset spans volumes, a consistency group (CG) snapshot must be created. Several options exist for creating CG snapshots, including NetApp SnapCenter software, native ONTAP consistency group features, and user-maintained scripts.
+
+Crash-consistent backups are primarily used when point-of-the-backup recovery is sufficient. When more granular recover is required, application-consistent backups are usually required.
+
+The word "consistent" in "application-consistent" is often a misnomer. For example, placing an Oracle database in backup mode is referred to as an application-consistent backup, but the data is not made consistent or quiesced in any way. The data continue to change throughout the backup. In contrast, most MySQL and Microsoft SQL Server backups do indeed quiesce the data before executing the backup. VMware may or may not make certain files consistent.
 
 == Consistency groups
 The term "consistency group" refers to the ability of a storage array to manage multiple storage resources as a single image. For example, a database might consist of 10 LUNs. The array must be able to back up, restore, and replicate those 10 LUNs in a consistent manner. Restoration is not possible if the images of the LUNs were not consistent at the point of backup. Replicating those 10 LUNs requires that all the replicas are perfectly synchronized with each other.

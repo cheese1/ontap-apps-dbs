@@ -108,31 +108,25 @@ entries:
   - title: Oracle data protection
     entries:
     - title: Overview
-      url: /oracle/dp/overview-dp.html
+      url: /oracle/dp/oracle-data-protection-introduction.html
     - title: RPO, TRO, and SLAs
-      url: /oracle/dp/slas.html
+      url: /oracle/dp/oracle-data-protection-slas.html
     - title: Data availability
-      url: /oracle/dp/availability.html
+      url: /oracle/dp/oracle-data-availability.html
     - title: Data integrity
-      url: /oracle/dp/integrity.html
+      url: /oracle/dp/oracle-data-integrity.html
     - title: Backup and Recovery Basics
       entries:
       - title: Snapshots
         url: /oracle/dp/snapshots.html
       - title: SnapRestore
         rl: /oracle/dp/snaprestore.html
-      - title: Oracle data protection with snapshots
-        url: /oracle/dp/snapshots-and-apps.html
-      - title: Data protection planning
-        url: /oracle/dp/planning.html
-      - title: Online (hot) backups
-        url: /oracle/dp/oracle_hot_backup.html
-      - title: SnapCenter and other tools
-        url: /oracle/dp/tools.html
-      - title: Consistency group backup
-        url: /oracle/dp/oracle_consistency_group_backup.html
+      - title: Snapshot-based backups with Oracle
+        url: /oracle/dp/oracle-online-backups.html
       - title: Storage Snapshot Optimized backups
         url: /oracle/dp/snapshot_optimized_backup.html
+      - title: SnapCenter and other tools
+        url: /oracle/dp/oracle-backup-tools.html
   - title: Oracle disaster recovery
     entries:
     - title: Overview

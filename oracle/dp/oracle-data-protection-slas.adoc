@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/slas.html
+permalink: oracle/dp/oracle-data-protection-slas.html
 keywords: SLA, data protection, RPO, RTO
-summary: Data protection SLA's
+summary: Oracle data protection SLAs
 ---
 = Recovery time objective, recovery point objective, and service level agreements
 :hardbreaks:

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/tools.html
+permalink: oracle/dp/oracle-backup-tools.html
 keywords: ontap, data protection
-summary: Snapshot tools
+summary: Oracle and NetApp backup tools
 ---
 
 = SnapCenter and other tools
