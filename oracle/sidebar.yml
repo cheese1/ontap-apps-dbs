@@ -120,7 +120,7 @@ entries:
       - title: Snapshots
         url: /oracle/dp/snapshots.html
       - title: SnapRestore
-        rl: /oracle/dp/snaprestore.html
+        url: /oracle/dp/snaprestore.html
       - title: Snapshot-based backups with Oracle
         url: /oracle/dp/oracle-online-backups.html
       - title: Storage Snapshot Optimized backups

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/dp/oracle-snapshots-bascis.html
+permalink: oracle/dp/oracle-snapshots-basics.html
 keywords: oracle, database, ontap, snapshots
 summary: Oracle on ONTAP and the role of snapshots
 ---
