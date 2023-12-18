@@ -140,13 +140,13 @@ entries:
       - title: SyncMirror
         url: /oracle/dr/metrocluster/oracle-and-syncmirror.html
       - title: Oracle Failover
-        url: /oracle/dr/metrocluster/oracle-on-metrocluster.html
+        url: /oracle/dr/metrocluster/oracle-failover-on-metrocluster.html
       - title: NVFAIL
         url: /oracle/dr/metrocluster/oracle-nvfail.html
       - title: Single Instance on MetroCluster
-        url: /oracle/dp/mcc-si.html
+        url: /oracle/dp/metrocluster/mcc-si.html
       - title: Oracle RAC on MetroCluster
-        url: /oracle/dp/mcc-rac.html
+        url: /oracle/dp/metrocluster/mcc-rac.html
     - title: SnapMirror Business Continuity
       entries:
       - title: Architecture
@@ -154,9 +154,9 @@ entries:
       - title: Failover
         url: /oracle/dr/smbc/oracle-smbc-failover.html
       - title: Single Instance on SM-BC
-        url: /oracle/dp/smbc-si.html
+        url: /oracle/dp/smbc/smbc-si.html
       - title: Oracle RAC on SM-BC
-        url: /oracle/dp/smbc-rac.html
+        url: /oracle/dp/smbc/smbc-rac.html
       - title: Failure scenarios
         url: /oracle/dr/smbc/oracle-smbc-failure-scenarios.html
     - title: SnapMirror
