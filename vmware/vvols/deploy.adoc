@@ -75,15 +75,15 @@ The NetApp VASA Provider comes with several pre-defined SCPs. New SCPs may be cr
 ===== Storage Capabilities for ONTAP tools 9.10 and later
 image:vvols-image9.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
 
-image:vvols-image10.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
+image:vvols-image12.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
 
 image:vvols-image11.png["Storage Capabilities for ONTAP tools 9.10 and later",300] 
 
-image:vvols-image12.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
-
-image:vvols-image13.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
+image:vvols-image10.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
 
 image:vvols-image14.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
+
+image:vvols-image13.png["Storage Capabilities for ONTAP tools 9.10 and later",300]
 
 *Creating vVols Datastores*
 Once the necessary SCPs have been created, they may be used to create the vVols datastore (and optionally, FlexVol volumes for the datastore). Right-click on the host, cluster, or datacenter on which you want to create the vVols datastore, then select _ONTAP tools_ > _Provision Datastore_. Select one or more SCPs to be supported by the datastore, then select from existing FlexVol volumes and/or provision new FlexVol volumes for the datastore. Finally, specify the default SCP for the datastore, which will be used for VMs that do not have an SCP specified by policy, as well as for swap vVols (these do not require high performance storage).
