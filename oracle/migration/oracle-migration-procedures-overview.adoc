@@ -23,7 +23,7 @@ There is no single best practice for creating a migration strategy. Creating a p
 
 For example, one step raises the issue of the total database size. The next step depends on whether the database is more or less than 1TB. The recommended steps are just that—recommendations based on typical customer practices. Most customers would not use DataGuard to copy a small database, but some might. Most customers would not attempt to copy a 50TB database because of the time required, but some might have a sufficiently large maintenance window to permit such an operation.
 
-You can find a flowchart of the types of considerations on which migration path is best link:../../media/migration-options-flowchart.png[here].
+You can find a flowchart of the types of considerations on which migration path is best link:/media/migration-options-flowchart.png[here].
 
 == Online datafile move
 Oracle 12cR1 and higher include the ability to move a datafile while the database remains online. It furthermore works between different filesystem types. For example, a datafile can be relocated from an xfs filesystem to ASM. This method is not generally used at scale because of the number of individual datafile move operations that would be required, but it is an option worth considering with smaller databases with fewer datafiles.
