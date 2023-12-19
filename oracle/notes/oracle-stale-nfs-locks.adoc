@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: oracle/notes/stale_nfs_locks.html
+permalink: oracle/notes/oracle-stale-nfs-locks.html
 keywords: oracle, database, ontap, stale, nfs, locks
 summary: Oracle and stale NFSv3 Locks
 ---
-= Stale NFS locks
+= Stale NFSv3 locks and Oracle databases
 :hardbreaks:
 :nofooter:
 :icons: font

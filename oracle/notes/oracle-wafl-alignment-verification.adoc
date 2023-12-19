@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: oracle/notes/wafl_alignment_verification.html
+permalink: oracle/notes/oracle-wafl-alignment-verification.html
 keywords: oracle, database, ontap, wafl, alignment
-summary: Storage alignment for Oracle databases
+summary: WAFL alignment for Oracle databases
 ---
-= WAFL alignment verification
+= WAFL alignment verification for Oracle databases
 :hardbreaks:
 :nofooter:
 :icons: font

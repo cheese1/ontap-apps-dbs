@@ -159,12 +159,12 @@ entries:
         url: /oracle/dr/smbc/smbc-rac.html
       - title: Failure scenarios
         url: /oracle/dr/smbc/oracle-smbc-failure-scenarios.html
-    - title: SnapMirror
-      entries:
-      - title: Consistency group disaster recovery
-        url: /oracle/dr/snapmirror/consistency_group_disaster_recovery.html
-      - title: Disaster recovery with log replay
-        url: /oracle/dr/snapmirror/disaster_recovery_with_log_replay.html
+#    - title: SnapMirror
+#      entries:
+#      - title: Consistency group disaster recovery
+#      url: /oracle/dr/snapmirror/consistency_group_disaster_recovery.html
+#      - title: Disaster recovery with log replay
+#        url: /oracle/dr/snapmirror/disaster_recovery_with_log_replay.html
   - title: Oracle database migration
     entries:
     - title: Overview
