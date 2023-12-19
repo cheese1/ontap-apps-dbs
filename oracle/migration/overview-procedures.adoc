@@ -10,7 +10,7 @@ summary: Oracle migration procedures - overview
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Many procedures are available for Oracle migration database. The right one depends on your business needs.

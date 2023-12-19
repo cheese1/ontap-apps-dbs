@@ -9,7 +9,7 @@ summary: Microsoft SQL Server on ONTAP
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 The SQL Server database platform can support many applications. 

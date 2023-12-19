@@ -9,7 +9,7 @@ summary: Oracle and TCP/IP and ethernet configuration.
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Many Oracle on ONTAP customers use ethernet, the network protocol of NFS, iSCSI, NVMe/TCP, and especially the cloud.

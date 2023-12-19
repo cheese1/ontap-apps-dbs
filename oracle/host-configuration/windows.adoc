@@ -10,7 +10,7 @@ summary: Oracle on ONTAP using Microsoft Windows
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Configuration topics specific to the Microsoft Windows OS.

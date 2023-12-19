@@ -10,7 +10,7 @@ summary: Introduction to database virtualization
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Virtualization of databases with VMware ESX, Oracle OVM, or KVM is an increasingly common choice for NetApp customers who chose virtualization for even their most mission-critical databases.

@@ -9,7 +9,7 @@ summary: Oracle SM-BC Failure Scenarios
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 There are multiple SnapMirror Business Continuity (SM-BC) failure scenarios each having different results.

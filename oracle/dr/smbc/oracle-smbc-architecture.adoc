@@ -9,7 +9,7 @@ summary: Oracle with SnapMirror Business Continuity (SM-BC)
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../../media/
 
 [.lead]
 SM-BC enables selective RPO=0 synchronous mirroring for individual Oracle databases and application environments.

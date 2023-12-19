@@ -10,7 +10,7 @@ summary: Introduction to Oracle storage migration
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ./media/
 
 [.lead]
 Leveraging the capabilities of a new storage platform has one unavoidable requirement; data must be placed on the new storage system. 
