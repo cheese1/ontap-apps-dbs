@@ -174,7 +174,7 @@ entries:
     - title: Procedures
       entries:
       - title: Overview
-        url: /oracle/migration/oracle-migration-procedure-overview.html
+        url: /oracle/migration/oracle-migration-procedures-overview.html
       - title: Datafile move
         url: /oracle/migration/oracle-datafile-move.html
       - title: Log shipping
@@ -192,7 +192,7 @@ entries:
         - title: Protocol conversion
           url: /oracle/migration/oracle-protocol-conversion.html
     - title: Sample scripts
-      url: /oracle/migration/oracle-fli-sample-scripts.html
+      url: /oracle/migration/oracle-migration-sample-scripts.html
   - title: Additional notes
     entries:
     - title: Performance optimization and benchmarking

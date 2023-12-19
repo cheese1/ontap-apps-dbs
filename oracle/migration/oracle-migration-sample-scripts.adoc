@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/oracle-fli-sample-scripts.html
+permalink: oracle/migration/oracle-migration-sample-scripts.html
 keywords: oracle, Scripts
 summary: Sample scripts for automating Oracle migration operations
 ---

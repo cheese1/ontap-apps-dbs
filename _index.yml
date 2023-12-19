@@ -4,7 +4,7 @@ indexpage:
     - title: Microsoft SQL Server
       links:
         - title: Microsoft SQL Server on ONTAP
-          url: /mssql/workloads.html
+          url: /mssql/overview.html
         - title: Microsoft SQL Server storage considerations
           url: /mssql/Storage-considerations.html
         - title: Microsoft SQL Server data protection

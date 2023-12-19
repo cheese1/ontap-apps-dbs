@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/oracle-migration-procedure-overview.html
+permalink: oracle/migration/oracle-migration-procedures-overview.html
 keywords: migration, oracle
 summary: Oracle migration procedures
 ---

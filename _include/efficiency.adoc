@@ -74,4 +74,4 @@ Volumes created on ONTAP running on an all-flash AFF system are thin provisioned
 * If volumes and/or LUNs are not thin provisioned, you should must disable all efficiency settings because using these features provides no savings and the combination of thick provisioning with space efficiency enabled can cause unexpected behavior, including out-of-space errors.
 * If data is not subject to overwrites, such as with backups or database transaction logs, you can achieve greater efficiency by enabling TSSE with a low cooling period. 
 * Some files might contain a significant amount of uncompressible data, for example when compression is already enabled at the application level of files are encrypted. If any of these scenarios are true, consider disabling compression to allow more efficient operation on other volumes containing compressible data.
-* Do not use both 32KB compression and deduplication with database backups. See the section <<Adaptive%20compression,Adaptive compression>> for details.
+* Do not use both 32KB compression and deduplication with database backups. See the section ""<<Adaptive compression>>"" for details.
