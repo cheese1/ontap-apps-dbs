@@ -58,7 +58,7 @@ The following overview summarizes the required storage configuration steps. Each
 . Create logical interfaces (LIFs) as described in the section link:storage_controller_setup.html#logical-interface-configuration[Logical interface configuration.]
 . Create FCP port sets as described in the section link:storage_controller_setup.html#fcp-port-sets[FCP port sets.]
 . Create initiator groups (igroups) with worldwide names (WWNs) of HANA servers as described in the section link:storage_controller_setup.html#initiator-groups[Initiator groups.]
-. Create volumes and LUNs within the aggregates as described in the section link:storage_controller_setup.html#volume-and-lun-configuration-for-sap-hana-single-host-systems[Volume and LUN configuration for SAP HANA single-host systems] and link:saphana_fas_fc_storage_controller_setup.html#volume-and-lun-configuration-for-sap-hana-multiple-host-systems[Volume and LUN configuration for SAP HANA multiple-host systems.]
+. Create volumes and LUNs within the aggregates as described in "<<"Volume and LUN configuration for SAP HANA single-host systems>> and "<<"Volume and LUN configuration for SAP HANA multiple-host systems>> 
 
 == Disk shelf connection
 
