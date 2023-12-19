@@ -56,7 +56,7 @@ The following overview summarizes the required storage configuration steps. Each
 . Create and configure the required aggregates as described in link:storage_controller_setup.html#aggregate-configuration[Aggregate configuration.]
 . Create a storage virtual machine (SVM) as described in link:storage_controller_setup.html#storage-virtual-machine-configuration[Storage virtual machine configuration.]
 . Create LIFs as described in link:storage_controller_setup.html#logical-interface-configuration[Logical interface configuration.]
-. Create volumes within the aggregates as described in "<<Volume configuration for SAP HANA single-host systems>>" and "<<Volume configuration for SAP HANA multiple-host systems.>>"
+. Create volumes within the aggregates as described in "<<Volume configuration for SAP HANA single-host systems>>" and "<<Volume configuration for SAP HANA multiple-host systems>>"
 . Set the required volume options as described in link:storage_controller_setup.html#volume-options[Volume options.]
 . Set the required options for NFSv3 as described in ""<<NFS configuration for NFSv3>>"" or for NFSv4 as described in ""<<NFS configuration for NFSv4>>""
 . Mount the volumes to namespace and set export policies as described in link:storage_controller_setup.html#mount-volumes-to-namespace-and-set-export-policies[Mount volumes to namespace and set export policies.]
