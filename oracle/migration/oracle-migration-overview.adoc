@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/oracle-fli-overview.html
+permalink: oracle/migration/oracle-migration-overview.html
 keywords: oracle, ontap, migrations, TR-4534
 summary: Introduction to Oracle storage migration
 ---
