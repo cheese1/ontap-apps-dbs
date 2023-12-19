@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/fli-completion.html
+permalink: oracle/migration/oracle-fli-completion.html
 keywords: migration, oracle, FLI
-summary: Completing an FLI cutover
+summary: Completing an FLI cutover - Oracle
 ---
-= Completion
+= FLI completion - Oracle
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -10,7 +10,7 @@ summary: Oracle Single Instance on ONTAP with SM-BC
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../../media/
 
 [.lead]
 The diagram below shows a simple deployment model where you have storage devices being zoned or connected from both the primary and remote storage clusters for an Oracle database. 

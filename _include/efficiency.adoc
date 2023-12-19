@@ -24,7 +24,7 @@ Compression block sizes larger than 8KB should not be used alongside deduplicati
 Temperature sensitive storage efficiency (TSSE) is a available in ONTAP 9.8 and later that relies on block access heat maps to identify infrequently accessed blocks and compress them with greater efficiency.
 
 === Compression alignment
-Adaptive compression in a database environment requires some consideration of compression block alignment. Doing so is only a concern for data that is subject to random overwrites of very specific blocks. This approach is similar in concept to overall file system alignment, as is described in the section link:../storage-configuration/fcsan.html#LUN%20alignment[LUN Alignment].
+Adaptive compression in a database environment requires some consideration of compression block alignment. Doing so is only a concern for data that is subject to random overwrites of very specific blocks. This approach is similar in concept to overall file system alignment, where the start of a filesystem must be aligned to a 4K device boundary and the blocksize of a filesystem must be a multiple of 4K.
 
 For example, an 8KB write to a file is compressed only if it aligns with an 8KB boundary within the file system itself. This point means that it must fall on the first 8KB of the file, the second 8KB of the file, and so forth. Data such as RMAN backups or archive logs are sequentially written operations that span multiple blocks, all of which are compressed. Therefore, there is no need to consider alignment. The only I/O pattern of concern is the random overwrites of files.
 
@@ -35,7 +35,7 @@ With the use of NFS, file I/O is aligned. Each block of a file is aligned with r
 SAN environments require data to be aligned to an 8KB boundary for optimum compression. There are two aspects of alignment for SAN: the LUN and the file system. The LUN must be configured as either a whole-drive device (no partition) or with a partition that aligns to an 8KB boundary.
 
 [NOTE]
-See the section link:../thin-provisioning.html#Fractional%20reservations[fractional reservations] for an explanation of the interaction between compression and fractional reservation.
+See the sections on thin provisioning for an explanation of the interaction between compression and fractional reservation.
 
 == Data compaction
 Data compaction is a technology introduced in ONTAP that improves compression efficiency. As stated previously, adaptive compression alone can provide at best 2:1 savings because it is limited to storing an 8KB I/O in a 4KB WAFL block. Compression methods with larger block sizes deliver better efficiency. However, they are not suitable for data that is subject to small block overwrites. Decompressing 32KB units of data, updating an 8KB portion, recompressing, and writing back to the drives creates overhead.
@@ -74,4 +74,4 @@ Volumes created on ONTAP running on an all-flash AFF system are thin provisioned
 * If volumes and/or LUNs are not thin provisioned, you should must disable all efficiency settings because using these features provides no savings and the combination of thick provisioning with space efficiency enabled can cause unexpected behavior, including out-of-space errors.
 * If data is not subject to overwrites, such as with backups or database transaction logs, you can achieve greater efficiency by enabling TSSE with a low cooling period. 
 * Some files might contain a significant amount of uncompressible data, for example when compression is already enabled at the application level of files are encrypted. If any of these scenarios are true, consider disabling compression to allow more efficient operation on other volumes containing compressible data.
-* Do not use both 32KB compression and deduplication with database backups. See the section <<Adaptive%20compression,Adaptive compression>> for details.
+* Do not use both 32KB compression and deduplication with database backups. See the section ""<<Adaptive compression>>"" for details.

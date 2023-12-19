@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/log-shipping.html
+permalink: oracle/migration/oracle-log-shipping.html
 keywords: migration, oracle, log shipping
-summary: "Oracle migration via log shipping"
+summary: Oracle migration via log shipping
 ---
-= Log shipping
+= Oracle log shipping
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -397,7 +397,7 @@ sent 204 bytes  received 75153219 bytes  150306846.00 bytes/sec
 total size is 399653376  speedup is 5.32
 ....
 
-After the logs have been received, they must be replayed. Previous examples show the use of sqlplus to manually run `recover database until cancel`, a process that can easily be automated. The example shown here uses the script described in link:sample-scripts.html#replay-logs-on-database[Replay Logs on Database]. The scripts accept an argument that specifies the database requiring a replay operation. This permits the same script to be used in a multidatabase migration effort.
+After the logs have been received, they must be replayed. Previous examples show the use of sqlplus to manually run `recover database until cancel`, a process that can easily be automated. The example shown here uses the script described in link:oracle-migration-sample-scripts.html#replay-logs-on-database[Replay Logs on Database]. The scripts accept an argument that specifies the database requiring a replay operation. This permits the same script to be used in a multidatabase migration effort.
 
 ....
 [oracle@jfsc3 logs]$ ./replay.logs.pl WAFFLE
@@ -566,7 +566,7 @@ Statement processed
 
 Several file locations currently defined in the controlfiles change when the database is moved. The following script creates an RMAN script to make the process easier. This example shows a database with a very small number of data files, but typically databases contain hundreds or even thousands of data files.
 
-This script can be found in link:sample-scripts.html#asm-to-file-system-name-conversion[ASM to File System Name Conversion] and it does two things.
+This script can be found in link:oracle-migration-sample-scripts.html#asm-to-file-system-name-conversion[ASM to File System Name Conversion] and it does two things.
 
 First, it creates a parameter to redefine the redo log locations called `log_file_name_convert`. It is essentially a list of alternating fields. The first field is the location of a current redo log, and the second field is the location on the new server. The pattern is then repeated.
 
@@ -923,7 +923,7 @@ ORA-19635: input and output file names are identical: /rman/pancake/logship/1_47
 Recovery Manager complete.
 ....
 
-After the logs have been received, they must be replayed. Previous examples showed the use of sqlplus to manually run `recover database until cancel`, which can be easily automated. The example shown here uses the script described in link:sample-scripts.html#replay-logs-on-standby-database[Replay Logs on Standby Database]. The script accepts an argument that specifies the database requiring a replay operation. This process permits the same script to be used in a multidatabase migration effort.
+After the logs have been received, they must be replayed. Previous examples showed the use of sqlplus to manually run `recover database until cancel`, which can be easily automated. The example shown here uses the script described in link:oracle-migration-sample-scripts.html#replay-logs-on-standby-database[Replay Logs on Standby Database]. The script accepts an argument that specifies the database requiring a replay operation. This process permits the same script to be used in a multidatabase migration effort.
 
 ....
 [root@jfsc2 pancake]# ./replaylogs.pl PANCAKE

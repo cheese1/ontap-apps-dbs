@@ -9,7 +9,7 @@ summary: Oracle with FabricPool tiering overview
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Understanding how FabricPool tiering affects Oracle and other databases requires an understanding of low-level FabricPool architecture.

@@ -9,7 +9,7 @@ summary: Oracle failover with SM-BC
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../../media/
 
 [.lead]
 The primary reason for hosting an Oracle database on SM-BC is to deliver transparent failover during planned and unplanned storage events.

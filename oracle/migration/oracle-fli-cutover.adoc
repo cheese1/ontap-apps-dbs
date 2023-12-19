@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/fli-cutover.html
+permalink: oracle/migration/oracle-fli-cutover.html
 keywords: migration, oracle, FLI
-summary: FLI Cutover
+summary: FLI Cutover - Oracle
 ---
 
-= Cutover
+= FLI Cutover - Oracle
 :hardbreaks:
 :nofooter:
 :icons: font

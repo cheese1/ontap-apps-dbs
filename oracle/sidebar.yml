@@ -140,13 +140,13 @@ entries:
       - title: SyncMirror
         url: /oracle/dr/metrocluster/oracle-and-syncmirror.html
       - title: Oracle Failover
-        url: /oracle/dr/metrocluster/oracle-on-metrocluster.html
+        url: /oracle/dr/metrocluster/oracle-failover-on-metrocluster.html
       - title: NVFAIL
         url: /oracle/dr/metrocluster/oracle-nvfail.html
       - title: Single Instance on MetroCluster
-        url: /oracle/dp/mcc-si.html
+        url: /oracle/dr/metrocluster/mcc-si.html
       - title: Oracle RAC on MetroCluster
-        url: /oracle/dp/mcc-rac.html
+        url: /oracle/dr/metrocluster/mcc-rac.html
     - title: SnapMirror Business Continuity
       entries:
       - title: Architecture
@@ -154,45 +154,45 @@ entries:
       - title: Failover
         url: /oracle/dr/smbc/oracle-smbc-failover.html
       - title: Single Instance on SM-BC
-        url: /oracle/dp/smbc-si.html
+        url: /oracle/dr/smbc/smbc-si.html
       - title: Oracle RAC on SM-BC
-        url: /oracle/dp/smbc-rac.html
+        url: /oracle/dr/smbc/smbc-rac.html
       - title: Failure scenarios
         url: /oracle/dr/smbc/oracle-smbc-failure-scenarios.html
-    - title: SnapMirror
-      entries:
-      - title: Consistency group disaster recovery
-        url: /oracle/dr/snapmirror/consistency_group_disaster_recovery.html
-      - title: Disaster recovery with log replay
-        url: /oracle/dr/snapmirror/disaster_recovery_with_log_replay.html
+#    - title: SnapMirror
+#      entries:
+#      - title: Consistency group disaster recovery
+#      url: /oracle/dr/snapmirror/consistency_group_disaster_recovery.html
+#      - title: Disaster recovery with log replay
+#        url: /oracle/dr/snapmirror/disaster_recovery_with_log_replay.html
   - title: Oracle database migration
     entries:
     - title: Overview
-      url: /oracle/migration/overview.html
+      url: /oracle/migration/oracle-migration-overview.html
     - title: Planning
-      url: /oracle/migration/planning.html
+      url: /oracle/migration/oracle-migration-planning.html
     - title: Procedures
       entries:
       - title: Overview
-        url: /oracle/migration/overview-procedures.html
+        url: /oracle/migration/oracle-migration-procedures-overview.html
       - title: Datafile move
-        url: /oracle/migration/datafile-move.html
+        url: /oracle/migration/oracle-datafile-move.html
       - title: Log shipping
-        url: /oracle/migration/log-shipping.html
+        url: /oracle/migration/oracle-log-shipping.html
       - title: Host data copy
-        url: /oracle/migration/host-data-copy.html
+        url: /oracle/migration/oracle-host-data-copy.html
       - title: Foreign LUN import
         entries:
         - title: Planning
-          url: /oracle/migration/fli-planning.html
+          url: /oracle/migration/oracle-fli-planning.html
         - title: Cutover
-          url: /oracle/migration/fli-cutover.html
+          url: /oracle/migration/oracle-fli-cutover.html
         - title: Completion
-          url: /oracle/migration/fli-completion.html
+          url: /oracle/migration/oracle-fli-completion.html
         - title: Protocol conversion
-          url: /oracle/migration/protocol-conversion.html
+          url: /oracle/migration/oracle-protocol-conversion.html
     - title: Sample scripts
-      url: /oracle/migration/sample-scripts.html
+      url: /oracle/migration/oracle-migration-sample-scripts.html
   - title: Additional notes
     entries:
     - title: Performance optimization and benchmarking

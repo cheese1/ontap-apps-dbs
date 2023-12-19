@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/datafile-move.html
+permalink: oracle/migration/oracle-datafile-move.html
 keywords: migration, oracle, move datafile
 summary: Migrating individual Oracle datafiles
 ---
@@ -13,7 +13,7 @@ summary: Migrating individual Oracle datafiles
 :imagesdir: ./media/
 
 [.lead]
-Individual datafiles can be moved with a single command.
+Individual Oracle datafiles can be moved with a single command.
 
 For example, the following command moves the datafile IOPST.dbf from filesystem `/oradata2` to filesystem `/oradata3`.
 

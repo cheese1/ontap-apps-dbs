@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar
-permalink: oracle/migration/host-data-copy.html
+permalink: oracle/migration/oracle-host-data-copy.html
 keywords: migration, oracle, data copy, lvm, rebalance, asm
 summary: Oracle migration using the host-side storage stack
 ---
-= Host data copy
+= Oracle host data copy
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -73,7 +73,7 @@ With the Partitioning, OLAP, Advanced Analytics and Real Application Testing opt
 NTAP shut down
 ....
 
-. Convert the file systems to read-only. This can be done more quickly by using a script, as shown in link:sample-scripts.html#convert-file-system-to-read-only[Convert File System to Read Only].
+. Convert the file systems to read-only. This can be done more quickly by using a script, as shown in link:oracle-migration-sample-scripts.html#convert-file-system-to-read-only[Convert File System to Read Only].
 +
 ....
 [root@host1 current]# ./mk.fs.readonly.pl /oradata
@@ -148,7 +148,7 @@ sent 527098156 bytes  received 278 bytes  95836078.91 bytes/sec
 total size is 527032832  speedup is 1.00
 ....
 
-. Unmount the old file systems and relocate the copied data. This can be done more quickly by using a script, as shown in link:sample-scripts.html#replace-file-system[Replace File System].
+. Unmount the old file systems and relocate the copied data. This can be done more quickly by using a script, as shown in link:oracle-migration-sample-scripts.html#replace-file-system[Replace File System].
 +
 ....
 [root@host1 current]# ./swap.fs.pl /logs,/new/logs
@@ -1194,7 +1194,7 @@ ASMCMD>
 ....
 
 === Data file cleanup procedure
-The migration process might result in data files with long or cryptic syntax, depending on how Oracle RMAN was used. In the example shown here, the backup was performed with the file format of `/oradata/TOAST/%U`. `%U` indicates that RMAN should create a default unique name for each data file. The result is similar to what is shown in the following text. The traditional names for the data files are embedded within the names. This can be cleaned up by using the scripted approach shown in link:sample-scripts.html#asm-migration-cleanup[ASM Migration Cleanup].
+The migration process might result in data files with long or cryptic syntax, depending on how Oracle RMAN was used. In the example shown here, the backup was performed with the file format of `/oradata/TOAST/%U`. `%U` indicates that RMAN should create a default unique name for each data file. The result is similar to what is shown in the following text. The traditional names for the data files are embedded within the names. This can be cleaned up by using the scripted approach shown in link:oracle-migration-sample-scripts.html#asm-migration-cleanup[ASM Migration Cleanup].
 
 ....
 [root@jfsc1 current]# ./fixuniquenames.pl TOAST

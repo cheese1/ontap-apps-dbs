@@ -53,7 +53,7 @@ The following overview summarizes the required storage configuration steps. Each
 . Create a storage virtual machine (SVM), as described in "<<Storage virtual machine configuration>>."
 . Create logical interfaces (LIFs), as described in "<<Logical interface configuration>>."
 . Create a port set, as described in "<<FCP port sets>>."
-. Create initiator groups, volumes, and LUNs within the aggregates, as described in creating "<<LUNs and volumes and mapping LUNs to initiator groups>>."
+. Create volumes and LUNs within the aggregates as described in "<<"Volume and LUN configuration for SAP HANA single-host systems>> and "<<"Volume and LUN configuration for SAP HANA multiple-host systems>> 
 
 == Disk shelf connection
 
@@ -351,7 +351,7 @@ The volume options listed in the following table must be verified and set on all
 |vol modify -vserver <vserver-name> -volume <volname> -snapdir-access false
 |===
 
-=== Creating LUNs, volumes, and mapping LUNs to initiator groups
+=== Creating LUNs and volumes and mapping LUNs to initiator groups
 
 You can use NetApp ONTAP System Manager to create storage volumes and LUNs and map them to the servers.
 

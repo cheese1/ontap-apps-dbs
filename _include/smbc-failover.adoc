@@ -12,7 +12,7 @@ image:smbc-failover-1.png[Error: Missing Graphic Image]
 == Failure
 If the active mirror copy becomes unavailable, either because of planned or unplanned failover, it obviously will no longer be usable. However, the remote system possesses a synchronous replica and SAN paths to the remote site already exist. The remote system is able to service IO for that LUN.
 
-Whether the remote copy is immediately used depends on whether SM-BC is operated in Sync or StrictSync Mode. See link:./architecture.html#modes[SM-BC operating modes] section for an explanation of the difference between those two modes.
+Whether the remote copy is immediately used depends on whether SM-BC is operated in Sync or StrictSync Mode. 
 
 image:smbc-failover-2.png[Error: Missing Graphic Image]
 
