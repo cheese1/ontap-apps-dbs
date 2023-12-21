@@ -12,10 +12,10 @@ sidebar:
     - section: mysql
     - section: oracle
     - section: postgres
-    - title: SAP HANA and AnyDB
+    - title: SAP
       entries:
-        - title: 
-          url: sap-solutions.html
+         title: SAP HANA and AnyDB
+         url: sap-solutions.html
     - section: vmware
     - title: Legal notices
       url: /legal-notices.html
