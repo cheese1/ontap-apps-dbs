@@ -7,8 +7,6 @@ entries:
         url: /vmware/vsphere/overview.html
       - title: Unified storage
         url: /vmware/vsphere/unified.html
-      - title: ONTAP Configuration
-        url: /vmware/vsphere/ontap.html
       - title: Virtualization tools
         url: /vmware/vsphere/vtools.html
       - title: Virtual Volume and storage policy based management
