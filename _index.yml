@@ -28,7 +28,13 @@ indexpage:
         - title: Oracle migration
           url: /oracle/migration/oracle-migration-overview.html
     - title: SAP HANA
-      url: https://docs.netapp.com/us-en/netapp-solutions-sap/
+      links:
+        - title: SAP Solutions
+          url: https://docs.netapp.com/us-en/netapp-solutions-sap/index.html
+        - title: SAP HANA with AFF and FC
+          url: https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_introduction.html
+        - title: SAP HANA with AFF and NFS
+          url: https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introduction.html
     - title: VMware
       links:
         - title: VMware vSphere with ONTAP
