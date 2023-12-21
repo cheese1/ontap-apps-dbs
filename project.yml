@@ -14,8 +14,8 @@ sidebar:
     - section: postgres
     - title: SAP HANA and AnyDB
       entries:
-         title: 
-         url: sap-solutions.html
+        - title: 
+          url: sap-solutions.html
     - section: vmware
     - title: Legal notices
       url: /legal-notices.html
