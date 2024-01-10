@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/ontap-configuration/oracle-efficiency.html
+keywords: oracle, efficiency, compression, compaction, deduplication
+summary: Oracle databases and storage efficiency
+---
+= Oracle databases and ONTAP efficiency features
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+ONTAP space efficiency features are optimized for Oracle databases. In almost all cases, the best approach is to leave the defaults in place with all efficiency features enabled.
+
+include::_include/efficiency.adoc[]

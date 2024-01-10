@@ -1,9 +1,45 @@
 indexpage:
-  lead: # single paragraph, shown on the page
+  lead: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures for ONTAP and enterprise applications and infrastructure.
   tiles:
-    # one or more tile definitions for the page
-  - title: # short string (tile title)
-    links:
-      # one or more links on the tile
-      - title: # short string (link title)
-        url: # single file name or external URL
+    - title: Microsoft SQL Server
+      links:
+        - title: Microsoft SQL Server on ONTAP
+          url: /mssql/overview.html
+        - title: Microsoft SQL Server storage considerations
+          url: /mssql/Storage-considerations.html
+        - title: Microsoft SQL Server data protection
+          url: /mssql/Data-protection.html
+        - title: Microsoft SQL Server disaster recovery
+          url: /mssql/SQL-disaster-recovery.html
+    - title: Open-source databases
+      links:
+        - title: MariaDB and MySQL on ONTAP
+          url: /mysql/overview.html
+        - title: PostgreSQL on ONTAP
+          url: /postgres/overview.html
+    - title: Oracle Database
+      links:
+        - title: Oracle on ONTAP
+          url: /oracle/overview.html
+        - title: Oracle data protection
+          url: /oracle/dp/oracle-data-protection-introduction.html
+        - title: Oracle disaster recovery
+          url: /oracle/dr/oracle-dr-overview.html
+        - title: Oracle migration
+          url: /oracle/migration/oracle-migration-overview.html
+    - title: SAP HANA
+      links:
+        - title: SAP Solutions
+          url: https://docs.netapp.com/us-en/netapp-solutions-sap/index.html
+        - title: SAP HANA with AFF and FC
+          url: https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_introduction.html
+        - title: SAP HANA with AFF and NFS
+          url: https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introduction.html
+    - title: VMware
+      links:
+        - title: VMware vSphere with ONTAP
+          url: /vmware/vsphere/overview.html
+        - title: Virtual Volumes (vVols) with ONTAP
+          url: /vmware/vvols/overview.html
+        - title: VMware Site Recovery Manager with ONTAP
+          url: /vmware/srm/overview.html

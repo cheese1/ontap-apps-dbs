@@ -1,0 +1,49 @@
+section: mysql
+title: MySQL
+entries:
+  - title: Overview
+    url: /mysql/overview.html
+  - title: ONTAP configuration
+    url: /mysql/ontap.html
+  - title: Database configuration
+    entries:
+    - title: File structure
+      url: /mysql/file-structure.html
+    - title: Configuration overview
+      url: /mysql/configuration.html
+    - title: innodb_log_file_size
+      url: /mysql/innodb_log_file_size.html
+    - title: innodb_flush_log_at_trx_commit
+      url: /mysql/innodb_flush_log_at_trx_commit.html
+    - title: innodb_doublewrite
+      url: /mysql/innodb_doublewrite.html
+    - title: innodb_buffer_pool_size
+      url: /mysql/innodb_buffer_pool_size.html
+    - title: innodb_flush_method
+      url: /mysql/innodb_flush_method.html
+    - title: innodb_io_capacity
+      url: /mysql/innodb_io_capacity.html
+    - title: innodb_lru_scan_depth 
+      url: /mysql/innodb_lru_scan_depth.html
+    - title: open_file_limits
+      url: /mysql/open_file_limits.html
+  - title: Host configuration
+    entries:
+    - title: Containerization 
+      url: /mysql/containers.html
+    - title: Slot tables 
+      url: /mysql/slot-tables.html
+    - title: I/O schedulers
+      url: /mysql/schedulers.html
+    - title: File descriptors
+      url: /mysql/file-descriptors.html
+  - title: Storage configuration
+    entries:
+    - title: General storage configuration
+      url: /mysql/storage.html
+    - title: MySQL over NFS
+      url: /mysql/mysql-over-nfs.html
+    - title: MySQL over SAN
+      url: /mysql/mysql-over-san.html
+    - title: MySQL tiering with FabricPool
+      url: /mysql/tiering.html

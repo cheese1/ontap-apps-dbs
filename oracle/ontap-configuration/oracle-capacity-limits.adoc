@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/ontap-configuration/oracle-capacity-limits.html
+keywords: capacity
+summary: Databases and ONTAP storage capacity and free space
+---
+= Oracle and and storage capacity management
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Managing a database or other enterprise application with predictable, manageable, high performance enterprise storage requires some free space on the drives for data and metadata management. The amount of free space required depends on the type of drive used, and business processes.
+
+include::_include/capacity-limits.adoc[]

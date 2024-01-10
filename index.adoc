@@ -1,11 +1,10 @@
 ---
-layout: landing-page
+layout: astra
 sidebar: sidebar
 permalink: index.html
-# lead: Use only if indexpage.lead is not present in _index.yml
-summary: "summary, used for search results"
+summary: ONTAP and enterprise applications
 ---
-= replace with repository name
+= ONTAP and enterprise applications
 :hardbreaks:
 :nofooter:
 :icons: font

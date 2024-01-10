@@ -1,0 +1,31 @@
+section: postgres
+title: PostgreSQL
+entries:
+  - title: Overview
+    url: /postgres/overview.html
+  - title: ONTAP configuration
+    url: /postgres/ontap.html
+  - title: Database configuration
+    entries:
+    - title: Architecture
+      url: /postgres/architecture.html
+    - title: Initialization
+      url: /postgres/initialization.html
+    - title: Settings
+      url: /postgres/db-config.html
+    - title: Tablespaces
+      url: /postgres/tablespaces.html
+  - title: Storage configuration
+    entries:
+    - title: Filesystem configuration
+      url: /postgres/filesystems.html
+    - title: Tiering
+      url: /postgres/tiering.html
+  - title: Data protection
+    entries:
+    - title: Native data protection
+      url: /postgres/native-dp.html
+    - title: Snapshot technology
+      url: /postgres/snapshot-dp.html
+    - title: Data protection software
+      url: /postgres/snapcenter-dp.html

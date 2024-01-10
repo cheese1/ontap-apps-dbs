@@ -1,0 +1,53 @@
+---
+permalink: oracle/dr/smbc/oracle-smbc-failure-scenarios.html
+sidebar: sidebar
+keywords: SM-BC, smbc, failover
+summary: Oracle SM-BC Failure Scenarios
+---
+= Oracle SM-BC failure scenarios
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+There are multiple SnapMirror Business Continuity (SM-BC) failure scenarios each having different results.
+
+[cols="1,1"]
+|===
+|Scenario|Result
+
+|Replication link failure
+
+|Mediator recognizes this split-brain scenario and resumes I/O on the node that holds the master copy. When the connectivity between sites is back online, the alternate site performs automatic resync.
+
+|Primary site storage failure
+
+|Automated unplanned failover is initiated by Mediator.
+
+No I/O disruption.
+
+|Remote site storage failure
+
+|There is no I/O disruption. There is a momentary pause due to the network causing sync replication to abort and the master establishing that it is the rightful owner to continue to serve I/O (consensus). Therefore, there is an I/O pause of a few seconds and then the I/O will resume.
+
+There is an automatic resync when the site is online.
+
+|Loss of Mediator or link between Mediator and the storage arrays
+
+|I/O continues and remains in sync with the remote cluster but automated unplanned/planned failover and failback is not possible in the absence of Mediator.
+
+|Loss of one of the storage controllers in the HA cluster
+
+|The partner node in the HA cluster attempts a takeover (NDO). If takeover fails, Mediator notices that both the node in the storage is down and performs an automatic unplanned failover to the remote cluster.
+
+|Loss of disks
+|IO continues for up to three consecutive disk failures. This is part of RAID-TEC.
+
+|Loss of the entire site in a typical deployment
+
+|Servers on the failed site will obviously no longer be available. Applications that support clustering can be configured to run at both sites and continue operations on the alternate site, although most such applications require a 3rd site tiebreaker similar to how SM-BC requires the mediator.
+
+Without application level clusters, applications will need to be started at the surviving site. This would affect availbility, but RPO=0 is preserved. No data would be lost.
+|===

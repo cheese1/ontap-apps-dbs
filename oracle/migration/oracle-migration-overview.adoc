@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: oracle/migration/oracle-migration-overview.html
+keywords: oracle, ontap, migrations, TR-4534
+summary: Introduction to Oracle storage migration
+---
+= Migration of Oracle Databases to NetApp Storage Systems
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Leveraging the capabilities of a new storage platform has one unavoidable requirement; data must be placed on the new storage system. 
+
+[NOTE]
+This documentation replaces previously published technical report _TR-4534: Migration of Oracle Databases to NetApp Storage Systems_
+
+In the case of a new database project, this is not a concern because the database and application environments are constructed in place. Migration, however, poses special challenges regarding business disruption, the time required for the completion of migration, needed skill sets, and risk minimization. 
+
+== Scripts
+Sample scripts are provided in this documentation. These scripts provide sample methods of automating various aspects of migration to reduce the chance of user errors. The scripts can reduce the overall demands on the IT staff responsible for a migration and they can speed up the overall process. These scripts are all drawn from actual migration projects performed by NetApp Professional Services and NetApp partners. Examples of their use are shown throughout this documentation.

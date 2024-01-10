@@ -1,0 +1,102 @@
+---
+sidebar: sidebar
+permalink: oracle/host-configuration/aix.html
+keywords: oracle, database, ontap, aix, cio
+summary: Oracle on ONTAP using AIX
+---
+= IBM AIX
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Configuration topics specific to the IBM AIX operating system.
+
+== Concurrent I/O
+Achieving optimum performance on IBM AIX requires the use of concurrent I/O. Without concurrent I/O, performance limitations are likely because AIX performs serialized, atomic I/O, which incurs significant overhead.
+
+Originally, NetApp recommended using the `cio` mount option to force the use of concurrent I/O on the file system, but this process had drawbacks and is no longer required. Since the introduction of AIX 5.2 and Oracle 10gR1, Oracle on AIX can open individual files for concurrent IO, as opposed to forcing concurrent I/O on the entire file system.
+
+The best method for enabling concurrent I/O is to set the `init.ora` parameter `filesystemio_options` to `setall`. Doing so allows Oracle to open specific files for use with concurrent I/O.
+
+Using `cio` as a mount option forces the use of concurrent I/O, which can have negative consequences. For example, forcing concurrent I/O disables readahead on file systems, which can damage performance for I/O occurring outside the Oracle database software, such as copying files and performing tape backups. Furthermore, products such as Oracle GoldenGate and SAP BR*Tools are not compatible with using the `cio` mount option with certain versions of Oracle.
+
+[TIP]
+====
+*NetApp recommends* the following:
+
+* Do not use the `cio` mount option at the file system level. Rather, enable concurrent I/O through the use of `filesystemio_options=setall`.
+* Only use the `cio` mount option should if it is not possible to set `filesystemio_options=setall`.
+====
+
+== AIX NFS mount options
+The following table lists the AIX NFS mount options for Oracle single instance databases.
+
+|===
+|File type |Mount options
+
+.^|ADR Home
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
+.^|Controlfiles
+Datafiles
+Redo logs
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
+.^|`ORACLE_HOME`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+intr`
+|===
+
+The following table lists the AIX NFS mount options for RAC.
+
+|===
+|File type |Mount options
+
+.^|ADR Home
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
+.^|Controlfiles
+Datafiles
+Redo logs
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,noac`
+.^|`CRS/Voting`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr,noac`
+.^|Dedicated `ORACLE_HOME`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144`
+.^|Shared `ORACLE_HOME`
+.^|`rw,bg,hard,[vers=3,vers=4.1],proto=tcp,
+timeo=600,rsize=262144,wsize=262144,
+nointr`
+|===
+
+The primary difference between single-instance and RAC mount options is the addition of `noac` to the mount options. This addition has the effect of disabling the host OS caching that enables all instances in the RAC cluster to have a consistent view of the state of the data.
+
+Although using the `cio` mount option and the `init.ora` parameter `filesystemio_options=setall` has the same effect of disabling host caching, it is still necessary to use `noac`. `noac` is required for shared `ORACLE_HOME` deployments to facilitate the consistency of files such as Oracle password files and `spfile` parameter files. If each instance in a RAC cluster has a dedicated `ORACLE_HOME`, then this parameter is not required.
+
+== AIX jfs/jfs2 Mount Options
+The following table lists the AIX jfs/jfs2 mount options.
+
+|===
+|File type |Mount options
+
+.^|ADR Home
+.^|Defaults
+.^|Controlfiles
+Datafiles
+Redo logs
+.^|Defaults
+.^|ORACLE_HOME
+.^|Defaults
+|===
+
+Before using AIX `hdisk` devices in any environment, including databases, check the parameter `queue_depth`. This parameter is not the HBA queue depth; rather it relates to the SCSI queue depth of the individual `hdisk device. Depending on how the LUNs are configured, the value for `queue_depth` might be too low for good performance. Testing has shown the optimum value to be 64.

@@ -1,0 +1,17 @@
+---
+permalink: mysql/tiering.html
+sidebar: sidebar
+keywords: tiering, fabricpool
+summary: FabricPool overview
+---
+= MySQL tiering with FabricPool
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./../media/
+
+[.lead]
+Understanding how FabricPool tiering affects applications and databases requires an understanding of low-level FabricPool architecture.
+

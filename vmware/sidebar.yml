@@ -1,0 +1,69 @@
+section: vmware
+title: VMware
+entries:
+  - title: VMware vSphere with ONTAP
+    entries:
+      - title: Overview
+        url: /vmware/vsphere/overview.html
+      - title: Unified storage
+        url: /vmware/vsphere/unified.html
+      - title: Virtualization tools
+        url: /vmware/vsphere/vtools.html
+      - title: Virtual Volume and storage policy based management
+        url: /vmware/vsphere/vvols_and_spbm.html
+      - title: Datastores and protocols
+        url: /vmware/vsphere/datastores.html
+      - title: Network configuration
+        url: /vmware/vsphere/network.html
+      - title: Cloning
+        url: /vmware/vsphere/cloning.html
+      - title: Data protection
+        url: /vmware/vsphere/dp.html
+      - title: QoS
+        url: /vmware/vsphere/qos.html
+      - title: Storage policy based management
+        url: /vmware/vsphere/policy-and-vvols.html
+      - title: VMware Storage Distributed Resource Scheduler
+        url: /vmware/vsphere/sdrs.html
+      - title: Recommended settings
+        url: /vmware/vsphere/settings.html
+  - title: "Virtual Volumes (vVols) with ONTAP"
+    entries:
+      - title: Overview
+        url: /vmware/vvols/overview.html
+      - title: "Using vVols with ONTAP"
+        url: /vmware/vvols/ontap.html
+      - title: "Deploying vVols storage"
+        url: /vmware/vvols/deploy.html
+      - title: "Protecting vVols"
+        url: /vmware/vvols/protect.html
+      - title: "Troubleshooting"
+        url: /vmware/vvols/resources.html
+  - title: "VMware Site Recovery Manager with ONTAP"
+    entries:
+      - title: Overview
+        url: /vmware/srm/overview.html
+      - title: "Deployment best practices"
+        url: /vmware/srm/deployment_best_practices.html
+      - title: "Operational best practices"
+        url: /vmware/srm/operational_best_practices.html
+      - title: "Replication topologies"
+        url: /vmware/srm/replication_topologies.html
+      - title: "Troubleshooting SRM when using vVols replication"
+        url: /vmware/srm/appendix_a__troubleshooting_srm_when_using_vvols_replication.html
+#  - title: "VMware Horizon"
+#    entries:
+#      - title: "End user computing with VMware (Design Guide)"
+#        url: /vmware/links/nva-1132-design.html
+#      - title: "End user computing with VMware and NVIDIA GPUs (Design Guide)"
+#        url: /vmware/links/nva-1129-design.html
+#      - title: "End user computing with VMware and NVIDIA GPUs (Deployment Guide)"
+#        url: /vmware/links/nva-1129-deploy.html
+#      - title: "End user computing with VMware for 3D graphics"
+#        url: /vmware/links/tr-4792-link.htm
+  - title: Product Security
+    entries:
+      - title: ONTAP tools for VMware vSphere
+        url: /vmware/security/tools.html
+      - title: SnapCenter Plug-in for VMware vSphere
+        url: /vmware/security/snapcenter.html

@@ -1,0 +1,34 @@
+---
+sidebar: sidebar
+permalink: mssql/Data-protection.html
+keywords: MS-SQL,mssql,SQL Server, SnapCenter, data protection
+summary: Microsoft SQL Server data protection with ONTAP
+---
+= Microsoft SQL Server data protection with ONTAP
+
+[.lead]
+Protecting database is critical to any organization. As data size and count of databases have increased, maintaining recovery time objective (RTO) and recovery point objective (RPO) is very crucial.
+
+The main consideration for database backup is leveraging NetApp Snapshot technology. Data protection planning on ONTAP is discussed link:../common/dp/overview.html[here]. Application consistent backup and database layout are other key consideration to achieve RTO and RPO which can be orchestrated by NetApp SnapCenter.
+
+== SnapCenter
+SnapCenter is the NetApp data protection software for enterprise applications.SQL Server databases can be quickly and easily protected using NetApp SnapCenter software with the Plug-in for SQL Server and the Plug-in for Microsoft Windows.
+
+This products enable application-consistent backup, automated cloning, and restore and recovery of SQL Server databases, instances, or availability groups. 
+
+[TIP]
+*NetApp recommends* using SnapCenter to create Snapshot copies. 
+
+For more details about the SQL Server Plug-in for SnapCenter, see link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf[TR-4714: Best practice guide for SQL Server using NetApp SnapCenter^].
+
+== Protecting database using T-SQL snapshots
+In SQL Server 2022, Microsoft introduced T-SQL snapshots that offers built-in advantage than traditional method that was not easily consumed by database administrator. Leveraging ONTAP REST API's, you can call commands to snapshot volumes. 
+
+The following is a sample backup workflow:
+
+1. Freeze a database with ALTER command - providing an opportunity to perform a consistent snapshot on the underlying storage. After this you can thaw the database and record the snapshot with BACKUP command.
+2. Perform snapshots of multiple databases on the storage volumes simultaneously with the new BACKUP GROUP and BACKUP SERVER commands. 
+3. Perform FULL backups or COPY_ONLY FULL backups. These backups are recorded in msdb as well.
+4. Perform point-in-time recovery using log backups taken with the normal streaming approach after the snapshot FULL backup. Streaming differential backups are also supported if desired.
+
+To learn more, see link:https://learn.microsoft.com/en-us/sql/relational-databases/databases/create-a-database-snapshot-transact-sql?view=sql-server-ver16[Microsoft documentation to know about the T-SQL snapshots^].

@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/storage-configuration/oracle-lvm-striping.html
+keywords: SAN, ASM, LVM
+summary: LVM stripe configuration for Oracle databases
+---
+= LVM Striping with Oracle databases
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+LVM striping refers to distributing data across multiple LUNs. The result is dramatically improved performance for many databases.
+
+include::_include/lvm-striping.adoc[]

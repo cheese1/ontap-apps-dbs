@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: mssql/overview.html
+keywords: MS-SQL,mssql,SQL Server,TR-4590
+summary: Microsoft SQL Server on ONTAP
+---
+= Microsoft SQL Server Overview
+
+[.lead]
+SQL Server is the foundation of Microsoft's data platform, delivering mission-critical performance with in-memory technologies and faster insights on any data, whether on the premises or in the cloud.
+
+[NOTE]
+This documentation replaces the previously published technical reports _TR-4590: Best practice guide for Microsoft SQL Server with ONTAP_
+
+Microsoft SQL Server builds on the mission-critical capabilities delivered in prior releases by providing breakthrough performance, availability, and manageability for mission-critical applications. The storage system is a key factor in the overall performance of a SQL Server database. NetApp provides several products to allow your SQL Server database to deliver enterprise-class performance while providing world-class tools to manage your environment.
+
+== Purpose and scope
+This section describes best practices and offers insight into design considerations for deploying SQL Server on NetApp storage systems running NetApp ONTAP software, with the goal of achieving effective and efficient storage deployment and end-to-end data protection and retention planning. The scope of this guide is limited to technical design guidelines based on the design principles and preferred standards that NetApp recommends for storage infrastructure when deploying SQL Server. The end-to-end implementation is out of the scope of this report. 
+
+The best practices and recommendations described in this guide enable SQL Server architects and NetApp storage administrators to plan a highly available and easy-to-manage SQL Server environment and to meet stringent SLAs. NetApp assumes that the reader has working knowledge of the following: 
+
+* NetApp ONTAP software
+* NetApp SnapCenter as backup software, which includes:
+    - SnapCenter Plug-in for Microsoft Windows
+    - SnapCenter Plug-in for SQL Server
+* Microsoft SQL Server architecture and administration 
+
+For configuration compatibility across the NetApp stack, see the link:http://mysupport.netapp.com/NOW/products/interoperability/[NetApp Interoperability Matrix Tool (IMT)^].

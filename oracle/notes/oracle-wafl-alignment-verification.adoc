@@ -1,0 +1,197 @@
+---
+sidebar: sidebar
+permalink: oracle/notes/oracle-wafl-alignment-verification.html
+keywords: oracle, database, ontap, wafl, alignment
+summary: WAFL alignment for Oracle databases
+---
+= WAFL alignment verification for Oracle databases
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Correct WAFL alignment is critical for good performance. Although ONTAP manages blocks in 4KB units, this fact does not mean that ONTAP performs all operations in 4KB units. In fact, ONTAP supports block operations of different sizes, but the underlying accounting is managed by WAFL in 4KB units.
+
+The term “alignment” refers to how Oracle I/O corresponds to these 4KB units. Optimum performance requires an Oracle 8KB block to reside on two 4KB WAFL physical blocks on a drive. If a block is offset by 2KB, this block resides on half of one 4KB block, a separate full 4KB block, and then half of a third 4KB block. This arrangement causes performance degradation.
+
+Alignment is not a concern with NAS file systems. Oracle datafiles are aligned to the start of the file based on the size of the Oracle block. Therefore, block sizes of 8KB, 16KB, and 32KB are always aligned. All block operations are offset from the start of the file in units of 4 kilobytes.
+
+LUNs, in contrast, generally contain some kind of driver header or file system metadata at their start that creates an offset. Alignment is rarely a problem in modern OSs because these OSs are designed for physical drives that might use a native 4KB sector, which also requires I/O to be aligned to 4KB boundaries for optimum performance.
+
+There are, however, some exceptions. A database might have been migrated from an older OS that was not optimized for 4KB I/O, or user error during partition creation might have led to an offset that is not in units of 4KB in size.
+
+The following examples are Linux-specific, but the procedure can be adapted for any OS.
+
+== Aligned
+The following example shows an alignment check on a single LUN with a single partition.
+
+First, create the partition that uses all partitions available on the drive.
+
+....
+[root@host0 iscsi]# fdisk /dev/sdb
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0xb97f94c1.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+The device presents a logical sector size that is smaller than
+the physical sector size. Aligning to a physical sector (or optimal
+I/O) size boundary is recommended, or performance may be impacted.
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First cylinder (1-10240, default 1):
+Using default value 1
+Last cylinder, +cylinders or +size{K,M,G} (1-10240, default 10240):
+Using default value 10240
+Command (m for help): w
+The partition table has been altered!
+Calling ioctl() to re-read partition table.
+Syncing disks.
+[root@host0 iscsi]#
+....
+
+The alignment can be checked mathematically with the following command:
+
+....
+[root@host0 iscsi]# fdisk -u -l /dev/sdb
+Disk /dev/sdb: 10.7 GB, 10737418240 bytes
+64 heads, 32 sectors/track, 10240 cylinders, total 20971520 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 65536 bytes
+Disk identifier: 0xb97f94c1
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1              32    20971519    10485744   83  Linux
+....
+
+The output shows that the units are 512 bytes, and the start of the partition is 32 units. This is a total of 32 x 512 = 16,834 bytes, which is a whole multiple of 4KB WAFL blocks. This partition is correctly aligned.
+
+To verify correct alignment, complete the following steps:
+
+. Identify the universally unique identifier (UUID) of the LUN.
++
+....
+FAS8040SAP::> lun show -v /vol/jfs_luns/lun0
+              Vserver Name: jfs
+                  LUN UUID: ed95d953-1560-4f74-9006-85b352f58fcd
+                    Mapped: mapped`                `
+....
+
+. Enter the node shell on the ONTAP controller.
++
+....
+FAS8040SAP::> node run -node FAS8040SAP-02
+Type 'exit' or 'Ctrl-D' to return to the CLI
+FAS8040SAP-02> set advanced
+set not found.  Type '?' for a list of commands
+FAS8040SAP-02> priv set advanced
+Warning: These advanced commands are potentially dangerous; use
+         them only when directed to do so by NetApp
+         personnel.
+....
+
+. Start statistical collections on the target UUID identified in the first step.
++
+....
+FAS8040SAP-02*> stats start lun:ed95d953-1560-4f74-9006-85b352f58fcd
+Stats identifier name is 'Ind0xffffff08b9536188'
+FAS8040SAP-02*>
+....
+
+. Perform some I/O. It is important to use the `iflag` argument to make sure that I/O is synchronous and not buffered.
++
+[NOTE]
+Be very careful with this command. Reversing the `if` and `of` arguments destroys data.
++
+....
+[root@host0 iscsi]# dd if=/dev/sdb1 of=/dev/null iflag=dsync count=1000 bs=4096
+1000+0 records in
+1000+0 records out
+4096000 bytes (4.1 MB) copied, 0.0186706 s, 219 MB/s
+....
+
+. Stop the stats and view the alignment histogram. All I/O should be in the `.0` bucket, which indicates I/O that is aligned to a 4KB block boundary.
++
+....
+FAS8040SAP-02*> stats stop
+StatisticsID: Ind0xffffff08b9536188
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:instance_uuid:ed95d953-1560-4f74-9006-85b352f58fcd
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.0:186%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.1:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.2:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.3:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.4:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.5:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.6:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.7:0%
+....
+
+== Misaligned
+
+The following example shows misaligned I/O:
+
+. Create a partition that does not align to a 4KB boundary. This is not default behavior on modern OSs.
++
+....
+[root@host0 iscsi]# fdisk -u /dev/sdb
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First sector (32-20971519, default 32): 33
+Last sector, +sectors or +size{K,M,G} (33-20971519, default 20971519):
+Using default value 20971519
+Command (m for help): w
+The partition table has been altered!
+Calling ioctl() to re-read partition table.
+Syncing disks.
+....
+
+. The partition has been created with a 33-sector offset instead of the default 32. Repeat the procedure outlined in link:./oracle-wafl-alignment-verification.html#aligned[Aligned]. The histogram appears as follows:
++
+....
+FAS8040SAP-02*> stats stop
+StatisticsID: Ind0xffffff0468242e78
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:instance_uuid:ed95d953-1560-4f74-9006-85b352f58fcd
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.0:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.1:136%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.2:4%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.3:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.4:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.5:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.6:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_align_histo.7:0%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:read_partial_blocks:31%
+....
++
+The misalignment is clear. The I/O mostly falls into the* *`.1` bucket, which matches the expected offset. When the partition was created, it was moved 512 bytes further into the device than the optimized default, which means that the histogram is offset by 512 bytes.
++
+Additionally, the `read_partial_blocks` statistic is nonzero, which means I/O was performed that did not fill up an entire 4KB block.
+
+== Redo logging
+
+The procedures explained here are applicable to datafiles. Oracle redo logs and archive logs have different I/O patterns. For example, redo logging is a circular overwrite of a single file. If the default 512-byte block size is used, the write statistics look something like this:
+
+....
+FAS8040SAP-02*> stats stop
+StatisticsID: Ind0xffffff0468242e78
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:instance_uuid:ed95d953-1560-4f74-9006-85b352f58fcd
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.0:12%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.1:8%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.2:4%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.3:10%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.4:13%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.5:6%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.6:8%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_align_histo.7:10%
+lun:ed95d953-1560-4f74-9006-85b352f58fcd:write_partial_blocks:85%
+....
+
+The I/O would be distributed across all histogram buckets, but this is not a performance concern. Extremely high redo-logging rates might, however, benefit from the use of a 4KB block size. In this case, it is desirable to make sure that the redo-logging LUNs are properly aligned. However, this is not as critical to good performance as datafile alignment.

@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/ontap-configuration/oracle-svm.html
+keywords: svm
+summary: SVM provisioning for Oracle databases
+---
+= Oracle databases and Storage Virtual Machines
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Oracle database storage management is centralized on a Storage Virtual Machine (SVM)
+
+include::_include/svm.adoc[]

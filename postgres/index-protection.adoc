@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: postgres/index-protection.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases on ONTAP
+---
+= Data protection
+
+[.lead]
+Index Protection
+
+////
+Placeholder - Moved this content to native-dp.adoc
+////
