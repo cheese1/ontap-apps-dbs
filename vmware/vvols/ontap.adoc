@@ -76,7 +76,7 @@ image:vvols-image6.png[ONTAP tools vVols dashboard,400]
 
 == Best Practices
 
-This section collects known best practices for using vVols with ONTAP along with other information.
+Using ONTAP vVols with vSphere is simple and follows published vSphere methods (see Working with Virtual Volumes under vSphere Storage in VMware documentation for your version of ESXi). Here are a few additional practices to consider in conjunction with ONTAP.
 
 *Limits*
 
@@ -98,12 +98,6 @@ In general, ONTAP supports vVols limits as defined by VMware (see published http
 * Size limit based on ASA systems or AFF and FAS systems running ONTAP 9.12.1P2 and later.
 
 ** Number of SAN vVols (NVMe namespaces or LUNs) varies based on platform. Always check the https://hwu.netapp.com/[NetApp Hardware Universe^] for updated limits on numbers and sizes of LUNs and files.
-
-*Best Practices*
-
-Using ONTAP vVols with vSphere is simple and follows published vSphere methods (see Working with Virtual Volumes under vSphere Storage in VMware documentation for your version of ESXi). Here are a few additional practices to consider in conjunction with ONTAP.
-
-Best Practices for using vVols with ONTAP.
 
 *Use ONTAP tools for VMware vSphere's UI extensions or REST APIs to provision vVols datastores* *and Protocol Endpoints.* 
 
