@@ -153,7 +153,7 @@ Create at least two LIFs per node per HA pair. More may be required based on you
 *Follow all protocol best practices.* 
 
 Refer to NetApp and VMware's other best practice guides specific to the protocol you've selected. In general, there are not any changes other than those already mentioned.
-[[Figure_6]]
-Example network configuration using vVols over NFS v3:
+
+*Example network configuration using vVols over NFS v3*
 
 image:vvols-image18.png[network configuration using vVols over NFS v3,500]
