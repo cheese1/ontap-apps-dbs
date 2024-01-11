@@ -1,6 +1,8 @@
 section: mssql
 title: Microsoft SQL Server
 entries:
+  - title: Overview
+    url: /mssql/overview.html
   - title: Workloads
     url: /mssql/workloads.html
   - title: ONTAP configuration
