@@ -17,4 +17,4 @@ Understanding how Oracle databases operate in a MetroCluster environment require
 [NOTE]
 This documentation replaces previously published technical report _TR-4592: Oracle on MetroCluster._ 
 
-include::../../_include/metrocluster-physical-summary.adoc[]
+include::../../../_include/metrocluster-physical-summary.adoc[]

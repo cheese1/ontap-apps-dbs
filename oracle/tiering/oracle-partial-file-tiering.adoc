@@ -9,7 +9,7 @@ summary: Partial file tiering with FabricPool
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Because FabricPool works at the block level, files that are subject to change can be partially tiered to object storage while also remaining partially on performance tier.

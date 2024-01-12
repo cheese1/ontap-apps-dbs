@@ -10,7 +10,7 @@ summary: Oracle on ONTAP DR procedure with log shipping
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../../media/
 
 [.lead]
 The replication procedures for an Oracle database are essentially the same as the backup procedures. The primary requirement is that the snapshots that constitute a recoverable backup must be replicated to the remote storage system.
@@ -24,14 +24,14 @@ Assuming the datafiles are encapsulated into dedicated volumes, the next questio
 == Two-volume layout
 The simplest layout is shown in the following figure.
 
-:imagesdir: ./media/2-volume.png[Error: Missing Graphic Image]
+image:2-volume.png[Error: Missing Graphic Image]
 
 This is the most common approach. From a DBA perspective, it might seem unusual to colocate all copies of the redo logs and archive logs on the same volume. However, separation does not offer much extra protection when the files and LUNs are all still located on the same underlying set of drives.
 
 == Three-volume layout
 Sometimes separation of redo logs is required because of data protection concerns or a need to distribute redo log I/O across controllers. If so, then the three-volume layout depicted in the figure below be used for replication while still avoiding any requirement to perform incomplete recovery or rely on backup controlfiles.
 
-:imagesdir: ./media/3-volume.png[Error: Missing Graphic Image]
+image:3-volume.png[Error: Missing Graphic Image]
 
 This permits striping of the redo logs and controlfiles across independent sets of spindles and controllers on the source. However, the archive logs and one set of controlfiles and redo logs can still be replicated in a synchronized state with the archive logs.
 

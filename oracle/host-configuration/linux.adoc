@@ -10,7 +10,7 @@ summary: Oracle on ONTAP using Linux
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Configuration topics specific to the Linux OS.

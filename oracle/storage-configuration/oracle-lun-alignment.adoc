@@ -9,7 +9,7 @@ summary: LUN alignment with Oracle databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 LUN alignment refers to optimizing I/O with respect to the underlying file system layout. 

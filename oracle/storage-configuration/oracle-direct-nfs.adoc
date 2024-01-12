@@ -10,7 +10,7 @@ summary: Oracle direct NFS
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Oracle databases can use NFS in two ways.

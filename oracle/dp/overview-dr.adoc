@@ -10,7 +10,7 @@ summary: NetApp ONTAP is a powerful data-management platform with native capabil
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 NetApp MetroCluster delivers a highly available, zero data-loss solution for mission-critical Oracle workloads. 

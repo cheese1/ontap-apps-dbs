@@ -9,7 +9,7 @@ summary: NFS transfer sizes with Oracle
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 include::../../_include/nfs-transfer-sizes.adoc[]
