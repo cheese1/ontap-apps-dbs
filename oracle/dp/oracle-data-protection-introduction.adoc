@@ -10,7 +10,7 @@ summary: Oracle data protection introduction
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 The most mission-critical data is found in databases. 

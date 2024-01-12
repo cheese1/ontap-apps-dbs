@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server tempdb files
+:imagesdir: ../media/
 
 [.lead]
 NetApp recommends proactively inflating tempdb files to their full size to avoid disk fragmentation.

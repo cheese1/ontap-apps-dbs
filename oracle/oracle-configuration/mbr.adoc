@@ -10,7 +10,7 @@ summary: Oracle multiblock read parameter
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 The `db_file_multiblock_read_count` parameter controls the maximum number of Oracle database blocks that Oracle reads as a single operation during sequential I/O.

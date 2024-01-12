@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server, disaster recovery, snapmirror
 summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server disaster recovery
+:imagesdir: ../media/
 
 [.lead]
 NetApp provides various approaches to increase data availability if there is hardware,software or site failure. 

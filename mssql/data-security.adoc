@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server, securing database, security
 summary: Microsoft SQL Server on ONTAP
 ---
 = Database security
+:imagesdir: ../media/
 
 [.lead]
 Securing database is always been priority and DBA and organization enforce hardening checkpoints to allow only authorize user to have access to server and database. From regular patching of server, configuring firewall, removal of generic guest or public access, and granting minimal permission to limited user to run applications or run adhoc reporting queries are all part of securing business ecosystem. 
@@ -14,7 +15,7 @@ ONTAP offers a variety of capabilities to secure data on NAS and SAN.
 
 ONTAP allows backing up flexible volumes to a SnapLock Enterprise or a SnapLock Compliance volume by creating SnapMirror relationship between FlexVol volume as source and SnapLock volume as destination.Snapshot copies backed up to secondary storage are protected against modification or deletion until its retention date using SnapLock technology.This is based on SnapMirror policy associated with relationship where the number of Snapshot copies are defined for a particular snapmirror-label retained on the destination SnapLock volume.To restore snapshot that contains LUN data can be done on non-SnapLock volume through snapmirror restore operation. In ONTAP 9.13.1, FlexClone copy can be created by specifying SnapLock type as non-snaplock. For more information on SnapLock, see link:https://docs.netapp.com/us-en/ontap/snaplock/[here].
 
-image:./media/snap_snaplock.png[Error: Missing Graphic Image]
+image:mssql-snap_snaplock.png[Error: Missing Graphic Image]
 
 Tamperproof Snapshot copies or snapshot copy locking : Snapshot copy is quick way to protect and restore database. An attacker might delete Snapshot copies which could have been the last option to restore a database in case of data corruption. Enabling tamperproof Snapshot copies locks the Snapshot copy on primary or secondary ONTAP system to prevent rougue administrator or untrusted administrator from deleting snapshots for a specified period. The tamperproof Snapshot copy feature is available from ONTAP 9.12.1 and requires the SnapLock license and initialization of compliance clock.
 

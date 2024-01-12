@@ -9,8 +9,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
-
+:imagesdir: ../../media/
 [.lead]
 There are several steps to creating vVols storage for your VMs. 
 

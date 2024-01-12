@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server,TR-4590
 summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server Overview
+:imagesdir: ../media/
 
 [.lead]
 SQL Server is the foundation of Microsoft's data platform, delivering mission-critical performance with in-memory technologies and faster insights on any data, whether on the premises or in the cloud.

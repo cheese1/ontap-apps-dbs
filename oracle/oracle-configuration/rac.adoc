@@ -10,7 +10,7 @@ summary: Oracle RAC settings with networked storage
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Oracle RAC is a clusterware product with several types of internal heartbeat processes that monitor the health of the cluster. 

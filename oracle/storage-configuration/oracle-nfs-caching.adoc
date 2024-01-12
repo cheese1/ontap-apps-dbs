@@ -9,7 +9,7 @@ summary: NFS attribute caching databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 The presence of any of the following mount options causes host caching to be disabled:

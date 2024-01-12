@@ -10,8 +10,7 @@ summary: NetApp ONTAP software has been a leading storage solution for VMware vS
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
-
+:imagesdir: ../../media/
 [.lead]
 Systems running ONTAP software are unified in several significant ways.
 
