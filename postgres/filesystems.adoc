@@ -7,6 +7,11 @@ summary: PostgreSQL Databases on ONTAP
 = Filesystems
 
 [.lead]
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
 PostgreSQL can be hosted on either NFS or SAN filesystems.
 
 == NFS

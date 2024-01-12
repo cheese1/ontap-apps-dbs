@@ -37,8 +37,6 @@ entries:
       url: /mysql/file-descriptors.html
   - title: Storage configuration
     entries:
-    - title: General storage configuration
-      url: /mysql/storage.html
     - title: MySQL over NFS
       url: /mysql/mysql-over-nfs.html
     - title: MySQL over SAN
