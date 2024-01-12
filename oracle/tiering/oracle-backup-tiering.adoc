@@ -14,4 +14,4 @@ summary: Oracle backup tiering
 [.lead]
 Traditional application backups include products such as Oracle Recovery Manager, which create file-based backups outside the location of the original database.
 
-include::_include/tiering-database-backup.adoc[]
+include::../../_include/tiering-database-backup.adoc[]

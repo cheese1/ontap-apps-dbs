@@ -14,4 +14,4 @@ summary: Oracle and Syncmirror
 [.lead]
 The foundation of Oracle data protection with a MetroCluster system is SyncMirror, a maximum-performance, scale-out synchronous mirroring technology.
 
-include::_include/syncmirror-summary.adoc[]
+include::../../../_include/syncmirror-summary.adoc[]
