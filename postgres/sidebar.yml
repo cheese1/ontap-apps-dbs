@@ -3,8 +3,6 @@ title: PostgreSQL
 entries:
   - title: Overview
     url: /postgres/overview.html
-  - title: ONTAP configuration
-    url: /postgres/ontap.html
   - title: Database configuration
     entries:
     - title: Architecture
