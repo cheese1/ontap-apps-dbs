@@ -15,4 +15,4 @@ summary: Oracle tiering policies
 [.lead]
 Four policies are available in ONTAP which control how Oracle data on the performance tier become a candidate to be relocated to the capacity tier.
 
-include::_include/tiering-policies-databases.adoc[]
+include::../../../_include/tiering-policies-databases.adoc[]

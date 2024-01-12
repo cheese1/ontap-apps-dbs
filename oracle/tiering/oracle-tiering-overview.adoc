@@ -14,4 +14,4 @@ summary: Oracle with FabricPool tiering overview
 [.lead]
 Understanding how FabricPool tiering affects Oracle and other databases requires an understanding of low-level FabricPool architecture.
 
-include::_include/tiering-with-databases-overview.adoc[]
+include::../../../_include/tiering-with-databases-overview.adoc[]

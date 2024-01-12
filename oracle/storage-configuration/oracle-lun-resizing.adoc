@@ -17,4 +17,4 @@ When a SAN-based file system has reached its capacity limit, there are two optio
 * Increase the size of the LUNs.
 * Add a LUN to an existing volume group and grow the contained logical volumes.
 
-include::_include/lun-resizing.adoc[]
+include::../../../_include/lun-resizing.adoc[]

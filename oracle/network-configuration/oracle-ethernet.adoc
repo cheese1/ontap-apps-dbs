@@ -14,4 +14,4 @@ summary: Oracle and TCP/IP and ethernet configuration.
 [.lead]
 Many Oracle on ONTAP customers use ethernet, the network protocol of NFS, iSCSI, NVMe/TCP, and especially the cloud.
 
-include::_include/ethernet.adoc[]
+include::../../../_include/ethernet.adoc[]

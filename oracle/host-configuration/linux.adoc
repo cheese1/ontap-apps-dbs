@@ -16,7 +16,7 @@ summary: Oracle on ONTAP using Linux
 Configuration topics specific to the Linux OS.
 
 == Linux NFSv3 TCP slot tables 
-include::../_include/nfs-slot-tables.adoc[]
+include::../../../_include/nfs-slot-tables.adoc[]
 
 == Linux NFS mount options
 The following table lists the Linux NFS mount options for a single instance.
