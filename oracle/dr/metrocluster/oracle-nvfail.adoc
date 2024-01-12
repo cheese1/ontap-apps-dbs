@@ -14,4 +14,4 @@ summary: NVFAIL
 [.lead]
 NVFAIL is a general data integrity feature in ONTAP that is especially critical with database workloads.
 
-include::_include/mcc-nvfail-summary.adoc[]
+include::../../../_include/mcc-nvfail-summary.adoc[]
