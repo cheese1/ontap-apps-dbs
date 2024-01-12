@@ -10,8 +10,7 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
-
+:imagesdir: ../../media/
 [.lead]
 ONTAP 9.8 adds support for FlexGroup datastores in vSphere, along with the ONTAP tools for VMware vSphere 9.8 release. 
 

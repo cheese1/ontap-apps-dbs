@@ -9,7 +9,7 @@ summary: This document discusses product security for ONTAP tools for VMware vSp
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
+:imagesdir: ../../media/
 
 [.lead]
 == Secure development activities

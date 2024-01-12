@@ -5,6 +5,8 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 = CPU configuration
+:imagesdir: ../media/
+
 [.lead]
 Modifying server and database settings can help achieve better and more efficient database performance.
 
@@ -19,7 +21,7 @@ There are two main schools of thought when licensing SQL Server. The first is kn
 
 === Log entries indicate number of cores being used after SQL Server startup.
 
-image:./media/hyperthreading.png[Error: Missing Graphic Image]
+image:hyperthreading.png[Error: Missing Graphic Image]
 
 Therefore, to use all CPUs, you should use the per-processor core license. For detailed information about SQL Server licensing, see link:https://www.microsoft.com/en-us/sql-server/sql-server-2022-comparison[SQL Server 2022: Your modern data platform^].
 

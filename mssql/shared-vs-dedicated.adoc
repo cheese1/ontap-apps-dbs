@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server shared instance versus dedicated instance
+:imagesdir: ../media/
 
 [.lead]
 If an application has many schemas and stored procedures, it could potentially affect other apps that share a SQL Server instance.

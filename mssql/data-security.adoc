@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server, securing database, security
 summary: Microsoft SQL Server on ONTAP
 ---
 = Database security
+:imagesdir: ../media/
 
 [.lead]
 Securing database is always been priority and DBA and organization enforce hardening checkpoints to allow only authorize user to have access to server and database. From regular patching of server, configuring firewall, removal of generic guest or public access, and granting minimal permission to limited user to run applications or run adhoc reporting queries are all part of securing business ecosystem. 

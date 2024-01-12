@@ -6,6 +6,8 @@ summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server memory configuration
 [.lead]
+:imagesdir: ../media/
+
 //Manohar, please add a intro paragraph.
 
 == Max server memory

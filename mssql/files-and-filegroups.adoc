@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server database files and filegroups
+:imagesdir: ../media/
 
 [.lead]
 A SQL Server database is a collection of objects that allows you to store and manipulate data. 
