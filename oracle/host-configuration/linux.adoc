@@ -15,8 +15,8 @@ summary: Oracle on ONTAP using Linux
 [.lead]
 Configuration topics specific to the Linux OS.
 
-== Slot tables
-NFS performance on Linux depends on a parameter called `tcp_max_slot_table_entries`. Please see the link:../../common/storage-configuration/nfs.html[NFS] for critical information.
+== Linux NFSv3 TCP slot tables 
+include::../_include/nfs-slot-tables.adoc[]
 
 == Linux NFS mount options
 The following table lists the Linux NFS mount options for a single instance.
