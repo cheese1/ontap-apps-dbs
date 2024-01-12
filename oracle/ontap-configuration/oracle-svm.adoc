@@ -14,4 +14,4 @@ summary: SVM provisioning for Oracle databases
 [.lead]
 Oracle database storage management is centralized on a Storage Virtual Machine (SVM)
 
-include::../../../_include/svm.adoc[]
+include::../../_include/svm.adoc[]

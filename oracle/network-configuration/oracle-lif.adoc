@@ -14,4 +14,4 @@ summary: Logical interface design for Oracle databases
 [.lead]
 Oracle databases need access to storage. Logical interfaces (LIFs) are the network plumbing that connects a storage virtual machine (SVM) to the network and in turn to the database. Proper LIF design is required to ensure sufficient bandwidth exists for each database workload, and failover does not result in a loss of storage services.
 
-include::../../../_include/lif.adoc[]
+include::../../_include/lif.adoc[]

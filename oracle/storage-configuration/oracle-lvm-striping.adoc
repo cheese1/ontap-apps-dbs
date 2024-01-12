@@ -14,4 +14,4 @@ summary: LVM stripe configuration for Oracle databases
 [.lead]
 LVM striping refers to distributing data across multiple LUNs. The result is dramatically improved performance for many databases.
 
-include::../../../_include/lvm-striping.adoc[]
+include::../../_include/lvm-striping.adoc[]

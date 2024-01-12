@@ -14,4 +14,4 @@ summary: Oracle performance management with QoS
 [.lead]
 Safely and efficiently managing multiple Oracle databases requires an effective QoS strategy. The reason is the ever-increasing performance capabilities of a modern storage system.
 
-include::../../../_include/qos.adoc[]
+include::../../_include/qos.adoc[]

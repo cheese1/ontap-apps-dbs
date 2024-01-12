@@ -12,4 +12,4 @@ summary: Oracle snapshot tiering
 :imagesdir: ./media/
 
 [.lead]
-include::../../../_include/tiering-database-snapshots.adoc[]
+include::../../_include/tiering-database-snapshots.adoc[]

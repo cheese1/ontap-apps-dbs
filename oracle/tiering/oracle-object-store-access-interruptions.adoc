@@ -12,4 +12,4 @@ summary: Database access during object store access interruptions
 :imagesdir: ./media/
 
 [.lead]
-include::../../../_include/tiering-object-store-interruptions.adoc[]
+include::../../_include/tiering-object-store-interruptions.adoc[]
