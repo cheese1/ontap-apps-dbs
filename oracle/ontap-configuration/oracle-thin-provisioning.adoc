@@ -14,4 +14,4 @@ summary: Oracle and ONTAP thin provisioning
 [.lead]
 Thin provisioning for an Oracle database requires careful planning because the result is configuring more space on a storage system than is necessarily physically available. It is very much worth the effort because, when done correctly, the result is significant cost savings and improvements in manageability.
 
-include::_include/thin-provisioning.adoc[]
+include::../../_include/thin-provisioning.adoc[]
