@@ -10,8 +10,7 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
-
+:imagesdir: ../../media/
 //
 // This file was created with Atom 1.57.0 (May 19, 2021)
 //

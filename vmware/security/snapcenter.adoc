@@ -11,8 +11,7 @@ summary:
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./../media/
-
+:imagesdir: ../../media/
 [.lead]
 NetApp SnapCenter Plug-in for VMware vSphere software engineering uses the following secure development activities:
 

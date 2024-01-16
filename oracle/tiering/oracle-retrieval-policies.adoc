@@ -9,9 +9,9 @@ summary: Pracle tiering retrieval policies
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 The tiering policies control which Oracle database blocks are tiered from the performance tier to the capacity tier. Retrieval policies control what happens when a block that has been tiered is read.
 
-include::_include/tiering-retrieval-policies-databases.adoc[]
+include::../../_include/tiering-retrieval-policies-databases.adoc[]

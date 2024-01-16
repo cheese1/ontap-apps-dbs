@@ -10,7 +10,7 @@ summary: Preparing ONTAP for an FLI migration
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 The procedures to migrate SAN resources using FLI are documented in NetApp http://www.netapp.com/us/media/tr-4380.pdf[TR-4380: SAN Migration Using Foreign LUN Import^].

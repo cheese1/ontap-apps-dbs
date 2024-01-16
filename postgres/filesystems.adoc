@@ -7,6 +7,11 @@ summary: PostgreSQL Databases on ONTAP
 = Filesystems
 
 [.lead]
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
 PostgreSQL can be hosted on either NFS or SAN filesystems.
 
 == NFS
@@ -18,7 +23,12 @@ Use the following mount option while mounting an NFS file system:
 nfs4 rw, hard,nointr,bg,vers=4,sync,proto=tcp,noatime,rsize=65536,wsize=65536
 ....
 
-To improve NFS performance, see link:../common/storage-configuration/nfs.html#ontap-nfs-transfer-sizes[NFS transfer sizes].
+=== NFS Transfer Sizes
+
+By default, ONTAP limits NFS I/O sizes to 64K. 
+
+include::../_include/nfs-transfer-sizes.adoc[]
 
 == SAN
-For guidance on SAN configuration and important details about LVM striping and LUN counts, see link:..//common/storage-configuration/fcsan.html[FC SAN].
+
+include::../_include/lvm-striping.adoc[]

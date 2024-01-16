@@ -9,9 +9,9 @@ summary: FC Network configuration for Oracle databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Configuring FC SAN for Oracle databases is primarily about following everyday SAN best practices. 
 
-include::_include/fc.adoc[]
+include::../../_include/fc.adoc[]

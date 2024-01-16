@@ -9,9 +9,9 @@ summary: Databases and ONTAP storage capacity and free space
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Managing a database or other enterprise application with predictable, manageable, high performance enterprise storage requires some free space on the drives for data and metadata management. The amount of free space required depends on the type of drive used, and business processes.
 
-include::_include/capacity-limits.adoc[]
+include::../../_include/capacity-limits.adoc[]

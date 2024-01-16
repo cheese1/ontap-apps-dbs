@@ -10,7 +10,7 @@ summary: Configuring NVFAIL to protect Oracle databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 NVFAIL is a feature within ONTAP that ensures the integrity during catastrophic failover scenarios.
@@ -22,5 +22,3 @@ Caching can occur at the application or server layer. For example, an Oracle Rea
 A less obvious use of caching is at the OS file system layer. Blocks from a mounted NFS file system might be cached in the OS. Alternatively, a clustered file system based on LUNs located on the primary site could be mounted on servers at the remote site, and once again data could be cached. A failure of NVRAM or a forced takeover or forced switchover in these situations could result in file system corruption.
 
 ONTAP protects databases and operating systems from this scenario with NVFAIL and its associated settings.
-
-For important additional information, please read link:../../common/dp/integrity.html#hardware-failure-protection-nvfail[NVFAIL with HA Pairs] and link:../../common/metrocluster/nvfail.html[NVFAIL with MetroCluster]

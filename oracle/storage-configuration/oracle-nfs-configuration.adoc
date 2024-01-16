@@ -9,7 +9,7 @@ summary: NFS configuration for Oracle databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 NetApp has been providing enterprise-grade NFS storage for over 30 years, and its use is growing with the push toward cloud-based infrastructures because of it's simplicity.
@@ -29,25 +29,7 @@ The operating system NFS client must be supported by NetApp.
 The link:https://imt.netapp.com/matrix/#search[NetApp support matrix] for NFSv3 and NFSv4 does not include specific operating systems. All OSs that obey the RFC are generally supported. When searching the online IMT for NFSv3 or NFSv4 support, do not select a specific OS because there will be no matches displayed. All OSs are implicitly supported by the general policy.
 
 == Linux NFSv3 TCP slot tables 
-TCP slot tables are the NFSv3 equivalent of host bus adapter (HBA) queue depth. These tables control the number of NFS operations that can be outstanding at any one time. The default value is usually 16, which is far too low for optimum performance. The opposite problem occurs on newer Linux kernels, which can automatically increase the TCP slot table limit to a level that saturates the NFS server with requests.
-
-For optimum performance and to prevent performance problems, adjust the kernel parameters that control the TCP slot tables.
-
-Run the `sysctl -a | grep tcp.*.slot_table` command, and observe the following parameters:
-
-....
-# sysctl -a | grep tcp.*.slot_table
-sunrpc.tcp_max_slot_table_entries = 128
-sunrpc.tcp_slot_table_entries = 128
-....
-
-All Linux systems should include `sunrpc.tcp_slot_table_entries`, but only some include `sunrpc.tcp_max_slot_table_entries`. They should both be set to 128.
-
-|===
-|Caution
-
-|Failure to set these parameters may have significant effects on performance. In some cases, performance is limited because the linux OS is not issuing sufficient I/O. In other cases, I/O latencies increases as the linux OS attempts to issue more I/O than can be serviced.
-|===
+include::../../_include/nfs-slot-tables.adoc[]
 
 == ADR and NFS
 Some customers have reported performance problems resulting from an excessive amount of I/O on data in the `ADR` location. The problem does not generally occur until a lot of performance data has accumulated. The reason for the excessive I/O is unknown, but this problem appears to be a result of Oracle processes repeatedly scanning the target directory for changes.

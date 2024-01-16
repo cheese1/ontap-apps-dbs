@@ -5,6 +5,7 @@ keywords: MS-SQL,mssql,SQL Server, database layout
 summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server storage considerations
+:imagesdir: ../media/
 
 [.lead]
 The combination of NetApp storage solutions and Microsoft SQL Server enables the creation of enterprise-level database storage designs that can meet today's most demanding application requirements. 

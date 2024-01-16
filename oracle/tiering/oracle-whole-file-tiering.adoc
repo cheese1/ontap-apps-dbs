@@ -10,9 +10,9 @@ summary: Oracle full tile tiering
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
 Although FabricPool tiering operates at the block level, in some cases it can be used to provide file-level tiering.
 
-include::_include/tiering-database-full-file.adoc[]
+include::../../_include/tiering-database-full-file.adoc[]

@@ -9,7 +9,7 @@ summary: Database access during object store access interruptions
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: ../../media/
 
 [.lead]
-include::_include/tiering-object-store-interruptions.adoc[]
+include::../../_include/tiering-object-store-interruptions.adoc[]
