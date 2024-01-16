@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mssql/data-protection.html
+permalink: mssql/sql-data-protection.html
 keywords: MS-SQL,mssql,SQL Server, SnapCenter, data protection
 summary: Microsoft SQL Server data protection with ONTAP
 ---
