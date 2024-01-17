@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/slot-tables.html
+permalink: mysql/mysql-slot-tables.html
 keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---

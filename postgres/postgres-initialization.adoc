@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/initialization.html
+permalink: postgres/postgres-initialization.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL initialization
 ---

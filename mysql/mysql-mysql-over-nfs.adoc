@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/mysql-over-nfs.html
+permalink: mysql/mysql-mysql-over-nfs.html
 keywords: MySQL,MariaDB,NFS
 summary: MySQL on ONTAP
 ---

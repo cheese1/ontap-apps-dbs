@@ -17,9 +17,9 @@ indexpage:
     - title: Open-source databases
       links:
         - title: MariaDB and MySQL on ONTAP
-          url: /mysql/overview.html
+          url: /mysql/mysql-overview.html
         - title: PostgreSQL on ONTAP
-          url: /postgres/overview.html
+          url: /postgres/postgres-overview.html
     - title: Oracle Database
       links:
         - title: Oracle on ONTAP

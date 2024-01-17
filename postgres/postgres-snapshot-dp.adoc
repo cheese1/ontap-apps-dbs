@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/snapshot-dp.html
+permalink: postgres/postgres-snapshot-dp.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---

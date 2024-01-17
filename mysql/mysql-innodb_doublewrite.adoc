@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/innodb_doublewrite.html
+permalink: mysql/mysql-innodb_doublewrite.html
 keywords: MySQL,MariaDB,innodb_doublewrite
 summary: MySQL on ONTAP
 ---

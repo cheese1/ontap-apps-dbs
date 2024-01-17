@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/containers.html
+permalink: mysql/mysql-containers.html
 keywords: MySQL,MariaDB,containers
 summary: MySQL on ONTAP
 ---

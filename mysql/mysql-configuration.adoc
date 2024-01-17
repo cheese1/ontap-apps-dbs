@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/configuration.html
+permalink: mysql/mysql-configuration.html
 keywords: MySQL,MariaDB
 summary: MySQL configuration
 ---

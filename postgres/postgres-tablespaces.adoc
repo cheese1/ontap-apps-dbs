@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/tablespaces.html
+permalink: postgres/postgres-tablespaces.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Tablespaces
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/mysql-over-san.html
+permalink: mysql/mysql-mysql-over-san.html
 keywords: MySQL,MariaDB,SAN
 summary: MySQL on ONTAP
 ---

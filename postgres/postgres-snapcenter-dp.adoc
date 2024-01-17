@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/snapcenter-dp.html
+permalink: postgres/postgres-snapcenter-dp.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---

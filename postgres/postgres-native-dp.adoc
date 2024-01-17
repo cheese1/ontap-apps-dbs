@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/native-dp.html
+permalink: postgres/postgres-native-dp.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
