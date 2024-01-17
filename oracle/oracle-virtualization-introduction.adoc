@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: /oracle/oracle-virtualization-introduction.html
+permalink: oracle/oracle-virtualization-introduction.html
 keywords: oracle, database, ontap, virtualization, esx, hyper-v, KVM
 summary: Introduction to database virtualization
 ---

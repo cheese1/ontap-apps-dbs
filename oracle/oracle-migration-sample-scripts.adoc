@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-migration-migration-sample-scripts.html
+permalink: oracle/oracle-migration-sample-scripts.html
 keywords: oracle, Scripts
 summary: Sample scripts for automating Oracle migration operations
 ---

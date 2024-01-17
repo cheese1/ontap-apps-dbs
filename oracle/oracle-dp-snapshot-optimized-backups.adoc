@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-dp-storage-snapshot-optimized-backups.html
+permalink: oracle/oracle-dp-snapshot-optimized-backups.html
 keywords: oracle, data protection, snapshot-optimized, crash-consistent
 summary: Snapshot-optimized backup
 ---

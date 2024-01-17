@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle/oracle-network-config-lifs.html
+permalink: oracle/oracle-network-config-lifs.html
 keywords: LIF, multipath, multipathing
 summary: Logical interface design for Oracle databases
 ---

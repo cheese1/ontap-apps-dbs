@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: /oracle/oracle-dr-overview.html
+permalink: oracle/oracle-dr-overview.html
 keywords: metrocluster, syncmirror, oracle
 summary: Oracle disaster recovery with ONTAP
 ---

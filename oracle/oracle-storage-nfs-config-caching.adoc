@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-storage-nfs-caching.html
+permalink: oracle/oracle-storage-nfs-config-caching.html
 keywords: NFS
 summary: NFS attribute caching databases
 ---
