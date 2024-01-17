@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-config-ontap-thin-provisioning.html
+permalink: oracle/oracle-ontap-config-thin-provisioning.html
 keywords: thin provisioning, oracle
 summary: Oracle and ONTAP thin provisioning
 ---

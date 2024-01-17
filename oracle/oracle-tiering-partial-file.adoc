@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle-tiering-partial-file.html
+permalink: oracle/oracle-tiering-partial-file.html
 keywords: tiering, fabricpool
 summary: Partial file tiering with FabricPool
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-storage-config-nfs-leases-and-locks.html
+permalink: oracle/oracle-storage-nfs-config-leases-and-locks.html
 keywords: NFS, lease
 summary: Oracle databases and NFS leases and locks
 ---

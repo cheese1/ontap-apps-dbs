@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-config-ontap-qos.html
+permalink: oracle/oracle-ontap-config-qos.html
 keywords: qos, bandwidth, minimum, guaranteed
 summary: Oracle performance management with QoS
 ---

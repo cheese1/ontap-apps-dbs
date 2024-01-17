@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle-tiering-whole-file.html
+permalink: oracle/oracle-tiering-whole-file.html
 keywords: tiering, fabricpool
 summary: Oracle full tile tiering
 ---

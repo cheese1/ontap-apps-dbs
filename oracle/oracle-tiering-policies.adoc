@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle-tiering-tiering-policies.html
+permalink: oracle/oracle-tiering-policies.html
 keywords: tiering, fabricpool
 summary: Oracle tiering policies
 ---

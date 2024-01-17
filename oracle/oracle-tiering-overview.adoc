@@ -1,5 +1,5 @@
 ---
-permalink: oracle-tiering-overview.html
+permalink: oracle/oracle-tiering-overview.html
 sidebar: sidebar
 keywords: tiering, fabricpool
 summary: Oracle with FabricPool tiering overview

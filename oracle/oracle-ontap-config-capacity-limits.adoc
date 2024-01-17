@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-config-ontap-capacity-limits.html
+permalink: oracle/oracle-ontap-config-capacity-limits.html
 keywords: capacity
 summary: Databases and ONTAP storage capacity and free space
 ---

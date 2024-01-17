@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-config-ontap-svm.html
+permalink: oracle/oracle-ontap-config-svm.html
 keywords: svm
 summary: SVM provisioning for Oracle databases
 ---
