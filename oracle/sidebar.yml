@@ -98,7 +98,7 @@ entries:
       - title: Partial files
         url: /oracle/oracle-tiering-partial-file.html
       - title: Select files
-        url: /oracle/oracle-tiering-whole-file.html
+        url: /oracle/oracle-tiering-logs.html
       - title: Snapshots
         url: /oracle/oracle-tiering-snapshots.html
       - title: Backups
