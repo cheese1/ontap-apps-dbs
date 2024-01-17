@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,innodb_lru_scan_depth
 summary: MySQL on ONTAP
 ---
 = innodb_lru_scan_depth
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 The `innodb_lru_scan_depth` parameter influences the algorithms and heuristics of the flush operation for the InnoDB buffer pool. 

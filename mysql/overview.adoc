@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 = MySQL databases on ONTAP
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 MySQL and its variants, including MariaDb and Percona MySQL, is the world's most popular database.

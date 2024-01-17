@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mssql/overview.html
+permalink: mssql/mssql-overview.html
 keywords: MS-SQL,mssql,SQL Server,TR-4590
 summary: Microsoft SQL Server on ONTAP
 ---

@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,NFS
 summary: MySQL on ONTAP
 ---
 = MySQL over NFS
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 The MySQL documentation recommends that you use NFSv4 for NAS deployments. 

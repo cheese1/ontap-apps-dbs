@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,innodb_doublewrite
 summary: MySQL on ONTAP
 ---
 = innodb_flush_log_at_trx_commit
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 When there is a change to the data, the change is not immediately written to storage.

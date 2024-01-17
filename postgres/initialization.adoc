@@ -5,6 +5,11 @@ keywords: PostgreSQL,database,postgres
 summary: PostgreSQL initialization
 ---
 = Initialization
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
 
 [.lead]
 You create a new database cluster by using the `initdb` program. An `initdb` script creates the data files, system tables, and template databases (template0 and template1) that define the cluster. 

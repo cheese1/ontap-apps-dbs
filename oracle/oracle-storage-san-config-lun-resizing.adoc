@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-storage-config-san-lun-resizing.html
+permalink: oracle/oracle-storage-san-config-lun-resizing.html
 keywords: SAN, ASM, LVM
 summary: LUN and LVM resizing with Oracle databases
 ---
@@ -14,7 +14,7 @@ summary: LUN and LVM resizing with Oracle databases
 [.lead]
 When a SAN-based file system has reached its capacity limit, there are two options for increasing the space available:
 
-* Increase the size of the LUNs.
-* Add a LUN to an existing volume group and grow the contained logical volumes.
+* Increase the size of the LUNs
+* Add a LUN to an existing volume group and grow the contained logical volume
 
 include::../_include/lun-resizing.adoc[]

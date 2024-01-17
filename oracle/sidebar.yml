@@ -2,7 +2,7 @@ section: oracle
 title: Oracle Database
 entries:
   - title: Overview
-    url: /oracle/overview.html
+    url: /oracle/oracle-overview.html
   - title: ONTAP configuration
     entries:
     - title: RAID
@@ -20,16 +20,18 @@ entries:
     - title: Failover and switchover
       url: /oracle/oracle-ontap-config-failover.html
   - title: Database configuration
+    pdf-filename: Database configuration for Oracle Database
     entries:
     - title: Datafile and redo block sizes
-      url: /oracle/oracle-config-app-block-sizes.html
+      url: /oracle/oracle-app-config-block-sizes.html
     - title: db_file_multiblock_read_count
-      url: /oracle/oracle-config-app-mbr.html
+      url: /oracle/oracle-app-config-mbr.html
     - title: filesystemio_options
-      url: /oracle/oracle-config-app-filesystemio_options.html
+      url: /oracle/oracle-app-config-filesystemio_options.html
     - title: Oracle RAC
-      url: /oracle/oracle-config-app-rac.html
+      url: /oracle/oracle-app-config-rac.html
   - title: Host configuration
+    pdf-filename: Host configuration for Oracle Database
     entries:
     - title: AIX
       url: /oracle/oracle-host-config-aix.html
@@ -44,6 +46,7 @@ entries:
     - title: Solaris
       url: /oracle/oracle-host-config-solaris.html
   - title: Network configuration
+    pdf-filename: Network configuration for Oracle Database
     entries:
     - title: Logical interfaces
       url: /oracle/oracle-network-config-lifs.html
@@ -52,33 +55,34 @@ entries:
     - title: FC SAN configuration
       url: /oracle/oracle-network-config-fc.html
   - title: Storage configuration
+    pdf-filename: Storage configuration for Oracle Database
     entries:
     - title: FC SAN
       entries:
       - title: LUN Alignment
-        url: /oracle/oracle-storage-config-san-lun-alignment.html
+        url: /oracle/oracle-storage-san-config-lun-alignment.html
       - title: LUN Count and LUN Size
-        url: /oracle/oracle-storage-config-san-lun-sizing.html
+        url: /oracle/oracle-storage-san-config-lun-sizing.html
       - title: LUN Resizing
-        url: /oracle/oracle-storage-config-san-lun-resizing.html
+        url: /oracle/oracle-storage-san-config-lun-resizing.html
       - title: LVM Striping
-        url: /oracle/oracle-storage-config-san-lvm-striping.html
+        url: /oracle/oracle-storage-san-config-lvm-striping.html
     - title: NFS
       entries:
       - title: Configuration
-        url: /oracle/oracle-storage-config-nfs-overview.html
+        url: /oracle/oracle-storage-nfs-config-overview.html
       - title: Oracle Direct NFS (dNFS)
-        url: /oracle/oracle-storage-config-nfs-dnfs.html
+        url: /oracle/oracle-storage-nfs-config-dnfs.html
       - title: NFS leases and locks
-        url: /oracle/oracle-storage-config-nfs-leases-and-locks.html
+        url: /oracle/oracle-storage-nfs-config-leases-and-locks.html
       - title: NFS caching
-        url: /oracle/oracle-storage-config-nfs-caching.html
+        url: /oracle/oracle-storage-nfs-config-caching.html
       - title: NFS transfer sizes
-        url: /oracle/oracle-storage-config-nfs-transfer-sizes.html
+        url: /oracle/oracle-storage-nfs-config-transfer-sizes.html
     - title: Oracle and NVFAIL
       url: /oracle/oracle-dp-nvfail.html
     - title: ASM Reclamation Utility
-      url: /oracle/storage-configuration/asmru.html
+      url: /oracle/oracle-storage-san-config-asmru.html
   - title: Virtualization
     url: /oracle/oracle-virtualization-introduction.html
   - title: Tiering
@@ -90,21 +94,21 @@ entries:
       - title: Sending data to an object store
         url: /oracle/oracle-tiering-policies.html
       - title: Retrieving data from object store
-        url: /oracle/oracle-retrieval-policies.html
+        url: /oracle/oracle-tiering-retrieval-policies.html
     - title: Tiering strategies
       entries:
       - title: Whole files
-        url: /oracle/oracle-whole-file.html
+        url: /oracle/oracle-tiering-whole-file.html
       - title: Partial files
-        url: /oracle/oracle-partial-file.html
+        url: /oracle/oracle-tiering-partial-file.html
       - title: Select files
-        url: /oracle/oracle-partial-file.html
+        url: /oracle/oracle-tiering-logs.html
       - title: Snapshots
         url: /oracle/oracle-tiering-snapshots.html
       - title: Backups
-        url: /oracle/oracle-backups.html
+        url: /oracle/oracle-tiering-backups.html
     - title: Object store access interruptions
-      url: /oracle/oracle-object-store-access-interruptions.html
+      url: /oracle/oracle-tiering-object-store-access-interruptions.html
   - title: Oracle data protection
     entries:
     - title: Overview
@@ -122,7 +126,7 @@ entries:
       - title: SnapRestore
         url: /oracle/oracle-dp-snaprestore.html
       - title: Snapshot-based online backups
-        url: /oracle/oracle-dp-online-backups.html
+        url: /oracle/oracle-dp-online-backup.html
       - title: Storage Snapshot Optimized backups
         url: /oracle/oracle-dp-storage-snapshot-optimized-backups.html
       - title: SnapCenter and other tools
@@ -186,11 +190,11 @@ entries:
         - title: Planning
           url: /oracle/oracle-migration-fli-planning.html
         - title: Cutover
-          url: oracle/oracle-migration-fli-cutover.html
+          url: /oracle/oracle-migration-fli-cutover.html
         - title: Completion
           url: /oracle/oracle-migration-fli-completion.html
         - title: Protocol conversion
-          url: oracle/oracle-migration-fli-protocol-conversion.html
+          url: /oracle/oracle-migration-fli-protocol-conversion.html
     - title: Sample scripts
       url: /oracle/oracle-migration-sample-scripts.html
   - title: Additional notes

@@ -4,6 +4,7 @@ entries:
   - title: Overview
     url: /postgres/overview.html
   - title: Database configuration
+    pdf-filename: Host configuration for PostgreSQL
     entries:
     - title: Architecture
       url: /postgres/architecture.html
@@ -14,12 +15,14 @@ entries:
     - title: Tablespaces
       url: /postgres/tablespaces.html
   - title: Storage configuration
+    pdf-filename: Storage configuration for PostgreSQL
     entries:
     - title: Filesystem configuration
       url: /postgres/filesystems.html
     - title: Tiering
       url: /postgres/tiering.html
   - title: Data protection
+    pdf-filename: Data protection for PostgreSQL
     entries:
     - title: Native data protection
       url: /postgres/native-dp.html

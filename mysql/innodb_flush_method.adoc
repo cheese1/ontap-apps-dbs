@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,innodb_flush_method
 summary: MySQL on ONTAP
 ---
 = innodb_flush_method
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 The innodb_flush_method parameter specifies how InnoDB opens and flushes the log and data files. 

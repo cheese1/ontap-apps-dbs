@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,schedulers
 summary: MySQL on ONTAP
 ---
 = I/O schedulers
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 The Linux kernel allows low-level control over the way that I/O to block devices is scheduled. 

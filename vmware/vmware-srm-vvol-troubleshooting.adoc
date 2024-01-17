@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vmware-srm-appendix_a__troubleshooting_srm_when_using_vvols_replication.html
+permalink: vmware/vmware-srm-vvol-troubleshooting.html
 keywords: vmware, site, recovery manager, vsrm, hybrid, cloud, srm, vvols, replication
 summary: The workflow within SRM is significantly different when using vVols replication from what is used with SRA and traditional datastores.
 ---

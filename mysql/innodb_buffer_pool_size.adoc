@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,innodb_buffer_pool_size
 summary: MySQL on ONTAP
 ---
 = innodb_buffer_pool_size
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 The InnoDB buffer pool is the most important part of any tuning activity. 

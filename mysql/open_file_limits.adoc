@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,open_file_limits
 summary: MySQL on ONTAP
 ---
 = open_file_limits
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 The `open_file_limits` parameter determines the number of files that the operating system permits mysqld to open. 

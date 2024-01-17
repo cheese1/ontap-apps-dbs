@@ -5,6 +5,11 @@ keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
 = Native data protection
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
 
 [.lead]
 One of the major aspects of storage design is enabling protection for PostgreSQL volumes. Customers can protect their PostgreSQL databases either by using the dump approach or by using file system backups. This section explains the different approaches of backing up individual databases or the entire cluster.

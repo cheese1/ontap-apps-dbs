@@ -2,32 +2,32 @@ section: mssql
 title: Microsoft SQL Server
 entries:
   - title: Overview
-    url: /mssql/overview.html
+    url: /mssql/mssql-overview.html
   - title: Workloads
-    url: /mssql/workloads.html
-  - title: ONTAP configuration
-    url: /postgres/ontap.html
+    url: /mssql/mssql-workloads.html
   - title: Database configuration
+    pdf-filename: Database configuration for Microsoft SQL Server
     entries:
     - title: Shared instance versus dedicated instance
-      url: /mssql/shared-vs-dedicated.html
+      url: /mssql/mssql-shared-vs-dedicated.html
     - title: CPU configuration
-      url: /mssql/CPUConfiguration.html
+      url: /mssql/mssql-cpu-configuration.html
     - title: Memory configuration
-      url: /mssql/Memoryconfiguration.html
+      url: /mssql/mssql-memory-configuration.html
   - title: Storage configuration
+    pdf-filename: Storage configuration for Microsoft SQL Server
     entries:
     - title:  Database Files and filegroups
-      url: /mssql/files-and-filegroups.html
+      url: /mssql/mssql-files-and-filegroups.html
     - title: Tempdb files
-      url: /mssql/tempdb.html
+      url: /mssql/mssql-tempdb.html
     - title: Storage considerations
-      url: /mssql/Storage-considerations.html
+      url: /mssql/mssql-storage-considerations.html
     - title: Storage efficiency
-      url: /mssql/storage-efficiency.html
+      url: /mssql/mssql-storage-efficiency.html
   - title: Data protection
-    url: /mssql/sql-data-protection.html
+    url: /mssql/mssql-data-protection.html
   - title: Disaster recovery
-    url: /mssql/SQL-disaster-recovery.html
+    url: /mssql/mssql-disaster-recovery.html
   - title: Data security
-    url: /mssql/data-security.html
+    url: /mssql/mssql-data-security.html

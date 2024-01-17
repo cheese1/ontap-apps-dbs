@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle/oracle-dr-snapmirror-log-replay.html
+permalink: oracle/oracle-dr-snapmirror-log-replay.html
 keywords: oracle, ontap, disaster recovery, log reply, log shipping
 summary: Oracle on ONTAP DR procedure with log shipping
 ---

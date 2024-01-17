@@ -5,6 +5,11 @@ keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Tablespaces
 ---
 = Tablespaces
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
 
 [.lead]
 Two tablespaces are automatically created when the database cluster is initialized. 
