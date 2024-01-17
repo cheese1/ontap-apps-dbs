@@ -19,8 +19,6 @@ entries:
     entries:
     - title: Filesystem configuration
       url: /postgres/postgres-filesystems.html
-    - title: Tiering
-      url: /postgres/postgres-tiering.html
   - title: Data protection
     pdf-filename: Data protection for PostgreSQL
     entries:
