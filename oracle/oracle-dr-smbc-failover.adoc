@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-dr-smbc-failover.html
+keywords: smbc, sm-bc
+summary: Oracle failover with SM-BC
+---
+= Oracle failover with SM-BC
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+The primary reason for hosting an Oracle database on SM-BC is to deliver transparent failover during planned and unplanned storage events.
+
+include::../_include/smbc-failover.adoc[]

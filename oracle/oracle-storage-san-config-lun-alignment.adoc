@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-storage-san-config-lun-alignment.html
+keywords: SAN, ASM, LVM
+summary: LUN alignment with Oracle databases
+---
+= LUN Alignment for Oracle I/O
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+LUN alignment refers to optimizing I/O with respect to the underlying file system layout. 
+
+include::../_include/lun-alignment.adoc[]
+
+Also see the discussion about compression block alignment in the section link:../ontap-configuration/oracle-efficiency.html[Efficiency]. Any layout that is aligned with 8KB compression block boundaries is also aligned with 4KB boundaries.
+
+== Misalignment warnings
+include::../_include/database-misalignment-warnings.adoc[]
+
+Alignment in Solaris environments is more complicated. Refer to http://support.netapp.com/documentation/productlibrary/index.html?productID=61343[ONTAP SAN Host Configuration^] for more information.
+
+|===
+|Caution
+
+|In Solaris x86 environments, take additional care about proper alignment because most configurations have several layers of partitions. Solaris x86 partition slices usually exist on top of a standard master boot record partition table.
+|===
