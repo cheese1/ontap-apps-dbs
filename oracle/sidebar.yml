@@ -6,19 +6,19 @@ entries:
   - title: ONTAP configuration
     entries:
     - title: RAID
-      url: /oracle/ontap-configuration/raid-oracle.html
+      url: /oracle/oracle-ontap-config-raid.html
     - title: Capacity limits
-      url: /oracle/ontap-configuration/oracle-capacity-limits.html
+      url: /oracle/oracle-ontap-config-capacity-limits.html
     - title: Storage virtual machines
-      url: /oracle/ontap-configuration/oracle-svm.html
+      url: /oracle/oracle-ontap-config-svm.html
     - title: Quality of service (QoS)
-      url: /oracle/ontap-configuration/oracle-qos.html
+      url: /oracle/oracle-ontap-config-qos.html
     - title: Efficiency
-      url: /oracle/ontap-configuration/oracle-efficiency.html
+      url: /oracle/oracle-ontap-config-efficiency.html
     - title: Thin provisioning
-      url: /oracle/ontap-configuration/oracle-thin-provisioning.html
+      url: /oracle/oracle-ontap-config-thin-provisioning.html
     - title: Failover and switchover
-      url: /oracle/ontap-configuration/oracle-and-ontap-failover.html
+      url: /oracle/oracle-ontap-config-failover.html
   - title: Database configuration
     entries:
     - title: Datafile and redo block sizes
@@ -84,49 +84,49 @@ entries:
   - title: Tiering
     entries:
     - title: Overview
-      url: /oracle/tiering/oracle-tiering-overview.html
+      url: /oracle/oracle-tiering-overview.html
     - title: Tiering policies
       entries:
       - title: Sending data to an object store
-        url: /oracle/tiering/oracle-tiering-policies.html
+        url: /oracle/oracle-tiering-policies.html
       - title: Retrieving data from object store
-        url: /oracle/tiering/oracle-retrieval-policies.html
+        url: /oracle/oracle-retrieval-policies.html
     - title: Tiering strategies
       entries:
       - title: Whole files
-        url: /oracle/tiering/oracle-whole-file-tiering.html
+        url: /oracle/oracle-whole-file.html
       - title: Partial files
-        url: /oracle/tiering/oracle-partial-file-tiering.html
+        url: /oracle/oracle-partial-file.html
       - title: Select files
-        url: /oracle/tiering/oracle-partial-file-tiering.html
+        url: /oracle/oracle-partial-file.html
       - title: Snapshots
-        url: /oracle/tiering/snapshots.html
+        url: /oracle/oracle-tiering-snapshots.html
       - title: Backups
-        url: /oracle/tiering/oracle-backup-tiering.html
+        url: /oracle/oracle-backups.html
     - title: Object store access interruptions
-      url: /oracle/tiering/oracle-object-store-access-interruptions.html
+      url: /oracle/oracle-object-store-access-interruptions.html
   - title: Oracle data protection
     entries:
     - title: Overview
-      url: /oracle/dp/oracle-data-protection-introduction.html
+      url: /oracle/oracle-dp-introduction.html
     - title: RPO, TRO, and SLAs
-      url: /oracle/dp/oracle-data-protection-slas.html
+      url: /oracle/oracle-dp-slas.html
     - title: Data availability
-      url: /oracle/dp/oracle-data-availability.html
+      url: /oracle/oracle-dp-data-availability.html
     - title: Data integrity
-      url: /oracle/dp/oracle-data-integrity.html
+      url: /oracle/oracle-dp-data-integrity.html
     - title: Backup and Recovery Basics
       entries:
       - title: Snapshots
-        url: /oracle/dp/snapshots.html
+        url: /oracle/oracle-dp-snapshots.html
       - title: SnapRestore
-        url: /oracle/dp/snaprestore.html
+        url: /oracle/oracle-dp-snaprestore.html
       - title: Snapshot-based online backups
-        url: /oracle/dp/oracle-online-backups.html
+        url: /oracle/oracle-dp-online-backups.html
       - title: Storage Snapshot Optimized backups
-        url: /oracle/dp/oracle-storage-snapshot-optimized-backups.html
+        url: /oracle/oracle-dp-storage-snapshot-optimized-backups.html
       - title: SnapCenter and other tools
-        url: /oracle/dp/oracle-backup-tools.html
+        url: /oracle/oracle-dp-backup-tools.html
   - title: Oracle disaster recovery
     entries:
     - title: Overview

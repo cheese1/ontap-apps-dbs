@@ -1,0 +1,15 @@
+---
+sidebar: sidebar
+permalink: oracle-tiering-snapshots.html
+keywords: tiering, fabricpool
+summary: Oracle snapshot tiering
+---
+= Oracle snapshot tiering
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+include::../_include/tiering-database-snapshots.adoc[]

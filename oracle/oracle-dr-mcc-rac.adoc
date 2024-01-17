@@ -1,0 +1,122 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-dr-mcc-rac.html
+keywords: oracle, metrocluster, extended rac, RAC
+summary: Oracle Extended RAC with MetroCluster
+---
+= Extended Oracle RAC on MetroCluster
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../../media/
+
+[.lead]
+Many customers optimize their RTO by stretching an Oracle RAC cluster across sites, yielding a fully active-active configuration. The overall design becomes more complicated because it must include quorum management of Oracle RAC. Additionally, data is accessed from both sites, which means a forced switchover might lead to the use of an out-of-date copy of the data.
+
+Although a copy of the data is present on both sites, only the controller that currently owns an aggregate can serve data. Therefore, with extended RAC clusters, the nodes that are remote must perform I/O across a site-to-site connection. The result is added I/O latency, but this latency is not generally a problem. The RAC interconnect network must also be stretched across sites, which means a high-speed, low-latency network is required anyway. If the added latency does cause a problem, the cluster can be operated in an active-passive manner. I/O-intensive operations would then need to be directed to the RAC nodes that are local to the controller that owns the aggregates. The remote nodes then perform lighter I/O operations or are used purely as warm standby servers.
+
+If active-active extended RAC is required, ASM mirroring should be considered in place of MetroCluster. ASM mirroring allows a specific replica of the data to be preferred. Therefore, a extended RAC cluster can be built in which all reads occur locally. Read I/O never crosses sites, which delivers the lowest possible latency. All write activity must still transit the intersite connection, but such traffic is unavoidable with any synchronous mirroring solution.
+
+[NOTE]
+If boot LUNs, including virtualized boot disks, are used with Oracle RAC, the `misscount` parameter might need to be changed. For more information about RAC timeout parameters, see link:../oracle-configuration/rac.html[Oracle RAC with ONTAP].
+
+== Two-site configuration
+A two-site extended RAC configuration can deliver active-active database services that can survive many, but not all, disaster scenarios nondisruptively.
+
+=== RAC voting files
+The first consideration when deploying extended RAC on MetroCluster should be quorum management. Oracle RAC has two mechanisms to manage quorum: disk heartbeat and network heartbeat. The disk heartbeat monitors storage access using the voting files. With a single-site RAC configuration, a single voting resource is sufficient as long as the underlying storage system offers HA capabilities.
+
+In earlier versions of Oracle, the voting files were placed on physical storage devices, but in current versions of Oracle the voting files are stored in ASM diskgroups.
+
+[NOTE]
+Oracle RAC is supported with NFS. During the grid installation process, a set of ASM processes is created to present the NFS location used for grid files as an ASM diskgroup. The process is nearly transparent to the end user and requires no ongoing ASM management after the installation is complete.
+
+The first requirement in a two-site configuration is making sure that each site can always access more than half of the voting files in a way that guarantees a nondisruptive disaster recovery process. This task was simple before the voting files were stored in ASM diskgroups, but today administrators need to understand basic principles of ASM redundancy.
+
+ASM diskgroups have three options for redundancy `external`, `normal`, and `high`. In other words, unmirrored, mirrored, and 3-way mirrored. A newer option called `Flex` is also available, but rarely used. The redundancy level and placement of the redundant devices controls what happens in failure scenarios. For example:
+
+* Placing the voting files on a `diskgroup` with `external` redundancy resource guarantees eviction of one site if intersite connectivity is lost.
+* Placing the voting files on a `diskgroup` with `normal` redundancy with only one ASM disk per site guarantees node eviction on both sites if intersite connectivity is lost because neither site would have a majority quorum.
+* Placing the voting files on a `diskgroup` with `high` redundancy with two disks on one site and a single disk on the other site allows for active-active operations when both sites are operational and mutually reachable. However, if the single-disk site is isolated from the network, then that site is evicted.
+
+=== RAC network heartbeat
+The Oracle RAC network heartbeat monitors node reachability across the cluster interconnect. To remain in the cluster, a node must be able to contact more than half of the other nodes. In a two-site architecture, this requirement creates the following choices for the RAC node count:
+
+* Placement of an equal number of nodes per site results in eviction at one site in the event network connectivity is lost.
+* Placement of N nodes on one site and N+1 nodes on the opposite site guarantees that loss of intersite connectivity results in the site with the larger number of nodes remaining in network quorum and the site with fewer nodes evicting.
+
+Prior to Oracle 12cR2, it was not feasible to control which side would experience an eviction during site loss. When each site has an equal number of nodes, eviction is controlled by the master node, which in general is the first RAC node to boot.
+
+Oracle 12cR2 introduces node weighting capability. This capability gives an administrator more control over how Oracle resolves split-brain conditions. As a simple example, the following command sets the preference for a particular node in an RAC:
+
+....
+[root@host-a ~]# /grid/bin/crsctl set server css_critical yes
+CRS-4416: Server attribute 'CSS_CRITICAL' successfully changed. Restart Oracle High Availability Services for new value to take effect.
+....
+
+After restarting Oracle High-Availability Services, the configuration looks as follows:
+
+....
+[root@host-a lib]# /grid/bin/crsctl status server -f | egrep '^NAME|CSS_CRITICAL='
+NAME=host-a
+CSS_CRITICAL=yes
+NAME=host-b
+CSS_CRITICAL=no
+....
+
+Node `host-a` is now designated as the critical server. If the two RAC nodes are isolated, `host-a` survives, and `host-b` is evicted.
+
+[NOTE]
+For complete details, see the Oracle white paper “Oracle Clusterware 12c Release 2 Technical Overview. ”
+
+For versions of Oracle RAC prior to 12cR2, the master node can be identified by checking the CRS logs as follows:
+
+....
+[root@host-a ~]# /grid/bin/crsctl status server -f | egrep '^NAME|CSS_CRITICAL='
+NAME=host-a
+CSS_CRITICAL=yes
+NAME=host-b
+CSS_CRITICAL=no
+ [root@host-a ~]# grep -i 'master node' /grid/diag/crs/host-a/crs/trace/crsd.trc
+2017-05-04 04:46:12.261525 :   CRSSE:2130671360: {1:16377:2} Master Change Event; New Master Node ID:1 This Node's ID:1
+2017-05-04 05:01:24.979716 :   CRSSE:2031576832: {1:13237:2} Master Change Event; New Master Node ID:2 This Node's ID:1
+2017-05-04 05:11:22.995707 :   CRSSE:2031576832: {1:13237:221} Master Change Event; New Master Node ID:1 This Node's ID:1
+2017-05-04 05:28:25.797860 :   CRSSE:3336529664: {1:8557:2} Master Change Event; New Master Node ID:2 This Node's ID:1
+....
+
+This log indicates that the master node is `2` and the node `host-a` has an ID of `1`. This fact means that `host-a` is not the master node. The identity of the master node can be confirmed with the command `olsnodes -n`.
+
+....
+[root@host-a ~]# /grid/bin/olsnodes -n
+host-a  1
+host-b  2
+....
+
+The node with an ID of `2` is `host-b`, which is the master node. In a configuration with equal numbers of nodes on each site, the site with `host-b` is the site that survives if the two sets lose network connectivity for any reason.
+
+It is possible that the log entry that identifies the master node can age out of the system. In this situation, the timestamps of the Oracle Cluster Registry (OCR) backups can be used.
+
+....
+[root@host-a ~]#  /grid/bin/ocrconfig -showbackup
+host-b     2017/05/05 05:39:53     /grid/cdata/host-cluster/backup00.ocr     0
+host-b     2017/05/05 01:39:53     /grid/cdata/host-cluster/backup01.ocr     0
+host-b     2017/05/04 21:39:52     /grid/cdata/host-cluster/backup02.ocr     0
+host-a     2017/05/04 02:05:36     /grid/cdata/host-cluster/day.ocr     0
+host-a     2017/04/22 02:05:17     /grid/cdata/host-cluster/week.ocr     0
+....
+
+This example shows that the master node is `host-b`. It also indicates a change in the master node from `host-a` to `host-b` somewhere between 2:05 and 21:39 on May 4. This method of identifying the master node is only safe to use if the CRS logs have also been checked because it is possible that the master node has changed since the previous OCR backup. If this change has occurred, then it should be visible in the OCR logs.
+
+Most customers choose a single voting diskgroup that services the entire environment and an equal number of RAC nodes on each site. The diskgroup should be placed on the site that that contains the database. The result is that loss of connectivity results in eviction on the remote site. The remote site would no longer have quorum, nor would it have access to the database files, but the local site continues running as usual. When connectivity is restored, the remote instance can be brought online again.
+
+In the event of disaster, a switchover is required to bring the database files and voting diskgroup online on the surviving site. If the disaster allows AUSO to trigger the switchover, NVFAIL is not triggered because the cluster is known to be in sync, and the storage resources come online normally. AUSO is a very fast operation and should complete before the `disktimeout` period expires.
+
+Because there are only two sites, it is not feasible to use any type of automated external tiebreaking software, which means forced switchover must be a manual operation.
+
+== Three-site configurations
+An extended RAC cluster is much easier to architect with three sites. The two sites hosting each half of the MetroCluster system also support the database workloads, while the third site serves as a tiebreaker for both the database and the MetroCluster system. The Oracle tiebreaker configuration may be as simple as placing a member of the ASM diskgroup used for voting on a 3rd site, and may also include an operational instance on the 3rd site to ensure there is an odd number of nodes in the RAC cluster.
+
+[NOTE]
+Consult the Oracle documentation on “quorum failure group” for important information on using NFS in an extended RAC configuration. In summary, the NFS mount options may need to be modified to include the soft option to ensure that loss of connectivity to the 3rd site hosting quorum resources does not hang the primary Oracle servers or Oracle RAC processes.

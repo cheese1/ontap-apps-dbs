@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-network-config-fc.html
+keywords: SAN, zoning
+summary: FC Network configuration for Oracle databases
+---
+= FC configuration for Oracle
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+Configuring FC SAN for Oracle databases is primarily about following everyday SAN best practices. 
+
+include::../_include/fc.adoc[]

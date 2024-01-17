@@ -1,0 +1,15 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-storage-config-nfs-transfer-sizes.html
+keywords: NFS
+summary: NFS transfer sizes with Oracle
+---
+= NFS transfer sizes with Oracle databases
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+include::../_include/nfs-transfer-sizes.adoc[]

@@ -1,0 +1,17 @@
+---
+permalink: oracle-tiering-overview.html
+sidebar: sidebar
+keywords: tiering, fabricpool
+summary: Oracle with FabricPool tiering overview
+---
+= Oracle tiering overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+Understanding how FabricPool tiering affects Oracle and other databases requires an understanding of low-level FabricPool architecture.
+
+include::../_include/tiering-with-databases-overview.adoc[]

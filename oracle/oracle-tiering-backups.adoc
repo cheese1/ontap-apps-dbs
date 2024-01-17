@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle-tiering-backups.html
+keywords: tiering, fabricpool
+summary: Oracle backup tiering
+---
+= Oracle backup tiering
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+Traditional application backups include products such as Oracle Recovery Manager, which create file-based backups outside the location of the original database.
+
+include::../_include/tiering-database-backup.adoc[]
