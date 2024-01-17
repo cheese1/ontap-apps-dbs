@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mssql/mssql-Storage-considerations.html
+permalink: mssql/mssql-storage-considerations.html
 keywords: MS-SQL,mssql,SQL Server, database layout
 summary: Microsoft SQL Server on ONTAP
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mssql/data-security.html
+permalink: mssql/mssql-data-security.html
 keywords: MS-SQL,mssql,SQL Server, securing database, security
 summary: Microsoft SQL Server on ONTAP
 ---

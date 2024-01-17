@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mssql/storage-efficiency.html
+permalink: mssql/mssql-storage-efficiency.html
 keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mssql/SQL-disaster-recovery.html
+permalink: mssql/mssql-disaster-recovery.html
 keywords: MS-SQL,mssql,SQL Server, disaster recovery, snapmirror
 summary: Microsoft SQL Server on ONTAP
 ---

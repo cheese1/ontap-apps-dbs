@@ -4,13 +4,13 @@ indexpage:
     - title: Microsoft SQL Server
       links:
         - title: Microsoft SQL Server on ONTAP
-          url: /mssql/overview.html
+          url: /mssql/mssql-overview.html
         - title: Microsoft SQL Server storage considerations
-          url: /mssql/Storage-considerations.html
+          url: /mssql/mssql-storage-considerations.html
         - title: Microsoft SQL Server data protection
-          url: /mssql/Data-protection.html
+          url: /mssql/mssql-data-protection.html
         - title: Microsoft SQL Server disaster recovery
-          url: /mssql/SQL-disaster-recovery.html
+          url: /mssql/mssql-disaster-recovery.html
     - title: Open-source databases
       links:
         - title: MariaDB and MySQL on ONTAP
