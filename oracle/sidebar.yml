@@ -56,25 +56,25 @@ entries:
     - title: FC SAN
       entries:
       - title: LUN Alignment
-        url: /oracle/oracle-storage-config-san-lun-alignment.html
+        url: /oracle/oracle-storage-san-config-lun-alignment.html
       - title: LUN Count and LUN Size
-        url: /oracle/oracle-storage-config-san-lun-sizing.html
+        url: /oracle/oracle-storage-san-config-lun-sizing.html
       - title: LUN Resizing
-        url: /oracle/oracle-storage-config-san-lun-resizing.html
+        url: /oracle/oracle-storage-san-config-lun-resizing.html
       - title: LVM Striping
-        url: /oracle/oracle-storage-config-san-lvm-striping.html
+        url: /oracle/oracle-storage-san-config-lvm-striping.html
     - title: NFS
       entries:
       - title: Configuration
-        url: /oracle/oracle-storage-config-nfs-overview.html
+        url: /oracle/oracle-storage-nfs-config-overview.html
       - title: Oracle Direct NFS (dNFS)
-        url: /oracle/oracle-storage-config-nfs-dnfs.html
+        url: /oracle/oracle-storage-nfs-config-dnfs.html
       - title: NFS leases and locks
-        url: /oracle/oracle-storage-config-nfs-leases-and-locks.html
+        url: /oracle/oracle-storage-nfs-config-leases-and-locks.html
       - title: NFS caching
-        url: /oracle/oracle-storage-config-nfs-caching.html
+        url: /oracle/oracle-storage-nfs-config-caching.html
       - title: NFS transfer sizes
-        url: /oracle/oracle-storage-config-nfs-transfer-sizes.html
+        url: /oracle/oracle-storage-nfs-config-transfer-sizes.html
     - title: Oracle and NVFAIL
       url: /oracle/oracle-dp-nvfail.html
     - title: ASM Reclamation Utility
