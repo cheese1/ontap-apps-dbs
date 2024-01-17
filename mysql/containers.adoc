@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,containers
 summary: MySQL on ONTAP
 ---
 = Containers
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 Containerization of MySQL databases is becoming more prevalent.

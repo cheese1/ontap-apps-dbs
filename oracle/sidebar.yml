@@ -20,6 +20,7 @@ entries:
     - title: Failover and switchover
       url: /oracle/oracle-ontap-config-failover.html
   - title: Database configuration
+    pdf-filename: Database configuration for Oracle Database
     entries:
     - title: Datafile and redo block sizes
       url: /oracle/oracle-app-config-block-sizes.html
@@ -30,6 +31,7 @@ entries:
     - title: Oracle RAC
       url: /oracle/oracle-app-config-rac.html
   - title: Host configuration
+    pdf-filename: Host configuration for Oracle Database
     entries:
     - title: AIX
       url: /oracle/oracle-host-config-aix.html
@@ -44,6 +46,7 @@ entries:
     - title: Solaris
       url: /oracle/oracle-host-config-solaris.html
   - title: Network configuration
+    pdf-filename: Network configuration for Oracle Database
     entries:
     - title: Logical interfaces
       url: /oracle/oracle-network-config-lifs.html
@@ -52,6 +55,7 @@ entries:
     - title: FC SAN configuration
       url: /oracle/oracle-network-config-fc.html
   - title: Storage configuration
+    pdf-filename: Storage configuration for Oracle Database
     entries:
     - title: FC SAN
       entries:

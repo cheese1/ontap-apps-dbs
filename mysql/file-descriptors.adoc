@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---
 = File descriptors
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 To run, the MySQL server needs file descriptors.

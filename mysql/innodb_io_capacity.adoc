@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,innodb_io_capacity
 summary: MySQL on ONTAP
 ---
 = innodb_io_capacity
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 In the InnoDB plug-in, a new parameter called innodb_io_capacity was added from MySQL 5.7. 

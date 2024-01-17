@@ -50,7 +50,7 @@ entries:
       - title: "Replication topologies"
         url: /vmware/vmware-srm-replication_topologies.html
       - title: "Troubleshooting SRM when using vVols replication"
-        url: /vmware/vmware-srm-appendix_a__troubleshooting_srm_when_using_vvols_replication.html
+        url: /vmware/vmware-srm-vvol-troubleshooting.html
 #  - title: "VMware Horizon"
 #    entries:
 #      - title: "End user computing with VMware (Design Guide)"

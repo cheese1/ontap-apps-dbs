@@ -5,7 +5,6 @@ keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
 = PostgreSQL architecture
-
 :hardbreaks:
 :nofooter:
 :icons: font

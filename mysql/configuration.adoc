@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB
 summary: MySQL configuration
 ---
 = Configuration overview
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 NetApp recommends a few important MySQL configuration parameters (listed in Table 1) to obtain optimal performance.

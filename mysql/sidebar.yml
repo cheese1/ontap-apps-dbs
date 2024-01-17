@@ -4,6 +4,7 @@ entries:
   - title: Overview
     url: /mysql/overview.html
   - title: Database configuration
+    pdf-filename: Database configuration for MySQL
     entries:
     - title: File structure
       url: /mysql/file-structure.html
@@ -26,6 +27,7 @@ entries:
     - title: open_file_limits
       url: /mysql/open_file_limits.html
   - title: Host configuration
+    pdf-filename: Host configuration for MySQL
     entries:
     - title: Containerization 
       url: /mysql/containers.html
@@ -36,6 +38,7 @@ entries:
     - title: File descriptors
       url: /mysql/file-descriptors.html
   - title: Storage configuration
+    pdf-filename: Storage configuration for MySQL
     entries:
     - title: MySQL over NFS
       url: /mysql/mysql-over-nfs.html

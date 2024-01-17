@@ -6,6 +6,7 @@ entries:
   - title: Workloads
     url: /mssql/mssql-workloads.html
   - title: Database configuration
+    pdf-filename: Database configuration for Microsoft SQL Server
     entries:
     - title: Shared instance versus dedicated instance
       url: /mssql/mssql-shared-vs-dedicated.html
@@ -14,6 +15,7 @@ entries:
     - title: Memory configuration
       url: /mssql/mssql-memory-configuration.html
   - title: Storage configuration
+    pdf-filename: Storage configuration for Microsoft SQL Server
     entries:
     - title:  Database Files and filegroups
       url: /mssql/mssql-files-and-filegroups.html

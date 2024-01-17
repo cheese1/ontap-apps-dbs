@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,SAN
 summary: MySQL on ONTAP
 ---
 = MySQL over SAN
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 There are two options to configure MySQL with SAN using the usual two-volume model. 

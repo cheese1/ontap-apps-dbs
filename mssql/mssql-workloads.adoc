@@ -24,10 +24,11 @@ The Transaction Process Council (TPC) is a nonprofit corporation founded to defi
 
 [cols="1,1,1"]
 |===
-Workload type|Scenario|Read/write ratio (percentages)|
-OLTP|TPC-C|~75/25|
-OLTP|TPC-E|~90/10|
-DSS|TPC-H|~100/0|
+|Workload type|Scenario|Read/write ratio (percentages)
+
+|OLTP|TPC-C|~75/25|
+|OLTP|TPC-E|~90/10|
+|DSS|TPC-H|~100/0|
 |===
 
 Although various workload generation options are available, we generally focus our efforts on measuring the performance of SQL Server databases when handling transactional workloads, and we use the TPC-E tools from Microsoft or TPC-H using HammerDB (link:http://www.hammerdb.com/document.html[HammerDB.com]^). The detailed instructions on how to use these specific benchmarks are beyond the scope of this document.

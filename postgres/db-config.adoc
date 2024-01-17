@@ -5,6 +5,8 @@ keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
 = Database configuration
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 There are several PostgreSQL tuning configurations that can improve performance. 

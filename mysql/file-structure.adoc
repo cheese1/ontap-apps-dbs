@@ -5,10 +5,10 @@ keywords: MySQL,MariaDB
 summary: MySQL file structure
 ---
 = File structure
-
-[.lead]
+:icons: font
 :imagesdir: ../media/
 
+[.lead]
 InnoDB acts as the middle layer between storage and the MySQL server, it stores the data to the drives. 
 
 image:mysql-file-structure1.png[Error: Graphic image not found]

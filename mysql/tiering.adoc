@@ -5,6 +5,8 @@ keywords: tiering, fabricpool
 summary: FabricPool overview
 ---
 = MySQL tiering with FabricPool
+:icons: font
+:imagesdir: ../media/
 
 :hardbreaks:
 :nofooter:

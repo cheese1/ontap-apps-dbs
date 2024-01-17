@@ -5,6 +5,8 @@ keywords: MySQL,MariaDB,innodb_log_file_size
 summary: MySQL on ONTAP
 ---
 = innodb_log_file_size
+:icons: font
+:imagesdir: ../media/
 
 [.lead]
 Selecting the right size for the InnoDB log file size is important for the write operations and for having a decent recovery time after a server crash. 
