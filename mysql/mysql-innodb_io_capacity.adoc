@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/innodb_io_capacity.html
+permalink: mysql/mysql-innodb_io_capacity.html
 keywords: MySQL,MariaDB,innodb_io_capacity
 summary: MySQL on ONTAP
 ---

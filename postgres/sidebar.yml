@@ -2,31 +2,31 @@ section: postgres
 title: PostgreSQL
 entries:
   - title: Overview
-    url: /postgres/overview.html
+    url: /postgres/postgres-overview.html
   - title: Database configuration
     pdf-filename: Host configuration for PostgreSQL
     entries:
     - title: Architecture
-      url: /postgres/architecture.html
+      url: /postgres/postgres-architecture.html
     - title: Initialization
-      url: /postgres/initialization.html
+      url: /postgres/postgres-initialization.html
     - title: Settings
-      url: /postgres/db-config.html
+      url: /postgres/postgres-db-config.html
     - title: Tablespaces
-      url: /postgres/tablespaces.html
+      url: /postgres/postgres-tablespaces.html
   - title: Storage configuration
     pdf-filename: Storage configuration for PostgreSQL
     entries:
     - title: Filesystem configuration
-      url: /postgres/filesystems.html
+      url: /postgres/postgres-filesystems.html
     - title: Tiering
-      url: /postgres/tiering.html
+      url: /postgres/postgres-tiering.html
   - title: Data protection
     pdf-filename: Data protection for PostgreSQL
     entries:
     - title: Native data protection
-      url: /postgres/native-dp.html
+      url: /postgres/postgres-native-dp.html
     - title: Snapshot technology
-      url: /postgres/snapshot-dp.html
+      url: /postgres/postgres-snapshot-dp.html
     - title: Data protection software
-      url: /postgres/snapcenter-dp.html
+      url: /postgres/postgres-snapcenter-dp.html

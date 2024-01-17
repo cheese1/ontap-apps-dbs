@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/architecture.html
+permalink: postgres/postgres-architecture.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---

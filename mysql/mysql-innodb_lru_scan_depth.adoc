@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/innodb_lru_scan_depth.html
+permalink: mysql/mysql-innodb_lru_scan_depth.html
 keywords: MySQL,MariaDB,innodb_lru_scan_depth
 summary: MySQL on ONTAP
 ---

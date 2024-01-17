@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/schedulers.html
+permalink: mysql/mysql-schedulers.html
 keywords: MySQL,MariaDB,schedulers
 summary: MySQL on ONTAP
 ---

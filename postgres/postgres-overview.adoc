@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/overview.html
+permalink: postgres/postgres-overview.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---

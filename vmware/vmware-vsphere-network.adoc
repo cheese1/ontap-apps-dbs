@@ -107,7 +107,6 @@ Other best practices to consider:
 
 image:vsphere_ontap_image2.png[Error: Missing Graphic Image]
 
-[[nfs]]
 == NFS
 vSphere allows customers to use enterprise-class NFS arrays to provide concurrent access to datastores to all the nodes in an ESXi cluster. As mentioned in the datastore section, there are some ease of use and storage efficiency visibility benefits when using NFS with vSphere.
 

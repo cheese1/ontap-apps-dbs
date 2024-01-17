@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/file-descriptors.html
+permalink: mysql/mysql-file-descriptors.html
 keywords: MySQL,MariaDB,TR-4722
 summary: MySQL on ONTAP
 ---

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: mysql/innodb_log_file_size.html
+permalink: mysql/mysql-innodb_log_file_size.html
 keywords: MySQL,MariaDB,innodb_log_file_size
 summary: MySQL on ONTAP
 ---

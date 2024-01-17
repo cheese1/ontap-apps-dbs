@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/filesystems.html
+permalink: postgres/postgres-filesystems.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---

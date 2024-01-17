@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: postgres/db-config.html
+permalink: postgres/postgres-db-config.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases on ONTAP
 ---
