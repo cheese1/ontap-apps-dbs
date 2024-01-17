@@ -10,7 +10,7 @@ summary: FLI Cutover - Oracle
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Some disruption during a foreign LUN import is unavoidable because of the need to change the FC network configuration. However, the disruption does not have to last much longer than the time required to restart the database environment and update FC zoning to switch the host FC connectivity from the foreign LUN to ONTAP.

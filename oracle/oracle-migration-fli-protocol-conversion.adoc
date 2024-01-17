@@ -9,7 +9,7 @@ summary: Changing the SAN protocol after FLI migration
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Changing the protocol used to access a LUN is a common requirement.

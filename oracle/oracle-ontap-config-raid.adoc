@@ -10,7 +10,7 @@ summary: RAID and Oracle Databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 RAID refers to the use of redundancy to protect data against the loss of a drive.

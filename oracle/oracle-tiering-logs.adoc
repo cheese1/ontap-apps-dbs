@@ -8,7 +8,7 @@ summary: Oracle archive log tiering
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Perhaps the most important use for FabricPool is improving the efficiency of known cold data, such as database transaction logs.

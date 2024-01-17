@@ -9,7 +9,7 @@ summary: MetroCluster Logical Architecture - Oracle
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../../media/
+:imagesdir: ../media/
 
 [.lead]
 Understanding how Oracle databases operate in a MetroCluster environment alsop requires some explanation of the logical functionality of a MetroCluster system.

@@ -9,7 +9,7 @@ summary: Oracle with MetroCluster
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../../media/
+:imagesdir: ../media/
 
 [.lead]
 The use of MetroCluster does not necessarily add to or change any best practices for operating a enterprise applications and databases.

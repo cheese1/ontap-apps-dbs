@@ -10,7 +10,7 @@ summary: Checksums and Oracle data protection
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 One question commonly directed to NetApp is how to secure the data integrity of an Oracle database.

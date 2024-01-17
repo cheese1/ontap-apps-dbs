@@ -9,7 +9,7 @@ summary: Oracle performance testing
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Accurate testing of database storage performance is an extremely complicated subject. It requires an understanding of the following issues:

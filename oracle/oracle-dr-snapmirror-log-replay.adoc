@@ -10,7 +10,7 @@ summary: Oracle on ONTAP DR procedure with log shipping
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../../media/
+:imagesdir: ../media/
 
 [.lead]
 The replication procedures for an Oracle database are essentially the same as the backup procedures. The primary requirement is that the snapshots that constitute a recoverable backup must be replicated to the remote storage system.

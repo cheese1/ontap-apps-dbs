@@ -9,7 +9,7 @@ summary: Oracle data protection SLAs
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 A data protection strategy should be defined by business requirements.

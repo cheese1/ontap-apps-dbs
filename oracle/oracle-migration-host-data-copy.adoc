@@ -9,7 +9,7 @@ summary: Oracle migration using the host-side storage stack
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 As with database-level migration, migration at the host layer provides a storage vendor–independent approach.

@@ -10,7 +10,7 @@ summary: Consistency group backups for Oracle on ONTAP
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 For the simplest possible backup, just place the entire Oracle database in a single volume.

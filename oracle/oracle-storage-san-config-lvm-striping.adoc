@@ -9,7 +9,7 @@ summary: LVM stripe configuration for Oracle databases
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 LVM striping refers to distributing data across multiple LUNs. The result is dramatically improved performance for many databases.

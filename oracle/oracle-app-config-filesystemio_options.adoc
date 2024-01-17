@@ -10,7 +10,7 @@ summary: Oracle filesystemio_options
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 The Oracle initialization parameter `filesystemio_options` controls the use of asynchronous and direct I/O.

@@ -10,7 +10,7 @@ summary: Oracle migration planning
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Oracle data migration can occur at one of three levels: the database, the host, or the storage array.
