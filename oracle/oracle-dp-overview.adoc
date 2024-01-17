@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: oracle/oracle-dp-introduction.html
+permalink: oracle/oracle-dp-overview.html
 keywords: oracle, database, ontap
-summary: Oracle data protection introduction
+summary: Oracle data protection overview
 ---
 = Oracle data protection with ONTAP
 

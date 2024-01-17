@@ -104,7 +104,7 @@ To configure a LUN, complete the following steps:
 . Partition the LUNs and verify that they are properly aligned. See "Appendix B: WAFL Alignment Verification” for instructions on how to directly test and confirm alignment.
 
 === zpools
-A zpool should only be created after the steps in the link:solaris.html#lun-configuration[LUN Configuration] are performed. If the procedure is not done correctly, it can result in serious performance degradation due to the I/O alignment. Optimum performance on ONTAP requires I/O to be aligned to a 4K boundary on a drive. The file systems created on a zpool use an effective block size that is controlled through a parameter called `ashift`, which can be viewed by running the command `zdb -C`.
+A zpool should only be created after the steps in the link:oracle-host-config-solaris.html#lun-configuration[LUN Configuration] are performed. If the procedure is not done correctly, it can result in serious performance degradation due to the I/O alignment. Optimum performance on ONTAP requires I/O to be aligned to a 4K boundary on a drive. The file systems created on a zpool use an effective block size that is controlled through a parameter called `ashift`, which can be viewed by running the command `zdb -C`.
 
 The value of `ashift` defaults to 9, which means 2^9, or 512 bytes. For optimum performance, the `ashift` value must be 12 (2^12=4K). This value is set at the time the zpool is created and cannot be changed, which means that data in zpools with `ashift` other than 12 should be migrated by copying data to a newly created zpool.
 
