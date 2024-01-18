@@ -23,7 +23,7 @@ If NFSv4 is chosen as a protocol, NetApp recommends using NFSv4.1. There are som
 
 Use the following mount options for general database workloads:
 ....
-rw, hard,nointr,bg,vers=[3|4],proto=tcp,rsize=65536,wsize=65536
+rw,hard,nointr,bg,vers=[3|4],proto=tcp,rsize=65536,wsize=65536
 ....
 
 If heavy sequential IO is expected, the NFS transfer sizes can be increased.
@@ -35,7 +35,7 @@ include::../_include/nfs-transfer-sizes.adoc[]
 Once the transfer size is increased at the ONTAP level, the following mount options would be used:
 
 ....
-rw, hard,nointr,bg,vers=[3|4],proto=tcp,rsize=262144,wsize=262144
+rw,hard,nointr,bg,vers=[3|4],proto=tcp,rsize=262144,wsize=262144
 ....
 
 == NFSv3 TCP Slot Tables
