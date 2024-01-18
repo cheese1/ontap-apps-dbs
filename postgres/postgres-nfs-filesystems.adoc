@@ -26,7 +26,7 @@ Use the following mount options for general database workloads:
 rw,hard,nointr,bg,vers=[3|4],proto=tcp,rsize=65536,wsize=65536
 ....
 
-If heavy sequential IO is expected, the NFS transfer sizes can be increased.
+If heavy sequential IO is expected, the NFS transfer sizes can be increased as described in the following section.
 
 == NFS Transfer Sizes
 
