@@ -4,7 +4,7 @@ permalink: postgres/postgres-nfs-filesystems.html
 keywords: PostgreSQL,database,postgres
 summary: PostgreSQL Databases NFS with ONTAP
 ---
-= Filesystems
+= PostgreSQL with NFS Filesystems
 :hardbreaks:
 :nofooter:
 :icons: font
