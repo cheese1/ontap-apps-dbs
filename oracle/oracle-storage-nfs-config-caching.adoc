@@ -1,0 +1,23 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-storage-nfs-config-caching.html
+keywords: NFS
+summary: NFS attribute caching databases
+---
+= NFS caching with databases
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+The presence of any of the following mount options causes host caching to be disabled:
+
+....
+cio, actimeo=0, noac, forcedirectio
+....
+
+These settings can have a severe negative effect on the speed of software installation, patching, and backup/restore operations. In some cases, especially with clustered applications, these options are required as an inevitable result of the need to deliver cache-coherency across all nodes in the cluster. In other cases, customers mistakenly use these parameters and the result is unnecessary performance damage.
+
+Many customers temporarily remove these mount options during installation or patching of the application binaries. This removal can be performed safely if the user verifies that no other processes are actively using the target directory during the installation or patching process.

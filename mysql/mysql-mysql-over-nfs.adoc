@@ -1,0 +1,43 @@
+---
+sidebar: sidebar
+permalink: mysql/mysql-mysql-over-nfs.html
+keywords: MySQL,MariaDB,NFS
+summary: MySQL on ONTAP
+---
+= MySQL over NFS
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The MySQL documentation recommends that you use NFSv4 for NAS deployments. 
+
+== ONTAP NFS transfer sizes 
+By default, ONTAP will limit NFS IO sizes to 64K. Random IO with an MySQL database uses a much smaller block size which is well below the 64K maximum. Large-block IO is usually parallelized, so the 64K maximum is also not a limitation.
+
+There are some workloads where the 64K maximum does create a limitation. In particular, single-threaded operations such as full table scan backup operations will run faster and more efficiently if the database can perform fewer but larger IO's. The optimum IO handling size for ONTAP with database workloads is 256K. The NFS mount options listed for specific operating systems below have been updated from 64K to 256K accordingly.
+
+The maximum transfer size for a given ONTAP SVM can be changed as follows:
+----
+Cluster01::> set advanced
+
+Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
+
+Do you want to continue? {y|n}: y
+
+Cluster01::*> nfs server modify -vserver vserver1 -tcp-max-xfer-size 262144
+----
+
+[CAUTION]
+Never decrease the maximum allowable transfer size on ONTAP below the value of rsize/wsize of currently mounted NFS filesystems. This can create hangs or even data corruption with some operating systems. For example, if NFS clients are currently set at a rsize/wsize of 65536, then the ONTAP maximum transfer size could be adjusted between 65536 and 1048576 with no effect because the clients themselves are limited. Reducing the maximum transfer size below 65536 can damage availability or data.
+
+[TIP]
+====
+*NetApp recommends*
+
+Setting the following NFSv4 fstab (/etc/fstab) setting:
+
+`nfs4 rw, hard,nointr,bg,vers=4,proto=tcp,noatime,rsize=262144,wsize=262144`
+====
+
+[NOTE]
+A common issue with NFSv3 was the locked InnoDB log files after a power outage. Using time or switching log files solved this issue. However, NFSv4 has locking operations and keeps track of open files and delegations. 

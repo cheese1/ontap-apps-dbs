@@ -1,0 +1,148 @@
+---
+sidebar: sidebar
+permalink: vmware/vmware-vsphere-settings.html
+keywords:
+summary:
+---
+
+= Recommended ESXi host and other ONTAP settings
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+//
+// This file was created with NDAC Version 2.0 (August 17, 2020)
+//
+// 2021-02-16 10:32:05.390906
+//
+
+[.lead]
+NetApp has developed a set of ESXi host multipathing and HBA timeout settings for proper behavior with ONTAP based on NetApp testing. These are easily set using ONTAP tools for VMware vSphere. From the Summary dashboard, click Edit Settings in the Host Systems portlet or right-click the host in vCenter, then navigate to ONTAP tools > Set Recommended Values. Here are the currently recommended host settings with the 9.8 release.
+
+[%autowidth.stretch]
+|===
+|*Host Setting* |*NetApp Recommended Value* |*Reboot Required*
+3+e|*ESXi Advanced Configuration*
+|VMFS3.HardwareAcceleratedLocking
+|Keep default (1)
+|No
+|VMFS3.EnableBlockDelete
+|Keep default (0), but can be changeded if needed.
+For more information, see link:https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2007427[VMware KB 2007427]
+|No
+|VMFS3.EnableVMFS6Unmap
+|Keep default (1)
+For more information, see link:https://core.vmware.com/resource/vmware-vsphere-apis-array-integration-vaai#sec9426-sub4[VMware vSphere APIs: Array Integration (VAAI)]
+|No
+
+3+e|*NFS Settings*
+|Net.TcpipHeapSize
+|vSphere 6.0 or later, set to 32.
+All other NFS configurations, set to 30
+|Yes
+|Net.TcpipHeapMax
+|Set to 512MB for most vSphere 6.X releases.
+Set to 1024MB for 6.5U3, 6.7U3, and 7.0 or later.
+|Yes
+|NFS.MaxVolumes
+|vSphere 6.0 or later, set to 256
+All other NFS configurations, set to 64.
+|No
+|NFS41.MaxVolumes
+|vSphere 6.0 or later, set to 256.
+|No
+|NFS.MaxQueueDepth^1^
+|vSphere 6.0 or later, set to 128
+|Yes
+|NFS.HeartbeatMaxFailures
+|Set to 10 for all NFS configurations
+|No
+|NFS.HeartbeatFrequency
+|Set to 12 for all NFS configurations
+|No
+|NFS.HeartbeatTimeout
+|Set to 5 for all NFS configurations.
+|No
+|SunRPC.MaxConnPerIP
+|vSphere 7.0 or later, set to 128.
+|No
+
+3+e|*FC/FCoE Settings*
+|Path selection policy
+|Set to RR (round robin) when FC paths with ALUA are used. Set to FIXED for all other configurations.
+Setting this value to RR helps provide load balancing across all active/optimized paths.
+The value FIXED is for older, non-ALUA configurations and helps prevent proxy I/O. In other words, it helps keep I/O from going to the other node of a high-availability (HA) pair in an environment that has Data ONTAP operating in 7-Mode
+|No
+|Disk.QFullSampleSize
+|Set to 32 for all configurations.
+Setting this value helps prevent I/O errors.
+|No
+|Disk.QFullThreshold
+|Set to 8 for all configurations.
+Setting this value helps prevent I/O errors.
+|No
+|Emulex FC HBA timeouts
+|Use the default value.
+|No
+|QLogic FC HBA timeouts
+|Use the default value.
+|No
+
+3+e|*iSCSI Settings*
+|Path selection policy
+|Set to RR (round robin) for all iSCSI paths.
+Setting this value to RR helps provide load balancing across all active/optimized paths.
+|No
+|Disk.QFullSampleSize
+|Set to 32 for all configurations.
+Setting this value helps prevent I/O errors
+|No
+|Disk.QFullThreshold
+|Set to 8 for all configurations.
+Setting this value helps prevent I/O errors.
+|No
+|===
+
+NOTE: 1 - NFS advanced configuration option MaxQueueDepth may not work as intended when using VMware vSphere ESXi 7.0.1 and VMware vSphere ESXi 7.0.2. Please reference link:https://kb.vmware.com/s/article/86331?lang=en_US[VMware KB 86331] for more information.
+
+ONTAP tools also specify certain default settings when creating ONTAP FlexVol volumes and LUNs:
+
+[%autowidth.stretch]
+|===
+|*ONTAP Tool* |*Default Setting*
+|Snapshot reserve (-percent-snapshot-space)
+|0
+|Fractional reserve (-fractional-reserve)
+|0
+|Access time update (-atime-update)
+|False
+|Minimum readahead (-min-readahead)
+|False
+|Scheduled snapshots
+|None
+|Storage efficiency
+|Enabled
+|Volume guarantee
+|None (thin provisioned)
+|Volume Autosize
+|grow_shrink
+|LUN space reservation
+|Disabled
+|LUN space allocation
+|Enabled
+|===
+
+== Multipath settings for performance
+
+While not currently configured by available ONTAP tools, NetApp suggests these configuration options:
+
+* In high-performance environments or when testing performance with a single LUN datastore, consider changing the load balance setting of the round-robin (VMW_PSP_RR) path selection policy (PSP) from the default IOPS setting of 1000 to a value of 1. See VMware KB https://kb.vmware.com/s/article/2069356[2069356^] for more info.
+* In vSphere 6.7 Update 1, VMware introduced a new latency load balance mechanism for the Round Robin PSP. The new option considers I/O bandwidth and path latency when selecting the optimal path for I/O. You might benefit from using it in environments with non-equivalent path connectivity, such as cases where there are more network hops on one path than another, or when using a NetApp All SAN Array system. See https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-B7AD0CA0-CBE2-4DB4-A22C-AD323226A257.html?hWord=N4IghgNiBcIA4Gc4AIJgC4FMB2BjAniAL5A[Path Selection Plug-Ins and Policies^] for more information.
+
+== Additional documentation
+
+For FCP and iSCSI with vSphere 7, more details can be found at https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_7.html[Use VMware vSphere 7.x with ONTAP^]
+For FCP and iSCSI with vSphere 8, more details can be found at https://docs.netapp.com/us-en/ontap-sanhost/hu_vsphere_8.html[Use VMware vSphere 8.x with ONTAP^]
+For NVMe-oF with vSphere 7, more details can be found at https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_7.html[For NVMe-oF, more details can be found at NVMe-oF Host Configuration for ESXi 7.x with ONTAP^]
+For NVMe-oF with vSphere 8, more details can be found at https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_8.html[For NVMe-oF, more details can be found at NVMe-oF Host Configuration for ESXi 8.x with ONTAP^]

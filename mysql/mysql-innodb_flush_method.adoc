@@ -1,0 +1,28 @@
+---
+sidebar: sidebar
+permalink: mysql/mysql-innodb_flush_method.html
+keywords: MySQL,MariaDB,innodb_flush_method
+summary: MySQL on ONTAP
+---
+= innodb_flush_method
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+The innodb_flush_method parameter specifies how InnoDB opens and flushes the log and data files. 
+
+== Optimizations
+In InnoDB optimization, setting this parameter tweaks the database performance when applicable. 
+
+The following options are for flushing the files through InnoDB:
+
+* `fsync`. InnoDB uses the `fsync()` system call to flush both the data and log files. This option is the default setting.
+
+* `O_DSYNC`. InnoDB uses the `O_DSYNC` option to open and flush the log files and fsync() to flush the data files. InnoDB does not use `O_DSYNC` directly, because there have been problems with it on many varieties of UNIX.
+
+* `O_DIRECT`. InnoDB uses the `O_DIRECT` option (or `directio()` on Solaris) to open the data files and uses `fsync()` to flush both the data and log files. This option is available on some GNU/Linux versions, FreeBSD, and Solaris.
+
+* `O_DIRECT_NO_FSYNC`. InnoDB uses the `O_DIRECT` option during flushing I/O; however, it skips the `fsync()` system call afterward. This option is unsuitable for some types of file systems (for example, XFS). If you are not sure if your file system requires an `fsync()` system call—for example, to preserve all file metadata—use the `O_DIRECT` option instead.
+
+== Observation
+In the NetApp lab tests, the `fsync` default option was used on NFS and SAN, and it was a great performance improviser compared to `O_DIRECT`. While using the flush method as `O_DIRECT` with ONTAP, we observed that the client writes a lot of single-byte writes at the border of the 4096 block in serial fashion. These writes increased latency over the network and degraded performance.

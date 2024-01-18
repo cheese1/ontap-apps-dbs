@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-ontap-config-failover.html
+keywords: failover, switchover
+summary: An understanding of storage takeover and switchover functions is required to ensure that Oracle database operations are not disrupted by these operations. In addition, the arguments used by takeover and switchover operations can affect data integrity if used incorrectly.
+---
+= Oracle and ONTAP Controller failover/switchover
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+An understanding of storage takeover and switchover functions is required to ensure that Oracle database operations are not disrupted by these operations. In addition, the arguments used by takeover and switchover operations can affect data integrity if used incorrectly.
+
+include::../_include/failover.adoc[]

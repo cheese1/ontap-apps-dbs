@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: mysql/mysql-slot-tables.html
+keywords: MySQL,MariaDB,TR-4722
+summary: MySQL on ONTAP
+---
+= Slot tables 
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+NFS performance on Linux depends on a parameter called `tcp_max_slot_table_entries`.
+
+include::../_include/nfs-slot-tables.adoc[]

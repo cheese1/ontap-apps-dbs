@@ -1,0 +1,78 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-dr-snapmirror-basics.html
+keywords: ontap, snapmirror
+summary: SnapMirror and SyncMirror
+---
+= SnapMirror and SyncMirror
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Nearly every application requires data replication. 
+
+At the most basic level, replication can mean a copy on tape stored offsite or application-level replication to a standby location. Disaster recovery refers to the use of those replica copies to bring a service online in the event of catastrophic loss of service.
+
+ONTAP offers multiple replication options to address a variety of requirements natively within the storage array, covering a complete spectrum of needs. These options can include simple replication of backups to a remote site up to a synchronous, fully automated solution that delivers both disaster recovery and high availability in the same platform.
+
+The primary ONTAP replication technologies applicable to applications are the NetApp SnapMirror and NetApp SyncMirror technologies. These are not add-on products; rather they are fully integrated into ONTAP and are activated by the simple addition of a license key. Storage-level replication is not the only option either. Application-level replication, such as with Oracle DataGuard, can also integrate into a data protection strategy based on ONTAP.
+
+The right choice depends on the specific replication, recovery, and retention requirements.
+
+== ONTAP SnapMirror
+SnapMirror is the NetApp asynchronous replication solution, ideally suited for protecting large, complicated, and dynamic datasets such as databases and their associated applications. Its key values are as follows:
+
+* *Manageability.* SnapMirror is easy to configure and manage because it is a native part of the storage software. No add-on products are required. Replication relationships can be established in minutes and can be managed directly on the storage system.
+* *Simplicity.* Replication is based on FlexVol volumes, which are containers of LUNs or files that are replicated as a single consistent group.
+* *Efficiency.* After the initial replication relationship is established, only changes are replicated. Furthermore, efficiency features such as deduplication and compression are preserved, further reducing the amount of data that must be transferred to a remote site.
+* *Flexibility.* Mirrors can be temporarily broken to allow testing of disaster recovery procedures, and then the mirroring can be easily reestablished with no need for a complete remirroring. Only the changed data must be applied to bring the mirrors back into sync. Mirroring can also be reversed to allow a rapid resync after the disaster concludes and the original site is back in service. Finally, read-write clones of replicated data are available for testing and development.
+
+ONTAP offers several different replication technologies, but the most flexible is SnapMirror, a volume-to-volume asynchronous mirroring option.
+
+As mentioned before, a FlexVol volume is the basic unit of management for Snapshot-based backups and SnapRestore-based recovery. A FlexVol volume is also the basic unit for SnapMirror-based replication. The first step is establishing the baseline mirror of the source volume to the destination volume. After this mirror relationship is initialized, all subsequent operations are based on replication of the changed data alone.
+
+From a recovery perspective, the key values of SnapMirror are as follows:
+
+* SnapMirror operations are simple to understand and can be easily automated.
+* A simple update of a SnapMirror replica requires that only the delta changes are replicated, reducing demands on bandwidth and allowing more frequent updates.
+* SnapMirror is highly granular. It is based on simple volume-to-volume relationships, allowing for the creation of hundreds of independently managed replicas and replication intervals. Replication does not need to be one-size-fits-all.
+* The mirroring direction can be easily reversed while preserving the ability to update the relationship based on the changes alone. This delivers rapid failback capability after the primary site is restored to service after a disaster such as a power failure. Only the changes must be synchronized back to the source.
+* Mirrors can easily be broken and efficiently resynced to permit rehearsal of disaster recovery procedures.
+* SnapMirror operating in full block-level replication mode replicates not just the data in a volume, but also the snapshots. This capability provides both a copy of the data and a complete set of backups on the disaster recovery site.
+
+SnapMirror operating in version-flexible mode allows for replication of specific snapshots, permitting different retention times at the primary and secondary sites.
+
+== SnapMirror Synchronous
+SnapMirror Synchronous (SM-S) is an enhancement to SnapMirror that delivers RPO=0 synchronous replication. It is most often used in storage architectures where only subset of the total data requires synchronous mirroring.
+
+SM-S can operate in two slightly different modes, Sync and StrictSync.
+
+In Sync mode, changes are replicated before being acknowledged. This guarantees an RPO of zero, so long as replication is operational. If the change cannot be replicated, SM-S can exit synchronous mode and allow operations to continue. This allows RPO=0 under normal circumstances, but data processes do not completely halt if the replication destination is unavailable.
+
+StrictSync guarantees an RPO=0. A failure to replicate changes results in an I/O error, which typically causes an application shutdown.
+
+For a complete explanation of SM-S, see https://www.netapp.com/media/17174-tr4733.pdf?v=1221202075448P[TR-4733^] and the official ONTAP documentation. Features are continuously added with new versions of ONTAP.
+
+== Consistency groups
+ONTAP allows the creation of consistency group snapshots, and starting with 9.13.1, ONTAP can replicate groups of volumes (remember that a volume in ONTAP terminology is not a LUN, it is a management container consisting of one or more files or LUNs) as consistent group.
+
+SnapMirror replication and breaking CG SnapMirror relation preserves consistency across volumes, and SnapMirror Synchronous and SnapMirror Business Continuity both preserve consistency across constituent volumes. 
+
+The result is you can replicate a multi-volume dataset and ensure all volumes are cross-consistent. Among other things, this allows "break the mirror and go" DR operations without a need for additional application or database recovery steps.
+
+== MetroCluster and SyncMirror
+MetroCluster is also a synchronous replication solution, aimed at large-scale mission-critical workloads. Replication is based on SyncMirror. At the simplest layer, SyncMirror creates two complete sets of RAID-protected data in two different locations. They could be in adjoining rooms within a data center, or they could be located many kilometers apart.
+
+SyncMirror is fully integrated with ONTAP and operates just above the RAID level. Therefore, all the usual ONTAP features, such as Snapshot copies, SnapRestore, and NetApp FlexClone, work seamlessly. It is still ONTAP, it just includes an additional layer of synchronous data mirroring.
+
+A collection of ONTAP controllers managing SyncMirror data is called a NetApp MetroCluster configuration. The primary purpose of MetroCluster is to provide high availability access to synchronously mirrored data in a variety of typical and disaster recovery failure scenarios.
+
+The key values of data protection with MetroCluster and SyncMirror are as follows:
+
+* In normal operations, SyncMirror delivers guaranteed synchronous mirroring across locations. A write operation is not acknowledged until it is present on nonvolatile media on both sites.
+* If connectivity between sites fails, SyncMirror automatically switches into asynchronous mode to keep the primary site serving data until connectivity is restored. When restored, it delivers rapid resynchronization by efficiently updating the changes that have accumulated on the primary site. Full reinitialization is not required.
+
+SnapMirror is also fully compatible with systems based on SyncMirror. For example, a primary database might be running on a MetroCluster cluster spread across two geographic sites. This database can also replicate backups to a third site as long-term archives or for the creation of clones in a DevOps environment.

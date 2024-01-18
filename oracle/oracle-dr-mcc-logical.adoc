@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-dr-mcc-logical.html
+keywords: metrocluster, mcc, mcc-ip
+summary: MetroCluster Logical Architecture - Oracle
+---
+= MetroCluster logical architecture - Oracle
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Understanding how Oracle databases operate in a MetroCluster environment alsop requires some explanation of the logical functionality of a MetroCluster system.
+
+include::../_include/metrocluster-logical-summary.adoc[]

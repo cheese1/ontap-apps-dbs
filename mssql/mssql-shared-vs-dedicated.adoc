@@ -1,0 +1,22 @@
+---
+sidebar: sidebar
+permalink: mssql/mssql-shared-vs-dedicated.html
+keywords: MS-SQL,mssql,SQL Server
+summary: Microsoft SQL Server on ONTAP
+---
+= Microsoft SQL Server shared instance versus dedicated instance
+:imagesdir: ../media/
+
+[.lead]
+If an application has many schemas and stored procedures, it could potentially affect other apps that share a SQL Server instance.
+
+Instance resources could potentially become divided or locked, which in turn causes performance issues for other apps that have databases hosted on the shared SQL Server instance.
+
+Troubleshooting performance issues can be complicated because you must figure out which instance is the root cause. This question is weighed against the costs of operating system licenses and SQL Server licenses. If application performance is paramount, then a dedicated instance is highly recommended.
+
+Microsoft licenses SQL Server per core at the server level and not per instance. For this reason, database administrators are tempted to install as many SQL Server instances as the server can handle to save on licensing costs, which can lead to major performance issues later.
+
+[TIP]
+*NetApp recommends* choosing dedicated SQL Server instances whenever possible to obtain optimal performance. 
+
+

@@ -11,9 +11,6 @@ summary:
 :linkattrs:
 :imagesdir: ./media/
 
-[.lead]
-Legal notices provide access to copyright statements, trademarks, patents, and more.
-
 // Include the common notices
 include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/common-legal-notices.adoc[]
 
@@ -21,7 +18,7 @@ include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/commo
 include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]
 
 // Add required links
-=== ONTAP
+== ONTAP
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2885801[Notice for ONTAP 9.13.1^]
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813[Notice for ONTAP 9.12.1^]
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2883760[Notice for ONTAP 9.12.0^]
@@ -38,7 +35,7 @@ link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2839209[Notice for ON
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2702054[Notice for ONTAP 9.2^]
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2516795[Notice for ONTAP 9.1^]
 
-=== ONTAP Mediator for MCC IP
+== ONTAP Mediator for MCC IP
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2870521[9.9.1 Notice for ONTAP Mediator for MCC IP^]
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2870521[9.8 Notice for ONTAP Mediator for MCC IP^]
 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2870521[9.7 Notice for ONTAP Mediator for MCC IP^]

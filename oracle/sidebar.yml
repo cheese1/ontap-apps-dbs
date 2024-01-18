@@ -2,163 +2,167 @@ section: oracle
 title: Oracle Database
 entries:
   - title: Overview
-    url: /oracle/overview.html
+    url: /oracle/oracle-overview.html
   - title: ONTAP configuration
     entries:
     - title: RAID
-      url: /oracle/ontap-configuration/raid-oracle.html
+      url: /oracle/oracle-ontap-config-raid.html
     - title: Capacity limits
-      url: /oracle/ontap-configuration/oracle-capacity-limits.html
+      url: /oracle/oracle-ontap-config-capacity-limits.html
     - title: Storage virtual machines
-      url: /oracle/ontap-configuration/oracle-svm.html
+      url: /oracle/oracle-ontap-config-svm.html
     - title: Quality of service (QoS)
-      url: /oracle/ontap-configuration/oracle-qos.html
+      url: /oracle/oracle-ontap-config-qos.html
     - title: Efficiency
-      url: /oracle/ontap-configuration/oracle-efficiency.html
+      url: /oracle/oracle-ontap-config-efficiency.html
     - title: Thin provisioning
-      url: /oracle/ontap-configuration/oracle-thin-provisioning.html
+      url: /oracle/oracle-ontap-config-thin-provisioning.html
     - title: Failover and switchover
-      url: /oracle/ontap-configuration/oracle-and-ontap-failover.html
+      url: /oracle/oracle-ontap-config-failover.html
   - title: Database configuration
+    pdf-filename: Database configuration for Oracle Database
     entries:
     - title: Datafile and redo block sizes
-      url: /oracle/oracle-configuration/oracle-block-sizes.html
+      url: /oracle/oracle-app-config-block-sizes.html
     - title: db_file_multiblock_read_count
-      url: /oracle/oracle-configuration/mbr.html
+      url: /oracle/oracle-app-config-mbr.html
     - title: filesystemio_options
-      url: /oracle/oracle-configuration/filesystemio_options.html
+      url: /oracle/oracle-app-config-filesystemio_options.html
     - title: Oracle RAC
-      url: /oracle/oracle-configuration/rac.html
+      url: /oracle/oracle-app-config-rac.html
   - title: Host configuration
+    pdf-filename: Host configuration for Oracle Database
     entries:
     - title: AIX
-      url: /oracle/host-configuration/aix.html
+      url: /oracle/oracle-host-config-aix.html
     - title: HP-UX
-      url: /oracle/host-configuration/hp-ux.html
+      url: /oracle/oracle-host-config-hp-ux.html
     - title: Linux
-      url: /oracle/host-configuration/linux.html
+      url: /oracle/oracle-host-config-linux.html
     - title: Linux with ASMlib and AFD
-      url: /oracle/host-configuration/asmlib-afd.html
+      url: /oracle/oracle-host-config-asmlib-afd.html
     - title: Microsoft Windows
-      url: /oracle/host-configuration/windows.html
+      url: /oracle/oracle-host-config-windows.html
     - title: Solaris
-      url: /oracle/host-configuration/solaris.html
+      url: /oracle/oracle-host-config-solaris.html
   - title: Network configuration
+    pdf-filename: Network configuration for Oracle Database
     entries:
     - title: Logical interfaces
-      url: /oracle/network-configuration/oracle-lif.html
+      url: /oracle/oracle-network-config-lifs.html
     - title: Ethernet configuration
-      url: /oracle/network-configuration/oracle-ethernet.html
+      url: /oracle/oracle-network-config-ethernet.html
     - title: FC SAN configuration
-      url: /oracle/network-configuration/oracle-fc.html
+      url: /oracle/oracle-network-config-fc.html
   - title: Storage configuration
+    pdf-filename: Storage configuration for Oracle Database
     entries:
     - title: FC SAN
       entries:
       - title: LUN Alignment
-        url: /oracle/storage-configuration/oracle-lun-alignment.html
+        url: /oracle/oracle-storage-san-config-lun-alignment.html
       - title: LUN Count and LUN Size
-        url: /oracle/storage-configuration/oracle-lun-sizing.html
+        url: /oracle/oracle-storage-san-config-lun-sizing.html
       - title: LUN Resizing
-        url: /oracle/storage-configuration/oracle-lun-resizing.html
+        url: /oracle/oracle-storage-san-config-lun-resizing.html
       - title: LVM Striping
-        url: /oracle/storage-configuration/oracle-lvm-striping.html
+        url: /oracle/oracle-storage-san-config-lvm-striping.html
     - title: NFS
       entries:
       - title: Configuration
-        url: /oracle/storage-configuration/oracle-nfs-configuration.html
+        url: /oracle/oracle-storage-nfs-config-overview.html
       - title: Oracle Direct NFS (dNFS)
-        url: /oracle/storage-configuration/oracle-direct-nfs.html
+        url: /oracle/oracle-storage-nfs-config-dnfs.html
       - title: NFS leases and locks
-        url: /oracle/storage-configuration/oracle-leases-and-locks.html
+        url: /oracle/oracle-storage-nfs-config-leases-and-locks.html
       - title: NFS caching
-        url: /oracle/storage-configuration/oracle-nfs-caching.html
+        url: /oracle/oracle-storage-nfs-config-caching.html
       - title: NFS transfer sizes
-        url: /oracle/storage-configuration/oracle-nfs-transfer-sizes.html
+        url: /oracle/oracle-storage-nfs-config-transfer-sizes.html
     - title: Oracle and NVFAIL
-      url: /oracle/dp/oracle_and_nvfail.html
+      url: /oracle/oracle-dp-nvfail.html
     - title: ASM Reclamation Utility
-      url: /oracle/storage-configuration/asmru.html
+      url: /oracle/oracle-storage-san-config-asmru.html
   - title: Virtualization
-    url: /oracle/virtualization/intro.html
+    url: /oracle/oracle-virtualization-introduction.html
   - title: Tiering
     entries:
     - title: Overview
-      url: /oracle/tiering/oracle-tiering-overview.html
+      url: /oracle/oracle-tiering-overview.html
     - title: Tiering policies
       entries:
       - title: Sending data to an object store
-        url: /oracle/tiering/oracle-tiering-policies.html
+        url: /oracle/oracle-tiering-policies.html
       - title: Retrieving data from object store
-        url: /oracle/tiering/oracle-retrieval-policies.html
+        url: /oracle/oracle-tiering-retrieval-policies.html
     - title: Tiering strategies
       entries:
       - title: Whole files
-        url: /oracle/tiering/oracle-whole-file-tiering.html
+        url: /oracle/oracle-tiering-whole-file.html
       - title: Partial files
-        url: /oracle/tiering/oracle-partial-file-tiering.html
+        url: /oracle/oracle-tiering-partial-file.html
       - title: Select files
-        url: /oracle/tiering/oracle-partial-file-tiering.html
+        url: /oracle/oracle-tiering-logs.html
       - title: Snapshots
-        url: /oracle/tiering/snapshots.html
+        url: /oracle/oracle-tiering-snapshots.html
       - title: Backups
-        url: /oracle/tiering/oracle-backup-tiering.html
+        url: /oracle/oracle-tiering-backups.html
     - title: Object store access interruptions
-      url: /oracle/tiering/oracle-object-store-access-interruptions.html
+      url: /oracle/oracle-tiering-object-store-access-interruptions.html
   - title: Oracle data protection
     entries:
     - title: Overview
-      url: /oracle/dp/oracle-data-protection-introduction.html
+      url: /oracle/oracle-dp-overview.html
     - title: RPO, TRO, and SLAs
-      url: /oracle/dp/oracle-data-protection-slas.html
+      url: /oracle/oracle-dp-slas.html
     - title: Data availability
-      url: /oracle/dp/oracle-data-availability.html
+      url: /oracle/oracle-dp-data-availability.html
     - title: Data integrity
-      url: /oracle/dp/oracle-data-integrity.html
+      url: /oracle/oracle-dp-data-integrity.html
     - title: Backup and Recovery Basics
       entries:
       - title: Snapshots
-        url: /oracle/dp/snapshots.html
+        url: /oracle/oracle-dp-snapshots.html
       - title: SnapRestore
-        url: /oracle/dp/snaprestore.html
+        url: /oracle/oracle-dp-snaprestore.html
       - title: Snapshot-based online backups
-        url: /oracle/dp/oracle-online-backups.html
+        url: /oracle/oracle-dp-online-backup.html
       - title: Storage Snapshot Optimized backups
-        url: /oracle/dp/oracle-storage-snapshot-optimized-backups.html
+        url: /oracle/oracle-dp-storage-snapshot-optimized-backups.html
       - title: SnapCenter and other tools
-        url: /oracle/dp/oracle-backup-tools.html
+        url: /oracle/oracle-dp-backup-tools.html
   - title: Oracle disaster recovery
     entries:
     - title: Overview
-      url: /oracle/dr/oracle-dr-overview.html
+      url: /oracle/oracle-dr-overview.html
     - title: MetroCluster
       entries:
       - title: Physical architecture
-        url: /oracle/dr/metrocluster/oracle-physical-metrocluster.html
+        url: /oracle/oracle-dr-mcc-physical.html
       - title: Logical architecture
-        url: /oracle/dr/metrocluster/oracle-logical-metrocluster.html
+        url: /oracle/oracle-dr-mcc-logical.html
       - title: SyncMirror
-        url: /oracle/dr/metrocluster/oracle-and-syncmirror.html
+        url: /oracle/oracle-dr-mcc-syncmirror.html
       - title: Oracle Failover
-        url: /oracle/dr/metrocluster/oracle-failover-on-metrocluster.html
+        url: /oracle/oracle-dr-mcc-failover.html
       - title: NVFAIL
-        url: /oracle/dr/metrocluster/oracle-nvfail.html
+        url: /oracle/oracle-dr-mcc-nvfail.html
       - title: Single Instance on MetroCluster
-        url: /oracle/dr/metrocluster/mcc-si.html
+        url: /oracle/oracle-dr-mcc-si.html
       - title: Oracle RAC on MetroCluster
-        url: /oracle/dr/metrocluster/mcc-rac.html
+        url: /oracle/oracle-dr-mcc-rac.html
     - title: SnapMirror Business Continuity
       entries:
       - title: Architecture
-        url: /oracle/dr/smbc/oracle-smbc-architecture.html
+        url: /oracle/oracle-dr-smbc-architecture.html
       - title: Failover
-        url: /oracle/dr/smbc/oracle-smbc-failover.html
+        url: /oracle/oracle-dr-smbc-failover.html
       - title: Single Instance on SM-BC
-        url: /oracle/dr/smbc/smbc-si.html
+        url: /oracle/oracle-dr-smbc-si.html
       - title: Oracle RAC on SM-BC
-        url: /oracle/dr/smbc/smbc-rac.html
+        url: /oracle/oracle-dr-smbc-rac.html
       - title: Failure scenarios
-        url: /oracle/dr/smbc/oracle-smbc-failure-scenarios.html
+        url: /oracle/oracle-dr-smbc-failure-scenarios.html
 #    - title: SnapMirror
 #      entries:
 #      - title: Consistency group disaster recovery
@@ -168,36 +172,36 @@ entries:
   - title: Oracle database migration
     entries:
     - title: Overview
-      url: /oracle/migration/oracle-migration-overview.html
+      url: /oracle/oracle-migration-overview.html
     - title: Planning
-      url: /oracle/migration/oracle-migration-planning.html
+      url: /oracle/oracle-migration-planning.html
     - title: Procedures
       entries:
       - title: Overview
-        url: /oracle/migration/oracle-migration-procedures-overview.html
+        url: /oracle/oracle-migration-procedures-overview.html
       - title: Datafile move
-        url: /oracle/migration/oracle-datafile-move.html
+        url: /oracle/oracle-migration-datafile-move.html
       - title: Log shipping
-        url: /oracle/migration/oracle-log-shipping.html
+        url: /oracle/oracle-migration-log-shipping.html
       - title: Host data copy
-        url: /oracle/migration/oracle-host-data-copy.html
+        url: /oracle/oracle-migration-host-data-copy.html
       - title: Foreign LUN import
         entries:
         - title: Planning
-          url: /oracle/migration/oracle-fli-planning.html
+          url: /oracle/oracle-migration-fli-planning.html
         - title: Cutover
-          url: /oracle/migration/oracle-fli-cutover.html
+          url: /oracle/oracle-migration-fli-cutover.html
         - title: Completion
-          url: /oracle/migration/oracle-fli-completion.html
+          url: /oracle/oracle-migration-fli-completion.html
         - title: Protocol conversion
-          url: /oracle/migration/oracle-protocol-conversion.html
+          url: /oracle/oracle-migration-fli-protocol-conversion.html
     - title: Sample scripts
-      url: /oracle/migration/oracle-migration-sample-scripts.html
+      url: /oracle/oracle-migration-sample-scripts.html
   - title: Additional notes
     entries:
     - title: Performance optimization and benchmarking
-      url: /oracle/notes/optimization_and_benchmarking.html
+      url: /oracle/oracle-notes-optimization-and-benchmarking.html
     - title: Stale NFS locks
-      url: /oracle/notes/stale_nfs_locks.html
+      url: /oracle/oracle-notes-stale-nfs-locks.html
     - title: WAFL alignment verification
-      url: /oracle/notes/wafl_alignment_verification.html
+      url: /oracle/oracle-notes-wafl-alignment-verification.html
