@@ -1,0 +1,21 @@
+---
+sidebar: sidebar
+permalink: postgres/postgres-san-filesystems.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases with SAN on ONTAP
+---
+= PostgreSQL with SAN Filesystems
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+PostgreSQL databases with SAN are generally hosted on xfs filesystems, but others can be used if supported by the OS vendor
+
+While a single LUN can generally support up to 100K IOPS, IO-intensive databases generally require the use of LVM with striping.
+
+== LVM Striping
+
+include::../_include/lvm-striping.adoc[]
