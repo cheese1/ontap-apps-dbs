@@ -1,0 +1,45 @@
+---
+sidebar: sidebar
+permalink: postgres/postgres-nfs-filesystems.html
+keywords: PostgreSQL,database,postgres
+summary: PostgreSQL Databases NFS with ONTAP
+---
+= PostgreSQL with NFS Filesystems
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+PostgreSQL databases can be hosted on NFSv3 or NFSv4 filesystems. The best option depends on factors outside the database. 
+
+For example, NFSv4 locking behavior may be preferable in certain clustered environments. (See link:../oracle/oracle-notes-stale-nfs-locks.html[here] for additional details)
+
+Database functionality should otherwise be close to identical, including performance. The only requirement is the use of the `hard` mount option. This is required to ensure soft timeouts do not produce unrecoverable IO errors.
+
+If NFSv4 is chosen as a protocol, NetApp recommends using NFSv4.1. There are some functional enhancements to the NFSv4 protocol in NFSv4.1 that improve resiliency over NFSv4.0.
+
+
+Use the following mount options for general database workloads:
+....
+rw, hard,nointr,bg,vers=[3|4],proto=tcp,rsize=65536,wsize=65536
+....
+
+If heavy sequential IO is expected, the NFS transfer sizes can be increased.
+
+== NFS Transfer Sizes
+
+include::../_include/nfs-transfer-sizes.adoc[]
+
+Once the transfer size is increased at the ONTAP level, the following mount options would be used:
+
+....
+rw, hard,nointr,bg,vers=[3|4],proto=tcp,rsize=262144,wsize=262144
+....
+
+== NFSv3 TCP Slot Tables
+
+If NFSv3 is used with Linux, it is critical to properly set the TCP slot tables.
+
+include::../_include/nfs-slot-tables.adoc[]
