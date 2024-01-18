@@ -112,7 +112,7 @@ entries:
   - title: Oracle data protection
     entries:
     - title: Overview
-      url: /oracle/oracle-dp-introduction.html
+      url: /oracle/oracle-dp-overview.html
     - title: RPO, TRO, and SLAs
       url: /oracle/oracle-dp-slas.html
     - title: Data availability

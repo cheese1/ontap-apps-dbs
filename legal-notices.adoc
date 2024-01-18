@@ -11,9 +11,6 @@ summary:
 :linkattrs:
 :imagesdir: ./media/
 
-[.lead]
-Legal notices provide access to copyright statements, trademarks, patents, and more.
-
 // Include the common notices
 include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/common-legal-notices.adoc[]
 
