@@ -11,10 +11,6 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-//
-// This file was created with Atom 1.57.0 (May 19, 2021)
-//
-//
 
 [.lead]
 == About vVols and SPBM

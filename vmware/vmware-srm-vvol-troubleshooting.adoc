@@ -11,11 +11,6 @@ summary: The workflow within SRM is significantly different when using vVols rep
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-24 16:18:25.264894
-//
 
 [.lead]
 The workflow within SRM is significantly different when using vVols replication from what is used with SRA and traditional datastores. For example, there is no array manager concept. As such, `discoverarrays` and `discoverdevices` commands are never seen.
