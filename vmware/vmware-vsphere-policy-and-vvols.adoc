@@ -11,11 +11,6 @@ summary: SnapCenter allows you to create backup policies that can be applied to 
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-02-16 10:32:05.253630
-//
 
 [.lead]
 VMware vSphere APIs for Storage Awareness (VASA) make it easy for a storage administrator to configure datastores with well-defined capabilities and let the VM administrator use those whenever needed to provision VMs without having to interact with each other. 

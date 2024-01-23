@@ -64,7 +64,6 @@ Automatic unattended switchover (AUSO) is a Fabric Attached MetroCluster feature
 
 The primary value of AUSO is to improve the HA capabilities of Fabric Attached MetroCluster systems. Each site monitors the health of the opposite site, and, if no nodes remain to serve data, AUSO results in rapid switchover. This approach is especially useful in MetroCluster configurations with just a single node per site because it brings the configuration closer to an HA pair in terms of availability.
 
-// Is this still true as MAUSO does offer 
 AUSO cannot offer comprehensive monitoring at the level of an HA pair. An HA pair can deliver extremely high availability because it includes two redundant physical cables for direct node-to-node communication. Furthermore, both nodes in an HA pair have access to the same set of disks on redundant loops, delivering another route for one node to monitor the health of another.
 
 MetroCluster clusters exist across sites for which both node-to-node communication and disk access rely on the site-to-site network connectivity. The ability to monitor the heartbeat of the rest of the cluster is limited. AUSO has to discriminate between a situation where the other site is actually down rather than unavailable due to a network problem.
@@ -98,16 +97,6 @@ The ONTAP Mediator is used with MetroCluster IP and certain other ONTAP solution
 A fabric-attached MetroCluster has direct access to the storage devices on the opposite site. This allows one MetroCluster controller to monitor the health of the other controllers by reading heartbeat data from the drives. This allows one controller to recognize the failure of another controller and perform a switchover.
 
 In contrast, the MetroCluster IP architecture routes all I/O exclusively through the controller-controller connection; there is no direct access to storage devices on the remote site. This limits the ability of a controller to detect failures and perform a switchover. The ONTAP Mediator is therefore required as a tiebreaker device to detect site loss and automatically perform a switchover.
-
-=== Mediator Automatic Unattended Switch Over (MAUSO)
-////
-Mediator Automatic Unattended Switch Over (MAUSO) enhancements to detect and respond to environmental events such as over/under temperature or shared component failure
-Detection of event will result in site failover rather than HA failover.
-Nondisruptive 8-node transition from MCC-FC to 8-node MCC-IP
-Ability to do complete 8-node tech refresh non-disruptively.
-Nondisruptive change of MCC-IP switch model or vendor.
-Support for NS224 shelf connectivity to MCC-IP switch on A900 and FAS9500 platforms.
-////
 
 === Virtual third site with ClusterLion
 ClusterLion is an advanced MetroCluster monitoring appliance that functions as a virtual third site. This approach allows MetroCluster to be safely deployed in a two-site configuration with fully automated switchover capability. Furthermore, ClusterLion can perform additional network level monitor and execute post-switchover operations. Complete documentation is available from ProLion.

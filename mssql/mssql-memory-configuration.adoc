@@ -5,10 +5,10 @@ keywords: MS-SQL,mssql,SQL Server
 summary: Microsoft SQL Server on ONTAP
 ---
 = Microsoft SQL Server memory configuration
-[.lead]
 :imagesdir: ../media/
 
-//Manohar, please add a intro paragraph.
+[.lead]
+The following sections explain some of the critical memory configuration settings.
 
 == Max server memory
 
