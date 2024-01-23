@@ -29,5 +29,5 @@ entries:
     url: /mssql/mssql-data-protection.html
   - title: Disaster recovery
     url: /mssql/mssql-disaster-recovery.html
-  - title: Data security
-    url: /mssql/mssql-data-security.html
+#  - title: Data security
+#    url: /mssql/mssql-data-security.html
