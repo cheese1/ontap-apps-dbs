@@ -12,13 +12,13 @@ For more information on snapshots, click link:https://docs.netapp.com/us-en/onta
 
 Beginning with ONTAP 9.12.1, snapshots are not just read-only, they can also be protected from accidental or intentional deletion. The feature is called Tamperproof Snapshots. A retention period can be set and enforced via snapshot policy. The resulting snapshots cannot be deleted until they have reached their expiration date. There are no administrative or support center overrides.
 
-This ensures that an intruder, a malicious insider, or even a ransomware attack is unable to compromise the backups even if it resulted in access to the ONTAP system itself.
+This ensures that an intruder, a malicious insider, or even a ransomware attack is unable to compromise the backups even if it resulted in access to the ONTAP system itself. When combined with an frequent snapshot schedule, the result is extremely powerful data protection with a very low RPO.
 
 For more information on Tamperproof Snapshots, click link:https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html[here.]
 
 == SnapMirror replication
 
-Snapshots can also be replicated to a remote system. This includes Tamperproof Snapshots, where the retention period is applied on the remote site. The result is the same data protection benefits, but the data is located on a second storage array. This ensures that destruction of the original array does not compromise the backups. 
+Snapshots can also be replicated to a remote system. This includes Tamperproof Snapshots, where the retention period is applied and enforced on the remote system. The result is the same data protection benefits as local snapshots, but the data is located on a second storage array. This ensures that destruction of the original array does not compromise the backups. 
 
 A second system also opens new options for administrative security. For example, some NetApp customers segregate authentication credentials for the primary and secondary storage systems. No single administrative user has access to both systems, which means a malicious administrator cannot delete all copies of data.
 
@@ -28,21 +28,19 @@ For more information on SnapMirror, click link:https://docs.netapp.com/us-en/ont
 
 A newly configured ONTAP storage system is similar to a newly provisioned VMware ESX server because neither of them can support any users until a virtual machine is created. With ONTAP, you create a Storage Virtual Machine (SVM) which becomes the most basic unit of storage management. Each SVM has its own storage resources, protocol configurations, IP addresses, and FCP WWNs.  This is the foundation of ONTAP mult-tenancy.
 
-For example, you might configure one SVM for critical production workloads, and a second SVM on a different network segment for development activities. You could then restrict access to the production SVM to certain administrators, while granting developers more expansive control over the storage resources in the development SVM. You might also need to provide a third SVM to your financial and HR teams to storage especially critical eyes-only data.
+For example, you might configure one SVM for critical production workloads, and a second SVM on a different network segment for development activities. You could then restrict access to the production SVM to certain administrators, while granting developers more expansive control over the storage resources in the development SVM. You might also need to provide a third SVM to your financial and HR teams to store especially critical eyes-only data.
 
 For more information about SVMs, click link:https://docs.netapp.com/us-en/ontap/concepts/storage-virtualization-concept.html[here.]
 
 == Administrative RBAC
 
-ONTAP offers powerful role-based access control (RBAC) for administrative logins. Some admins might need full cluster access, while others might only need access to select SVMs. Advanced help desk personnel might need the ability to increase volumes sizes only. The result is you can grant administrative users the access required to perform their job responsibilities, and nothing more.
-
-Furthermore, you can secure logins using PKI from various vendors, restrict access to ssh keys only, and enforce failed login attempt lockouts.
+ONTAP offers powerful role-based access control (RBAC) for administrative logins. Some admins might need full cluster access, while others might only need access to certain SVMs. Advanced helpdesk personnel might need the ability to increase volumes sizes. The result is you can grant administrative users the access required to perform their job responsibilities, and nothing more. Furthermore, you can secure these logins using PKI from various vendors, restrict access to ssh keys only, and enforce failed login attempt lockouts.
 
 For more information on administrative access control, click link:https://docs.netapp.com/us-en/ontap/authentication/manage-access-control-roles-concept.html[here.]
 
 == Multfactor authentication
 
-ONTAP and certain other NetApp products now support multifactor authentication using a variety of methods.
+ONTAP and certain other NetApp products now support multifactor authentication using a variety of methods. The result is a compromised username/password alone is not a security thread without the data from the second factor, such as a FOB or a smartphone app.
 
 For more information, click link:https://docs.netapp.com/us-en/ontap/authentication/mfa-overview.html[here.]
 
