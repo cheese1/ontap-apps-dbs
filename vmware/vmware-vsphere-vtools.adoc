@@ -10,11 +10,6 @@ summary: ONTAP supports all major storage protocols used for virtualization, suc
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-02-16 10:32:05.078772
-//
 
 [.lead]
 NetApp offers several standalone software tools that can be used together with ONTAP and vSphere to manage your virtualized environment.

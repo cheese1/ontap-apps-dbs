@@ -10,11 +10,6 @@ summary: With the transition from the legacy virtual appliance, ONTAP tools brin
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
-//
-// This file was created with NDAC Version 2.0 (August 17, 2020)
-//
-// 2021-06-24 16:18:25.230063
-//
 
 [.lead]
 With the transition from the legacy virtual appliance, ONTAP tools brings a wealth of new features, higher limits, and new vVols support.
