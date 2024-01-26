@@ -59,13 +59,13 @@ entries:
     entries:
     - title: FC SAN
       entries:
-      - title: LUN Alignment
+      - title: LUN alignment
         url: /oracle/oracle-storage-san-config-lun-alignment.html
-      - title: LUN Count and LUN Size
+      - title: LUN count and LUN size
         url: /oracle/oracle-storage-san-config-lun-sizing.html
-      - title: LUN Resizing
+      - title: LUN resizing
         url: /oracle/oracle-storage-san-config-lun-resizing.html
-      - title: LVM Striping
+      - title: LVM striping
         url: /oracle/oracle-storage-san-config-lvm-striping.html
     - title: NFS
       entries:
@@ -113,13 +113,13 @@ entries:
     entries:
     - title: Overview
       url: /oracle/oracle-dp-overview.html
-    - title: RPO, TRO, and SLAs
+    - title: RPO, RTO, and SLAs
       url: /oracle/oracle-dp-slas.html
     - title: Data availability
       url: /oracle/oracle-dp-data-availability.html
     - title: Data integrity
       url: /oracle/oracle-dp-data-integrity.html
-    - title: Backup and Recovery Basics
+    - title: Backup and recovery basics
       entries:
       - title: Snapshots
         url: /oracle/oracle-dp-snapshots.html

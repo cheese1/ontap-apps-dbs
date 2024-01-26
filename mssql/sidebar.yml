@@ -17,7 +17,7 @@ entries:
   - title: Storage configuration
     pdf-filename: Storage configuration for Microsoft SQL Server
     entries:
-    - title:  Database Files and filegroups
+    - title:  Database files and filegroups
       url: /mssql/mssql-files-and-filegroups.html
     - title: Tempdb files
       url: /mssql/mssql-tempdb.html
