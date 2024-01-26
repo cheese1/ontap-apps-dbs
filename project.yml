@@ -1,5 +1,6 @@
 settings:
   name: Enterprise applications
+  search: ontap-technical-reports, ontap-apps-dbs, netapp-solutions-sap
   internal:
     pdf_enabled: true
   prod:
