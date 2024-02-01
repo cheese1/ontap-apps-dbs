@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: mysql/mysql-innodb_lru_scan_depth.html
 keywords: MySQL,MariaDB,innodb_lru_scan_depth
-summary: MySQL on ONTAP
+summary: MySQL and innodb_lru_scan_depth
 ---
 = innodb_lru_scan_depth
 :icons: font

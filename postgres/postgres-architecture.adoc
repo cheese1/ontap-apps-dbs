@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: postgres/postgres-architecture.html
 keywords: PostgreSQL,database,postgres
-summary: PostgreSQL Databases on ONTAP
+summary: PostgreSQL architecture
 ---
 = PostgreSQL architecture
 :hardbreaks:

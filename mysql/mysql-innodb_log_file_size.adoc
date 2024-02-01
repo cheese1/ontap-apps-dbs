@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: mysql/mysql-innodb_log_file_size.html
 keywords: MySQL,MariaDB,innodb_log_file_size
-summary: MySQL on ONTAP
+summary: MySQL and innodb_log_file_size
 ---
 = innodb_log_file_size
 :icons: font
