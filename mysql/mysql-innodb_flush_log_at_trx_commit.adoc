@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: mysql/mysql-innodb_flush_log_at_trx_commit.html
-keywords: MySQL,MariaDB,innodb_doublewrite
-summary: MySQL on ONTAP
+keywords: MySQL,MariaDB,innodb_flush_log_at_trx_commi
+summary: MySQL and innodb_flush_log_at_trx_commi
 ---
 = innodb_flush_log_at_trx_commit
 :icons: font

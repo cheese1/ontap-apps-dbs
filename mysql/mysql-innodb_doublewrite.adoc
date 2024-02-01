@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: mysql/mysql-innodb_doublewrite.html
 keywords: MySQL,MariaDB,innodb_doublewrite
-summary: MySQL on ONTAP
+summary: MySQL and innodb_doublewrite
 ---
 = innodb_doublewrite
 :icons: font

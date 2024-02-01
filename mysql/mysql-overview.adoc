@@ -14,18 +14,8 @@ MySQL and its variants, including MariaDb and Percona MySQL, is the world's most
 [NOTE]
 This documentation on ONTAP and the MySQL database replaces the previously published _TR-4722: MySQL database on NetApp ONTAP best practices._
 
-The features of MySQL include:
+ONTAP is an ideal platform for MySQL database because ONTAP is literally designed for databases. Numerous features such as random IO latency optimizations to advanced quality of service (QoS) to basic FlexClone functionality were created specifically to address the needs of database workloads.
 
-* *Lower TCO.* MySQL is a powerful, free, open-source database management system that has been available for years. It is very stable. It has community support that helps maintain, debug, and add new features. If a web application requires more than a database, or requires load-balancing or sharding, you can easily set up database instances with only hardware costs, rather than commercial databases that require a single license for each instance.
+Additional features such as nondisruptive upgrades, (including storage replacement) ensure that your critical databases remain available. You can also have instant disaster recovery for large environments through MetroCluster, or select databases using SnapMirror active sync. 
 
-* *Reliability, performance, and ease of use.* One of MySQL's hallmarks is exceptional performance and scalability, which is why so many web-based businesses use it. MySQL uses several key strengths to deliver fast performance. Because competition is always a mouse click (or screen touch) away, rapid responses to customer inquiries and activities are paramount. The database serving web-based applications needs to provide extreme performance for both read (simple and complex queries) and write operations. 
-
-* *Database development, design, and administration.* MySQL Workbench provides an integrated development, design, and administration environment to make developers and DBAs more productive. Different developers look for different features in a database, and MySQL offers a range of features. It can run adequately on both a laptop and a desktop. It can easily adapt to the environment, ensuring that it does not collide with existing web servers or applications.
-
-* *Comprehensive transactional support.* MySQL is one of the most robust transactional database engines available. It is the solution for full data integrity, offering features such as complete atomic, consistent, isolated, durable transaction support; multiversion transaction support; and unrestricted row-level locking. It provides instant deadlock identification through server-enforced referential integrity.
-
-* *Data security.* MySQL is globally renowned for being the most secure and reliable database management system used in popular web applications such as WordPress, Drupal, Joomla, Facebook, Google, and Twitter. The data security and support for transactional processing that accompany the recent version of MySQL can benefit any business, especially e-commerce businesses that involve frequent money transfers.
-
-* *Pluggable architecture.* The MySQL pluggable storage engine architecture enables a database professional to select a specialized storage engine for a particular application need without having to manage application coding requirements. The MySQL server architecture isolates the application programmer and DBA from all the low-level implementation details at the storage level, providing a consistent and easy application model and API. Although there are different capabilities across different storage engines, the application is shielded from these differences.
-
-MySQL's efficient and modular architecture provides huge benefits if you want to target a particular application need—such as data warehousing, transaction processing, or HA situations—while using interfaces and services that are independent of any one storage engine.
+Most importantly, ONTAP delivers unmatched performance with the ability to size the solution for your unique needs. Our high-end systems can deliver over 1M IOPS with latencies measured in microseconds, but if you only need 100K IOPS you can right-size your storage solution with a smaller controller that still runs the exact same storage operating system. 
