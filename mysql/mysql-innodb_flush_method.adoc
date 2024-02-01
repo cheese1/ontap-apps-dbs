@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: mysql/mysql-innodb_flush_method.html
 keywords: MySQL,MariaDB,innodb_flush_method
-summary: MySQL on ONTAP
+summary: MySQL and innodb_flush_method
 ---
 = innodb_flush_method
 :icons: font

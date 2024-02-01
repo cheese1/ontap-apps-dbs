@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: mysql/mysql-schedulers.html
 keywords: MySQL,MariaDB,schedulers
-summary: MySQL on ONTAP
+summary: MySQL and IO schedulers
 ---
-= I/O schedulers
+= I/O schedulers and MySQL
 :icons: font
 :imagesdir: ../media/
 

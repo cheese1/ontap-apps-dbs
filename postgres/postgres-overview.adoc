@@ -17,7 +17,10 @@ PostgreSQL comes with variants that include PostgreSQL, PostgreSQL Plus, and EDB
 [NOTE]
 This documentation on ONTAP and the PostgreSQL database replaces the previously published _TR-4770: PostgreSQL database on ONTAP best practices._
 
-As data grows exponentially, data management becomes more complex for enterprises. This complexity increases licensing, operational, support, and maintenance costs. To reduce the overall TCO, consider switching from commercial to open-source databases with reliable, high-performing back-end storage. PostgreSQL is an advanced open-source database that is widely used in academic, commercial, and large enterprises. It comes with a new set of features that addresses the gaps in other relational database management systems (RDBMSs).
+As data grows exponentially, data management becomes more complex for enterprises. This complexity increases licensing, operational, support, and maintenance costs. To reduce the overall TCO, consider switching from commercial to open-source databases with reliable, high-performing back-end storage. 
 
-[NOTE]
-NetApp customers who use PostgreSQL databases in either physical or virtualized environments can benefit from understanding the best practices for successfully deploying and managing PostgreSQL databases on ONTAP. The recommendations are generic, so they are not specific to any configuration. Depending on your business needs, some suggestions might require changes. You must evaluate your environment against the official documentation for PostgreSQL, hypervisors, OS, and ONTAP storage.
+ONTAP is an ideal platform because ONTAP is literally designed for databases. Numerous features such as random IO latency optimizations to advanced quality of service (QoS) to basic FlexClone functionality were created specifically to address the needs of database workloads.
+
+Additional features such as nondisruptive upgrades, (including storage replacement) ensure that your critical databases remain available. You can also have instant disaster recovery for large environments through MetroCluster, or select databases using SnapMirror active sync. 
+
+Most importantly, ONTAP delivers unmatched performance with the ability to size the solution for your unique needs. Our high-end systems can deliver over 1M IOPS with latencies measured in microseconds, but if you only need 100K IOPS you can rightsize your storage solution with a smaller controller that still runs the exact same storage operating system.
