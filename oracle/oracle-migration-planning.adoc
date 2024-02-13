@@ -4,7 +4,7 @@ permalink: oracle/oracle-migration-planning.html
 keywords: migration, oracle
 summary: Oracle migration planning
 ---
-= Iracle migration planning
+= Oracle migration planning
 
 :hardbreaks:
 :nofooter:
