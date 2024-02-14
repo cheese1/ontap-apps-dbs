@@ -183,3 +183,9 @@ The following table lists NFS versions and supported features.
 |No
 |No
 |===
+
+== Direct connected networking
+
+Storage administrators sometimes prefer to simplify their infrastructures by removing network switches from the configuration. This can be supported in some scenarios.
+
+include::../_include/direct-connect.adoc[]
