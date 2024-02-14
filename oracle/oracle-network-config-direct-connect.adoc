@@ -4,7 +4,7 @@ permalink: oracle/oracle-network-config-direct-connect.html
 keywords: direct-connect, oracle
 summary: Direct network connections with ONTAP 
 ---
-= Direct connections for TCP/IP and FC networking with
+= Direct-connect with TCP/IP and FC networks
 :hardbreaks:
 :nofooter:
 :icons: font

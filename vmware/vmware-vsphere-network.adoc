@@ -184,7 +184,7 @@ The following table lists NFS versions and supported features.
 |No
 |===
 
-== Direct connected networking
+== Direct-connect networking
 
 Storage administrators sometimes prefer to simplify their infrastructures by removing network switches from the configuration. This can be supported in some scenarios.
 
