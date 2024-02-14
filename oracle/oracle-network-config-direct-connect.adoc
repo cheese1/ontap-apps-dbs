@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: oracle/oracle-network-config-direct-connect.html
+keywords: direct-connect, oracle
+summary: Direct network connections with ONTAP 
+---
+= Direct-connect with TCP/IP and FC networks
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Storage administrators sometimes prefer to simplify their infrastructures by removing network switches from the configuration. This can be supported in some scenarios.
+
+include::../_include/direct-connect.adoc[]
