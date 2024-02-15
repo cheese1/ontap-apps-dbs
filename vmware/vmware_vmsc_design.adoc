@@ -21,14 +21,14 @@ To configure an HA cluster, complete the following steps:
 [arabic]
 . Connect to the vCenter UI.
 . In Hosts and Clusters, browse to the data center where you want to create your HA cluster.
-. Right-click the data center object and select New Cluster. Under basics ensure you have enabled vSphere DRS and vSphere HA. Complete the wizard. image::../media/vmsc_1.png[A screenshot of a computer Description automatically generated,width=624,height=302]
+. Right-click the data center object and select New Cluster. Under basics ensure you have enabled vSphere DRS and vSphere HA. Complete the wizard. image::../media/vmsc_3_1.png[A screenshot of a computer Description automatically generated,width=624,height=302]
 . Select the cluster and go to the configure tab. Select vSphere HA and click edit.
-. Under Host Monitoring, select the Enable Host Monitoring option. image::../media/vmsc_2.png[A screenshot of a computer Description automatically generated,width=624,height=475]
-. While still on the Failures and Responses tab, Under VM Monitoring, select the VM Monitoring Only option or VM and Application Monitoring option. image::../media/vmsc_3.png[A screenshot of a computer Description automatically generated,width=624,height=480]
-. Under Admission Control, set the HA admission control option to cluster resource reserve; use 50% CPU/MEM. image::../media/vmsc_4.png[A screenshot of a computer Description automatically generated,width=624,height=479]
+. Under Host Monitoring, select the Enable Host Monitoring option. image::../media/vmsc_3_2.png[A screenshot of a computer Description automatically generated,width=624,height=475]
+. While still on the Failures and Responses tab, Under VM Monitoring, select the VM Monitoring Only option or VM and Application Monitoring option. image::../media/vmsc_3_3.png[A screenshot of a computer Description automatically generated,width=624,height=480]
+. Under Admission Control, set the HA admission control option to cluster resource reserve; use 50% CPU/MEM. image::../media/vmsc_3_4.png[A screenshot of a computer Description automatically generated,width=624,height=479]
 . Click “OK”.
 . Select DRS and click EDIT.
-. Set the automation level to manual unless required by your applications. image::../media/vmsc_5.png[width=624,height=336]
+. Set the automation level to manual unless required by your applications. image::../media/vmsc_3_5.png[width=624,height=336]
 . Enable VM Component Protection, refer to https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-availability/GUID-F01F7EB8-FF9D-45E2-A093-5F56A788D027.html[docs.vmware.com].
 . The following additional vSphere HA settings are recommended for vMSC with MCC:
 
@@ -58,7 +58,7 @@ vSphere HA uses datastores to monitor hosts and virtual machines when the manage
 . In the Datastore Heartbeating section, select Use Datastores from the Specified List and Compliment Automatically if Needed.
 . Select the datastores you want vCenter to use from both sites and press OK.
 
-image::../media/vmsc_6.png[A screenshot of a computer Description automatically generated,width=624,height=540]
+image::../media/vmsc_3_6.png[A screenshot of a computer Description automatically generated,width=624,height=540]
 
 ==== Configure Advanced Options
 
@@ -68,7 +68,7 @@ Isolation events occur when hosts within an HA cluster lose connectivity to eith
 
 Refer to https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-recommended-practices#sec2-sub5[core.vmware.com] for more information__.__
 
-image::../media/vmsc_7.png[A screenshot of a computer Description automatically generated,width=624,height=545]
+image::../media/vmsc_3_7.png[A screenshot of a computer Description automatically generated,width=624,height=545]
 
 Adding an advanced setting called das.heartbeatDsPerHost can increase the number of heartbeat datastores. Use four heartbeat datastores (HB DSs)—two per site. Use the “Select from List but Compliment” option. This is needed because if one site fails, you still need two HB DSs. However, those don’t have to be protected with MCC or SnapMirror active sync.
 
@@ -133,7 +133,7 @@ To create DRS affinity rules specific to site A and site B, complete the followi
 . Repeat these steps to add another VM\Host Rule for site B.
 . Click OK.
 
-image::../media/vmsc_8.png[A screenshot of a computer Description automatically generated,width=474,height=364]
+image::../media/vmsc_3_8.png[A screenshot of a computer Description automatically generated,width=474,height=364]
 
 === VMWare vSphere Storage DRS for NetApp MetroCluster
 
@@ -152,22 +152,22 @@ To configure a datastore cluster for each site, complete the following steps:
 * NetApp recommends that Storage DRS be configured in manual mode, so that the administrator gets to decide and control when migrations need to happen.
 
 
-image::../media/vmsc_9.png[A close up of a text Description automatically generated,width=528,height=94]
+image::../media/vmsc_3_9.png[A close up of a text Description automatically generated,width=528,height=94]
 
 [arabic, start=5]
 . Verify that the Enable I/O Metric for SDRS Recommendations checkbox is checked; metric settings can be left with default values.
 
-image::../media/vmsc_10.png[A screenshot of a computer Description automatically generated,width=624,height=241]
+image::../media/vmsc_3_10.png[A screenshot of a computer Description automatically generated,width=624,height=241]
 
 [arabic, start=6]
 . Select the HA cluster and click Next.
 
-image::../media/vmsc_11.png[A screenshot of a computer Description automatically generated,width=624,height=149]
+image::../media/vmsc_3_11.png[A screenshot of a computer Description automatically generated,width=624,height=149]
 
 [arabic, start=7]
 . Select the datastores belonging to site A and click Next.
 
-image::../media/vmsc_12.png[A screenshot of a computer Description automatically generated,width=624,height=134]
+image::../media/vmsc_3_12.png[A screenshot of a computer Description automatically generated,width=624,height=134]
 
 [arabic, start=8]
 . Review options and click Finish.
