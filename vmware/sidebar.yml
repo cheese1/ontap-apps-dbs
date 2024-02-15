@@ -51,6 +51,18 @@ entries:
         url: /vmware/vmware-srm-replication_topologies.html
       - title: "Troubleshooting SRM when using vVols replication"
         url: /vmware/vmware-srm-vvol-troubleshooting.html
+  - title: "vSphere Metro Storage Cluster with ONTAP"
+    entries:
+      - title: Overview
+        url: /vmware/vmware-srm-overview.html
+      - title: "Deployment best practices"
+        url: /vmware/vmware-srm-deployment_best_practices.html
+      - title: "Operational best practices"
+        url: /vmware/vmware-srm-operational_best_practices.html
+      - title: "Replication topologies"
+        url: /vmware/vmware-srm-replication_topologies.html
+      - title: "Troubleshooting SRM when using vVols replication"
+        url: /vmware/vmware-srm-vvol-troubleshooting.html
 #  - title: "VMware Horizon"
 #    entries:
 #      - title: "End user computing with VMware (Design Guide)"
