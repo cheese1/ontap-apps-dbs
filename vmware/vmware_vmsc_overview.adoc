@@ -32,7 +32,7 @@ Depending on the latency considerations, NetApp MetroCluster can be deployed in 
 
 The following illustrates a high-level topology diagram of stretch MetroCluster.
 
-image:extracted-media/media/image1.png[A diagram of a computer Description automatically generated,width=624,height=485]
+image::vmsc_1.png[vMSC diagram with MCC,width=624,height=485]
 
 Refer to https://www.netapp.com/support-and-training/documentation/metrocluster/[MetroCluster documentation] for specific design and deployment information for MetroCluster.
 
@@ -41,4 +41,4 @@ SnapMirror active sync can also be deployed in two different ways.
 * Asymmetric
 * Symmetric (private preview in ONTAP 9.14.1)
 
-image:/media/vmsc_image2.png[A diagram of a computer network Description automatically generated,width=624,height=440]Refer to https://docs.netapp.com/us-en/ontap/smbc/index.html[NetApp Docs] for specific design and deployment information for SnapMirror active sync.
+Refer to https://docs.netapp.com/us-en/ontap/smbc/index.html[NetApp Docs] for specific design and deployment information for SnapMirror active sync.
