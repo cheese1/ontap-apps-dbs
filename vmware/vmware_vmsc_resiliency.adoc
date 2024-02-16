@@ -1,4 +1,18 @@
-== Resiliency for Planned and Unplanned Events
+---
+sidebar: sidebar
+permalink: vmware/vmware_vmsc_resiliency.html
+keywords: VMware, Data protection, MetroCluster, SMBC, SnapMirror active sync, vMSC
+summary: Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+---
+
+= Resiliency for Planned and Unplanned Events
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+[.lead]
+=Resiliency for Planned and Unplanned Events
 
 NetApp MetroCluster and SnapMirror active sync are powerful tools that enhance the high availability and non-disruptive operations of NetApp hardware and ONTAP® software. These tools provide site-wide protection for the entire storage environment, ensuring that your data is always available. Whether you are using standalone servers, high-availability server clusters, Docker containers, or virtualized servers, NetApp technology seamlessly maintains storage availability in the event of a total outage due to loss of power, cooling, or network connectivity, storage array shutdown, or operational error.
 
