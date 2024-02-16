@@ -1,5 +1,17 @@
-== vMSC Design and Implementation Guidelines 
+---
+sidebar: sidebar
+permalink: vmware/vmware_vmsc_design.html
+keywords: Data protection, MetroCluster, SMBC, SnapMirror active sync, vMSC
+summary: vMSC Design and Implementation Guidelines.
+---
 
+= vMSC Design and Implementation Guidelines 
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+[.lead]
 === NetApp Storage Configuration
 
 Setup instructions for NetApp MetroCluster (referred to as an MCC configuration) are available at https://docs.netapp.com/us-en/ontap-metrocluster/[MetroCluster Documentation]. Instructions for SnapMirror active sync are also available at https://docs.netapp.com/us-en/ontap/smbc/index.html[SnapMirror Business Continuity overview].
