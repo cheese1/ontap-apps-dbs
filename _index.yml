@@ -46,3 +46,5 @@ indexpage:
           url: /vmware/vmware-vvols-overview.html
         - title: VMware Site Recovery Manager with ONTAP
           url: /vmware/vmware-srm-overview.html
+        - title: VMware vSphere Metro Storage Cluster with ONTAP
+          url: /vmware/vmware_vmsc_overview.html
