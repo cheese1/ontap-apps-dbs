@@ -1,4 +1,18 @@
-== Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+---
+sidebar: sidebar
+permalink: vmware/vmware_vmsc_overview.html
+keywords: VMware, Data protection, MetroCluster, SMBC, SnapMirror active sync, vMSC
+summary: Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+---
+
+= Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+[.lead]
+=Learn about vSphere Metro Storage Cluster with NetApp ONTAP
 
 VMware’s industry-leading vSphere hypervisor can be deployed as a stretched cluster referred to as a vSphere Metro Storage Cluster (vMSC). vMSC solutions are supported with both NetApp® MetroCluster™ and SnapMirror active sync (formerly known as SnapMirror Business Continuity, or SMBC) and provide advanced business continuity if one or more failure domains suffer a total outage. The resilience to different modes of failure depends on which configuration options you choose.
 
