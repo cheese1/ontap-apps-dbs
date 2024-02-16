@@ -14,6 +14,8 @@ summary: vMSC Design and Implementation Guidelines.
 [.lead]
 === NetApp Storage Configuration
 
+=== NetApp Storage Configuration
+
 Setup instructions for NetApp MetroCluster (referred to as an MCC configuration) are available at https://docs.netapp.com/us-en/ontap-metrocluster/[MetroCluster Documentation]. Instructions for SnapMirror active sync are also available at https://docs.netapp.com/us-en/ontap/smbc/index.html[SnapMirror Business Continuity overview].
 
 Once you have configured MetroCluster, administering it is like managing a traditional ONTAP environment. You can set up Storage Virtual Machines (SVMs) using various tools like the Command Line Interface (CLI), System Manager, or Ansible. Once the SVMs are configured, create Logical Interfaces (LIFs), volumes, and Logical Unit Numbers (LUNs) on the cluster that will be used for normal operations. These objects will automatically be replicated to the other cluster using the cluster peering network.
