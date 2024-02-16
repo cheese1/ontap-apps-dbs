@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: vmware/vmware_vmsc_design.html
-keywords: Data protection, MetroCluster, SMBC, SnapMirror active sync, vMSC
+keywords: VMware, Data protection, MetroCluster, SMBC, SnapMirror active sync, vMSC
 summary: vMSC Design and Implementation Guidelines.
 ---
 
