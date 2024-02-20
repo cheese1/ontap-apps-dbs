@@ -98,7 +98,7 @@ There are two types of rules you can specify vSphere HA failover behavior:
 
 Using VM host affinity rules in VMware DRS, one can have a logical separation between site A and site B so that the VM runs on the host at the same site as the array that is configured as the primary read/write controller for a given datastore. Also, VM host affinity rules enable virtual machines to stay local to the storage, which in turn ascertains the virtual machine connection in case of network failures between the sites.
 
-Figure ) VM host groups and affinity rules.
+The following is an example of VM host groups and affinity rules.
 
 image::../media/vmsc_2_2.png[A diagram of a computer server Description automatically generated,width=528,height=369]
 
