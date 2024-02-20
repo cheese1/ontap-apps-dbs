@@ -30,6 +30,8 @@ There is some difference in managing a vMSC configuration with SnapMirror active
 
 Creating a vSphere HA cluster is a multi-step process that is fully documented at https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-esxi-management/GUID-F7818000-26E3-4E2A-93D2-FCDCE7114508.html[How Do You Create and Configure Clusters in the vSphere Client on docs.vmware.com]. In short, you must first create an empty cluster, and then, using vCenter, you must add hosts and specify the cluster’s vSphere HA and other settings.
 
+*Note:* Nothing in this document supersedes https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-recommended-practices[VMware vSphere Metro Storage Cluster Recommended Practices]
+
 To configure an HA cluster, complete the following steps:
 
 [arabic]
