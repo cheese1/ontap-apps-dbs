@@ -53,7 +53,7 @@ Isolation Response is a setting in vSphere HA that determines the action trigger
 Before HA initiates the isolation response, it first checks to see if the vSphere HA master agent owns the datastore that contains the VM config files. If not, then the host will not trigger the isolation response, because there is no master to restart the VMs. The host will periodically check the datastore state to determine if it is claimed by a vSphere HA agent that holds the master role.
 
 ==== _Best Practice_
-NetApp recommends setting the Host Isolation Response” to Disabled.
+NetApp recommends setting the “Host Isolation Response” to Disabled.
 
 
 A split-brain condition can occur if a host becomes isolated or partitioned from the vSphere HA master host and the master is unable to communicate via heartbeat datastores or by ping. The master declares the isolated host dead and restarts the VMs on other hosts in the cluster. A split-brain condition now exists because there are two instances of the virtual machine running, only one of which can read or write the virtual disks. Split-brain conditions can now be avoided by configuring VM Component Protection (VMCP).
