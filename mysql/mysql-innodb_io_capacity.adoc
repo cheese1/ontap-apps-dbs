@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: mysql/mysql-innodb_io_capacity.html
 keywords: MySQL,MariaDB,innodb_io_capacity
-summary: MySQL on ONTAP
+summary: MySQL and innodb_io_capacity
 ---
 = innodb_io_capacity
 :icons: font

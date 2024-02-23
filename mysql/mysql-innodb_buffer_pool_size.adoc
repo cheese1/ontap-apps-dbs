@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: mysql/mysql-innodb_buffer_pool_size.html
 keywords: MySQL,MariaDB,innodb_buffer_pool_size
-summary: MySQL on ONTAP
+summary: MySQL and innodb_buffer_pool_size
 ---
 = innodb_buffer_pool_size
 :icons: font
