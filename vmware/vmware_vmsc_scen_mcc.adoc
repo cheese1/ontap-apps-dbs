@@ -99,7 +99,7 @@ image::../media/vmsc_5_8.png[All ISL failure or complete data center partition,w
 NetApp recommends determining if any virtual machine has violated the DRS rules. Any virtual machines running from a remote site will be down since they will not be able to access the datastore, and vSphere HA will restart that virtual machine on the local site. After the ISL links are back online, the virtual machine that was running in the remote site will be killed, since there cannot be two instances of virtual machines running with the same MAC addresses.
 
 
-image:extracted-media/media/image9.png[A data center partition where VM1 violated a DRS affinity rule,width=624,height=614]
+image::../media/vmsc_5_9.png[A data center partition where VM1 violated a DRS affinity rule,width=624,height=614]
 
 ==== Interswitch Link Failure on Both Fabrics in NetApp MetroCluster
 
