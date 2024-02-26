@@ -2,21 +2,21 @@
 sidebar: sidebar
 permalink: vmware/vmware_vmsc_overview.html
 keywords: VMware, Data protection, MetroCluster, SMBC, SnapMirror active sync, vMSC
-summary: Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+summary: vSphere Metro Storage Cluster with NetApp ONTAP
 ---
 
-= Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+= vSphere Metro Storage Cluster with NetApp ONTAP
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
 [.lead]
-=Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+VMware’s industry-leading vSphere hypervisor can be deployed as a stretched cluster referred to as a vSphere Metro Storage Cluster (vMSC). 
 
-VMware’s industry-leading vSphere hypervisor can be deployed as a stretched cluster referred to as a vSphere Metro Storage Cluster (vMSC). vMSC solutions are supported with both NetApp® MetroCluster™ and SnapMirror active sync (formerly known as SnapMirror Business Continuity, or SMBC) and provide advanced business continuity if one or more failure domains suffer a total outage. The resilience to different modes of failure depends on which configuration options you choose.
+vMSC solutions are supported with both NetApp® MetroCluster™ and SnapMirror active sync (formerly known as SnapMirror Business Continuity, or SMBC) and provide advanced business continuity if one or more failure domains suffer a total outage. The resilience to different modes of failure depends on which configuration options you choose.
 
-=== Continuous Availability Solutions for vSphere Environments
+== Continuous Availability Solutions for vSphere Environments
 
 The NetApp ONTAP architecture is a flexible and scalable storage platform that provides SAN (FCP, iSCSI, and NVMe-oF) and NAS (NFS v3 and v4.1) services for datastores. The NetApp AFF, ASA, and FAS storage systems use the ONTAP operating system to offer additional protocols for guest storage access like S3 and SMB/CIFS.
 
@@ -30,7 +30,7 @@ Refer to https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-esxi-mana
 
 You should also refer to https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-recommended-practices[VMware vSphere Metro Storage Cluster Recommended Practices].
 
-==== What Is vSphere Metro Storage Cluster?
+== What Is vSphere Metro Storage Cluster?
 
 vSphere Metro Storage Cluster (vMSC) is a certified configuration that protects virtual machines (VMs) and containers against failures. This is achieved by using stretched storage concepts along with clusters of ESXi hosts, which are distributed across different failure domains such as racks, buildings, campuses, or even cities. The NetApp MetroCluster and SnapMirror active sync storage technologies are used to provide RPO=0 or near RPO=0 protection respectively to the host clusters. The vMSC configuration is designed to ensure that data is always available even if a complete physical or logical “site” fails. A storage device that is part of the vMSC configuration must be certified after undergoing a successful vMSC certification process. All the supported storage devices can be found in the https://www.vmware.com/resources/compatibility/search.php[VMware Storage Compatibility Guide]. 
 

@@ -12,9 +12,9 @@ summary: vMSC Design and Implementation Guidelines.
 :linkattrs:
 :imagesdir: ../media/
 [.lead]
-=== NetApp Storage Configuration
+This document outlines the design and implementation guidlines for vMSC with ONTAP storage systems.
 
-=== NetApp Storage Configuration
+== NetApp Storage Configuration
 
 Setup instructions for NetApp MetroCluster (referred to as an MCC configuration) are available at https://docs.netapp.com/us-en/ontap-metrocluster/[MetroCluster Documentation]. Instructions for SnapMirror active sync are also available at https://docs.netapp.com/us-en/ontap/smbc/index.html[SnapMirror Business Continuity overview].
 
@@ -24,9 +24,9 @@ If not using MetroCluster, you can use SnapMirror active sync which provides dat
 
 There is some difference in managing a vMSC configuration with SnapMirror active sync when compared to a MetroCluster. First, this is a SAN-only configuration, no NFS datastores can be protected with SnapMirror active sync. Second, you must map both copies of the LUNs to your ESXi hosts for them to access the replicated datastores in both failure domains.
 
-=== VMware vSphere HA
+== VMware vSphere HA
 
-==== Create a vSphere HA Cluster
+=== Create a vSphere HA Cluster
 
 Creating a vSphere HA cluster is a multi-step process that is fully documented at https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-esxi-management/GUID-F7818000-26E3-4E2A-93D2-FCDCE7114508.html[How Do You Create and Configure Clusters in the vSphere Client on docs.vmware.com]. In short, you must first create an empty cluster, and then, using vCenter, you must add hosts and specify the cluster’s vSphere HA and other settings.
 
@@ -81,7 +81,7 @@ image::../media/vmsc_3_5.png[width=624,height=336]
 |===
 
 
-==== Configure Datastores for Heartbeating
+=== Configure Datastores for Heartbeating
 
 vSphere HA uses datastores to monitor hosts and virtual machines when the management network has failed. You can configure how vCenter selects heartbeat datastores. To configure datastores for heartbeating, complete the following steps:
 
@@ -91,7 +91,7 @@ vSphere HA uses datastores to monitor hosts and virtual machines when the manage
 
 image::../media/vmsc_3_6.png[A screenshot of a computer Description automatically generated,width=624,height=540]
 
-==== Configure Advanced Options
+=== Configure Advanced Options
 
 *Host Failure Detection*
 
@@ -110,13 +110,13 @@ VMware DRS Affinity for NetApp MetroCluster
 In this section, we create DRS groups for VMs and hosts for each site\cluster in the MetroCluster environment. Then we configure VM\Host rules to align VM host affinity with local storage resources. For example, site A VMs belong to VM group sitea_vms and site A hosts belong to host group sitea_hosts. Next, in VM\Host Rules, we state that sitea_vms should run on hosts in sitea_hosts.
 
 
-==== Best Practice
+=== _Best Practice_
 * NetApp highly recommends the specification *Should Run on Hosts in Group* rather than the specification *Must Run on Hosts in Group*. In the event of a site A host failure, the VMs of site A need to be restarted on hosts at site B through vSphere HA, but the latter specification does not allow HA to restart VMs on site B because it’s a hard rule. The former specification is a soft rule and will be violated in the event of HA, thus enabling availability rather than performance.
 
 *Note:* You can create an event-based alarm that is triggered when a virtual machine violates a VM-Host affinity rule. In the vSphere Client, add a new alarm for the virtual machine and select “VM is violating VM-Host Affinity Rule” as the event trigger. For more information about creating and editing alarms, refer to http://pubs.vmware.com/vsphere-51/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-51-monitoring-performance-guide.pdf[vSphere Monitoring and Performance] documentation.
 
 
-==== Create DRS Host Groups
+=== Create DRS Host Groups
 
 To create DRS host groups specific to site A and site B, complete the following steps:
 
@@ -130,7 +130,7 @@ To create DRS host groups specific to site A and site B, complete the following 
 . Repeat these steps to add another host group for site B.
 . Click OK.
 
-==== Create DRS VM Groups
+=== Create DRS VM Groups
 
 To create DRS VM groups specific to site A and site B, complete the following steps:
 
@@ -146,7 +146,7 @@ To create DRS VM groups specific to site A and site B, complete the following st
 . Repeat these steps to add another host group for site B.
 . Click OK.
 
-==== Create VM\Host Rules
+=== Create VM Host Rules
 
 To create DRS affinity rules specific to site A and site B, complete the following steps:
 
@@ -166,9 +166,9 @@ To create DRS affinity rules specific to site A and site B, complete the followi
 
 image::../media/vmsc_3_8.png[A screenshot of a computer Description automatically generated,width=474,height=364]
 
-=== VMWare vSphere Storage DRS for NetApp MetroCluster
+== VMWare vSphere Storage DRS for NetApp MetroCluster
 
-==== Create Datastore Clusters
+=== Create Datastore Clusters
 
 To configure a datastore cluster for each site, complete the following steps:
 
@@ -179,7 +179,7 @@ To configure a datastore cluster for each site, complete the following steps:
 . Set all options to No Automation (Manual Mode) and click Next.
 
 
-==== Best Practice
+==== _Best Practice_
 * NetApp recommends that Storage DRS be configured in manual mode, so that the administrator gets to decide and control when migrations need to happen.
 
 

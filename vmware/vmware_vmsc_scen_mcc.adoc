@@ -12,9 +12,9 @@ summary: Failure Scenarios for vMSC with MCC
 :linkattrs:
 :imagesdir: ../media/
 [.lead]
-= Failure Scenarios for vMSC with MCC
+The following sections outline the expected results from various failure scenarios with vMSC and NetApp MetroCluster systems.
 
-=== Single Storage Path Failure
+== Single Storage Path Failure
 
 In this scenario, if components such as the HBA port, the network port, the front-end data switch port, or an FC or Ethernet cable fails, that particular path to the storage device is marked as dead by the ESXi host. If several paths are configured for the storage device by providing resiliency at the HBA/network/switch port, ESXi ideally performs a path switchover. During this period, virtual machines remain running without getting affected, because availability to the storage is taken care of by providing multiple paths to the storage device.
 
@@ -30,7 +30,7 @@ In environments in which Fibre Channel LUNs are used, NetApp recommends having a
 
 Virtual Storage Console (VSC) should be used to set multipathing policies because it sets policies for all new and existing NetApp storage devices.
 
-=== Single ESXi Host Failure
+== Single ESXi Host Failure
 
 image::../media/vmsc_5_1.png[A single host failure.,width=624,height=598]
 
@@ -42,7 +42,7 @@ It is possible that the virtual machines will be started on the ESXi hosts at th
 
 There is no change in the MetroCluster behavior in this scenario and all the datastores continue to be intact from their respective sites.
 
-=== ESXi Host Isolation
+== ESXi Host Isolation
 
 image::../media/vmsc_5_2.png[ESXi host isolation,width=624,height=301]
 
@@ -50,7 +50,7 @@ In this scenario, if the management network of the ESXi host is down, the master
 
 There is no change in the MetroCluster behavior in this scenario and all the datastores continue to be intact from their respective sites.
 
-=== Disk Shelf Failure
+== Disk Shelf Failure
 
 In this scenario, there is a failure of more than two disks or an entire shelf. Data is served from the surviving plex with no interruption to data services. The disk failure could affect either a local or remote plex. The aggregates will show as degraded mode because only one plex is active. Once the failed disks are replaced, the affected aggregates will automatically resync to rebuild the data. After resync, the aggregates will return automatically to normal mirrored mode. If more than two disks within a single RAID group have failed, then the plex has to be rebuilt from scratch.
 
@@ -58,7 +58,7 @@ image::../media/vmsc_5_3.png[A single disk shelf failure.,width=624,height=576]
 
 *Note:* During this period, there is no impact on the virtual machine I/O operations, but there is degraded performance because the data is being accessed from the remote disk shelf through ISL links.
 
-=== Single Storage Controller Failure
+== Single Storage Controller Failure
 
 In this scenario, one of the two storage controllers fails at one site. Because there is an HA pair at each site, a failure of one node transparently and automatically triggers failover to the other node. For example, if node A1 fails, its storage and workloads are automatically transferred to node A2. Virtual machines will not be affected because all plexes remain available. The second site nodes (B1 and B2) are unaffected. In addition, vSphere HA will not take any action because the master node in the cluster will still be receiving the network heartbeats.
 
@@ -66,9 +66,9 @@ image::../media/vmsc_5_4.png[A single node failure,width=624,height=603]
 
 If the failover is part of a rolling disaster (node A1 fails over to A2), and there is a subsequent failure of A2, or the complete failure of site A, switchover following a disaster can occur at site B.
 
-=== Interswitch Link Failures
+== Interswitch Link Failures
 
-==== Interswitch Link Failure at Management Network
+=== Interswitch Link Failure at Management Network
 
 image::../media/vmsc_5_5.png[Interswitch link failure at the management network,width=624,height=184]
 
@@ -76,7 +76,7 @@ In this scenario, if the ISL links at the front-end host management network fail
 
 *Note:* During this period, the virtual machines remain running and there is no change in the MetroCluster behavior in this scenario. All the datastores continue to be intact from their respective sites.
 
-==== Interswitch Link Failure at Storage Network
+=== Interswitch Link Failure at Storage Network
 
 image::../media/vmsc_5_6.png[Interswitch link failure at the storage network,width=624,height=481]
 
@@ -88,7 +88,7 @@ If for some reason the affinity rule was violated (for example, VM1, which was s
 
 image::../media/vmsc_5_7.png[A VM violating a DRS affinity rule is unable to write to disks after ISL failure,width=624,height=502]
 
-==== All Interswitch Failure or Complete Data Center Partition
+=== All Interswitch Failure or Complete Data Center Partition
 
 In this scenario, all the ISL links between the sites are down and both the sites are isolated from each other. As discussed in earlier scenarios, such as ISL failure at the management network and at the storage network, the virtual machines are not affected in complete ISL failure.
 
@@ -101,7 +101,7 @@ NetApp recommends determining if any virtual machine has violated the DRS rules.
 
 image::../media/vmsc_5_9.png[A data center partition where VM1 violated a DRS affinity rule,width=624,height=614]
 
-==== Interswitch Link Failure on Both Fabrics in NetApp MetroCluster
+=== Interswitch Link Failure on Both Fabrics in NetApp MetroCluster
 
 In a scenario of one or more ISLs failing, traffic continues through the remaining links. If all ISLs on both fabrics fail, such that there is no link between the sites for storage and NVRAM replication, each controller will continue to serve its local data. On restoration of a minimum of one ISL, resynchronization of all the plexes will happen automatically.
 
