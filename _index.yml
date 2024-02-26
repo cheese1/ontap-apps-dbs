@@ -2,7 +2,7 @@ indexpage:
   title: ONTAP and enterprise applications
   lead: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures for ONTAP and enterprise applications and infrastructure.
   summary: ONTAP is the foundation for data management and data protection for many enterprise application and database technologies. The following pages provide guidance on the best practices and implementation procedures for ONTAP and enterprise applications and infrastructure.
-  keywords: Oracle, SAP, HANA, SAP HANA, MSSQL, SQL Server, Postgres, postgresql, mysql, mariadb
+  keywords: VMware, vSphere, Oracle, SAP, HANA, SAP HANA, MSSQL, SQL Server, Postgres, postgresql, mysql, mariadb
   tiles:
     - title: Microsoft SQL Server
       links:
@@ -46,3 +46,5 @@ indexpage:
           url: /vmware/vmware-vvols-overview.html
         - title: VMware Site Recovery Manager with ONTAP
           url: /vmware/vmware-srm-overview.html
+        - title: VMware vSphere Metro Storage Cluster with ONTAP
+          url: /vmware/vmware_vmsc_overview.html
