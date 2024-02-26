@@ -15,6 +15,8 @@ entries:
         url: /vmware/vmware-vsphere-datastores.html
       - title: Network configuration
         url: /vmware/vmware-vsphere-network.html
+      - title: Direct connect networking
+        url: /vmware/vmware-vsphere-config-direct-connect-networking.html
       - title: Cloning
         url: /vmware/vmware-vsphere-cloning.html
       - title: Data protection
