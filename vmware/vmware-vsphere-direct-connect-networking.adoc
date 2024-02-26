@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: vmware/vmware-vsphere-config-direct-connect-networking.html
+permalink: vmware/vmware-vsphere-direct-connect-networking.html
 keywords: direct-connect, vmware, direct connect
 summary: Direct network connections with VMware vSphere 
 ---
