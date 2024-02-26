@@ -10,7 +10,9 @@ summary:
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
+The following sections outline the procedures and best practices for using VMware vVols with ONTAP storage.
 
 == VASA Provider High Availability
 
