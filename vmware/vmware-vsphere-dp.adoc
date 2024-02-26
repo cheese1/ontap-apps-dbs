@@ -11,6 +11,7 @@ summary: SnapCenter allows you to create backup policies that can be applied to 
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 Backing up your VMs and quickly recovering them are among the great strengths of ONTAP for vSphere, and it is easy to manage this ability inside vCenter with the SnapCenter Plug-In for VMware vSphere. 
 

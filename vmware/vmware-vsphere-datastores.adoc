@@ -11,6 +11,7 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 == vSphere datastore and protocol features
 Seven protocols are used to connect VMware vSphere to datastores on a system running ONTAP software:
