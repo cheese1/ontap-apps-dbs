@@ -12,6 +12,8 @@ summary: If possible, always use ONTAP tools to provision datastores and volumes
 :imagesdir: ../media/
 
 [.lead]
+The following sections outline the operational best practices for VMware SRM and ONTAP storage.
+
 == Datastores and protocols
 * If possible, always use ONTAP tools to provision datastores and volumes. This makes sure that volumes, junction paths, LUNs, igroups, export policies, and other settings are configured in a compatible manner.
 

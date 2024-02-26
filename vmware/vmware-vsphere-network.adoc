@@ -11,6 +11,7 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 Configuring network settings when using vSphere with systems running ONTAP software is straightforward and similar to other network configuration. 
 

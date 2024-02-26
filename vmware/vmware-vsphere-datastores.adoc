@@ -5,7 +5,7 @@ keywords: vSphere, datastore, VMFS, FC, FCoE, NVMe/FC, iSCSI, NFS, vVols
 summary: This page describes the best practices for implementing a NetApp ONTAP storage solution in a VMware vSphere environment.
 ---
 
-= Datastores and protocols
+== vSphere datastore and protocol features
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +13,6 @@ summary: This page describes the best practices for implementing a NetApp ONTAP 
 :imagesdir: ../media/
 
 [.lead]
-== vSphere datastore and protocol features
 Seven protocols are used to connect VMware vSphere to datastores on a system running ONTAP software:
 
 * FCP
