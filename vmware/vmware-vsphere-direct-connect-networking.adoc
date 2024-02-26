@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: vmware/vmware-vsphere-config-direct-connect-networking.html
+keywords: direct-connect, vmware, direct connect
+summary: Direct network connections with VMware vSphere 
+---
+= Direct-connect with TCP/IP and FC networks
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Storage administrators sometimes prefer to simplify their infrastructures by removing network switches from the configuration. This can be supported in some scenarios.
+
+include::../_include/direct-connect.adoc[]
