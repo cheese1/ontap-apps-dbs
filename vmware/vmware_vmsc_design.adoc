@@ -11,6 +11,7 @@ summary: vMSC Design and Implementation Guidelines.
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 This document outlines the design and implementation guidlines for vMSC with ONTAP storage systems.
 

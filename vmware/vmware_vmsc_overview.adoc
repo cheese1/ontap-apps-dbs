@@ -11,6 +11,7 @@ summary: vSphere Metro Storage Cluster with NetApp ONTAP
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 VMware’s industry-leading vSphere hypervisor can be deployed as a stretched cluster referred to as a vSphere Metro Storage Cluster (vMSC). 
 

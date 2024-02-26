@@ -11,6 +11,7 @@ summary: Failure Scenarios for vMSC with MCC
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 The following sections outline the expected results from various failure scenarios with vMSC and NetApp MetroCluster systems.
 

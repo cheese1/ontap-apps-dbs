@@ -11,6 +11,7 @@ summary: Learn about vSphere Metro Storage Cluster with NetApp ONTAP
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 NetApp MetroCluster and SnapMirror active sync are powerful tools that enhance the high availability and non-disruptive operations of NetApp hardware and ONTAP® software. 
 

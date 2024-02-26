@@ -11,6 +11,7 @@ summary: VMware vSphere Solution Overview
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 The vCenter Server Appliance (VCSA) is the powerful centralized management system and single pane of glass for vSphere that enables administrators to effectively operate ESXi clusters. It facilitates key functions such as VM provisioning, vMotion operation, High Availability (HA), Distributed Resource Scheduler (DRS), Tanzu Kubernetes Grid, and more. It is an essential component in VMware cloud environments and should be designed with service availability in mind.
 
