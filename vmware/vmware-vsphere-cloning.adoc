@@ -11,6 +11,7 @@ summary: SnapCenter allows you to create backup policies that can be applied to 
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 Cloning a storage object allows you to quickly create copies for further use, such as provisioning additional VMs, backup/recovery operations, and so on. 
 

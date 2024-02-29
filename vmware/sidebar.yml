@@ -51,6 +51,18 @@ entries:
         url: /vmware/vmware-srm-replication_topologies.html
       - title: "Troubleshooting SRM when using vVols replication"
         url: /vmware/vmware-srm-vvol-troubleshooting.html
+  - title: "vSphere Metro Storage Cluster with ONTAP"
+    entries:
+      - title: "vMSC Overview"
+        url: /vmware/vmware_vmsc_overview.html
+      - title: "vSphere HA Solution"
+        url: /vmware/vmware_vmsc_solution.html
+      - title: "vMSC Design"
+        url: /vmware/vmware_vmsc_design.html
+      - title: "vMSC Resiliency"
+        url: /vmware/vmware_vmsc_resiliency.html
+      - title: "vMSC Scenarios with MCC"
+        url: /vmware/vmware_vmsc_scen_mcc.html
 #  - title: "VMware Horizon"
 #    entries:
 #      - title: "End user computing with VMware (Design Guide)"

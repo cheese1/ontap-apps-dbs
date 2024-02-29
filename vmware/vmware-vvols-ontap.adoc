@@ -11,6 +11,7 @@ summary: This document discusses product security for ONTAP tools for VMware vSp
 :icons: font
 :linkattrs:
 :imagesdir: ../media/
+
 [.lead]
 The key to using vVols with ONTAP is the VASA Provider software included as part of the ONTAP tools for VMware vSphere virtual appliance. 
 

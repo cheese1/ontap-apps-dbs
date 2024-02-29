@@ -1,0 +1,38 @@
+---
+sidebar: sidebar
+permalink: vmware/vmware_vmsc_resiliency.html
+keywords: VMware, Data protection, MetroCluster, SMBC, SnapMirror active sync, vMSC
+summary: Learn about vSphere Metro Storage Cluster with NetApp ONTAP
+---
+
+= Resiliency for Planned and Unplanned Events
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+NetApp MetroCluster and SnapMirror active sync are powerful tools that enhance the high availability and non-disruptive operations of NetApp hardware and ONTAP® software. 
+
+These tools provide site-wide protection for the entire storage environment, ensuring that your data is always available. Whether you are using standalone servers, high-availability server clusters, Docker containers, or virtualized servers, NetApp technology seamlessly maintains storage availability in the event of a total outage due to loss of power, cooling, or network connectivity, storage array shutdown, or operational error.
+
+MetroCluster and SnapMirror active sync provide three basic methods for data continuity in the event of planned or unplanned events:
+
+* Redundant components for protection against single-component failure
+* Local HA takeover for events affecting a single controller
+* Complete site protection – rapid resumption of service by moving storage and client access from the source cluster to the destination cluster
+
+This means operations continue seamlessly in case of a single component failure and return automatically to redundant operation when the failed component is replaced.
+
+All ONTAP clusters, except single-node clusters (typically software-defined versions, such as ONTAP Select for example), have built-in HA features called takeover and giveback. Each controller in the cluster is paired with another controller, forming an HA pair. These pairs ensure that each node is locally connected to the storage.
+
+Takeover is an automated process where one node takes over the other's storage to maintain data services. Giveback is the reverse process that restores normal operation. Takeover can be planned, such as when performing hardware maintenance or ONTAP upgrades, or unplanned, resulting from a node panic or hardware failure.
+
+During a takeover, Network Attached Storage Logical Interfaces (NAS LIFs) in MetroCluster configurations automatically failover. However, Storage Area Network LIFs (SAN LIFs) do not fail over; they will continue to use the direct path to the Logical Unit Numbers (LUNs).
+
+For more information on HA takeover and giveback, please refer to the https://docs.netapp.com/us-en/ontap/high-availability/index.html[HA pair management overview]. It's worth noting that this functionality is not specific to MetroCluster or SnapMirror active sync.
+
+Site switchover with MetroCluster occurs when one site is offline or as a planned activity for site-wide maintenance. The remaining site assumes ownership of the storage resources (disks and aggregates) of the offline cluster, and the SVMs on the failed site are brought online and restarted on the disaster site, preserving their full identity for client and host access.
+
+With SnapMirror active sync, since both copies are actively used simultaneously, your existing hosts will continue to operate. The NetApp Mediator is required to ensure site failover occurs correctly.
