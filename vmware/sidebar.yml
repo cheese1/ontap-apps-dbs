@@ -11,7 +11,7 @@ entries:
         url: /vmware/vmware-vsphere-vtools.html
       - title: Virtual Volume and storage policy based management
         url: /vmware/vmware-vsphere-vvols_and_spbm.html
-      - title: Datastores and protocols Introduction
+      - title: Datastores and protocols introduction
         url: /vmware/vmware-vsphere-datastores-top.html
       - title: Datastores and protocols with SAN
         url: /vmware/vmware-vsphere-datastores-san.html
