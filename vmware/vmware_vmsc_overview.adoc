@@ -31,7 +31,7 @@ Refer to https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-esxi-mana
 
 You should also refer to https://core.vmware.com/resource/vmware-vsphere-metro-storage-cluster-recommended-practices[VMware vSphere Metro Storage Cluster Recommended Practices].
 
-== What Is vSphere Metro Storage Cluster?
+== What is vSphere Metro Storage Cluster?
 
 vSphere Metro Storage Cluster (vMSC) is a certified configuration that protects virtual machines (VMs) and containers against failures. This is achieved by using stretched storage concepts along with clusters of ESXi hosts, which are distributed across different failure domains such as racks, buildings, campuses, or even cities. The NetApp MetroCluster and SnapMirror active sync storage technologies are used to provide RPO=0 or near RPO=0 protection respectively to the host clusters. The vMSC configuration is designed to ensure that data is always available even if a complete physical or logical “site” fails. A storage device that is part of the vMSC configuration must be certified after undergoing a successful vMSC certification process. All the supported storage devices can be found in the https://www.vmware.com/resources/compatibility/search.php[VMware Storage Compatibility Guide]. 
 
