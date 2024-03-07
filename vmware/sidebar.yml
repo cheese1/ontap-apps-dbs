@@ -12,7 +12,15 @@ entries:
       - title: Virtual Volume and storage policy based management
         url: /vmware/vmware-vsphere-vvols_and_spbm.html
       - title: Datastores and protocols
-        url: /vmware/vmware-vsphere-datastores.html
+        entries:
+          - title: Overview
+            url: /vmware/vmware-vsphere-datastores-top.html
+          - title: SAN
+            url: /vmware/vmware-vsphere-datastores-san.html
+          - title: NFS
+            url: /vmware/vmware-vsphere-datastores-nfs.html        
+          - title: FlexGroup volumes
+            url: /vmware/vmware-vsphere-datastores-fg.html        
       - title: Network configuration
         url: /vmware/vmware-vsphere-network.html
       - title: Cloning
@@ -53,15 +61,15 @@ entries:
         url: /vmware/vmware-srm-vvol-troubleshooting.html
   - title: "vSphere Metro Storage Cluster with ONTAP"
     entries:
-      - title: "vMSC Overview"
+      - title: "vMSC overview"
         url: /vmware/vmware_vmsc_overview.html
-      - title: "vSphere HA Solution"
+      - title: "vSphere HA solution"
         url: /vmware/vmware_vmsc_solution.html
-      - title: "vMSC Design"
+      - title: "vMSC design"
         url: /vmware/vmware_vmsc_design.html
-      - title: "vMSC Resiliency"
+      - title: "vMSC resiliency"
         url: /vmware/vmware_vmsc_resiliency.html
-      - title: "vMSC Scenarios with MCC"
+      - title: "vMSC scenarios with MCC"
         url: /vmware/vmware_vmsc_scen_mcc.html
 #  - title: "VMware Horizon"
 #    entries:
