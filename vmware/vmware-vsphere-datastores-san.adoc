@@ -5,7 +5,7 @@ keywords: vSphere, datastore, VMFS, FC, FCoE, NVMe/FC, iSCSI, NFS, vVols
 summary: This page describes the best practices for implementing a NetApp ONTAP storage solution in a VMware vSphere environment.
 ---
 
-== SAN (FC, FCoE, NVMe/FC, iSCSI), RDM
+= SAN (FC, FCoE, NVMe/FC, iSCSI), RDM
 :hardbreaks:
 :nofooter:
 :icons: font
