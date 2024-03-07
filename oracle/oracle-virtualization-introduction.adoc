@@ -27,10 +27,10 @@ Customers considering virtualization of their databases should base their storag
 
 There are three basic options for storage presentation:
 
-* virtualized LUNs on hypervisor datastores
+* Virtualized LUNs on hypervisor datastores
 * iSCSI LUNs managed by the iSCSI initiator on the VM, not the hypervisor
 * NFS file systems mounted by the VM (not from an NFS-based datastore)
-* Direct device mappings. VMware RDMs are disfavored by customers, but physical devices are still often similarly directly mapped to KVM and OLVM hypervisors.
+* Direct device mappings. VMware RDMs are disfavored by customers, but physical devices are still often similarly directly mapped with KVM and OLVM virtualization.
 
 === Performance
 
@@ -73,4 +73,4 @@ image:vmfs-striping.png[Error: Missing Graphic Image]
 
 The primary driver for this approach is not ONTAP, it's because of inherent limitation of the number of operations a single VM or hypervisor LUN can service in parallel. A single ONTAP LUN can generally support far more IOPS than a host can request. The single-LUN performance limit is almost universally a result of the host OS. The result is that most databases need between 4 and 8 LUNs to meet their performance needs. 
 
-VMware architectures need to plan their architectures carefully to ensure that datastore and/or LUN path maximumes are not encountered with this approach. Addtionally, there is no requirement for a unique set of VMFS datastores for every database. The primary need is to ensure each host has a clean set of 4-8 IO paths from the virtualized LUNs to the backend LUNs on the storage system itself. In rare occasions, even more datatores may be beneficial for truly extreme performance demands, but 4-8 LUNs is generally sufficient for 95% of all databases. A single ONTAP volume containing 8 LUNs should support up to 250,000 completely random Oracle block IOPS, assuming the controller itself has headroom for that level of IO. 
+VMware architectures need to plan their architectures carefully to ensure that datastore and/or LUN path maximumes are not encountered with this approach. Addtionally, there is no requirement for a unique set of VMFS datastores for every database. The primary need is to ensure each host has a clean set of 4-8 IO paths from the virtualized LUNs to the backend LUNs on the storage system itself. In rare occasions, even more datatores may be beneficial for truly extreme performance demands, but 4-8 LUNs is generally sufficient for 95% of all databases. A single ONTAP volume containing 8 LUNs can support up to 250,000 random Oracle block IOPS with a typical OS/ONTAP/network configuration.
