@@ -1,0 +1,2 @@
+=== Temperature sensitive storage efficiency
+Temperature sensitive storage efficiency (TSSE) is a available in ONTAP 9.8 and later that relies on block access heat maps to identify infrequently accessed blocks and compress them with greater efficiency.
