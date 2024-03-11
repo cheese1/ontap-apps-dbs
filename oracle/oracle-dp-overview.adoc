@@ -13,7 +13,7 @@ summary: Oracle data protection overview
 :imagesdir: ../media/
 
 [.lead]
-The most mission-critical data is found in databases. 
+NetApp knows the most mission-critical data is found in databases.
 
 An enterprise cannot operate without access to its data, and sometimes, the data defines the business. This data must be protected; however, data protection is more than just ensuring a usable backup—it is about performing the backups quickly and reliably in addition to storing them safely. 
 

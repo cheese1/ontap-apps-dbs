@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dp-planning.html
 keywords: data protection, DR, snapshots, CG
-summary: ONTAP data protection strategies
+summary: Data protection planning for Oracle databases
 ---
-= Data protection planning
+= Data protection planning for Oracle databases
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,7 +12,7 @@ summary: ONTAP data protection strategies
 :imagesdir: ../media/
 
 [.lead]
-The right enterprise data protection architecture depends on the business requirements surrounding data retention, recoverability, and tolerance for disruption during various events.
+The right Oracle database data protection architecture depends on the business requirements surrounding data retention, recoverability, and tolerance for disruption during various events.
 
 For example, consider the number of applications, databases, and important datasets in scope. Building a backup strategy for a single dataset that ensures compliance with typical SLAs is fairly straightforward because there are not many objects to manage. As the number of datasets increases, monitoring becomes more complicated and administrators might be forced to spend an increasing amount of time addressing backup failures. As an environment reaches cloud and service provider scales, a wholly different approach is needed.
 
@@ -41,7 +41,7 @@ The RTO can usually be measured in seconds. A an application is shut down, the v
 The simplest approach is to place all the files or LUNs in a single volume consistency group, which allows a snapshot creation to be scheduled directly in ONTAP. Where a dataset must span volumes, a consistency group snapshot (cg-snapshot) is required. This can be configured using System Manager or RESTful API calls, plus SnapCenter is capable of creating a simple consistency group snapshot on a defined list of volumes. 
 
 == Replication and disaster recovery architecture
-This section addresses remote data protection, for which data is replicated to a remote site for the purposes of secure offsite storage and disaster recovery. Note that these tables do not address synchronous mirroring data protection. For this requirement, see the NetApp MetroCluster documentation including link:../metrocluster/overview.html[MetroCluster] and link:../smbc/overview.html[SnapMirror Business Continuity]
+This section addresses remote data protection, for which data is replicated to a remote site for the purposes of secure offsite storage and disaster recovery. Note that these tables do not address synchronous mirroring data protection. For this requirement, see the NetApp MetroCluster documentation including link:../metrocluster/overview.html[MetroCluster] and link:../smbc/overview.html[SnapMirror active sync]
 
 The DR RPO is limited by the available network bandwidth and the total size of the data being protected. After the initial baseline transfer is created, the updates are only based on the changed data, which typically is a low percentage of the total data footprint, although exceptions do exist. 
 

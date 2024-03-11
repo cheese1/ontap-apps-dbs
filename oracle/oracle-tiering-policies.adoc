@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-tiering-policies.html
 keywords: tiering, fabricpool
-summary: Oracle tiering policies
+summary: Oracle database FabricPool tiering policies
 ---
-= Oracle database tiering policies
+= Oracle database FabricPool tiering policies
 :hardbreaks:
 :nofooter:
 :icons: font

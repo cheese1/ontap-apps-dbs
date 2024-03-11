@@ -4,7 +4,7 @@ permalink: oracle/oracle-storage-san-config-lun-resizing.html
 keywords: SAN, ASM, LVM
 summary: LUN and LVM resizing with Oracle databases
 ---
-= LUN resizing and LVM-based resizing
+= Oracle database LUN resizing and LVM-based resizing
 :hardbreaks:
 :nofooter:
 :icons: font

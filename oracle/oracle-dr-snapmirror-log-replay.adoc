@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-snapmirror-log-replay.html
 keywords: oracle, ontap, disaster recovery, log reply, log shipping
-summary: Oracle on ONTAP DR procedure with log shipping
+summary: Oracle database DR via log shipping
 ---
-= Disaster recovery with log replay
+= Oracle database DR via log shipping
 
 :hardbreaks:
 :nofooter:

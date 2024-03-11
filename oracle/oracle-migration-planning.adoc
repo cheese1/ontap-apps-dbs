@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-migration-planning.html
 keywords: migration, oracle
-summary: Oracle migration planning
+summary: Oracle database migration planning
 ---
-= Oracle migration planning
+= Oracle database migration planning
 
 :hardbreaks:
 :nofooter:

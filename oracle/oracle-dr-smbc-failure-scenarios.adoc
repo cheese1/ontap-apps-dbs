@@ -1,10 +1,10 @@
 ---
 permalink: oracle/oracle-dr-smbc-failure-scenarios.html
 sidebar: sidebar
-keywords: SM-BC, smbc, failover
-summary: Oracle SM-BC Failure Scenarios
+keywords: SnapMirror active sync, smbc, failover
+summary: Oracle databases and SnapMirror active sync Failure Scenarios
 ---
-= Oracle SM-BC failure scenarios
+= Oracle databases and SnapMirror active sync failure scenarios
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,7 +12,7 @@ summary: Oracle SM-BC Failure Scenarios
 :imagesdir: ../media/
 
 [.lead]
-There are multiple SnapMirror Business Continuity (SM-BC) failure scenarios each having different results.
+There are multiple SnapMirror active sync (SM-AS) failure scenarios each having different results.
 
 [cols="1,1"]
 |===
@@ -47,7 +47,7 @@ There is an automatic resync when the site is online.
 
 |Loss of the entire site in a typical deployment
 
-|Servers on the failed site will obviously no longer be available. Applications that support clustering can be configured to run at both sites and continue operations on the alternate site, although most such applications require a 3rd site tiebreaker similar to how SM-BC requires the mediator.
+|Servers on the failed site will obviously no longer be available. Applications that support clustering can be configured to run at both sites and continue operations on the alternate site, although most such applications require a 3rd site tiebreaker similar to how SM-AS requires the mediator.
 
 Without application level clusters, applications will need to be started at the surviving site. This would affect availbility, but RPO=0 is preserved. No data would be lost.
 |===

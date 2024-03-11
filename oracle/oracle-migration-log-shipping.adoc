@@ -4,7 +4,7 @@ permalink: oracle/oracle-migration-log-shipping.html
 keywords: migration, oracle, log shipping
 summary: Oracle migration via log shipping
 ---
-= Oracle log shipping
+= Oracle database migration via log shipping
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -73,7 +73,7 @@ Cluster01::*>
 Cluster01::*> snapmirror show -destination-path vserver1:vol_oradata -fields state
 source-path             destination-path        state
 ----------------------- ----------------------- ------------
-vserver1:jfsc1_oradata vserver1:vol_oradata Snapmirrored
+vserver1:jfsc1_oradata vserver1:vol_oradata SnapMirrored
 ....
 +
 ....

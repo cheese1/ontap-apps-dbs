@@ -48,7 +48,7 @@ For more information, click link:https://docs.netapp.com/us-en/ontap/authenticat
 
 Automation requires API calls, but not all tools require full administrative access. To help secure automation systems, RBAC is also available at the API level. You can limit the automation user accounts to the API calls required. For example, monitoring software does not need change access, it only requires read access. Workflows that provision storage do not need the ability to delete storage.
 
-To learn more, start link:https://docs.netapp.com/us-en/ontap-automation/rest/rbac_overview.html[here.]
+To learn more, start chttps://docs.netapp.com/us-en/ontap-automation/rest/rbac_overview.html[here.]
 
 == Multi-admin verification
 

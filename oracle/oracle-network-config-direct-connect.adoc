@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-network-config-direct-connect.html
 keywords: direct-connect, oracle
-summary: Direct network connections with ONTAP 
+summary: Oracle database and direct-connect ONTAP connectivity
 ---
-= Direct-connect with TCP/IP and FC networks
+= Oracle database and direct-connect ONTAP connectivity
 :hardbreaks:
 :nofooter:
 :icons: font

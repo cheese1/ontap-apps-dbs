@@ -4,7 +4,7 @@ permalink: oracle/oracle-storage-nfs-config-leases-and-locks.html
 keywords: NFS, lease
 summary: Oracle databases and NFS leases and locks
 ---
-= NFS leases and locks - Oracle
+= Oracle databases and NFS leases and locks
 :hardbreaks:
 :nofooter:
 :icons: font

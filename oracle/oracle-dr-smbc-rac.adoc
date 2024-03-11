@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-smbc-rac.html
 keywords: oracle, smbc, sm-bc, RAC
-summary: Oracle RAC on ONTAP with SM-BC
+summary: Oracle RAC with SnapMirror active sync
 ---
-= Oracle RAC with SM-BC
+= Oracle RAC with SnapMirror active sync
 
 :hardbreaks:
 :nofooter:
@@ -13,8 +13,8 @@ summary: Oracle RAC on ONTAP with SM-BC
 :imagesdir: ../media/
 
 [.lead]
-SM-BC delivers granular control over dataset replication for purposes such as load balancing or individual application failover. The overall architecture looks like an extended RAC cluster, but some databases are dedicated to specific sites and the overall load is distributed.
+SnapMirror active sync delivers granular control over dataset replication for purposes such as load balancing or individual application failover. The overall architecture looks like an extended RAC cluster, but some databases are dedicated to specific sites and the overall load is distributed.
 
 For example, you could build an Oracle RAC cluster hosting six individual databases. The storage for three of the databases would be primarily hosted on site A, and storage for the other three databases would be hosted on site B. This configuration ensures the best possible performance by minimizing cross-site traffic. In addition, applications would be configured to use the database instances that are local to the storage system with active paths. This minimizes RAC interconnect traffic. Finally, this overall design ensures that all compute resources are used evenly. As workloads change, databases can be selectively failed back and forth across sites to ensure even loading.
 
-Other than granularity, the basic principles and options for Oracle RAC using SM-BC are the same as link:../metrocluster/mcc-rac.html[Oracle RAC on MetroCluster]
+Other than granularity, the basic principles and options for Oracle RAC using SnapMirror active syncare the same as link:../metrocluster/mcc-rac.html[Oracle RAC on MetroCluster]

@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-smbc-architecture.html
 keywords: smbc, sm-bc, oracle
-summary: Oracle with SnapMirror Business Continuity (SM-BC)
+summary: Oracle databases with SnapMirror active sync
 ---
-= Oracle and Snapmirror Business Continuity
+= Oracle databases with SnapMirror active sync
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,6 +12,6 @@ summary: Oracle with SnapMirror Business Continuity (SM-BC)
 :imagesdir: ../media/
 
 [.lead]
-SM-BC enables selective RPO=0 synchronous mirroring for individual Oracle databases and application environments.
+SnapMirror active sync enables selective RPO=0 synchronous mirroring for individual Oracle databases and application environments.
 
-include::../_include/smbc-summary.adoc[]
+include::../_include/smas-summary.adoc[]
