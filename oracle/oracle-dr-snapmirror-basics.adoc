@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-snapmirror-basics.html
 keywords: ontap, snapmirror
-summary: SnapMirror and SyncMirror
+summary: Oracle databases with SnapMirror and SyncMirror
 ---
-= SnapMirror and SyncMirror
+= Oracle databases with SnapMirror and SyncMirror
 :hardbreaks:
 :nofooter:
 :icons: font
