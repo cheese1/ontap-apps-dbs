@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: oracle/oracle-app-config-block-sizes.html
 keywords: oracle, database, ontap, SAN, ASM, blocks
-summary: Oracle database block size
+summary: Oracle database block sizes
 ---
 = Oracle database block sizes
 

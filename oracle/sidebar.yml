@@ -9,7 +9,7 @@ entries:
       url: /oracle/oracle-ontap-config-raid.html
     - title: Capacity limits
       url: /oracle/oracle-ontap-config-capacity-limits.html
-    - title: Storage virtual machines
+    - title: Storage Virtual Machines
       url: /oracle/oracle-ontap-config-svm.html
     - title: Quality of service (QoS)
       url: /oracle/oracle-ontap-config-qos.html

@@ -5,7 +5,7 @@ keywords: oracle, ontap, migrations, TR-4534
 summary: Introduction to Oracle storage migration
 ---
 
-= Migration of Oracle Databases to NetApp Storage Systems
+= Migration of Oracle databases to ONTAP storage systems
 
 :hardbreaks:
 :nofooter:

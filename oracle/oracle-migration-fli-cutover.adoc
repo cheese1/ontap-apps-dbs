@@ -5,7 +5,7 @@ keywords: migration, oracle, FLI
 summary: FLI Cutover - Oracle
 ---
 
-= FLI Cutover - Oracle
+= Oracle migration with FLI: Cutover
 :hardbreaks:
 :nofooter:
 :icons: font
