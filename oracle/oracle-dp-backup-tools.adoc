@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: oracle/oracle-dp-backup-tools.html
 keywords: ontap, data protection
-summary: Oracle databases and NetApp data management tools
+summary: Oracle database management and automation tools
 ---
 
-= SnapCenter and other tools
+= Oracle database management and automation tools
 :hardbreaks:
 :nofooter:
 :icons: font
