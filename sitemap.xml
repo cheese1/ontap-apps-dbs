@@ -1,0 +1,1494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/</loc>
+        
+      
+      <lastmod>2024-01-17T23:39:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/legal-notices.html</loc>
+        
+      
+      <lastmod>2024-01-17T23:55:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-cpu-configuration.html</loc>
+        
+      
+      <lastmod>2024-01-17T17:48:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-data-protection.html</loc>
+        
+      
+      <lastmod>2024-01-17T17:48:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-data-security.html</loc>
+        
+      
+      <lastmod>2024-01-23T18:42:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-disaster-recovery.html</loc>
+        
+      
+      <lastmod>2024-01-17T17:48:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-files-and-filegroups.html</loc>
+        
+      
+      <lastmod>2024-01-17T17:48:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-memory-configuration.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-overview.html</loc>
+        
+      
+      <lastmod>2024-01-23T18:42:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-shared-vs-dedicated.html</loc>
+        
+      
+      <lastmod>2024-01-17T17:48:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-storage-considerations.html</loc>
+        
+      
+      <lastmod>2024-01-17T18:19:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-storage-efficiency.html</loc>
+        
+      
+      <lastmod>2024-01-17T17:48:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-tempdb.html</loc>
+        
+      
+      <lastmod>2024-01-17T17:48:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-workloads.html</loc>
+        
+      
+      <lastmod>2024-01-17T23:02:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-configuration.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-containers.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-file-descriptors.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-file-structure.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-innodb_buffer_pool_size.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-innodb_doublewrite.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-innodb_flush_log_at_trx_commit.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-innodb_flush_method.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-innodb_io_capacity.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-innodb_log_file_size.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-innodb_lru_scan_depth.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-mysql-over-nfs.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-mysql-over-san.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-open_file_limits.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-overview.html</loc>
+        
+      
+      <lastmod>2024-02-01T13:53:50+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-schedulers.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-slot-tables.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-app-config-block-sizes.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-app-config-filesystemio_options.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-app-config-mbr.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-app-config-rac.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-backup-tools.html</loc>
+        
+      
+      <lastmod>2024-03-12T14:25:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-consistency-group-backup.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-data-availability.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-data-integrity.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-nvfail.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-online-backup.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-overview.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-planning.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-slas.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-snaprestore.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-snapshots.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-storage-snapshot-optimized-backups.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-mcc-failover.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-mcc-logical.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-mcc-nvfail.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-mcc-physical.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-mcc-rac.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-mcc-si.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-mcc-syncmirror.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-overview.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-smbc-architecture.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-smbc-failover.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-smbc-failure-scenarios.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-smbc-rac.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-smbc-si.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-snapmirror-basics.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:49:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-snapmirror-cg.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-snapmirror-log-replay.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-host-config-aix.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-host-config-asmlib-afd.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-host-config-hp-ux.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-host-config-linux.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-host-config-solaris.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-host-config-windows.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-datafile-move.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-fli-completion.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:23:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-fli-cutover.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:23:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-fli-planning.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:23:47+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-fli-protocol-conversion.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-host-data-copy.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-log-shipping.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-overview.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-planning.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-procedures-overview.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-sample-scripts.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-network-config-direct-connect.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-network-config-ethernet.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-network-config-fc.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:49:31+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-network-config-lifs.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:15:23+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-notes-optimization-and-benchmarking.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-notes-stale-nfs-locks.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-notes-wafl-alignment-verification.html</loc>
+        
+      
+      <lastmod>2024-01-17T18:44:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-ontap-config-capacity-limits.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-ontap-config-efficiency.html</loc>
+        
+      
+      <lastmod>2024-03-11T18:14:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-ontap-config-failover.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-ontap-config-qos.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-ontap-config-raid.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-ontap-config-svm.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-ontap-config-thin-provisioning.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-overview.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-nfs-config-caching.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-nfs-config-dnfs.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-nfs-config-leases-and-locks.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-nfs-config-overview.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-nfs-config-transfer-sizes.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-san-config-asmru.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-san-config-lun-alignment.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-san-config-lun-resizing.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-san-config-lun-sizing.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-storage-san-config-lvm-striping.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-backups.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-logs.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-object-store-access-interruptions.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-overview.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-partial-file.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-policies.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-retrieval-policies.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-snapshots.html</loc>
+        
+      
+      <lastmod>2024-03-11T23:21:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-tiering-whole-file.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-virtualization-introduction.html</loc>
+        
+      
+      <lastmod>2024-03-11T15:44:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-architecture.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-db-config.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-initialization.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-native-dp.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-nfs-filesystems.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-overview.html</loc>
+        
+      
+      <lastmod>2024-02-01T13:53:50+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-san-filesystems.html</loc>
+        
+      
+      <lastmod>2024-01-18T19:16:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-snapcenter-dp.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-snapshot-dp.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-tablespaces.html</loc>
+        
+      
+      <lastmod>2024-02-01T12:55:15+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/sap-solutions.html</loc>
+        
+      
+      <lastmod>2023-12-21T18:56:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs//search.html</loc>
+        
+      
+      <lastmod>2024-03-13T13:47:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-links-tr-4792.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-security-snapcenter.html</loc>
+        
+      
+      <lastmod>2024-02-26T20:53:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-security-tools.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-additional-information.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-deployment_best_practices.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-ontap-tools-features.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-operational_best_practices.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-replication_topologies.html</loc>
+        
+      
+      <lastmod>2024-01-17T16:02:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-vvol-troubleshooting.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-cloning.html</loc>
+        
+      
+      <lastmod>2024-02-26T20:53:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-datastores-fg.html</loc>
+        
+      
+      <lastmod>2024-03-13T12:50:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-datastores-nfs.html</loc>
+        
+      
+      <lastmod>2024-03-13T13:00:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-datastores-san.html</loc>
+        
+      
+      <lastmod>2024-03-07T19:04:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-datastores-top.html</loc>
+        
+      
+      <lastmod>2024-03-07T19:04:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vsphere_admin_storage_efficiencies.html</loc>
+        
+      
+      <lastmod>2024-03-07T19:04:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-dp.html</loc>
+        
+      
+      <lastmod>2024-02-26T20:53:59+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-flexgroups.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-network.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-overview.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-policy-and-vvols.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-qos.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-sdrs.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-settings.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-unified.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-vtools.html</loc>
+        
+      
+      <lastmod>2024-01-22T13:57:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-vvols_and_spbm.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vvols-deploy.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vvols-ontap.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vvols-overview.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vvols-protect.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vvols-resources.html</loc>
+        
+      
+      <lastmod>2024-02-26T21:28:04+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_design.html</loc>
+        
+      
+      <lastmod>2024-02-26T20:51:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_overview.html</loc>
+        
+      
+      <lastmod>2024-03-04T16:17:22+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_resiliency.html</loc>
+        
+      
+      <lastmod>2024-02-26T20:51:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_scen_mcc.html</loc>
+        
+      
+      <lastmod>2024-02-26T20:51:46+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware_vmsc_solution.html</loc>
+        
+      
+      <lastmod>2024-02-26T20:51:46+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
