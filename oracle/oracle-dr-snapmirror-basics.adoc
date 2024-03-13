@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-snapmirror-basics.html
 keywords: ontap, snapmirror
-summary: SnapMirror and SyncMirror
+summary: Oracle databases with SnapMirror and SyncMirror
 ---
-= SnapMirror and SyncMirror
+= Oracle databases with SnapMirror and SyncMirror
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -59,7 +59,7 @@ For a complete explanation of SM-S, see https://www.netapp.com/media/17174-tr473
 == Consistency groups
 ONTAP allows the creation of consistency group snapshots, and starting with 9.13.1, ONTAP can replicate groups of volumes (remember that a volume in ONTAP terminology is not a LUN, it is a management container consisting of one or more files or LUNs) as consistent group.
 
-SnapMirror replication and breaking CG SnapMirror relation preserves consistency across volumes, and SnapMirror Synchronous and SnapMirror Business Continuity both preserve consistency across constituent volumes. 
+SnapMirror replication and breaking CG SnapMirror relation preserves consistency across volumes, and SnapMirror Synchronous and SnapMirror active sync both preserve consistency across constituent volumes. 
 
 The result is you can replicate a multi-volume dataset and ensure all volumes are cross-consistent. Among other things, this allows "break the mirror and go" DR operations without a need for additional application or database recovery steps.
 

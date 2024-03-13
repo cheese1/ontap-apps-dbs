@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-snapmirror-cg.html
 keywords: oracle, data protection, DR, CG
-summary: Consistency group replication for Oracle databases
+summary: Oracle database and consistency group disaster recovery
 ---
-= Consistency group disaster recovery
+= Oracle database and consistency group disaster recovery
 
 :hardbreaks:
 :nofooter:

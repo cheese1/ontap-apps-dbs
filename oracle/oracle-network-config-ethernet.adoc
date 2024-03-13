@@ -2,9 +2,10 @@
 sidebar: sidebar
 permalink: oracle/oracle-network-config-ethernet.html
 keywords: ethernet, jumbo frames, MTU
-summary: Oracle and TCP/IP and ethernet configuration.
+summary: Oracle and TCP/IP and ethernet configuration
 ---
-= TCP/IP and Ethernet configuration for Oracle Database
+
+= TCP/IP and ethernet configuration for Oracle databases
 :hardbreaks:
 :nofooter:
 :icons: font

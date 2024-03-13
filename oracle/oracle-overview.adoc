@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: oracle/oracle-overview.html
 keywords: oracle, database, ontap, TR-3633
-summary: NetApp ONTAP is a powerful data-management platform with native capabilities that include everything from instant backup, restore and cloning capabilities, efficiency features such as inline compression, nondisruptive hardware upgrades, and the ability to import a LUN from a foreign storage array.
+summary: ONTAP is designed for Oracle databases. Learn how!
 ---
 = Oracle databases on ONTAP
 

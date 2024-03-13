@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-host-config-solaris.html
 keywords: oracle, database, ontap, solaris, zfs
-summary: Oracle on ONTAP using Solaris
+summary: Oracle databases with Solaris
 ---
-= Solaris
+= Oracle databases with Solaris
 
 :hardbreaks:
 :nofooter:

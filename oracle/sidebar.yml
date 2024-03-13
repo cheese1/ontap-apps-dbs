@@ -9,7 +9,7 @@ entries:
       url: /oracle/oracle-ontap-config-raid.html
     - title: Capacity limits
       url: /oracle/oracle-ontap-config-capacity-limits.html
-    - title: Storage virtual machines
+    - title: Storage Virtual Machines
       url: /oracle/oracle-ontap-config-svm.html
     - title: Quality of service (QoS)
       url: /oracle/oracle-ontap-config-qos.html
@@ -149,19 +149,19 @@ entries:
         url: /oracle/oracle-dr-mcc-failover.html
       - title: NVFAIL
         url: /oracle/oracle-dr-mcc-nvfail.html
-      - title: Single Instance on MetroCluster
+      - title: Oracle SI on MetroCluster
         url: /oracle/oracle-dr-mcc-si.html
       - title: Oracle RAC on MetroCluster
         url: /oracle/oracle-dr-mcc-rac.html
-    - title: SnapMirror Business Continuity
+    - title: SnapMirror active sync
       entries:
       - title: Architecture
         url: /oracle/oracle-dr-smbc-architecture.html
       - title: Failover
         url: /oracle/oracle-dr-smbc-failover.html
-      - title: Single Instance on SM-BC
+      - title: Oracle SI with SnapMirror active sync
         url: /oracle/oracle-dr-smbc-si.html
-      - title: Oracle RAC on SM-BC
+      - title: Oracle RAC with SnapMirror active sync
         url: /oracle/oracle-dr-smbc-rac.html
       - title: Failure scenarios
         url: /oracle/oracle-dr-smbc-failure-scenarios.html

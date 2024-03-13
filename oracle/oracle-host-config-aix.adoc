@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-host-config-aix.html
 keywords: oracle, database, ontap, aix, cio
-summary: Oracle on ONTAP using AIX
+summary: Oracle databases with AIX
 ---
-= IBM AIX
+= Oracle databases with IBM AIX
 
 :hardbreaks:
 :nofooter:
@@ -13,7 +13,7 @@ summary: Oracle on ONTAP using AIX
 :imagesdir: ../media/
 
 [.lead]
-Configuration topics specific to the IBM AIX operating system.
+Configuration topics for Oracle database on IBM AIX with ONTAP.
 
 == Concurrent I/O
 Achieving optimum performance on IBM AIX requires the use of concurrent I/O. Without concurrent I/O, performance limitations are likely because AIX performs serialized, atomic I/O, which incurs significant overhead.

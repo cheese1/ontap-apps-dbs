@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-mcc-nvfail.html
 keywords: metrocluster, nvfail, switchover
-summary: NVFAIL 
+summary: Oracle, MetroCluster, and NVFAIL
 ---
-= Oracle, MetroCluster, and NVFAIL
+= Oracle databases, MetroCluster, and NVFAIL
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,6 +12,6 @@ summary: NVFAIL
 :imagesdir: ../media/
 
 [.lead]
-NVFAIL is a general data integrity feature in ONTAP that is especially critical with database workloads.
+NVFAIL is a general data integrity feature in ONTAP that is designed to maximize data integrity protection with databases.
 
 include::../_include/mcc-nvfail-summary.adoc[]

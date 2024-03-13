@@ -4,7 +4,8 @@ permalink: oracle/oracle-migration-overview.html
 keywords: oracle, ontap, migrations, TR-4534
 summary: Introduction to Oracle storage migration
 ---
-= Migration of Oracle Databases to NetApp Storage Systems
+
+= Migration of Oracle databases to ONTAP storage systems
 
 :hardbreaks:
 :nofooter:
@@ -13,7 +14,7 @@ summary: Introduction to Oracle storage migration
 :imagesdir: ../media/
 
 [.lead]
-Leveraging the capabilities of a new storage platform has one unavoidable requirement; data must be placed on the new storage system. 
+Leveraging the capabilities of a new storage platform has one unavoidable requirement; data must be placed on the new storage system. ONTAP makes the migration process simple, including both ONTAP to ONTAP migrations and upgrades, foreign LUN imports, and procedures for using the host operating system or Oracle database software directly. 
 
 [NOTE]
 This documentation replaces previously published technical report _TR-4534: Migration of Oracle Databases to NetApp Storage Systems_

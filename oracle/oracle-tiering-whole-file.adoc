@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-tiering-whole-file.html
 keywords: tiering, fabricpool
-summary: Oracle full tile tiering
+summary: Oracle database full file FabricPool tiering
 ---
-= Oracle full file tiering
+= Oracle database full file FabricPool tiering
 
 :hardbreaks:
 :nofooter:

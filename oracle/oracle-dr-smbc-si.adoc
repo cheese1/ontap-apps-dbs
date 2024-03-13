@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-smbc-si.html
 keywords: TR-4899, oracle, smbc, sm-bc
-summary: Oracle Single Instance on ONTAP with SM-BC
+summary: Single-Instance Oracle databases with SnapMirror active sync
 ---
-= Single-Instance Oracle with SM-BC
+= Single-Instance Oracle databases with SnapMirror active sync
 
 :hardbreaks:
 :nofooter:
@@ -17,6 +17,6 @@ The diagram below shows a simple deployment model where you have storage devices
 
 Oracle is configured on the primary only. This model addresses seamless storage failover in the event of storage side disasters providing no loss of data without any application downtime. This model would not, however, provide high availability of the database environment during a site failure. This type of architecture is useful for customers looking for a zero data loss solution with high availability of the storage services but accept that a total loss of the database cluster would require manual work.
 
-image:smbc-si.png[Error: Missing Graphic Image]
+image:smas-si.png[Error: Missing Graphic Image]
 
 This approach also saves money on Oracle licensing costs. Preconfiguration of Oracle database nodes on the remote site would require that all cores be licensed under most Oracle licensing agreements. If the delay caused by the time required to install an Oracle database server and mount the surviving copy of data is acceptable, this design can be very cost effective.

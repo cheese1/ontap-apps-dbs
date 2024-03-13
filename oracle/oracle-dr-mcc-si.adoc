@@ -4,7 +4,7 @@ permalink: oracle/oracle-dr-mcc-si.html
 keywords: oracle, metrocluster, mcc, MCC-IP
 summary: Oracle Single Instance on MetroCluster
 ---
-= Oracle Single Instance on MetroCluster
+= Oracle single-instance on MetroCluster
 
 :hardbreaks:
 :nofooter:

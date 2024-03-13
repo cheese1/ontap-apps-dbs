@@ -15,3 +15,15 @@ summary: Oracle databases and storage efficiency
 ONTAP space efficiency features are optimized for Oracle databases. In almost all cases, the best approach is to leave the defaults in place with all efficiency features enabled.
 
 include::../_include/efficiency.adoc[]
+
+include::../_include/compression.adoc[]
+
+include::../_include/compaction.adoc[]
+
+include::../_include/tsse.adoc[]
+
+include::../_include/deduplication.adoc[]
+
+include::../_include/efficiency-and-thin-provisioning.adoc[]
+
+include::../_include/efficiency-bp.adoc[]

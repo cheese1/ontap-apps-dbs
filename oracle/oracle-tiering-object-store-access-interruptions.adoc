@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-tiering-object-store-access-interruptions.html
 keywords: tiering, fabricpool, interruption
-summary: Database access during object store access interruptions
+summary: Oracle database and object store access interruptions
 ---
-= Object store access interruptions
+= Oracle database and object store access interruptions
 :hardbreaks:
 :nofooter:
 :icons: font

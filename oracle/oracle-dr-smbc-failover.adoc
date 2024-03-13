@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-dr-smbc-failover.html
 keywords: smbc, sm-bc
-summary: Oracle failover with SM-BC
+summary: Oracle database failover with SnapMirror active sync
 ---
-= Oracle failover with SM-BC
+= Oracle database failover with SnapMirror active sync
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -12,6 +12,6 @@ summary: Oracle failover with SM-BC
 :imagesdir: ../media/
 
 [.lead]
-The primary reason for hosting an Oracle database on SM-BC is to deliver transparent failover during planned and unplanned storage events.
+The primary reason for hosting an Oracle database on SnapMirror active sync is to deliver transparent failover during planned and unplanned storage events.
 
-include::../_include/smbc-failover.adoc[]
+include::../_include/smas-failover.adoc[]

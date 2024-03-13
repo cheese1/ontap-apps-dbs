@@ -2,9 +2,9 @@
 sidebar: sidebar
 permalink: oracle/oracle-host-config-hp-ux.html
 keywords: oracle, database, ontap, hp-ux
-summary: Oracle on ONTAP using HP-UX
+summary: Oracle databases with HP-UX
 ---
-= HP-UX
+= Oracle databases with HP-UX
 
 :hardbreaks:
 :nofooter:
@@ -13,7 +13,7 @@ summary: Oracle on ONTAP using HP-UX
 :imagesdir: ../media/
 
 [.lead]
-Configuration topics specific to the HP-UX operating system.
+Configuration topics for Oracle database on HP-UX with ONTAP.
 
 == HP-UX NFS Mount Options
 The following table lists the HP-UX NFS mount options for a single instance.
