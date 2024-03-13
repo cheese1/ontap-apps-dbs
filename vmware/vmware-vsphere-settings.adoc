@@ -23,7 +23,7 @@ NetApp has developed a set of ESXi host multipathing and HBA timeout settings fo
 |Keep default (1)
 |No
 |VMFS3.EnableBlockDelete
-|Keep default (0), but can be changeded if needed.
+|Keep default (0), but can be changed if needed.
 For more information, see link:https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2007427[VMware KB 2007427]
 |No
 |VMFS3.EnableVMFS6Unmap
